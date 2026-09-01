@@ -107,8 +107,23 @@ function processa(html) {
     s = s.split(`href="${de}"`).join(`href="${LINKS[de]}"`);
   }
 
-  // 5. nosso JS de interações, no fim do body
-  s = s.replace(/<\/body>/i, '  <script src="/interacoes.js" defer></script>\n</body>');
+  // 5. formulários: o HTML do Framer vem sem action, porque quem tratava o
+  //    envio era o runtime que removemos no passo 1. Aponta cada form para o
+  //    endpoint certo — o de contato tem textarea "Mensagem", o da newsletter
+  //    só tem o campo de e-mail. Com o action no HTML, o envio funciona mesmo
+  //    sem JavaScript; formularios.js só melhora a experiência.
+  s = s.replace(/<form\b([^>]*)>([\s\S]*?)<\/form>/gi, (todo, atributos, interno) => {
+    if (/\baction=/i.test(atributos)) return todo;
+    const rota = /name="Mensagem"/i.test(interno) ? '/api/contato' : '/api/newsletter';
+    return `<form${atributos} method="POST" action="${rota}">${interno}</form>`;
+  });
+
+  // 6. nosso JS, no fim do body
+  s = s.replace(
+    /<\/body>/i,
+    '  <script src="/interacoes.js" defer></script>\n' +
+      '  <script src="/formularios.js" defer></script>\n</body>',
+  );
 
   return s;
 }

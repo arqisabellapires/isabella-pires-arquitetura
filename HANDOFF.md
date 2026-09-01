@@ -162,8 +162,10 @@ precisam sair de lá, e as duas são insubstituíveis:
 1. **Os CSV do CMS** (Plugins → CMS Export). São ~26 artigos; o clone só tem 5.
    Salvar em `_importar/` e rodar `importa-framer.mjs`. **Ainda não foi feito.**
 2. **As capturas por breakpoint** (`captura-breakpoints.mjs`). Sem o site no ar
-   não há como obter o DOM de celular. Feito nesta sessão — conferir
-   `_capturas/` antes de confiar.
+   não há como obter o DOM de celular. **✅ FEITO E VERIFICADO** — 42/42
+   capturas (14 páginas × 3 breakpoints) em `_capturas/`, versionadas no git,
+   nenhuma truncada. Este risco está neutralizado: mesmo que o Framer caia
+   amanhã, o material para reconstruir o site inteiro já está no repositório.
 
 Se o acesso cair antes disso, sobra engenharia reversa dos `.framercms` do
 clone, com perda de formatação.

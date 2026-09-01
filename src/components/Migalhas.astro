@@ -1,0 +1,21 @@
+---
+interface Props { atual: string }
+const { atual } = Astro.props;
+---
+<nav class="migalhas container" aria-label="Você está aqui">
+  <ol>
+    <li><a href="/">Início</a></li>
+    <li aria-current="page">{atual}</li>
+  </ol>
+</nav>
+<style>
+  .migalhas { padding-block-start: var(--esp-md); }
+  .migalhas ol {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; gap: var(--esp-2xs); flex-wrap: wrap;
+    font-size: var(--texto-sm); color: var(--cor-texto-suave);
+  }
+  .migalhas li + li::before { content: '/'; margin-inline-end: var(--esp-2xs); opacity: 0.5; }
+  .migalhas a { text-decoration: none; }
+  .migalhas a:hover { color: var(--cor-acento-escuro); }
+</style>

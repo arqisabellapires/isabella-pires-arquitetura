@@ -1,0 +1,110 @@
+{
+  "desktop": [
+    {
+      "indice": 0,
+      "controle": "Frame 3070",
+      "de": "framer-v-8p8k2y",
+      "para": "framer-v-1pr5vsu"
+    },
+    {
+      "indice": 1,
+      "controle": "COZINHA LA",
+      "de": "framer-v-8p8k2y",
+      "para": "framer-v-1pr5vsu"
+    },
+    {
+      "indice": 2,
+      "controle": "CASA IP",
+      "de": "framer-v-8p8k2y",
+      "para": null
+    },
+    {
+      "indice": 3,
+      "controle": "Vector",
+      "de": "framer-v-8p8k2y",
+      "para": "framer-v-1pr5vsu"
+    },
+    {
+      "indice": 4,
+      "controle": "Vector",
+      "de": "framer-v-8p8k2y",
+      "para": "framer-v-1thzb68"
+    },
+    {
+      "indice": 5,
+      "controle": "Frame 3069",
+      "de": "framer-v-8p8k2y",
+      "para": "framer-v-1thzb68"
+    },
+    {
+      "indice": 6,
+      "controle": "STUDIO",
+      "de": "framer-v-8p8k2y",
+      "para": "framer-v-1thzb68"
+    }
+  ],
+  "tablet": [
+    {
+      "indice": 0,
+      "controle": "COZINHA LA",
+      "de": "framer-v-sm6rr6",
+      "para": "framer-v-4dtimf"
+    },
+    {
+      "indice": 1,
+      "controle": "CASA IP",
+      "de": "framer-v-sm6rr6",
+      "para": null
+    },
+    {
+      "indice": 2,
+      "controle": "Vector",
+      "de": "framer-v-sm6rr6",
+      "para": "framer-v-4dtimf"
+    },
+    {
+      "indice": 3,
+      "controle": "Vector",
+      "de": "framer-v-sm6rr6",
+      "para": "framer-v-r5q2vu"
+    },
+    {
+      "indice": 4,
+      "controle": "STUDIO",
+      "de": "framer-v-sm6rr6",
+      "para": "framer-v-r5q2vu"
+    }
+  ],
+  "mobile": [
+    {
+      "indice": 0,
+      "controle": "COZINHA LA",
+      "de": "framer-v-sm6rr6",
+      "para": "framer-v-4dtimf"
+    },
+    {
+      "indice": 1,
+      "controle": "CASA IP",
+      "de": "framer-v-sm6rr6",
+      "para": null
+    },
+    {
+      "indice": 2,
+      "controle": "Vector",
+      "de": "framer-v-sm6rr6",
+      "para": "framer-v-4dtimf"
+    },
+    {
+      "indice": 3,
+      "controle": "Vector",
+      "de": "framer-v-sm6rr6",
+      "para": "framer-v-r5q2vu"
+    },
+    {
+      "indice": 4,
+      "controle": "STUDIO",
+      "de": "framer-v-sm6rr6",
+      "para": "framer-v-r5q2vu"
+    }
+  ]
+}

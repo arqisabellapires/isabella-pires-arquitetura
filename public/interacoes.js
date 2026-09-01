@@ -213,7 +213,133 @@
     aplicaVariantes(pares.filter((par) => arvoreAtiva().querySelector('.' + par.de)));
   }
 
-  const tudo = () => { inicia(); iniciaVariantes(); };
+  // ─────────────────────────────────────────────────────────────────
+  //  Carrossel de projetos
+  //
+  //  O Framer não move nada: ele troca a classe da raiz e o CSS de cada
+  //  variante reordena os filhos com `order:`. O DOM é idêntico nos quatro
+  //  estados — medido no Framer vivo, os mesmos cards estão presentes em
+  //  todos. Por isso o nosso HTML estático reproduz isto sem faltar nada.
+  //
+  //  O mapa em /carrossel.json sai do cycleOrder do fonte (nkDfbQNR8.js)
+  //  cruzado com tools/sonda-carrossel.mjs, que clicou no Framer e mediu
+  //  para onde cada controle leva. O fonte sozinho não bastava: o render é
+  //  condicional por variante e o mesmo onTap aparece em vários ramos.
+  //
+  //  Controles, conforme medido:
+  //    Vector (1º)  seta anterior      Vector (2º)  seta seguinte
+  //    card lateral salta para o projeto que exibe
+  //    card ativo   não faz nada
+  // ─────────────────────────────────────────────────────────────────
+
+  /**
+   * `order` não é animável: o navegador reposiciona de um quadro para o
+   * outro. Para ter o movimento do Framer, mede antes e depois, aplica a
+   * diferença como transform invertido e deixa a mola levar até zero.
+   */
+  function animaReordenacao(filhos, antes) {
+    const reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduzido) return;
+    for (const filho of filhos) {
+      const de = antes.get(filho);
+      if (!de) continue;
+      const para = filho.getBoundingClientRect();
+      const dx = de.left - para.left, dy = de.top - para.top;
+      if (!dx && !dy) continue;
+      filho.style.transition = 'none';
+      filho.style.transform = `translate(${dx}px, ${dy}px)`;
+      // dois quadros: o primeiro assenta o transform, o segundo anima
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        filho.style.transition = `transform .4s ${MOLA_CSS}`;
+        filho.style.transform = '';
+      }));
+    }
+  }
+
+  function ligaCarrossel(mapa) {
+    const raiz = arvoreAtiva();
+    const todas = Object.keys(mapa.projetos);
+    for (const el of raiz.querySelectorAll(todas.map((c) => '.' + c).join(','))) {
+      if (el.dataset.carrosselPronto) continue;
+
+      const atual = [...el.classList].find((c) => todas.includes(c));
+      const ciclo = Object.values(mapa.ciclos).find((c) => c.includes(atual));
+      if (!ciclo || ciclo.length < 2) continue;
+
+      // Trava obrigatória: se trocar a classe não mexe em nada, não ligar
+      // handler nenhum. O acordeão tem par inerte e um clique com
+      // preventDefault ali derrubaria a navegação.
+      // Medir só os filhos diretos não serve: a raiz tem um único filho e
+      // o `order:` das variantes atua em netos. Mede a árvore inteira.
+      const posicoes = () => [...el.querySelectorAll('*')]
+        .map((n) => { const b = n.getBoundingClientRect(); return `${Math.round(b.left)},${Math.round(b.top)}`; })
+        .join('|');
+      const proximo = ciclo[(ciclo.indexOf(atual) + 1) % ciclo.length];
+      const antesTeste = posicoes();
+      el.classList.replace(atual, proximo);
+      const depoisTeste = posicoes();
+      el.classList.replace(proximo, atual);
+      if (antesTeste === depoisTeste) continue;
+
+      el.dataset.carrosselPronto = '1';
+
+      const vai = (destino) => {
+        const agora = [...el.classList].find((c) => todas.includes(c));
+        if (!destino || destino === agora) return;
+        const filhos = [...el.querySelectorAll('*')].filter((n) => n.getBoundingClientRect().width > 8);
+        const antes = new Map(filhos.map((n) => [n, n.getBoundingClientRect()]));
+        el.classList.replace(agora, destino);
+        animaReordenacao(filhos, antes);
+      };
+
+      el.addEventListener('click', (e) => {
+        // Link navega, sempre — nunca preventDefault num a[href].
+        if (e.target.closest('a[href]')) return;
+
+        const agora = [...el.classList].find((c) => todas.includes(c));
+        const i = ciclo.indexOf(agora);
+
+        const seta = e.target.closest('[data-framer-name="Vector"]');
+        if (seta) {
+          const setas = [...el.querySelectorAll('[data-framer-name="Vector"]')]
+            .filter((v) => getComputedStyle(v).cursor === 'pointer');
+          const qual = setas.indexOf(seta);
+          if (qual === 0) return vai(ciclo[(i - 1 + ciclo.length) % ciclo.length]);
+          if (qual === 1) return vai(ciclo[(i + 1) % ciclo.length]);
+          return;
+        }
+
+        // O Framer pendura o onTap no frame do card, não no rótulo. Um
+        // clique pode cair em qualquer um dos dois, então sobe procurando
+        // um nome de projeto e, se o nome do frame não for de projeto,
+        // desce atrás do rótulo que ele embrulha.
+        const doNome = (n) => {
+          if (!n) return null;
+          const alvo = n.trim().toUpperCase();
+          return ciclo.find((c) => (mapa.projetos[c] ?? '').toUpperCase() === alvo) ?? null;
+        };
+        for (let n = e.target.closest('[data-framer-name]'); n && el.contains(n); n = n.parentElement.closest('[data-framer-name]')) {
+          const direto = doNome(n.getAttribute('data-framer-name'));
+          if (direto) return vai(direto);
+          for (const dentro of n.querySelectorAll('[data-framer-name]')) {
+            const achado = doNome(dentro.getAttribute('data-framer-name'));
+            if (achado) return vai(achado);
+          }
+        }
+      });
+    }
+  }
+
+  async function iniciaCarrossel() {
+    try {
+      const r = await fetch('/carrossel.json');
+      if (!r.ok) return;
+      const mapa = await r.json();
+      if (mapa && mapa.projetos && mapa.ciclos) ligaCarrossel(mapa);
+    } catch { /* sem mapa, sem carrossel — o site continua servindo */ }
+  }
+
+  const tudo = () => { inicia(); iniciaVariantes(); iniciaCarrossel(); };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', tudo);
   else tudo();
 

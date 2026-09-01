@@ -53,47 +53,58 @@ for (const bp of BREAKPOINTS) {
   const existe = await p.locator(raizSel).count();
   if (!existe) { console.log(`\n── ${bp.nome} ── carrossel não encontrado`); await ctx.close(); continue; }
 
-  // Candidatos a controle: tudo clicável dentro da raiz, com nome do Framer.
-  const candidatos = await p.evaluate((sel) => {
-    const raiz = document.querySelector(sel);
-    const vistos = [];
-    for (const el of raiz.querySelectorAll('[data-framer-name]')) {
-      const b = el.getBoundingClientRect();
-      if (b.width < 8 || b.height < 8) continue;
-      vistos.push({ nome: el.getAttribute('data-framer-name'),
-                    classe: [...el.classList].find((c) => c.startsWith('framer-') && !c.startsWith('framer-v-')) ?? '' });
-    }
-    return vistos.slice(0, 40);
+  // Um clique reordena os filhos, então o elemento sob o cursor muda de
+  // papel a cada troca. Medir em sequência dá um mapa que se contradiz.
+  // Cada candidato parte, portanto, do estado padrão, com página nova.
+  const estado = async (pg) => pg.evaluate((s) => {
+    const r = document.querySelector(s);
+    return r ? [...r.classList].find((c) => c.startsWith('framer-v-')) ?? '' : null;
   }, raizSel);
 
+  /** Os clicáveis são os que o Framer marcou com cursor:pointer — é onde
+   *  ele pendurou onTap. Não adivinhamos: perguntamos ao estilo aplicado. */
+  const listaClicaveis = (pg) => pg.evaluate((s) => {
+    const r = document.querySelector(s);
+    return [...r.querySelectorAll('[data-framer-name]')]
+      .filter((e) => getComputedStyle(e).cursor === 'pointer')
+      .map((e, i) => ({ i, nome: e.getAttribute('data-framer-name') }));
+  }, raizSel);
+
+  const clicaveis = await listaClicaveis(p);
   const linhas = [];
-  for (const cand of candidatos) {
-    if (!cand.classe) continue;
-    // volta ao estado inicial antes de cada tentativa
-    await p.reload({ waitUntil: 'networkidle' });
-    await p.waitForTimeout(1200);
-    const antes = await p.evaluate((s) => {
-      const r = document.querySelector(s);
-      return [...r.classList].find((c) => c.startsWith('framer-v-')) ?? '';
-    }, raizSel);
+
+  for (const alvo of clicaveis) {
+    const pg = await ctx.newPage();
     try {
-      await p.locator(`.${cand.classe}`).first().click({ timeout: 2500, force: true });
-    } catch { continue; }
-    await p.waitForTimeout(700);
-    const depois = await p.evaluate((s) => {
-      const r = document.querySelector(s);
-      return [...r.classList].find((c) => c.startsWith('framer-v-')) ?? '';
-    }, raizSel);
-    if (depois && depois !== antes) {
-      linhas.push({ controle: cand.nome, classe: cand.classe, de: antes, para: depois });
-    }
+      await pg.goto(`${BASE}/`, { waitUntil: 'networkidle', timeout: 60000 });
+      await pg.waitForSelector(raizSel, { timeout: 20000 });
+      await pg.waitForTimeout(1500);
+      const antes = await estado(pg);
+      const handle = await pg.evaluateHandle((o) => {
+        const r = document.querySelector(o.sel);
+        return [...r.querySelectorAll('[data-framer-name]')]
+          .filter((e) => getComputedStyle(e).cursor === 'pointer')[o.i];
+      }, { sel: raizSel, i: alvo.i });
+      const el = handle.asElement();
+      if (!el) { await pg.close(); continue; }
+      await el.scrollIntoViewIfNeeded();
+      await el.click({ timeout: 4000 });
+      await pg.waitForTimeout(800);
+      const depois = await estado(pg);
+      if (depois && depois !== antes)
+        linhas.push({ indice: alvo.i, controle: alvo.nome, de: antes, para: depois });
+      else
+        linhas.push({ indice: alvo.i, controle: alvo.nome, de: antes, para: null });
+    } catch { /* candidato que não aceita clique fica de fora */ }
+    await pg.close();
   }
 
   achados[bp.nome] = linhas;
   console.log(`\n── ${bp.nome} (${bp.largura}px) ──`);
   if (!linhas.length) console.log('  nenhum controle mudou o estado');
   for (const l of linhas)
-    console.log(`  ${l.nome ?? l.controle}`.padEnd(26) + `.${l.classe.padEnd(18)} ${VARIANTES[l.de] ?? l.de} → ${VARIANTES[l.para] ?? l.para}`);
+    console.log(`  [${l.indice}] ${l.controle}`.padEnd(28) +
+      (l.para ? `${VARIANTES[l.de] ?? l.de}  →  ${VARIANTES[l.para] ?? l.para}` : `${VARIANTES[l.de] ?? l.de}  →  (sem efeito)`));
   await ctx.close();
 }
 

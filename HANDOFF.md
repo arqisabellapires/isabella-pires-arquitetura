@@ -355,8 +355,10 @@ interações.** Todas só capturam DOM. Não vale comprar.
 
 ## 7. Risco com prazo
 
-**A assinatura do Framer vence.** Enquanto ela viver, tudo que for
-insubstituível precisa sair de lá.
+**A assinatura do Framer vence em 30 de setembro de 2026.** Origem:
+`https://authentic-learning-761482.framer.app/` (o domínio próprio já aponta
+para a Vercel). Enquanto ela viver, tudo que for insubstituível precisa sair
+de lá.
 
 - ✅ **Capturas por breakpoint** — 45/45 da origem certa, versionadas.
 - ✅ **CSV do blog** — 25 artigos importados.

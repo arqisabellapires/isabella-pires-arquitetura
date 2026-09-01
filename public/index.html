@@ -363,115 +363,7 @@ body {
   }
 </style>
 <!-- SnippetEnd: legacy-headEnd-augiA20Il --><!-- End of headEnd -->
-<style>
-#__framer-editorbar-container {
-    align-items: center;
-    display: flex;
-    gap: 8px;
-    position: fixed;
-    z-index: calc(2147483647);
-    width: max-content;
-    cursor: pointer;
-}
 
-#__framer-editorbar-label {
-    background-color: #111;
-    border-radius: 8px;
-    font-family: "Inter", "Inter-Regular", system-ui, Arial, sans-serif;
-    font-size: 12px;
-    height: fit-content;
-    opacity: 0;
-    padding: 4px 8px;
-    transition: opacity 0.4s ease-out;
-    font-weight: 500;
-    flex-shrink: 0;
-    position: fixed;
-    width: max-content;
-    pointer-events: none;
-    user-select: none;
-}
-
-#__framer-editorbar-button {
-    all: unset;
-    align-items: center;
-    border-radius: 15px;
-    display: flex;
-    height: 30px;
-    justify-content: center;
-    width: 30px;
-    flex-shrink: 0;
-}
-
-#__framer-editorbar-label.__framer-editorbar-button-tooltip-visible {
-    opacity: 1;
-}
-
-#__framer-editorbar-label, #__framer-editorbar-button {
-    backdrop-filter: blur(10px);
-    background-color: rgba(34, 34, 34, 0.8);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px;
-    color: #fff;
-}
-
-#__framer-editorbar-loading-spinner {
-    width: 12px;
-    height: 12px;
-    -webkit-mask: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAApNJREFUSA2tlUtLlFEYgEe7mtFFQ8NLFBG1SJAwahtiLVy5ceVSEPQH1LZf0Lp9FO1bdYNyI7gyBFcS2kAzilYq3sfxeYZ55Zv6FGfohWfOd97vnPd23u9MXeZoaeb1Q7gPHXAFzsAS5GACxiEPqVKXqs1kmtAPQi+cAtedToz1PJ8ExxPwDl7CAlRImoN7rBiF86ABHTiGAzMIh8n3O+ifwWc4EL0n5TGTYQijvjNSxbUadozInUeGZ3nuh1WYgpIkM+hGMwYajAgdrfUn+AaLoLTCAxiAOxCZxL4RdB+gZMjxEjwHo4hS8Jh5DR9hz0mKaNizegoNEI7Wee6FXJTISG6AUgDr+QImoAiHie+mwZJow/PRps4uwnsnRj8Epqc4voVJJ8eULOtW4BFYYjPpgjc+3IWI2sh/wFeoVl6xYQ48dDGLfjOwc/ygQqz595hUMVouS9QHBm4l6k3HWpnBLqicgVrlCxujSbR1Swd+UDpQYRS/oVaZZ2MWwlZBB9Zdxf+QTYw8SRgq6sAvz7vH6JULEB9USVHFjzZskgPRQR4ayxoXXIdaHdg9HrB2rErByWxZERnYtrWUzD0esDbtTmXPhzXwHrKLxEUbYGbVyDkWWwkdadfqbPmwDXZSCyh2VAf8BM/nOOJH5Y0QopMt2I5U/KO4DZZJB47XwEX+ex0mGroMV8sLwp56gyuGwiyW4SZ4c8bt2cZzO7jBNeqtsRHbeZ1g9krsMbhfYPv/c5gecA+4yAVuitFszE5Hjva872OMdXagF19JIoOYWyozMTI3J0tmA6gLvXPfO1cc/XOqOLe/HbjwD8yCXRD3VNJROEgatiRZMJsKsbZHia3nAdphtq8fkiWyXJbBe8uM1aXKPouNnz2Bm1kwAAAAAElFTkSuQmCC);
-    mask: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAApNJREFUSA2tlUtLlFEYgEe7mtFFQ8NLFBG1SJAwahtiLVy5ceVSEPQH1LZf0Lp9FO1bdYNyI7gyBFcS2kAzilYq3sfxeYZ55Zv6FGfohWfOd97vnPd23u9MXeZoaeb1Q7gPHXAFzsAS5GACxiEPqVKXqs1kmtAPQi+cAtedToz1PJ8ExxPwDl7CAlRImoN7rBiF86ABHTiGAzMIh8n3O+ifwWc4EL0n5TGTYQijvjNSxbUadozInUeGZ3nuh1WYgpIkM+hGMwYajAgdrfUn+AaLoLTCAxiAOxCZxL4RdB+gZMjxEjwHo4hS8Jh5DR9hz0mKaNizegoNEI7Wee6FXJTISG6AUgDr+QImoAiHie+mwZJow/PRps4uwnsnRj8Epqc4voVJJ8eULOtW4BFYYjPpgjc+3IWI2sh/wFeoVl6xYQ48dDGLfjOwc/ygQqz595hUMVouS9QHBm4l6k3HWpnBLqicgVrlCxujSbR1Swd+UDpQYRS/oVaZZ2MWwlZBB9Zdxf+QTYw8SRgq6sAvz7vH6JULEB9USVHFjzZskgPRQR4ayxoXXIdaHdg9HrB2rErByWxZERnYtrWUzD0esDbtTmXPhzXwHrKLxEUbYGbVyDkWWwkdadfqbPmwDXZSCyh2VAf8BM/nOOJH5Y0QopMt2I5U/KO4DZZJB47XwEX+ex0mGroMV8sLwp56gyuGwiyW4SZ4c8bt2cZzO7jBNeqtsRHbeZ1g9krsMbhfYPv/c5gecA+4yAVuitFszE5Hjva872OMdXagF19JIoOYWyozMTI3J0tmA6gLvXPfO1cc/XOqOLe/HbjwD8yCXRD3VNJROEgatiRZMJsKsbZHia3nAdphtq8fkiWyXJbBe8uM1aXKPouNnz2Bm1kwAAAAAElFTkSuQmCC);
-    -webkit-mask-size: 12px;
-    mask-size: 12px;
-    background-color: #fff;
-
-
-    animation-duration: 800ms;
-    animation-iteration-count: infinite;
-    animation-name: __framer-loading-spin;
-    animation-timing-function: linear;
-}
-
-@keyframes __framer-loading-spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-</style><style>
-#__framer-editorbar {
-    /* https://sergeyski.com/css-color-scheme-and-iframes-lessons-learned-from-disqus-background-bug */
-    color-scheme: light dark;
-    overflow: hidden;
-    position: fixed;
-    border: none;
-    z-index: calc(2147483647);
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    touch-action: manipulation;
-}
-
-@supports (height: 100dvh) {
-    #__framer-editorbar {
-        height: 100dvh;
-    }
-}
-
-#__framer-editorbar.status_hidden {
-    display: none;
-}
-
-#__framer-editorbar.status_visually_hidden {
-    clip-path: circle(1px at calc(100% - 1px) calc(100% - 1px));
-    z-index: calc(2147483647 - 1);
-}
-
-#__framer-editorbar.status_measuring {
-    clip-path: unset;
-}
-</style>
 <style>
 /* ── troca de breakpoint: só uma árvore fica no layout por vez ── */
 [data-bp] { display: none; }
@@ -760,7 +652,7 @@ body {
 <!-- SnippetEnd: legacy-bodyEnd-augiA20Il --><!-- End of bodyEnd -->
 
 
-<div id="__framer-editorbar-container" dir="ltr" style="right: 10px; top: calc(-15px + 50vh); transform: translate(0px, 0px); transition: transform 100ms cubic-bezier(0.2, 0, 0, 1); cursor: pointer;"><span aria-label="Edit Framer Content" id="__framer-editorbar-label" style="right: 40px;">Edit Content</span><button type="button" aria-labelledby="__framer-editorbar-label" id="__framer-editorbar-button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path d="M8.75 2.25a1.77 1.77 0 0 1 2.5 0h0c.69.69.69 1.81 0 2.5l-7 7h-2.5v-2.5Z" fill="transparent" stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 11.75h3.75" fill="transparent" stroke-width="1.5" stroke="currentColor" stroke-linecap="round"></path></svg></button></div><iframe id="__framer-editorbar" src="https://framer.com/edit?framerSiteId=cf468a4dad7290258f824854496288d01001ba19a12c7854f3db1a3aaf76731f&amp;source=authentic-learning-761482.framer.app&amp;features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%7D&amp;loadStart=1788230408344" aria-hidden="true" allow="autoplay" tabindex="-1" class="status_visually_hidden"></iframe></div>
+</div>
 <div data-bp="tablet">
 	
 	<!-- Start of bodyStart -->
@@ -1040,7 +932,7 @@ body {
 <!-- SnippetEnd: legacy-bodyEnd-augiA20Il --><!-- End of bodyEnd -->
 
 
-<div id="__framer-editorbar-container" dir="ltr" style="right: 10px; top: calc(-15px + 50vh); transform: translate(0px, 0px); transition: transform 100ms cubic-bezier(0.2, 0, 0, 1); cursor: pointer;"><span aria-label="Edit Framer Content" id="__framer-editorbar-label" style="right: 40px;">Edit Content</span><button type="button" aria-labelledby="__framer-editorbar-label" id="__framer-editorbar-button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path d="M8.75 2.25a1.77 1.77 0 0 1 2.5 0h0c.69.69.69 1.81 0 2.5l-7 7h-2.5v-2.5Z" fill="transparent" stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 11.75h3.75" fill="transparent" stroke-width="1.5" stroke="currentColor" stroke-linecap="round"></path></svg></button></div><iframe id="__framer-editorbar" src="https://framer.com/edit?framerSiteId=cf468a4dad7290258f824854496288d01001ba19a12c7854f3db1a3aaf76731f&amp;source=authentic-learning-761482.framer.app&amp;features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%7D&amp;loadStart=1788230418283" aria-hidden="true" allow="autoplay" tabindex="-1" class="status_visually_hidden"></iframe></div>
+</div>
 <div data-bp="mobile">
 	
 	<!-- Start of bodyStart -->
@@ -1320,7 +1212,7 @@ body {
 <!-- SnippetEnd: legacy-bodyEnd-augiA20Il --><!-- End of bodyEnd -->
 
 
-<div id="__framer-editorbar-container" dir="ltr" style="right: 10px; top: calc(-15px + 50vh); transform: translate(0px, 0px); transition: transform 100ms cubic-bezier(0.2, 0, 0, 1); cursor: pointer;"><span aria-label="Edit Framer Content" id="__framer-editorbar-label" style="right: 40px;">Edit Content</span><button type="button" aria-labelledby="__framer-editorbar-label" id="__framer-editorbar-button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path d="M8.75 2.25a1.77 1.77 0 0 1 2.5 0h0c.69.69.69 1.81 0 2.5l-7 7h-2.5v-2.5Z" fill="transparent" stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 11.75h3.75" fill="transparent" stroke-width="1.5" stroke="currentColor" stroke-linecap="round"></path></svg></button></div><iframe id="__framer-editorbar" src="https://framer.com/edit?framerSiteId=cf468a4dad7290258f824854496288d01001ba19a12c7854f3db1a3aaf76731f&amp;source=authentic-learning-761482.framer.app&amp;features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%7D&amp;loadStart=1788230426165" aria-hidden="true" allow="autoplay" tabindex="-1" class="status_visually_hidden"></iframe></div>
+</div>
   <script src="/interacoes.js" defer></script>
   <script src="/formularios.js" defer></script>
 </body>

@@ -51,6 +51,13 @@ export function processa(html) {
   s = s.replace(/<link[^>]+href="[^"]*(?:framer\.com|events\.framer\.com)[^"]*"[^>]*>/gi, '');
   s = s.replace(/<link[^>]+rel="(?:modulepreload|preload)"[^>]*framerusercontent\.com\/sites[^>]*>/gi, '');
 
+  //    A barra "Edit Content" do editor. A captura foi feita logado no Framer,
+  //    e ele injeta a barra no HTML servido: dois <style>, um <div> e um
+  //    <iframe> para framer.com — que o site no ar carregava sem ninguém pedir.
+  s = s.replace(/<style>\s*#__framer-editorbar[\s\S]*?<\/style>/gi, '');
+  s = s.replace(/<div id="__framer-editorbar-container"[\s\S]*?<\/button><\/div>/gi, '');
+  s = s.replace(/<iframe id="__framer-editorbar"[\s\S]*?<\/iframe>/gi, '');
+
   // 2. imagens → /img/
   //    O clone guarda cada variante de srcset como arquivo próprio, trocando
   //    o "?" da query por "@". Preservamos a variante no nome local.

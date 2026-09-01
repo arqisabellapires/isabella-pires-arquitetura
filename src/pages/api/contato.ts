@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { enviaEmailDeContato, ErroBrevo } from '~/lib/brevo';
+import { confirmaParaOLead, enviaEmailDeContato, ErroBrevo, registraLead } from '~/lib/brevo';
 import { caiuNaIsca, emailPlausivel, excedeuLimite, texto } from '~/lib/antispam';
 import { responde } from '~/lib/resposta';
 import { env, envObrigatoria } from '~/lib/ambiente';
@@ -50,22 +50,38 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     return responde(request, { ok: false, erro: 'Muitos envios seguidos. Tente de novo em alguns minutos.' }, 429);
   }
 
+  const chave = envObrigatoria('BREVO_API_KEY');
+  const remetente = {
+    nome: env('BREVO_REMETENTE_NOME') ?? 'Site Isabella Pires',
+    email: envObrigatoria('BREVO_REMETENTE_EMAIL'),
+  };
+
+  // Só o aviso para a arquiteta é obrigatório: se ele falhar, o lead se perdeu
+  // e a pessoa precisa saber para tentar de novo.
   try {
-    await enviaEmailDeContato(
-      envObrigatoria('BREVO_API_KEY'),
-      {
-        nome: env('BREVO_REMETENTE_NOME') ?? 'Site Isabella Pires',
-        email: envObrigatoria('BREVO_REMETENTE_EMAIL'),
-      },
-      envObrigatoria('BREVO_DESTINO_EMAIL'),
-      contato,
-    );
+    await enviaEmailDeContato(chave, remetente, envObrigatoria('BREVO_DESTINO_EMAIL'), contato);
   } catch (erro) {
     // O corpo da resposta da Brevo diz o motivo real (domínio não autenticado,
     // IP recusado, cota estourada). Fica no log da função, nunca na resposta.
     console.error('[contato] falha ao enviar', erro instanceof ErroBrevo ? erro.corpo : erro);
     return responde(request, { ok: false, erro: 'Não consegui enviar agora. Tente novamente em instantes.' }, 502);
   }
+
+  // O arquivo de leads e a confirmação são secundários. Falha aqui vira log,
+  // não erro na tela: o e-mail já chegou, e dizer "não consegui enviar" faria
+  // a pessoa mandar tudo de novo.
+  const lista = env('BREVO_LISTA_LEADS_ID');
+  await Promise.allSettled([
+    lista ? registraLead(chave, Number(lista), contato) : Promise.resolve(null),
+    confirmaParaOLead(chave, remetente, contato),
+  ]).then((resultados) => {
+    for (const r of resultados) {
+      if (r.status === 'rejected') {
+        console.error('[contato] etapa secundária falhou',
+          r.reason instanceof ErroBrevo ? r.reason.corpo : r.reason);
+      }
+    }
+  });
 
   return responde(request, { ok: true }, 200);
 };

@@ -223,8 +223,47 @@ opção: o recurso precisa ficar **desligado**.
    Hoje `/api/contato` em produção devolve 502 por env ausente — o que, por sorte,
    é melhor que o falso sucesso descrito acima.
 
+### 6.2. Destinos do lead e e-mails de confirmação
+
+Os prints da configuração do Framer mostraram que o formulário original mandava
+o lead para **dois** destinos — e-mail *e* uma planilha do Google Sheets — e
+depois **redirecionava para `/`**. Decisões tomadas com o Gabriel:
+
+| Item | Original (Framer) | Agora |
+|---|---|---|
+| Aviso para a arquiteta | e-mail | e-mail (igual) |
+| Arquivo do lead | Google Sheets | lista "Leads do site" na Brevo (id 4) |
+| Confirmação para quem preencheu | não existia | e-mail curto de confirmação |
+| Newsletter | — | entra na lista + e-mail de boas-vindas |
+| Depois do envio | redireciona para `/` | mensagem na própria página |
+
+A planilha saiu para não depender de service account do Google e para deixar
+tudo num painel só; a lista exporta CSV. O redirecionamento para `/` foi
+deliberadamente **não** reproduzido: perder a página depois de enviar é pior, e
+a mensagem inline resolve. Se a cliente sentir falta, é uma linha em
+`formularios.js`.
+
+**Só o aviso para a arquiteta é obrigatório.** O arquivo do lead e a confirmação
+rodam em `Promise.allSettled` e falham para o log, nunca para a tela: o e-mail
+já chegou, e dizer "não consegui enviar" faria a pessoa mandar tudo de novo.
+
+**Armadilha:** a conta Brevo está em **português**, então os atributos padrão
+são `NOME`/`SOBRENOME`, não `FIRSTNAME`/`LASTNAME`. A API de contatos
+**descarta atributo desconhecido em silêncio**, com 200 e sem aviso — foi assim
+que o nome do lead sumiu na primeira versão. Conferir sempre com
+`GET /v3/contacts/attributes` antes de gravar.
+
+**Textos provisórios:** o corpo da confirmação e o das boas-vindas foram
+escritos por falta de original — o Framer não tinha nenhum dos dois. Estão
+marcados no `brevo.ts` e precisam da revisão do Gabriel.
+
+**Verificado:** os três e-mails saíram como `delivered` (aviso, confirmação do
+lead, boas-vindas) e os atributos `NOME`, `TELEFONE`, `SERVICO`,
+`ULTIMA_MENSAGEM` e `ORIGEM` gravaram certo. Contatos de teste removidos.
+
 **Já resolvido:** conta Brevo é `arqisabellapires@gmail.com`, plano free, 300
-envios/dia. `BREVO_DESTINO_EMAIL=arqisabellapires@gmail.com` (única caixa que
+envios/dia. Atenção à cota: cada contato pelo formulário agora consome **2**
+envios, não 1. `BREVO_DESTINO_EMAIL=arqisabellapires@gmail.com` (única caixa que
 existe — a zona não tem MX, então `contato@` não recebe). Lista "Newsletter do
 blog" criada, `BREVO_LISTA_NEWSLETTER_ID=3`. As cinco variáveis estão na Vercel.
 

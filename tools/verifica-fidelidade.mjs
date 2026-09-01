@@ -55,13 +55,10 @@ async function captura(pagina, url) {
     await pagina.goto(url, { waitUntil: 'load', timeout: 45000 });
   }
   await pagina.waitForTimeout(1800);
-  await pagina.evaluate(async () => {
-    for (let y = 0; y < document.body.scrollHeight; y += 700) {
-      window.scrollTo(0, y);
-      await new Promise((r) => setTimeout(r, 70));
-    }
-    window.scrollTo(0, 0);
-  });
+  // Rola por teclado: com javaScriptEnabled:false não há evaluate.
+  // O objetivo é só materializar imagem preguiçosa antes do print.
+  for (let i = 0; i < 40; i++) { await pagina.keyboard.press('PageDown'); await pagina.waitForTimeout(45); }
+  await pagina.keyboard.press('Home');
   await pagina.waitForTimeout(900);
   return pagina.screenshot({ fullPage: true });
 }
@@ -81,6 +78,11 @@ for (const bp of alvos) {
     hasTouch: bp.movel,
     userAgent: bp.movel ? UA_MOVEL : undefined,
     deviceScaleFactor: 1,
+    // Sem JS dos dois lados. A referência já vem com os <script> removidos;
+    // desligar aqui mantém a comparação simétrica agora que a nossa saída
+    // carrega interacoes.js. O portão mede fidelidade do DOM estático — as
+    // interações são verificadas à parte.
+    javaScriptEnabled: false,
   });
   const p = await ctx.newPage();
 

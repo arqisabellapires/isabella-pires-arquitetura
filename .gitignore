@@ -12,3 +12,7 @@ _referencia/
 _importar/
 .diffs/
 .ref/
+
+# Runtime do Framer — código proprietário, material de estudo local
+_capturas/_runtime/
+_fonte-framer/

@@ -163,14 +163,43 @@ variante disponível", que entrega a imagem certa na resolução errada.
 
 ## 6. Depois disso
 
-1. **Interações.** Duas são mecânicas (menu de celular, scroll reveals — são
-   5 elementos com `opacity: 0; transform: translateX(-150px)`). Duas exigem
-   injetar conteúdo que o Framer buscava do CMS:
+1. **Interações.** O runtime do Framer foi baixado com os **source maps
+   publicados**, então existe o código-fonte original (não minificado) como
+   especificação. `baixa-runtime.mjs` e `extrai-fontes.mjs` refazem isso
+   enquanto o Framer viver. **Fora do git de propósito**: é código
+   proprietário do Framer e este repositório é público. Se precisar
+   sobreviver ao vencimento da assinatura, faça backup fora do repo.
+
+   Onde mora cada uma, em `_fonte-framer/https:/framerusercontent.com/modules/`:
+
+   | Interação | Arquivo | Movimento |
+   |---|---|---|
+   | Acordeão | `uecwB1KwkJFtBMPwNyzd/…/Qv_x9EZNH.js` | spring bounce .2 dur .4 |
+   | Carrossel | `PfylROkYYGkR2aow5ETM/…/a6Nde7smU.js` | spring damping 30 stiffness 400 |
+   | Reveals | `IbsRGwyzKW2hSLkLaVJo/…/sBuWTkbUo.js` | spring bounce .2 dur .8 |
+
+   **Scroll reveals: feitos.** `public/interacoes.js`, escrito do zero — só
+   os valores vieram da dissecação. Mola por oscilador harmônico
+   amortecido. Pega dois casos: `opacity:0` com `translateX(-150px)`, e
+   elemento congelado no meio da animação na captura (`opacity .5`,
+   `scale .9`). Não toca em `scale` acima de 1, que é zoom de imagem no
+   hover — confundir os dois faria a foto de `/servicos/` saltar sozinha.
+   Respeita `prefers-reduced-motion`.
+
+   **Consequência no portão:** o verificador agora roda com
+   `javaScriptEnabled: false` nos dois lados. A referência já vinha sem
+   `<script>`; sem isso a nossa saída revelaria os elementos e acusaria
+   divergência falsa. O portão mede fidelidade do DOM estático, que é o
+   que ele sempre mediu.
+
+   As outras três exigem injetar conteúdo que o Framer buscava do CMS:
    - **Acordeão de serviços**: os painéis fechados não têm texto no DOM. Os 5
      textos já estão transcritos em `src/lib/conteudo.ts`.
    - **Carrossel de projetos**: só `CASA IP` está no DOM. Existem 4 projetos —
      o quarto é `COZINHA LA`, descoberto clicando a seta na referência, e não
      tem página no clone.
+   - **Menu de celular**: o gatilho é um `svg` de 24×24 no topo, em 390px.
+     O painel aberto não está no DOM.
 2. ~~**Formulário** → Brevo.~~ Feito — ver seção 6.1.
 3. **Sitemap** — o do Astro não gera mais nada, porque não há páginas em
    `src/pages/`. Precisa sair do pipeline.

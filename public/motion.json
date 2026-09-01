@@ -1,0 +1,2050 @@
+[
+  {
+    "arquivo": "g12rrN1mX.js",
+    "variantes": [
+      {
+        "id": "CZFhnX32U",
+        "classe": "framer-v-1k4v42z",
+        "nome": "Serviços/Sobre nós - Desktop",
+        "papel": "base",
+        "assunto": "serviços sobre nós",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "EhBX9xTG1",
+        "classe": "framer-v-1ag6bzi",
+        "nome": "Página de Projetos - Desktop",
+        "papel": "base",
+        "assunto": "página de projetos",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "EYybWcy4X",
+        "classe": "framer-v-5qygg",
+        "nome": "Homepage - Mobile",
+        "papel": "base",
+        "assunto": "homepage",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "hXikxNJ48",
+        "classe": "framer-v-1ibt2yj",
+        "nome": "Homepage - Tablet",
+        "papel": "base",
+        "assunto": "homepage",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "JenDPtwo0",
+        "classe": "framer-v-vos8h1",
+        "nome": "Projetos/Blog - Mobile",
+        "papel": "base",
+        "assunto": "projetos blog",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "KFJ2EbCIg",
+        "classe": "framer-v-1pbgcjx",
+        "nome": "Contato - Mobile",
+        "papel": "base",
+        "assunto": "contato",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "kX4ngK10o",
+        "classe": "framer-v-5n2vjc",
+        "nome": "Projetos/Blog - Desktop",
+        "papel": "base",
+        "assunto": "projetos blog",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "P1hZv2B_o",
+        "classe": "framer-v-idkna6",
+        "nome": "Página de Projetos - Mobile",
+        "papel": "base",
+        "assunto": "página de projetos",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "qeg9RKpBr",
+        "classe": "framer-v-q9b2c8",
+        "nome": "Serviços/Sobre nós - Tablet",
+        "papel": "base",
+        "assunto": "serviços sobre nós",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "qwdkHD1Kn",
+        "classe": "framer-v-1bixn07",
+        "nome": "Página de Projetos - Tablet",
+        "papel": "base",
+        "assunto": "página de projetos",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "RyTnlus22",
+        "classe": "framer-v-9mj3i5",
+        "nome": "Homepage - Desktop",
+        "papel": "base",
+        "assunto": "homepage",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "S4klZcTpt",
+        "classe": "framer-v-c37d0j",
+        "nome": "Contato - Desktop",
+        "papel": "base",
+        "assunto": "contato",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "TtKlrL57s",
+        "classe": "framer-v-13q6s77",
+        "nome": "Contato - Tablet",
+        "papel": "base",
+        "assunto": "contato",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "uxNJb2BIF",
+        "classe": "framer-v-klhfo8",
+        "nome": "Projetos/Blog - Tablet",
+        "papel": "base",
+        "assunto": "projetos blog",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "y2UknT7ZW",
+        "classe": "framer-v-1hcitto",
+        "nome": "Serviços/Sobre nós - Mobile",
+        "papel": "base",
+        "assunto": "serviços sobre nós",
+        "largura": "mobile",
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "serviços sobre nós",
+      "página de projetos",
+      "homepage",
+      "projetos blog",
+      "contato"
+    ],
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "oP7yAzn2R.js",
+    "variantes": [
+      {
+        "id": "BRI7_Ss9K",
+        "classe": "framer-v-1kqj95e",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      },
+      {
+        "id": "Hqz3kuqQG",
+        "classe": "framer-v-10zmmn7",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      },
+      {
+        "id": "qX8aeYm_S",
+        "classe": "framer-v-1rcojlu",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "yk5YRcviH.js",
+    "variantes": [
+      {
+        "id": "iXiBvSo1_",
+        "classe": "framer-v-408477",
+        "nome": "Loading",
+        "papel": "base",
+        "assunto": "loading",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "OnTaxgMBZ",
+        "classe": "framer-v-1dj9qi0",
+        "nome": "Default",
+        "papel": "fechado",
+        "assunto": "",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "rfb_lLUuq",
+        "classe": "framer-v-u4wn9b",
+        "nome": "Error",
+        "papel": "base",
+        "assunto": "error",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "T3bZCq7Bu",
+        "classe": "framer-v-1q1jlmq",
+        "nome": "Success",
+        "papel": "base",
+        "assunto": "success",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "VBI_8QgAR",
+        "classe": "framer-v-1mdsyb",
+        "nome": "Disabled",
+        "papel": "base",
+        "assunto": "disabled",
+        "largura": null,
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "loading",
+      "error",
+      "success",
+      "disabled"
+    ],
+    "transicoes": [
+      {
+        "delay": "0",
+        "duration": ".2",
+        "type": "tween"
+      },
+      {
+        "delay": "0",
+        "duration": "1",
+        "type": "tween"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "sBuWTkbUo.js",
+    "variantes": [
+      {
+        "id": "l4xHijRQ9",
+        "classe": "framer-v-9hexkc",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      },
+      {
+        "id": "WfO9YqNLh",
+        "classe": "framer-v-1k64po1",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      },
+      {
+        "id": "xndw6hOOo",
+        "classe": "framer-v-hmje5u",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".8",
+        "type": "spring"
+      },
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "t7zGxtXgb.js",
+    "variantes": [
+      {
+        "id": "mlVLrkGEE",
+        "classe": "framer-v-16z0h3r",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      },
+      {
+        "id": "Sb23PYRmp",
+        "classe": "framer-v-lujl38",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      },
+      {
+        "id": "wNCA7bVaQ",
+        "classe": "framer-v-v1fdhj",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "Ewb5uANoV.js",
+    "variantes": [
+      {
+        "id": "a4rFCHKWQ",
+        "classe": "framer-v-11c5pkb",
+        "nome": "Variant 8",
+        "papel": "base",
+        "assunto": "variant 8",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "b8AQuZbJY",
+        "classe": "framer-v-zlb7d",
+        "nome": "Variant 14",
+        "papel": "base",
+        "assunto": "variant 14",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "hSnYZGuLT",
+        "classe": "framer-v-1cdmg4a",
+        "nome": "Variant 3",
+        "papel": "base",
+        "assunto": "variant 3",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "m6spVPu2t",
+        "classe": "framer-v-9qe7hd",
+        "nome": "Variant 15",
+        "papel": "base",
+        "assunto": "variant 15",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "oXH39oin9",
+        "classe": "framer-v-1a3ouli",
+        "nome": "Variant 9",
+        "papel": "base",
+        "assunto": "variant 9",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "PeCe63Nyq",
+        "classe": "framer-v-87sddp",
+        "nome": "Variant 12",
+        "papel": "base",
+        "assunto": "variant 12",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "RB2Rv41Us",
+        "classe": "framer-v-17uno2l",
+        "nome": "Variant 2",
+        "papel": "base",
+        "assunto": "variant 2",
+        "largura": null,
+        "noNossoDom": false
+      },
+      {
+        "id": "T4LHOt9uc",
+        "classe": "framer-v-1q1yxik",
+        "nome": "Variant 1",
+        "papel": "base",
+        "assunto": "variant 1",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "TWqKNk3NP",
+        "classe": "framer-v-d0ntfy",
+        "nome": "Variant 7",
+        "papel": "base",
+        "assunto": "variant 7",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "vM1d1jX43",
+        "classe": "framer-v-1cqj7d",
+        "nome": "Variant 10",
+        "papel": "base",
+        "assunto": "variant 10",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "Vulxi0KGi",
+        "classe": "framer-v-v6ysq7",
+        "nome": "Variant 13",
+        "papel": "base",
+        "assunto": "variant 13",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "Y6UYvgLLK",
+        "classe": "framer-v-6u9lzw",
+        "nome": "Variant 11",
+        "papel": "base",
+        "assunto": "variant 11",
+        "largura": null,
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "variant 8",
+      "variant 14",
+      "variant 3",
+      "variant 15",
+      "variant 9",
+      "variant 12",
+      "variant 2",
+      "variant 1",
+      "variant 7",
+      "variant 10",
+      "variant 13",
+      "variant 11"
+    ],
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "AenPZQAsG.js",
+    "variantes": [
+      {
+        "id": "PFbzEmu9Q",
+        "classe": "framer-v-5n612e",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      },
+      {
+        "id": "TU7wpR9SY",
+        "classe": "framer-v-1su0eh2",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      },
+      {
+        "id": "XsPSRfV6C",
+        "classe": "framer-v-fte6tb",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "GLf2JneGn.js",
+    "variantes": [
+      {
+        "id": "Eny4OeP6U",
+        "classe": "framer-v-1i5vdyc",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      },
+      {
+        "id": "MFAw5is8M",
+        "classe": "framer-v-rdq9ip",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      },
+      {
+        "id": "yoObrDdv1",
+        "classe": "framer-v-r2ktep",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "n8yL1JHdr.js",
+    "variantes": [
+      {
+        "id": "gqr1lVrNK",
+        "classe": "framer-v-1rh6nm6",
+        "nome": "Variant 3",
+        "papel": "base",
+        "assunto": "variant 3",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "KqkCNjq8D",
+        "classe": "framer-v-oxme8k",
+        "nome": "Open",
+        "papel": "aberto",
+        "assunto": "",
+        "largura": null,
+        "noNossoDom": false
+      },
+      {
+        "id": "ulmTkLWIH",
+        "classe": "framer-v-1wsop6p",
+        "nome": "Closed",
+        "papel": "fechado",
+        "assunto": "",
+        "largura": null,
+        "noNossoDom": true
+      }
+    ],
+    "pares": [
+      {
+        "de": "framer-v-1wsop6p",
+        "para": "framer-v-oxme8k",
+        "assunto": "",
+        "papel": "aberto",
+        "largura": null,
+        "vivoNoDom": true
+      }
+    ],
+    "trocador": null,
+    "transicoes": [
+      {
+        "damping": "40",
+        "delay": "0",
+        "mass": "1",
+        "stiffness": "600",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "XlJvYx7WH.js",
+    "variantes": [
+      {
+        "id": "P7jW8BtS3",
+        "classe": "framer-v-afkcb5",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      },
+      {
+        "id": "p7srULorg",
+        "classe": "framer-v-1d626b3",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      },
+      {
+        "id": "RUNa6jayL",
+        "classe": "framer-v-9rk8h7",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [
+      {
+        "bounce": "0",
+        "delay": ".2",
+        "duration": ".5",
+        "type": "spring"
+      },
+      {
+        "bounce": "0",
+        "delay": ".4",
+        "duration": ".5",
+        "type": "spring"
+      },
+      {
+        "bounce": "0",
+        "delay": ".6",
+        "duration": ".5",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "ohPsV9U7H.js",
+    "variantes": [
+      {
+        "id": "DbXHWMS_R",
+        "classe": "framer-v-2txdfz",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      },
+      {
+        "id": "f2AG19yZX",
+        "classe": "framer-v-1puhmst",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      },
+      {
+        "id": "vOQewqXAu",
+        "classe": "framer-v-3qicbj",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "a6Nde7smU.js",
+    "variantes": [
+      {
+        "id": "AZP28fCR8",
+        "classe": "framer-v-12tixbn",
+        "nome": "STUDIO",
+        "papel": "base",
+        "assunto": "studio",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "hYjTMOXKm",
+        "classe": "framer-v-1x1c6j",
+        "nome": "AP MM",
+        "papel": "base",
+        "assunto": "ap mm",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "hzRQ3b3dR",
+        "classe": "framer-v-1486m57",
+        "nome": "Casa IP",
+        "papel": "base",
+        "assunto": "casa ip",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "nakDyZ8Ej",
+        "classe": "framer-v-q533eb",
+        "nome": "Variant 1",
+        "papel": "base",
+        "assunto": "variant 1",
+        "largura": null,
+        "noNossoDom": false
+      },
+      {
+        "id": "WBxX5RIMy",
+        "classe": "framer-v-8v2d9r",
+        "nome": "COZINHA LA",
+        "papel": "base",
+        "assunto": "cozinha la",
+        "largura": null,
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "studio",
+      "ap mm",
+      "casa ip",
+      "variant 1",
+      "cozinha la"
+    ],
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      },
+      {
+        "damping": "30",
+        "delay": "0",
+        "mass": "1",
+        "stiffness": "400",
+        "type": "spring"
+      },
+      {
+        "bounce": ".25",
+        "delay": "0",
+        "duration": ".45",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "nkDfbQNR8.js",
+    "variantes": [
+      {
+        "id": "ACLyDQBmc",
+        "classe": "framer-v-1thzb68",
+        "nome": "Studio - Desktop",
+        "papel": "base",
+        "assunto": "studio",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "c0vbjeh27",
+        "classe": "framer-v-sm6rr6",
+        "nome": "Casa Ip - Mobile",
+        "papel": "base",
+        "assunto": "casa ip",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "G08cKq6Vs",
+        "classe": "framer-v-8p8k2y",
+        "nome": "Casa Ip - Desktop",
+        "papel": "base",
+        "assunto": "casa ip",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "h1CxIljmj",
+        "classe": "framer-v-1xok40r",
+        "nome": "AP MM - Mobile",
+        "papel": "base",
+        "assunto": "ap mm",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "oUtd2ooSc",
+        "classe": "framer-v-r5q2vu",
+        "nome": "Studio - Mobile",
+        "papel": "base",
+        "assunto": "studio",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "uhwfbXAPT",
+        "classe": "framer-v-4oun70",
+        "nome": "AP MM - Desktop",
+        "papel": "base",
+        "assunto": "ap mm",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "WY4wH4DXi",
+        "classe": "framer-v-1pr5vsu",
+        "nome": "Cozinha LA - Desktop",
+        "papel": "base",
+        "assunto": "cozinha la",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "zS4MFgT3U",
+        "classe": "framer-v-4dtimf",
+        "nome": "Cozinha LA - Mobile",
+        "papel": "base",
+        "assunto": "cozinha la",
+        "largura": "mobile",
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "studio",
+      "casa ip",
+      "ap mm",
+      "cozinha la"
+    ],
+    "transicoes": [
+      {
+        "duration": "0",
+        "type": "tween"
+      },
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "eXDaQYx5n.js",
+    "variantes": [
+      {
+        "id": "BPhTLPKOB",
+        "classe": "framer-v-1mdlik3",
+        "nome": "Variant 4",
+        "papel": "base",
+        "assunto": "variant 4",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "IZAcgigK4",
+        "classe": "framer-v-aq2bpn",
+        "nome": "1 - Mobile",
+        "papel": "base",
+        "assunto": "1",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "LW6Jpp9UX",
+        "classe": "framer-v-1xyzhkw",
+        "nome": "Variant 1",
+        "papel": "base",
+        "assunto": "variant 1",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "Meb3yMMbt",
+        "classe": "framer-v-ip6sql",
+        "nome": "Variant 3",
+        "papel": "base",
+        "assunto": "variant 3",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "qauxF0_46",
+        "classe": "framer-v-14pgvcn",
+        "nome": "5 - Mobile",
+        "papel": "base",
+        "assunto": "5",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "TtQgonFVT",
+        "classe": "framer-v-sq4dhs",
+        "nome": "3 - Mobile",
+        "papel": "base",
+        "assunto": "3",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "UQtJaL8yz",
+        "classe": "framer-v-wjdzy9",
+        "nome": "Variant 5",
+        "papel": "base",
+        "assunto": "variant 5",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "uyFqXtH5P",
+        "classe": "framer-v-1tmhv4h",
+        "nome": "Variant 2",
+        "papel": "base",
+        "assunto": "variant 2",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "W3qA98vC1",
+        "classe": "framer-v-z7fl7y",
+        "nome": "2 - Mobile",
+        "papel": "base",
+        "assunto": "2",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "yamYPwG7P",
+        "classe": "framer-v-xhybf0",
+        "nome": "4 - Mobile",
+        "papel": "base",
+        "assunto": "4",
+        "largura": "mobile",
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "variant 4",
+      "1",
+      "variant 1",
+      "variant 3",
+      "5",
+      "3",
+      "variant 5",
+      "variant 2",
+      "2",
+      "4"
+    ],
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      },
+      {
+        "delay": "0",
+        "duration": ".4",
+        "type": "tween"
+      },
+      {
+        "delay": "0",
+        "duration": ".3",
+        "type": "tween"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "i15JnwUan.js",
+    "variantes": [
+      {
+        "id": "n4RfJ4xmM",
+        "classe": "framer-v-1k08968",
+        "nome": "Closed",
+        "papel": "fechado",
+        "assunto": "",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "n6yeOyNn8",
+        "classe": "framer-v-ksa47a",
+        "nome": "Variant 3",
+        "papel": "base",
+        "assunto": "variant 3",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "PFkvOCIGf",
+        "classe": "framer-v-1goo2da",
+        "nome": "Open",
+        "papel": "aberto",
+        "assunto": "",
+        "largura": null,
+        "noNossoDom": false
+      }
+    ],
+    "pares": [
+      {
+        "de": "framer-v-1k08968",
+        "para": "framer-v-1goo2da",
+        "assunto": "",
+        "papel": "aberto",
+        "largura": null,
+        "vivoNoDom": true
+      }
+    ],
+    "trocador": null,
+    "transicoes": [
+      {
+        "damping": "40",
+        "delay": "0",
+        "mass": "1",
+        "stiffness": "600",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "th049PTOv.js",
+    "variantes": [
+      {
+        "id": "cs2xn11X0",
+        "classe": "framer-v-118rwx7",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      },
+      {
+        "id": "NE5JO5MaJ",
+        "classe": "framer-v-5fciax",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      },
+      {
+        "id": "Ops5lTZAd",
+        "classe": "framer-v-p5homo",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "alGJ1YU_X.js",
+    "variantes": [
+      {
+        "id": "Mkog3Bv32",
+        "classe": "framer-v-1d21ufr",
+        "nome": "Mobile",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "zTOq2kS1F",
+        "classe": "framer-v-13ul4di",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      },
+      {
+        "delay": ".05",
+        "duration": ".4",
+        "type": "tween"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "iCmFNLdck.js",
+    "variantes": [
+      {
+        "id": "BdJ7fMtdO",
+        "classe": "framer-v-14p21jk",
+        "nome": "Consultoria de Decoração - Mobile",
+        "papel": "base",
+        "assunto": "consultoria de decoração",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "CRSowkg4Y",
+        "classe": "framer-v-147ude9",
+        "nome": "CRSowkg4Y",
+        "papel": "base",
+        "assunto": "crsowkg4y",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "EgNPJJ0a5",
+        "classe": "framer-v-1qhptna",
+        "nome": "Consultoria de Decoração - Desktop",
+        "papel": "base",
+        "assunto": "consultoria de decoração",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "G4vwmhgWb",
+        "classe": "framer-v-zci3f",
+        "nome": "Variant 9",
+        "papel": "base",
+        "assunto": "variant 9",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "Glz3610xE",
+        "classe": "framer-v-rxpis2",
+        "nome": "Arquitetura Residencial - Mobile",
+        "papel": "base",
+        "assunto": "arquitetura residencial",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "mcW1cSdnP",
+        "classe": "framer-v-1bekwba",
+        "nome": "Ambientações - Desktop",
+        "papel": "base",
+        "assunto": "ambientações",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "pOQXysj9J",
+        "classe": "framer-v-aiq52q",
+        "nome": "Arquitetura Comercial - Mobile",
+        "papel": "base",
+        "assunto": "arquitetura comercial",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "s_ztaWpNS",
+        "classe": "framer-v-1ohklah",
+        "nome": "Design de Interiores - Desktop",
+        "papel": "base",
+        "assunto": "design de interiores",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "xm2TC8VqJ",
+        "classe": "framer-v-1ifeu2v",
+        "nome": "Arquitetura Comercial - Desktop",
+        "papel": "base",
+        "assunto": "arquitetura comercial",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "yPb90D6tn",
+        "classe": "framer-v-77b0lw",
+        "nome": "Arquitetura Residencial - Desktop",
+        "papel": "base",
+        "assunto": "arquitetura residencial",
+        "largura": "desktop",
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "consultoria de decoração",
+      "crsowkg4y",
+      "variant 9",
+      "arquitetura residencial",
+      "ambientações",
+      "arquitetura comercial",
+      "design de interiores"
+    ],
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      },
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".8",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "f2cs68FR9.js",
+    "variantes": [
+      {
+        "id": "e74rnx4MW",
+        "classe": "framer-v-68rnn9",
+        "nome": "Mobile",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "qN0wjTofy",
+        "classe": "framer-v-1tv1iqh",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [
+      {
+        "damping": "60",
+        "delay": "0",
+        "mass": "1",
+        "stiffness": "500",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "f4n4OEmqR.js",
+    "variantes": [
+      {
+        "id": "jEullumuL",
+        "classe": "framer-v-1xamux2",
+        "nome": "Open",
+        "papel": "aberto",
+        "assunto": "",
+        "largura": null,
+        "noNossoDom": false
+      },
+      {
+        "id": "s5QzSA3sl",
+        "classe": "framer-v-1mux62y",
+        "nome": "Closed",
+        "papel": "fechado",
+        "assunto": "",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "wdDQBHfY8",
+        "classe": "framer-v-9k8lam",
+        "nome": "Variant 3",
+        "papel": "base",
+        "assunto": "variant 3",
+        "largura": null,
+        "noNossoDom": true
+      }
+    ],
+    "pares": [
+      {
+        "de": "framer-v-1mux62y",
+        "para": "framer-v-1xamux2",
+        "assunto": "",
+        "papel": "aberto",
+        "largura": null,
+        "vivoNoDom": true
+      }
+    ],
+    "trocador": null,
+    "transicoes": [
+      {
+        "damping": "40",
+        "delay": "0",
+        "mass": "1",
+        "stiffness": "600",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "IItBHcQ2o.js",
+    "variantes": [
+      {
+        "id": "k4niMyNRb",
+        "classe": "framer-v-3h70cy",
+        "nome": "Phone Open",
+        "papel": "aberto",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "MvC5y9DN6",
+        "classe": "framer-v-9t8jbv",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "RfFErrlQv",
+        "classe": "framer-v-b0pc0c",
+        "nome": "Variant 4",
+        "papel": "base",
+        "assunto": "variant 4",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "usAMecKbQ",
+        "classe": "framer-v-14nbjqd",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "XEHl7ummY",
+        "classe": "framer-v-jybs8a",
+        "nome": "Phome Homepage Open",
+        "papel": "aberto",
+        "assunto": "phome homepage",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "YrEmHLXy9",
+        "classe": "framer-v-l6houv",
+        "nome": "Phone Homepage",
+        "papel": "base",
+        "assunto": "homepage",
+        "largura": "mobile",
+        "noNossoDom": true
+      }
+    ],
+    "pares": [
+      {
+        "de": "framer-v-14nbjqd",
+        "para": "framer-v-3h70cy",
+        "assunto": "",
+        "papel": "aberto",
+        "largura": "mobile",
+        "vivoNoDom": true
+      }
+    ],
+    "trocador": null,
+    "transicoes": [
+      {
+        "damping": "40",
+        "delay": "0",
+        "mass": "1",
+        "stiffness": "400",
+        "type": "spring"
+      },
+      {
+        "damping": "40",
+        "delay": "0",
+        "mass": "1",
+        "stiffness": "600",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "augiA20Il.js",
+    "variantes": [
+      {
+        "id": "AX0mbxAVr",
+        "classe": "framer-v-1adnsdp",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      },
+      {
+        "id": "c8d0DozhM",
+        "classe": "framer-v-4xe8s0",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      },
+      {
+        "id": "WQLkyLRf1",
+        "classe": "framer-v-72rtr7",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      },
+      {
+        "bounce": "0",
+        "delay": ".03",
+        "duration": ".1",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "O_XoZ3FcZ.js",
+    "variantes": [
+      {
+        "id": "G47S15YSn",
+        "classe": "framer-v-1hbo82m",
+        "nome": "Loading",
+        "papel": "base",
+        "assunto": "loading",
+        "largura": null,
+        "noNossoDom": false
+      },
+      {
+        "id": "PX1MOnVXY",
+        "classe": "framer-v-17k3l76",
+        "nome": "Hidden",
+        "papel": "base",
+        "assunto": "hidden",
+        "largura": null,
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [
+      {
+        "duration": "0",
+        "type": "tween"
+      },
+      {
+        "delay": "0",
+        "duration": ".3",
+        "type": "tween"
+      },
+      {
+        "delay": "0",
+        "duration": "1",
+        "type": "tween"
+      }
+    ],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "e8xPPqHpl.js",
+    "variantes": [
+      {
+        "id": "cUrIzMkcx",
+        "classe": "framer-v-1svgx9w",
+        "nome": "Success",
+        "papel": "base",
+        "assunto": "success",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "CyA_QR3sg",
+        "classe": "framer-v-1gwse2p",
+        "nome": "Disabled",
+        "papel": "base",
+        "assunto": "disabled",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "J293avTkd",
+        "classe": "framer-v-m2z8cp",
+        "nome": "Error",
+        "papel": "base",
+        "assunto": "error",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "Nu8kxEF18",
+        "classe": "framer-v-w5wo8y",
+        "nome": "Default",
+        "papel": "fechado",
+        "assunto": "",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "tyraMtF3D",
+        "classe": "framer-v-1tujrkw",
+        "nome": "Loading",
+        "papel": "base",
+        "assunto": "loading",
+        "largura": null,
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "success",
+      "disabled",
+      "error",
+      "loading"
+    ],
+    "transicoes": [
+      {
+        "bounce": ".1",
+        "delay": "0",
+        "duration": ".7",
+        "type": "spring"
+      },
+      {
+        "delay": "0",
+        "duration": "1",
+        "type": "tween"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "SCwmqDHfy.js",
+    "variantes": [
+      {
+        "id": "asYGMMByH",
+        "classe": "framer-v-19m95nx",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      },
+      {
+        "id": "souZRvgg4",
+        "classe": "framer-v-1du0m9f",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      },
+      {
+        "id": "TSqv9Xdjg",
+        "classe": "framer-v-1ky3z1q",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [],
+    "presenteNoDom": false
+  },
+  {
+    "arquivo": "Qv_x9EZNH.js",
+    "variantes": [
+      {
+        "id": "bSx8armIJ",
+        "classe": "framer-v-158zpz9",
+        "nome": "Cozinha LA - Desktop - Aberto",
+        "papel": "aberto",
+        "assunto": "cozinha la",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "dIG8781tc",
+        "classe": "framer-v-14q13sg",
+        "nome": "Ap MM - Mobile - Open",
+        "papel": "aberto",
+        "assunto": "ap mm",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "Do_1Ju3ZL",
+        "classe": "framer-v-1dvtl3z",
+        "nome": "Studio - Mobile - Fechado",
+        "papel": "fechado",
+        "assunto": "studio",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "dPa9doemo",
+        "classe": "framer-v-2owmgo",
+        "nome": "Studio Desktop Hover",
+        "papel": "hover",
+        "assunto": "studio",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "fgOSF1ITA",
+        "classe": "framer-v-10hijyr",
+        "nome": "AP MM - Mobile - Fechado",
+        "papel": "fechado",
+        "assunto": "ap mm",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "fufC7QDKy",
+        "classe": "framer-v-h7bg6v",
+        "nome": "Cozinha LA Desktop Hover",
+        "papel": "hover",
+        "assunto": "cozinha la",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "I5VfpjVFG",
+        "classe": "framer-v-g6mp7s",
+        "nome": "Studio - Mobile - Open",
+        "papel": "aberto",
+        "assunto": "studio",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "IBKffPqs8",
+        "classe": "framer-v-8eah41",
+        "nome": "AP MM - Desktop - Hover",
+        "papel": "hover",
+        "assunto": "ap mm",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "khKJX4v6g",
+        "classe": "framer-v-1s0yo9y",
+        "nome": "Casa IP - Desktop",
+        "papel": "base",
+        "assunto": "casa ip",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "lYfGVvYxK",
+        "classe": "framer-v-1pkibmu",
+        "nome": "Cozinha La - Mobile - Open",
+        "papel": "aberto",
+        "assunto": "cozinha la",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "OWaqEgmaj",
+        "classe": "framer-v-1pm1y0o",
+        "nome": "Casa IP Desktop - Hover",
+        "papel": "hover",
+        "assunto": "casa ip",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "Qn13NWhUn",
+        "classe": "framer-v-ce4yy1",
+        "nome": "Casa Ip - Mobile - Open",
+        "papel": "aberto",
+        "assunto": "casa ip",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "RwrWIvPcj",
+        "classe": "framer-v-1a01evd",
+        "nome": "AP MM - Desktop - ABERTO",
+        "papel": "aberto",
+        "assunto": "ap mm",
+        "largura": "desktop",
+        "noNossoDom": true
+      },
+      {
+        "id": "XeA4d0JXW",
+        "classe": "framer-v-p6pido",
+        "nome": "Cozinha LA - Mobile - Fechado",
+        "papel": "fechado",
+        "assunto": "cozinha la",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "YCV54P10M",
+        "classe": "framer-v-1tui4an",
+        "nome": "Studio - Desktop",
+        "papel": "base",
+        "assunto": "studio",
+        "largura": "desktop",
+        "noNossoDom": false
+      },
+      {
+        "id": "ZfNowY8PL",
+        "classe": "framer-v-1m3zwg4",
+        "nome": "Casa Ip - Mobile - Fechado",
+        "papel": "fechado",
+        "assunto": "casa ip",
+        "largura": "mobile",
+        "noNossoDom": true
+      }
+    ],
+    "pares": [
+      {
+        "de": "framer-v-10hijyr",
+        "para": "framer-v-14q13sg",
+        "assunto": "ap mm",
+        "papel": "aberto",
+        "largura": "mobile",
+        "vivoNoDom": true
+      },
+      {
+        "de": "framer-v-1tui4an",
+        "para": "framer-v-2owmgo",
+        "assunto": "studio",
+        "papel": "hover",
+        "largura": "desktop",
+        "vivoNoDom": false
+      },
+      {
+        "de": "framer-v-1dvtl3z",
+        "para": "framer-v-g6mp7s",
+        "assunto": "studio",
+        "papel": "aberto",
+        "largura": "mobile",
+        "vivoNoDom": true
+      },
+      {
+        "de": "framer-v-p6pido",
+        "para": "framer-v-1pkibmu",
+        "assunto": "cozinha la",
+        "papel": "aberto",
+        "largura": "mobile",
+        "vivoNoDom": true
+      },
+      {
+        "de": "framer-v-1s0yo9y",
+        "para": "framer-v-1pm1y0o",
+        "assunto": "casa ip",
+        "papel": "hover",
+        "largura": "desktop",
+        "vivoNoDom": true
+      },
+      {
+        "de": "framer-v-1m3zwg4",
+        "para": "framer-v-ce4yy1",
+        "assunto": "casa ip",
+        "papel": "aberto",
+        "largura": "mobile",
+        "vivoNoDom": true
+      }
+    ],
+    "trocador": [
+      "studio",
+      "ap mm",
+      "casa ip",
+      "cozinha la"
+    ],
+    "transicoes": [
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      },
+      {
+        "bounce": ".25",
+        "delay": "0",
+        "duration": ".45",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "vXw5861FN.js",
+    "variantes": [
+      {
+        "id": "BJdtYy0KH",
+        "classe": "framer-v-u2p9kb",
+        "nome": "Dicas - Mobile",
+        "papel": "base",
+        "assunto": "dicas",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "dS7juFyg4",
+        "classe": "framer-v-1pfb1lu",
+        "nome": "Todos - Mobile",
+        "papel": "base",
+        "assunto": "todos",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "fsFVg0llz",
+        "classe": "framer-v-n1vbp6",
+        "nome": "Dicas - Tablet",
+        "papel": "base",
+        "assunto": "dicas",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "i4Z73U4j0",
+        "classe": "framer-v-revcp9",
+        "nome": "Notícias - Tablet",
+        "papel": "base",
+        "assunto": "notícias",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "j5PrqttES",
+        "classe": "framer-v-41ik7x",
+        "nome": "Projetos e Portfólio - Mobile",
+        "papel": "base",
+        "assunto": "projetos e portfólio",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "jXQQAl9ny",
+        "classe": "framer-v-1m6r0zv",
+        "nome": "Arquitetura na Prática - Tablet",
+        "papel": "base",
+        "assunto": "arquitetura na prática",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "K4NUXXpXx",
+        "classe": "framer-v-1l0t53f",
+        "nome": "Dicas",
+        "papel": "base",
+        "assunto": "dicas",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "Kb48WnFPa",
+        "classe": "framer-v-lbcbut",
+        "nome": "Arq",
+        "papel": "base",
+        "assunto": "arq",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "KPqQg8_RG",
+        "classe": "framer-v-k8eg1g",
+        "nome": "Tods",
+        "papel": "base",
+        "assunto": "tods",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "nmNlzsYbT",
+        "classe": "framer-v-pqokia",
+        "nome": "Arquitetura na Prática - Mobile",
+        "papel": "base",
+        "assunto": "arquitetura na prática",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "sPzJ0xHzP",
+        "classe": "framer-v-16pe9fy",
+        "nome": "Todos - Tablet",
+        "papel": "base",
+        "assunto": "todos",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "TVa2JE7Yp",
+        "classe": "framer-v-16qxkvc",
+        "nome": "Projetos",
+        "papel": "base",
+        "assunto": "projetos",
+        "largura": null,
+        "noNossoDom": true
+      },
+      {
+        "id": "v2K3L4I4b",
+        "classe": "framer-v-xwlamg",
+        "nome": "Projetos e Portfólio - Tablet",
+        "papel": "base",
+        "assunto": "projetos e portfólio",
+        "largura": "tablet",
+        "noNossoDom": true
+      },
+      {
+        "id": "yG4jypW8A",
+        "classe": "framer-v-wtdrnm",
+        "nome": "Notícias - Mobile",
+        "papel": "base",
+        "assunto": "notícias",
+        "largura": "mobile",
+        "noNossoDom": true
+      },
+      {
+        "id": "YkdvoxaeN",
+        "classe": "framer-v-bx44yh",
+        "nome": "Notícias",
+        "papel": "base",
+        "assunto": "notícias",
+        "largura": null,
+        "noNossoDom": true
+      }
+    ],
+    "pares": [],
+    "trocador": [
+      "dicas",
+      "todos",
+      "notícias",
+      "projetos e portfólio",
+      "arquitetura na prática",
+      "arq",
+      "tods",
+      "projetos"
+    ],
+    "transicoes": [
+      {
+        "bounce": "0",
+        "delay": ".2",
+        "duration": ".5",
+        "type": "spring"
+      },
+      {
+        "bounce": ".2",
+        "delay": "0",
+        "duration": ".4",
+        "type": "spring"
+      }
+    ],
+    "presenteNoDom": true
+  },
+  {
+    "arquivo": "GRDmIHVyV.js",
+    "variantes": [
+      {
+        "id": "EFDo5wZxL",
+        "classe": "framer-v-q2si4d",
+        "nome": "Desktop",
+        "papel": "base",
+        "assunto": "",
+        "largura": "desktop",
+        "noNossoDom": false
+      },
+      {
+        "id": "Khc0IOZjB",
+        "classe": "framer-v-1gfqzq4",
+        "nome": "Tablet",
+        "papel": "base",
+        "assunto": "",
+        "largura": "tablet",
+        "noNossoDom": false
+      },
+      {
+        "id": "ZjUrChPwS",
+        "classe": "framer-v-xoycr6",
+        "nome": "Phone",
+        "papel": "base",
+        "assunto": "",
+        "largura": "mobile",
+        "noNossoDom": false
+      }
+    ],
+    "pares": [],
+    "trocador": null,
+    "transicoes": [],
+    "presenteNoDom": false
+  }
+]

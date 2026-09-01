@@ -3,457 +3,333 @@
 Migração do site do Framer para código próprio. Este documento é o estado
 completo do projeto. Leia antes de tocar em qualquer coisa.
 
+Último commit desta rodada: `029ce76`.
+
 ---
 
 ## 1. O que é o projeto
 
-A cliente (Isabella Pires, arquiteta) tem um site no Framer em
-`www.isabellapiresarquitetura.com.br`. Vamos substituí-lo por um site próprio,
-hospedado na Vercel, na conta dela. O objetivo declarado pelo Gabriel é
-**SEO e beleza**, e o site novo tem que ficar **idêntico** ao atual —
-ele dirige as melhorias depois, uma a uma.
+A cliente (Isabella Pires, arquiteta) tinha o site no Framer. Estamos
+substituindo por site próprio na Vercel, na conta dela. Objetivo declarado
+pelo Gabriel: **SEO e beleza**. O site novo tem que ficar **idêntico** ao
+atual — ele dirige as melhorias depois, uma a uma.
 
-Fases combinadas: resgate do conteúdo → site 1:1 no ar → CMS de blog no
-Supabase → produção de ~40 posts.
+Fases: resgate do conteúdo → site 1:1 no ar → CMS de blog no Supabase →
+produção de ~40 posts.
+
+**O Gabriel dirige o texto. Não invente copy.** Se faltar texto, extraia da
+referência ou pergunte.
 
 ---
 
-## 2. Decisões fechadas (não reabrir sem falar com o Gabriel)
+## 2. Como rodar
+
+**A origem do Framer não é o domínio próprio.** O domínio já aponta para a
+Vercel e serve o nosso site; capturar de lá traz a migração de volta como se
+fosse referência. Use sempre:
+
+```bash
+export FRAMER_BASE=https://authentic-learning-761482.framer.app
+
+node tools/captura-breakpoints.mjs      # só enquanto o Framer existir
+node tools/audita-capturas.mjs          # confere que vieram do Framer
+node tools/funde-breakpoints.mjs
+node tools/baixa-variantes.mjs          # só enquanto o Framer existir
+node tools/processa-framer.mjs
+node tools/otimiza-imagens.mjs
+node tools/verifica-fidelidade.mjs      # o portão, nos 3 breakpoints
+```
+
+Diagnóstico quando o portão reclamar (dá a resposta em texto, sem abrir os
+mapas de imagem):
+
+```bash
+node tools/diagnostica-diferenca.mjs /servicos/ mobile
+```
+
+### Ferramentas
+
+| Script | O que faz |
+|---|---|
+| `paginas.mjs` | **Tabela única** das 14 páginas e dos 3 breakpoints |
+| `captura-breakpoints.mjs` | Captura 14 páginas × 3 breakpoints do Framer vivo |
+| `audita-capturas.mjs` | Confere que toda captura é do Framer, não nossa |
+| `funde-breakpoints.mjs` | Funde as 3 capturas num HTML com media queries |
+| `baixa-variantes.mjs` | Baixa variantes de imagem que só celular/tablet pedem |
+| `baixa-runtime.mjs` | Puxa o runtime JS do Framer + source maps |
+| `extrai-fontes.mjs` | Desempacota os source maps em código legível |
+| `extrai-variantes.mjs` | Gera `public/variantes.json` (máquinas de estado) |
+| `processa-framer.mjs` | Tira runtime, reescreve assets e links → `public/` |
+| `otimiza-imagens.mjs` | Converte para WebP e reescreve as referências |
+| `verifica-fidelidade.mjs` | **O portão.** Compara pixel a pixel |
+| `diagnostica-diferenca.mjs` | Diz *onde* diverge, em texto |
+| `servidor.mjs` | Servidor estático em porta livre, com checagem |
+| `importa-framer.mjs` | Converte CSV do CMS do Framer em markdown |
+
+---
+
+## 3. Estado atual
+
+### Verificado
+
+- **Portão: 38/42.** Todas as alturas batem exatamente.
+
+  | Breakpoint | Passam |
+  |---|---|
+  | desktop 1440 | 13/14 |
+  | tablet 1000 | 12/14 |
+  | mobile 390 | 13/14 |
+
+  Falha `/artigos/` nos três, e `o-que-muda-na-arquitetura-residencial-em-2026`
+  no tablet em 0,55% (passa nas outras larguras — ruído de limite).
+
+- **42/42 capturas** da origem real do Framer, auditadas.
+- **Imagens em WebP**: 142,8 MB → 60,5 MB (−58%).
+- **25 artigos** do CMS em `src/content/artigos/`.
+- **Fontes self-hospedadas** (3 origens: Google, assets do Framer, Fontshare).
+- No ar: `www.isabellapiresarquitetura.com.br` (Vercel).
+
+### Interações que funcionam
+
+Em `public/interacoes.js`, reimplementação própria:
+
+| Interação | Como |
+|---|---|
+| Scroll reveals | Mola por oscilador harmônico amortecido |
+| Menu de celular | Troca de variante: cabeçalho 59px → 223px |
+| Hover do card de projeto | Troca de variante: 557px → 367px |
+
+**O mecanismo, que é o achado que destrava o resto:** o CSS de *todas* as
+variantes de um componente vem servido na página, inclusive das que o HTML
+não usa — são os estados de hover e aberto esperando alguém aplicar.
+`extrai-variantes.mjs` lê `variantClassNames` e `humanReadableVariantMap` do
+fonte do Framer e pareia repouso → resposta pelos nomes que a arquiteta deu
+("Casa IP Desktop - Hover"). Reviver a interação é trocar a classe.
+
+**Trava obrigatória:** o runtime testa cada par antes de ligar handler —
+troca a classe, mede, desfaz, descarta o que não muda nada. Sem isso o
+cabeçalho, que tem par `Open/Closed` inerte, receberia handler de clique com
+`preventDefault` e **mataria a navegação do site inteiro**. E nunca chamar
+`preventDefault` em clique que caiu num `a[href]`.
+
+### Arquitetura, para não se perder
+
+O site no ar **não é Astro renderizando páginas**. É o HTML do Framer
+processado, servido estático de `public/`. `src/pages/` só tem as rotas de
+API. O Astro está ali para a fase do CMS.
+
+```
+public/           HTML processado do Framer — é isto que está no ar
+src/pages/api/    contato.ts, newsletter.ts (Brevo)
+src/content/      25 artigos em markdown, ainda sem página que os consuma
+src/components/   da reconstrução manual abandonada — ver seção 6
+_capturas/        42 capturas + fundido.html (versionado)
+_fonte-framer/    fonte do Framer desempacotado (FORA do git)
+_capturas/_runtime/ runtime do Framer (FORA do git)
+_referencia/      clone antigo, imagens e fontes em disco (FORA do git)
+_importar/        Blog.csv e imagens-para-baixar.txt (FORA do git)
+```
+
+---
+
+## 4. O que falta
+
+Em ordem de dependência: os itens 1 e 2 destravam vários outros.
+
+### 4.1. Conteúdo que não está no DOM — **faça primeiro**
+
+O Framer buscava do CMS em tempo de execução, então o HTML capturado não tem.
+Sem isso, carrossel e acordeão não têm o que mostrar.
+
+- [ ] **Exportar a coleção de projetos** no editor do Framer
+      (Plugins → CMS Export). Foi assim que os 25 artigos vieram. Salvar em
+      `_importar/` e rodar `node tools/importa-framer.mjs _importar/Projetos.csv projetos`.
+      São 4: `Casa IP`, `AP MM`, `STUDIO`, `COZINHA LA` — esta última não tem
+      página no clone e é a que falta no carrossel.
+- [ ] **Baixar as 25 capas dos artigos.** URLs em
+      `_importar/imagens-para-baixar.txt`. **Bloqueia o build** assim que
+      existir uma página consumindo a coleção: o schema usa `image()` e quebra
+      se o arquivo não existir. Hoje o build passa só porque nada consome.
+- [ ] **Textos dos 5 painéis do acordeão** já estão em `src/lib/conteudo.ts`,
+      transcritos. Falta injetar no DOM.
+
+### 4.2. Carrossel de projetos — rolar entre os cases
+
+Hoje só `CASA IP` aparece. O mapa de variantes confirma os 4 estados e o
+componente controlador.
+
+- Controlador: `a6Nde7smU.js` — variantes `Casa IP`, `AP MM`, `STUDIO`, `COZINHA LA`
+- Cards: `Qv_x9EZNH.js` — 16 variantes (projeto × breakpoint × hover/aberto)
+- Movimento: `spring damping 30, stiffness 400, mass 1`
+- Em `/projetos/` os 4 cards **estão no DOM** (`Casa IP - Desktop`,
+  `AP MM - Desktop - Hover`, `Studio Desktop Hover`, `Cozinha LA Desktop Hover`).
+  Na home o carrossel (`carousels-isa`) só tem um.
+
+Caminho: usar o mesmo mecanismo de troca de variante, com as setas trocando
+o estado do controlador. O conteúdo dos outros 3 sai do item 4.1.
+
+### 4.3. Acordeão de serviços
+
+Trocar a classe **não muda nada** — testado. O painel aberto não tem conteúdo
+no DOM, então não há o que expandir. Precisa injetar os textos de
+`src/lib/conteudo.ts` primeiro e só então ligar o toggle.
+
+- Componentes: `n8yL1JHdr.js`, `i15JnwUan.js`, `f4n4OEmqR.js` (`Open`/`Closed`)
+- Serviços nomeados em `iCmFNLdck.js`: `Arquitetura Residencial`,
+  `Arquitetura Comercial`, `Design de Interiores`
+- Movimento: `spring bounce .2 duration .4`
+
+### 4.4. Motion no site todo
+
+O que já foi medido na origem certa, para não refazer:
+
+- **Hover só existe no card de projeto.** 2/18 em `/projetos/`, 0/8 na home,
+  0/20 em `/serviços/`. Links, botões e imagens **não têm hover** no original.
+  Não invente o que não existe.
+- Falta varrer as 14 páginas × 3 breakpoints com o mesmo método para achar o
+  que ainda não foi coberto. O que existe hoje é amostragem, não varredura.
+- **Melhoria pendente na mola:** hoje as trocas de variante usam
+  `cubic-bezier(.34,1.2,.64,1)`, que é aproximação. CSS `linear()` suporta
+  mola de verdade desde 2023 (~87% de cobertura) e expressa múltiplos
+  bounces, que bezier não consegue. Gerar os pontos com integração numérica
+  (já existe `curvaDeMola()` em `interacoes.js`) e trocar.
+
+### 4.5. Páginas em Astro
+
+Nada disso existe ainda — `src/pages/` só tem as APIs. É o que transforma o
+site estático em site com CMS.
+
+- [ ] `/artigos/` — listagem. **Não é reproduzível estaticamente**: a
+      referência mede altura diferente a cada carregamento (2778, 5073, 5532 px)
+      porque busca do CMS em runtime. É a falha de 1% no portão. Vira template.
+- [ ] `/artigos/[slug]` — as páginas de artigo compartilham um molde; a região
+      de conteúdo vira slot. Os 25 markdowns já estão prontos para consumir.
+- [ ] `/projetos/` e `/projetos/[slug]` — depende do item 4.1.
+- [ ] `/sobre-nos/`, `/contato/`, `/servicos/` — hoje são HTML estático fiel.
+      Só precisam virar Astro quando houver motivo (conteúdo dinâmico ou
+      manutenção). Se não houver, deixe estático: já passam no portão.
+
+### 4.6. Formulário → Brevo
+
+Código pronto e testado localmente. **Travado por três coisas fora do código:**
+
+1. **IPs autorizados na Brevo.** A chave é válida mas a conta recusa com 401
+   citando o IP. As funções da Vercel saem por IP dinâmico e não são
+   whitelistáveis no Hobby. Tem que ser **desligado** em
+   `app.brevo.com/security/authorised_ips`. Enquanto isso não acontece, nada
+   pode ser verificado contra a API real.
+2. **`BREVO_DESTINO_EMAIL` vazio.** Sem ele o endpoint devolve 502. Decisão do
+   Gabriel: para qual caixa vão os leads.
+3. **Domínio não autenticado.** O remetente é
+   `contato@isabellapiresarquitetura.com.br`, mas a zona não tem DKIM nem
+   DMARC (nem MX — esse e-mail não existe como caixa). São 3 TXT no
+   registro.br; os valores saem em `GET /v3/senders/domains` assim que o
+   item 1 for resolvido.
+4. **`BREVO_LISTA_NEWSLETTER_ID`** — criar a lista na Brevo e pegar o id.
+
+Verificado local (`astro dev` + curl): isca → 200 silencioso; campo faltando
+→ 422; e-mail inválido → 422; sem JS → 303 com `?envio=`; 6º envio válido em
+10 min → 429.
+
+**Decisão:** o limite por IP roda **depois** da validação, para não trancar
+por 10 min quem só errou o e-mail. É um `Map` em memória, por instância —
+segura repetição de um visitante, não ataque distribuído. Se não bastar, o
+próximo passo é KV/Upstash, não afinar os números.
+
+### 4.7. Lançamento
+
+- [ ] **Sitemap.** O do Astro não gera nada porque não há páginas em
+      `src/pages/`. Hoje `/sitemap-index.xml` responde 404 no domínio. Precisa
+      sair do pipeline ou ganhar páginas.
+- [ ] **GA4 e Clarity** — variáveis existem no `.env`, falta injetar.
+- [ ] **301 das URLs antigas** (que tinham acento). O mapa está em
+      `tools/paginas.mjs`; os artigos guardam `slugAntigo` no frontmatter.
+- [ ] **Search Console** e cortar o Framer.
+
+### 4.8. Dívidas menores
+
+- [ ] `/artigos/` fica ~1% acima do limite no portão. Já foram descartados:
+      layout (DOM idêntico), imagens (mesmos 24 arquivos nas mesmas posições)
+      e codec (AVIF vs PNG vale só 0,19%, medido). Causa real desconhecida.
+      Como a página vira template, foi deixada assim de propósito.
+- [ ] `src/components/Formulario.astro` é resquício da reconstrução manual
+      abandonada e não é usado por nada. Apagar quando alguém confirmar.
+- [ ] `.env` linha 6 tem valor sem aspas: `set -a && . ./.env` cospe
+      `Isabella: command not found`.
+
+---
+
+## 5. Decisões fechadas
+
+Não reabrir sem falar com o Gabriel.
 
 | Tema | Decisão |
 |---|---|
 | Estratégia | **Processar o HTML renderizado do Framer**, não reconstruir à mão |
 | Responsivo | Capturar os 3 breakpoints e empilhar no mesmo HTML |
 | Fidelidade | Portão de pixel: falha acima de 0,5% de divergência |
-| Hospedagem | Vercel Hobby — **risco aceito** (termos cobrem uso não-comercial) |
-| Versionamento | GitHub, repositório **público** por ora |
+| Hospedagem | Vercel Hobby — risco aceito |
+| Versionamento | GitHub, repositório **público** |
+| Runtime do Framer | **Fora do git.** Código proprietário deles, repo público |
 | E-mail | Brevo (300/dia grátis); o log da Brevo é o arquivo de leads |
 | Banco/CMS | Supabase (fase posterior) |
 | Analytics | GA4 + Microsoft Clarity |
-| URLs | ASCII, com 301 das antigas (que tinham acento) |
-| Domínio | registro.br, apontamento manual |
+| URLs | ASCII, com 301 das antigas |
 
-### Por que não reconstruir à mão
-Foi tentado. A home reconstruída divergia da referência em **14 pontos**
-(títulos inventados, seções omitidas, números errados). A reconstrução de
-olho não converge. Ver commits `cb20c52` e `821f036` para o histórico.
+**Por que não reconstruir à mão:** foi tentado. A home reconstruída divergia
+em 14 pontos (títulos inventados, seções omitidas, números errados). Não
+converge. Ver `cb20c52` e `821f036`.
 
-### Por que processar o HTML funciona
-Medido: o HTML renderizado do Framer é **pixel-idêntico sem nenhum
-JavaScript** (0,00% de diferença, 90 pixels em 3,5 milhões). O runtime do
-Framer é 1,4 MB que não afeta a renderização estática.
-
-É também o que a indústria faz — os serviços pagos (NoCodeXport, FramerExport,
-ConvertFramer) vendem exatamente isso: renderizam o site publicado num browser
-e capturam a saída. O Framer não tem export nativo, por decisão de lock-in.
+**Por que processar o HTML funciona:** o HTML renderizado do Framer é
+pixel-idêntico sem nenhum JavaScript (0,00%, 90 pixels em 3,5 milhões). É
+também o que a indústria faz — os serviços pagos vendem exatamente isso.
+Pesquisado: **nenhuma ferramenta, paga ou aberta, reimplementa as
+interações.** Todas só capturam DOM. Não vale comprar.
 
 ---
 
-## 3. Estado atual
+## 6. Armadilhas que já custaram tempo
 
-### Funciona e está verificado
-- **Fusão de breakpoints aplicada às 14 páginas.** O portão de pixel:
+1. **Confirme a origem antes de medir.** Duas conclusões erradas saíram de
+   sondar "o site vivo" sem checar quem responde no domínio — que hoje é o
+   nosso próprio site. Ou confirme a origem, ou leia o fonte em
+   `_fonte-framer/`, que não depende de rede.
+2. **Servidores zumbis.** `python3 -m http.server` de sessão anterior segurando
+   as portas: os do verificador não sobem, morrem calados, a referência vem
+   404 e toda página "diverge" 100% com altura de viewport. `servidor.mjs`
+   procura porta livre e confirma que serve. Se vir divergência ~100% com
+   altura igual à viewport, é isto.
+3. **Captura falsa não denuncia nada.** O HTML é plausível e a página compara a
+   migração consigo mesma e aprova. Rode `audita-capturas.mjs`.
+4. O clone salva variantes de `srcset` como `base@query`, **não** `base?query`.
+5. O `&` no HTML vem como `&amp;` — precisa decodificar para achar o arquivo em
+   disco. Sem isso o fallback pega a variante errada: imagem certa, resolução
+   errada. Esse bug sozinho valia 26 pontos percentuais.
+6. As fontes vêm de **três** origens distintas.
+7. `(?is)` é sintaxe de Python. Em JavaScript são flags: `/regex/gis`.
+8. A CDN do Framer serve **AVIF** para navegador e **PNG/JPEG** para `fetch`
+   sem `Accept`. Vale 0,19% de divergência — não é a causa de nada maior.
+9. As classes `framer-v-*` não são estáveis entre publicações do Framer. Se
+   recapturar depois de a arquiteta republicar, **regere `variantes.json`**.
 
-  | Breakpoint | Passam | Alturas |
-  |---|---|---|
-  | desktop 1440 | 13/14 | todas idênticas |
-  | tablet 1000 | 12/14 | todas idênticas |
-  | mobile 390 | 13/14 | todas idênticas |
-
-  38 de 42, agora medido contra capturas da origem real do Framer. Falha
-  `/artigos/` nos três (o listing não-determinístico) e
-  `o-que-muda-na-arquitetura-residencial-em-2026` no tablet, em 0,55%,
-  que passa nas outras duas larguras — está no limite, é ruído.
-- Imagens em WebP: **142,8 MB → 60,5 MB (−58%)**. É maior que os 25,7 MB
-  anteriores porque agora inclui as variantes de celular e tablet, que o
-  clone de desktop não tinha.
-- Fontes self-hospedadas (3 origens: Google, assets do Framer, Fontshare)
-- Deploy automático: commit → push → build → Vercel
-- No ar: https://isabella-pires-arquitetura.vercel.app
-
-### Não funciona ainda
-- **`/artigos/` fica ~1% acima do limite** no desktop e no tablet. Já foram
-  descartados: layout (DOM idêntico, mesmas posições), imagens (mesmos 24
-  arquivos nas mesmas posições) e codec (a CDN do Framer serve AVIF para o
-  navegador e PNG para `fetch`, mas isso vale só 0,19% — medido). A causa
-  real não foi encontrada. Como a página vira template do CMS de qualquer
-  forma, foi deixada assim de propósito.
-- **Movimento: o que existe, o que falta.** Medido, não estimado — e a
-  medição corrigiu duas conclusões erradas anteriores.
-
-  **Hover existe, e só nos cards de projeto.** Medido na origem certa
-  (`authentic-learning-761482.framer.app`): 2 de 18 elementos em
-  `/projetos/` respondem ao ponteiro, 0 de 8 na home e 0 de 20 em
-  `/serviços/`. O que responde é o card, indo de 367px a 557px — os mesmos
-  números do hover que já está implementado. Links, botões e imagens
-  realmente não têm hover no original. Links,
-  botões e imagens não têm hover lá. Uma versão anterior deste documento
-  dizia "327 links sem hover, 92 imagens sem zoom" — era erro de método:
-  mediu-se a nossa saída sem conferir se a original fazia algo.
-  *Ressalva:* medido com ponteiro sintético do Playwright.
-
-  **O que de fato funciona hoje**, em `public/interacoes.js`:
-
-  | Interação | Como |
-  |---|---|
-  | Scroll reveals | Reimplementados. Mola por oscilador amortecido |
-  | Menu de celular | Troca de variante — cabeçalho 59px → 223px |
-  | Hover do card de projeto | Troca de variante — 557px → 367px |
-
-  **O mecanismo genérico:** o CSS de *todas* as variantes de um componente
-  vem servido na página, inclusive das que o HTML não usa — são os estados
-  de hover e aberto esperando alguém aplicar. `tools/extrai-variantes.mjs`
-  lê `variantClassNames` e `humanReadableVariantMap` do fonte do Framer e
-  gera `public/variantes.json` pareando repouso → resposta pelos nomes que
-  a designer deu ("Casa IP Desktop - Hover"). Reviver a interação é trocar
-  a classe.
-
-  **Trava importante:** o runtime testa cada par antes de ligar handler —
-  troca a classe, mede, desfaz. Par que não muda nada é descartado. Sem
-  isso, o cabeçalho (que tem par Open/Closed inerte) receberia um handler
-  de clique com `preventDefault` e **mataria a navegação do site inteiro**.
-  Nunca chamar `preventDefault` em clique que caiu num `a[href]`.
-
-  **Falta**, e os dois dependem de conteúdo ausente do DOM:
-  - **Acordeão de serviços** — trocar a classe não muda nada, porque o
-    painel aberto não tem conteúdo. Os 5 textos estão em `src/lib/conteudo.ts`.
-  - **Carrossel de projetos** — só `CASA IP` no DOM. O mapa de variantes
-    confirma 4: `Casa IP`, `AP MM`, `STUDIO` e `COZINHA LA`, esta última
-    sem página no clone.
-
-- **`/artigos/` fica ~1% acima do limite** no desktop e no tablet. Já foram
-  descartados: layout (DOM idêntico, mesmas posições), imagens (mesmos 24
-  arquivos nas mesmas posições) e codec (a CDN do Framer serve AVIF para o
-  navegador e PNG para `fetch`, mas isso vale só 0,19% — medido). A causa
-  real não foi encontrada. Como a página vira template do CMS de qualquer
-  forma, foi deixada assim de propósito.
-- **Praticamente todo o movimento está morto, não "4 interações".** Isso foi
-  medido, não estimado. O Framer faz hover por **variante em JavaScript**,
-  não por CSS — existem 51 regras `:hover` no CSS servido, e nenhuma pega
-  os elementos que importam. Teste: 0 de 12 elementos da primeira dobra de
-  `/projetos/` respondem ao ponteiro.
-
-  | Medido, só no desktop, nas 14 páginas | |
-  |---|---|
-  | Links visíveis sem hover | 327 |
-  | Botões sem hover | 50 |
-  | Imagens sem zoom | 92 |
-  | Nós com estado (`Closed`/`Trigger`/`Hover`) | 74 |
-
-  No fonte do Framer: 498 `onTap`, 40 `useVariantState`, 17 componentes com
-  máquina de estado de 2 a 16 variantes.
-
-  **Não são 500 trabalhos distintos** — cabeçalho e rodapé se repetem nas 14
-  páginas. Em componentes distintos são cerca de dez: hover de link de
-  navegação, hover de botão, zoom de imagem, card de projeto, card de
-  artigo, acordeão, carrossel, menu de celular, e os scroll reveals, que
-  são os únicos prontos.
-- **O passo WebP não foi reverificado.** Os 40/42 foram medidos antes dele.
-
-### Duas armadilhas que quase falsificaram o resultado
-
-1. **Servidores zumbis.** Dois `python3 -m http.server` de uma sessão
-   anterior seguravam as portas 8901/8902. Os do verificador não subiam,
-   morriam calados, e a referência vinha 404 — toda página "divergia" 100%
-   com altura de viewport. `tools/servidor.mjs` agora procura porta livre e
-   confirma que a pasta está sendo servida antes de qualquer medição.
-
-2. **Duas capturas eram do nosso próprio site.** `servicos` e `contato` em
-   `_capturas/` não vinham do Framer, e sim da Vercel: zero referências ao
-   framerusercontent e os três breakpoints idênticos ao byte. Essas páginas
-   estavam comparando a migração **com ela mesma** e aprovando. Recapturadas.
-   `captura-breakpoints.mjs` agora recusa gravar captura sem o runtime do
-   Framer ou com os 3 breakpoints iguais, e `audita-capturas.mjs` confere
-   as 14 de uma vez.
-
-## 4. Ferramentas no repositório
-
-Todas em `tools/`, todas re-executáveis.
-
-| Script | O que faz |
-|---|---|
-| `paginas.mjs` | **Tabela única** das 14 páginas e dos 3 breakpoints. Todos leem daqui |
-| `captura-breakpoints.mjs` | Captura as 14 páginas × 3 breakpoints do site **vivo** → `_capturas/` |
-| `audita-capturas.mjs` | Confere que toda captura é mesmo do Framer, não do nosso site |
-| `funde-breakpoints.mjs` | Funde as 3 capturas de cada página num HTML só, com media queries |
-| `baixa-variantes.mjs` | Baixa do Framer as variantes de imagem que só o celular/tablet pedem |
-| `servidor.mjs` | Sobe servidor estático em porta livre e confirma que serve |
-| `diagnostica-diferenca.mjs` | Diz *onde* uma página diverge, em texto, sem abrir os mapas |
-| `processa-framer.mjs` | Tira o runtime, reescreve assets e links, copia imagens e fontes → `public/` |
-| `otimiza-imagens.mjs` | Converte para WebP e reescreve as referências no HTML |
-| `verifica-fidelidade.mjs` | **O portão.** Compara cada página com a original, pixel a pixel |
-| `importa-framer.mjs` | Converte os CSV do CMS do Framer em markdown |
-
-### Como rodar o ciclo completo
-```bash
-node tools/captura-breakpoints.mjs      # só enquanto o Framer existir
-node tools/audita-capturas.mjs         # confere que as capturas são do Framer
-node tools/funde-breakpoints.mjs
-node tools/baixa-variantes.mjs         # só enquanto o Framer existir
-node tools/processa-framer.mjs
-node tools/otimiza-imagens.mjs
-node tools/verifica-fidelidade.mjs             # os 3 breakpoints
-node tools/verifica-fidelidade.mjs --bp mobile # um só
-```
-
-O verificador escreve mapas de diferença em `.diffs/` (vermelho = divergente)
-para toda página que passar do limite.
-
-### Armadilhas que já custaram tempo
-1. O clone salva variantes de `srcset` como `base@query`, **não** `base?query`.
-2. O `&` no HTML vem como `&amp;` — precisa decodificar para achar o arquivo
-   em disco. Sem isso o fallback pega a variante errada: imagem certa,
-   resolução errada. Esse bug sozinho valia 26 pontos percentuais de divergência.
-3. As fontes vêm de **três** origens distintas. Tratar só o Google deixa tudo
-   em fallback e o diff nunca zera.
-4. `(?is)` é sintaxe de Python. Em JavaScript são flags: `/regex/gis`.
+> **Regra aprendida do jeito difícil:** o Gabriel já colou um token real no
+> `.env.example`, que é versionado, e eu commitei sem reauditar. Foi preciso
+> reescrever o histórico. **Audite o conteúdo de todo arquivo versionado antes
+> de cada commit**, não só antes do push.
 
 ---
 
-## 5. Fusão de breakpoints — feita
+## 7. Risco com prazo
 
-As 14 páginas foram fundidas e passam pelo portão. Os números estão na
-seção 3.
+**A assinatura do Framer vence.** Enquanto ela viver, tudo que for
+insubstituível precisa sair de lá.
 
-O truque é `display: contents` no invólucro de cada árvore: ele some do
-layout, então as regras do Framer continuam valendo como se os filhos
-fossem diretos do `<body>`. O `<head>` é byte-idêntico entre os três
-breakpoints nas 14 páginas (conferido por MD5), então entra uma vez só.
-
-Breakpoints reais do Framer, extraídos do CSS dele e agora em
-`tools/paginas.mjs`, que é a tabela única que todos os scripts leem:
-- desktop `(min-width: 1200px)`
-- tablet `(min-width: 810px) and (max-width: 1199.98px)`
-- mobile `(max-width: 809.98px)`
-
-O clone de desktop não tinha as variantes de imagem que o celular e o
-tablet pedem — eram 276, baixadas por `baixa-variantes.mjs` enquanto o
-Framer está no ar. Antes disso o processador caía no fallback "maior
-variante disponível", que entrega a imagem certa na resolução errada.
-
-## 6. Depois disso
-
-1. **Interações.** O runtime do Framer foi baixado com os **source maps
-   publicados**, então existe o código-fonte original (não minificado) como
-   especificação. `baixa-runtime.mjs` e `extrai-fontes.mjs` refazem isso
-   enquanto o Framer viver. **Fora do git de propósito**: é código
-   proprietário do Framer e este repositório é público. Se precisar
-   sobreviver ao vencimento da assinatura, faça backup fora do repo.
-
-   Onde mora cada uma, em `_fonte-framer/https:/framerusercontent.com/modules/`:
-
-   | Interação | Arquivo | Movimento |
-   |---|---|---|
-   | Acordeão | `uecwB1KwkJFtBMPwNyzd/…/Qv_x9EZNH.js` | spring bounce .2 dur .4 |
-   | Carrossel | `PfylROkYYGkR2aow5ETM/…/a6Nde7smU.js` | spring damping 30 stiffness 400 |
-   | Reveals | `IbsRGwyzKW2hSLkLaVJo/…/sBuWTkbUo.js` | spring bounce .2 dur .8 |
-
-   **Scroll reveals: feitos.** `public/interacoes.js`, escrito do zero — só
-   os valores vieram da dissecação. Mola por oscilador harmônico
-   amortecido. Pega dois casos: `opacity:0` com `translateX(-150px)`, e
-   elemento congelado no meio da animação na captura (`opacity .5`,
-   `scale .9`). Não toca em `scale` acima de 1, que é zoom de imagem no
-   hover — confundir os dois faria a foto de `/servicos/` saltar sozinha.
-   Respeita `prefers-reduced-motion`.
-
-   **Consequência no portão:** o verificador agora roda com
-   `javaScriptEnabled: false` nos dois lados. A referência já vinha sem
-   `<script>`; sem isso a nossa saída revelaria os elementos e acusaria
-   divergência falsa. O portão mede fidelidade do DOM estático, que é o
-   que ele sempre mediu.
-
-   As outras três exigem injetar conteúdo que o Framer buscava do CMS:
-   - **Acordeão de serviços**: os painéis fechados não têm texto no DOM. Os 5
-     textos já estão transcritos em `src/lib/conteudo.ts`.
-   - **Carrossel de projetos**: só `CASA IP` está no DOM. Existem 4 projetos —
-     o quarto é `COZINHA LA`, descoberto clicando a seta na referência, e não
-     tem página no clone.
-   - **Menu de celular**: o gatilho é um `svg` de 24×24 no topo, em 390px.
-     O painel aberto não está no DOM.
-2. ~~**Formulário** → Brevo.~~ Feito — ver seção 6.1.
-3. **Sitemap** — o do Astro não gera mais nada, porque não há páginas em
-   `src/pages/`. Precisa sair do pipeline.
-4. **GA4 e Clarity** — as variáveis existem no `.env`, falta injetar.
-5. **Lançamento** — DNS no registro.br, 301 das URLs antigas, Search Console,
-   e cortar o Framer.
-6. **CMS** — Supabase. As páginas de artigo compartilham um molde; a região
-   de conteúdo vira slot.
-
-### 6.1. Brevo — o que existe e o que trava
-
-**Código, pronto e testado localmente:**
-
-| Arquivo | Papel |
-|---|---|
-| `src/lib/brevo.ts` | Cliente da API: e-mail transacional e criação de contato |
-| `src/lib/antispam.ts` | Campos-isca, limite por IP, validação de e-mail |
-| `src/lib/ambiente.ts` | Lê env de `process.env` **e** `import.meta.env` |
-| `src/lib/resposta.ts` | Responde JSON para o fetch, 303 para envio sem JS |
-| `src/pages/api/contato.ts` | Formulário de contato (home e /contato) |
-| `src/pages/api/newsletter.ts` | Inscrição do rodapé de /artigos |
-| `public/formularios.js` | Intercepta o submit e responde na própria página |
-
-O `processa-framer.mjs` ganhou o passo 5: injeta `method`/`action` em cada
-`<form>` do Framer, escolhendo a rota pela presença do campo `Mensagem`. Por
-isso o envio funciona **mesmo sem JavaScript** — o endpoint devolve 303 de volta
-para a página com `?envio=ok|erro`. Nada é inserido no DOM antes do primeiro
-envio, para não quebrar o portão de fidelidade.
-
-Os 11 campos-isca são os que o **próprio Framer** já emitia (`website`,
-`company`, `message`, `subject`…). Não foram inventados; foram reaproveitados.
-
-**Verificado local** (`astro dev` + curl): isca → 200 silencioso; campo faltando
-→ 422; e-mail inválido → 422; sem JS → 303 com `?envio=`; 6º envio válido em
-10 min → 429. Os dois formatos que o navegador usa (urlencoded e multipart)
-parseiam igual, inclusive com o campo acentuado `Serviço`.
-
-**Decisão:** o limite por IP roda **depois** da validação. Ele protege a cota de
-300 envios/dia da Brevo, e envio recusado por validação não consome cota —
-contar tentativa inválida trancaria por 10 min quem só errou o e-mail.
-
-**Ressalva:** o limite é um `Map` em memória, por instância da função. Segura
-repetição de um visitante, não ataque distribuído. Se um dia não bastar, o
-próximo passo é KV/Upstash, não afinar os números.
-
-**Armadilha medida, não suposta:** a `POST /v3/smtp/email` devolve **201 com
-`messageId`** e só **depois** rejeita, de forma assíncrona. Com o domínio não
-autenticado, o log de eventos mostra `requests` seguido de `error — Sending has
-been rejected because the sender you used ... is not valid`. Ou seja: a resposta
-de sucesso da API **não é prova de entrega**, e o visitante vê "Recebido"
-enquanto o lead se perde. A única verificação confiável é
-`GET /v3/smtp/statistics/events`, que leva ~30 s para popular.
-
-Consequência prática: **não vale subir o formulário em produção antes de o DKIM
-estar propagado.** A alternativa provisória é trocar `BREVO_REMETENTE_EMAIL` para
-`arqisabellapires@gmail.com`, que já é remetente validado — funciona hoje, mas
-sai com DMARC desalinhado (o domínio do envelope não é gmail.com) e tende a
-cair em spam.
-
-**O bloqueio por IP é instável.** Depois de autorizar o IP, as chamadas passaram
-a alternar entre 200 e 401 na mesma sequência — a lista propaga de forma desigual
-entre os nós da Brevo. Para função da Vercel, com IP dinâmico, whitelist não é
-opção: o recurso precisa ficar **desligado**.
-
-**O que trava agora, em ordem:**
-
-1. **Autenticar o domínio na Brevo.** Único bloqueio restante. O domínio já foi
-   criado (id `6a9627fd736b02920808cf56`); faltam 4 registros no registro.br:
-
-   | Tipo | Nome | Valor |
-   |---|---|---|
-   | CNAME | `brevo1._domainkey` | `b1.isabellapiresarquitetura-com-br.dkim.brevo.com` |
-   | CNAME | `brevo2._domainkey` | `b2.isabellapiresarquitetura-com-br.dkim.brevo.com` |
-   | TXT | *(vazio = raiz)* | `brevo-code:e2319a36aed4e27d5e035c9e8f99e8c0` |
-   | TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com` |
-
-   Conferir com `GET /v3/senders/domains` até `authenticated: true`.
-2. **Redeploy.** As variáveis de ambiente da Vercel só valem no build seguinte.
-   Hoje `/api/contato` em produção devolve 502 por env ausente — o que, por sorte,
-   é melhor que o falso sucesso descrito acima.
-
-### 6.2. Destinos do lead e e-mails de confirmação
-
-Os prints da configuração do Framer mostraram que o formulário original mandava
-o lead para **dois** destinos — e-mail *e* uma planilha do Google Sheets — e
-depois **redirecionava para `/`**. Decisões tomadas com o Gabriel:
-
-| Item | Original (Framer) | Agora |
-|---|---|---|
-| Aviso para a arquiteta | e-mail | e-mail (igual) |
-| Arquivo do lead | Google Sheets | lista "Leads do site" na Brevo (id 4) |
-| Confirmação para quem preencheu | não existia | e-mail curto de confirmação |
-| Newsletter | — | entra na lista + e-mail de boas-vindas |
-| Depois do envio | redireciona para `/` | mensagem na própria página |
-
-A planilha saiu para não depender de service account do Google e para deixar
-tudo num painel só; a lista exporta CSV. O redirecionamento para `/` foi
-deliberadamente **não** reproduzido: perder a página depois de enviar é pior, e
-a mensagem inline resolve. Se a cliente sentir falta, é uma linha em
-`formularios.js`.
-
-**Só o aviso para a arquiteta é obrigatório.** O arquivo do lead e a confirmação
-rodam em `Promise.allSettled` e falham para o log, nunca para a tela: o e-mail
-já chegou, e dizer "não consegui enviar" faria a pessoa mandar tudo de novo.
-
-**Armadilha:** a conta Brevo está em **português**, então os atributos padrão
-são `NOME`/`SOBRENOME`, não `FIRSTNAME`/`LASTNAME`. A API de contatos
-**descarta atributo desconhecido em silêncio**, com 200 e sem aviso — foi assim
-que o nome do lead sumiu na primeira versão. Conferir sempre com
-`GET /v3/contacts/attributes` antes de gravar.
-
-**Textos provisórios:** o corpo da confirmação e o das boas-vindas foram
-escritos por falta de original — o Framer não tinha nenhum dos dois. Estão
-marcados no `brevo.ts` e precisam da revisão do Gabriel.
-
-**Verificado:** os três e-mails saíram como `delivered` (aviso, confirmação do
-lead, boas-vindas) e os atributos `NOME`, `TELEFONE`, `SERVICO`,
-`ULTIMA_MENSAGEM` e `ORIGEM` gravaram certo. Contatos de teste removidos.
-
-**Já resolvido:** conta Brevo é `arqisabellapires@gmail.com`, plano free, 300
-envios/dia. Atenção à cota: cada contato pelo formulário agora consome **2**
-envios, não 1. `BREVO_DESTINO_EMAIL=arqisabellapires@gmail.com` (única caixa que
-existe — a zona não tem MX, então `contato@` não recebe). Lista "Newsletter do
-blog" criada, `BREVO_LISTA_NEWSLETTER_ID=3`. As cinco variáveis estão na Vercel.
-
-**Verificado contra a API real:** a newsletter funciona fim a fim — o contato de
-teste apareceu na lista 3 e foi removido depois. O contato ainda não, por causa
-do item 1.
-
-**Resquício:** `src/components/Formulario.astro` é da reconstrução manual
-abandonada e não é usado por nada — o formulário real é o HTML do Framer.
-Apagar quando alguém confirmar que não serve de referência.
-
----
-
-## 6.2. O domínio já aponta para a Vercel
-
-**`www.isabellapiresarquitetura.com.br` serve o NOSSO site, não o Framer.**
-Verificado por três vias: `server: Vercel`, IPs em `vercel-dns-017.com`, e
-o HTML devolvido byte a byte igual ao `public/index.html` local. O aviso
-`[@astrojs/sitemap] No pages found` no nosso build explica de quebra por
-que `/sitemap-index.xml` responde 404 no domínio.
-
-**A origem real do Framer é `https://authentic-learning-761482.framer.app`**
-— id do projeto `Z5TWjXNSA6vZfuMOJEFOH`, o mesmo das capturas. Não está no
-HTML publicado: `canonical` e `og:url` apontam para o domínio próprio. Veio
-do editor.
-
-`captura-breakpoints.mjs` aceita a origem por variável de ambiente:
-
-```bash
-FRAMER_BASE=https://authentic-learning-761482.framer.app node tools/captura-breakpoints.mjs
-```
-
-Sem isso ele captura o nosso próprio site, que foi o que corrompeu
-`servicos` e `contato` antes. **As 42 capturas atuais já vieram da origem
-certa e passaram na auditoria.**
-
-**Lição de método:** duas conclusões erradas saíram de sondar "o site vivo"
-sem confirmar quem responde no domínio. Confirme a origem antes de medir —
-ou leia o fonte em `_fonte-framer/`, que não depende de rede.
-
-## 7. Riscos com prazo
-
-**A assinatura do Framer vence em breve.** Enquanto ela viver, duas coisas
-precisam sair de lá, e as duas são insubstituíveis:
-
-1. ~~**Os CSV do CMS**~~ **✅ FEITO.** `Blog.csv` exportado do editor e
-   importado: **25 artigos** em `src/content/artigos/`, com corpo,
-   `seoDescricao`, `tags` e `autor`. O clone tinha 5. Quatro Meta
-   Descriptions passam de 160 caracteres e foram omitidas do
-   `seoDescricao` em vez de cortadas em silêncio — o importador lista
-   quais. Falta baixar as 25 capas, cujas URLs estão em
-   `_importar/imagens-para-baixar.txt`. O build passa hoje porque nenhuma
-   página consome a coleção ainda; ao criar a página de artigo, as capas
-   precisam existir ou o `image()` do schema quebra o build.
-2. **As capturas por breakpoint** (`captura-breakpoints.mjs`). Sem o site no ar
-   não há como obter o DOM de celular. **✅ FEITO E VERIFICADO** — 42/42
-   capturas (14 páginas × 3 breakpoints) em `_capturas/`, versionadas no git,
-   nenhuma truncada. Este risco está neutralizado: mesmo que o Framer caia
-   amanhã, o material para reconstruir o site inteiro já está no repositório.
-
-Se o acesso cair antes disso, sobra engenharia reversa dos `.framercms` do
-clone, com perda de formatação.
+- ✅ **Capturas por breakpoint** — 42/42 da origem certa, versionadas.
+- ✅ **CSV do blog** — 25 artigos importados.
+- ✅ **Runtime e source maps** — baixados, mas **fora do git**. Se precisar
+  sobreviver ao vencimento, faça backup fora do repo ou torne o repo privado.
+- ❌ **CSV de projetos** — ainda não exportado. É o item 4.1.
+- ❌ **Capas dos 25 artigos** — ainda não baixadas.
 
 ---
 
@@ -469,30 +345,13 @@ Tudo em `.env` (ignorado pelo git). `.env.example` é o formulário em branco.
 **Faltam:** `BREVO_DESTINO_EMAIL`, `BREVO_LISTA_NEWSLETTER_ID`,
 `PUBLIC_GA4_ID`, `PUBLIC_CLARITY_ID`.
 
-Na Vercel já estão configuradas (produção, preview e dev): `BREVO_API_KEY`
-(encrypted), `BREVO_REMETENTE_EMAIL`, `BREVO_REMETENTE_NOME`. Variável nova só
-vale a partir do próximo deploy.
+Na Vercel já estão (produção, preview e dev): `BREVO_API_KEY` (encrypted),
+`BREVO_REMETENTE_EMAIL`, `BREVO_REMETENTE_NOME`. Variável nova só vale a
+partir do próximo deploy.
 
-O git não tem credential helper configurado. Para dar push:
+O git não tem credential helper. Para dar push:
+
 ```bash
 set -a && . ./.env && set +a
 git -c credential.helper='!f() { echo username=x-access-token; echo "password=$GH_TOKEN"; }; f' push
 ```
-
-> **Regra aprendida do jeito difícil:** o Gabriel já colou um token real no
-> `.env.example`, que é versionado, e eu commitei sem reauditar. Foi preciso
-> reescrever o histórico. **Audite o conteúdo de todo arquivo versionado antes
-> de cada commit**, não só antes do push.
-
----
-
-## 9. Conteúdo já resgatado
-
-- `src/lib/conteudo.ts` — textos transcritos do site atual, sem reescrita:
-  os 5 serviços com 3 parágrafos cada, os números da home
-  (2024 / +32 / +10 / 100%), e os links do rodapé.
-- `_referencia/` — o clone completo do Framer (fora do git, 93 MB).
-- `_capturas/` — capturas por breakpoint do site vivo.
-
-O Gabriel dirige as melhorias de texto. **Não invente copy.** Se faltar texto,
-extraia da referência ou pergunte.

@@ -1,9 +1,13 @@
 ---
 import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
 import { site } from '~/lib/site';
 ---
 
 <Base titulo={site.nome} descricao={site.descricao}>
+  <Cabecalho slot="cabecalho" />
+
   <section class="secao container">
     <p class="rotulo">Fundação em construção</p>
     <h1>Espaços que refletem quem você realmente é</h1>
@@ -11,4 +15,6 @@ import { site } from '~/lib/site';
       {site.descricao}
     </p>
   </section>
+
+  <Rodape slot="rodape" />
 </Base>

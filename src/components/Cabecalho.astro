@@ -1,0 +1,212 @@
+---
+import { navegacao, site } from '~/lib/site';
+
+interface Props {
+  /** Sobre hero escura o cabeçalho começa transparente e claro. */
+  sobreHero?: boolean;
+}
+const { sobreHero = false } = Astro.props;
+const atual = Astro.url.pathname.replace(/\/$/, '') || '/';
+const estaAtiva = (href: string) =>
+  href === '/' ? atual === '/' : atual === href || atual.startsWith(`${href}/`);
+---
+
+<header class:list={['cabecalho', sobreHero && 'cabecalho--sobre-hero']} data-cabecalho>
+  <div class="cabecalho__interno container">
+    <a href="/" class="cabecalho__marca" aria-label={`${site.nome} — início`}>
+      {site.nomeCurto}
+    </a>
+
+    <nav class="cabecalho__nav" aria-label="Navegação principal">
+      <ul class="cabecalho__lista">
+        {
+          navegacao.map(({ rotulo, href }) => (
+            <li>
+              <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>
+                {rotulo}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <button
+      type="button"
+      class="cabecalho__alternador"
+      aria-expanded="false"
+      aria-controls="menu-movel"
+      data-alternador
+    >
+      <span class="apenas-leitor">Abrir menu</span>
+      <span class="cabecalho__risco" aria-hidden="true"></span>
+      <span class="cabecalho__risco" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <div class="menu-movel" id="menu-movel" hidden data-menu>
+    <nav aria-label="Navegação principal (celular)">
+      <ul>
+        {
+          navegacao.map(({ rotulo, href }) => (
+            <li>
+              <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>
+                {rotulo}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: var(--camada-cabecalho);
+    background-color: color-mix(in srgb, var(--cor-fundo) 88%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: background-color var(--transicao-media),
+                border-color var(--transicao-media);
+  }
+  /* Só ganha borda depois que a página rola — sem linha flutuando no topo */
+  .cabecalho[data-rolado] { border-bottom-color: var(--cor-borda); }
+
+  .cabecalho__interno {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--esp-md);
+    min-height: 4.5rem;
+  }
+
+  .cabecalho__marca {
+    font-family: var(--fonte-titulo);
+    font-size: var(--texto-md);
+    font-weight: var(--peso-semi);
+    letter-spacing: var(--entre-letras-caixa);
+    text-transform: uppercase;
+    color: var(--cor-tinta);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .cabecalho__nav { display: none; }
+
+  .cabecalho__lista {
+    display: flex;
+    gap: var(--esp-md);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cabecalho__lista a {
+    font-size: var(--texto-sm);
+    text-decoration: none;
+    color: var(--cor-texto);
+    padding-block: var(--esp-2xs);
+    position: relative;
+  }
+  /* Sublinhado que cresce do centro — o detalhe que o Framer não tinha */
+  .cabecalho__lista a::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+    height: 1px;
+    background-color: var(--cor-acento);
+    transform: scaleX(0);
+    transition: transform var(--transicao-media);
+  }
+  .cabecalho__lista a:hover::after,
+  .cabecalho__lista a[aria-current='page']::after { transform: scaleX(1); }
+  .cabecalho__lista a[aria-current='page'] { color: var(--cor-tinta); }
+
+  .cabecalho__alternador {
+    display: grid;
+    place-content: center;
+    gap: 5px;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-inline-end: calc(var(--esp-2xs) * -1);
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .cabecalho__risco {
+    display: block;
+    width: 1.25rem;
+    height: 1.5px;
+    background-color: var(--cor-tinta);
+    transition: transform var(--transicao-media), opacity var(--transicao-rapida);
+  }
+  .cabecalho__alternador[aria-expanded='true'] .cabecalho__risco:first-child {
+    transform: translateY(3.25px) rotate(45deg);
+  }
+  .cabecalho__alternador[aria-expanded='true'] .cabecalho__risco:last-child {
+    transform: translateY(-3.25px) rotate(-45deg);
+  }
+
+  .menu-movel {
+    border-top: 1px solid var(--cor-borda);
+    padding: var(--esp-sm) 0 var(--esp-md);
+  }
+  .menu-movel ul {
+    list-style: none;
+    margin: 0;
+    padding-inline: var(--margem-lateral);
+    display: grid;
+    gap: var(--esp-3xs);
+  }
+  .menu-movel a {
+    display: block;
+    padding: var(--esp-xs) 0;
+    font-family: var(--fonte-titulo);
+    font-size: var(--texto-lg);
+    color: var(--cor-tinta);
+    text-decoration: none;
+  }
+  .menu-movel a[aria-current='page'] { color: var(--cor-acento-escuro); }
+
+  @media (min-width: 60rem) {
+    .cabecalho__nav { display: block; }
+    .cabecalho__alternador { display: none; }
+    .menu-movel { display: none; }
+  }
+</style>
+
+<script>
+  const cabecalho = document.querySelector<HTMLElement>('[data-cabecalho]');
+  const alternador = document.querySelector<HTMLButtonElement>('[data-alternador]');
+  const menu = document.querySelector<HTMLElement>('[data-menu]');
+
+  if (alternador && menu) {
+    alternador.addEventListener('click', () => {
+      const aberto = alternador.getAttribute('aria-expanded') === 'true';
+      alternador.setAttribute('aria-expanded', String(!aberto));
+      menu.hidden = aberto;
+      alternador.querySelector('.apenas-leitor')!.textContent = aberto
+        ? 'Abrir menu'
+        : 'Fechar menu';
+    });
+
+    // Esc fecha o menu — teclado também é gente
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && alternador.getAttribute('aria-expanded') === 'true') {
+        alternador.click();
+        alternador.focus();
+      }
+    });
+  }
+
+  if (cabecalho) {
+    const aoRolar = () => {
+      cabecalho.toggleAttribute('data-rolado', window.scrollY > 8);
+    };
+    aoRolar();
+    window.addEventListener('scroll', aoRolar, { passive: true });
+  }
+</script>

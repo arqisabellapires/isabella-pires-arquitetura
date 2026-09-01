@@ -17,11 +17,11 @@ export const site = {
 } as const;
 
 export const navegacao = [
-  { rotulo: 'Início', href: '/' },
-  { rotulo: 'Projetos', href: '/projetos' },
+  { rotulo: 'Home', href: '/' },
   { rotulo: 'Serviços', href: '/servicos' },
-  { rotulo: 'Sobre', href: '/sobre' },
-  { rotulo: 'Artigos', href: '/artigos' },
+  { rotulo: 'Projetos', href: '/projetos' },
+  { rotulo: 'Blog', href: '/artigos' },
+  { rotulo: 'Sobre nós', href: '/sobre' },
   { rotulo: 'Contato', href: '/contato' },
 ] as const;
 

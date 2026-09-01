@@ -1,0 +1,52 @@
+---
+interface Props {
+  href: string;
+  variante?: 'solido' | 'contorno' | 'claro';
+  class?: string;
+}
+const { href, variante = 'solido', class: classe } = Astro.props;
+---
+<a href={href} class:list={['botao', `botao--${variante}`, classe]}>
+  <span><slot /></span>
+</a>
+
+<style>
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--esp-2xs);
+    padding: 0.85rem var(--esp-md);
+    border-radius: var(--raio-pill);
+    font-size: var(--texto-sm);
+    font-weight: var(--peso-medio);
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color var(--transicao-media),
+                color var(--transicao-media),
+                border-color var(--transicao-media),
+                transform var(--transicao-rapida);
+  }
+  .botao:active { transform: translateY(1px); }
+
+  .botao--solido {
+    background-color: var(--cor-acento);
+    color: #fff;
+  }
+  .botao--solido:hover { background-color: var(--cor-acento-escuro); color: #fff; }
+
+  .botao--contorno {
+    border-color: var(--cor-tinta);
+    color: var(--cor-tinta);
+  }
+  .botao--contorno:hover { background-color: var(--cor-tinta); color: var(--cor-fundo); }
+
+  .botao--claro {
+    border-color: color-mix(in srgb, #fff 55%, transparent);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    background-color: color-mix(in srgb, #000 18%, transparent);
+  }
+  .botao--claro:hover { background-color: #fff; color: var(--cor-tinta); border-color: #fff; }
+</style>

@@ -1,20 +1,330 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
+import Botao from '~/components/Botao.astro';
 import { site } from '~/lib/site';
+
+import heroSala from '~/assets/imagens/hero-sala.jpg';
+import casaIp from '~/assets/imagens/projeto-casa-ip.jpg';
+import apMm from '~/assets/imagens/projeto-ap-mm.jpg';
+import studio from '~/assets/imagens/projeto-studio.png';
+
+const numeros = [
+  { valor: '+120', rotulo: 'Meses dedicados à arquitetura' },
+  { valor: '+40', rotulo: 'Projetos residenciais e comerciais' },
+  { valor: '100%', rotulo: 'Foco em personalização' },
+];
+
+const projetos = [
+  { titulo: 'Casa IP', local: 'Maringá — PR', imagem: casaIp, href: '/projetos/casa-ip' },
+  { titulo: 'AP MM', local: 'Maringá — PR', imagem: apMm, href: '/projetos/ap-mm' },
+  { titulo: 'Studio', local: 'Maringá — PR', imagem: studio, href: '/projetos/studio' },
+];
+
+const servicos = [
+  {
+    titulo: 'Arquitetura Residencial',
+    texto: 'Residências únicas que refletem o estilo de vida dos moradores, com cada detalhe pensado para unir conforto, estética e funcionalidade.',
+  },
+  {
+    titulo: 'Arquitetura Comercial',
+    texto: 'Mais do que estética: projetos que fortalecem marcas e experiências, com ambientes funcionais que valorizam produtos e serviços.',
+  },
+  {
+    titulo: 'Design de Interiores',
+    texto: 'Paleta, mobiliário e disposição pensados juntos, para que o ambiente funcione tão bem quanto emociona.',
+  },
+  {
+    titulo: 'Consultoria e Ambientação',
+    texto: 'Soluções práticas e duradouras para quem quer transformar o espaço sem obra, com atenção aos desejos de cada cliente.',
+  },
+];
 ---
 
 <Base titulo={site.nome} descricao={site.descricao}>
   <Cabecalho slot="cabecalho" />
 
+  <!-- ─── Hero ─────────────────────────────────────────── -->
+  <section class="hero">
+    <Image
+      src={heroSala}
+      alt="Sala de estar integrada com iluminação natural, mobiliário em tons neutros e madeira"
+      class="hero__imagem"
+      widths={[640, 960, 1440, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero__veu"></div>
+    <div class="hero__conteudo container">
+      <h1 class="hero__titulo">
+        Espaços que refletem<br />quem você <em>realmente</em> é
+      </h1>
+      <p class="hero__texto">
+        Mais do que criar ambientes bonitos, nosso propósito é dar vida a espaços com alma.
+        Do primeiro esboço ao acabamento final, tudo é pensado para refletir sua história
+        e estilo de vida.
+      </p>
+      <div class="hero__acoes">
+        <Botao href="/contato" variante="solido">Entrar em contato</Botao>
+        <Botao href="/projetos" variante="claro">Explorar projetos</Botao>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Números ──────────────────────────────────────── -->
+  <section class="numeros">
+    <div class="container numeros__grade">
+      {
+        numeros.map(({ valor, rotulo }) => (
+          <div class="numeros__item">
+            <p class="numeros__valor">{valor}</p>
+            <p class="numeros__rotulo">{rotulo}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ─── Projetos ─────────────────────────────────────── -->
   <section class="secao container">
-    <p class="rotulo">Fundação em construção</p>
-    <h1>Espaços que refletem quem você realmente é</h1>
-    <p style="max-width: var(--largura-texto); margin-top: var(--esp-md);">
-      {site.descricao}
-    </p>
+    <header class="secao__cabecalho">
+      <p class="rotulo">Histórias recentes</p>
+      <h2>Projetos que já ganharam vida</h2>
+    </header>
+
+    <ul class="projetos">
+      {
+        projetos.map(({ titulo, local, imagem, href }) => (
+          <li class="projeto">
+            <a href={href} class="projeto__link">
+              <div class="projeto__moldura">
+                <Image
+                  src={imagem}
+                  alt={`Projeto ${titulo}, em ${local}`}
+                  class="projeto__imagem"
+                  widths={[400, 800, 1200]}
+                  sizes="(min-width: 60rem) 33vw, (min-width: 40rem) 50vw, 100vw"
+                  loading="lazy"
+                />
+              </div>
+              <div class="projeto__texto">
+                <h3 class="projeto__titulo">{titulo}</h3>
+                <p class="projeto__local">{local}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- ─── Serviços ─────────────────────────────────────── -->
+  <section class="servicos">
+    <div class="container">
+      <header class="secao__cabecalho">
+        <p class="rotulo">O que fazemos</p>
+        <h2>Serviços pensados para você</h2>
+      </header>
+
+      <ul class="servicos__grade">
+        {
+          servicos.map(({ titulo, texto }, i) => (
+            <li class="servico">
+              <p class="servico__indice">{String(i + 1).padStart(2, '0')}</p>
+              <h3 class="servico__titulo">{titulo}</h3>
+              <p class="servico__texto">{texto}</p>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="servicos__acao">
+        <Botao href="/servicos" variante="contorno">Ver todos os serviços</Botao>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Chamada final ────────────────────────────────── -->
+  <section class="chamada">
+    <div class="container chamada__interno">
+      <p class="rotulo chamada__rotulo">Contate-nos</p>
+      <h2 class="chamada__titulo">Vamos conversar sobre<br />seu próximo projeto?</h2>
+      <p class="chamada__texto">
+        Conte um pouco sobre o que você sonha para o seu espaço. Preparamos uma
+        proposta feita sob medida para você.
+      </p>
+      <Botao href="/contato" variante="solido">Quero agendar uma reunião</Botao>
+    </div>
   </section>
 
   <Rodape slot="rodape" />
 </Base>
+
+<style>
+  /* ─── Hero ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    display: grid;
+    align-items: end;
+    min-height: min(88svh, 46rem);
+    isolation: isolate;
+    overflow: clip;
+  }
+  .hero :global(.hero__imagem) {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Véu em gradiente: escurece só onde o texto pousa, preserva a foto acima */
+  .hero__veu {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      to top,
+      rgb(23 18 14 / 0.82) 0%,
+      rgb(23 18 14 / 0.55) 38%,
+      rgb(23 18 14 / 0.15) 70%,
+      rgb(23 18 14 / 0.05) 100%
+    );
+  }
+  .hero__conteudo { padding-block: var(--esp-xl) var(--esp-2xl); }
+  .hero__titulo {
+    color: #fff;
+    font-size: var(--texto-3xl);
+    font-weight: var(--peso-semi);
+    max-width: 18ch;
+  }
+  .hero__titulo em {
+    font-style: normal;
+    color: var(--cor-acento-suave);
+  }
+  .hero__texto {
+    color: color-mix(in srgb, #fff 86%, transparent);
+    max-width: 48ch;
+    margin-block-start: var(--esp-md);
+    font-size: var(--texto-md);
+  }
+  .hero__acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-xs);
+    margin-block-start: var(--esp-lg);
+  }
+
+  /* ─── Números ──────────────────────────────────────── */
+  .numeros {
+    background-color: var(--cor-fundo-alt);
+    padding-block: var(--esp-xl);
+  }
+  .numeros__grade {
+    display: grid;
+    gap: var(--esp-lg);
+    text-align: center;
+  }
+  .numeros__valor {
+    font-family: var(--fonte-titulo);
+    font-size: var(--texto-2xl);
+    font-weight: var(--peso-semi);
+    color: var(--cor-tinta);
+    line-height: 1;
+  }
+  .numeros__rotulo {
+    margin-block-start: var(--esp-2xs);
+    font-size: var(--texto-sm);
+    color: var(--cor-texto-suave);
+    max-width: 22ch;
+    margin-inline: auto;
+  }
+
+  /* ─── Cabeçalho de seção ───────────────────────────── */
+  .secao__cabecalho { margin-block-end: var(--esp-lg); }
+  .secao__cabecalho h2 { margin-block-start: var(--esp-2xs); max-width: 20ch; }
+
+  /* ─── Projetos ─────────────────────────────────────── */
+  .projetos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--esp-md);
+  }
+  .projeto__link { text-decoration: none; display: block; }
+  .projeto__moldura {
+    overflow: clip;
+    border-radius: var(--raio-lg);
+    aspect-ratio: 4 / 5;
+    background-color: var(--cor-fundo-alt);
+  }
+  .projeto :global(.projeto__imagem) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transicao-suave);
+  }
+  .projeto__link:hover :global(.projeto__imagem) { transform: scale(1.04); }
+  .projeto__texto {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--esp-sm);
+    padding-block-start: var(--esp-sm);
+  }
+  .projeto__titulo {
+    font-size: var(--texto-md);
+    text-transform: uppercase;
+    letter-spacing: var(--entre-letras-caixa);
+  }
+  .projeto__local { font-size: var(--texto-sm); color: var(--cor-texto-suave); }
+
+  /* ─── Serviços ─────────────────────────────────────── */
+  .servicos {
+    background-color: var(--cor-fundo-alt);
+    padding-block: var(--secao-y);
+  }
+  .servicos__grade {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--esp-lg);
+  }
+  .servico { border-top: 1px solid var(--cor-borda); padding-block-start: var(--esp-sm); }
+  .servico__indice {
+    font-family: var(--fonte-mono);
+    font-size: var(--texto-xs);
+    color: var(--cor-acento);
+  }
+  .servico__titulo { font-size: var(--texto-lg); margin-block: var(--esp-2xs); }
+  .servico__texto { font-size: var(--texto-sm); color: var(--cor-texto-suave); }
+  .servicos__acao { margin-block-start: var(--esp-xl); }
+
+  /* ─── Chamada final ────────────────────────────────── */
+  .chamada { padding-block: var(--secao-y); }
+  .chamada__interno { text-align: center; }
+  .chamada__rotulo { margin-block-end: var(--esp-xs); }
+  .chamada__titulo { margin-block-end: var(--esp-md); }
+  .chamada__texto {
+    max-width: 46ch;
+    margin-inline: auto;
+    margin-block-end: var(--esp-lg);
+    color: var(--cor-texto-suave);
+  }
+
+  /* ─── Pontos de quebra ─────────────────────────────── */
+  @media (min-width: 40rem) {
+    .numeros__grade { grid-template-columns: repeat(3, 1fr); }
+    .projetos { grid-template-columns: repeat(2, 1fr); }
+    .servicos__grade { grid-template-columns: repeat(2, 1fr); gap: var(--esp-lg) var(--esp-xl); }
+  }
+  @media (min-width: 60rem) {
+    .projetos { grid-template-columns: repeat(3, 1fr); gap: var(--esp-lg); }
+    .secao__cabecalho h2 { font-size: var(--texto-2xl); }
+  }
+</style>

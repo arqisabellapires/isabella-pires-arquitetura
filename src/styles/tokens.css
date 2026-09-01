@@ -1,0 +1,103 @@
+/* ============================================================
+   Tokens de design — Isabella Pires Arquitetura
+   Paleta extraída do site original (Framer), normalizada.
+   ============================================================ */
+
+:root {
+  /* ─── Cor ─────────────────────────────────────────────── */
+  --cor-fundo:             #fbf7f4;  /* areia clara — fundo principal */
+  --cor-fundo-alt:         #edeae7;  /* cinza-areia — seções alternadas */
+  --cor-fundo-quente:      #f8efe9;  /* creme — destaques suaves */
+  --cor-fundo-escuro:      #21201f;  /* quase-preto — rodapé, seções invertidas */
+
+  --cor-tinta:             #341f04;  /* marrom profundo — títulos */
+  --cor-texto:             #3a2e26;  /* marrom acinzentado — corpo */
+  --cor-texto-suave:       #6b6560;  /* apoio, legendas, metadados */
+
+  --cor-acento:            #a98c67;  /* caramelo — botões, links, detalhes */
+  --cor-acento-escuro:     #8d7252;  /* hover */
+  --cor-acento-suave:      #f0d9c6;  /* pêssego — fundos de realce */
+
+  --cor-borda:             #e2ddd7;
+  --cor-sobre-escuro:      #fbf7f4;  /* texto sobre fundo escuro */
+
+  /* ─── Tipografia ──────────────────────────────────────── */
+  --fonte-titulo:  'Cairo Play', Georgia, serif;
+  --fonte-corpo:   'Mulish Variable', 'Mulish', system-ui, -apple-system, sans-serif;
+  --fonte-mono:    'Fragment Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Escala fluida: cresce de 360px a 1440px de viewport.
+     Razão 1.2 no mobile, abrindo para 1.333 no desktop — os títulos
+     ganham presença na tela grande sem esmagar o celular. */
+  --texto-xs:   clamp(0.75rem,  0.72rem + 0.15vw, 0.8125rem);
+  --texto-sm:   clamp(0.875rem, 0.85rem + 0.15vw, 0.9375rem);
+  --texto-base: clamp(1rem,     0.96rem + 0.2vw,  1.0625rem);
+  --texto-md:   clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --texto-lg:   clamp(1.375rem, 1.2rem + 0.75vw,  1.75rem);
+  --texto-xl:   clamp(1.75rem,  1.4rem + 1.5vw,   2.5rem);
+  --texto-2xl:  clamp(2.25rem,  1.6rem + 2.8vw,   3.75rem);
+  --texto-3xl:  clamp(2.75rem,  1.7rem + 4.5vw,   5.25rem);
+
+  --peso-normal: 400;
+  --peso-medio:  500;
+  --peso-semi:   600;
+  --peso-forte:  700;
+
+  --altura-apertada: 1.08;   /* títulos grandes */
+  --altura-titulo:   1.18;
+  --altura-corpo:    1.65;   /* leitura confortável em texto longo */
+  --altura-solta:    1.8;
+
+  --entre-letras-titulo: -0.02em;
+  --entre-letras-caixa:   0.08em;  /* para versaletes e rótulos */
+
+  /* ─── Espaçamento ─────────────────────────────────────── */
+  --esp-3xs: 0.25rem;
+  --esp-2xs: 0.5rem;
+  --esp-xs:  0.75rem;
+  --esp-sm:  1rem;
+  --esp-md:  1.5rem;
+  --esp-lg:  2.5rem;
+  --esp-xl:  4rem;
+  --esp-2xl: 6rem;
+  --esp-3xl: 9rem;
+
+  /* Respiro vertical entre seções — fluido */
+  --secao-y: clamp(4rem, 2rem + 8vw, 9rem);
+
+  /* ─── Layout ──────────────────────────────────────────── */
+  --largura-max:     84rem;   /* 1344px — contêiner geral */
+  --largura-texto:   38rem;   /* ~65 caracteres — medida de leitura */
+  --largura-estreita: 56rem;
+  --margem-lateral:  clamp(1.25rem, 0.5rem + 3.5vw, 4rem);
+
+  /* ─── Forma e profundidade ────────────────────────────── */
+  --raio-sm:  4px;
+  --raio-md:  8px;
+  --raio-lg:  16px;
+  --raio-pill: 999px;
+
+  --sombra-sutil: 0 1px 2px rgb(52 31 4 / 0.04),
+                  0 2px 8px rgb(52 31 4 / 0.04);
+  --sombra-media: 0 2px 4px rgb(52 31 4 / 0.05),
+                  0 12px 32px rgb(52 31 4 / 0.08);
+
+  /* ─── Movimento ───────────────────────────────────────── */
+  --transicao-rapida: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transicao-media:  320ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transicao-suave:  600ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --camada-base: 1;
+  --camada-cabecalho: 100;
+  --camada-menu: 200;
+  --camada-cursor: 9999;
+}
+
+/* Quem pediu menos movimento, recebe menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transicao-rapida: 1ms;
+    --transicao-media:  1ms;
+    --transicao-suave:  1ms;
+  }
+}

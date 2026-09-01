@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.env
+.env*.local
+.DS_Store
+npm-debug.log*
+
+# Material de referência e importação — pesado, fora do versionamento
+_referencia/
+_importar/

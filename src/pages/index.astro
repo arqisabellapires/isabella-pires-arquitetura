@@ -1,0 +1,14 @@
+---
+import Base from '~/layouts/Base.astro';
+import { site } from '~/lib/site';
+---
+
+<Base titulo={site.nome} descricao={site.descricao}>
+  <section class="secao container">
+    <p class="rotulo">Fundação em construção</p>
+    <h1>Espaços que refletem quem você realmente é</h1>
+    <p style="max-width: var(--largura-texto); margin-top: var(--esp-md);">
+      {site.descricao}
+    </p>
+  </section>
+</Base>

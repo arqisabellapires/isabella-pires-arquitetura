@@ -1,0 +1,66 @@
+---
+import { site } from '~/lib/site';
+
+interface Props {
+  titulo: string;
+  descricao: string;
+  imagem?: string;
+  tipo?: 'website' | 'article';
+  publicadoEm?: Date;
+  atualizadoEm?: Date;
+  autor?: string;
+  noindex?: boolean;
+}
+
+const {
+  titulo,
+  descricao,
+  imagem = site.imagemPadrao,
+  tipo = 'website',
+  publicadoEm,
+  atualizadoEm,
+  autor,
+  noindex = false,
+} = Astro.props;
+
+const canonica = new URL(Astro.url.pathname, site.url).href.replace(/(.+)\/$/, '$1');
+const imagemAbsoluta = new URL(imagem, site.url).href;
+// Evita "Isabella Pires Arquitetura | Isabella Pires Arquitetura" na home.
+const tituloCompleto = titulo === site.nome ? titulo : `${titulo} | ${site.nome}`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': tipo === 'article' ? 'BlogPosting' : 'WebPage',
+  headline: titulo,
+  description: descricao,
+  url: canonica,
+  image: imagemAbsoluta,
+  inLanguage: site.idioma,
+  ...(tipo === 'article' && {
+    datePublished: publicadoEm?.toISOString(),
+    dateModified: (atualizadoEm ?? publicadoEm)?.toISOString(),
+    author: { '@type': 'Person', name: autor ?? site.autora },
+    publisher: { '@type': 'Organization', name: site.nome, url: site.url },
+  }),
+};
+---
+
+<title>{tituloCompleto}</title>
+<meta name="description" content={descricao} />
+<link rel="canonical" href={canonica} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<meta property="og:type" content={tipo} />
+<meta property="og:title" content={tituloCompleto} />
+<meta property="og:description" content={descricao} />
+<meta property="og:url" content={canonica} />
+<meta property="og:image" content={imagemAbsoluta} />
+<meta property="og:site_name" content={site.nome} />
+<meta property="og:locale" content={site.locale} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={tituloCompleto} />
+<meta name="twitter:description" content={descricao} />
+<meta name="twitter:image" content={imagemAbsoluta} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

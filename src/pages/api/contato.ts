@@ -28,10 +28,6 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   // devolver erro só ensina o robô a tentar de novo sem a isca.
   if (caiuNaIsca(dados)) return responde(request, { ok: true }, 200);
 
-  if (excedeuLimite(clientAddress ?? 'desconhecido')) {
-    return responde(request, { ok: false, erro: 'Muitos envios seguidos. Tente de novo em alguns minutos.' }, 429);
-  }
-
   const contato = {
     nome: campo(dados, ['Name', 'nome'], 120),
     email: campo(dados, ['Email', 'email'], 254),
@@ -45,6 +41,13 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   }
   if (!emailPlausivel(contato.email)) {
     return responde(request, { ok: false, erro: 'Confira o e-mail informado.' }, 422);
+  }
+
+  // O limite fica depois da validação de propósito: o que ele protege é a cota
+  // de 300 envios/dia da Brevo, e envio recusado por validação não consome cota.
+  // Contar tentativa inválida trancaria por 10 minutos quem só errou o e-mail.
+  if (excedeuLimite(clientAddress ?? 'desconhecido')) {
+    return responde(request, { ok: false, erro: 'Muitos envios seguidos. Tente de novo em alguns minutos.' }, 429);
   }
 
   try {

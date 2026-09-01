@@ -142,8 +142,7 @@ Breakpoints reais do Framer, extraídos do CSS dele:
    - **Carrossel de projetos**: só `CASA IP` está no DOM. Existem 4 projetos —
      o quarto é `COZINHA LA`, descoberto clicando a seta na referência, e não
      tem página no clone.
-2. **Formulário** → Brevo. O `action` aponta para `/api/contato`, que ainda
-   não existe. Honeypot e rate limit já previstos.
+2. ~~**Formulário** → Brevo.~~ Feito — ver seção 6.1.
 3. **Sitemap** — o do Astro não gera mais nada, porque não há páginas em
    `src/pages/`. Precisa sair do pipeline.
 4. **GA4 e Clarity** — as variáveis existem no `.env`, falta injetar.
@@ -151,6 +150,91 @@ Breakpoints reais do Framer, extraídos do CSS dele:
    e cortar o Framer.
 6. **CMS** — Supabase. As páginas de artigo compartilham um molde; a região
    de conteúdo vira slot.
+
+### 6.1. Brevo — o que existe e o que trava
+
+**Código, pronto e testado localmente:**
+
+| Arquivo | Papel |
+|---|---|
+| `src/lib/brevo.ts` | Cliente da API: e-mail transacional e criação de contato |
+| `src/lib/antispam.ts` | Campos-isca, limite por IP, validação de e-mail |
+| `src/lib/ambiente.ts` | Lê env de `process.env` **e** `import.meta.env` |
+| `src/lib/resposta.ts` | Responde JSON para o fetch, 303 para envio sem JS |
+| `src/pages/api/contato.ts` | Formulário de contato (home e /contato) |
+| `src/pages/api/newsletter.ts` | Inscrição do rodapé de /artigos |
+| `public/formularios.js` | Intercepta o submit e responde na própria página |
+
+O `processa-framer.mjs` ganhou o passo 5: injeta `method`/`action` em cada
+`<form>` do Framer, escolhendo a rota pela presença do campo `Mensagem`. Por
+isso o envio funciona **mesmo sem JavaScript** — o endpoint devolve 303 de volta
+para a página com `?envio=ok|erro`. Nada é inserido no DOM antes do primeiro
+envio, para não quebrar o portão de fidelidade.
+
+Os 11 campos-isca são os que o **próprio Framer** já emitia (`website`,
+`company`, `message`, `subject`…). Não foram inventados; foram reaproveitados.
+
+**Verificado local** (`astro dev` + curl): isca → 200 silencioso; campo faltando
+→ 422; e-mail inválido → 422; sem JS → 303 com `?envio=`; 6º envio válido em
+10 min → 429. Os dois formatos que o navegador usa (urlencoded e multipart)
+parseiam igual, inclusive com o campo acentuado `Serviço`.
+
+**Decisão:** o limite por IP roda **depois** da validação. Ele protege a cota de
+300 envios/dia da Brevo, e envio recusado por validação não consome cota —
+contar tentativa inválida trancaria por 10 min quem só errou o e-mail.
+
+**Ressalva:** o limite é um `Map` em memória, por instância da função. Segura
+repetição de um visitante, não ataque distribuído. Se um dia não bastar, o
+próximo passo é KV/Upstash, não afinar os números.
+
+**Armadilha medida, não suposta:** a `POST /v3/smtp/email` devolve **201 com
+`messageId`** e só **depois** rejeita, de forma assíncrona. Com o domínio não
+autenticado, o log de eventos mostra `requests` seguido de `error — Sending has
+been rejected because the sender you used ... is not valid`. Ou seja: a resposta
+de sucesso da API **não é prova de entrega**, e o visitante vê "Recebido"
+enquanto o lead se perde. A única verificação confiável é
+`GET /v3/smtp/statistics/events`, que leva ~30 s para popular.
+
+Consequência prática: **não vale subir o formulário em produção antes de o DKIM
+estar propagado.** A alternativa provisória é trocar `BREVO_REMETENTE_EMAIL` para
+`arqisabellapires@gmail.com`, que já é remetente validado — funciona hoje, mas
+sai com DMARC desalinhado (o domínio do envelope não é gmail.com) e tende a
+cair em spam.
+
+**O bloqueio por IP é instável.** Depois de autorizar o IP, as chamadas passaram
+a alternar entre 200 e 401 na mesma sequência — a lista propaga de forma desigual
+entre os nós da Brevo. Para função da Vercel, com IP dinâmico, whitelist não é
+opção: o recurso precisa ficar **desligado**.
+
+**O que trava agora, em ordem:**
+
+1. **Autenticar o domínio na Brevo.** Único bloqueio restante. O domínio já foi
+   criado (id `6a9627fd736b02920808cf56`); faltam 4 registros no registro.br:
+
+   | Tipo | Nome | Valor |
+   |---|---|---|
+   | CNAME | `brevo1._domainkey` | `b1.isabellapiresarquitetura-com-br.dkim.brevo.com` |
+   | CNAME | `brevo2._domainkey` | `b2.isabellapiresarquitetura-com-br.dkim.brevo.com` |
+   | TXT | *(vazio = raiz)* | `brevo-code:e2319a36aed4e27d5e035c9e8f99e8c0` |
+   | TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com` |
+
+   Conferir com `GET /v3/senders/domains` até `authenticated: true`.
+2. **Redeploy.** As variáveis de ambiente da Vercel só valem no build seguinte.
+   Hoje `/api/contato` em produção devolve 502 por env ausente — o que, por sorte,
+   é melhor que o falso sucesso descrito acima.
+
+**Já resolvido:** conta Brevo é `arqisabellapires@gmail.com`, plano free, 300
+envios/dia. `BREVO_DESTINO_EMAIL=arqisabellapires@gmail.com` (única caixa que
+existe — a zona não tem MX, então `contato@` não recebe). Lista "Newsletter do
+blog" criada, `BREVO_LISTA_NEWSLETTER_ID=3`. As cinco variáveis estão na Vercel.
+
+**Verificado contra a API real:** a newsletter funciona fim a fim — o contato de
+teste apareceu na lista 3 e foi removido depois. O contato ainda não, por causa
+do item 1.
+
+**Resquício:** `src/components/Formulario.astro` é da reconstrução manual
+abandonada e não é usado por nada — o formulário real é o HTML do Framer.
+Apagar quando alguém confirmar que não serve de referência.
 
 ---
 
@@ -181,8 +265,12 @@ Tudo em `.env` (ignorado pelo git). `.env.example` é o formulário em branco.
 `PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`,
 `SUPABASE_DATABASE_PASSWORD`.
 
-**Faltam:** `BREVO_API_KEY`, `BREVO_DESTINO_EMAIL`, `PUBLIC_GA4_ID`,
-`PUBLIC_CLARITY_ID`.
+**Faltam:** `BREVO_DESTINO_EMAIL`, `BREVO_LISTA_NEWSLETTER_ID`,
+`PUBLIC_GA4_ID`, `PUBLIC_CLARITY_ID`.
+
+Na Vercel já estão configuradas (produção, preview e dev): `BREVO_API_KEY`
+(encrypted), `BREVO_REMETENTE_EMAIL`, `BREVO_REMETENTE_NOME`. Variável nova só
+vale a partir do próximo deploy.
 
 O git não tem credential helper configurado. Para dar push:
 ```bash

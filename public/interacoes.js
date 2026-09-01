@@ -124,13 +124,103 @@
     }, { passive: true });
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', inicia);
-  else inicia();
+
+  // ─────────────────────────────────────────────────────────────────
+  //  Variantes: hover de card e menu de celular
+  //
+  //  Cada componente do Framer é uma máquina de estado, e o CSS de TODAS
+  //  as variantes vem servido na página — inclusive das que o HTML não
+  //  usa. São os estados de hover e aberto, esperando alguém aplicar.
+  //
+  //  public/variantes.json diz qual classe é o repouso e qual é a
+  //  resposta. A tabela sai de tools/extrai-variantes.mjs, que lê os
+  //  nomes que a designer deu no Framer ("Casa IP Desktop - Hover").
+  //
+  //  Nem todo par funciona: os do acordeão trocam de classe sem mudar
+  //  nada, porque o conteúdo do painel aberto não está no DOM. Ficam
+  //  registrados no JSON e são ignorados aqui por não terem efeito.
+  // ─────────────────────────────────────────────────────────────────
+
+  const MOLA_CSS = 'cubic-bezier(.34, 1.2, .64, 1)';   // ≈ spring bounce .2
+
+  /**
+   * Um par só serve se trocar a classe mudar alguma coisa na tela. Vários
+   * não mudam — o painel aberto do acordeão não tem conteúdo no DOM, e o
+   * cabeçalho tem par de Open/Closed que não altera geometria. Aplicar
+   * handler neles seria pior que inútil: o de clique chamaria
+   * preventDefault e mataria a navegação do site inteiro.
+   */
+  function temEfeito(el, par) {
+    const medir = () => { const b = el.getBoundingClientRect(); const s = getComputedStyle(el);
+      return `${Math.round(b.width)}x${Math.round(b.height)}|${s.opacity}|${s.transform}|${s.backgroundColor}`; };
+    const antes = medir();
+    el.classList.remove(par.de); el.classList.add(par.para);
+    const depois = medir();
+    el.classList.remove(par.para); el.classList.add(par.de);
+    return antes !== depois;
+  }
+
+  function aplicaVariantes(pares) {
+    const raiz = arvoreAtiva();
+    const reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let ligados = 0;
+
+    for (const par of pares) {
+      for (const el of raiz.querySelectorAll('.' + par.de)) {
+        if (el.dataset.variantePronta) continue;
+        if (!temEfeito(el, par)) continue;
+        el.dataset.variantePronta = '1';
+        ligados++;
+
+        if (!reduzido) {
+          el.style.transition =
+            `height .4s ${MOLA_CSS}, width .4s ${MOLA_CSS}, transform .4s ${MOLA_CSS}, opacity .3s ease`;
+        }
+
+        const troca = (ligado) => {
+          el.classList.toggle(par.de, !ligado);
+          el.classList.toggle(par.para, ligado);
+          el.dataset.varianteAtiva = ligado ? '1' : '';
+        };
+
+        if (par.gatilho === 'hover') {
+          el.addEventListener('mouseenter', () => troca(true));
+          el.addEventListener('mouseleave', () => troca(false));
+          el.addEventListener('focusin', () => troca(true));
+          el.addEventListener('focusout', () => troca(false));
+        } else {
+          el.addEventListener('click', (e) => {
+            // Link navega, sempre. Nunca chamar preventDefault aqui: o
+            // cabeçalho é um destes elementos, e bloquear o clique dele
+            // derrubaria a navegação do site inteiro.
+            if (e.target.closest('a[href]')) return;
+            troca(el.dataset.varianteAtiva !== '1');
+          });
+        }
+      }
+    }
+    return ligados;
+  }
+
+  async function iniciaVariantes() {
+    let pares;
+    try {
+      const r = await fetch('/variantes.json');
+      if (!r.ok) return;
+      ({ pares } = await r.json());
+    } catch { return; }
+    if (!Array.isArray(pares)) return;
+    aplicaVariantes(pares.filter((par) => arvoreAtiva().querySelector('.' + par.de)));
+  }
+
+  const tudo = () => { inicia(); iniciaVariantes(); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', tudo);
+  else tudo();
 
   // A troca de breakpoint põe outra árvore no layout, com os próprios ocultos.
   let redimensionando;
   window.addEventListener('resize', () => {
     clearTimeout(redimensionando);
-    redimensionando = setTimeout(inicia, 250);
+    redimensionando = setTimeout(tudo, 250);
   });
 })();

@@ -76,6 +76,51 @@ e capturam a saída. O Framer não tem export nativo, por decisão de lock-in.
   navegador e PNG para `fetch`, mas isso vale só 0,19% — medido). A causa
   real não foi encontrada. Como a página vira template do CMS de qualquer
   forma, foi deixada assim de propósito.
+- **Movimento: o que existe, o que falta.** Medido, não estimado — e a
+  medição corrigiu duas conclusões erradas anteriores.
+
+  **Hover não existe no site original.** Varredura no site vivo do Framer:
+  **0 de 46 elementos**, em 3 páginas, respondem ao ponteiro. Links,
+  botões e imagens não têm hover lá. Uma versão anterior deste documento
+  dizia "327 links sem hover, 92 imagens sem zoom" — era erro de método:
+  mediu-se a nossa saída sem conferir se a original fazia algo.
+  *Ressalva:* medido com ponteiro sintético do Playwright.
+
+  **O que de fato funciona hoje**, em `public/interacoes.js`:
+
+  | Interação | Como |
+  |---|---|
+  | Scroll reveals | Reimplementados. Mola por oscilador amortecido |
+  | Menu de celular | Troca de variante — cabeçalho 59px → 223px |
+  | Hover do card de projeto | Troca de variante — 557px → 367px |
+
+  **O mecanismo genérico:** o CSS de *todas* as variantes de um componente
+  vem servido na página, inclusive das que o HTML não usa — são os estados
+  de hover e aberto esperando alguém aplicar. `tools/extrai-variantes.mjs`
+  lê `variantClassNames` e `humanReadableVariantMap` do fonte do Framer e
+  gera `public/variantes.json` pareando repouso → resposta pelos nomes que
+  a designer deu ("Casa IP Desktop - Hover"). Reviver a interação é trocar
+  a classe.
+
+  **Trava importante:** o runtime testa cada par antes de ligar handler —
+  troca a classe, mede, desfaz. Par que não muda nada é descartado. Sem
+  isso, o cabeçalho (que tem par Open/Closed inerte) receberia um handler
+  de clique com `preventDefault` e **mataria a navegação do site inteiro**.
+  Nunca chamar `preventDefault` em clique que caiu num `a[href]`.
+
+  **Falta**, e os dois dependem de conteúdo ausente do DOM:
+  - **Acordeão de serviços** — trocar a classe não muda nada, porque o
+    painel aberto não tem conteúdo. Os 5 textos estão em `src/lib/conteudo.ts`.
+  - **Carrossel de projetos** — só `CASA IP` no DOM. O mapa de variantes
+    confirma 4: `Casa IP`, `AP MM`, `STUDIO` e `COZINHA LA`, esta última
+    sem página no clone.
+
+- **`/artigos/` fica ~1% acima do limite** no desktop e no tablet. Já foram
+  descartados: layout (DOM idêntico, mesmas posições), imagens (mesmos 24
+  arquivos nas mesmas posições) e codec (a CDN do Framer serve AVIF para o
+  navegador e PNG para `fetch`, mas isso vale só 0,19% — medido). A causa
+  real não foi encontrada. Como a página vira template do CMS de qualquer
+  forma, foi deixada assim de propósito.
 - **Praticamente todo o movimento está morto, não "4 interações".** Isso foi
   medido, não estimado. O Framer faz hover por **variante em JavaScript**,
   não por CSS — existem 51 regras `:hover` no CSS servido, e nenhuma pega

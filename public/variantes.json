@@ -1,0 +1,84 @@
+{
+ "pares": [
+  {
+   "componente": "n8yL1JHdr.js",
+   "gatilho": "clique",
+   "de": "framer-v-1wsop6p",
+   "para": "framer-v-oxme8k",
+   "assunto": "Open",
+   "largura": null
+  },
+  {
+   "componente": "i15JnwUan.js",
+   "gatilho": "clique",
+   "de": "framer-v-1k08968",
+   "para": "framer-v-1goo2da",
+   "assunto": "Open",
+   "largura": null
+  },
+  {
+   "componente": "f4n4OEmqR.js",
+   "gatilho": "clique",
+   "de": "framer-v-1mux62y",
+   "para": "framer-v-1xamux2",
+   "assunto": "Open",
+   "largura": null
+  },
+  {
+   "componente": "IItBHcQ2o.js",
+   "gatilho": "clique",
+   "de": "framer-v-14nbjqd",
+   "para": "framer-v-3h70cy",
+   "assunto": "Phone Open",
+   "largura": "mobile"
+  },
+  {
+   "componente": "Qv_x9EZNH.js",
+   "gatilho": "clique",
+   "de": "framer-v-10hijyr",
+   "para": "framer-v-14q13sg",
+   "assunto": "ap mm",
+   "largura": "mobile"
+  },
+  {
+   "componente": "Qv_x9EZNH.js",
+   "gatilho": "hover",
+   "de": "framer-v-1tui4an",
+   "para": "framer-v-2owmgo",
+   "assunto": "studio",
+   "largura": "desktop"
+  },
+  {
+   "componente": "Qv_x9EZNH.js",
+   "gatilho": "clique",
+   "de": "framer-v-1dvtl3z",
+   "para": "framer-v-g6mp7s",
+   "assunto": "studio",
+   "largura": "mobile"
+  },
+  {
+   "componente": "Qv_x9EZNH.js",
+   "gatilho": "clique",
+   "de": "framer-v-p6pido",
+   "para": "framer-v-1pkibmu",
+   "assunto": "cozinha la",
+   "largura": "mobile"
+  },
+  {
+   "componente": "Qv_x9EZNH.js",
+   "gatilho": "hover",
+   "de": "framer-v-1s0yo9y",
+   "para": "framer-v-1pm1y0o",
+   "assunto": "casa ip",
+   "largura": "desktop"
+  },
+  {
+   "componente": "Qv_x9EZNH.js",
+   "gatilho": "clique",
+   "de": "framer-v-1m3zwg4",
+   "para": "framer-v-ce4yy1",
+   "assunto": "casa ip",
+   "largura": "mobile"
+  }
+ ]
+}

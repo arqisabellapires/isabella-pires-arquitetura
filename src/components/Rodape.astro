@@ -1,34 +1,31 @@
 ---
-import { navegacao, site } from '~/lib/site';
-const ano = new Date().getFullYear();
+import { site } from '~/lib/site';
+import { rodapeLinks } from '~/lib/conteudo';
 ---
 
 <footer class="rodape">
   <div class="container rodape__interno">
     <div class="rodape__marca">
       <p class="rodape__nome">{site.nomeCurto}</p>
-      <p class="rodape__frase">{site.descricao}</p>
     </div>
 
-    <nav class="rodape__nav" aria-label="Navegação do rodapé">
-      <p class="rotulo rodape__rotulo">Navegue</p>
+    <nav class="rodape__coluna" aria-label="Institucional">
+      <p class="rotulo rodape__rotulo">Institucional</p>
       <ul>
-        {navegacao.map(({ rotulo, href }) => <li><a href={href}>{rotulo}</a></li>)}
+        {rodapeLinks.institucional.map(({ rotulo, href }) => <li><a href={href}>{rotulo}</a></li>)}
       </ul>
     </nav>
 
-    <div class="rodape__contato">
-      <p class="rotulo rodape__rotulo">Contato</p>
+    <nav class="rodape__coluna" aria-label="Informações">
+      <p class="rotulo rodape__rotulo">Informações</p>
       <ul>
-        {site.email && <li><a href={`mailto:${site.email}`}>{site.email}</a></li>}
-        {site.telefone && <li><a href={`tel:${site.telefone.replace(/\D/g, '')}`}>{site.telefone}</a></li>}
-        {site.redes.instagram && <li><a href={site.redes.instagram} rel="me noopener" target="_blank">Instagram</a></li>}
+        {rodapeLinks.informacoes.map(({ rotulo, href }) => <li><a href={href}>{rotulo}</a></li>)}
       </ul>
-    </div>
+    </nav>
   </div>
 
   <div class="container rodape__base">
-    <p>© {ano} {site.nome}. Todos os direitos reservados.</p>
+    <p>© 2025 Arquiteta Isabella Pires</p>
   </div>
 </footer>
 
@@ -40,13 +37,7 @@ const ano = new Date().getFullYear();
     color: color-mix(in srgb, var(--cor-sobre-escuro) 78%, transparent);
     font-size: var(--texto-sm);
   }
-
-  .rodape__interno {
-    display: grid;
-    gap: var(--esp-lg);
-    padding-block-end: var(--esp-xl);
-  }
-
+  .rodape__interno { display: grid; gap: var(--esp-lg); padding-block-end: var(--esp-xl); }
   .rodape__nome {
     font-family: var(--fonte-titulo);
     font-size: var(--texto-lg);
@@ -54,42 +45,20 @@ const ano = new Date().getFullYear();
     letter-spacing: var(--entre-letras-caixa);
     text-transform: uppercase;
   }
-  .rodape__frase {
-    margin-block-start: var(--esp-2xs);
-    max-width: 34ch;
-    line-height: var(--altura-corpo);
-  }
-
   .rodape__rotulo {
     color: color-mix(in srgb, var(--cor-sobre-escuro) 55%, transparent);
     margin-block-end: var(--esp-xs);
   }
-
-  .rodape ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: var(--esp-2xs);
-  }
-  .rodape a {
-    text-decoration: none;
-    color: inherit;
-    transition: color var(--transicao-rapida);
-  }
+  .rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--esp-2xs); }
+  .rodape a { text-decoration: none; color: inherit; transition: color var(--transicao-rapida); }
   .rodape a:hover { color: var(--cor-acento-suave); }
-
   .rodape__base {
     padding-block: var(--esp-sm);
     border-top: 1px solid color-mix(in srgb, var(--cor-sobre-escuro) 12%, transparent);
     font-size: var(--texto-xs);
     color: color-mix(in srgb, var(--cor-sobre-escuro) 55%, transparent);
   }
-
   @media (min-width: 48rem) {
-    .rodape__interno {
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: var(--esp-xl);
-    }
+    .rodape__interno { grid-template-columns: 2fr 1fr 1fr; gap: var(--esp-xl); }
   }
 </style>

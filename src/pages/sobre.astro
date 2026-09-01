@@ -4,6 +4,7 @@ import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Migalhas from '~/components/Migalhas.astro';
 import Botao from '~/components/Botao.astro';
+import { servicos } from '~/lib/conteudo';
 
 const pilares = [
   { titulo: 'Transparência e clareza', texto: 'Planejamento e custos sem surpresas.' },
@@ -54,8 +55,8 @@ const metodo = [
   <Migalhas atual="Quem somos" />
 
   <section class="secao container">
-    <p class="rotulo">Nossa história</p>
-    <h1 class="historia__titulo">Ideias que viram lugares<br />para viver</h1>
+    <p class="rotulo">Quem somos</p>
+    <h1 class="historia__titulo">Nossa História</h1>
 
     <div class="historia__texto">
       <p>
@@ -106,8 +107,20 @@ const metodo = [
 
   <section class="secao container">
     <header class="secao__cabecalho">
+      <p class="rotulo">Nossos Serviços</p>
+      <h2>Nós entregamos apenas o nosso melhor</h2>
+    </header>
+    <ul class="lista-servicos">
+      {servicos.map(({ tituloCompleto, slug }) => (
+        <li><a href={`/servicos#${slug}`}>{tituloCompleto}</a></li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="secao container">
+    <header class="secao__cabecalho">
       <p class="rotulo">Passo a passo</p>
-      <h2>Um método simples, rápido e efetivo</h2>
+      <h2>Nós temos um método simples,<br />rápido e efetivo</h2>
     </header>
 
     <ol class="metodo">
@@ -127,6 +140,8 @@ const metodo = [
     <div class="acao">
       <Botao href="/contato" variante="solido">Quero agendar uma reunião</Botao>
     </div>
+
+    <p class="instagram">Siga-nos no instagram!</p>
   </section>
 
   <Rodape slot="rodape" />
@@ -180,6 +195,26 @@ const metodo = [
   .etapa__texto { font-size: var(--texto-sm); color: var(--cor-texto-suave); max-width: 60ch; }
 
   .acao { margin-block-start: var(--esp-xl); }
+
+  .lista-servicos { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--esp-sm); }
+  .lista-servicos a {
+    display: block;
+    border-top: 1px solid var(--cor-borda);
+    padding-block: var(--esp-sm);
+    font-family: var(--fonte-titulo);
+    font-size: var(--texto-lg);
+    color: var(--cor-tinta);
+    text-decoration: none;
+    transition: color var(--transicao-rapida), padding-inline-start var(--transicao-media);
+  }
+  .lista-servicos a:hover { color: var(--cor-acento-escuro); padding-inline-start: var(--esp-xs); }
+
+  .instagram {
+    margin-block-start: var(--esp-xl);
+    font-family: var(--fonte-titulo);
+    font-size: var(--texto-lg);
+    color: var(--cor-tinta);
+  }
 
   @media (min-width: 48rem) {
     .pilares { grid-template-columns: repeat(3, 1fr); gap: var(--esp-lg); }

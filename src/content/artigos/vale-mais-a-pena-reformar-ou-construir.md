@@ -1,7 +1,7 @@
 ---
 titulo: "Vale mais a pena reformar ou construir?"
 resumo: "Reformar ou construir: qual vale mais a pena? Descubra os custos, vantagens e o que analisar antes de investir no seu imóvel."
-capa: "./imagens/vale-mais-a-pena-reformar-ou-construir.jpg"
+capa: "./imagens/vale-mais-a-pena-reformar-ou-construir.png"
 capaAlt: "Vale mais a pena reformar ou construir?"
 autor: "Isabella Pires"
 seoDescricao: "Reformar ou construir: qual vale mais a pena? Descubra os custos, vantagens e o que analisar antes de investir no seu imóvel."

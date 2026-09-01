@@ -1,7 +1,7 @@
 ---
 titulo: "Organize sua casa com olhar de arquiteto"
 resumo: "Organizar a casa vai muito além de arrumar objetos. É sobre estratégia espacial.  Neste post, você aprende como aplicar princípios da arquitetura na organização do dia a dia, criando ambientes mais funcionais, fluidos e inteligentes. Menos improviso, mais planejamento. Mais estética, mas principalm…"
-capa: "./imagens/organize-sua-casa-com-olhar-de-arquiteto.jpg"
+capa: "./imagens/organize-sua-casa-com-olhar-de-arquiteto.png"
 capaAlt: "Organize sua casa com olhar de arquiteto"
 autor: "Isabella Pires"
 tags: ["organização da casa", "organização residencial", "casa organizada", "organização de ambientes", "como organizar a casa", "organização prática", "dicas para organizar a casa sozinho", "organização sem reforma", "soluções inteligentes de armazenamento"]

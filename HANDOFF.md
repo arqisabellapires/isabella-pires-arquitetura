@@ -76,8 +76,27 @@ e capturam a saída. O Framer não tem export nativo, por decisão de lock-in.
   navegador e PNG para `fetch`, mas isso vale só 0,19% — medido). A causa
   real não foi encontrada. Como a página vira template do CMS de qualquer
   forma, foi deixada assim de propósito.
-- **4 interações mortas**: carrossel de projetos, acordeão de serviços,
-  menu de celular e scroll reveals. Sem o runtime do Framer, nada disso roda.
+- **Praticamente todo o movimento está morto, não "4 interações".** Isso foi
+  medido, não estimado. O Framer faz hover por **variante em JavaScript**,
+  não por CSS — existem 51 regras `:hover` no CSS servido, e nenhuma pega
+  os elementos que importam. Teste: 0 de 12 elementos da primeira dobra de
+  `/projetos/` respondem ao ponteiro.
+
+  | Medido, só no desktop, nas 14 páginas | |
+  |---|---|
+  | Links visíveis sem hover | 327 |
+  | Botões sem hover | 50 |
+  | Imagens sem zoom | 92 |
+  | Nós com estado (`Closed`/`Trigger`/`Hover`) | 74 |
+
+  No fonte do Framer: 498 `onTap`, 40 `useVariantState`, 17 componentes com
+  máquina de estado de 2 a 16 variantes.
+
+  **Não são 500 trabalhos distintos** — cabeçalho e rodapé se repetem nas 14
+  páginas. Em componentes distintos são cerca de dez: hover de link de
+  navegação, hover de botão, zoom de imagem, card de projeto, card de
+  artigo, acordeão, carrossel, menu de celular, e os scroll reveals, que
+  são os únicos prontos.
 - **O passo WebP não foi reverificado.** Os 40/42 foram medidos antes dele.
 
 ### Duas armadilhas que quase falsificaram o resultado

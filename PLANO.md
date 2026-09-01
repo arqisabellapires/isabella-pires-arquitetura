@@ -1,5 +1,7 @@
 # Isabella Pires Arquitetura — plano de migração
 
+> **Estado atual, ferramentas e próximos passos: [HANDOFF.md](HANDOFF.md).**
+
 Substituição do site em Framer por um site próprio em código.
 
 ## Decisões fechadas

@@ -3,6 +3,14 @@
 Migração do site do Framer para código próprio. Este documento é o estado
 completo do projeto. Leia antes de tocar em qualquer coisa.
 
+> **Rumo decidido em 01/09/2026:** reconstruir em Astro usando as capturas
+> como especificação medida, com cutover página por página, e CMS de blog
+> próprio e reutilizável. O site estático em `public/` é a ponte, não o
+> destino. Desenho, fases e portões em
+> [docs/superpowers/specs/](docs/superpowers/specs/) e resumo em
+> [PLANO.md](PLANO.md). As seções 4 e 5 abaixo descrevem o **estado da
+> ponte**; onde conflitarem com a spec, a spec manda.
+
 Último commit desta rodada: `029ce76`.
 
 ---
@@ -143,6 +151,10 @@ public/img-artigos/  19 imagens de dentro dos artigos, WebP (versionado)
 ---
 
 ## 4. O que falta
+
+> Esta seção descreve o que falta **no site estático que está no ar**. O
+> plano de substituí-lo está na spec; itens daqui só valem enquanto a
+> página correspondente não tiver sido reconstruída.
 
 Em ordem de dependência: os itens 1 e 2 destravam vários outros.
 
@@ -299,7 +311,7 @@ Não reabrir sem falar com o Gabriel.
 
 | Tema | Decisão |
 |---|---|
-| Estratégia | **Processar o HTML renderizado do Framer**, não reconstruir à mão |
+| Estratégia | ~~Processar o HTML renderizado do Framer~~ → **Reconstruir em Astro medindo a captura** (spec de 01/09/2026). O HTML processado fica no ar só até cada página ser substituída |
 | Responsivo | Capturar os 3 breakpoints e empilhar no mesmo HTML |
 | Fidelidade | Portão de pixel: falha acima de 0,5% de divergência |
 | Hospedagem | Vercel Hobby — risco aceito |

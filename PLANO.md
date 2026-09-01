@@ -1,48 +1,70 @@
-# Isabella Pires Arquitetura — plano de migração
+# Isabella Pires Arquitetura — plano
 
-> **Estado atual, ferramentas e próximos passos: [HANDOFF.md](HANDOFF.md).**
+> **Estado corrente do repositório, ferramentas e armadilhas: [HANDOFF.md](HANDOFF.md).**
+> **Desenho completo e fases: [docs/superpowers/specs/](docs/superpowers/specs/).**
 
-Substituição do site em Framer por um site próprio em código.
+Substituição do site em Framer por site próprio em código, vitalício.
+O Framer vence em **30 de setembro de 2026**.
+
+## Rumo (decidido em 01/09/2026)
+
+**Reconstruir o site em Astro usando as capturas do Framer como
+especificação medida por máquina**, com cutover página por página.
+O HTML processado do Framer que está no ar hoje (`public/*.html`) é a
+ponte, não o destino: vai sendo substituído a cada página aprovada.
+
+- Spec da reconstrução: [2026-09-01-reconstrucao-astro-design.md](docs/superpowers/specs/2026-09-01-reconstrucao-astro-design.md)
+- Spec do CMS de blog reutilizável: [2026-09-01-cms-blog-reutilizavel-design.md](docs/superpowers/specs/2026-09-01-cms-blog-reutilizavel-design.md)
 
 ## Decisões fechadas
 
 | Tema | Decisão | Motivo |
 |---|---|---|
-| Framework | Astro 7 | Site de conteúdo; 0 KB de JS por padrão; islands para motion |
-| Estilo | CSS nativo + tokens | 8 páginas com estética autoral; controle total de escala e ritmo |
-| Conteúdo V1 | Markdown em `src/content/` | Content Layer com loader plugável |
-| Conteúdo V2 | Supabase pelo mesmo loader | Troca a fonte sem reescrever página |
-| Visual | Fiel ao layout aprovado | Menor risco com a cliente; beleza vem da execução |
-| URLs | ASCII + 301 das antigas | Higiene definitiva; SEO acumulado é baixo |
-| Fontes | Cairo Play, Mulish, Fragment Mono self-hospedadas | Mesmas do original, todas OFL; 120 KB no total |
-| E-mail | Brevo (300/dia grátis) | O log da Brevo já é o arquivo de leads; sem banco na V1 |
-| Hospedagem | Vercel Hobby | **Risco aceito** — ver abaixo |
+| Estratégia | **Reconstruir em Astro, medindo a captura do Framer** (spec §5) | HTML processado não é componentizável nem indexável; reconstrução de memória não converge — reconstrução medida, com portão, converge |
+| Fidelidade | Indistinguível pela cliente, com liberdade para corrigir o que está errado sem parecer diferente (semântica, alt, meta, responsividade) | Pixel-perfect forçaria a carregar as esquisitices do Framer |
+| Aceitação | Lado a lado (`compara.html`) aprovado pelo Gabriel, por seção e breakpoint; o portão de pixel é diagnóstico | O mapa de diferença assusta e não diz o que fazer |
+| Breakpoints | Os do Framer: ≥1200 / 810–1199.98 / ≤809.98 | As capturas foram feitas neles; mudar é decisão de depois |
+| Framework | Astro, `output: 'static'`, APIs e painel sob demanda | Zero JS por padrão; islands só para motion |
+| Estilo | CSS nativo + tokens **derivados das medidas** | Nenhum valor visual sai da memória |
+| Motion | Implementação própria; só os valores (molas, estados) vêm do fonte do Framer; mola em CSS `linear()` | Fatos do design, não código deles |
+| Conteúdo | Coleções do Astro (`artigos`, `projetos`) + `conteudo.ts` | Componente não tem copy |
+| CMS | **Painel próprio** (Supabase Auth + Postgres + Storage), pacote reutilizável `packages/cms-blog`; site continua estático, publicar dispara rebuild | O Gabriel vai reusar em outros sites; custo zero recorrente |
+| SEO | Busca **local** (Maringá): title/description únicos com serviço + cidade, `LocalBusiness`, `Article`, sitemap, 301, Search Console | Foi medido: o site nunca concorreu por busca local, e é a única que ganha |
+| URLs | ASCII + 301 das antigas | Higiene definitiva |
+| Fontes | As mesmas do original, self-hospedadas | Já em `public/fontes/` |
+| E-mail | Brevo | Log da Brevo é o arquivo de leads |
+| Hospedagem | Vercel Hobby — **risco aceito** | Mitigação: adapter Cloudflare |
 | Analytics | GA4 + Clarity | — |
+| Versionamento | GitHub, repositório público; o que é do Framer fica fora do git | Código proprietário deles |
 
-### Risco aceito: Vercel Hobby
-Os termos do plano Hobby cobrem uso pessoal e não-comercial; este é um site
-comercial. Se a Vercel notificar, a mitigação é trocar o adapter do Astro para
-`@astrojs/cloudflare` e apontar o DNS — cerca de uma hora de trabalho.
-
-### Risco crítico: acesso ao Framer
-A assinatura vence em breve. Os ~26 artigos e os projetos só saem limpos pelo
-plugin **CMS Export** enquanto ela existir. Perder o acesso custa 21 artigos.
+**O Gabriel dirige o texto.** Nada de copy, alt, title ou description
+inventados. Melhorias visíveis só depois de a página estar idêntica, e
+ficam anotadas em `docs/melhorias-depois.md` até lá.
 
 ## Fases
 
-- [x] **0. Resgate** — exportar CSV do Framer *(tarefa do Gabriel, urgente)*
-- [x] **1. Fundação** — Astro, tokens, fontes, layout base, SEO, importador
-- [ ] **2. Site público** — 8 páginas, projetos, artigos, motion, cursor, ilustrações
-- [ ] **3. SEO e captação** — JSON-LD, sitemap, formulário Brevo, GA4, Clarity
-- [ ] **4. Lançamento** — Vercel, DNS registro.br, 301, Search Console, cortar Framer
-- [ ] **5. CMS (V2)** — Supabase, autenticação, painel dela
-- [ ] **6. Conteúdo** — chegar a 40 artigos
+Ordem por dependência. Sem datas. Detalhe e portões de saída na spec.
 
-## Importar do Framer
+- [ ] **0. Antes que algo vença** — gravações das interações no Framer vivo,
+      fichas de movimento, backup fora do repo, estancar os 20 artigos em 404,
+      sitemap provisório + Search Console.
+- [ ] **1. Fundação** — `extrai-medidas`, `deriva-tokens`, `compara`,
+      `verifica-secao`, `verifica-comportamento`; cabeçalho e rodapé
+      aprovados nos 3 breakpoints (prova do método).
+- [ ] **2. Páginas, com cutover** — `/artigos/[slug]` + `/artigos/` → home →
+      `/servicos/` → `/projetos/*` → `/sobre-nos/` → `/contato/`. Cada uma
+      apaga a sua pasta em `public/` no mesmo PR.
+- [ ] **3. SEO local, performance, lançamento** — meta por rota, JSON-LD,
+      sitemap, 301, GA4/Clarity, Lighthouse ≥ 95, alt, Search Console.
+      Externo: Perfil da Empresa no Google (Isabella).
+- [ ] **4. CMS reutilizável** — spec própria. Depende da 2.
+- [ ] **5. Conteúdo local** — pauta com Maringá; chegar a 40 posts.
 
-```bash
-# 1. Framer → Plugins → CMS Export → salvar em _importar/
-node tools/importa-framer.mjs _importar/artigos.csv artigos
-node tools/importa-framer.mjs _importar/projetos.csv projetos
-# 2. baixar as imagens listadas em _importar/imagens-para-baixar.txt
-```
+## Riscos
+
+- **Framer vence em 30/09/2026.** Tudo que precisa do original em execução
+  é Fase 0.
+- **Vercel Hobby** em site comercial — aceito; troca de adapter se
+  notificarem.
+- **Brevo** travada por IP autorizado, destino vazio e DKIM — fora do
+  código; lista no HANDOFF §4.6.

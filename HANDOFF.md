@@ -51,8 +51,8 @@ node tools/diagnostica-diferenca.mjs /servicos/ mobile
 
 | Script | O que faz |
 |---|---|
-| `paginas.mjs` | **Tabela única** das 14 páginas e dos 3 breakpoints |
-| `captura-breakpoints.mjs` | Captura 14 páginas × 3 breakpoints do Framer vivo |
+| `paginas.mjs` | **Tabela única** das 15 páginas e dos 3 breakpoints |
+| `captura-breakpoints.mjs` | Captura 15 páginas × 3 breakpoints do Framer vivo |
 | `audita-capturas.mjs` | Confere que toda captura é do Framer, não nossa |
 | `funde-breakpoints.mjs` | Funde as 3 capturas num HTML com media queries |
 | `baixa-variantes.mjs` | Baixa variantes de imagem que só celular/tablet pedem |
@@ -65,6 +65,8 @@ node tools/diagnostica-diferenca.mjs /servicos/ mobile
 | `diagnostica-diferenca.mjs` | Diz *onde* diverge, em texto |
 | `servidor.mjs` | Servidor estático em porta livre, com checagem |
 | `importa-framer.mjs` | Converte CSV do CMS do Framer em markdown |
+| `baixa-capas.mjs` | Baixa as capas do CMS para dentro da coleção do Astro |
+| `baixa-imagens-do-corpo.mjs` | Traz as imagens de dentro dos artigos e reescreve as referências |
 
 ---
 
@@ -72,20 +74,26 @@ node tools/diagnostica-diferenca.mjs /servicos/ mobile
 
 ### Verificado
 
-- **Portão: 38/42.** Todas as alturas batem exatamente.
+- **Portão: 41/45.** Todas as alturas batem exatamente.
 
   | Breakpoint | Passam |
   |---|---|
-  | desktop 1440 | 13/14 |
-  | tablet 1000 | 12/14 |
-  | mobile 390 | 13/14 |
+  | desktop 1440 | 14/15 |
+  | tablet 1000 | 13/15 |
+  | mobile 390 | 14/15 |
 
   Falha `/artigos/` nos três, e `o-que-muda-na-arquitetura-residencial-em-2026`
-  no tablet em 0,55% (passa nas outras larguras — ruído de limite).
+  no tablet em 0,55% (passa nas outras larguras — ruído de limite). São as
+  **mesmas 4 falhas de sempre**: eram 38/42 com 14 páginas, e as 3 comparações
+  novas de `cozinha-la` passaram todas (tablet 0,23%, mobile 0,12%).
 
-- **42/42 capturas** da origem real do Framer, auditadas.
+- **45/45 capturas** da origem real do Framer, auditadas — inclui
+  `/projetos/cozinha-la`, que faltava na tabela de páginas (ver 4.1).
 - **Imagens em WebP**: 142,8 MB → 60,5 MB (−58%).
-- **25 artigos** do CMS em `src/content/artigos/`.
+- **25 artigos** do CMS em `src/content/artigos/`, com as **25 capas** em
+  `src/content/artigos/imagens/` (50 MB de originais; 21 JPG, 4 PNG).
+  Verificado: página temporária consumindo `getCollection('artigos')` builda,
+  as 25 `image()` resolvem. O bloqueio de build descrito em 4.1 acabou.
 - **Fontes self-hospedadas** (3 origens: Google, assets do Framer, Fontshare).
 - No ar: `www.isabellapiresarquitetura.com.br` (Vercel).
 
@@ -121,13 +129,15 @@ API. O Astro está ali para a fase do CMS.
 ```
 public/           HTML processado do Framer — é isto que está no ar
 src/pages/api/    contato.ts, newsletter.ts (Brevo)
-src/content/      25 artigos em markdown, ainda sem página que os consuma
+src/content/      25 artigos + 25 capas, ainda sem página que os consuma
 src/components/   da reconstrução manual abandonada — ver seção 6
-_capturas/        42 capturas + fundido.html (versionado)
+_capturas/        45 capturas + fundido.html (versionado)
 _fonte-framer/    fonte do Framer desempacotado (FORA do git)
 _capturas/_runtime/ runtime do Framer (FORA do git)
 _referencia/      clone antigo, imagens e fontes em disco (FORA do git)
 _importar/        Blog.csv e imagens-para-baixar.txt (FORA do git)
+src/content/artigos/imagens/  as 25 capas, originais (DENTRO do git, 50 MB)
+public/img-artigos/  19 imagens de dentro dos artigos, WebP (versionado)
 ```
 
 ---
@@ -141,15 +151,37 @@ Em ordem de dependência: os itens 1 e 2 destravam vários outros.
 O Framer buscava do CMS em tempo de execução, então o HTML capturado não tem.
 Sem isso, carrossel e acordeão não têm o que mostrar.
 
-- [ ] **Exportar a coleção de projetos** no editor do Framer
-      (Plugins → CMS Export). Foi assim que os 25 artigos vieram. Salvar em
-      `_importar/` e rodar `node tools/importa-framer.mjs _importar/Projetos.csv projetos`.
-      São 4: `Casa IP`, `AP MM`, `STUDIO`, `COZINHA LA` — esta última não tem
-      página no clone e é a que falta no carrossel.
-- [ ] **Baixar as 25 capas dos artigos.** URLs em
-      `_importar/imagens-para-baixar.txt`. **Bloqueia o build** assim que
-      existir uma página consumindo a coleção: o schema usa `image()` e quebra
-      se o arquivo não existir. Hoje o build passa só porque nada consome.
+- [x] **As 25 capas dos artigos** — baixadas com
+      `node tools/baixa-capas.mjs _importar/Blog.csv artigos`.
+      O par slug↔URL sai do CSV, não de `imagens-para-baixar.txt`, que é só um
+      Set de URLs sem o slug ao lado. 4 das 25 são PNG e o `importa-framer.mjs`
+      tinha escrito `.jpg` para todas: os frontmatters foram corrigidos para a
+      extensão real, senão `image()` não resolve. **O bloqueio de build acabou** —
+      verificado com uma página temporária consumindo a coleção.
+- [ ] **Não existe coleção de projetos no CMS do Framer.** O item anterior
+      ("Plugins → CMS Export" para os projetos) partia de premissa errada. O
+      grafo inteiro de módulos do site — 86 arquivos em `_capturas/_runtime`,
+      semeados pelas 15 páginas e seguidos transitivamente — cita **uma única**
+      coleção, `displayName:"Blog"` (módulo `Zi5xpiTPh`, chunks `.framercms`).
+      Nenhuma outra. Os 4 projetos são **componentes com variante**, não CMS:
+      controlador `a6Nde7smU.js`, cards `Qv_x9EZNH.js`. Não adianta abrir o
+      editor: não há o que exportar.
+- [x] **`/projetos/cozinha-la` existe no Framer e nunca foi capturada.** O
+      sitemap do Framer (`$FRAMER_BASE/sitemap.xml`, 35 URLs) tem a página;
+      `paginas.mjs` não tinha. Capturada nos 3 breakpoints e auditada — é o
+      conteúdo do 4º projeto, que o CMS nunca teria dado. As outras 20 URLs
+      fora da tabela são artigos, que compartilham molde e já vieram no CSV.
+- [x] **`cozinha-la` migrada para `public/`** — pipeline completo rodado
+      (`funde` → `baixa-variantes` → `processa` → `otimiza` → portão).
+      21 variantes de imagem que faltavam no clone foram baixadas. O diff
+      em `public/` saiu **puramente aditivo**: a página nova mais 5 WebP,
+      e nenhuma das 14 páginas antigas mudou um byte — o pipeline é
+      determinístico, dá para rodar sem medo de mexer no que já passava.
+- [x] **As 19 imagens de dentro dos artigos** — ver seção 7. Ficam em
+      `public/img-artigos/` e são referenciadas por caminho absoluto, não
+      pelo `image()` do schema: estão em `<img>` cru dentro do markdown,
+      que o Astro não resolve. O `alt` delas veio **vazio do Framer** e foi
+      mantido vazio — texto é do Gabriel, não se inventa.
 - [ ] **Textos dos 5 painéis do acordeão** já estão em `src/lib/conteudo.ts`,
       transcritos. Falta injetar no DOM.
 
@@ -166,7 +198,9 @@ componente controlador.
   Na home o carrossel (`carousels-isa`) só tem um.
 
 Caminho: usar o mesmo mecanismo de troca de variante, com as setas trocando
-o estado do controlador. O conteúdo dos outros 3 sai do item 4.1.
+o estado do controlador. O conteúdo dos outros 3 **não vem de CMS nenhum**
+(ver 4.1): sai do DOM de `/projetos/` e das capturas de cada página de
+projeto, `cozinha-la` inclusive.
 
 ### 4.3. Acordeão de serviços
 
@@ -324,12 +358,24 @@ interações.** Todas só capturam DOM. Não vale comprar.
 **A assinatura do Framer vence.** Enquanto ela viver, tudo que for
 insubstituível precisa sair de lá.
 
-- ✅ **Capturas por breakpoint** — 42/42 da origem certa, versionadas.
+- ✅ **Capturas por breakpoint** — 45/45 da origem certa, versionadas.
 - ✅ **CSV do blog** — 25 artigos importados.
 - ✅ **Runtime e source maps** — baixados, mas **fora do git**. Se precisar
   sobreviver ao vencimento, faça backup fora do repo ou torne o repo privado.
-- ❌ **CSV de projetos** — ainda não exportado. É o item 4.1.
-- ❌ **Capas dos 25 artigos** — ainda não baixadas.
+- ✅ **Capas dos 25 artigos** — baixadas, em `src/content/artigos/imagens/`.
+- ✅ **CSV de projetos** — não existe e nunca existiu. Ver 4.1: o conteúdo
+  dos projetos é componente, e a peça que faltava (`cozinha-la`) já foi
+  capturada.
+- ✅ **19 imagens dentro do corpo de 6 artigos** — baixadas com
+  `baixa-imagens-do-corpo.mjs`. WebP em `public/img-artigos/` (36,9 MB →
+  17,0 MB), originais em `_importar/imagens/corpo/` (fora do git). Os
+  markdowns foram reescritos: **nenhum artigo depende mais da CDN do
+  Framer.**
+
+Sobra uma dependência cosmética: as 15 páginas trazem
+`<meta name="framer-search-index" content="https://framerusercontent…">`.
+É metadado inerte — o runtime que o lia foi removido —, mas é um site que
+saiu do Framer anunciando o Framer no `<head>`. Limpar no lançamento.
 
 ---
 

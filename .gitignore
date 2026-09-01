@@ -10,3 +10,4 @@ npm-debug.log*
 # Material de referência e importação — pesado, fora do versionamento
 _referencia/
 _importar/
+.diffs/

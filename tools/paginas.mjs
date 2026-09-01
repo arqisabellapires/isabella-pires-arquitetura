@@ -15,6 +15,7 @@ export const PAGINAS = [
   { caminho: '/projetos/casa-ip', pasta: 'projetos__casa-ip', rota: '/projetos/casa-ip/' },
   { caminho: '/projetos/ap-mm',   pasta: 'projetos__ap-mm',   rota: '/projetos/ap-mm/' },
   { caminho: '/projetos/studio',  pasta: 'projetos__studio',  rota: '/projetos/studio/' },
+  { caminho: '/projetos/cozinha-la', pasta: 'projetos__cozinha-la', rota: '/projetos/cozinha-la/' },
   { caminho: '/artigos/blog', pasta: 'artigos', rota: '/artigos/' },
   {
     caminho: '/artigos/vale-mais-a-pena-reformar-ou-construir',

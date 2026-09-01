@@ -11,3 +11,4 @@ npm-debug.log*
 _referencia/
 _importar/
 .diffs/
+.ref/

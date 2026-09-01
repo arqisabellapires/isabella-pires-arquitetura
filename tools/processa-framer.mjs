@@ -1,64 +1,36 @@
 #!/usr/bin/env node
 /**
- * Converte as páginas renderizadas do Framer em páginas estáticas próprias.
+ * Converte as capturas fundidas do Framer em páginas estáticas próprias.
  *
- *   node tools/processa-framer.mjs
+ *   node tools/funde-breakpoints.mjs && node tools/processa-framer.mjs
+ *
+ * A entrada é _capturas/<pasta>/fundido.html — as três árvores de breakpoint
+ * empilhadas. As imagens e fontes ainda saem do clone em _referencia/, que é
+ * onde os binários estão em disco.
  *
  * Etapas, nesta ordem:
  *   1. remove o runtime do Framer (<script>) e os pingos de telemetria
  *   2. reescreve URLs de asset para caminhos locais
- *   3. normaliza links internos para os slugs sem acento
- *   4. copia as imagens usadas
- *   5. injeta o nosso JS de interações
+ *   3. reescreve as fontes, que vêm de três origens diferentes
+ *   4. normaliza links internos para os slugs sem acento
+ *   5. aponta os formulários para os nossos endpoints
+ *   6. injeta o nosso JS de interações
  *
  * A fidelidade é verificada por diff de pixel em tools/verifica-fidelidade.mjs.
  */
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, readdirSync } from 'node:fs';
-import { join, basename } from 'node:path';
+import { join } from 'node:path';
+import { PAGINAS, LINKS } from './paginas.mjs';
 
-const ORIGEM = '_referencia/renderizado';
+const ORIGEM = '_capturas';
 const REF = '_referencia';
 const SAIDA = 'public';
 
-/** Nome do arquivo clonado → rota final (slug sem acento). */
-export const ROTAS = {
-  'index.html': '/',
-  'sobre-nós.html': '/sobre-nos/',
-  'serviços.html': '/servicos/',
-  'contato.html': '/contato/',
-  'projetos.html': '/projetos/',
-  'projetos__casa-ip.html': '/projetos/casa-ip/',
-  'projetos__ap-mm.html': '/projetos/ap-mm/',
-  'projetos__studio.html': '/projetos/studio/',
-  'artigos__blog.html': '/artigos/',
-  'artigos__vale-mais-a-pena-reformar-ou-construir.html': '/artigos/vale-mais-a-pena-reformar-ou-construir/',
-  'artigos__organize-sua-casa-com-olhar-de-arquiteto.html': '/artigos/organize-sua-casa-com-olhar-de-arquiteto/',
-  'artigos__o-que-muda-na-arquitetura-residencial-em-2026.html': '/artigos/o-que-muda-na-arquitetura-residencial-em-2026/',
-  'artigos__iluminação-decorativa-x-iluminação-funcional.html': '/artigos/iluminacao-decorativa-x-iluminacao-funcional/',
-  'artigos__minimalismo-vs.-maximalismo-qual-estilo-combina-com-você.html':
-    '/artigos/minimalismo-vs-maximalismo-qual-estilo-combina-com-voce/',
-};
+/** Prefixo de origem: absoluto, protocol-relative ou relativo ao clone. */
+const ORIGEM_URL = String.raw`(?:https?:)?\/\/|\.\.\/`;
 
-/** Link interno do Framer (com acento) → rota nova. Vira 301 também. */
-const LINKS = {
-  './': '/',
-  './sobre-nós': '/sobre-nos/',
-  './serviços': '/servicos/',
-  './contato': '/contato/',
-  './projetos': '/projetos/',
-  './projetos/casa-ip': '/projetos/casa-ip/',
-  './projetos/ap-mm': '/projetos/ap-mm/',
-  './projetos/studio': '/projetos/studio/',
-  './artigos/blog': '/artigos/',
-  './artigos/vale-mais-a-pena-reformar-ou-construir': '/artigos/vale-mais-a-pena-reformar-ou-construir/',
-  './artigos/organize-sua-casa-com-olhar-de-arquiteto': '/artigos/organize-sua-casa-com-olhar-de-arquiteto/',
-  './artigos/o-que-muda-na-arquitetura-residencial-em-2026': '/artigos/o-que-muda-na-arquitetura-residencial-em-2026/',
-  './artigos/iluminação-decorativa-x-iluminação-funcional': '/artigos/iluminacao-decorativa-x-iluminacao-funcional/',
-  './artigos/minimalismo-vs.-maximalismo-qual-estilo-combina-com-você':
-    '/artigos/minimalismo-vs-maximalismo-qual-estilo-combina-com-voce/',
-};
-
-const imagensUsadas = new Set();
+/** Preenchido por processa(): toda variante de imagem que o HTML referencia. */
+export const imagensUsadas = new Set();
 
 /** Nome local determinístico e seguro para uma variante de imagem. */
 function nomeLocal(base, query) {
@@ -70,7 +42,7 @@ function nomeLocal(base, query) {
   return `${nome}--${variante}${ext}`;
 }
 
-function processa(html) {
+export function processa(html) {
   let s = html;
 
   // 1. runtime do Framer e telemetria
@@ -83,23 +55,25 @@ function processa(html) {
   //    O clone guarda cada variante de srcset como arquivo próprio, trocando
   //    o "?" da query por "@". Preservamos a variante no nome local.
   s = s.replace(
-    /(?:\.\.\/)?framerusercontent\.com\/images\/([A-Za-z0-9._-]+)([@?][^"'\s)\\]*)?/g,
+    new RegExp(`(?:${ORIGEM_URL})?framerusercontent\\.com\\/images\\/([A-Za-z0-9._-]+)([@?][^"'\\s)\\\\]*)?`, 'g'),
     (_m, base, query) => {
       // O clone salva a variante como "base@query"; o HTML já referencia assim.
       // No HTML o "&" vem escapado como &amp;; no disco o arquivo usa "&".
       const consulta = query ? query.slice(1).replace(/&amp;/g, '&') : '';
       const arquivoClone = consulta ? `${base}@${consulta}` : base;
       const local = nomeLocal(base, query);
-      imagensUsadas.add({ clone: arquivoClone, local, base });
+      const url = `https://framerusercontent.com/images/${base}${consulta ? `?${consulta}` : ''}`;
+      imagensUsadas.add({ clone: arquivoClone, local, base, url });
       return `/img/${local}`;
     }
   );
 
   // 3. fontes, de três origens diferentes, todas para /fontes/
   //    a) Google Fonts   b) assets do próprio Framer   c) Fontshare
-  s = s.replace(/(?:\.\.\/)?fonts\.gstatic\.com\/s\//g, '/fontes/gstatic/');
-  s = s.replace(/(?:\.\.\/)?framerusercontent\.com\/assets\//g, '/fontes/framer/');
-  s = s.replace(/(?:\.\.\/)?framerusercontent\.com\/third-party-assets\//g, '/fontes/terceiros/');
+  const fonte = (de, para) => { s = s.replace(new RegExp(`(?:${ORIGEM_URL})?${de}`, 'g'), para); };
+  fonte(String.raw`fonts\.gstatic\.com\/s\/`, '/fontes/gstatic/');
+  fonte(String.raw`framerusercontent\.com\/assets\/`, '/fontes/framer/');
+  fonte(String.raw`framerusercontent\.com\/third-party-assets\/`, '/fontes/terceiros/');
 
   // 4. links internos → slugs normalizados.
   //    Ordena do mais longo para o mais curto, senão './' engole os outros.
@@ -129,14 +103,18 @@ function processa(html) {
 }
 
 // ── execução ──
+if (import.meta.url !== `file://${process.argv[1]}`) {
+  // importado só pelas funções; não gera nada
+} else {
 mkdirSync(join(SAIDA, 'img'), { recursive: true });
 let paginas = 0;
+const semCaptura = [];
 
-for (const arquivo of readdirSync(ORIGEM).filter((f) => f.endsWith('.html'))) {
-  const rota = ROTAS[arquivo];
-  if (!rota) { console.warn(`⚠ sem rota definida: ${arquivo}`); continue; }
+for (const { pasta, rota } of PAGINAS) {
+  const entrada = join(ORIGEM, pasta, 'fundido.html');
+  if (!existsSync(entrada)) { semCaptura.push(pasta); continue; }
 
-  const html = processa(readFileSync(join(ORIGEM, arquivo), 'utf8'));
+  const html = processa(readFileSync(entrada, 'utf8'));
   const destino = rota === '/' ? join(SAIDA, 'index.html') : join(SAIDA, rota, 'index.html');
   mkdirSync(join(destino, '..'), { recursive: true });
   writeFileSync(destino, html);
@@ -144,6 +122,7 @@ for (const arquivo of readdirSync(ORIGEM).filter((f) => f.endsWith('.html'))) {
 }
 
 let copiadas = 0;
+let aproximadas = 0;
 const faltando = [];
 const disponiveis = readdirSync(join(REF, 'framerusercontent.com/images'));
 for (const img of imagensUsadas) {
@@ -160,6 +139,7 @@ for (const img of imagensUsadas) {
   if (alternativa) {
     copyFileSync(join(REF, 'framerusercontent.com/images', alternativa), join(SAIDA, 'img', img.local));
     copiadas++;
+    aproximadas++;
   } else {
     faltando.push(img.clone);
   }
@@ -191,8 +171,10 @@ const fontes =
 
 console.log(`✓ ${paginas} páginas geradas em ${SAIDA}/`);
 console.log(`✓ ${fontes} arquivos de fonte copiados`);
-console.log(`✓ ${copiadas} imagens copiadas para ${SAIDA}/img/`);
+console.log(`✓ ${copiadas} imagens copiadas para ${SAIDA}/img/ (${aproximadas} por aproximação de variante)`);
+if (semCaptura.length) console.log(`⚠ sem fundido.html: ${semCaptura.join(', ')}`);
 if (faltando.length) {
   console.log(`⚠ ${faltando.length} imagem(ns) referenciadas mas ausentes no clone:`);
   faltando.slice(0, 8).forEach((f) => console.log(`   · ${f}`));
+}
 }

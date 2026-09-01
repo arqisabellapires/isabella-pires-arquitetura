@@ -52,24 +52,49 @@ e capturam a saída. O Framer não tem export nativo, por decisão de lock-in.
 ## 3. Estado atual
 
 ### Funciona e está verificado
-- **13 das 14 páginas em 0,00–0,10% de divergência** no desktop
-- Imagens convertidas para WebP: **71,2 MB → 25,7 MB (−64%)**, sem regressão
+- **Fusão de breakpoints aplicada às 14 páginas.** O portão de pixel:
+
+  | Breakpoint | Passam | Alturas |
+  |---|---|---|
+  | desktop 1440 | 13/14 | todas idênticas |
+  | tablet 1000 | 13/14 | todas idênticas |
+  | mobile 390 | **14/14** | todas idênticas |
+
+  40 de 42. A única falha é `/artigos/` no desktop (1,02%) e tablet (0,88%),
+  que passa em 0,09% no celular.
+- Imagens em WebP: **142,8 MB → 60,5 MB (−58%)**. É maior que os 25,7 MB
+  anteriores porque agora inclui as variantes de celular e tablet, que o
+  clone de desktop não tinha.
 - Fontes self-hospedadas (3 origens: Google, assets do Framer, Fontshare)
 - Deploy automático: commit → push → build → Vercel
 - No ar: https://isabella-pires-arquitetura.vercel.app
 
 ### Não funciona ainda
-- **Celular: 0 de 14 páginas passam** (12% a 71% de divergência). Causa
-  diagnosticada: o Framer emite **DOM diferente por breakpoint** (645 nós no
-  desktop, 628 no celular). O snapshot atual só tem a árvore de desktop.
-  Solução já validada na home — ver seção 5.
+- **`/artigos/` fica ~1% acima do limite** no desktop e no tablet. Já foram
+  descartados: layout (DOM idêntico, mesmas posições), imagens (mesmos 24
+  arquivos nas mesmas posições) e codec (a CDN do Framer serve AVIF para o
+  navegador e PNG para `fetch`, mas isso vale só 0,19% — medido). A causa
+  real não foi encontrada. Como a página vira template do CMS de qualquer
+  forma, foi deixada assim de propósito.
 - **4 interações mortas**: carrossel de projetos, acordeão de serviços,
   menu de celular e scroll reveals. Sem o runtime do Framer, nada disso roda.
-- **Listagem do blog** (`/artigos/`) não é reproduzível estaticamente: busca
-  os posts do CMS em tempo de execução. A própria referência mede alturas
-  diferentes a cada carregamento (2778, 5073, 5532 px). Vira template do CMS.
+- **O passo WebP não foi reverificado.** Os 40/42 foram medidos antes dele.
 
----
+### Duas armadilhas que quase falsificaram o resultado
+
+1. **Servidores zumbis.** Dois `python3 -m http.server` de uma sessão
+   anterior seguravam as portas 8901/8902. Os do verificador não subiam,
+   morriam calados, e a referência vinha 404 — toda página "divergia" 100%
+   com altura de viewport. `tools/servidor.mjs` agora procura porta livre e
+   confirma que a pasta está sendo servida antes de qualquer medição.
+
+2. **Duas capturas eram do nosso próprio site.** `servicos` e `contato` em
+   `_capturas/` não vinham do Framer, e sim da Vercel: zero referências ao
+   framerusercontent e os três breakpoints idênticos ao byte. Essas páginas
+   estavam comparando a migração **com ela mesma** e aprovando. Recapturadas.
+   `captura-breakpoints.mjs` agora recusa gravar captura sem o runtime do
+   Framer ou com os 3 breakpoints iguais, e `audita-capturas.mjs` confere
+   as 14 de uma vez.
 
 ## 4. Ferramentas no repositório
 
@@ -77,8 +102,13 @@ Todas em `tools/`, todas re-executáveis.
 
 | Script | O que faz |
 |---|---|
+| `paginas.mjs` | **Tabela única** das 14 páginas e dos 3 breakpoints. Todos leem daqui |
 | `captura-breakpoints.mjs` | Captura as 14 páginas × 3 breakpoints do site **vivo** → `_capturas/` |
-| `funde-breakpoints.mjs` | Funde as 3 capturas de uma página num HTML só, com media queries |
+| `audita-capturas.mjs` | Confere que toda captura é mesmo do Framer, não do nosso site |
+| `funde-breakpoints.mjs` | Funde as 3 capturas de cada página num HTML só, com media queries |
+| `baixa-variantes.mjs` | Baixa do Framer as variantes de imagem que só o celular/tablet pedem |
+| `servidor.mjs` | Sobe servidor estático em porta livre e confirma que serve |
+| `diagnostica-diferenca.mjs` | Diz *onde* uma página diverge, em texto, sem abrir os mapas |
 | `processa-framer.mjs` | Tira o runtime, reescreve assets e links, copia imagens e fontes → `public/` |
 | `otimiza-imagens.mjs` | Converte para WebP e reescreve as referências no HTML |
 | `verifica-fidelidade.mjs` | **O portão.** Compara cada página com a original, pixel a pixel |
@@ -87,10 +117,13 @@ Todas em `tools/`, todas re-executáveis.
 ### Como rodar o ciclo completo
 ```bash
 node tools/captura-breakpoints.mjs      # só enquanto o Framer existir
+node tools/audita-capturas.mjs         # confere que as capturas são do Framer
+node tools/funde-breakpoints.mjs
+node tools/baixa-variantes.mjs         # só enquanto o Framer existir
 node tools/processa-framer.mjs
 node tools/otimiza-imagens.mjs
-node tools/verifica-fidelidade.mjs                    # desktop
-node tools/verifica-fidelidade.mjs --largura 390      # celular
+node tools/verifica-fidelidade.mjs             # os 3 breakpoints
+node tools/verifica-fidelidade.mjs --bp mobile # um só
 ```
 
 O verificador escreve mapas de diferença em `.diffs/` (vermelho = divergente)
@@ -107,30 +140,26 @@ para toda página que passar do limite.
 
 ---
 
-## 5. Próximo passo, já validado
+## 5. Fusão de breakpoints — feita
 
-Fundir os breakpoints. A home foi testada e passou nos três:
-
-| Breakpoint | Divergência | Altura |
-|---|---|---|
-| Desktop 1440 | 0,45% | 7626 → 7626 |
-| Tablet 1000 | 0,27% | 8361 → 8361 |
-| Mobile 390 | 0,03% | 8807 → 8807 |
+As 14 páginas foram fundidas e passam pelo portão. Os números estão na
+seção 3.
 
 O truque é `display: contents` no invólucro de cada árvore: ele some do
-layout, então as regras do Framer continuam valendo como se os filhos fossem
-diretos do `<body>`. O `<head>` é byte-idêntico entre os três breakpoints
-(mesmo MD5), então entra uma vez só.
+layout, então as regras do Framer continuam valendo como se os filhos
+fossem diretos do `<body>`. O `<head>` é byte-idêntico entre os três
+breakpoints nas 14 páginas (conferido por MD5), então entra uma vez só.
 
-Breakpoints reais do Framer, extraídos do CSS dele:
+Breakpoints reais do Framer, extraídos do CSS dele e agora em
+`tools/paginas.mjs`, que é a tabela única que todos os scripts leem:
 - desktop `(min-width: 1200px)`
 - tablet `(min-width: 810px) and (max-width: 1199.98px)`
 - mobile `(max-width: 809.98px)`
 
-**Tarefa:** aplicar `funde-breakpoints.mjs` às 14 páginas, passar pelo
-`processa-framer.mjs`, e fazer o verificador passar nas três larguras.
-
----
+O clone de desktop não tinha as variantes de imagem que o celular e o
+tablet pedem — eram 276, baixadas por `baixa-variantes.mjs` enquanto o
+Framer está no ar. Antes disso o processador caía no fallback "maior
+variante disponível", que entrega a imagem certa na resolução errada.
 
 ## 6. Depois disso
 

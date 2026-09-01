@@ -1,19 +1,17 @@
 #!/usr/bin/env node
 /**
- * Funde as capturas de uma página nos três breakpoints do Framer em um
- * único HTML. O <head> é idêntico entre elas, então entra uma vez só; os
- * corpos entram empilhados, cada um ligado por media query.
+ * Funde as capturas de cada página nos três breakpoints do Framer em um
+ * único HTML. O <head> é idêntico entre elas (mesmo MD5), então entra uma
+ * vez só; os corpos entram empilhados, cada um ligado por media query.
  *
  * O invólucro usa display:contents para não existir no layout — as regras
  * do Framer continuam valendo como se os filhos fossem diretos do <body>.
+ *
+ *   node tools/funde-breakpoints.mjs               # as 14 páginas
+ *   node tools/funde-breakpoints.mjs _capturas/home  # uma só
  */
-import { readFileSync, writeFileSync } from 'node:fs';
-
-export const BREAKPOINTS = [
-  { nome: 'desktop', largura: 1440, media: '(min-width: 1200px)' },
-  { nome: 'tablet',  largura: 1000, media: '(min-width: 810px) and (max-width: 1199.98px)' },
-  { nome: 'mobile',  largura: 390,  media: '(max-width: 809.98px)' },
-];
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { PAGINAS, BREAKPOINTS } from './paginas.mjs';
 
 const CSS_CHAVE = `
 /* ── troca de breakpoint: só uma árvore fica no layout por vez ── */
@@ -46,11 +44,32 @@ ${corpos}
 </html>`;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const dir = process.argv[2] ?? '_capturas/home';
-  const saida = process.argv[3] ?? '_capturas/home/fundido.html';
-  const caminhos = Object.fromEntries(BREAKPOINTS.map((b) => [b.nome, `${dir}/${b.nome}.html`]));
+/** Funde um diretório de capturas em <dir>/fundido.html. */
+export function fundeDiretorio(dir) {
+  const caminhos = Object.fromEntries(
+    BREAKPOINTS.map((b) => [b.nome, `${dir}/${b.nome}.html`]),
+  );
+  const ausentes = Object.values(caminhos).filter((c) => !existsSync(c));
+  if (ausentes.length) throw new Error(`capturas ausentes: ${ausentes.join(', ')}`);
+
   const out = funde(caminhos);
-  writeFileSync(saida, out);
-  console.log(`✓ ${saida} — ${(out.length / 1024).toFixed(0)} KB`);
+  writeFileSync(`${dir}/fundido.html`, out);
+  return out.length;
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const alvo = process.argv[2];
+  const dirs = alvo ? [alvo] : PAGINAS.map((p) => `_capturas/${p.pasta}`);
+
+  let ok = 0;
+  for (const dir of dirs) {
+    try {
+      const bytes = fundeDiretorio(dir);
+      console.log(`✓ ${dir}/fundido.html — ${(bytes / 1024).toFixed(0)} KB`);
+      ok++;
+    } catch (e) {
+      console.log(`✗ ${dir} — ${e.message}`);
+    }
+  }
+  console.log(`\n${ok}/${dirs.length} páginas fundidas`);
 }

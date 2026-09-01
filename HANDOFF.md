@@ -57,11 +57,13 @@ e capturam a saída. O Framer não tem export nativo, por decisão de lock-in.
   | Breakpoint | Passam | Alturas |
   |---|---|---|
   | desktop 1440 | 13/14 | todas idênticas |
-  | tablet 1000 | 13/14 | todas idênticas |
-  | mobile 390 | **14/14** | todas idênticas |
+  | tablet 1000 | 12/14 | todas idênticas |
+  | mobile 390 | 13/14 | todas idênticas |
 
-  40 de 42. A única falha é `/artigos/` no desktop (1,02%) e tablet (0,88%),
-  que passa em 0,09% no celular.
+  38 de 42, agora medido contra capturas da origem real do Framer. Falha
+  `/artigos/` nos três (o listing não-determinístico) e
+  `o-que-muda-na-arquitetura-residencial-em-2026` no tablet, em 0,55%,
+  que passa nas outras duas larguras — está no limite, é ruído.
 - Imagens em WebP: **142,8 MB → 60,5 MB (−58%)**. É maior que os 25,7 MB
   anteriores porque agora inclui as variantes de celular e tablet, que o
   clone de desktop não tinha.
@@ -79,10 +81,12 @@ e capturam a saída. O Framer não tem export nativo, por decisão de lock-in.
 - **Movimento: o que existe, o que falta.** Medido, não estimado — e a
   medição corrigiu duas conclusões erradas anteriores.
 
-  **Hover: não se sabe.** Uma varredura anterior concluiu que 0 de 46
-  elementos respondiam ao ponteiro e que hover nunca existiu. **Essa
-  conclusão foi retirada**: a varredura mediu o nosso próprio site, porque
-  o domínio já aponta para a Vercel. Ver seção 6.2. Links,
+  **Hover existe, e só nos cards de projeto.** Medido na origem certa
+  (`authentic-learning-761482.framer.app`): 2 de 18 elementos em
+  `/projetos/` respondem ao ponteiro, 0 de 8 na home e 0 de 20 em
+  `/serviços/`. O que responde é o card, indo de 367px a 557px — os mesmos
+  números do hover que já está implementado. Links, botões e imagens
+  realmente não têm hover no original. Links,
   botões e imagens não têm hover lá. Uma versão anterior deste documento
   dizia "327 links sem hover, 92 imagens sem zoom" — era erro de método:
   mediu-se a nossa saída sem conferir se a original fazia algo.
@@ -401,48 +405,47 @@ Apagar quando alguém confirmar que não serve de referência.
 
 ---
 
-## 6.2. URGENTE — o domínio já aponta para a Vercel
+## 6.2. O domínio já aponta para a Vercel
 
 **`www.isabellapiresarquitetura.com.br` serve o NOSSO site, não o Framer.**
-Verificado: `server: Vercel`, IPs em `vercel-dns-017.com`, e o HTML
-devolvido é byte a byte igual ao `public/index.html` local — 74 refs
-`/img/`, zero `framerusercontent.com/images`, e o `interacoes.js`.
+Verificado por três vias: `server: Vercel`, IPs em `vercel-dns-017.com`, e
+o HTML devolvido byte a byte igual ao `public/index.html` local. O aviso
+`[@astrojs/sitemap] No pages found` no nosso build explica de quebra por
+que `/sitemap-index.xml` responde 404 no domínio.
 
-Três consequências, todas ruins:
+**A origem real do Framer é `https://authentic-learning-761482.framer.app`**
+— id do projeto `Z5TWjXNSA6vZfuMOJEFOH`, o mesmo das capturas. Não está no
+HTML publicado: `canonical` e `og:url` apontam para o domínio próprio. Veio
+do editor.
 
-1. **`captura-breakpoints.mjs` não alcança mais o Framer por esse
-   domínio.** Ele captura o nosso próprio site. Foi exatamente isso que
-   corrompeu as capturas de `servicos` e `contato`. A trava de sanidade
-   pega o caso, mas não resolve: falta a URL de origem.
+`captura-breakpoints.mjs` aceita a origem por variável de ambiente:
 
-2. **Toda medição feita contra "o site vivo" está sob suspeita.** Em
-   particular, a varredura que concluiu "0 de 46 elementos respondem ao
-   hover, logo hover nunca existiu" mediu o nosso site. **Conclusão
-   retirada.** Não se sabe se o original tem hover.
+```bash
+FRAMER_BASE=https://authentic-learning-761482.framer.app node tools/captura-breakpoints.mjs
+```
 
-3. **A URL de origem do Framer não está no HTML.** O `canonical` e o
-   `og:url` apontam para o domínio próprio, e não há nenhum
-   `*.framer.website` nas capturas. O id do projeto é
-   `Z5TWjXNSA6vZfuMOJEFOH`. **Só sai do editor do Framer.**
+Sem isso ele captura o nosso próprio site, que foi o que corrompeu
+`servicos` e `contato` antes. **As 42 capturas atuais já vieram da origem
+certa e passaram na auditoria.**
 
-**O que fazer, nesta ordem:**
-
-1. Pegar a URL de staging do Framer no editor (algo como
-   `nome.framer.website`) e apontar `BASE` em `captura-breakpoints.mjs`
-   para lá. Sem isso não há mais como capturar nada do original.
-2. No editor, rodar **Plugins → CMS Export** e salvar os CSV em
-   `_importar/`. É o caminho oficial para o conteúdo que falta — os 5
-   textos do acordeão e os 4 projetos do carrossel. Confirmado que existe
-   e que precisa de acesso ao editor.
-3. Só então refazer capturas e remedir hover.
+**Lição de método:** duas conclusões erradas saíram de sondar "o site vivo"
+sem confirmar quem responde no domínio. Confirme a origem antes de medir —
+ou leia o fonte em `_fonte-framer/`, que não depende de rede.
 
 ## 7. Riscos com prazo
 
 **A assinatura do Framer vence em breve.** Enquanto ela viver, duas coisas
 precisam sair de lá, e as duas são insubstituíveis:
 
-1. **Os CSV do CMS** (Plugins → CMS Export). São ~26 artigos; o clone só tem 5.
-   Salvar em `_importar/` e rodar `importa-framer.mjs`. **Ainda não foi feito.**
+1. ~~**Os CSV do CMS**~~ **✅ FEITO.** `Blog.csv` exportado do editor e
+   importado: **25 artigos** em `src/content/artigos/`, com corpo,
+   `seoDescricao`, `tags` e `autor`. O clone tinha 5. Quatro Meta
+   Descriptions passam de 160 caracteres e foram omitidas do
+   `seoDescricao` em vez de cortadas em silêncio — o importador lista
+   quais. Falta baixar as 25 capas, cujas URLs estão em
+   `_importar/imagens-para-baixar.txt`. O build passa hoje porque nenhuma
+   página consome a coleção ainda; ao criar a página de artigo, as capas
+   precisam existir ou o `image()` do schema quebra o build.
 2. **As capturas por breakpoint** (`captura-breakpoints.mjs`). Sem o site no ar
    não há como obter o DOM de celular. **✅ FEITO E VERIFICADO** — 42/42
    capturas (14 páginas × 3 breakpoints) em `_capturas/`, versionadas no git,

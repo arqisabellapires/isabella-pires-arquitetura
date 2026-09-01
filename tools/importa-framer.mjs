@@ -58,7 +58,11 @@ const APELIDOS = {
   capa: ['image', 'cover', 'capa', 'thumbnail', 'imagem', 'featured image'],
   corpo: ['content', 'body', 'conteudo', 'conteúdo', 'texto', 'rich text'],
   publicadoEm: ['date', 'data', 'published', 'publicado', 'created', 'createdat'],
-  categoria: ['category', 'categoria', 'tipo'],
+  categoria: ['category', 'categoria', 'categorias', 'tipo'],
+  autor: ['autor', 'author', 'nome', 'name'],
+  capaAlt: ['capa:alt', 'cover:alt', 'image:alt', 'imagem:alt', 'alt'],
+  seoDescricao: ['meta description', 'metadescription', 'seo description', 'descrição seo'],
+  tags: ['keywords', 'palavras-chave', 'palavras chave', 'tags'],
   local: ['location', 'local', 'cidade'],
   ano: ['year', 'ano'],
   areaM2: ['area', 'área', 'metragem', 'm2'],
@@ -86,6 +90,7 @@ mkdirSync('_importar/imagens', { recursive: true });
 
 const pega = (linha, campo) => (idx[campo] >= 0 ? (linha[idx[campo]] ?? '').trim() : '');
 const imagens = new Set();
+const longas = [];
 let gravados = 0;
 
 for (const linha of registros) {
@@ -102,12 +107,30 @@ for (const linha of registros) {
     ? new Date(dataBruta).toISOString().slice(0, 10)
     : new Date().toISOString().slice(0, 10);
 
+  // O Framer não tem campo "resumo"; a Meta Description é o texto curto
+  // que a arquiteta de fato escreveu, então serve melhor que um aviso.
+  const metaDesc = pega(linha, 'seoDescricao');
+  const resumo = pega(linha, 'resumo') || metaDesc || 'REVISAR: resumo ausente no export.';
+  const corta = (t, n) => (t.length <= n ? t : `${t.slice(0, n - 1).trimEnd()}…`);
+
   const campos = [
-    `titulo: ${escapaYaml(titulo)}`,
-    `resumo: ${escapaYaml(pega(linha, 'resumo') || 'REVISAR: resumo ausente no export.')}`,
+    `titulo: ${escapaYaml(corta(titulo, 120))}`,
+    `resumo: ${escapaYaml(corta(resumo, 300))}`,
     `capa: ${escapaYaml(capaUrl ? `./imagens/${slug}.jpg` : './imagens/placeholder.jpg')}`,
-    `capaAlt: ${escapaYaml(titulo)}`,
+    `capaAlt: ${escapaYaml(pega(linha, 'capaAlt') || titulo)}`,
   ];
+
+  const autor = pega(linha, 'autor');
+  if (autor) campos.push(`autor: ${escapaYaml(autor)}`);
+
+  // seoDescricao tem teto de 160 no schema. Cortar em silêncio seria pior
+  // que omitir: melhor deixar o campo de fora e a página cair no resumo.
+  if (metaDesc && metaDesc.length <= 160) campos.push(`seoDescricao: ${escapaYaml(metaDesc)}`);
+  else if (metaDesc) longas.push(`${slug} (${metaDesc.length} caracteres)`);
+
+  const tags = pega(linha, 'tags')
+    .split(/[,;|]/).map((t) => t.trim()).filter(Boolean);
+  if (tags.length) campos.push(`tags: [${tags.map(escapaYaml).join(', ')}]`);
 
   if (colecao === 'artigos') {
     campos.push(`publicadoEm: ${data}`);
@@ -135,6 +158,10 @@ writeFileSync('_importar/imagens-para-baixar.txt', [...imagens].join('\n'));
 
 console.log(`✓ ${gravados} arquivo(s) em ${destino}`);
 console.log(`✓ ${imagens.size} URL(s) de imagem em _importar/imagens-para-baixar.txt`);
+if (longas.length) {
+  console.log(`\n⚠ ${longas.length} Meta Description(s) acima de 160 caracteres, omitidas do seoDescricao:`);
+  longas.slice(0, 6).forEach((l) => console.log(`   · ${l}`));
+}
 if (naoMapeadas.length) {
   console.log(`\n⚠ colunas do CSV que não reconheci (revisar à mão):`);
   naoMapeadas.forEach((c) => console.log(`   · ${c}`));

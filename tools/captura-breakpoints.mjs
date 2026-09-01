@@ -20,7 +20,15 @@ import { chromium } from '/home/gabfelix/dev/portfolio/node_modules/playwright/i
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { PAGINAS, BREAKPOINTS } from './paginas.mjs';
 
-const BASE = 'https://www.isabellapiresarquitetura.com.br';
+/**
+ * Origem das capturas. O domínio próprio já aponta para a Vercel e serve
+ * o NOSSO site, então capturar de lá traz a migração de volta como se
+ * fosse referência. Use a URL de staging do Framer:
+ *
+ *   FRAMER_BASE=https://algo.framer.website node tools/captura-breakpoints.mjs
+ */
+const BASE = (process.env.FRAMER_BASE ?? 'https://www.isabellapiresarquitetura.com.br').replace(/\/$/, '');
+console.log(`origem: ${BASE}\n`);
 const filtro = process.argv.slice(2);
 const alvos = filtro.length ? PAGINAS.filter((p) => filtro.includes(p.pasta)) : PAGINAS;
 if (!alvos.length) { console.error(`nenhuma página bate com: ${filtro.join(', ')}`); process.exit(1); }

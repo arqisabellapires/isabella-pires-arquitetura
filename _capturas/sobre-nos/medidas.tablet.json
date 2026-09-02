@@ -1,0 +1,5281 @@
+{
+ "_origem": "_capturas/sobre-nos/tablet.html",
+ "_breakpoint": {
+  "nome": "tablet",
+  "largura": 1000
+ },
+ "_rota": "/sobre-nos/",
+ "_alturaDaPagina": 6675,
+ "_elementosRevelados": 15,
+ "_recursosQueFalharam": [],
+ "elementos": [
+  {
+   "caminho": "body > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 6674.73
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 6674.73
+   },
+   "fundo": "rgb(255, 255, 255)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 6674.73
+   },
+   "nomeFramer": "Frame 3098",
+   "fundo": "rgb(251, 247, 244)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 59
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav",
+   "tag": "nav",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 59
+   },
+   "nomeFramer": "Phone",
+   "fundo": "rgb(251, 247, 244)",
+   "padding": [
+    16,
+    32,
+    16,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 16,
+    "w": 146,
+    "h": 27
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 32,
+    "y": 16,
+    "w": 146,
+    "h": 27
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 8.5,
+    "w": 33,
+    "h": 42
+   },
+   "nomeFramer": "Logotipo",
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 33 42%22><path d=%22M 14.851 0.043 C 12.906 0.24 11.183 0.723 9.511 1.",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 79,
+    "y": 21.09,
+    "w": 113,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 79,
+    "y": 21.09,
+    "w": 113,
+    "h": 16.8
+   },
+   "texto": "ISABELLA PIRES",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 14,
+    "peso": 700,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(53, 32, 5)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 178,
+    "y": 16,
+    "w": 790,
+    "h": 24
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 944,
+    "y": 16,
+    "w": 24,
+    "h": 24
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 948.75,
+    "y": 21.75,
+    "w": 14.5,
+    "h": 12.5
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 340,
+    "w": 1000,
+    "h": 4762.33
+   },
+   "nomeFramer": "Frame 3031",
+   "padding": [
+    49,
+    32,
+    114,
+    32
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 130,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 389,
+    "w": 936,
+    "h": 429.36
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 389,
+    "w": 936,
+    "h": 429.36
+   },
+   "nomeFramer": "Frame 2763",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 35,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 85.09,
+    "y": 393.48,
+    "w": 280,
+    "h": 420.39
+   },
+   "nomeFramer": "foto29 (1) 1",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 85.09,
+    "y": 393.48,
+    "w": 280,
+    "h": 420.39
+   },
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 85.09,
+    "y": 393.48,
+    "w": 280,
+    "h": 420.39
+   },
+   "imagem": {
+    "src": "https://framerusercontent.com/images/FlHPskyYDjmoj9CAuVMFaTyklE.png?width=1396&height=2096",
+    "srcset": "https://framerusercontent.com/images/FlHPskyYDjmoj9CAuVMFaTyklE.png?scale-down-to=1024&width=1396&height=2096 682w,https://framerusercontent.com/images/FlHPskyYDjmoj9CAuVMFaTyklE.png?scale-down-to=2048&width=1396&height=2096 1364w,https://framerusercontent.com/images/FlHPskyYDjmoj9CAuVMFaTyklE.png?width=1396&height=2096 1396w",
+    "sizes": "(min-width: 1200px) max(280px, 100vw), (min-width: 810px) and (max-width: 1199.98px) max(280px, 100vw), (max-width: 809.98px) max(280px, max(100vw - 72px, 1px))",
+    "alt": "",
+    "objectFit": "contain",
+    "natural": {
+     "w": 1000,
+     "h": 1501
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 400.09,
+    "y": 389,
+    "w": 514.8,
+    "h": 429.36
+   },
+   "nomeFramer": "Textos",
+   "padding": [
+    20,
+    0,
+    20,
+    20
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 27,
+   "raio": "12px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 409,
+    "w": 494.8,
+    "h": 113.8
+   },
+   "nomeFramer": "Tag parceiros e Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 409,
+    "w": 230.72,
+    "h": 28.8
+   },
+   "nomeFramer": "Frame 3124",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 24,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 421.89,
+    "w": 64,
+    "h": 3
+   },
+   "nomeFramer": "Line 6",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 421.89,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 420.09,
+    "y": 421.89,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 508.09,
+    "y": 409,
+    "w": 142.72,
+    "h": 28.8
+   },
+   "nomeFramer": "Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 508.09,
+    "y": 409,
+    "w": 142.72,
+    "h": 28.8
+   },
+   "texto": "Quem somos",
+   "fonte": {
+    "familia": "Faberge",
+    "tamanho": 24,
+    "peso": 400,
+    "alturaLinha": 28.8,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 437.8,
+    "w": 494.8,
+    "h": 85
+   },
+   "nomeFramer": "Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 420.09,
+    "y": 437.8,
+    "w": 494.8,
+    "h": 85
+   },
+   "texto": "Nossa História",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 38,
+    "peso": 700,
+    "alturaLinha": 85,
+    "tracking": 0
+   },
+   "cor": "rgb(26, 26, 26)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 549.8,
+    "w": 494.8,
+    "h": 86.38
+   },
+   "nomeFramer": "Descrição",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 420.09,
+    "y": 549.8,
+    "w": 494.8,
+    "h": 86.38
+   },
+   "texto": "No nosso escritório, conduzido por , transformamos ideias em projetos arquitetônicos e de interiores que unem estética, ",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 18,
+    "peso": 600,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgba(47, 47, 47, 0.8)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > p > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 728.11,
+    "y": 549.8,
+    "w": 155.08,
+    "h": 20
+   },
+   "texto": "Isabella Cito Pires",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 18,
+    "peso": 900,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgba(47, 47, 47, 0.8)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 663.17,
+    "w": 494.8,
+    "h": 65
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 663.17,
+    "w": 494.8,
+    "h": 65
+   },
+   "nomeFramer": "Descrição",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 420.09,
+    "y": 663.17,
+    "w": 494.8,
+    "h": 86.38
+   },
+   "texto": "Oferecemos também, consultorias e ambientações personalizadas, garantindo soluções práticas e duradouras, sempre com ate",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 18,
+    "peso": 600,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgba(47, 47, 47, 0.8)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 420.09,
+    "y": 755.17,
+    "w": 494.8,
+    "h": 43.19
+   },
+   "nomeFramer": "Descrição",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 420.09,
+    "y": 755.17,
+    "w": 494.8,
+    "h": 43.19
+   },
+   "texto": "“Arquitetura é a arte de transformar espaços em experiências inesquecíveis”",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 18,
+    "peso": 700,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgba(0, 0, 0, 0.8)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 948.36,
+    "w": 936,
+    "h": 921.8
+   },
+   "nomeFramer": "Frame 2965",
+   "fundo": "rgba(240, 217, 199, 0.2)",
+   "padding": [
+    92,
+    32,
+    92,
+    32
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 60,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1040.36,
+    "w": 872,
+    "h": 125.8
+   },
+   "nomeFramer": "Tag parceiros e Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1040.36,
+    "w": 370.8,
+    "h": 28.8
+   },
+   "nomeFramer": "Frame 3124",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 24,
+   "posicao": "relative",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1053.25,
+    "w": 64,
+    "h": 3
+   },
+   "nomeFramer": "Line 6",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1053.25,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 64,
+    "y": 1053.25,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 152,
+    "y": 1040.36,
+    "w": 282.8,
+    "h": 28.8
+   },
+   "nomeFramer": "Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 152,
+    "y": 1040.36,
+    "w": 282.8,
+    "h": 28.8
+   },
+   "texto": "Princípios que nos movem",
+   "fonte": {
+    "familia": "Faberge",
+    "tamanho": 24,
+    "peso": 400,
+    "alturaLinha": 28.8,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1081.16,
+    "w": 498,
+    "h": 85
+   },
+   "nomeFramer": "Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 1081.16,
+    "w": 498,
+    "h": 85
+   },
+   "texto": "Nossos valores",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 70,
+    "peso": 700,
+    "alturaLinha": 85,
+    "tracking": 0
+   },
+   "cor": "rgb(26, 26, 26)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1226.16,
+    "w": 872,
+    "h": 4
+   },
+   "nomeFramer": "Line 3",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1226.16,
+    "w": 872,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 64,
+    "y": 1226.16,
+    "w": 872,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1290.16,
+    "w": 872,
+    "h": 72
+   },
+   "nomeFramer": "Frame 2963",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1290.16,
+    "w": 436,
+    "h": 31.05
+   },
+   "nomeFramer": "Modernidade",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 1290.16,
+    "w": 436,
+    "h": 31.05
+   },
+   "texto": "Modernidade",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 31.04,
+    "tracking": 0
+   },
+   "cor": "rgb(33, 32, 31)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 500,
+    "y": 1290.16,
+    "w": 436,
+    "h": 72
+   },
+   "nomeFramer": "Priorizamos soluções inovadoras e atuais, integrando tecnologia e tendências para criar projetos funcionais e cheios de estilo.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 500,
+    "y": 1290.16,
+    "w": 436,
+    "h": 72
+   },
+   "texto": "Priorizamos soluções inovadoras e atuais, integrando tecnologia e tendências para criar projetos funcionais e cheios de ",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 20,
+    "peso": 700,
+    "alturaLinha": 24,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1422.16,
+    "w": 872,
+    "h": 4
+   },
+   "nomeFramer": "Line 2",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1422.16,
+    "w": 872,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 64,
+    "y": 1422.16,
+    "w": 872,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1486.16,
+    "w": 872,
+    "h": 96
+   },
+   "nomeFramer": "Frame 2964",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1486.16,
+    "w": 436,
+    "h": 31.05
+   },
+   "nomeFramer": "Empatia",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 1486.16,
+    "w": 436,
+    "h": 31.05
+   },
+   "texto": "Empatia",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 31.04,
+    "tracking": 0
+   },
+   "cor": "rgb(33, 32, 31)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 500,
+    "y": 1486.16,
+    "w": 436,
+    "h": 96
+   },
+   "nomeFramer": "Entendemos profundamente cada cliente, suas necessidades e preferências, para criar ambientes que refletem essência e proporcionam conforto.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 500,
+    "y": 1486.16,
+    "w": 436,
+    "h": 96
+   },
+   "texto": "Entendemos profundamente cada cliente, suas necessidades e preferências, para criar ambientes que refletem essência e pr",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 20,
+    "peso": 700,
+    "alturaLinha": 24,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(6)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1642.16,
+    "w": 872,
+    "h": 4
+   },
+   "nomeFramer": "Line 1",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(6) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1642.16,
+    "w": 872,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(6) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 64,
+    "y": 1642.16,
+    "w": 872,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(7)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1706.16,
+    "w": 872,
+    "h": 72
+   },
+   "nomeFramer": "Frame 2965",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 1706.16,
+    "w": 436,
+    "h": 31.05
+   },
+   "nomeFramer": "Constância",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 1706.16,
+    "w": 436,
+    "h": 31.05
+   },
+   "texto": "Constância",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 31.04,
+    "tracking": 0
+   },
+   "cor": "rgb(33, 32, 31)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 500,
+    "y": 1706.16,
+    "w": 436,
+    "h": 72
+   },
+   "nomeFramer": "Agimos com disciplina e comprometimento, acompanhando cada detalhe do projeto para garantir qualidade e resultados consistentes.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 500,
+    "y": 1706.16,
+    "w": 436,
+    "h": 72
+   },
+   "texto": "Agimos com disciplina e comprometimento, acompanhando cada detalhe do projeto para garantir qualidade e resultados consi",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 20,
+    "peso": 700,
+    "alturaLinha": 24,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2000.16,
+    "w": 936,
+    "h": 1141.02
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2000.16,
+    "w": 936,
+    "h": 1141.02
+   },
+   "nomeFramer": "Arquitetura Comercial - Desktop",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 34,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2000.16,
+    "w": 936,
+    "h": 383.02
+   },
+   "nomeFramer": "Frame 323",
+   "padding": [
+    40,
+    80,
+    47,
+    80
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 112,
+    "y": 2040.16,
+    "w": 776,
+    "h": 28.8
+   },
+   "nomeFramer": "Frame 3124",
+   "padding": [
+    0,
+    0,
+    0,
+    86
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 24,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 198,
+    "y": 2053.05,
+    "w": 64,
+    "h": 3
+   },
+   "nomeFramer": "Line 6",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 198,
+    "y": 2053.05,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 198,
+    "y": 2053.05,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 286,
+    "y": 2040.16,
+    "w": 602,
+    "h": 28.8
+   },
+   "nomeFramer": "Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 286,
+    "y": 2040.16,
+    "w": 602,
+    "h": 28.8
+   },
+   "texto": "Nossos Serviços",
+   "fonte": {
+    "familia": "Faberge",
+    "tamanho": 24,
+    "peso": 400,
+    "alturaLinha": 28.8,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 112,
+    "y": 2076.95,
+    "w": 776,
+    "h": 259.22
+   },
+   "nomeFramer": "Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 112,
+    "y": 2076.95,
+    "w": 776,
+    "h": 259.22
+   },
+   "texto": "Nós entregamos apenas o nosso melhor",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 72,
+    "peso": 600,
+    "alturaLinha": 86.4,
+    "tracking": 0
+   },
+   "cor": "rgb(33, 32, 31)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2417.17,
+    "w": 936,
+    "h": 724
+   },
+   "nomeFramer": "Frame 321",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 46,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2417.17,
+    "w": 445,
+    "h": 650.38
+   },
+   "nomeFramer": "Frame 320",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 40,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2417.17,
+    "w": 445,
+    "h": 650.38
+   },
+   "nomeFramer": "Frame 2771",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2417.17,
+    "w": 445,
+    "h": 194.38
+   },
+   "nomeFramer": "Frame 2770",
+   "fundo": "rgba(240, 217, 198, 0.45)",
+   "padding": [
+    26,
+    32,
+    26,
+    32
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 24,
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 2443.17,
+    "w": 381,
+    "h": 32
+   },
+   "nomeFramer": "Frame 2770",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 2443.17,
+    "w": 186,
+    "h": 21.59
+   },
+   "nomeFramer": "Arquitetura Comercial",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 2443.17,
+    "w": 186,
+    "h": 21.59
+   },
+   "texto": "Arquitetura Comercial",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 18,
+    "peso": 600,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(33, 32, 31)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 2443.17,
+    "w": 32,
+    "h": 32
+   },
+   "nomeFramer": " Icone Arrow down",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 2443.17,
+    "w": 32,
+    "h": 32
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 413,
+    "y": 2443.17,
+    "w": 32,
+    "h": 32
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 422.33,
+    "y": 2455.17,
+    "w": 13.33,
+    "h": 6.67
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 2499.17,
+    "w": 381,
+    "h": 86.38
+   },
+   "nomeFramer": "Um projeto residencial transforma o lar, unindo estética, conforto e funcionalidade.  Começa com briefing, levantamento e estudo das necessidades do cliente.  Define conceito, cores, materiais, mobiliário e disposição dos ambientes.  Inclui imagens 3D, detalhamentos técnicos, lista de compras e acompanhamento.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 2499.17,
+    "w": 381,
+    "h": 86.38
+   },
+   "texto": "Residências únicas que refletem o estilo de vida dos moradores, com cada detalhe pensado para unir conforto, estética e ",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 18,
+    "peso": 400,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 51, 49)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2625.55,
+    "w": 445,
+    "h": 100
+   },
+   "nomeFramer": "Frame 2767",
+   "padding": [
+    40,
+    32,
+    40,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "center"
+   ],
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 2664.75,
+    "w": 202.06,
+    "h": 21.59
+   },
+   "nomeFramer": "Arquitetura Residencial",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 2664.75,
+    "w": 202.06,
+    "h": 21.59
+   },
+   "texto": "Arquitetura Residencial",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 18,
+    "peso": 700,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(67, 67, 67)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 2659.05,
+    "w": 32,
+    "h": 33
+   },
+   "nomeFramer": " Icone Arrow down",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 2659.05,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 413,
+    "y": 2659.05,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 422.33,
+    "y": 2672.88,
+    "w": 13.33,
+    "h": 6.67
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2739.55,
+    "w": 445,
+    "h": 100
+   },
+   "nomeFramer": "Frame 2771",
+   "padding": [
+    40,
+    32,
+    40,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "center"
+   ],
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 2778.75,
+    "w": 173.06,
+    "h": 21.59
+   },
+   "nomeFramer": "Design de Interiores",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 2778.75,
+    "w": 173.06,
+    "h": 21.59
+   },
+   "texto": "Design de Interiores",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 18,
+    "peso": 700,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(67, 67, 67)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 2773.05,
+    "w": 32,
+    "h": 33
+   },
+   "nomeFramer": " Icone Arrow down",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 2773.05,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 413,
+    "y": 2773.05,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 422.33,
+    "y": 2786.88,
+    "w": 13.33,
+    "h": 6.67
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2853.55,
+    "w": 445,
+    "h": 100
+   },
+   "nomeFramer": "Frame 2772",
+   "padding": [
+    40,
+    32,
+    40,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "center"
+   ],
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(4) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 2892.75,
+    "w": 223.06,
+    "h": 21.59
+   },
+   "nomeFramer": "Consultoria de Decoração",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(4) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 2892.75,
+    "w": 223.06,
+    "h": 21.59
+   },
+   "texto": "Consultoria de Decoração",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 18,
+    "peso": 700,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(67, 67, 67)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(4) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 2887.05,
+    "w": 32,
+    "h": 33
+   },
+   "nomeFramer": " Icone Arrow down",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(4) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 2887.05,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(4) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 413,
+    "y": 2887.05,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(4) > div:nth-of-type(2) > div > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 422.33,
+    "y": 2900.88,
+    "w": 13.33,
+    "h": 6.67
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(5)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2967.55,
+    "w": 445,
+    "h": 100
+   },
+   "nomeFramer": "Frame 2768",
+   "padding": [
+    40,
+    32,
+    40,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "center"
+   ],
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(5) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3006.75,
+    "w": 123.05,
+    "h": 21.59
+   },
+   "nomeFramer": "Ambientações",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(5) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 3006.75,
+    "w": 123.05,
+    "h": 21.59
+   },
+   "texto": "Ambientações",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 18,
+    "peso": 700,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(68, 68, 68)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(5) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 3001.05,
+    "w": 32,
+    "h": 33
+   },
+   "nomeFramer": " Icone Arrow down",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(5) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 413,
+    "y": 3001.05,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(5) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 413,
+    "y": 3001.05,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(5) > div:nth-of-type(2) > div > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 422.33,
+    "y": 3014.88,
+    "w": 13.33,
+    "h": 6.67
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 523,
+    "y": 2417.17,
+    "w": 445,
+    "h": 656
+   },
+   "nomeFramer": "unsplash:GWdZpXUPMs0",
+   "raio": "32px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 523,
+    "y": 2417.17,
+    "w": 445,
+    "h": 656
+   },
+   "raio": "32px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 523,
+    "y": 2417.17,
+    "w": 445,
+    "h": 656
+   },
+   "raio": "32px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/aUsWNH5HVns8IeHpSxQk7R2VUqY.jpg?width=2499&height=1666",
+    "srcset": "https://framerusercontent.com/images/aUsWNH5HVns8IeHpSxQk7R2VUqY.jpg?scale-down-to=512&width=2499&height=1666 512w,https://framerusercontent.com/images/aUsWNH5HVns8IeHpSxQk7R2VUqY.jpg?scale-down-to=1024&width=2499&height=1666 1024w,https://framerusercontent.com/images/aUsWNH5HVns8IeHpSxQk7R2VUqY.jpg?scale-down-to=2048&width=2499&height=1666 2048w,https://framerusercontent.com/images/aUsWNH5HVns8IeHpSxQk7R2VUqY.jpg?width=2499&height=1666 2499w",
+    "sizes": "(min-width: 1200px) max((calc(100vw - 200px) - 46px) / 2, 1px), (max-width: 809.98px) calc(100vw - 32px), (min-width: 810px) and (max-width: 1199.98px) max((calc(100vw - 64px) - 46px) / 2, 1px)",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 445,
+     "h": 296
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 3271.17,
+    "w": 936,
+    "h": 1717.16
+   },
+   "nomeFramer": "Frame 3102",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-end"
+   ],
+   "gap": 34,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 3271.17,
+    "w": 936,
+    "h": 1717.16
+   },
+   "nomeFramer": "Frame 2771",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 37,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 3271.17,
+    "w": 936,
+    "h": 1717.16
+   },
+   "nomeFramer": "Frame 3103",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 31,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 3271.17,
+    "w": 423,
+    "h": 1717.16
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 3271.17,
+    "w": 423,
+    "h": 388.78
+   },
+   "nomeFramer": "Frame 2776",
+   "padding": [
+    40,
+    32,
+    40,
+    32
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 24,
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3311.17,
+    "w": 359,
+    "h": 108
+   },
+   "nomeFramer": "Frame 2770",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3311.17,
+    "w": 100.11,
+    "h": 108
+   },
+   "nomeFramer": "01",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 3311.17,
+    "w": 100.11,
+    "h": 108
+   },
+   "texto": "01",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 90,
+    "peso": 700,
+    "alturaLinha": 108,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3443.17,
+    "w": 359,
+    "h": 38.41
+   },
+   "nomeFramer": "Frame 2771",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3443.17,
+    "w": 373.41,
+    "h": 38.41
+   },
+   "nomeFramer": "Briefing e Levantamento",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 3443.17,
+    "w": 373.41,
+    "h": 38.41
+   },
+   "texto": "Briefing e Levantamento",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 118, 105)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3505.58,
+    "w": 359,
+    "h": 86.38
+   },
+   "nomeFramer": "Conversamos com você para entender estilo de vida, necessidades e expectativas, e realizamos medições e registro completo do espaço.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 3505.58,
+    "w": 359,
+    "h": 86.38
+   },
+   "texto": "Conversamos com você para entender estilo de vida, necessidades e expectativas, e realizamos medições e registro complet",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 18,
+    "peso": 600,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(112, 108, 105)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3615.95,
+    "w": 359,
+    "h": 4
+   },
+   "nomeFramer": "Line 1",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3615.95,
+    "w": 359,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 64,
+    "y": 3615.95,
+    "w": 359,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 3669.95,
+    "w": 423,
+    "h": 405.59
+   },
+   "nomeFramer": "Frame 2781",
+   "padding": [
+    40,
+    32,
+    40,
+    32
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-end"
+   ],
+   "gap": 24,
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3709.95,
+    "w": 359,
+    "h": 108
+   },
+   "nomeFramer": "Frame 2770",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3709.95,
+    "w": 359,
+    "h": 108
+   },
+   "nomeFramer": "02",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 3709.95,
+    "w": 359,
+    "h": 108
+   },
+   "texto": "02",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 90,
+    "peso": 700,
+    "alturaLinha": 108,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3841.95,
+    "w": 359,
+    "h": 76.81
+   },
+   "nomeFramer": "Frame 2771",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3841.95,
+    "w": 359,
+    "h": 76.81
+   },
+   "nomeFramer": "Desenvolvimento do Conceito",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 3841.95,
+    "w": 359,
+    "h": 76.81
+   },
+   "texto": "Desenvolvimento do Conceito",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 118, 105)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 3942.77,
+    "w": 359,
+    "h": 64.78
+   },
+   "nomeFramer": "Criamos o conceito do projeto, definindo paleta de cores, materiais, mobiliário e disposição dos ambientes.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 3942.77,
+    "w": 359,
+    "h": 64.78
+   },
+   "texto": "Criamos o conceito do projeto, definindo paleta de cores, materiais, mobiliário e disposição dos ambientes.",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 18,
+    "peso": 600,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(112, 108, 105)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4031.55,
+    "w": 359,
+    "h": 4
+   },
+   "nomeFramer": "Line 1",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4031.55,
+    "w": 359,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 64,
+    "y": 4031.55,
+    "w": 359,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 4085.55,
+    "w": 423,
+    "h": 465.59
+   },
+   "nomeFramer": "Frame 2782",
+   "padding": [
+    40,
+    32,
+    40,
+    32
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 24,
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4125.55,
+    "w": 359,
+    "h": 108
+   },
+   "nomeFramer": "Frame 2770",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4125.55,
+    "w": 359,
+    "h": 108
+   },
+   "nomeFramer": "03",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 4125.55,
+    "w": 359,
+    "h": 108
+   },
+   "texto": "03",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 90,
+    "peso": 700,
+    "alturaLinha": 108,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4257.55,
+    "w": 359,
+    "h": 115.22
+   },
+   "nomeFramer": "Frame 2771",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4257.55,
+    "w": 359,
+    "h": 115.22
+   },
+   "nomeFramer": "Detalhamentos Técnicos e Planejamento",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 4257.55,
+    "w": 359,
+    "h": 115.22
+   },
+   "texto": "Detalhamentos Técnicos e Planejamento",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 118, 105)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4396.77,
+    "w": 359,
+    "h": 86.38
+   },
+   "nomeFramer": "Elaboramos plantas, projetos de marcenaria, iluminação e revestimentos, além de lista de compras e fornecedores para garantir precisão.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 4396.77,
+    "w": 359,
+    "h": 86.38
+   },
+   "texto": "Elaboramos plantas, projetos de marcenaria, iluminação e revestimentos, além de lista de compras e fornecedores para gar",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 18,
+    "peso": 600,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(112, 108, 105)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4507.14,
+    "w": 359,
+    "h": 4
+   },
+   "nomeFramer": "Line 1",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4507.14,
+    "w": 359,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(4) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 64,
+    "y": 4507.14,
+    "w": 359,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 4561.14,
+    "w": 423,
+    "h": 427.19
+   },
+   "nomeFramer": "Frame 2784",
+   "padding": [
+    40,
+    32,
+    40,
+    32
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-end"
+   ],
+   "gap": 24,
+   "raio": "16px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4601.14,
+    "w": 359,
+    "h": 108
+   },
+   "nomeFramer": "Frame 2770",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4601.14,
+    "w": 359,
+    "h": 108
+   },
+   "nomeFramer": "04",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 4601.14,
+    "w": 359,
+    "h": 108
+   },
+   "texto": "04",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 90,
+    "peso": 700,
+    "alturaLinha": 108,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4733.14,
+    "w": 359,
+    "h": 76.81
+   },
+   "nomeFramer": "Frame 2771",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4733.14,
+    "w": 359,
+    "h": 76.81
+   },
+   "nomeFramer": "Execução e Ambientação",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 4733.14,
+    "w": 359,
+    "h": 76.81
+   },
+   "texto": "Execução e Ambientação",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 118, 105)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4833.95,
+    "w": 359,
+    "h": 86.38
+   },
+   "nomeFramer": "Acompanhamos a implementação, garantindo que cada detalhe seja fiel ao projeto e que o resultado final seja funcional e harmonioso.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 64,
+    "y": 4833.95,
+    "w": 359,
+    "h": 86.38
+   },
+   "texto": "Acompanhamos a implementação, garantindo que cada detalhe seja fiel ao projeto e que o resultado final seja funcional e ",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 18,
+    "peso": 600,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(112, 108, 105)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4944.33,
+    "w": 359,
+    "h": 4
+   },
+   "nomeFramer": "Line 1",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 64,
+    "y": 4944.33,
+    "w": 359,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(4) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 64,
+    "y": 4944.33,
+    "w": 359,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 486,
+    "y": 3271.17,
+    "w": 482,
+    "h": 196.8
+   },
+   "nomeFramer": "Tag parceiros e Titulo",
+   "padding": [
+    48,
+    0,
+    0,
+    0
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-end"
+   ],
+   "gap": 12,
+   "posicao": "sticky",
+   "z": 1
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 486,
+    "y": 3319.17,
+    "w": 482,
+    "h": 28.8
+   },
+   "nomeFramer": "Frame 3124",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 24,
+   "posicao": "relative",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 486,
+    "y": 3332.06,
+    "w": 64,
+    "h": 3
+   },
+   "nomeFramer": "Line 6",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 486,
+    "y": 3332.06,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 486,
+    "y": 3332.06,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 574,
+    "y": 3319.17,
+    "w": 157.44,
+    "h": 28.8
+   },
+   "nomeFramer": "Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574,
+    "y": 3319.17,
+    "w": 157.44,
+    "h": 28.8
+   },
+   "texto": "Passo a passo",
+   "fonte": {
+    "familia": "Faberge",
+    "tamanho": 24,
+    "peso": 400,
+    "alturaLinha": 28.8,
+    "tracking": 0
+   },
+   "cor": "rgb(169, 140, 103)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 486,
+    "y": 3359.97,
+    "w": 482,
+    "h": 108
+   },
+   "nomeFramer": "Titulo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > p:nth-of-type(1)",
+   "tag": "p",
+   "caixa": {
+    "x": 486,
+    "y": 3359.97,
+    "w": 482,
+    "h": 54
+   },
+   "texto": "Nós temos um método simples,",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 30,
+    "peso": 500,
+    "alturaLinha": 54,
+    "tracking": 0
+   },
+   "cor": "rgb(72, 59, 42)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > p:nth-of-type(2)",
+   "tag": "p",
+   "caixa": {
+    "x": 486,
+    "y": 3413.97,
+    "w": 482,
+    "h": 54
+   },
+   "texto": "rápido e efetivo",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 54,
+    "tracking": 0
+   },
+   "cor": "rgb(72, 59, 42)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > p:nth-of-type(2) > span",
+   "tag": "span",
+   "caixa": {
+    "x": 486,
+    "y": 3421.97,
+    "w": 67,
+    "h": 38
+   },
+   "texto": "mas",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 30,
+    "peso": 500,
+    "alturaLinha": 54,
+    "tracking": 0
+   },
+   "cor": "rgb(72, 59, 42)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 5102.33,
+    "w": 1000,
+    "h": 656.41
+   },
+   "padding": [
+    0,
+    60,
+    0,
+    60
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 60,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 60,
+    "y": 5102.33,
+    "w": 880,
+    "h": 50.41
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 88,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 60,
+    "y": 5109.53,
+    "w": 372,
+    "h": 36
+   },
+   "nomeFramer": "@Isabellapires",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 60,
+    "y": 5109.53,
+    "w": 372,
+    "h": 36
+   },
+   "texto": "@arq.isabellapires",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 36,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 520,
+    "y": 5102.33,
+    "w": 420,
+    "h": 50.41
+   },
+   "nomeFramer": "Botão Primario",
+   "fundo": "rgb(169, 140, 103)",
+   "padding": [
+    12,
+    24,
+    12,
+    24
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > a > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 606.5,
+    "y": 5114.33,
+    "w": 247,
+    "h": 26.41
+   },
+   "nomeFramer": "Botão Primário",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > a > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 606.5,
+    "y": 5114.33,
+    "w": 247,
+    "h": 26.41
+   },
+   "texto": "Siga-nos no instagram!",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 26.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 60,
+    "y": 5212.73,
+    "w": 880,
+    "h": 546
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 31,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 60,
+    "y": 5212.73,
+    "w": 424.5,
+    "h": 496.86
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 10,
+   "raio": "21px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 60,
+    "y": 5212.73,
+    "w": 424.5,
+    "h": 496.86
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div > iframe",
+   "tag": "iframe",
+   "caixa": {
+    "x": 60,
+    "y": 5212.73,
+    "w": 424.5,
+    "h": 496.86
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 515.5,
+    "y": 5212.73,
+    "w": 424.5,
+    "h": 496.86
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 10,
+   "raio": "21px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 515.5,
+    "y": 5212.73,
+    "w": 424.5,
+    "h": 496.86
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div > iframe",
+   "tag": "iframe",
+   "caixa": {
+    "x": 515.5,
+    "y": 5212.73,
+    "w": 424.5,
+    "h": 496.86
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 5758.73,
+    "w": 1000,
+    "h": 372
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 5758.73,
+    "w": 1000,
+    "h": 372
+   },
+   "nomeFramer": "Mobile",
+   "padding": [
+    150,
+    32,
+    150,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 5908.73,
+    "w": 936,
+    "h": 72
+   },
+   "nomeFramer": "ISABELLA PIRES",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 32,
+    "y": 5908.73,
+    "w": 936,
+    "h": 72
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1)",
+   "tag": "span",
+   "caixa": {
+    "x": 222,
+    "y": 5906.73,
+    "w": 334,
+    "h": 75
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(1)",
+   "tag": "span",
+   "caixa": {
+    "x": 222,
+    "y": 5908.73,
+    "w": 22,
+    "h": 72
+   },
+   "texto": "I",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(2)",
+   "tag": "span",
+   "caixa": {
+    "x": 244,
+    "y": 5908.73,
+    "w": 44,
+    "h": 72
+   },
+   "texto": "S",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(3)",
+   "tag": "span",
+   "caixa": {
+    "x": 288,
+    "y": 5908.73,
+    "w": 51,
+    "h": 72
+   },
+   "texto": "A",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(4)",
+   "tag": "span",
+   "caixa": {
+    "x": 339,
+    "y": 5908.73,
+    "w": 47,
+    "h": 72
+   },
+   "texto": "B",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(5)",
+   "tag": "span",
+   "caixa": {
+    "x": 386,
+    "y": 5908.73,
+    "w": 41,
+    "h": 72
+   },
+   "texto": "E",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(6)",
+   "tag": "span",
+   "caixa": {
+    "x": 427,
+    "y": 5908.73,
+    "w": 39,
+    "h": 72
+   },
+   "texto": "L",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(7)",
+   "tag": "span",
+   "caixa": {
+    "x": 466,
+    "y": 5908.73,
+    "w": 39,
+    "h": 72
+   },
+   "texto": "L",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(8)",
+   "tag": "span",
+   "caixa": {
+    "x": 505,
+    "y": 5908.73,
+    "w": 51,
+    "h": 72
+   },
+   "texto": "A",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(2)",
+   "tag": "span",
+   "caixa": {
+    "x": 578,
+    "y": 5906.73,
+    "w": 200,
+    "h": 75
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(1)",
+   "tag": "span",
+   "caixa": {
+    "x": 578,
+    "y": 5908.73,
+    "w": 45,
+    "h": 72
+   },
+   "texto": "P",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(2)",
+   "tag": "span",
+   "caixa": {
+    "x": 623,
+    "y": 5908.73,
+    "w": 22,
+    "h": 72
+   },
+   "texto": "I",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(3)",
+   "tag": "span",
+   "caixa": {
+    "x": 645,
+    "y": 5908.73,
+    "w": 48,
+    "h": 72
+   },
+   "texto": "R",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(4)",
+   "tag": "span",
+   "caixa": {
+    "x": 693,
+    "y": 5908.73,
+    "w": 41,
+    "h": 72
+   },
+   "texto": "E",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(5)",
+   "tag": "span",
+   "caixa": {
+    "x": 734,
+    "y": 5908.73,
+    "w": 44,
+    "h": 72
+   },
+   "texto": "S",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 6130.73,
+    "w": 1000,
+    "h": 544
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 6130.73,
+    "w": 1000,
+    "h": 544
+   },
+   "nomeFramer": "Serviços/Sobre nós - Tablet",
+   "fundo": "rgb(169, 140, 103)",
+   "padding": [
+    52,
+    48,
+    52,
+    48
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 133,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6182.73,
+    "w": 904,
+    "h": 440
+   },
+   "nomeFramer": "Frame 2744",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6182.73,
+    "w": 904,
+    "h": 309
+   },
+   "nomeFramer": "Frame 2743",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 40,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6182.73,
+    "w": 904,
+    "h": 265
+   },
+   "nomeFramer": "Frame 52",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 42,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6182.73,
+    "w": 904,
+    "h": 265
+   },
+   "nomeFramer": "Frame 3045",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 149,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6182.73,
+    "w": 377.5,
+    "h": 265
+   },
+   "nomeFramer": "Opções Institucionais",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6182.73,
+    "w": 185,
+    "h": 38.41
+   },
+   "nomeFramer": "Institucional",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 6182.73,
+    "w": 185,
+    "h": 38.41
+   },
+   "texto": "Institucional",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 6233.14,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6243.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Início",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 6243.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Início",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 6265.14,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6275.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 6275.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Serviços",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 6297.14,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6307.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Projetos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 6307.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Projetos",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 6329.14,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6339.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 6339.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Sobre nós",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 6361.14,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6371.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Blog",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 6371.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Blog",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 6393.14,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6403.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Contato",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 6403.14,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Contato",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 6182.73,
+    "w": 377.5,
+    "h": 265
+   },
+   "nomeFramer": "opções de Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 6182.73,
+    "w": 190,
+    "h": 38.41
+   },
+   "nomeFramer": "Informações",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 6182.73,
+    "w": 190,
+    "h": 38.41
+   },
+   "texto": "Informações",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 6233.14,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "Planos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 6233.14,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Termos de uso",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 6264.34,
+    "w": 177,
+    "h": 38.41
+   },
+   "nomeFramer": "Seja Parceiro(a)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 6264.34,
+    "w": 177,
+    "h": 38.41
+   },
+   "texto": "Políticas de Privacidade",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 6314.75,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "já Sou Parceiro",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 6314.75,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Políticas de Cookies",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6487.73,
+    "w": 904,
+    "h": 4
+   },
+   "nomeFramer": "Divisor",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6487.73,
+    "w": 904,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 48,
+    "y": 6487.73,
+    "w": 904,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6523.73,
+    "w": 904,
+    "h": 99
+   },
+   "nomeFramer": "Frame 3047",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 15,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6523.73,
+    "w": 904,
+    "h": 24
+   },
+   "nomeFramer": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 6523.73,
+    "w": 904,
+    "h": 24
+   },
+   "texto": "© 2025 Arquiteta Isabella Pires |",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 20,
+    "peso": 500,
+    "alturaLinha": 24,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 6562.73,
+    "w": 904,
+    "h": 60
+   },
+   "padding": [
+    10,
+    0,
+    10,
+    0
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 405,
+    "y": 6572.73,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 405,
+    "y": 6572.73,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 455,
+    "y": 6572.73,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 455,
+    "y": 6572.73,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 505,
+    "y": 6572.73,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 505,
+    "y": 6572.73,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 555,
+    "y": 6572.73,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 555,
+    "y": 6572.73,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 59,
+    "w": 810,
+    "h": 281
+   },
+   "nomeFramer": "Frame 2902",
+   "fundo": "rgb(251, 247, 244)",
+   "padding": [
+    0,
+    48,
+    0,
+    48
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 22,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 59,
+    "w": 714,
+    "h": 281
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 59,
+    "w": 423,
+    "h": 281
+   },
+   "nomeFramer": "Frame 2901",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 67,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 124.7,
+    "w": 195,
+    "h": 25
+   },
+   "nomeFramer": "Frame 2907",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 24,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 124.7,
+    "w": 195,
+    "h": 25
+   },
+   "nomeFramer": "Frame 2905",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 124.7,
+    "w": 18,
+    "h": 25
+   },
+   "nomeFramer": "fa-house",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 124.7,
+    "w": 18,
+    "h": 25
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 48,
+    "y": 124.7,
+    "w": 18,
+    "h": 25
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 49.5,
+    "y": 130.59,
+    "w": 15,
+    "h": 13.24
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 74,
+    "y": 127.2,
+    "w": 169,
+    "h": 20
+   },
+   "nomeFramer": "Frame 2906",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 74,
+    "y": 127.2,
+    "w": 50,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 99,
+    "y": 137.2,
+    "w": 49,
+    "h": 19.2
+   },
+   "nomeFramer": "Início /",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > a > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 99,
+    "y": 137.2,
+    "w": 49,
+    "h": 19.2
+   },
+   "texto": "Início /",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(33, 37, 41)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 124,
+    "y": 127.59,
+    "w": 119,
+    "h": 19.2
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 124,
+    "y": 127.59,
+    "w": 119,
+    "h": 19.2
+   },
+   "texto": "Nossos serviços",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 216.7,
+    "w": 423,
+    "h": 57.59
+   },
+   "nomeFramer": "Frame 2904",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 159,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 216.7,
+    "w": 224,
+    "h": 57.59
+   },
+   "nomeFramer": "Frame 3044",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 26,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 216.7,
+    "w": 224,
+    "h": 57.59
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 216.7,
+    "w": 224,
+    "h": 57.59
+   },
+   "texto": "Sobre nós",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 48,
+    "peso": 600,
+    "alturaLinha": 57.6,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(6) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 481,
+    "y": 59,
+    "w": 281,
+    "h": 281
+   },
+   "nomeFramer": "31 1",
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 281 281%22><path d=%22M 136.661 79.487 C 136.695 81.177 136.736 82.559",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(1)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1000,
+    "w": 24,
+    "h": 34
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(1) > path",
+   "tag": "path",
+   "caixa": {
+    "x": 2,
+    "y": 1008,
+    "w": 20,
+    "h": 18
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(2)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1045,
+    "w": 64,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(3)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1059,
+    "w": 340,
+    "h": 3
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(4)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1072,
+    "w": 1660,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(5)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1079,
+    "w": 32,
+    "h": 32
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(5) > path",
+   "tag": "path",
+   "caixa": {
+    "x": 9.33,
+    "y": 1091,
+    "w": 13.33,
+    "h": 6.67
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(6)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1114,
+    "w": 32,
+    "h": 33
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(6) > path",
+   "tag": "path",
+   "caixa": {
+    "x": 9.33,
+    "y": 1127.83,
+    "w": 13.33,
+    "h": 6.67
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(7)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1157,
+    "w": 586,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(8)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1171,
+    "w": 1446,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 960,
+    "y": 485,
+    "w": 30,
+    "h": 30
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "fixed",
+   "z": 2147483647
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > span",
+   "tag": "span",
+   "caixa": {
+    "x": 857,
+    "y": 488.5,
+    "w": 93,
+    "h": 23
+   },
+   "texto": "Edit Content",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 12,
+    "peso": 500,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)",
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "padding": [
+    4,
+    8,
+    4,
+    8
+   ],
+   "raio": "8px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px",
+   "opacidade": 0,
+   "posicao": "fixed"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button",
+   "tag": "button",
+   "caixa": {
+    "x": 960,
+    "y": 485,
+    "w": 30,
+    "h": 30
+   },
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "raio": "15px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 968,
+    "y": 493,
+    "w": 14,
+    "h": 14
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg > path:nth-of-type(1)",
+   "tag": "path",
+   "caixa": {
+    "x": 969.75,
+    "y": 494.73,
+    "w": 10.02,
+    "h": 10.02
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > iframe",
+   "tag": "iframe",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 1000
+   },
+   "posicao": "fixed",
+   "z": 2147483646
+  }
+ ]
+}

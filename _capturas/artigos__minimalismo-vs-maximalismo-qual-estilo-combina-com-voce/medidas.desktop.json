@@ -1,0 +1,3093 @@
+{
+ "_origem": "_capturas/artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce/desktop.html",
+ "_breakpoint": {
+  "nome": "desktop",
+  "largura": 1440
+ },
+ "_rota": "/artigos/minimalismo-vs-maximalismo-qual-estilo-combina-com-voce/",
+ "_alturaDaPagina": 4744,
+ "_elementosRevelados": 6,
+ "_recursosQueFalharam": [],
+ "elementos": [
+  {
+   "caminho": "body > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 4743.75
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 4743.75
+   },
+   "fundo": "rgb(251, 247, 244)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 58,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav",
+   "tag": "nav",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   },
+   "nomeFramer": "Desktop",
+   "fundo": "rgb(251, 247, 244)",
+   "padding": [
+    24,
+    100,
+    24,
+    100
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 24,
+    "w": 179,
+    "h": 42
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 100,
+    "y": 24,
+    "w": 179,
+    "h": 42
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 101.5,
+    "y": 24,
+    "w": 33,
+    "h": 42
+   },
+   "nomeFramer": "Logotipo",
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 33 42%22><path d=%22M 14.851 0.043 C 12.906 0.24 11.183 0.723 9.511 1.",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 148.5,
+    "y": 35.39,
+    "w": 129,
+    "h": 19.2
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 148.5,
+    "y": 35.39,
+    "w": 129,
+    "h": 19.2
+   },
+   "texto": "ISABELLA PIRES",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(53, 32, 5)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 293,
+    "y": 25,
+    "w": 1047,
+    "h": 40
+   },
+   "nomeFramer": "Links",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "center"
+   ],
+   "gap": 20,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 899.97,
+    "y": 25,
+    "w": 42.41,
+    "h": 40
+   },
+   "nomeFramer": "Trigger",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(1) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 899.97,
+    "y": 25,
+    "w": 42.41,
+    "h": 40
+   },
+   "nomeFramer": "Closed",
+   "padding": [
+    5,
+    0,
+    5,
+    0
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 5,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(1) > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 899.97,
+    "y": 30,
+    "w": 42.41,
+    "h": 30
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(1) > a > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 899.97,
+    "y": 30,
+    "w": 42.41,
+    "h": 30
+   },
+   "texto": "Home",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 15,
+    "peso": 500,
+    "alturaLinha": 30,
+    "tracking": -0.15
+   },
+   "cor": "rgb(68, 68, 68)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 962.38,
+    "y": 25,
+    "w": 62.81,
+    "h": 40
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 962.38,
+    "y": 25,
+    "w": 62.81,
+    "h": 40
+   },
+   "nomeFramer": "Closed",
+   "padding": [
+    5,
+    0,
+    5,
+    0
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 5,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 962.38,
+    "y": 30,
+    "w": 62.81,
+    "h": 30
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > a > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 962.38,
+    "y": 30,
+    "w": 62.81,
+    "h": 30
+   },
+   "texto": "Serviços",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 15,
+    "peso": 500,
+    "alturaLinha": 30,
+    "tracking": -0.15
+   },
+   "cor": "rgb(68, 68, 68)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 1045.19,
+    "y": 25,
+    "w": 58.81,
+    "h": 40
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(3) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 1045.19,
+    "y": 25,
+    "w": 58.81,
+    "h": 40
+   },
+   "nomeFramer": "Closed",
+   "padding": [
+    5,
+    0,
+    5,
+    0
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 5,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(3) > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 1045.19,
+    "y": 30,
+    "w": 58.81,
+    "h": 30
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > div:nth-of-type(3) > a > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 1045.19,
+    "y": 30,
+    "w": 58.81,
+    "h": 30
+   },
+   "texto": "Projetos",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 15,
+    "peso": 500,
+    "alturaLinha": 30,
+    "tracking": -0.15
+   },
+   "cor": "rgb(68, 68, 68)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 1124,
+    "y": 25,
+    "w": 32,
+    "h": 40
+   },
+   "nomeFramer": "Inline Link",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 1124,
+    "y": 25,
+    "w": 32,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 1124,
+    "y": 15,
+    "w": 32,
+    "h": 60
+   },
+   "texto": "Blog",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 15,
+    "peso": 500,
+    "alturaLinha": 30,
+    "tracking": -0.15
+   },
+   "cor": "rgb(68, 68, 68)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 1176,
+    "y": 25,
+    "w": 72,
+    "h": 40
+   },
+   "nomeFramer": "Inline Link",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 1176,
+    "y": 25,
+    "w": 72,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 1176,
+    "y": 30,
+    "w": 72,
+    "h": 30
+   },
+   "texto": "Sobre nós",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 15,
+    "peso": 500,
+    "alturaLinha": 30,
+    "tracking": -0.15
+   },
+   "cor": "rgb(68, 68, 68)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 1268,
+    "y": 25,
+    "w": 72,
+    "h": 40
+   },
+   "nomeFramer": "Inline Link",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 1268,
+    "y": 25,
+    "w": 72,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > a:nth-of-type(3) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 1268,
+    "y": 30,
+    "w": 72,
+    "h": 30
+   },
+   "texto": "Contato",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 15,
+    "peso": 500,
+    "alturaLinha": 30,
+    "tracking": -0.15
+   },
+   "cor": "rgb(68, 68, 68)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 148,
+    "w": 1440,
+    "h": 3484.75
+   },
+   "padding": [
+    0,
+    200,
+    0,
+    200
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 60,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 250,
+    "y": 148,
+    "w": 940,
+    "h": 82.59
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 15,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 420,
+    "y": 148,
+    "w": 600,
+    "h": 25.59
+   },
+   "nomeFramer": "Data",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 420,
+    "y": 148,
+    "w": 600,
+    "h": 25.59
+   },
+   "texto": "12 de mai. de 2026",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(153, 153, 153)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 262.48,
+    "y": 188.59,
+    "w": 915.02,
+    "h": 42
+   },
+   "nomeFramer": "Título",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h2",
+   "tag": "h2",
+   "caixa": {
+    "x": 262.48,
+    "y": 188.59,
+    "w": 915.02,
+    "h": 42
+   },
+   "texto": "Minimalismo x Maximalismo: Qual estilo é o seu?",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(89, 89, 89)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 200,
+    "y": 290.59,
+    "w": 1040,
+    "h": 400
+   },
+   "nomeFramer": "Banner",
+   "raio": "24px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 200,
+    "y": 290.59,
+    "w": 1040,
+    "h": 400
+   },
+   "raio": "24px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 200,
+    "y": 290.59,
+    "w": 1040,
+    "h": 400
+   },
+   "raio": "24px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?width=1536&height=1024",
+    "srcset": "https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?scale-down-to=512&width=1536&height=1024 512w,https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?scale-down-to=1024&width=1536&height=1024 1024w,https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?width=1536&height=1024 1536w",
+    "sizes": "(min-width: 1200px) max(calc(100vw - 400px), 306.6667px), (max-width: 809.98px) max(calc(100vw - 48px), max((100vw - 52px) / 2, 50px)), (min-width: 810px) and (max-width: 1199.98px) max(calc(100vw - 300px), max((100vw - 220px) / 2, 50px))",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 1040,
+     "h": 693
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 282.5,
+    "y": 750.59,
+    "w": 875,
+    "h": 2882.16
+   },
+   "nomeFramer": "Conteúdo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h1",
+   "tag": "h1",
+   "caixa": {
+    "x": 282.5,
+    "y": 750.59,
+    "w": 875,
+    "h": 88
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h1 > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 282.5,
+    "y": 747.59,
+    "w": 792.42,
+    "h": 93
+   },
+   "texto": "Minimalismo vs. Maximalismo: qual estilo combina com você?",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 40,
+    "peso": 900,
+    "alturaLinha": 44,
+    "tracking": -1.6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(1)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 858.59,
+    "w": 875,
+    "h": 51.19
+   },
+   "texto": "Antes de começar qualquer projeto, existe uma pergunta essencial: qual linguagem visual te faz sentir em casa? Entender ",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(2)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 929.78,
+    "w": 875,
+    "h": 76.78
+   },
+   "texto": "Dois dos estilos mais influentes da arquitetura contemporânea partem de filosofias opostas. O minimalismo propõe que cad",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3:nth-of-type(1)",
+   "tag": "h3",
+   "caixa": {
+    "x": 282.5,
+    "y": 1046.56,
+    "w": 875,
+    "h": 36.41
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3:nth-of-type(1) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 282.5,
+    "y": 1048.56,
+    "w": 488.48,
+    "h": 31
+   },
+   "texto": "Minimalismo: o essencial com elegância",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 26,
+    "peso": 900,
+    "alturaLinha": 36.4,
+    "tracking": -1.04
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(3)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 1102.97,
+    "w": 875,
+    "h": 102.38
+   },
+   "texto": "No minimalismo, menos é literalmente mais. A paleta é neutra: brancos, beges, cinzas e pretos e cada móvel é escolhido c",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > img:nth-of-type(1)",
+   "tag": "img",
+   "caixa": {
+    "x": 282.5,
+    "y": 1237.34,
+    "w": 768,
+    "h": 512
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "imagem": {
+    "src": "https://framerusercontent.com/images/Gd5nXrWDvSBuwywlH1TMAr44rc.png",
+    "srcset": "https://framerusercontent.com/images/Gd5nXrWDvSBuwywlH1TMAr44rc.png?scale-down-to=512&width=1536&height=1024 512w,https://framerusercontent.com/images/Gd5nXrWDvSBuwywlH1TMAr44rc.png?scale-down-to=1024&width=1536&height=1024 1024w,https://framerusercontent.com/images/Gd5nXrWDvSBuwywlH1TMAr44rc.png?width=1536&height=1024 1536w",
+    "sizes": "(min-width: 1200px) 100vw, (min-width: 810px) and (max-width: 1199.98px) 100vw, (max-width: 809.98px) 100vw",
+    "alt": "",
+    "objectFit": "fill",
+    "natural": {
+     "w": 1439,
+     "h": 959
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(4)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 1769.34,
+    "w": 875,
+    "h": 25.59
+   },
+   "texto": "imagem ilustrativa gerada por IA",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3:nth-of-type(2)",
+   "tag": "h3",
+   "caixa": {
+    "x": 282.5,
+    "y": 1834.94,
+    "w": 875,
+    "h": 36.41
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3:nth-of-type(2) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 282.5,
+    "y": 1836.94,
+    "w": 561.33,
+    "h": 31
+   },
+   "texto": "Maximalismo: personalidade em cada detalhe",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 26,
+    "peso": 900,
+    "alturaLinha": 36.4,
+    "tracking": -1.04
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(5)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 1891.34,
+    "w": 875,
+    "h": 102.38
+   },
+   "texto": "O maximalismo não é bagunça, é intenção em camadas. Cores vibrantes, papéis de parede com personalidade, coleções expost",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > img:nth-of-type(2)",
+   "tag": "img",
+   "caixa": {
+    "x": 282.5,
+    "y": 2025.72,
+    "w": 768,
+    "h": 512
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "imagem": {
+    "src": "https://framerusercontent.com/images/BoFUDg5jsmN1ITHx2CyfIFew.png",
+    "srcset": "https://framerusercontent.com/images/BoFUDg5jsmN1ITHx2CyfIFew.png?scale-down-to=512&width=1536&height=1024 512w,https://framerusercontent.com/images/BoFUDg5jsmN1ITHx2CyfIFew.png?scale-down-to=1024&width=1536&height=1024 1024w,https://framerusercontent.com/images/BoFUDg5jsmN1ITHx2CyfIFew.png?width=1536&height=1024 1536w",
+    "sizes": "(min-width: 1200px) 100vw, (min-width: 810px) and (max-width: 1199.98px) 100vw, (max-width: 809.98px) 100vw",
+    "alt": "",
+    "objectFit": "fill",
+    "natural": {
+     "w": 1439,
+     "h": 959
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(6)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 2557.72,
+    "w": 875,
+    "h": 25.59
+   },
+   "texto": "imagem ilustrativa gerada por IA",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3:nth-of-type(3)",
+   "tag": "h3",
+   "caixa": {
+    "x": 282.5,
+    "y": 2623.31,
+    "w": 875,
+    "h": 36.41
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3:nth-of-type(3) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 282.5,
+    "y": 2625.31,
+    "w": 344.84,
+    "h": 31
+   },
+   "texto": "Como identificar o seu estilo",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 26,
+    "peso": 900,
+    "alturaLinha": 36.4,
+    "tracking": -1.04
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(7)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 2679.72,
+    "w": 875,
+    "h": 51.19
+   },
+   "texto": "Não existe resposta certa. O que define o estilo ideal é a forma como você vive, não como você gostaria de ser visto. Ob",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(8)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 2750.91,
+    "w": 875,
+    "h": 51.19
+   },
+   "texto": "Você sente ansiedade com superfícies cheias de objetos? Ou o espaço vazio te parece sem vida? Essas respostas dizem mais",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(9)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 2822.09,
+    "w": 875,
+    "h": 51.19
+   },
+   "texto": "Muitos projetos contemporâneos combinam as duas linguagens, bases neutras e minimalistas que recebem obras de arte, tape",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > img:nth-of-type(3)",
+   "tag": "img",
+   "caixa": {
+    "x": 282.5,
+    "y": 2905.28,
+    "w": 512,
+    "h": 279.5
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "imagem": {
+    "src": "https://framerusercontent.com/images/C4Lvj8CSsIoFpwFglIbv063gywY.png",
+    "srcset": "https://framerusercontent.com/images/C4Lvj8CSsIoFpwFglIbv063gywY.png?scale-down-to=512&width=1024&height=559 512w,https://framerusercontent.com/images/C4Lvj8CSsIoFpwFglIbv063gywY.png?width=1024&height=559 1024w",
+    "sizes": "(min-width: 1200px) 100vw, (min-width: 810px) and (max-width: 1199.98px) 100vw, (max-width: 809.98px) 100vw",
+    "alt": "",
+    "objectFit": "fill",
+    "natural": {
+     "w": 1440,
+     "h": 786
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(10)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 3204.78,
+    "w": 875,
+    "h": 25.59
+   },
+   "texto": "imagem ilustrativa gerada por IA",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4",
+   "tag": "h4",
+   "caixa": {
+    "x": 282.5,
+    "y": 3270.38,
+    "w": 875,
+    "h": 61.59
+   },
+   "texto": "\"O melhor projeto é aquele que parece inevitável, como se não pudesse ser de outra forma.\"",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3:nth-of-type(4)",
+   "tag": "h3",
+   "caixa": {
+    "x": 282.5,
+    "y": 3371.97,
+    "w": 875,
+    "h": 72.81
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3:nth-of-type(4) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 282.5,
+    "y": 3373.97,
+    "w": 796.58,
+    "h": 67.41
+   },
+   "texto": "Seu espaço merece um projeto pensado para você, não para uma tendência.",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 26,
+    "peso": 900,
+    "alturaLinha": 36.4,
+    "tracking": -1.04
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(11)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 3464.78,
+    "w": 875,
+    "h": 76.78
+   },
+   "texto": "Seja minimalista, maximalista ou um pouco dos dois, traduzir sua personalidade em um ambiente funcional e bonito é exata",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(12)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 3561.56,
+    "w": 875,
+    "h": 25.59
+   },
+   "texto": "Atendimento personalizado, agenda limitada (44) 998790444",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(13)",
+   "tag": "p",
+   "caixa": {
+    "x": 282.5,
+    "y": 3607.16,
+    "w": 875,
+    "h": 25.59
+   },
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": -80,
+    "y": 3690.75,
+    "w": 1600,
+    "h": 510
+   },
+   "padding": [
+    0,
+    320,
+    45,
+    320
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 25,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 240,
+    "y": 3719.55,
+    "w": 960,
+    "h": 57.59
+   },
+   "nomeFramer": "Header Info",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 240,
+    "y": 3719.55,
+    "w": 705,
+    "h": 57.59
+   },
+   "nomeFramer": "Recent Post",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div > h2",
+   "tag": "h2",
+   "caixa": {
+    "x": 240,
+    "y": 3719.55,
+    "w": 705,
+    "h": 57.59
+   },
+   "texto": "Mais Recentes",
+   "fonte": {
+    "familia": "Inter Display",
+    "tamanho": 48,
+    "peso": 600,
+    "alturaLinha": 57.6,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 945,
+    "y": 3729.55,
+    "w": 255,
+    "h": 37.59
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a",
+   "tag": "a",
+   "caixa": {
+    "x": 945,
+    "y": 3729.55,
+    "w": 255,
+    "h": 37.59
+   },
+   "nomeFramer": "Desktop",
+   "padding": [
+    8,
+    15,
+    8,
+    15
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 5,
+   "raio": "999px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 960,
+    "y": 3737.55,
+    "w": 225,
+    "h": 21.59
+   },
+   "nomeFramer": "Section Browse",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 960,
+    "y": 3737.55,
+    "w": 194,
+    "h": 21.59
+   },
+   "nomeFramer": "View more blog",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(1) > h5",
+   "tag": "h5",
+   "caixa": {
+    "x": 960,
+    "y": 3737.55,
+    "w": 194,
+    "h": 21.59
+   },
+   "texto": "Ver todas as postagens",
+   "fonte": {
+    "familia": "Inter Display",
+    "tamanho": 18,
+    "peso": 400,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 1164,
+    "y": 3737.84,
+    "w": 21,
+    "h": 21
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 1164,
+    "y": 3737.84,
+    "w": 21,
+    "h": 21
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg > g",
+   "tag": "g",
+   "caixa": {
+    "x": 1168.59,
+    "y": 3742.44,
+    "w": 11.81,
+    "h": 11.81
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg > g > path",
+   "tag": "path",
+   "caixa": {
+    "x": 1168.59,
+    "y": 3742.44,
+    "w": 11.81,
+    "h": 11.81
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 240,
+    "y": 3802.14,
+    "w": 960,
+    "h": 324.81
+   },
+   "display": "grid",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "gap": 20,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 240,
+    "y": 3802.14,
+    "w": 306.66,
+    "h": 324.81
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 240,
+    "y": 3802.14,
+    "w": 306.66,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 240,
+    "y": 3802.14,
+    "w": 306.66,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 240,
+    "y": 3802.14,
+    "w": 306.66,
+    "h": 270
+   },
+   "raio": "8px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?width=1536&height=1024",
+    "srcset": "https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?scale-down-to=512&width=1536&height=1024 512w,https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?scale-down-to=1024&width=1536&height=1024 1024w,https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?width=1536&height=1024 1536w",
+    "sizes": "(min-width: 1200px) max(calc(100vw - 400px), 306.6667px), (max-width: 809.98px) max(calc(100vw - 48px), max((100vw - 52px) / 2, 50px)), (min-width: 810px) and (max-width: 1199.98px) max(calc(100vw - 300px), max((100vw - 220px) / 2, 50px))",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 1040,
+     "h": 693
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 240,
+    "y": 4082.14,
+    "w": 306.66,
+    "h": 44.81
+   },
+   "nomeFramer": "Title",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(2) > h6",
+   "tag": "h6",
+   "caixa": {
+    "x": 240,
+    "y": 4082.14,
+    "w": 306.66,
+    "h": 44.81
+   },
+   "texto": "Minimalismo x Maximalismo: Qual estilo é o seu?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 22.4,
+    "tracking": -0.32
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 566.66,
+    "y": 3802.14,
+    "w": 306.67,
+    "h": 302.41
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 566.66,
+    "y": 3802.14,
+    "w": 306.67,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 566.66,
+    "y": 3802.14,
+    "w": 306.67,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 566.66,
+    "y": 3802.14,
+    "w": 306.67,
+    "h": 270
+   },
+   "raio": "8px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/me9vvpdvwhhmckbSz680F10c.png?width=1536&height=1024",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 1536,
+     "h": 1024
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 566.66,
+    "y": 4082.14,
+    "w": 306.67,
+    "h": 22.41
+   },
+   "nomeFramer": "Title",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(2) > h6",
+   "tag": "h6",
+   "caixa": {
+    "x": 566.66,
+    "y": 4082.14,
+    "w": 306.67,
+    "h": 22.41
+   },
+   "texto": "Vale mais a pena reformar ou construir?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 22.4,
+    "tracking": -0.32
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 893.33,
+    "y": 3802.14,
+    "w": 306.66,
+    "h": 302.41
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 893.33,
+    "y": 3802.14,
+    "w": 306.66,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(3) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 893.33,
+    "y": 3802.14,
+    "w": 306.66,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(3) > div:nth-of-type(1) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 893.33,
+    "y": 3802.14,
+    "w": 306.66,
+    "h": 270
+   },
+   "raio": "8px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/m7nRiwddLb1wuJ5F1yYAi36DnR4.png?width=1536&height=1024",
+    "srcset": "https://framerusercontent.com/images/m7nRiwddLb1wuJ5F1yYAi36DnR4.png?scale-down-to=512&width=1536&height=1024 512w,https://framerusercontent.com/images/m7nRiwddLb1wuJ5F1yYAi36DnR4.png?scale-down-to=1024&width=1536&height=1024 1024w,https://framerusercontent.com/images/m7nRiwddLb1wuJ5F1yYAi36DnR4.png?width=1536&height=1024 1536w",
+    "sizes": "(min-width: 1200px) 306.6667px",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 306,
+     "h": 204
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 893.33,
+    "y": 4082.14,
+    "w": 306.66,
+    "h": 22.41
+   },
+   "nomeFramer": "Title",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(3) > div:nth-of-type(2) > h6",
+   "tag": "h6",
+   "caixa": {
+    "x": 893.33,
+    "y": 4082.14,
+    "w": 306.66,
+    "h": 22.41
+   },
+   "texto": "Organize sua casa com olhar de arquiteto",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 22.4,
+    "tracking": -0.32
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 4258.75,
+    "w": 1440,
+    "h": 485
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 4258.75,
+    "w": 1440,
+    "h": 485
+   },
+   "nomeFramer": "Serviços/Sobre nós - Desktop",
+   "fundo": "rgb(169, 140, 103)",
+   "padding": [
+    52,
+    128,
+    52,
+    128
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 52,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4310.75,
+    "w": 1184,
+    "h": 381
+   },
+   "nomeFramer": "Frame 2744",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4310.75,
+    "w": 1184,
+    "h": 309
+   },
+   "nomeFramer": "Frame 2743",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 40,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4310.75,
+    "w": 1184,
+    "h": 265
+   },
+   "nomeFramer": "Frame 52",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4310.75,
+    "w": 592,
+    "h": 195.19
+   },
+   "nomeFramer": "Frame 3048",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4310.75,
+    "w": 116.67,
+    "h": 24
+   },
+   "nomeFramer": "Contate-nos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 128,
+    "y": 4310.75,
+    "w": 116.67,
+    "h": 24
+   },
+   "texto": "Contate-nos",
+   "fonte": {
+    "familia": "Segoe UI",
+    "tamanho": 20,
+    "peso": 600,
+    "alturaLinha": 24,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4346.75,
+    "w": 592,
+    "h": 159.19
+   },
+   "nomeFramer": "Frame 3046",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4346.75,
+    "w": 379,
+    "h": 81.59
+   },
+   "nomeFramer": "Sobrou alguma dúvida? Vamos conversar!",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > p:nth-of-type(1)",
+   "tag": "p",
+   "caixa": {
+    "x": 128,
+    "y": 4346.75,
+    "w": 379,
+    "h": 40.8
+   },
+   "texto": "Sobrou alguma dúvida?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 34,
+    "peso": 600,
+    "alturaLinha": 40.8,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > p:nth-of-type(2)",
+   "tag": "p",
+   "caixa": {
+    "x": 128,
+    "y": 4387.55,
+    "w": 379,
+    "h": 40.8
+   },
+   "texto": "Vamos conversar!",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 34,
+    "peso": 600,
+    "alturaLinha": 40.8,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 128,
+    "y": 4460.34,
+    "w": 289,
+    "h": 45.59
+   },
+   "nomeFramer": "Botão secundario",
+   "fundo": "rgba(255, 255, 255, 0.73)",
+   "padding": [
+    12,
+    24,
+    12,
+    24
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "raio": "16px",
+   "sombra": "rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.06) 0px 10px 10px -3.75px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 152,
+    "y": 4472.34,
+    "w": 241,
+    "h": 21.59
+   },
+   "nomeFramer": "Botão Secundario",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 152,
+    "y": 4472.34,
+    "w": 241,
+    "h": 21.59
+   },
+   "texto": "Quero agendar uma reunião",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 18,
+    "peso": 600,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4310.75,
+    "w": 592,
+    "h": 265
+   },
+   "nomeFramer": "Frame 3045",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4310.75,
+    "w": 280,
+    "h": 265
+   },
+   "nomeFramer": "Opções Institucionais",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4310.75,
+    "w": 185,
+    "h": 38.41
+   },
+   "nomeFramer": "Institucional",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 720,
+    "y": 4310.75,
+    "w": 185,
+    "h": 38.41
+   },
+   "texto": "Institucional",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 720,
+    "y": 4361.16,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4371.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Início",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 720,
+    "y": 4371.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Início",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 720,
+    "y": 4393.16,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4403.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 720,
+    "y": 4403.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Serviços",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 720,
+    "y": 4425.16,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4435.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Projetos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(3) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 720,
+    "y": 4435.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Projetos",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 720,
+    "y": 4457.16,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4467.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(4) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 720,
+    "y": 4467.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Sobre nós",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5)",
+   "tag": "a",
+   "caixa": {
+    "x": 720,
+    "y": 4489.16,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4499.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Blog",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(5) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 720,
+    "y": 4499.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Blog",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(6)",
+   "tag": "a",
+   "caixa": {
+    "x": 720,
+    "y": 4521.16,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(6) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 720,
+    "y": 4531.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Contato",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(6) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 720,
+    "y": 4531.16,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Contato",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 1032,
+    "y": 4310.75,
+    "w": 280,
+    "h": 265
+   },
+   "nomeFramer": "opções de Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 1032,
+    "y": 4310.75,
+    "w": 190,
+    "h": 38.41
+   },
+   "nomeFramer": "Informações",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 1032,
+    "y": 4310.75,
+    "w": 190,
+    "h": 38.41
+   },
+   "texto": "Informações",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 1032,
+    "y": 4361.16,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "Planos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 1032,
+    "y": 4361.16,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Termos de uso",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 1032,
+    "y": 4392.36,
+    "w": 177,
+    "h": 38.41
+   },
+   "nomeFramer": "Seja Parceiro(a)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 1032,
+    "y": 4392.36,
+    "w": 177,
+    "h": 38.41
+   },
+   "texto": "Políticas de Privacidade",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 1032,
+    "y": 4442.77,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "já Sou Parceiro",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(4) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 1032,
+    "y": 4442.77,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Políticas de Cookies",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4615.75,
+    "w": 1184,
+    "h": 4
+   },
+   "nomeFramer": "Divisor",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4615.75,
+    "w": 1184,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 128,
+    "y": 4615.75,
+    "w": 1184,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4651.75,
+    "w": 1184,
+    "h": 40
+   },
+   "nomeFramer": "Frame 3047",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 128,
+    "y": 4651.75,
+    "w": 296.78,
+    "h": 24
+   },
+   "nomeFramer": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 128,
+    "y": 4651.75,
+    "w": 296.78,
+    "h": 24
+   },
+   "texto": "© 2025 Arquiteta Isabella Pires |",
+   "fonte": {
+    "familia": "Arboria",
+    "tamanho": 20,
+    "peso": 500,
+    "alturaLinha": 24,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 1032,
+    "y": 4651.75,
+    "w": 280,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 1032,
+    "y": 4651.75,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 1032,
+    "y": 4651.75,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 1082,
+    "y": 4651.75,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 1082,
+    "y": 4651.75,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 1132,
+    "y": 4651.75,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 1132,
+    "y": 4651.75,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 1182,
+    "y": 4651.75,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 1182,
+    "y": 4651.75,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(1)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 907,
+    "w": 1446,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 1400,
+    "y": 435,
+    "w": 30,
+    "h": 30
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "fixed",
+   "z": 2147483647
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > span",
+   "tag": "span",
+   "caixa": {
+    "x": 1297,
+    "y": 438.5,
+    "w": 93,
+    "h": 23
+   },
+   "texto": "Edit Content",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 12,
+    "peso": 500,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)",
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "padding": [
+    4,
+    8,
+    4,
+    8
+   ],
+   "raio": "8px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px",
+   "opacidade": 0,
+   "posicao": "fixed"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button",
+   "tag": "button",
+   "caixa": {
+    "x": 1400,
+    "y": 435,
+    "w": 30,
+    "h": 30
+   },
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "raio": "15px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 1408,
+    "y": 443,
+    "w": 14,
+    "h": 14
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg > path:nth-of-type(1)",
+   "tag": "path",
+   "caixa": {
+    "x": 1409.75,
+    "y": 444.73,
+    "w": 10.02,
+    "h": 10.02
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > iframe",
+   "tag": "iframe",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "posicao": "fixed",
+   "z": 2147483646
+  }
+ ]
+}

@@ -1,0 +1,3318 @@
+{
+ "_origem": "_capturas/artigos__organize-sua-casa-com-olhar-de-arquiteto/tablet.html",
+ "_breakpoint": {
+  "nome": "tablet",
+  "largura": 1000
+ },
+ "_rota": "/artigos/organize-sua-casa-com-olhar-de-arquiteto/",
+ "_alturaDaPagina": 4177,
+ "_elementosRevelados": 6,
+ "_recursosQueFalharam": [],
+ "elementos": [
+  {
+   "caminho": "body > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 4177.28
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 4177.28
+   },
+   "fundo": "rgb(251, 247, 244)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 58,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 59
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav",
+   "tag": "nav",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 59
+   },
+   "nomeFramer": "Phone",
+   "fundo": "rgb(251, 247, 244)",
+   "padding": [
+    16,
+    32,
+    16,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 16,
+    "w": 146,
+    "h": 27
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 32,
+    "y": 16,
+    "w": 146,
+    "h": 27
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 8.5,
+    "w": 33,
+    "h": 42
+   },
+   "nomeFramer": "Logotipo",
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 33 42%22><path d=%22M 14.851 0.043 C 12.906 0.24 11.183 0.723 9.511 1.",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 79,
+    "y": 21.09,
+    "w": 113,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 79,
+    "y": 21.09,
+    "w": 113,
+    "h": 16.8
+   },
+   "texto": "ISABELLA PIRES",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 14,
+    "peso": 700,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(53, 32, 5)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 178,
+    "y": 16,
+    "w": 790,
+    "h": 24
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 944,
+    "y": 16,
+    "w": 24,
+    "h": 24
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 948.75,
+    "y": 21.75,
+    "w": 14.5,
+    "h": 12.5
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 117,
+    "w": 1000,
+    "h": 2979.88
+   },
+   "padding": [
+    0,
+    150,
+    0,
+    150
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 60,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 117,
+    "w": 700,
+    "h": 82.59
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 15,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 200,
+    "y": 117,
+    "w": 600,
+    "h": 25.59
+   },
+   "nomeFramer": "Data",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 200,
+    "y": 117,
+    "w": 600,
+    "h": 25.59
+   },
+   "texto": "24 de fev. de 2026",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(153, 153, 153)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 157.59,
+    "w": 700,
+    "h": 42
+   },
+   "nomeFramer": "Título",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h2",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 157.59,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "Organize sua casa com olhar de arquiteto",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(89, 89, 89)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 259.59,
+    "w": 700,
+    "h": 400
+   },
+   "nomeFramer": "Banner",
+   "raio": "24px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 259.59,
+    "w": 700,
+    "h": 400
+   },
+   "raio": "24px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 150,
+    "y": 259.59,
+    "w": 700,
+    "h": 400
+   },
+   "raio": "24px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/m7nRiwddLb1wuJ5F1yYAi36DnR4.png?width=1536&height=1024",
+    "srcset": "https://framerusercontent.com/images/m7nRiwddLb1wuJ5F1yYAi36DnR4.png?scale-down-to=512&width=1536&height=1024 512w,https://framerusercontent.com/images/m7nRiwddLb1wuJ5F1yYAi36DnR4.png?scale-down-to=1024&width=1536&height=1024 1024w,https://framerusercontent.com/images/m7nRiwddLb1wuJ5F1yYAi36DnR4.png?width=1536&height=1024 1536w",
+    "sizes": "(min-width: 1200px) max(calc(100vw - 400px), 306.6667px), (max-width: 809.98px) calc(100vw - 48px), (min-width: 810px) and (max-width: 1199.98px) calc(100vw - 300px)",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 700,
+     "h": 466
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 719.59,
+    "w": 700,
+    "h": 2377.28
+   },
+   "nomeFramer": "Conteúdo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3",
+   "tag": "h3",
+   "caixa": {
+    "x": 150,
+    "y": 719.59,
+    "w": 700,
+    "h": 72.81
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h3 > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 721.59,
+    "w": 665.86,
+    "h": 67.41
+   },
+   "texto": "Organização Inteligente: quando arquitetura encontra rotina real",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 26,
+    "peso": 900,
+    "alturaLinha": 36.4,
+    "tracking": -1.04
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(1)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 812.41,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Organizar não é sobre caixas bonitas.É sobre fluxo, função e intenção.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(2)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 883.59,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Se você quer organizar a casa sozinha, pense como arquiteta por um dia. Aqui vai algumas dicas simples:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(1)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 974.78,
+    "w": 700,
+    "h": 30.8
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(1) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 976.78,
+    "w": 402.33,
+    "h": 26
+   },
+   "texto": "Comece pelo FLUXO, não pelos objetos",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 900,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(3)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1025.58,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Antes de tirar tudo do armário, observe:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 1083.17,
+    "w": 700,
+    "h": 76.78
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1083.17,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1083.17,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Por onde você circula mais?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1108.77,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1108.77,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Onde as coisas “atrapalham”?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1134.36,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1134.36,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "O que você usa todo dia?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(4)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1179.95,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Na arquitetura, fluxo mal resolvido gera desconforto.Na casa, gera bagunça.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(5)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1251.14,
+    "w": 700,
+    "h": 76.78
+   },
+   "texto": "💡 Dica prática:Pegue um papel e desenhe o ambiente. Marque com setas o seu caminho diário. Tudo que estiver fora desse ",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(2)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 1367.92,
+    "w": 700,
+    "h": 30.8
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(2) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 1369.92,
+    "w": 344.97,
+    "h": 26
+   },
+   "texto": "Setorização é o segredo invisível",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 900,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(6)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1418.72,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Casa organizada funciona como planta bem distribuída: cada coisa tem território.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(7)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1464.31,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Crie microzonas:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 1521.91,
+    "w": 700,
+    "h": 102.38
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1521.91,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1521.91,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Zona do café",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1547.5,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1547.5,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Zona do trabalho",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1573.09,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1573.09,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Zona da papelada",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(4)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1598.69,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(4) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1598.69,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Zona de autocuidado",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(8)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1644.28,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Mistura de função = poluição visual.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(9)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1689.88,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "💡 Dica prática:Se uma prateleira tem mais de 2 funções diferentes, ela está pedindo reorganização.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(3)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 1781.06,
+    "w": 700,
+    "h": 30.8
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(3) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 1783.06,
+    "w": 374.33,
+    "h": 26
+   },
+   "texto": "Verticalize. Arquitetura ama altura.",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 900,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(10)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1831.86,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Quando falta espaço, suba.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 1889.45,
+    "w": 700,
+    "h": 102.38
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1889.45,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1889.45,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Prateleiras altas",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1915.05,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1915.05,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Ganchos",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1940.64,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1940.64,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Nichos",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(4)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1966.23,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(4) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1966.23,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Organizadores verticais",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(11)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2011.83,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Espaço vazio na parede é potencial não explorado.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(12)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2057.42,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "💡 Dica arquitetônica:Quanto mais área livre no chão, maior a sensação de ordem e amplitude.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(4)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 2148.61,
+    "w": 700,
+    "h": 30.8
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(4) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 2150.61,
+    "w": 363.09,
+    "h": 26
+   },
+   "texto": "Menos volume, mais respiro visual",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 900,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(13)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2199.41,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Organização também é edição.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(14)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2245,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Na arquitetura, excesso de informação cansa.Na casa, também.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(15)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2316.19,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Faça 3 perguntas estratégicas:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 2373.78,
+    "w": 700,
+    "h": 76.78
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2373.78,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2373.78,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Eu uso?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2399.38,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2399.38,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Eu amo?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2424.97,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2424.97,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Eu preciso?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(16)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2470.56,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Se não encaixa em pelo menos uma, está ocupando espaço físico e mental.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(5)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 2536.16,
+    "w": 700,
+    "h": 30.8
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(5) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 2538.16,
+    "w": 365.97,
+    "h": 26
+   },
+   "texto": "Iluminação influencia organização",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 900,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(17)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2586.95,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Ambientes escuros parecem mais bagunçados.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(18)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2632.55,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Iluminação bem pensada:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 2690.14,
+    "w": 700,
+    "h": 76.78
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2690.14,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2690.14,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Valoriza nichos",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2715.73,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2715.73,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Destaca prateleiras",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2741.33,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2741.33,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Traz sensação de limpeza",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(19)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2786.92,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Você, que já tem olhar técnico, sabe: luz é ferramenta de percepção.Uma fita de LED no armário muda completamente a expe",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(6)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 2878.11,
+    "w": 700,
+    "h": 30.8
+   },
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(6) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 2880.11,
+    "w": 195.05,
+    "h": 26
+   },
+   "texto": "Conclusão prática",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 900,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(20)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2928.91,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Organizar não é só arrumar.É projetar melhor o próprio cotidiano.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(21)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3000.09,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Quando você aplica princípios de arquitetura dentro da sua própria casa, você deixa de reagir à bagunça e começa a desen",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(22)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3071.28,
+    "w": 700,
+    "h": 25.59
+   },
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 3154.88,
+    "w": 1000,
+    "h": 420.41
+   },
+   "padding": [
+    0,
+    100,
+    45,
+    100
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 25,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3154.88,
+    "w": 800,
+    "h": 48
+   },
+   "nomeFramer": "Header Info",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3154.88,
+    "w": 545,
+    "h": 48
+   },
+   "nomeFramer": "Recent Post",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div > h2",
+   "tag": "h2",
+   "caixa": {
+    "x": 100,
+    "y": 3154.88,
+    "w": 545,
+    "h": 48
+   },
+   "texto": "Mais Recentes",
+   "fonte": {
+    "familia": "Inter Display",
+    "tamanho": 40,
+    "peso": 600,
+    "alturaLinha": 48,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 645,
+    "y": 3160.08,
+    "w": 255,
+    "h": 37.59
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a",
+   "tag": "a",
+   "caixa": {
+    "x": 645,
+    "y": 3160.08,
+    "w": 255,
+    "h": 37.59
+   },
+   "nomeFramer": "Desktop",
+   "padding": [
+    8,
+    15,
+    8,
+    15
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 5,
+   "raio": "999px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 660,
+    "y": 3168.08,
+    "w": 225,
+    "h": 21.59
+   },
+   "nomeFramer": "Section Browse",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 660,
+    "y": 3168.08,
+    "w": 194,
+    "h": 21.59
+   },
+   "nomeFramer": "View more blog",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(1) > h5",
+   "tag": "h5",
+   "caixa": {
+    "x": 660,
+    "y": 3168.08,
+    "w": 194,
+    "h": 21.59
+   },
+   "texto": "Ver todas as postagens",
+   "fonte": {
+    "familia": "Inter Display",
+    "tamanho": 18,
+    "peso": 400,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 864,
+    "y": 3168.38,
+    "w": 21,
+    "h": 21
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 864,
+    "y": 3168.38,
+    "w": 21,
+    "h": 21
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg > g",
+   "tag": "g",
+   "caixa": {
+    "x": 868.59,
+    "y": 3172.97,
+    "w": 11.81,
+    "h": 11.81
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg > g > path",
+   "tag": "path",
+   "caixa": {
+    "x": 868.59,
+    "y": 3172.97,
+    "w": 11.81,
+    "h": 11.81
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3227.88,
+    "w": 800,
+    "h": 302.41
+   },
+   "display": "grid",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "gap": 20,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 100,
+    "y": 3227.88,
+    "w": 390,
+    "h": 302.41
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3227.88,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3227.88,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 100,
+    "y": 3227.88,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?width=1536&height=1024",
+    "srcset": "https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?scale-down-to=512&width=1536&height=1024 512w,https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?scale-down-to=1024&width=1536&height=1024 1024w,https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?width=1536&height=1024 1536w",
+    "sizes": "(min-width: 1200px) 306.6667px, (max-width: 809.98px) max((100vw - 52px) / 2, 50px), (min-width: 810px) and (max-width: 1199.98px) max((100vw - 220px) / 2, 50px)",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 390,
+     "h": 259
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3507.88,
+    "w": 390,
+    "h": 22.41
+   },
+   "nomeFramer": "Title",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(2) > h6",
+   "tag": "h6",
+   "caixa": {
+    "x": 100,
+    "y": 3507.88,
+    "w": 390,
+    "h": 22.41
+   },
+   "texto": "Minimalismo x Maximalismo: Qual estilo é o seu?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 22.4,
+    "tracking": -0.32
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 510,
+    "y": 3227.88,
+    "w": 390,
+    "h": 302.41
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 510,
+    "y": 3227.88,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 510,
+    "y": 3227.88,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 510,
+    "y": 3227.88,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/me9vvpdvwhhmckbSz680F10c.png?width=1536&height=1024",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 1536,
+     "h": 1024
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 510,
+    "y": 3507.88,
+    "w": 390,
+    "h": 22.41
+   },
+   "nomeFramer": "Title",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(2) > h6",
+   "tag": "h6",
+   "caixa": {
+    "x": 510,
+    "y": 3507.88,
+    "w": 390,
+    "h": 22.41
+   },
+   "texto": "Vale mais a pena reformar ou construir?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 22.4,
+    "tracking": -0.32
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 3633.28,
+    "w": 1000,
+    "h": 544
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 3633.28,
+    "w": 1000,
+    "h": 544
+   },
+   "nomeFramer": "Serviços/Sobre nós - Tablet",
+   "fundo": "rgb(169, 140, 103)",
+   "padding": [
+    52,
+    48,
+    52,
+    48
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 133,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3685.28,
+    "w": 904,
+    "h": 440
+   },
+   "nomeFramer": "Frame 2744",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3685.28,
+    "w": 904,
+    "h": 309
+   },
+   "nomeFramer": "Frame 2743",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 40,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3685.28,
+    "w": 904,
+    "h": 265
+   },
+   "nomeFramer": "Frame 52",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 42,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3685.28,
+    "w": 904,
+    "h": 265
+   },
+   "nomeFramer": "Frame 3045",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 149,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3685.28,
+    "w": 377.5,
+    "h": 265
+   },
+   "nomeFramer": "Opções Institucionais",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3685.28,
+    "w": 185,
+    "h": 38.41
+   },
+   "nomeFramer": "Institucional",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3685.28,
+    "w": 185,
+    "h": 38.41
+   },
+   "texto": "Institucional",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 3735.69,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3745.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Início",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3745.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Início",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 3767.69,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3777.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3777.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Serviços",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 3799.69,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3809.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Projetos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3809.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Projetos",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 3831.69,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3841.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3841.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Sobre nós",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 3863.69,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3873.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Blog",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3873.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Blog",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 3895.69,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3905.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Contato",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3905.69,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Contato",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 3685.28,
+    "w": 377.5,
+    "h": 265
+   },
+   "nomeFramer": "opções de Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 3685.28,
+    "w": 190,
+    "h": 38.41
+   },
+   "nomeFramer": "Informações",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 3685.28,
+    "w": 190,
+    "h": 38.41
+   },
+   "texto": "Informações",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 3735.69,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "Planos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 3735.69,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Termos de uso",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 3766.89,
+    "w": 177,
+    "h": 38.41
+   },
+   "nomeFramer": "Seja Parceiro(a)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 3766.89,
+    "w": 177,
+    "h": 38.41
+   },
+   "texto": "Políticas de Privacidade",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 3817.3,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "já Sou Parceiro",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 3817.3,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Políticas de Cookies",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3990.28,
+    "w": 904,
+    "h": 4
+   },
+   "nomeFramer": "Divisor",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3990.28,
+    "w": 904,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 48,
+    "y": 3990.28,
+    "w": 904,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4026.28,
+    "w": 904,
+    "h": 99
+   },
+   "nomeFramer": "Frame 3047",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 15,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4026.28,
+    "w": 904,
+    "h": 24
+   },
+   "nomeFramer": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4026.28,
+    "w": 904,
+    "h": 24
+   },
+   "texto": "© 2025 Arquiteta Isabella Pires |",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 20,
+    "peso": 500,
+    "alturaLinha": 24,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4065.28,
+    "w": 904,
+    "h": 60
+   },
+   "padding": [
+    10,
+    0,
+    10,
+    0
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 405,
+    "y": 4075.28,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 405,
+    "y": 4075.28,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 455,
+    "y": 4075.28,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 455,
+    "y": 4075.28,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 505,
+    "y": 4075.28,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 505,
+    "y": 4075.28,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 555,
+    "y": 4075.28,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 555,
+    "y": 4075.28,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(1)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1007,
+    "w": 1446,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 960,
+    "y": 485,
+    "w": 30,
+    "h": 30
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "fixed",
+   "z": 2147483647
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > span",
+   "tag": "span",
+   "caixa": {
+    "x": 857,
+    "y": 488.5,
+    "w": 93,
+    "h": 23
+   },
+   "texto": "Edit Content",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 12,
+    "peso": 500,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)",
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "padding": [
+    4,
+    8,
+    4,
+    8
+   ],
+   "raio": "8px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px",
+   "opacidade": 0,
+   "posicao": "fixed"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button",
+   "tag": "button",
+   "caixa": {
+    "x": 960,
+    "y": 485,
+    "w": 30,
+    "h": 30
+   },
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "raio": "15px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 968,
+    "y": 493,
+    "w": 14,
+    "h": 14
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg > path:nth-of-type(1)",
+   "tag": "path",
+   "caixa": {
+    "x": 969.75,
+    "y": 494.73,
+    "w": 10.02,
+    "h": 10.02
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > iframe",
+   "tag": "iframe",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 1000
+   },
+   "posicao": "fixed",
+   "z": 2147483646
+  }
+ ]
+}

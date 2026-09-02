@@ -1,0 +1,3693 @@
+{
+ "_origem": "_capturas/contato/mobile.html",
+ "_breakpoint": {
+  "nome": "mobile",
+  "largura": 390
+ },
+ "_rota": "/contato/",
+ "_alturaDaPagina": 3715,
+ "_elementosRevelados": 18,
+ "_recursosQueFalharam": [],
+ "elementos": [
+  {
+   "caminho": "body > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 3715
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 3715
+   },
+   "fundo": "rgb(255, 255, 255)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 3715
+   },
+   "nomeFramer": "Frame 3058",
+   "fundo": "rgb(251, 247, 244)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 59
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav",
+   "tag": "nav",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 59
+   },
+   "nomeFramer": "Phone",
+   "fundo": "rgb(251, 247, 244)",
+   "padding": [
+    16,
+    32,
+    16,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 16,
+    "w": 146,
+    "h": 27
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 32,
+    "y": 16,
+    "w": 146,
+    "h": 27
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 8.5,
+    "w": 33,
+    "h": 42
+   },
+   "nomeFramer": "Logotipo",
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 33 42%22><path d=%22M 14.851 0.043 C 12.906 0.24 11.183 0.723 9.511 1.",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 79,
+    "y": 21.09,
+    "w": 113,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 79,
+    "y": 21.09,
+    "w": 113,
+    "h": 16.8
+   },
+   "texto": "ISABELLA PIRES",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 14,
+    "peso": 700,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(53, 32, 5)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 178,
+    "y": 16,
+    "w": 180,
+    "h": 24
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 334,
+    "y": 16,
+    "w": 24,
+    "h": 24
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 338.75,
+    "y": 21.75,
+    "w": 14.5,
+    "h": 12.5
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 263,
+    "w": 390,
+    "h": 2056.92
+   },
+   "nomeFramer": "Frame 3031",
+   "padding": [
+    52,
+    24,
+    0,
+    24
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 66,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 24,
+    "y": 315,
+    "w": 342,
+    "h": 1358.13
+   },
+   "nomeFramer": "Frame 3045",
+   "fundo": "rgb(248, 239, 233)",
+   "padding": [
+    60,
+    29,
+    60,
+    25
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 72,
+   "raio": "12px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form",
+   "tag": "form",
+   "caixa": {
+    "x": 49,
+    "y": 1039.14,
+    "w": 288,
+    "h": 573.98
+   },
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    20,
+    20,
+    20,
+    20
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 20,
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(1)",
+   "tag": "label",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 248,
+    "h": 66.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 140,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(1) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 140,
+    "h": 16.8
+   },
+   "texto": "Qual é o seu nome?",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 500,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 136, 136)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1085.94,
+    "w": 248,
+    "h": 40
+   },
+   "fundo": "rgba(187, 187, 187, 0.15)",
+   "padding": [
+    12,
+    12,
+    12,
+    12
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "raio": "10px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(1) > div:nth-of-type(2) > input",
+   "tag": "input",
+   "caixa": {
+    "x": 81,
+    "y": 1097.94,
+    "w": 224,
+    "h": 16
+   },
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 400,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(82, 82, 82)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(2)",
+   "tag": "label",
+   "caixa": {
+    "x": 69,
+    "y": 1145.94,
+    "w": 248,
+    "h": 66.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1145.94,
+    "w": 44,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 69,
+    "y": 1145.94,
+    "w": 44,
+    "h": 16.8
+   },
+   "texto": "E-mail",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 500,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 136, 136)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1172.73,
+    "w": 248,
+    "h": 40
+   },
+   "fundo": "rgba(187, 187, 187, 0.15)",
+   "padding": [
+    12,
+    12,
+    12,
+    12
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "raio": "10px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(2) > div:nth-of-type(2) > input",
+   "tag": "input",
+   "caixa": {
+    "x": 81,
+    "y": 1184.73,
+    "w": 224,
+    "h": 16
+   },
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 400,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(82, 82, 82)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(3)",
+   "tag": "label",
+   "caixa": {
+    "x": 69,
+    "y": 1232.73,
+    "w": 248,
+    "h": 66.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1232.73,
+    "w": 65,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(3) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 69,
+    "y": 1232.73,
+    "w": 65,
+    "h": 16.8
+   },
+   "texto": "Telefone",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 500,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 136, 136)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1259.53,
+    "w": 248,
+    "h": 40
+   },
+   "fundo": "rgba(187, 187, 187, 0.15)",
+   "padding": [
+    12,
+    12,
+    12,
+    12
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "raio": "10px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(3) > div:nth-of-type(2) > input",
+   "tag": "input",
+   "caixa": {
+    "x": 81,
+    "y": 1271.53,
+    "w": 224,
+    "h": 16
+   },
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 400,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(82, 82, 82)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(4)",
+   "tag": "label",
+   "caixa": {
+    "x": 69,
+    "y": 1319.53,
+    "w": 248,
+    "h": 66.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(4) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1319.53,
+    "w": 192,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(4) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 69,
+    "y": 1319.53,
+    "w": 192,
+    "h": 16.8
+   },
+   "texto": "Qual serviço você procura?",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 500,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 136, 136)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(4) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1346.33,
+    "w": 248,
+    "h": 40
+   },
+   "fundo": "rgba(187, 187, 187, 0.15)",
+   "padding": [
+    0,
+    12,
+    0,
+    0
+   ],
+   "raio": "10px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(4) > div:nth-of-type(2) > select",
+   "tag": "select",
+   "caixa": {
+    "x": 69,
+    "y": 1346.33,
+    "w": 236,
+    "h": 40
+   },
+   "padding": [
+    12,
+    12,
+    12,
+    12
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(5)",
+   "tag": "label",
+   "caixa": {
+    "x": 69,
+    "y": 1406.33,
+    "w": 248,
+    "h": 126.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(5) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1406.33,
+    "w": 78,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(5) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 69,
+    "y": 1406.33,
+    "w": 78,
+    "h": 16.8
+   },
+   "texto": "Mensagem",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 500,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(136, 136, 136)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(5) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1433.13,
+    "w": 248,
+    "h": 100
+   },
+   "fundo": "rgba(187, 187, 187, 0.15)",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "raio": "10px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > label:nth-of-type(5) > div:nth-of-type(2) > textarea",
+   "tag": "textarea",
+   "caixa": {
+    "x": 69,
+    "y": 1433.13,
+    "w": 248,
+    "h": 100
+   },
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 400,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(82, 82, 82)",
+   "padding": [
+    12,
+    12,
+    12,
+    12
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "normal"
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 69,
+    "y": 1553.13,
+    "w": 248,
+    "h": 40
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > div > div > button",
+   "tag": "button",
+   "caixa": {
+    "x": 69,
+    "y": 1553.13,
+    "w": 248,
+    "h": 40
+   },
+   "nomeFramer": "Default",
+   "fundo": "rgb(51, 51, 51)",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "raio": "10px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > div > div > button > div",
+   "tag": "div",
+   "caixa": {
+    "x": 171,
+    "y": 1564.72,
+    "w": 44,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > div > div > button > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 171,
+    "y": 1564.72,
+    "w": 44,
+    "h": 16.8
+   },
+   "texto": "Enviar",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 14,
+    "peso": 600,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(1)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(2)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(3)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(4)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(5)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(6)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(7)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(8)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(9)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(10)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > form > input:nth-of-type(11)",
+   "tag": "input",
+   "caixa": {
+    "x": 69,
+    "y": 1059.14,
+    "w": 163,
+    "h": 20
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)",
+   "fundo": "rgb(255, 255, 255)",
+   "padding": [
+    1,
+    2,
+    1,
+    2
+   ],
+   "borda": "2px inset rgb(118, 118, 118)",
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 375,
+    "w": 288,
+    "h": 592.14
+   },
+   "nomeFramer": "Frame 7",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 36,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 375,
+    "w": 288,
+    "h": 191.73
+   },
+   "nomeFramer": "Frame 3046",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 375,
+    "w": 288,
+    "h": 108.78
+   },
+   "nomeFramer": "Como nos encontrar",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 49,
+    "y": 375,
+    "w": 288,
+    "h": 108.78
+   },
+   "texto": "Como nos encontrar",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 49,
+    "peso": 700,
+    "alturaLinha": 54.39,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 497.78,
+    "w": 288,
+    "h": 68.95
+   },
+   "nomeFramer": "Conte com a nossa equipe para resolver dúvidas, orientar processos ou ouvir sugestões.",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(1) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 49,
+    "y": 497.78,
+    "w": 288,
+    "h": 68.95
+   },
+   "texto": "Conte com a nossa equipe para resolver dúvidas, orientar processos ou ouvir sugestões.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 19,
+    "peso": 500,
+    "alturaLinha": 22.99,
+    "tracking": 0
+   },
+   "cor": "rgb(108, 117, 125)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 602.73,
+    "w": 288,
+    "h": 364.41
+   },
+   "nomeFramer": "Frame 2870",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 602.73,
+    "w": 288,
+    "h": 104.23
+   },
+   "nomeFramer": "Frame 2870",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 16,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 602.73,
+    "w": 288,
+    "h": 29.05
+   },
+   "nomeFramer": "Contato",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 49,
+    "y": 602.73,
+    "w": 288,
+    "h": 29.05
+   },
+   "texto": "Contato",
+   "fonte": {
+    "familia": "Faberge",
+    "tamanho": 24,
+    "peso": 400,
+    "alturaLinha": 29.04,
+    "tracking": 0
+   },
+   "cor": "rgb(25, 25, 25)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 647.78,
+    "w": 311.03,
+    "h": 59.19
+   },
+   "nomeFramer": "Frame 2866",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 647.78,
+    "w": 311.03,
+    "h": 21.78
+   },
+   "nomeFramer": "atendimento@isabellapires.com.br",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 49,
+    "y": 647.78,
+    "w": 311.03,
+    "h": 21.78
+   },
+   "texto": "arqisabellapires@gmail.com",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 18,
+    "peso": 500,
+    "alturaLinha": 21.78,
+    "tracking": 0
+   },
+   "cor": "rgb(109, 110, 111)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 681.56,
+    "w": 172,
+    "h": 25.41
+   },
+   "nomeFramer": "(44) 3346-2300",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 49,
+    "y": 681.56,
+    "w": 172,
+    "h": 25.41
+   },
+   "texto": "(44) 99879-0444",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 21,
+    "peso": 500,
+    "alturaLinha": 25.41,
+    "tracking": 0
+   },
+   "cor": "rgb(109, 110, 111)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 738.97,
+    "w": 288,
+    "h": 110.39
+   },
+   "nomeFramer": "Frame 2868",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 16,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 738.97,
+    "w": 288,
+    "h": 29.05
+   },
+   "nomeFramer": "Endereço",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 49,
+    "y": 738.97,
+    "w": 288,
+    "h": 29.05
+   },
+   "texto": "Endereço",
+   "fonte": {
+    "familia": "Faberge",
+    "tamanho": 24,
+    "peso": 400,
+    "alturaLinha": 29.04,
+    "tracking": 0
+   },
+   "cor": "rgb(25, 25, 25)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 784.02,
+    "w": 317,
+    "h": 65.34
+   },
+   "nomeFramer": "Frame 2866",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 784.02,
+    "w": 317,
+    "h": 65.34
+   },
+   "nomeFramer": "Av. Pioneiro Alício Arantes Campolina, 2527 - Jardim Canada, Maringá - PR, 87083-020",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 49,
+    "y": 784.02,
+    "w": 317,
+    "h": 65.34
+   },
+   "texto": "Rua Miguel Belai Filho, 175 - interfone 21 - Jardim Everest - Maringá, PR - 87075- 810",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 18,
+    "peso": 500,
+    "alturaLinha": 21.78,
+    "tracking": 0
+   },
+   "cor": "rgb(109, 110, 111)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 881.36,
+    "w": 288,
+    "h": 85.78
+   },
+   "nomeFramer": "Frame 2871",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 24,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 881.36,
+    "w": 288,
+    "h": 21.78
+   },
+   "nomeFramer": "Nossos Canais",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 49,
+    "y": 881.36,
+    "w": 288,
+    "h": 21.78
+   },
+   "texto": "Nossos Canais",
+   "fonte": {
+    "familia": "Faberge",
+    "tamanho": 18,
+    "peso": 400,
+    "alturaLinha": 21.78,
+    "tracking": 0
+   },
+   "cor": "rgb(25, 25, 25)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 927.14,
+    "w": 280,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 49,
+    "y": 927.14,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 49,
+    "y": 927.14,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 99,
+    "y": 927.14,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 99,
+    "y": 927.14,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 149,
+    "y": 927.14,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 149,
+    "y": 927.14,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 199,
+    "y": 927.14,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 199,
+    "y": 927.14,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 24,
+    "y": 1739.13,
+    "w": 342,
+    "h": 580.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 22,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 24,
+    "y": 1739.13,
+    "w": 342,
+    "h": 40.8
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 24,
+    "y": 1748.72,
+    "w": 213,
+    "h": 21.59
+   },
+   "nomeFramer": "@Isabellapires",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 24,
+    "y": 1748.72,
+    "w": 213,
+    "h": 21.59
+   },
+   "texto": "@arq.isabellapires",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 18,
+    "peso": 700,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 237,
+    "y": 1739.13,
+    "w": 129,
+    "h": 40.8
+   },
+   "nomeFramer": "Botão Primario",
+   "fundo": "rgb(169, 140, 103)",
+   "padding": [
+    12,
+    33,
+    12,
+    33
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > a > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 270,
+    "y": 1751.13,
+    "w": 63,
+    "h": 16.8
+   },
+   "nomeFramer": "Botão Primário",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > a > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 270,
+    "y": 1751.13,
+    "w": 63,
+    "h": 16.8
+   },
+   "texto": "Siga-nos!",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 14,
+    "peso": 700,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 24,
+    "y": 1801.92,
+    "w": 342,
+    "h": 518
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 18,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 24,
+    "y": 1801.92,
+    "w": 342,
+    "h": 518
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "raio": "21px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 24,
+    "y": 1801.92,
+    "w": 342,
+    "h": 518
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > iframe",
+   "tag": "iframe",
+   "caixa": {
+    "x": 24,
+    "y": 1801.92,
+    "w": 342,
+    "h": 518
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 2319.92,
+    "w": 390,
+    "h": 444
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 2319.92,
+    "w": 390,
+    "h": 444
+   },
+   "nomeFramer": "Mobile",
+   "padding": [
+    150,
+    32,
+    150,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 2469.92,
+    "w": 326,
+    "h": 144
+   },
+   "nomeFramer": "ISABELLA PIRES",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 32,
+    "y": 2469.92,
+    "w": 326,
+    "h": 144
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1)",
+   "tag": "span",
+   "caixa": {
+    "x": 32,
+    "y": 2467.92,
+    "w": 334,
+    "h": 75
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(1)",
+   "tag": "span",
+   "caixa": {
+    "x": 32,
+    "y": 2469.92,
+    "w": 22,
+    "h": 72
+   },
+   "texto": "I",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(2)",
+   "tag": "span",
+   "caixa": {
+    "x": 54,
+    "y": 2469.92,
+    "w": 44,
+    "h": 72
+   },
+   "texto": "S",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(3)",
+   "tag": "span",
+   "caixa": {
+    "x": 98,
+    "y": 2469.92,
+    "w": 51,
+    "h": 72
+   },
+   "texto": "A",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(4)",
+   "tag": "span",
+   "caixa": {
+    "x": 149,
+    "y": 2469.92,
+    "w": 47,
+    "h": 72
+   },
+   "texto": "B",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(5)",
+   "tag": "span",
+   "caixa": {
+    "x": 196,
+    "y": 2469.92,
+    "w": 41,
+    "h": 72
+   },
+   "texto": "E",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(6)",
+   "tag": "span",
+   "caixa": {
+    "x": 237,
+    "y": 2469.92,
+    "w": 39,
+    "h": 72
+   },
+   "texto": "L",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(7)",
+   "tag": "span",
+   "caixa": {
+    "x": 276,
+    "y": 2469.92,
+    "w": 39,
+    "h": 72
+   },
+   "texto": "L",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(1) > span:nth-of-type(8)",
+   "tag": "span",
+   "caixa": {
+    "x": 315,
+    "y": 2469.92,
+    "w": 51,
+    "h": 72
+   },
+   "texto": "A",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(2)",
+   "tag": "span",
+   "caixa": {
+    "x": 95,
+    "y": 2539.92,
+    "w": 200,
+    "h": 75
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(1)",
+   "tag": "span",
+   "caixa": {
+    "x": 95,
+    "y": 2541.92,
+    "w": 45,
+    "h": 72
+   },
+   "texto": "P",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(2)",
+   "tag": "span",
+   "caixa": {
+    "x": 140,
+    "y": 2541.92,
+    "w": 22,
+    "h": 72
+   },
+   "texto": "I",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(3)",
+   "tag": "span",
+   "caixa": {
+    "x": 162,
+    "y": 2541.92,
+    "w": 48,
+    "h": 72
+   },
+   "texto": "R",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(4)",
+   "tag": "span",
+   "caixa": {
+    "x": 210,
+    "y": 2541.92,
+    "w": 41,
+    "h": 72
+   },
+   "texto": "E",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(3) > div > div > div > p > span:nth-of-type(2) > span:nth-of-type(5)",
+   "tag": "span",
+   "caixa": {
+    "x": 251,
+    "y": 2541.92,
+    "w": 44,
+    "h": 72
+   },
+   "texto": "S",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 60,
+    "peso": 600,
+    "alturaLinha": 72,
+    "tracking": 6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 2763.92,
+    "w": 390,
+    "h": 753.59
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 2763.92,
+    "w": 390,
+    "h": 753.59
+   },
+   "nomeFramer": "Contato - Mobile",
+   "fundo": "rgb(248, 239, 233)",
+   "padding": [
+    52,
+    48,
+    52,
+    48
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 52,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2815.92,
+    "w": 294,
+    "h": 649.59
+   },
+   "nomeFramer": "Frame 2744",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2815.92,
+    "w": 294,
+    "h": 521
+   },
+   "nomeFramer": "Frame 2743",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 40,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2815.92,
+    "w": 294,
+    "h": 440.22
+   },
+   "nomeFramer": "Frame 52",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 42,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2815.92,
+    "w": 294,
+    "h": 440.22
+   },
+   "nomeFramer": "Frame 3045",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 24,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2815.92,
+    "w": 294,
+    "h": 265
+   },
+   "nomeFramer": "Opções Institucionais",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2815.92,
+    "w": 185,
+    "h": 38.41
+   },
+   "nomeFramer": "Institucional",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 2815.92,
+    "w": 185,
+    "h": 38.41
+   },
+   "texto": "Institucional",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 2866.33,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2876.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Início",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 2876.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Início",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 2898.33,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2908.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 2908.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Serviços",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 2930.33,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2940.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Projetos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 2940.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Projetos",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 2962.33,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 2972.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 2972.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Sobre nós",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 2994.33,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3004.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Blog",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3004.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Blog",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 3026.33,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3036.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Contato",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3036.33,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Contato",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3104.92,
+    "w": 294,
+    "h": 151.22
+   },
+   "nomeFramer": "opções de Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3104.92,
+    "w": 190,
+    "h": 38.41
+   },
+   "nomeFramer": "Informações",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3104.92,
+    "w": 190,
+    "h": 38.41
+   },
+   "texto": "Informações",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3155.33,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "Planos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3155.33,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Termos de uso",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3186.53,
+    "w": 177,
+    "h": 38.41
+   },
+   "nomeFramer": "Seja Parceiro(a)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3186.53,
+    "w": 177,
+    "h": 38.41
+   },
+   "texto": "Políticas de Privacidade",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3236.94,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "já Sou Parceiro",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3236.94,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Políticas de Cookies",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3296.14,
+    "w": 294,
+    "h": 4
+   },
+   "nomeFramer": "Divisor",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3296.14,
+    "w": 294,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 48,
+    "y": 3296.14,
+    "w": 294,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3368.92,
+    "w": 294,
+    "h": 96.59
+   },
+   "nomeFramer": "Frame 3047",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 15,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3368.92,
+    "w": 294,
+    "h": 21.59
+   },
+   "nomeFramer": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 3368.92,
+    "w": 294,
+    "h": 21.59
+   },
+   "texto": "© 2025 Arquiteta Isabella Pires |",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 18,
+    "peso": 500,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 3405.52,
+    "w": 294,
+    "h": 60
+   },
+   "padding": [
+    10,
+    0,
+    10,
+    0
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 100,
+    "y": 3415.52,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3415.52,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 150,
+    "y": 3415.52,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 3415.52,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 200,
+    "y": 3415.52,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 200,
+    "y": 3415.52,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 250,
+    "y": 3415.52,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 250,
+    "y": 3415.52,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 59,
+    "w": 390,
+    "h": 204
+   },
+   "nomeFramer": "Frame 2902",
+   "fundo": "rgb(251, 247, 244)",
+   "padding": [
+    32,
+    32,
+    32,
+    32
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 22,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 91,
+    "w": 326,
+    "h": 140
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 91,
+    "w": 326,
+    "h": 140
+   },
+   "nomeFramer": "Frame 2901",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 108.5,
+    "w": 179,
+    "h": 25
+   },
+   "nomeFramer": "Frame 2907",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 24,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 108.5,
+    "w": 179,
+    "h": 25
+   },
+   "nomeFramer": "Frame 2905",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 4,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 108.5,
+    "w": 18,
+    "h": 25
+   },
+   "nomeFramer": "fa-house",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 108.5,
+    "w": 18,
+    "h": 25
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(1) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 32,
+    "y": 108.5,
+    "w": 18,
+    "h": 25
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(1) > div > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 33.5,
+    "y": 114.38,
+    "w": 15,
+    "h": 13.24
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 54,
+    "y": 111,
+    "w": 157,
+    "h": 20
+   },
+   "nomeFramer": "Frame 2906",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(2) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 54,
+    "y": 111,
+    "w": 50,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(2) > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 79,
+    "y": 121,
+    "w": 43,
+    "h": 16.8
+   },
+   "nomeFramer": "Início /",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(2) > a > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 79,
+    "y": 121,
+    "w": 43,
+    "h": 16.8
+   },
+   "texto": "Início /",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 14,
+    "peso": 700,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(33, 37, 41)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 104,
+    "y": 112.59,
+    "w": 107,
+    "h": 16.8
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(1) > div > div:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 104,
+    "y": 112.59,
+    "w": 107,
+    "h": 16.8
+   },
+   "texto": "Nossos serviços",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 14,
+    "peso": 700,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 165.5,
+    "w": 326,
+    "h": 48
+   },
+   "nomeFramer": "Frame 2904",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 159,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 165.5,
+    "w": 305,
+    "h": 48
+   },
+   "nomeFramer": "Frame 3044",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 26,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(2) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 165.5,
+    "w": 305,
+    "h": 48
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(5) > div > div > div:nth-of-type(2) > div > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 32,
+    "y": 165.5,
+    "w": 305,
+    "h": 48
+   },
+   "texto": "Contato",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 40,
+    "peso": 600,
+    "alturaLinha": 48,
+    "tracking": 0
+   },
+   "cor": "rgb(52, 31, 4)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(1)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 844,
+    "w": 24,
+    "h": 34
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(1) > path",
+   "tag": "path",
+   "caixa": {
+    "x": 2,
+    "y": 852,
+    "w": 20,
+    "h": 18
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(2)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 888,
+    "w": 1446,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 350,
+    "y": 407,
+    "w": 30,
+    "h": 30
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "fixed",
+   "z": 2147483647
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > span",
+   "tag": "span",
+   "caixa": {
+    "x": 247,
+    "y": 410.5,
+    "w": 93,
+    "h": 23
+   },
+   "texto": "Edit Content",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 12,
+    "peso": 500,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)",
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "padding": [
+    4,
+    8,
+    4,
+    8
+   ],
+   "raio": "8px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px",
+   "opacidade": 0,
+   "posicao": "fixed"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button",
+   "tag": "button",
+   "caixa": {
+    "x": 350,
+    "y": 407,
+    "w": 30,
+    "h": 30
+   },
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "raio": "15px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 358,
+    "y": 415,
+    "w": 14,
+    "h": 14
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg > path:nth-of-type(1)",
+   "tag": "path",
+   "caixa": {
+    "x": 359.75,
+    "y": 416.73,
+    "w": 10.02,
+    "h": 10.02
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > iframe",
+   "tag": "iframe",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 844
+   },
+   "posicao": "fixed",
+   "z": 2147483646
+  }
+ ]
+}

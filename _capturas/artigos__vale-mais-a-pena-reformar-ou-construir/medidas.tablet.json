@@ -1,0 +1,3700 @@
+{
+ "_origem": "_capturas/artigos__vale-mais-a-pena-reformar-ou-construir/tablet.html",
+ "_breakpoint": {
+  "nome": "tablet",
+  "largura": 1000
+ },
+ "_rota": "/artigos/vale-mais-a-pena-reformar-ou-construir/",
+ "_alturaDaPagina": 5002,
+ "_elementosRevelados": 6,
+ "_recursosQueFalharam": [],
+ "elementos": [
+  {
+   "caminho": "body > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 5002.05
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 5002.05
+   },
+   "fundo": "rgb(251, 247, 244)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 58,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 59
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav",
+   "tag": "nav",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 59
+   },
+   "nomeFramer": "Phone",
+   "fundo": "rgb(251, 247, 244)",
+   "padding": [
+    16,
+    32,
+    16,
+    32
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "flex-start"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 16,
+    "w": 146,
+    "h": 27
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a",
+   "tag": "a",
+   "caixa": {
+    "x": 32,
+    "y": 16,
+    "w": 146,
+    "h": 27
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 14,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 32,
+    "y": 8.5,
+    "w": 33,
+    "h": 42
+   },
+   "nomeFramer": "Logotipo",
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 33 42%22><path d=%22M 14.851 0.043 C 12.906 0.24 11.183 0.723 9.511 1.",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 79,
+    "y": 21.09,
+    "w": 113,
+    "h": 16.8
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(1) > a > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 79,
+    "y": 21.09,
+    "w": 113,
+    "h": 16.8
+   },
+   "texto": "ISABELLA PIRES",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 14,
+    "peso": 700,
+    "alturaLinha": 16.8,
+    "tracking": 0
+   },
+   "cor": "rgb(53, 32, 5)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 178,
+    "y": 16,
+    "w": 790,
+    "h": 24
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 944,
+    "y": 16,
+    "w": 24,
+    "h": 24
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div > nav > div:nth-of-type(2) > svg > use",
+   "tag": "use",
+   "caixa": {
+    "x": 948.75,
+    "y": 21.75,
+    "w": 14.5,
+    "h": 12.5
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 117,
+    "w": 1000,
+    "h": 3804.64
+   },
+   "padding": [
+    0,
+    150,
+    0,
+    150
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 60,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 117,
+    "w": 700,
+    "h": 82.59
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 15,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 200,
+    "y": 117,
+    "w": 600,
+    "h": 25.59
+   },
+   "nomeFramer": "Data",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 200,
+    "y": 117,
+    "w": 600,
+    "h": 25.59
+   },
+   "texto": "24 de mar. de 2026",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(153, 153, 153)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 157.59,
+    "w": 700,
+    "h": 42
+   },
+   "nomeFramer": "Título",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h2",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 157.59,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "Vale mais a pena reformar ou construir?",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(89, 89, 89)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 259.59,
+    "w": 700,
+    "h": 400
+   },
+   "nomeFramer": "Banner",
+   "raio": "24px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 259.59,
+    "w": 700,
+    "h": 400
+   },
+   "raio": "24px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 150,
+    "y": 259.59,
+    "w": 700,
+    "h": 400
+   },
+   "raio": "24px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/me9vvpdvwhhmckbSz680F10c.png?width=1536&height=1024",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 1536,
+     "h": 1024
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 150,
+    "y": 719.59,
+    "w": 700,
+    "h": 3202.05
+   },
+   "nomeFramer": "Conteúdo",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h1",
+   "tag": "h1",
+   "caixa": {
+    "x": 150,
+    "y": 719.59,
+    "w": 700,
+    "h": 88
+   },
+   "texto": "Vale mais a pena reformar ou construir? Descubra antes de investir",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 40,
+    "peso": 700,
+    "alturaLinha": 44,
+    "tracking": -1.6
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(1)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 827.59,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Essa é uma das dúvidas mais comuns de quem quer melhorar o imóvel:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(1) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 829.59,
+    "w": 687.58,
+    "h": 45.59
+   },
+   "texto": "reformar o que já existe ou começar do zero?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(2)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 898.78,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "A resposta não é tão simples, mas com a análise certa, é possível tomar uma decisão inteligente e evitar gastos desneces",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(3)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 969.97,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Preparei um guia prático para te ajudar:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h2:nth-of-type(1)",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 1035.56,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "1. Custo: qual opção pesa mais no bolso?",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(1)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 1117.56,
+    "w": 700,
+    "h": 30.8
+   },
+   "texto": "Reformar",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(4)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1168.36,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Ao pensar em uma reforma, é comum acreditar que o custo será menor, já que a proposta é melhorar apenas pontos específic",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(5)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1239.55,
+    "w": 700,
+    "h": 76.78
+   },
+   "texto": "Porém, na prática, . Problemas ocultos como infiltrações, fiação antiga ou falhas estruturais podem surgir durante a obr",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(5) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 284.92,
+    "y": 1241.55,
+    "w": 356.28,
+    "h": 20
+   },
+   "texto": "imprevistos são mais frequentes do que parecem",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(2)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 1356.33,
+    "w": 700,
+    "h": 30.8
+   },
+   "texto": "Construir",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(6)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1407.13,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Construir exige um investimento inicial maior, mas tem uma grande vantagem: .",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(6) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 715.69,
+    "y": 1409.13,
+    "w": 106.2,
+    "h": 20
+   },
+   "texto": "previsibilidade",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(7)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1452.72,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Com planejamento adequado, especialmente com acompanhamento profissional, os custos são mais claros, reduzindo surpresas",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(8)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1523.91,
+    "w": 700,
+    "h": 76.78
+   },
+   "texto": "A reforma pode parecer mais econômica no início, mas em muitos casos, .",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(8) > strong:nth-of-type(1)",
+   "tag": "strong",
+   "caixa": {
+    "x": 153.69,
+    "y": 1525.91,
+    "w": 62.77,
+    "h": 20
+   },
+   "texto": "Resumo:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(8) > strong:nth-of-type(2)",
+   "tag": "strong",
+   "caixa": {
+    "x": 150,
+    "y": 1551.5,
+    "w": 686.58,
+    "h": 45.59
+   },
+   "texto": "construir acaba sendo mais vantajoso no custo final",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h2:nth-of-type(2)",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 1640.69,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "2. Estado do imóvel: o fator decisivo",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(9)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1702.69,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Antes de qualquer decisão, é essencial avaliar as condições do imóvel.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 1760.28,
+    "w": 700,
+    "h": 51.19
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1760.28,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1760.28,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Estrutura em bom estado → reforma é uma ótima opção",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 1785.88,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 1785.88,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Problemas estruturais (telhado, elétrica, hidráulica) → construir pode ser mais viável",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(10)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1831.47,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Intervenções estruturais costumam ser complexas e caras e, nesses casos, começar do zero pode compensar mais.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h2:nth-of-type(3)",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 1922.66,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "3. Liberdade de projeto",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(11)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 1984.66,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Se você sonha com uma casa totalmente personalizada, isso faz toda a diferença.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(3)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 2050.25,
+    "w": 700,
+    "h": 30.8
+   },
+   "texto": "Reformar:",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 2113.05,
+    "w": 700,
+    "h": 51.19
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2113.05,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2113.05,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Limitações da estrutura existente;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2138.64,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2138.64,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Nem sempre é possível alterar layout completamente.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(4)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 2204.23,
+    "w": 700,
+    "h": 30.8
+   },
+   "texto": "Construir:",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 2267.03,
+    "w": 700,
+    "h": 76.78
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2267.03,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2267.03,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Projeto 100% personalizado;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2292.63,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2292.63,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Espaços pensados para seu estilo de vida;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2318.22,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(3) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2318.22,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Melhor aproveitamento funcional.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(12)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2363.81,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Quer uma casa sob medida? Construir é o melhor caminho.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(12) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 153.69,
+    "y": 2365.81,
+    "w": 62.77,
+    "h": 20
+   },
+   "texto": "Resumo:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(13)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 2435,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Acha que com uma reforma a casa ficara com sua personalidade? Aposte na reforma.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h2:nth-of-type(4)",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 2500.59,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "4. Tempo de obra",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 2574.59,
+    "w": 700,
+    "h": 25.59
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4) > li",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2574.59,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(4) > li > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2574.59,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Reformas tendem a ser mais rápidas… Mas imprevistos podem gerar atrasos significativos.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 2632.19,
+    "w": 700,
+    "h": 25.59
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5) > li",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2632.19,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(5) > li > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2632.19,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Já a construção... Demora mais, porém segue um planejamento mais previsível.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h2:nth-of-type(5)",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 2697.78,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "5. Valorização do imóvel",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(6)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 2771.78,
+    "w": 700,
+    "h": 51.19
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(6) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2771.78,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(6) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2771.78,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Imóveis novos geralmente têm maior valorização no mercado.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(6) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 2797.38,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(6) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 2797.38,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Reformas também valorizam, mas possuem limitações.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h2:nth-of-type(6)",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 2862.97,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "6. Afinal, o que vale mais a pena?",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(5)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 2944.97,
+    "w": 700,
+    "h": 30.8
+   },
+   "texto": "Reformar é ideal quando:",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(7)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 3007.77,
+    "w": 700,
+    "h": 76.78
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(7) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3007.77,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(7) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3007.77,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "O orçamento é mais limitado;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(7) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3033.36,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(7) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3033.36,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "As mudanças são pontuais;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(7) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3058.95,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(7) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3058.95,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "A estrutura do imóvel está em bom estado.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(6)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 3124.55,
+    "w": 700,
+    "h": 30.8
+   },
+   "texto": "Construir é mais vantajoso quando:",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(8)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 3187.34,
+    "w": 700,
+    "h": 76.78
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(8) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3187.34,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(8) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3187.34,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "O imóvel exige muitas alterações;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(8) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3212.94,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(8) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3212.94,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Você busca um projeto totalmente personalizado;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(8) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3238.53,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(8) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3238.53,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "O objetivo é valorização a longo prazo.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h2:nth-of-type(7)",
+   "tag": "h2",
+   "caixa": {
+    "x": 150,
+    "y": 3304.13,
+    "w": 700,
+    "h": 42
+   },
+   "texto": "7. Conclusão: como tomar a melhor decisão?",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 30,
+    "peso": 700,
+    "alturaLinha": 42,
+    "tracking": -1.2
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(14)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3366.13,
+    "w": 700,
+    "h": 51.19
+   },
+   "texto": "Não existe uma resposta única. A melhor escolha é aquela que faz sentido para o seu momento, seu orçamento e seus objeti",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(15)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3437.31,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Mas uma coisa é certa:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(15) > strong",
+   "tag": "strong",
+   "caixa": {
+    "x": 322.33,
+    "y": 3439.31,
+    "w": 245.13,
+    "h": 20
+   },
+   "texto": "Decidir sem avaliar pode sair caro",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(16)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3482.91,
+    "w": 700,
+    "h": 25.59
+   },
+   "texto": "Um arquiteto pode te ajudar a:",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(9)",
+   "tag": "ul",
+   "caixa": {
+    "x": 150,
+    "y": 3540.5,
+    "w": 700,
+    "h": 76.78
+   },
+   "margem": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(9) > li:nth-of-type(1)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3540.5,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(9) > li:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3540.5,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Entender o custo real de cada opção;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(9) > li:nth-of-type(2)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3566.09,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(9) > li:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3566.09,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Avaliar o potencial do imóvel;",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(9) > li:nth-of-type(3)",
+   "tag": "li",
+   "caixa": {
+    "x": 150,
+    "y": 3591.69,
+    "w": 700,
+    "h": 25.59
+   },
+   "padding": [
+    0,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > ul:nth-of-type(9) > li:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 170,
+    "y": 3591.69,
+    "w": 680,
+    "h": 25.59
+   },
+   "texto": "Definir o melhor caminho para o seu caso.",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(7)",
+   "tag": "h4",
+   "caixa": {
+    "x": 150,
+    "y": 3657.28,
+    "w": 700,
+    "h": 30.8
+   },
+   "texto": "Antes de começar, faça isso",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 22,
+    "peso": 700,
+    "alturaLinha": 30.8,
+    "tracking": -0.88
+   },
+   "cor": "rgb(0, 0, 0)",
+   "margem": [
+    40,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(17)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3708.08,
+    "w": 700,
+    "h": 76.78
+   },
+   "texto": "Se você está pensando em reformar ou construir, o ideal é fazer uma análise profissional antes de tomar qualquer decisão",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(18)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3804.86,
+    "w": 700,
+    "h": 25.59
+   },
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(19)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3850.45,
+    "w": 700,
+    "h": 25.59
+   },
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(20)",
+   "tag": "p",
+   "caixa": {
+    "x": 150,
+    "y": 3896.05,
+    "w": 700,
+    "h": 25.59
+   },
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 400,
+    "alturaLinha": 25.6,
+    "tracking": -0.32
+   },
+   "cor": "rgb(102, 102, 102)",
+   "margem": [
+    20,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 3979.64,
+    "w": 1000,
+    "h": 420.41
+   },
+   "padding": [
+    0,
+    100,
+    45,
+    100
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 25,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3979.64,
+    "w": 800,
+    "h": 48
+   },
+   "nomeFramer": "Header Info",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "space-between",
+    "center"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 3979.64,
+    "w": 545,
+    "h": 48
+   },
+   "nomeFramer": "Recent Post",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div > h2",
+   "tag": "h2",
+   "caixa": {
+    "x": 100,
+    "y": 3979.64,
+    "w": 545,
+    "h": 48
+   },
+   "texto": "Mais Recentes",
+   "fonte": {
+    "familia": "Inter Display",
+    "tamanho": 40,
+    "peso": 600,
+    "alturaLinha": 48,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 645,
+    "y": 3984.84,
+    "w": 255,
+    "h": 37.59
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a",
+   "tag": "a",
+   "caixa": {
+    "x": 645,
+    "y": 3984.84,
+    "w": 255,
+    "h": 37.59
+   },
+   "nomeFramer": "Desktop",
+   "padding": [
+    8,
+    15,
+    8,
+    15
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 5,
+   "raio": "999px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div",
+   "tag": "div",
+   "caixa": {
+    "x": 660,
+    "y": 3992.84,
+    "w": 225,
+    "h": 21.59
+   },
+   "nomeFramer": "Section Browse",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 660,
+    "y": 3992.84,
+    "w": 194,
+    "h": 21.59
+   },
+   "nomeFramer": "View more blog",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(1) > h5",
+   "tag": "h5",
+   "caixa": {
+    "x": 660,
+    "y": 3992.84,
+    "w": 194,
+    "h": 21.59
+   },
+   "texto": "Ver todas as postagens",
+   "fonte": {
+    "familia": "Inter Display",
+    "tamanho": 18,
+    "peso": 400,
+    "alturaLinha": 21.6,
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 864,
+    "y": 3993.14,
+    "w": 21,
+    "h": 21
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 864,
+    "y": 3993.14,
+    "w": 21,
+    "h": 21
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg > g",
+   "tag": "g",
+   "caixa": {
+    "x": 868.59,
+    "y": 3997.73,
+    "w": 11.81,
+    "h": 11.81
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > div > a > div > div:nth-of-type(2) > div > svg > g > path",
+   "tag": "path",
+   "caixa": {
+    "x": 868.59,
+    "y": 3997.73,
+    "w": 11.81,
+    "h": 11.81
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 4052.64,
+    "w": 800,
+    "h": 302.41
+   },
+   "display": "grid",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "normal"
+   ],
+   "gap": 20,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 100,
+    "y": 4052.64,
+    "w": 390,
+    "h": 302.41
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 4052.64,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 4052.64,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(1) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 100,
+    "y": 4052.64,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?width=1536&height=1024",
+    "srcset": "https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?scale-down-to=512&width=1536&height=1024 512w,https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?scale-down-to=1024&width=1536&height=1024 1024w,https://framerusercontent.com/images/tzbQkbNCikt3gsXQbbQrx11Ydk.png?width=1536&height=1024 1536w",
+    "sizes": "(min-width: 1200px) 306.6667px, (max-width: 809.98px) max((100vw - 52px) / 2, 50px), (min-width: 810px) and (max-width: 1199.98px) max((100vw - 220px) / 2, 50px)",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 390,
+     "h": 259
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 100,
+    "y": 4332.64,
+    "w": 390,
+    "h": 22.41
+   },
+   "nomeFramer": "Title",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(1) > div:nth-of-type(2) > h6",
+   "tag": "h6",
+   "caixa": {
+    "x": 100,
+    "y": 4332.64,
+    "w": 390,
+    "h": 22.41
+   },
+   "texto": "Minimalismo x Maximalismo: Qual estilo é o seu?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 22.4,
+    "tracking": -0.32
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 510,
+    "y": 4052.64,
+    "w": 390,
+    "h": 302.41
+   },
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 510,
+    "y": 4052.64,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 510,
+    "y": 4052.64,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "posicao": "absolute"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(1) > div > img",
+   "tag": "img",
+   "caixa": {
+    "x": 510,
+    "y": 4052.64,
+    "w": 390,
+    "h": 270
+   },
+   "raio": "8px",
+   "imagem": {
+    "src": "https://framerusercontent.com/images/me9vvpdvwhhmckbSz680F10c.png?width=1536&height=1024",
+    "alt": "",
+    "objectFit": "cover",
+    "natural": {
+     "w": 1536,
+     "h": 1024
+    }
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 510,
+    "y": 4332.64,
+    "w": 390,
+    "h": 22.41
+   },
+   "nomeFramer": "Title",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div > a:nth-of-type(2) > div:nth-of-type(2) > h6",
+   "tag": "h6",
+   "caixa": {
+    "x": 510,
+    "y": 4332.64,
+    "w": 390,
+    "h": 22.41
+   },
+   "texto": "Vale mais a pena reformar ou construir?",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 700,
+    "alturaLinha": 22.4,
+    "tracking": -0.32
+   },
+   "cor": "rgb(0, 0, 0)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 4458.05,
+    "w": 1000,
+    "h": 544
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 0,
+    "y": 4458.05,
+    "w": 1000,
+    "h": 544
+   },
+   "nomeFramer": "Serviços/Sobre nós - Tablet",
+   "fundo": "rgb(169, 140, 103)",
+   "padding": [
+    52,
+    48,
+    52,
+    48
+   ],
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 133,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4510.05,
+    "w": 904,
+    "h": 440
+   },
+   "nomeFramer": "Frame 2744",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 32,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4510.05,
+    "w": 904,
+    "h": 309
+   },
+   "nomeFramer": "Frame 2743",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 40,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4510.05,
+    "w": 904,
+    "h": 265
+   },
+   "nomeFramer": "Frame 52",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 42,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4510.05,
+    "w": 904,
+    "h": 265
+   },
+   "nomeFramer": "Frame 3045",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "flex-end",
+    "flex-start"
+   ],
+   "gap": 149,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4510.05,
+    "w": 377.5,
+    "h": 265
+   },
+   "nomeFramer": "Opções Institucionais",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4510.05,
+    "w": 185,
+    "h": 38.41
+   },
+   "nomeFramer": "Institucional",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4510.05,
+    "w": 185,
+    "h": 38.41
+   },
+   "texto": "Institucional",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 4560.45,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4570.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Início",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(1) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4570.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Início",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 4592.45,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4602.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(2) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4602.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Serviços",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 4624.45,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4634.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Projetos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(3) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4634.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Projetos",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 4656.45,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4666.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Sobre nós",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(4) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4666.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Sobre nós",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 4688.45,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4698.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Blog",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(5) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4698.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Blog",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6)",
+   "tag": "a",
+   "caixa": {
+    "x": 48,
+    "y": 4720.45,
+    "w": 176,
+    "h": 20
+   },
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4730.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "nomeFramer": "Contato",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "absolute",
+   "revelado": true
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(1) > a:nth-of-type(6) > div > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4730.45,
+    "w": 176,
+    "h": 19.2
+   },
+   "texto": "Contato",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 4510.05,
+    "w": 377.5,
+    "h": 265
+   },
+   "nomeFramer": "opções de Serviços",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "flex-start"
+   ],
+   "gap": 12,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 4510.05,
+    "w": 190,
+    "h": 38.41
+   },
+   "nomeFramer": "Informações",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 4510.05,
+    "w": 190,
+    "h": 38.41
+   },
+   "texto": "Informações",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 32,
+    "peso": 700,
+    "alturaLinha": 38.4,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 4560.45,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "Planos",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(2) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 4560.45,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Termos de uso",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 4591.66,
+    "w": 177,
+    "h": 38.41
+   },
+   "nomeFramer": "Seja Parceiro(a)",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(3) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 4591.66,
+    "w": 177,
+    "h": 38.41
+   },
+   "texto": "Políticas de Privacidade",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4)",
+   "tag": "div",
+   "caixa": {
+    "x": 574.5,
+    "y": 4642.06,
+    "w": 177,
+    "h": 19.2
+   },
+   "nomeFramer": "já Sou Parceiro",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > div:nth-of-type(2) > div:nth-of-type(4) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 574.5,
+    "y": 4642.06,
+    "w": 177,
+    "h": 19.2
+   },
+   "texto": "Políticas de Cookies",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 16,
+    "peso": 500,
+    "alturaLinha": 19.2,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4815.05,
+    "w": 904,
+    "h": 4
+   },
+   "nomeFramer": "Divisor",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4815.05,
+    "w": 904,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(1) > div:nth-of-type(2) > div > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 48,
+    "y": 4815.05,
+    "w": 904,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4851.05,
+    "w": 904,
+    "h": 99
+   },
+   "nomeFramer": "Frame 3047",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "center",
+    "flex-start"
+   ],
+   "gap": 15,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4851.05,
+    "w": 904,
+    "h": 24
+   },
+   "nomeFramer": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+   "display": "flex",
+   "direcao": "column",
+   "alinhamento": [
+    "flex-start",
+    "normal"
+   ],
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(1) > p",
+   "tag": "p",
+   "caixa": {
+    "x": 48,
+    "y": 4851.05,
+    "w": 904,
+    "h": 24
+   },
+   "texto": "© 2025 Arquiteta Isabella Pires |",
+   "fonte": {
+    "familia": "Mulish",
+    "tamanho": 20,
+    "peso": 500,
+    "alturaLinha": 24,
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2)",
+   "tag": "div",
+   "caixa": {
+    "x": 48,
+    "y": 4890.05,
+    "w": 904,
+    "h": 60
+   },
+   "padding": [
+    10,
+    0,
+    10,
+    0
+   ],
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+   "tag": "a",
+   "caixa": {
+    "x": 405,
+    "y": 4900.05,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 405,
+    "y": 4900.05,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2)",
+   "tag": "a",
+   "caixa": {
+    "x": 455,
+    "y": 4900.05,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(2) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 455,
+    "y": 4900.05,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3)",
+   "tag": "a",
+   "caixa": {
+    "x": 505,
+    "y": 4900.05,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(3) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 505,
+    "y": 4900.05,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4)",
+   "tag": "a",
+   "caixa": {
+    "x": 555,
+    "y": 4900.05,
+    "w": 40,
+    "h": 40
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "gap": 10,
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(4) > div",
+   "tag": "div",
+   "caixa": {
+    "x": 555,
+    "y": 4900.05,
+    "w": 40,
+    "h": 40
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(0, 0, 238)",
+   "fundoImagem": "url(\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 viewBox=%220 0 40 40%22 overflow=%22visible%22><g><path d=%22M 20 40 C 14.696 40 9.60",
+   "posicao": "relative"
+  },
+  {
+   "caminho": "body > div:nth-of-type(2) > svg:nth-of-type(1)",
+   "tag": "svg",
+   "caixa": {
+    "x": 0,
+    "y": 1007,
+    "w": 1446,
+    "h": 4
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3)",
+   "tag": "div",
+   "caixa": {
+    "x": 960,
+    "y": 485,
+    "w": 30,
+    "h": 30
+   },
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "normal",
+    "center"
+   ],
+   "gap": 8,
+   "posicao": "fixed",
+   "z": 2147483647
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > span",
+   "tag": "span",
+   "caixa": {
+    "x": 857,
+    "y": 488.5,
+    "w": 93,
+    "h": 23
+   },
+   "texto": "Edit Content",
+   "fonte": {
+    "familia": "Inter",
+    "tamanho": 12,
+    "peso": 500,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)",
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "padding": [
+    4,
+    8,
+    4,
+    8
+   ],
+   "raio": "8px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px",
+   "opacidade": 0,
+   "posicao": "fixed"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button",
+   "tag": "button",
+   "caixa": {
+    "x": 960,
+    "y": 485,
+    "w": 30,
+    "h": 30
+   },
+   "fundo": "rgba(34, 34, 34, 0.8)",
+   "display": "flex",
+   "direcao": "row",
+   "alinhamento": [
+    "center",
+    "center"
+   ],
+   "raio": "15px",
+   "sombra": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px"
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg",
+   "tag": "svg",
+   "caixa": {
+    "x": 968,
+    "y": 493,
+    "w": 14,
+    "h": 14
+   }
+  },
+  {
+   "caminho": "body > div:nth-of-type(3) > button > svg > path:nth-of-type(1)",
+   "tag": "path",
+   "caixa": {
+    "x": 969.75,
+    "y": 494.73,
+    "w": 10.02,
+    "h": 10.02
+   },
+   "fonte": {
+    "familia": "sans-serif",
+    "tamanho": 12,
+    "peso": 400,
+    "alturaLinha": "normal",
+    "tracking": 0
+   },
+   "cor": "rgb(255, 255, 255)"
+  },
+  {
+   "caminho": "body > iframe",
+   "tag": "iframe",
+   "caixa": {
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 1000
+   },
+   "posicao": "fixed",
+   "z": 2147483646
+  }
+ ]
+}

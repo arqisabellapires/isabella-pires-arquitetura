@@ -12,6 +12,9 @@ _referencia/
 _importar/
 .diffs/
 .ref/
+# Cópias sem script das capturas, geradas por extrai-medidas e compara
+.medidas-ref/
+.compara-ref/
 
 # Runtime do Framer — código proprietário, material de estudo local
 _capturas/_runtime/

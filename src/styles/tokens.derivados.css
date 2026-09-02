@@ -1,0 +1,582 @@
+/* ============================================================
+   Tokens derivados — gerado por tools/deriva-tokens.mjs
+   Origem: 45 arquivos _capturas/<pagina>/medidas.<bp>.json
+
+   EDITE OS NOMES, NÃO OS VALORES. Todo valor aqui foi medido na
+   captura do Framer. Trocar um valor à mão é reintroduzir memória
+   no lugar de medida — que é exatamente o que fez a primeira
+   tentativa de reconstrução divergir em 14 pontos.
+
+   Procedência de cada valor (quantas vezes, em que páginas):
+   _capturas/tokens-relatorio.json
+   ============================================================ */
+
+:root {
+
+  /* ─── Cor: texto ──────────────────────────────────────────── */
+
+  --cor-texto-1: #ffffff;  /* 603× · ex.: ISABELLA PIRES */
+  --cor-texto-2: #000000;  /* 385× · ex.: @arq.isabellapires */
+  --cor-texto-3: #666666;  /* 360× · ex.: Essa é uma das dúvidas mais comuns */
+  --cor-texto-4: #696969;  /* 144× · ex.: Arquitetura na Prática */
+  --cor-texto-5: #341f04;  /* 140× · ex.: 2024 */
+  --cor-texto-6: #444444;  /* 87× · ex.: Home */
+  --cor-texto-7: #21201f;  /* 80× · ex.: Arquitetura, Design & */
+  --cor-texto-8: #a98c67;  /* 57× · ex.: Sobre nós */
+  --cor-texto-9: #887669;  /* 51× · ex.: Entre em contato */
+  --cor-texto-10: #6c757d;  /* 48× · ex.: Transformamos seu lar em um espaço */
+  --cor-texto-11: #352005;  /* 42× · ex.: ISABELLA PIRES */
+  --cor-texto-12: #483b2a;  /* 33× · ex.: Contate-nos */
+  --cor-texto-13: #888888;  /* 30× · ex.: Qual é o seu nome? */
+  --cor-texto-14: #ededed;  /* 27× · ex.: 01 */
+  --cor-texto-15: #262626;  /* 23× · ex.: CASA IP */
+  --cor-texto-16: #1a1a1a;  /* 21× · ex.: Mais que Design, */
+  --cor-texto-17: #212529;  /* 16× · ex.: Início / */
+  --cor-texto-18: #999999;  /* 15× · ex.: 24 de mar. de 2026 */
+  --cor-texto-19: #595959;  /* 15× · ex.: Vale mais a pena reformar ou const */
+  --cor-texto-20: #2f2f2fcc;  /* 13× · ex.: Nosso propósito é criar o incomum. */
+  --cor-texto-21: #706c69;  /* 12× · ex.: Conversamos com você para entender */
+  --cor-texto-22: #434343;  /* 9× · ex.: Arquitetura Residencial */
+  --cor-texto-23: #191919;  /* 9× · ex.: Contato */
+  --cor-texto-24: #6d6e6f;  /* 9× · ex.: arqisabellapires@gmail.com */
+  --cor-texto-25: #e9e9e9;  /* 3× · ex.: Mais do que criar ambientes bonito */
+  --cor-texto-26: #525252;  /* 3× · ex.: Maringá - PR */
+  --cor-texto-27: #ffffffd6;  /* 3× · ex.: Residências únicas que refletem o  */
+  --cor-texto-28: #000000cc;  /* 3× · ex.: “Arquitetura é a arte de transform */
+  --cor-texto-29: #483b2ad4;  /* 3× · ex.: Planejamento e custos sem surpresa */
+  --cor-texto-30: #343331;  /* 3× · ex.: Residências únicas que refletem o  */
+  --cor-texto-31: #ffffffeb;  /* 3× · ex.: O projeto CASA IP foi pensado para */
+  --cor-texto-32: #a6a6a6;  /* 3× · ex.: Pesquisar */
+  --cor-texto-33: #3a2e26;  /* 3× · ex.: Acompanhe-nos através de nossa New */
+  --cor-texto-34: #0000007a;  /* 3× · ex.: Sem spam, você pode se desinscreve */
+
+  /* ─── Cor: fundo ──────────────────────────────────────────── */
+
+  --cor-fundo-1: #ffffff;  /* 213× · home, sobre-nos, servicos */
+  --cor-fundo-2: #fbf7f4;  /* 92× · home, sobre-nos, servicos */
+  --cor-fundo-3: #222222cc;  /* 90× · home, sobre-nos, servicos */
+  --cor-fundo-4: #a98c67;  /* 69× · home, sobre-nos, servicos */
+  --cor-fundo-5: #bbbbbb26;  /* 30× · home, contato */
+  --cor-fundo-6: #ffffffba;  /* 15× · home, sobre-nos, servicos */
+  --cor-fundo-7: #341f04;  /* 13× · home, sobre-nos, servicos */
+  --cor-fundo-8: #ffffffd9;  /* 12× · home */
+  --cor-fundo-9: #3a2e26;  /* 12× · projetos, artigos */
+  --cor-fundo-10: #989593;  /* 12× · projetos__casa-ip, projetos__ap-mm, projetos__studio */
+  --cor-fundo-11: #ffffffde;  /* 12× · artigos */
+  --cor-fundo-12: #00000047;  /* 7× · home */
+  --cor-fundo-13: #333333;  /* 6× · home, contato */
+  --cor-fundo-14: #f8efe9;  /* 6× · contato */
+  --cor-fundo-15: #00000036;  /* 3× · home */
+  --cor-fundo-16: #f0d9c6;  /* 3× · home */
+  --cor-fundo-17: #f0d9c740;  /* 3× · home */
+  --cor-fundo-18: #f0d9c7;  /* 3× · home */
+  --cor-fundo-19: #f0d9c733;  /* 3× · sobre-nos */
+  --cor-fundo-20: #f0d9c673;  /* 3× · sobre-nos */
+  --cor-fundo-21: #ededed;  /* 3× · projetos */
+  --cor-fundo-22: #edeae7;  /* 3× · artigos */
+
+  /* ─── Famílias ────────────────────────────────────────────── */
+
+  --fonte-1: 'Mulish';  /* 1722× */
+  --fonte-2: 'Inter';  /* 207× */
+  --fonte-3: 'Segoe UI';  /* 134× */
+  --fonte-4: 'Faberge';  /* 71× */
+  --fonte-5: 'Arboria';  /* 62× */
+  --fonte-6: 'Inter Display';  /* 44× */
+  --fonte-7: 'Manrope';  /* 15× */
+  --fonte-8: 'Cairo Play';  /* 4× */
+
+  /* ─── Tipografia · desktop (≥1440px) ──────────────────────── */
+
+  --texto-desktop-1: 100px/120px 400 'Faberge';
+  --tracking-desktop-1: 0px;  /* 3× · ex.: AP MM */
+  --texto-desktop-2: 90px/108px 700 'Segoe UI';
+  --tracking-desktop-2: 0px;  /* 4× · ex.: 01 */
+  --texto-desktop-3: 80px/96px 400 'Mulish';
+  --tracking-desktop-3: 0px;  /* 5× · ex.: Arquitetura */
+  --texto-desktop-4: 60px/72px 600 'Mulish';
+  --tracking-desktop-4: 0px;  /* 5× · ex.: Sobre nós */
+  --texto-desktop-5: 60px/72px 400 'Faberge';
+  --tracking-desktop-5: 0px;  /* 5× · ex.: 01 */
+  --texto-desktop-6: 48px/57.6px 700 'Mulish';
+  --tracking-desktop-6: 0px;  /* 6× · ex.: CASA IP */
+  --texto-desktop-7: 48px/57.6px 600 'Inter Display';
+  --tracking-desktop-7: 0px;  /* 5× · ex.: Mais Recentes */
+  --texto-desktop-8: 42px/40.74px 700 'Mulish';
+  --tracking-desktop-8: 0px;  /* 4× · ex.: 2024 */
+  --texto-desktop-9: 40px/48px 400 'Faberge';
+  --tracking-desktop-9: 0px;  /* 8× · ex.: AP MM */
+  --texto-desktop-10: 40px/38.8px 600 'Mulish';
+  --tracking-desktop-10: 0px;  /* 4× · ex.: Detalhes do Projeto */
+  --texto-desktop-11: 34px/40.8px 600 'Mulish';
+  --tracking-desktop-11: 0px;  /* 30× · ex.: Sobrou alguma dúvida? */
+  --texto-desktop-12: 32px/38.4px 700 'Mulish';
+  --tracking-desktop-12: 0px;  /* 30× · ex.: Institucional */
+  --texto-desktop-13: 32px/38.4px 700 'Arboria';
+  --tracking-desktop-13: 0px;  /* 4× · ex.: Briefing e Levantamento */
+  --texto-desktop-14: 32px/31.04px 700 'Mulish';
+  --tracking-desktop-14: 0px;  /* 3× · ex.: Modernidade */
+  --texto-desktop-15: 30px/42px 700 'Inter';
+  --tracking-desktop-15: -1.2px;  /* 12× · ex.: Vale mais a pena reformar ou c */
+  --texto-desktop-16: 29px/28.13px 600 'Segoe UI';
+  --tracking-desktop-16: 0px;  /* 12× · ex.: Ano */
+  --texto-desktop-17: 29px/34.8px 700 'Segoe UI';
+  --tracking-desktop-17: 0px;  /* 12× · ex.: 2024 */
+  --texto-desktop-18: 28px/33.6px 700 'Mulish';
+  --tracking-desktop-18: 0px;  /* 4× · ex.: 2 */
+  --texto-desktop-19: 26px/25.22px 400 'Faberge';
+  --tracking-desktop-19: 0px;  /* 3× · ex.: Transparência e Clareza */
+  --texto-desktop-20: 24px/28.8px 400 'Mulish';
+  --tracking-desktop-20: 0px;  /* 5× · ex.: Sobre nós */
+  --texto-desktop-21: 24px/28.8px 400 'Faberge';
+  --tracking-desktop-21: 0px;  /* 4× · ex.: Quem somos */
+  --texto-desktop-22: 22px/26.33px 400 'Mulish';
+  --tracking-desktop-22: 0px;  /* 25× · ex.: Nos ambientes internos, a esco */
+  --texto-desktop-23: 22px/26.33px 600 'Mulish';
+  --tracking-desktop-23: 0px;  /* 14× · ex.: O ponto de partida do projeto  */
+  --texto-desktop-24: 22px/28.33px 600 'Mulish';
+  --tracking-desktop-24: 0px;  /* 8× · ex.: · com garagem e entrada princi */
+  --texto-desktop-25: 22px/30.8px 700 'Inter';
+  --tracking-desktop-25: -0.88px;  /* 8× · ex.: Reformar */
+  --texto-desktop-26: 20px/28px 700 'Mulish';
+  --tracking-desktop-26: -0.8px;  /* 26× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-desktop-27: 20px/24px 600 'Segoe UI';
+  --tracking-desktop-27: 0px;  /* 15× · ex.: Contate-nos */
+  --texto-desktop-28: 20px/24px 500 'Arboria';
+  --tracking-desktop-28: 0px;  /* 15× · ex.: © 2025 Arquiteta Isabella Pire */
+  --texto-desktop-29: 20px/24px 700 'Mulish';
+  --tracking-desktop-29: 0px;  /* 7× · ex.: Explorar Projetos */
+  --texto-desktop-30: 20px/19.4px 400 'Mulish';
+  --tracking-desktop-30: 0px;  /* 6× · ex.: Início de um sonho */
+  --texto-desktop-31: 20px/24px 700 'Arboria';
+  --tracking-desktop-31: 0px;  /* 4× · ex.: Ver todos */
+  --texto-desktop-32: 20px/19.4px 400 'Faberge';
+  --tracking-desktop-32: 0px;  /* 3× · ex.: Planejamento e custos sem surp */
+  --texto-desktop-33: 18px/21.6px 600 'Mulish';
+  --tracking-desktop-33: 0px;  /* 17× · ex.: Conte um pouco sobre o que voc */
+  --texto-desktop-34: 18px/21.78px 500 'Mulish';
+  --tracking-desktop-34: 0px;  /* 12× · ex.: Mais do que estética, criamos  */
+  --texto-desktop-35: 18px/21.6px 600 'Segoe UI';
+  --tracking-desktop-35: 0px;  /* 6× · ex.: No nosso escritório, conduzido */
+  --texto-desktop-36: 18px/21.78px 700 'Mulish';
+  --tracking-desktop-36: 0px;  /* 5× · ex.: Entrar em contato */
+  --texto-desktop-37: 18px/21.6px 400 'Inter Display';
+  --tracking-desktop-37: 0px;  /* 5× · ex.: Ver todas as postagens */
+  --texto-desktop-38: 18px/21.6px 700 'Arboria';
+  --tracking-desktop-38: 0px;  /* 4× · ex.: Arquitetura Residencial */
+  --texto-desktop-39: 18px/21.78px 600 'Mulish';
+  --tracking-desktop-39: 0px;  /* 3× · ex.: Transformamos seu lar em um es */
+  --texto-desktop-40: 16px/25.6px 400 'Mulish';
+  --tracking-desktop-40: -0.32px;  /* 173× · ex.: Arquitetura na Prática */
+  --texto-desktop-41: 16px/19.2px 500 'Mulish';
+  --tracking-desktop-41: 0px;  /* 135× · ex.: Início */
+  --texto-desktop-42: 16px/19.2px 700 'Mulish';
+  --tracking-desktop-42: 0px;  /* 25× · ex.: ISABELLA PIRES */
+  --texto-desktop-43: 16px/22.4px 700 'Mulish';
+  --tracking-desktop-43: -0.32px;  /* 15× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-desktop-44: 16px/19.2px 400 'Inter';
+  --tracking-desktop-44: 0px;  /* 5× · ex.: Todos */
+  --texto-desktop-45: 16px/19.2px 400 'Inter Display';
+  --tracking-desktop-45: 0px;  /* 4× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-desktop-46: 15px/30px 500 'Inter';
+  --tracking-desktop-46: -0.15px;  /* 90× · ex.: Home */
+  --texto-desktop-47: 14px/16.8px 500 'Inter';
+  --tracking-desktop-47: 0px;  /* 10× · ex.: Qual é o seu nome? */
+
+  /* ─── Tipografia · tablet (≥1000px) ───────────────────────── */
+
+  --texto-tablet-1: 100px/120px 400 'Faberge';
+  --tracking-tablet-1: 0px;  /* 3× · ex.: AP MM */
+  --texto-tablet-2: 90px/108px 700 'Segoe UI';
+  --tracking-tablet-2: 0px;  /* 4× · ex.: 01 */
+  --texto-tablet-3: 80px/96px 400 'Mulish';
+  --tracking-tablet-3: 0px;  /* 5× · ex.: Arquitetura */
+  --texto-tablet-4: 60px/72px 400 'Faberge';
+  --tracking-tablet-4: 0px;  /* 5× · ex.: 01 */
+  --texto-tablet-5: 50px/60px 500 'Arboria';
+  --tracking-tablet-5: 0px;  /* 4× · ex.: CASA IP */
+  --texto-tablet-6: 48px/57.6px 600 'Mulish';
+  --tracking-tablet-6: 0px;  /* 6× · ex.: Sobre nós */
+  --texto-tablet-7: 42px/40.74px 700 'Mulish';
+  --tracking-tablet-7: 0px;  /* 4× · ex.: 2024 */
+  --texto-tablet-8: 40px/48px 400 'Faberge';
+  --tracking-tablet-8: 0px;  /* 8× · ex.: AP MM */
+  --texto-tablet-9: 40px/48px 600 'Inter Display';
+  --tracking-tablet-9: 0px;  /* 5× · ex.: Mais Recentes */
+  --texto-tablet-10: 40px/38.8px 600 'Mulish';
+  --tracking-tablet-10: 0px;  /* 4× · ex.: Detalhes do Projeto */
+  --texto-tablet-11: 40px/48px 700 'Mulish';
+  --tracking-tablet-11: 0px;  /* 3× · ex.: Outros Projetos */
+  --texto-tablet-12: 32px/38.4px 700 'Mulish';
+  --tracking-tablet-12: 0px;  /* 30× · ex.: Institucional */
+  --texto-tablet-13: 32px/38.4px 700 'Arboria';
+  --tracking-tablet-13: 0px;  /* 4× · ex.: Briefing e Levantamento */
+  --texto-tablet-14: 32px/31.04px 700 'Mulish';
+  --tracking-tablet-14: 0px;  /* 3× · ex.: Modernidade */
+  --texto-tablet-15: 30px/42px 700 'Inter';
+  --tracking-tablet-15: -1.2px;  /* 12× · ex.: Vale mais a pena reformar ou c */
+  --texto-tablet-16: 29px/28.13px 600 'Segoe UI';
+  --tracking-tablet-16: 0px;  /* 12× · ex.: Ano */
+  --texto-tablet-17: 29px/34.8px 700 'Segoe UI';
+  --tracking-tablet-17: 0px;  /* 12× · ex.: 2024 */
+  --texto-tablet-18: 28px/33.6px 700 'Mulish';
+  --tracking-tablet-18: 0px;  /* 4× · ex.: 2 */
+  --texto-tablet-19: 24px/28.8px 400 'Mulish';
+  --tracking-tablet-19: 0px;  /* 4× · ex.: Sobre nós */
+  --texto-tablet-20: 24px/28.8px 400 'Faberge';
+  --tracking-tablet-20: 0px;  /* 4× · ex.: Quem somos */
+  --texto-tablet-21: 22px/26.33px 400 'Mulish';
+  --tracking-tablet-21: 0px;  /* 25× · ex.: Nos ambientes internos, a esco */
+  --texto-tablet-22: 22px/26.33px 600 'Mulish';
+  --tracking-tablet-22: 0px;  /* 14× · ex.: O ponto de partida do projeto  */
+  --texto-tablet-23: 22px/28.33px 600 'Mulish';
+  --tracking-tablet-23: 0px;  /* 8× · ex.: · com garagem e entrada princi */
+  --texto-tablet-24: 22px/30.8px 700 'Inter';
+  --tracking-tablet-24: -0.88px;  /* 8× · ex.: Reformar */
+  --texto-tablet-25: 20px/28px 700 'Mulish';
+  --tracking-tablet-25: -0.8px;  /* 26× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-tablet-26: 20px/24px 500 'Mulish';
+  --tracking-tablet-26: 0px;  /* 15× · ex.: © 2025 Arquiteta Isabella Pire */
+  --texto-tablet-27: 20px/24px 700 'Mulish';
+  --tracking-tablet-27: 0px;  /* 6× · ex.: Explorar Projetos */
+  --texto-tablet-28: 20px/19.4px 400 'Mulish';
+  --tracking-tablet-28: 0px;  /* 6× · ex.: Início de um sonho */
+  --texto-tablet-29: 20px/24px 700 'Arboria';
+  --tracking-tablet-29: 0px;  /* 4× · ex.: Ver todos */
+  --texto-tablet-30: 18px/21.78px 500 'Mulish';
+  --tracking-tablet-30: 0px;  /* 12× · ex.: Mais do que estética, criamos  */
+  --texto-tablet-31: 18px/21.6px 600 'Segoe UI';
+  --tracking-tablet-31: 0px;  /* 7× · ex.: No nosso escritório, conduzido */
+  --texto-tablet-32: 18px/21.78px 700 'Mulish';
+  --tracking-tablet-32: 0px;  /* 5× · ex.: Entrar em contato */
+  --texto-tablet-33: 18px/21.6px 400 'Inter Display';
+  --tracking-tablet-33: 0px;  /* 5× · ex.: Ver todas as postagens */
+  --texto-tablet-34: 18px/21.6px 700 'Arboria';
+  --tracking-tablet-34: 0px;  /* 4× · ex.: Arquitetura Residencial */
+  --texto-tablet-35: 18px/21.6px 400 'Mulish';
+  --tracking-tablet-35: 0px;  /* 3× · ex.: Nosso propósito é criar o inco */
+  --texto-tablet-36: 18px/21.78px 600 'Mulish';
+  --tracking-tablet-36: 0px;  /* 3× · ex.: Transformamos seu lar em um es */
+  --texto-tablet-37: 16px/25.6px 400 'Mulish';
+  --tracking-tablet-37: -0.32px;  /* 173× · ex.: Arquitetura na Prática */
+  --texto-tablet-38: 16px/19.2px 500 'Mulish';
+  --tracking-tablet-38: 0px;  /* 135× · ex.: Início */
+  --texto-tablet-39: 16px/19.2px 700 'Mulish';
+  --tracking-tablet-39: 0px;  /* 13× · ex.: Início / */
+  --texto-tablet-40: 16px/22.4px 700 'Mulish';
+  --tracking-tablet-40: -0.32px;  /* 10× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-tablet-41: 16px/19.2px 400 'Inter';
+  --tracking-tablet-41: 0px;  /* 5× · ex.: Todos */
+  --texto-tablet-42: 16px/19.2px 400 'Inter Display';
+  --tracking-tablet-42: 0px;  /* 4× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-tablet-43: 14px/16.8px 700 'Mulish';
+  --tracking-tablet-43: 0px;  /* 15× · ex.: ISABELLA PIRES */
+  --texto-tablet-44: 14px/16.8px 500 'Inter';
+  --tracking-tablet-44: 0px;  /* 10× · ex.: Qual é o seu nome? */
+
+  /* ─── Tipografia · mobile (≥390px) ────────────────────────── */
+
+  --texto-mobile-1: 90px/108px 700 'Segoe UI';
+  --tracking-mobile-1: 0px;  /* 4× · ex.: 01 */
+  --texto-mobile-2: 60px/72px 400 'Faberge';
+  --tracking-mobile-2: 0px;  /* 7× · ex.: 01 */
+  --texto-mobile-3: 50px/60px 400 'Mulish';
+  --tracking-mobile-3: 0px;  /* 7× · ex.: Arquitetura */
+  --texto-mobile-4: 50px/60px 500 'Arboria';
+  --tracking-mobile-4: 0px;  /* 4× · ex.: CASA IP */
+  --texto-mobile-5: 40px/48px 600 'Mulish';
+  --tracking-mobile-5: 0px;  /* 5× · ex.: Sobre nós */
+  --texto-mobile-6: 40px/48px 400 'Faberge';
+  --tracking-mobile-6: 0px;  /* 5× · ex.: AP MM */
+  --texto-mobile-7: 32px/38.4px 700 'Mulish';
+  --tracking-mobile-7: 0px;  /* 30× · ex.: Institucional */
+  --texto-mobile-8: 32px/31.04px 700 'Mulish';
+  --tracking-mobile-8: 0px;  /* 9× · ex.: Espaços que refletem */
+  --texto-mobile-9: 32px/38.4px 700 'Arboria';
+  --tracking-mobile-9: 0px;  /* 4× · ex.: Briefing e Levantamento */
+  --texto-mobile-10: 30px/42px 700 'Inter';
+  --tracking-mobile-10: -1.2px;  /* 12× · ex.: Vale mais a pena reformar ou c */
+  --texto-mobile-11: 28px/33.6px 700 'Mulish';
+  --tracking-mobile-11: 0px;  /* 4× · ex.: 2 */
+  --texto-mobile-12: 24px/28.8px 400 'Mulish';
+  --tracking-mobile-12: 0px;  /* 5× · ex.: Sobre nós */
+  --texto-mobile-13: 24px/28.8px 700 'Mulish';
+  --tracking-mobile-13: 0px;  /* 5× · ex.: CASA IP */
+  --texto-mobile-14: 24px/28.8px 400 'Faberge';
+  --tracking-mobile-14: 0px;  /* 3× · ex.: Quem somos */
+  --texto-mobile-15: 22px/26.33px 400 'Mulish';
+  --tracking-mobile-15: 0px;  /* 14× · ex.: O uso de elementos naturais, c */
+  --texto-mobile-16: 22px/26.4px 700 'Segoe UI';
+  --tracking-mobile-16: 0px;  /* 13× · ex.: Projetos de Arquitetura Reside */
+  --texto-mobile-17: 22px/21.34px 600 'Segoe UI';
+  --tracking-mobile-17: 0px;  /* 12× · ex.: Ano */
+  --texto-mobile-18: 22px/30.8px 700 'Inter';
+  --tracking-mobile-18: -0.88px;  /* 8× · ex.: Reformar */
+  --texto-mobile-19: 22px/26.33px 600 'Mulish';
+  --tracking-mobile-19: 0px;  /* 7× · ex.: O ponto de partida do projeto  */
+  --texto-mobile-20: 22px/28.33px 600 'Mulish';
+  --tracking-mobile-20: 0px;  /* 4× · ex.: · , distribuída em bancadas li */
+  --texto-mobile-21: 20px/28px 700 'Mulish';
+  --tracking-mobile-21: -0.8px;  /* 27× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-mobile-22: 20px/26.33px 400 'Mulish';
+  --tracking-mobile-22: 0px;  /* 12× · ex.: Nos ambientes internos, a esco */
+  --texto-mobile-23: 20px/26.33px 600 'Mulish';
+  --tracking-mobile-23: 0px;  /* 7× · ex.: O ponto de partida do projeto  */
+  --texto-mobile-24: 20px/19.4px 400 'Mulish';
+  --tracking-mobile-24: 0px;  /* 6× · ex.: Início de um sonho */
+  --texto-mobile-25: 20px/24px 700 'Mulish';
+  --tracking-mobile-25: 0px;  /* 5× · ex.: Saiba mais sobre quem somos */
+  --texto-mobile-26: 20px/24px 600 'Inter Display';
+  --tracking-mobile-26: 0px;  /* 5× · ex.: Mais Recentes */
+  --texto-mobile-27: 20px/24.2px 700 'Mulish';
+  --tracking-mobile-27: 0px;  /* 4× · ex.: Entrar em contato */
+  --texto-mobile-28: 20px/28.33px 600 'Mulish';
+  --tracking-mobile-28: 0px;  /* 4× · ex.: · com garagem e entrada princi */
+  --texto-mobile-29: 20px/24px 700 'Arboria';
+  --tracking-mobile-29: 0px;  /* 4× · ex.: Ver todos */
+  --texto-mobile-30: 18px/21.78px 500 'Mulish';
+  --tracking-mobile-30: 0px;  /* 15× · ex.: Dicas e tendências para quem v */
+  --texto-mobile-31: 18px/21.6px 500 'Mulish';
+  --tracking-mobile-31: 0px;  /* 15× · ex.: © 2025 Arquiteta Isabella Pire */
+  --texto-mobile-32: 18px/21.6px 600 'Segoe UI';
+  --tracking-mobile-32: 0px;  /* 7× · ex.: No nosso escritório, conduzido */
+  --texto-mobile-33: 18px/21.6px 400 'Mulish';
+  --tracking-mobile-33: 0px;  /* 4× · ex.: Nosso propósito é criar o inco */
+  --texto-mobile-34: 18px/21.6px 700 'Arboria';
+  --tracking-mobile-34: 0px;  /* 4× · ex.: Arquitetura Residencial */
+  --texto-mobile-35: 18px/21.6px 600 'Mulish';
+  --tracking-mobile-35: 0px;  /* 3× · ex.: Mais do que criar ambientes bo */
+  --texto-mobile-36: 18px/21.78px 600 'Mulish';
+  --tracking-mobile-36: 0px;  /* 3× · ex.: Transformamos seu lar em um es */
+  --texto-mobile-37: 16px/25.6px 400 'Mulish';
+  --tracking-mobile-37: -0.32px;  /* 173× · ex.: Arquitetura na Prática */
+  --texto-mobile-38: 16px/19.2px 500 'Mulish';
+  --tracking-mobile-38: 0px;  /* 135× · ex.: Início */
+  --texto-mobile-39: 16px/19.2px 400 'Inter Display';
+  --tracking-mobile-39: 0px;  /* 11× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-mobile-40: 16px/22.4px 700 'Mulish';
+  --tracking-mobile-40: -0.32px;  /* 10× · ex.: Minimalismo x Maximalismo: Qua */
+  --texto-mobile-41: 14px/16.8px 700 'Mulish';
+  --tracking-mobile-41: 0px;  /* 26× · ex.: ISABELLA PIRES */
+  --texto-mobile-42: 14px/16.8px 500 'Inter';
+  --tracking-mobile-42: 0px;  /* 10× · ex.: Qual é o seu nome? */
+  --texto-mobile-43: 14px/16.8px 400 'Inter';
+  --tracking-mobile-43: 0px;  /* 5× · ex.: Todos */
+
+  /* ─── Espaçamento · desktop ───────────────────────────────── */
+
+  --esp-desktop-1: 1px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-2: 2px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-3: 4px;
+  --esp-desktop-4: 5px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-5: 8px;
+  --esp-desktop-6: 10px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-7: 12px;
+  --esp-desktop-8: 14px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-9: 15px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-10: 16px;
+  --esp-desktop-11: 18px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-12: 20px;
+  --esp-desktop-13: 22px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-14: 24px;
+  --esp-desktop-15: 25px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-16: 26px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-17: 30px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-18: 32px;
+  --esp-desktop-19: 35px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-20: 40px;
+  --esp-desktop-21: 45px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-22: 46px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-23: 48px;
+  --esp-desktop-24: 50px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-25: 52px;
+  --esp-desktop-26: 58px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-27: 60px;
+  --esp-desktop-28: 65px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-29: 67px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-30: 76px;
+  --esp-desktop-31: 80px;
+  --esp-desktop-32: 100px;
+  --esp-desktop-33: 110px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-34: 120px;
+  --esp-desktop-35: 128px;
+  --esp-desktop-36: 150px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-37: 159px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-desktop-38: 200px;
+  --esp-desktop-39: 320px;
+  --largura-desktop-1: 1440px;
+  --largura-desktop-2: 875px;
+  --largura-desktop-3: 620px;
+  --largura-desktop-4: 1184px;
+  --largura-desktop-5: 368px;
+  --largura-desktop-6: 307px;
+  --largura-desktop-7: 560px;
+  --largura-desktop-8: 1240px;
+
+  /* ─── Espaçamento · tablet ────────────────────────────────── */
+
+  --esp-tablet-1: 1px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-2: 2px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-3: 4px;
+  --esp-tablet-4: 5px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-5: 8px;
+  --esp-tablet-6: 10px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-7: 12px;
+  --esp-tablet-8: 14px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-9: 15px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-10: 16px;
+  --esp-tablet-11: 18px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-12: 20px;
+  --esp-tablet-13: 22px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-14: 24px;
+  --esp-tablet-15: 25px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-16: 26px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-17: 30px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-18: 31px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-19: 32px;
+  --esp-tablet-20: 35px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-21: 36px;
+  --esp-tablet-22: 40px;
+  --esp-tablet-23: 42px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-24: 45px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-25: 46px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-26: 48px;
+  --esp-tablet-27: 50px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-28: 51px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-29: 52px;
+  --esp-tablet-30: 58px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-31: 60px;
+  --esp-tablet-32: 63px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-33: 67px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-34: 80px;
+  --esp-tablet-35: 83px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-36: 100px;
+  --esp-tablet-37: 110px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-38: 120px;
+  --esp-tablet-39: 133px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-40: 149px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-41: 150px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-tablet-42: 159px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --largura-tablet-1: 700px;
+  --largura-tablet-2: 1000px;
+  --largura-tablet-3: 880px;
+  --largura-tablet-4: 904px;
+  --largura-tablet-5: 426px;
+  --largura-tablet-6: 390px;
+  --largura-tablet-7: 680px;
+  --largura-tablet-8: 328px;
+
+  /* ─── Espaçamento · mobile ────────────────────────────────── */
+
+  --esp-mobile-1: 1px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-2: 2px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-3: 4px;
+  --esp-mobile-4: 5px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-5: 8px;
+  --esp-mobile-6: 10px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-7: 12px;
+  --esp-mobile-8: 14px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-9: 15px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-10: 16px;
+  --esp-mobile-11: 18px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-12: 20px;
+  --esp-mobile-13: 22px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-14: 24px;
+  --esp-mobile-15: 25px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-16: 26px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-17: 30px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-18: 32px;
+  --esp-mobile-19: 34px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-20: 35px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-21: 40px;
+  --esp-mobile-22: 42px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-23: 45px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-24: 46px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-25: 48px;
+  --esp-mobile-26: 50px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-27: 51px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-28: 52px;
+  --esp-mobile-29: 58px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-30: 60px;
+  --esp-mobile-31: 63px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-32: 80px;
+  --esp-mobile-33: 83px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-34: 100px;
+  --esp-mobile-35: 150px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --esp-mobile-36: 159px;  /* não é múltiplo de 4 — valor literal do Framer */
+  --largura-mobile-1: 342px;
+  --largura-mobile-2: 294px;
+  --largura-mobile-3: 390px;
+  --largura-mobile-4: 310px;
+  --largura-mobile-5: 358px;
+  --largura-mobile-6: 322px;
+  --largura-mobile-7: 326px;
+  --largura-mobile-8: 239px;
+
+  /* ─── Forma ───────────────────────────────────────────────── */
+
+  --raio-1: 8px;  /* 480× */
+  --raio-2: 16px;  /* 113× */
+  --raio-3: 12px;  /* 103× */
+  --raio-4: 32px;  /* 78× */
+  --raio-5: 15px;  /* 45× */
+  --raio-6: 24px;  /* 45× */
+  --raio-7: 10px;  /* 42× */
+  --raio-8: 100px;  /* 34× */
+  --raio-9: 56px;  /* 24× */
+  --raio-10: 18px;  /* 21× */
+  --raio-11: 35px;  /* 18× */
+  --raio-12: 21px;  /* 12× */
+  --raio-13: 20px;  /* 12× */
+  --raio-14: 4px;  /* 12× */
+  --raio-15: 999px;  /* 10× */
+  --raio-16: 9px;  /* 9× */
+  --raio-17: 6px;  /* 6× */
+  --raio-18: 14px;  /* 6× */
+  --raio-19: 22px;  /* 5× */
+  --raio-20: 13px;  /* 3× */
+  --raio-21: 17px;  /* 3× */
+  --sombra-1: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px;  /* 90× */
+  --sombra-2: rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.06) 0px 10px 10px -3.75px;  /* 15× */
+  --borda-1: 2px inset rgb(118, 118, 118);  /* 99× */
+
+  /* ─── Movimento — molas do Framer, em linear() de verdade ─── */
+
+  /* cubic-bezier não expressa mola com mais de um repique; linear() sim.
+     Cobertura ~87%; onde faltar, o fallback é ease-out. */
+  --mola-1-duracao: 0.1s;  /* bounce 0.00 · augiA20Il.js */
+  --mola-1: linear(0, 0.0205, 0.0711, 0.1394, 0.2164, 0.2962, 0.3747, 0.4494, 0.5188, 0.5821, 0.639, 0.6897, 0.7343, 0.7733, 0.8073, 0.8366, 0.8618, 0.8834, 0.9018, 0.9175, 0.9308, 0.9421, 0.9516, 1);
+  --mola-2-duracao: 0.17s;  /* bounce 0.00 · f2cs68FR9.js */
+  --mola-2: linear(0, 0.0205, 0.0711, 0.1394, 0.2164, 0.2962, 0.3747, 0.4494, 0.5188, 0.5821, 0.639, 0.6897, 0.7343, 0.7733, 0.8073, 0.8366, 0.8618, 0.8834, 0.9018, 0.9175, 0.9308, 0.9421, 0.9516, 1);
+  --mola-3-duracao: 0.25s;  /* bounce 0.18 · n8yL1JHdr.js i15JnwUan.js f4n4OEmqR.js */
+  --mola-3: linear(0, 0.0306, 0.1059, 0.2057, 0.3157, 0.426, 0.5303, 0.6246, 0.7071, 0.7773, 0.8354, 0.8825, 0.9197, 0.9483, 0.9698, 0.9855, 0.9964, 1.0037, 1.0083, 1.0107, 1.0117, 1.0116, 1.011, 1);
+  --mola-4-duracao: 0.25s;  /* bounce 0.00 · IItBHcQ2o.js */
+  --mola-4: linear(0, 0.0205, 0.0711, 0.1394, 0.2164, 0.2962, 0.3747, 0.4494, 0.5188, 0.5821, 0.639, 0.6897, 0.7343, 0.7733, 0.8073, 0.8366, 0.8618, 0.8834, 0.9018, 0.9175, 0.9308, 0.9421, 0.9516, 1);
+  --mola-5-duracao: 0.33s;  /* bounce 0.25 · a6Nde7smU.js */
+  --mola-5: linear(0, 0.0363, 0.125, 0.2416, 0.3684, 0.4933, 0.6084, 0.7094, 0.7944, 0.8634, 0.9173, 0.9578, 0.9869, 1.0066, 1.0189, 1.0256, 1.0282, 1.028, 1.0259, 1.0229, 1.0193, 1.0157, 1.0123, 1);
+  --mola-6-duracao: 0.4s;  /* bounce 0.20 · g12rrN1mX.js sBuWTkbUo.js Ewb5uANoV.js */
+  --mola-6: linear(0, 0.0319, 0.1102, 0.2138, 0.3277, 0.4415, 0.5483, 0.6444, 0.7278, 0.798, 0.8554, 0.9012, 0.9367, 0.9635, 0.983, 0.9966, 1.0057, 1.0112, 1.0141, 1.0151, 1.0149, 1.0139, 1.0124, 1);
+  --mola-7-duracao: 0.45s;  /* bounce 0.25 · a6Nde7smU.js Qv_x9EZNH.js */
+  --mola-7: linear(0, 0.0363, 0.125, 0.2416, 0.3684, 0.4933, 0.6084, 0.7094, 0.7944, 0.8634, 0.9173, 0.9578, 0.9869, 1.0066, 1.0189, 1.0256, 1.0282, 1.028, 1.0259, 1.0229, 1.0193, 1.0157, 1.0123, 1);
+  --mola-8-duracao: 0.5s;  /* bounce 0.00 · XlJvYx7WH.js vXw5861FN.js */
+  --mola-8: linear(0, 0.0205, 0.0711, 0.1394, 0.2164, 0.2962, 0.3747, 0.4494, 0.5188, 0.5821, 0.639, 0.6897, 0.7343, 0.7733, 0.8073, 0.8366, 0.8618, 0.8834, 0.9018, 0.9175, 0.9308, 0.9421, 0.9516, 1);
+  --mola-9-duracao: 0.7s;  /* bounce 0.10 · e8xPPqHpl.js */
+  --mola-9: linear(0, 0.0252, 0.0875, 0.1708, 0.2637, 0.3586, 0.4502, 0.5354, 0.6124, 0.6805, 0.7397, 0.7902, 0.8328, 0.8683, 0.8974, 0.9211, 0.9402, 0.9554, 0.9673, 0.9765, 0.9836, 0.989, 0.993, 1);
+  --mola-10-duracao: 0.8s;  /* bounce 0.20 · sBuWTkbUo.js iCmFNLdck.js */
+  --mola-10: linear(0, 0.0319, 0.1102, 0.2138, 0.3277, 0.4415, 0.5483, 0.6444, 0.7278, 0.798, 0.8554, 0.9012, 0.9367, 0.9635, 0.983, 0.9966, 1.0057, 1.0112, 1.0141, 1.0151, 1.0149, 1.0139, 1.0124, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --mola-1-duracao: 1ms;
+    --mola-2-duracao: 1ms;
+    --mola-3-duracao: 1ms;
+    --mola-4-duracao: 1ms;
+    --mola-5-duracao: 1ms;
+    --mola-6-duracao: 1ms;
+    --mola-7-duracao: 1ms;
+    --mola-8-duracao: 1ms;
+    --mola-9-duracao: 1ms;
+    --mola-10-duracao: 1ms;
+  }
+}

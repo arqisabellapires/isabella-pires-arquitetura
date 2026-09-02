@@ -1,0 +1,5257 @@
+{
+ "_gerado": "tools/deriva-tokens.mjs",
+ "_arquivosDeMedida": 45,
+ "cores": [
+  {
+   "valor": "#ffffff",
+   "n": 603,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": "ISABELLA PIRES"
+  },
+  {
+   "valor": "#000000",
+   "n": 385,
+   "onde": [
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip",
+    "projetos__ap-mm"
+   ],
+   "exemplo": "@arq.isabellapires"
+  },
+  {
+   "valor": "#666666",
+   "n": 360,
+   "onde": [
+    "artigos__vale-mais-a-pena-reformar-ou-construir",
+    "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+    "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+    "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+    "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+   ],
+   "exemplo": "Essa é uma das dúvidas mais comuns de quem quer melhorar o imóvel:"
+  },
+  {
+   "valor": "#696969",
+   "n": 144,
+   "onde": [
+    "artigos"
+   ],
+   "exemplo": "Arquitetura na Prática"
+  },
+  {
+   "valor": "#341f04",
+   "n": 140,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "artigos"
+   ],
+   "exemplo": "2024"
+  },
+  {
+   "valor": "#444444",
+   "n": 87,
+   "onde": [
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip",
+    "projetos__ap-mm"
+   ],
+   "exemplo": "Home"
+  },
+  {
+   "valor": "#21201f",
+   "n": 80,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "projetos__casa-ip",
+    "projetos__ap-mm",
+    "projetos__studio",
+    "projetos__cozinha-la"
+   ],
+   "exemplo": "Arquitetura, Design &"
+  },
+  {
+   "valor": "#a98c67",
+   "n": 57,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos"
+   ],
+   "exemplo": "Sobre nós"
+  },
+  {
+   "valor": "#887669",
+   "n": 51,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "projetos__casa-ip",
+    "projetos__ap-mm",
+    "projetos__studio",
+    "projetos__cozinha-la"
+   ],
+   "exemplo": "Entre em contato"
+  },
+  {
+   "valor": "#6c757d",
+   "n": 48,
+   "onde": [
+    "servicos",
+    "contato"
+   ],
+   "exemplo": "Transformamos seu lar em um espaço que une estética, conforto e funcionalidade."
+  },
+  {
+   "valor": "#352005",
+   "n": 42,
+   "onde": [
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip",
+    "projetos__ap-mm"
+   ],
+   "exemplo": "ISABELLA PIRES"
+  },
+  {
+   "valor": "#483b2a",
+   "n": 33,
+   "onde": [
+    "home",
+    "sobre-nos"
+   ],
+   "exemplo": "Contate-nos"
+  },
+  {
+   "valor": "#888888",
+   "n": 30,
+   "onde": [
+    "home",
+    "contato"
+   ],
+   "exemplo": "Qual é o seu nome?"
+  },
+  {
+   "valor": "#ededed",
+   "n": 27,
+   "onde": [
+    "servicos",
+    "projetos__casa-ip",
+    "projetos__ap-mm",
+    "projetos__studio",
+    "projetos__cozinha-la"
+   ],
+   "exemplo": "01"
+  },
+  {
+   "valor": "#262626",
+   "n": 23,
+   "onde": [
+    "home",
+    "projetos__casa-ip",
+    "projetos__ap-mm",
+    "projetos__studio",
+    "projetos__cozinha-la"
+   ],
+   "exemplo": "CASA IP"
+  },
+  {
+   "valor": "#1a1a1a",
+   "n": 21,
+   "onde": [
+    "home",
+    "sobre-nos"
+   ],
+   "exemplo": "Mais que Design,"
+  },
+  {
+   "valor": "#212529",
+   "n": 16,
+   "onde": [
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "artigos"
+   ],
+   "exemplo": "Início /"
+  },
+  {
+   "valor": "#999999",
+   "n": 15,
+   "onde": [
+    "artigos__vale-mais-a-pena-reformar-ou-construir",
+    "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+    "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+    "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+    "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+   ],
+   "exemplo": "24 de mar. de 2026"
+  },
+  {
+   "valor": "#595959",
+   "n": 15,
+   "onde": [
+    "artigos__vale-mais-a-pena-reformar-ou-construir",
+    "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+    "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+    "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+    "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+   ],
+   "exemplo": "Vale mais a pena reformar ou construir?"
+  },
+  {
+   "valor": "#2f2f2fcc",
+   "n": 13,
+   "onde": [
+    "home",
+    "sobre-nos"
+   ],
+   "exemplo": "Nosso propósito é criar o incomum. Ambientes que emocionam, acolhem e refletem autenticidade, traduzindo não apenas esté"
+  },
+  {
+   "valor": "#706c69",
+   "n": 12,
+   "onde": [
+    "sobre-nos"
+   ],
+   "exemplo": "Conversamos com você para entender estilo de vida, necessidades e expectativas, e realizamos medições e registro complet"
+  },
+  {
+   "valor": "#434343",
+   "n": 9,
+   "onde": [
+    "sobre-nos"
+   ],
+   "exemplo": "Arquitetura Residencial"
+  },
+  {
+   "valor": "#191919",
+   "n": 9,
+   "onde": [
+    "contato"
+   ],
+   "exemplo": "Contato"
+  },
+  {
+   "valor": "#6d6e6f",
+   "n": 9,
+   "onde": [
+    "contato"
+   ],
+   "exemplo": "arqisabellapires@gmail.com"
+  },
+  {
+   "valor": "#e9e9e9",
+   "n": 3,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Mais do que criar ambientes bonitos, nosso propósito é dar vida a espaços com alma. Do primeiro esboço ao acabamento fin"
+  },
+  {
+   "valor": "#525252",
+   "n": 3,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Maringá - PR"
+  },
+  {
+   "valor": "#ffffffd6",
+   "n": 3,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Residências únicas que refletem o estilo de vida dos moradores, com cada detalhe pensado para unir conforto, estética e "
+  },
+  {
+   "valor": "#000000cc",
+   "n": 3,
+   "onde": [
+    "sobre-nos"
+   ],
+   "exemplo": "“Arquitetura é a arte de transformar espaços em experiências inesquecíveis”"
+  },
+  {
+   "valor": "#483b2ad4",
+   "n": 3,
+   "onde": [
+    "sobre-nos"
+   ],
+   "exemplo": "Planejamento e custos sem surpresas."
+  },
+  {
+   "valor": "#343331",
+   "n": 3,
+   "onde": [
+    "sobre-nos"
+   ],
+   "exemplo": "Residências únicas que refletem o estilo de vida dos moradores, com cada detalhe pensado para unir conforto, estética e "
+  },
+  {
+   "valor": "#ffffffeb",
+   "n": 3,
+   "onde": [
+    "projetos"
+   ],
+   "exemplo": "O projeto CASA IP foi pensado para um casal com um filho, criando um lar acolhedor e funcional, perfeito para receber am"
+  },
+  {
+   "valor": "#a6a6a6",
+   "n": 3,
+   "onde": [
+    "artigos"
+   ],
+   "exemplo": "Pesquisar"
+  },
+  {
+   "valor": "#3a2e26",
+   "n": 3,
+   "onde": [
+    "artigos"
+   ],
+   "exemplo": "Acompanhe-nos através de nossa Newsletter!"
+  },
+  {
+   "valor": "#0000007a",
+   "n": 3,
+   "onde": [
+    "artigos"
+   ],
+   "exemplo": "Sem spam, você pode se desinscrever a qualquer momento."
+  }
+ ],
+ "fundos": [
+  {
+   "valor": "#ffffff",
+   "n": 213,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": "form"
+  },
+  {
+   "valor": "#fbf7f4",
+   "n": 92,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": "div"
+  },
+  {
+   "valor": "#222222cc",
+   "n": 90,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": "span"
+  },
+  {
+   "valor": "#a98c67",
+   "n": 69,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos__casa-ip",
+    "projetos__ap-mm"
+   ],
+   "exemplo": "Botão Primario"
+  },
+  {
+   "valor": "#bbbbbb26",
+   "n": 30,
+   "onde": [
+    "home",
+    "contato"
+   ],
+   "exemplo": "div"
+  },
+  {
+   "valor": "#ffffffba",
+   "n": 15,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": "Botão secundario"
+  },
+  {
+   "valor": "#341f04",
+   "n": 13,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos"
+   ],
+   "exemplo": "Rectangle 5"
+  },
+  {
+   "valor": "#ffffffd9",
+   "n": 12,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Frame 2998"
+  },
+  {
+   "valor": "#3a2e26",
+   "n": 12,
+   "onde": [
+    "projetos",
+    "artigos"
+   ],
+   "exemplo": "Projetos/Blog - Desktop"
+  },
+  {
+   "valor": "#989593",
+   "n": 12,
+   "onde": [
+    "projetos__casa-ip",
+    "projetos__ap-mm",
+    "projetos__studio",
+    "projetos__cozinha-la"
+   ],
+   "exemplo": "Página de Projetos - Desktop"
+  },
+  {
+   "valor": "#ffffffde",
+   "n": 12,
+   "onde": [
+    "artigos"
+   ],
+   "exemplo": "div"
+  },
+  {
+   "valor": "#00000047",
+   "n": 7,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "div"
+  },
+  {
+   "valor": "#333333",
+   "n": 6,
+   "onde": [
+    "home",
+    "contato"
+   ],
+   "exemplo": "Default"
+  },
+  {
+   "valor": "#f8efe9",
+   "n": 6,
+   "onde": [
+    "contato"
+   ],
+   "exemplo": "Frame 3045"
+  },
+  {
+   "valor": "#00000036",
+   "n": 3,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Frame 3034"
+  },
+  {
+   "valor": "#f0d9c6",
+   "n": 3,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Group 20"
+  },
+  {
+   "valor": "#f0d9c740",
+   "n": 3,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Frame 8"
+  },
+  {
+   "valor": "#f0d9c7",
+   "n": 3,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Homepage - Desktop"
+  },
+  {
+   "valor": "#f0d9c733",
+   "n": 3,
+   "onde": [
+    "sobre-nos"
+   ],
+   "exemplo": "Frame 2965"
+  },
+  {
+   "valor": "#f0d9c673",
+   "n": 3,
+   "onde": [
+    "sobre-nos"
+   ],
+   "exemplo": "Frame 2770"
+  },
+  {
+   "valor": "#ededed",
+   "n": 3,
+   "onde": [
+    "projetos"
+   ],
+   "exemplo": "Botão Primario"
+  },
+  {
+   "valor": "#edeae7",
+   "n": 3,
+   "onde": [
+    "artigos"
+   ],
+   "exemplo": "Variant 1"
+  },
+  {
+   "valor": "#fbf7f400",
+   "n": 1,
+   "onde": [
+    "home"
+   ],
+   "exemplo": "Variant 4"
+  }
+ ],
+ "familias": [
+  {
+   "valor": "Mulish",
+   "n": 1722,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "Inter",
+   "n": 207,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "Segoe UI",
+   "n": 134,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "Faberge",
+   "n": 71,
+   "onde": [
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos__casa-ip",
+    "projetos__ap-mm",
+    "projetos__studio"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "Arboria",
+   "n": 62,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "Inter Display",
+   "n": 44,
+   "onde": [
+    "home",
+    "artigos__vale-mais-a-pena-reformar-ou-construir",
+    "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+    "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+    "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+    "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "Manrope",
+   "n": 15,
+   "onde": [
+    "artigos"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "Cairo Play",
+   "n": 4,
+   "onde": [
+    "projetos"
+   ],
+   "exemplo": null
+  }
+ ],
+ "tipografia": {
+  "desktop": [
+   {
+    "valor": "Mulish|16|400|25.6|-0.32",
+    "n": 173,
+    "onde": [
+     "artigos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Arquitetura na Prática"
+   },
+   {
+    "valor": "Mulish|16|500|19.2|0",
+    "n": 135,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Início"
+   },
+   {
+    "valor": "Inter|15|500|30|-0.15",
+    "n": 90,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Home"
+   },
+   {
+    "valor": "Mulish|34|600|40.8|0",
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Sobrou alguma dúvida?"
+   },
+   {
+    "valor": "Mulish|32|700|38.4|0",
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Institucional"
+   },
+   {
+    "valor": "Mulish|20|700|28|-0.8",
+    "n": 26,
+    "onde": [
+     "home",
+     "artigos"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Mulish|16|700|19.2|0",
+    "n": 25,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "ISABELLA PIRES"
+   },
+   {
+    "valor": "Mulish|22|400|26.33|0",
+    "n": 25,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Nos ambientes internos, a escolha de valoriza o conforto contemporâneo:"
+   },
+   {
+    "valor": "Mulish|18|600|21.6|0",
+    "n": 17,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Conte um pouco sobre o que você sonha para o seu espaço. Nossa equipe vai preparar uma proposta feita sob medida para vo"
+   },
+   {
+    "valor": "Segoe UI|20|600|24|0",
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Contate-nos"
+   },
+   {
+    "valor": "Arboria|20|500|24|0",
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "© 2025 Arquiteta Isabella Pires |"
+   },
+   {
+    "valor": "Mulish|16|700|22.4|-0.32",
+    "n": 15,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Mulish|22|600|26.33|0",
+    "n": 14,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "O ponto de partida do projeto foi a análise do e da relação entre áreas externas e internas. A partir disso, definiu-se "
+   },
+   {
+    "valor": "Mulish|18|500|21.78|0",
+    "n": 12,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Mais do que estética, criamos projetos que fortalecem marcas e experiências."
+   },
+   {
+    "valor": "Segoe UI|29|600|28.13|0",
+    "n": 12,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Ano"
+   },
+   {
+    "valor": "Segoe UI|29|700|34.8|0",
+    "n": 12,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "2024"
+   },
+   {
+    "valor": "Inter|30|700|42|-1.2",
+    "n": 12,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Vale mais a pena reformar ou construir?"
+   },
+   {
+    "valor": "Inter|14|500|16.8|0",
+    "n": 10,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": "Qual é o seu nome?"
+   },
+   {
+    "valor": "Mulish|22|600|28.33|0",
+    "n": 8,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "· com garagem e entrada principal;"
+   },
+   {
+    "valor": "Faberge|40|400|48|0",
+    "n": 8,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "AP MM"
+   },
+   {
+    "valor": "Inter|22|700|30.8|-0.88",
+    "n": 8,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Reformar"
+   },
+   {
+    "valor": "Mulish|20|700|24|0",
+    "n": 7,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "projetos"
+    ],
+    "exemplo": "Explorar Projetos"
+   },
+   {
+    "valor": "Mulish|20|400|19.4|0",
+    "n": 6,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Início de um sonho"
+   },
+   {
+    "valor": "Mulish|48|700|57.6|0",
+    "n": 6,
+    "onde": [
+     "home",
+     "contato",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "CASA IP"
+   },
+   {
+    "valor": "Segoe UI|18|600|21.6|0",
+    "n": 6,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "No nosso escritório, conduzido por Isabella Cito Pires, transformamos ideias em projetos arquitetônicos e de interiores "
+   },
+   {
+    "valor": "Mulish|24|400|28.8|0",
+    "n": 5,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Sobre nós"
+   },
+   {
+    "valor": "Mulish|60|600|72|0",
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": "Sobre nós"
+   },
+   {
+    "valor": "Faberge|60|400|72|0",
+    "n": 5,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "01"
+   },
+   {
+    "valor": "Mulish|80|400|96|0",
+    "n": 5,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Arquitetura"
+   },
+   {
+    "valor": "Mulish|18|700|21.78|0",
+    "n": 5,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Entrar em contato"
+   },
+   {
+    "valor": "Inter|16|400|19.2|0",
+    "n": 5,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": "Todos"
+   },
+   {
+    "valor": "Inter Display|48|600|57.6|0",
+    "n": 5,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Mais Recentes"
+   },
+   {
+    "valor": "Inter Display|18|400|21.6|0",
+    "n": 5,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Ver todas as postagens"
+   },
+   {
+    "valor": "Mulish|42|700|40.74|0",
+    "n": 4,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "2024"
+   },
+   {
+    "valor": "Mulish|28|700|33.6|0",
+    "n": 4,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "2"
+   },
+   {
+    "valor": "Inter Display|16|400|19.2|0",
+    "n": 4,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Faberge|24|400|28.8|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Quem somos"
+   },
+   {
+    "valor": "Arboria|18|700|21.6|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Arquitetura Residencial"
+   },
+   {
+    "valor": "Segoe UI|90|700|108|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "01"
+   },
+   {
+    "valor": "Arboria|32|700|38.4|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Briefing e Levantamento"
+   },
+   {
+    "valor": "Mulish|40|600|38.8|0",
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Detalhes do Projeto"
+   },
+   {
+    "valor": "Arboria|20|700|24|0",
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Ver todos"
+   },
+   {
+    "valor": "Faberge|26|400|25.22|0",
+    "n": 3,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Transparência e Clareza"
+   },
+   {
+    "valor": "Faberge|20|400|19.4|0",
+    "n": 3,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Planejamento e custos sem surpresas."
+   },
+   {
+    "valor": "Mulish|32|700|31.04|0",
+    "n": 3,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Modernidade"
+   },
+   {
+    "valor": "Mulish|18|600|21.78|0",
+    "n": 3,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Transformamos seu lar em um espaço que une estética, conforto e funcionalidade."
+   },
+   {
+    "valor": "Faberge|100|400|120|0",
+    "n": 3,
+    "onde": [
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "AP MM"
+   },
+   {
+    "valor": "Mulish|80|700|77.6|0",
+    "n": 2,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Espaços que refletem"
+   },
+   {
+    "valor": "Mulish|60|700|85|0",
+    "n": 2,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Mais que Design,"
+   },
+   {
+    "valor": "Mulish|18|400|21.6|0",
+    "n": 2,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": "Nosso propósito é criar o incomum. Ambientes que emocionam, acolhem e refletem autenticidade, traduzindo não apenas esté"
+   },
+   {
+    "valor": "Mulish|70|600|85|0",
+    "n": 2,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Histórias Recentes"
+   },
+   {
+    "valor": "Inter|14|600|16.8|0",
+    "n": 2,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": "Enviar"
+   },
+   {
+    "valor": "Mulish|22|700|26.4|0",
+    "n": 2,
+    "onde": [
+     "sobre-nos",
+     "contato"
+    ],
+    "exemplo": "Siga-nos no instagram!"
+   },
+   {
+    "valor": "Mulish|19|500|22.99|0",
+    "n": 2,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": "Conte com a nossa equipe para resolver dúvidas, orientar processos ou ouvir sugestões."
+   },
+   {
+    "valor": "Faberge|24|400|29.04|0",
+    "n": 2,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": "Contato"
+   },
+   {
+    "valor": "Mulish|21|500|25.41|0",
+    "n": 2,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": "arqisabellapires@gmail.com"
+   },
+   {
+    "valor": "Cairo Play|64|400|76.8|0",
+    "n": 2,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": "CASA IP"
+   },
+   {
+    "valor": "Cairo Play|64|500|76.8|0",
+    "n": 2,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": "COZINHA LA"
+   },
+   {
+    "valor": "Manrope|64|500|70.4|-3.84",
+    "n": 2,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": "Dicas e notícias para quem realmente se destaca."
+   }
+  ],
+  "tablet": [
+   {
+    "valor": "Mulish|16|400|25.6|-0.32",
+    "n": 173,
+    "onde": [
+     "artigos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Arquitetura na Prática"
+   },
+   {
+    "valor": "Mulish|16|500|19.2|0",
+    "n": 135,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Início"
+   },
+   {
+    "valor": "Mulish|32|700|38.4|0",
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Institucional"
+   },
+   {
+    "valor": "Mulish|20|700|28|-0.8",
+    "n": 26,
+    "onde": [
+     "home",
+     "artigos"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Mulish|22|400|26.33|0",
+    "n": 25,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Nos ambientes internos, a escolha de valoriza o conforto contemporâneo:"
+   },
+   {
+    "valor": "Mulish|14|700|16.8|0",
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "ISABELLA PIRES"
+   },
+   {
+    "valor": "Mulish|20|500|24|0",
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "© 2025 Arquiteta Isabella Pires |"
+   },
+   {
+    "valor": "Mulish|22|600|26.33|0",
+    "n": 14,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "O ponto de partida do projeto foi a análise do e da relação entre áreas externas e internas. A partir disso, definiu-se "
+   },
+   {
+    "valor": "Mulish|16|700|19.2|0",
+    "n": 13,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": "Início /"
+   },
+   {
+    "valor": "Mulish|18|500|21.78|0",
+    "n": 12,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Mais do que estética, criamos projetos que fortalecem marcas e experiências."
+   },
+   {
+    "valor": "Segoe UI|29|600|28.13|0",
+    "n": 12,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Ano"
+   },
+   {
+    "valor": "Segoe UI|29|700|34.8|0",
+    "n": 12,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "2024"
+   },
+   {
+    "valor": "Inter|30|700|42|-1.2",
+    "n": 12,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Vale mais a pena reformar ou construir?"
+   },
+   {
+    "valor": "Inter|14|500|16.8|0",
+    "n": 10,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": "Qual é o seu nome?"
+   },
+   {
+    "valor": "Mulish|16|700|22.4|-0.32",
+    "n": 10,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Mulish|22|600|28.33|0",
+    "n": 8,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "· com garagem e entrada principal;"
+   },
+   {
+    "valor": "Faberge|40|400|48|0",
+    "n": 8,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "AP MM"
+   },
+   {
+    "valor": "Inter|22|700|30.8|-0.88",
+    "n": 8,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Reformar"
+   },
+   {
+    "valor": "Segoe UI|18|600|21.6|0",
+    "n": 7,
+    "onde": [
+     "sobre-nos",
+     "projetos"
+    ],
+    "exemplo": "No nosso escritório, conduzido por , transformamos ideias em projetos arquitetônicos e de interiores que unem estética, "
+   },
+   {
+    "valor": "Mulish|20|700|24|0",
+    "n": 6,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": "Explorar Projetos"
+   },
+   {
+    "valor": "Mulish|20|400|19.4|0",
+    "n": 6,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Início de um sonho"
+   },
+   {
+    "valor": "Mulish|48|600|57.6|0",
+    "n": 6,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": "Sobre nós"
+   },
+   {
+    "valor": "Faberge|60|400|72|0",
+    "n": 5,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "01"
+   },
+   {
+    "valor": "Mulish|80|400|96|0",
+    "n": 5,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Arquitetura"
+   },
+   {
+    "valor": "Mulish|18|700|21.78|0",
+    "n": 5,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Entrar em contato"
+   },
+   {
+    "valor": "Inter|16|400|19.2|0",
+    "n": 5,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": "Todos"
+   },
+   {
+    "valor": "Inter Display|40|600|48|0",
+    "n": 5,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Mais Recentes"
+   },
+   {
+    "valor": "Inter Display|18|400|21.6|0",
+    "n": 5,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Ver todas as postagens"
+   },
+   {
+    "valor": "Mulish|24|400|28.8|0",
+    "n": 4,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Sobre nós"
+   },
+   {
+    "valor": "Mulish|42|700|40.74|0",
+    "n": 4,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "2024"
+   },
+   {
+    "valor": "Mulish|28|700|33.6|0",
+    "n": 4,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "2"
+   },
+   {
+    "valor": "Inter Display|16|400|19.2|0",
+    "n": 4,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Faberge|24|400|28.8|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Quem somos"
+   },
+   {
+    "valor": "Arboria|18|700|21.6|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Arquitetura Residencial"
+   },
+   {
+    "valor": "Segoe UI|90|700|108|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "01"
+   },
+   {
+    "valor": "Arboria|32|700|38.4|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Briefing e Levantamento"
+   },
+   {
+    "valor": "Arboria|50|500|60|0",
+    "n": 4,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": "CASA IP"
+   },
+   {
+    "valor": "Mulish|40|600|38.8|0",
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Detalhes do Projeto"
+   },
+   {
+    "valor": "Arboria|20|700|24|0",
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Ver todos"
+   },
+   {
+    "valor": "Mulish|18|400|21.6|0",
+    "n": 3,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": "Nosso propósito é criar o incomum. Ambientes que emocionam, acolhem e refletem autenticidade, traduzindo não apenas esté"
+   },
+   {
+    "valor": "Mulish|32|700|31.04|0",
+    "n": 3,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Modernidade"
+   },
+   {
+    "valor": "Mulish|18|600|21.78|0",
+    "n": 3,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Transformamos seu lar em um espaço que une estética, conforto e funcionalidade."
+   },
+   {
+    "valor": "Mulish|40|700|48|0",
+    "n": 3,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Outros Projetos"
+   },
+   {
+    "valor": "Faberge|100|400|120|0",
+    "n": 3,
+    "onde": [
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "AP MM"
+   },
+   {
+    "valor": "Mulish|60|700|58.2|0",
+    "n": 2,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Espaços que refletem"
+   },
+   {
+    "valor": "Mulish|60|700|85|0",
+    "n": 2,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Mais que Design,"
+   },
+   {
+    "valor": "Mulish|70|600|85|0",
+    "n": 2,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Histórias Recentes"
+   },
+   {
+    "valor": "Inter|14|600|16.8|0",
+    "n": 2,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": "Enviar"
+   },
+   {
+    "valor": "Mulish|18|600|21.6|0",
+    "n": 2,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": "Conte um pouco sobre o que você sonha para o seu espaço. Nossa equipe vai preparar uma proposta feita sob medida para vo"
+   },
+   {
+    "valor": "Mulish|19|500|22.99|0",
+    "n": 2,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": "Conte com a nossa equipe para resolver dúvidas, orientar processos ou ouvir sugestões."
+   },
+   {
+    "valor": "Faberge|24|400|29.04|0",
+    "n": 2,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": "Contato"
+   },
+   {
+    "valor": "Mulish|21|500|25.41|0",
+    "n": 2,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": "arqisabellapires@gmail.com"
+   }
+  ],
+  "mobile": [
+   {
+    "valor": "Mulish|16|400|25.6|-0.32",
+    "n": 173,
+    "onde": [
+     "artigos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Arquitetura na Prática"
+   },
+   {
+    "valor": "Mulish|16|500|19.2|0",
+    "n": 135,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Início"
+   },
+   {
+    "valor": "Mulish|32|700|38.4|0",
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "Institucional"
+   },
+   {
+    "valor": "Mulish|20|700|28|-0.8",
+    "n": 27,
+    "onde": [
+     "home",
+     "artigos"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Mulish|14|700|16.8|0",
+    "n": 26,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "ISABELLA PIRES"
+   },
+   {
+    "valor": "Mulish|18|500|21.78|0",
+    "n": 15,
+    "onde": [
+     "home",
+     "servicos",
+     "contato"
+    ],
+    "exemplo": "Dicas e tendências para quem valoriza bons espaços."
+   },
+   {
+    "valor": "Mulish|18|500|21.6|0",
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": "© 2025 Arquiteta Isabella Pires |"
+   },
+   {
+    "valor": "Mulish|22|400|26.33|0",
+    "n": 14,
+    "onde": [
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "O uso de elementos naturais, como a madeira e os detalhes verdes, equilibra modernidade e aconchego, resultando em um am"
+   },
+   {
+    "valor": "Segoe UI|22|700|26.4|0",
+    "n": 13,
+    "onde": [
+     "home",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Projetos de Arquitetura Residencial"
+   },
+   {
+    "valor": "Segoe UI|22|600|21.34|0",
+    "n": 12,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Ano"
+   },
+   {
+    "valor": "Mulish|20|400|26.33|0",
+    "n": 12,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm"
+    ],
+    "exemplo": "Nos ambientes internos, a escolha de valoriza o conforto contemporâneo:"
+   },
+   {
+    "valor": "Inter|30|700|42|-1.2",
+    "n": 12,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Vale mais a pena reformar ou construir?"
+   },
+   {
+    "valor": "Inter Display|16|400|19.2|0",
+    "n": 11,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Inter|14|500|16.8|0",
+    "n": 10,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": "Qual é o seu nome?"
+   },
+   {
+    "valor": "Mulish|16|700|22.4|-0.32",
+    "n": 10,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Minimalismo x Maximalismo: Qual estilo é o seu?"
+   },
+   {
+    "valor": "Mulish|32|700|31.04|0",
+    "n": 9,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": "Espaços que refletem"
+   },
+   {
+    "valor": "Inter|22|700|30.8|-0.88",
+    "n": 8,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Reformar"
+   },
+   {
+    "valor": "Segoe UI|18|600|21.6|0",
+    "n": 7,
+    "onde": [
+     "sobre-nos",
+     "projetos"
+    ],
+    "exemplo": "No nosso escritório, conduzido por Isabella Cito Pires, transformamos ideias em projetos arquitetônicos e de interiores "
+   },
+   {
+    "valor": "Faberge|60|400|72|0",
+    "n": 7,
+    "onde": [
+     "servicos",
+     "projetos__ap-mm",
+     "projetos__studio"
+    ],
+    "exemplo": "01"
+   },
+   {
+    "valor": "Mulish|50|400|60|0",
+    "n": 7,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Arquitetura"
+   },
+   {
+    "valor": "Mulish|20|600|26.33|0",
+    "n": 7,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm"
+    ],
+    "exemplo": "O ponto de partida do projeto foi a análise do e da relação entre áreas externas e internas. A partir disso, definiu-se "
+   },
+   {
+    "valor": "Mulish|22|600|26.33|0",
+    "n": 7,
+    "onde": [
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "O ponto de partida do projeto foi a análise do e da relação entre áreas externas e internas. A partir disso, definiu-se "
+   },
+   {
+    "valor": "Mulish|20|400|19.4|0",
+    "n": 6,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Início de um sonho"
+   },
+   {
+    "valor": "Mulish|24|400|28.8|0",
+    "n": 5,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Sobre nós"
+   },
+   {
+    "valor": "Mulish|20|700|24|0",
+    "n": 5,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": "Saiba mais sobre quem somos"
+   },
+   {
+    "valor": "Mulish|24|700|28.8|0",
+    "n": 5,
+    "onde": [
+     "home",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "CASA IP"
+   },
+   {
+    "valor": "Mulish|40|600|48|0",
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": "Sobre nós"
+   },
+   {
+    "valor": "Faberge|40|400|48|0",
+    "n": 5,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "AP MM"
+   },
+   {
+    "valor": "Inter|14|400|16.8|0",
+    "n": 5,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": "Todos"
+   },
+   {
+    "valor": "Inter Display|20|600|24|0",
+    "n": 5,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": "Mais Recentes"
+   },
+   {
+    "valor": "Mulish|18|400|21.6|0",
+    "n": 4,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": "Nosso propósito é criar o incomum. Ambientes que emocionam, acolhem e refletem autenticidade, traduzindo não apenas esté"
+   },
+   {
+    "valor": "Mulish|28|700|33.6|0",
+    "n": 4,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "2"
+   },
+   {
+    "valor": "Arboria|18|700|21.6|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Arquitetura Residencial"
+   },
+   {
+    "valor": "Segoe UI|90|700|108|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "01"
+   },
+   {
+    "valor": "Arboria|32|700|38.4|0",
+    "n": 4,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Briefing e Levantamento"
+   },
+   {
+    "valor": "Mulish|20|700|24.2|0",
+    "n": 4,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Entrar em contato"
+   },
+   {
+    "valor": "Arboria|50|500|60|0",
+    "n": 4,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": "CASA IP"
+   },
+   {
+    "valor": "Mulish|20|600|28.33|0",
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip"
+    ],
+    "exemplo": "· com garagem e entrada principal;"
+   },
+   {
+    "valor": "Arboria|20|700|24|0",
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Ver todos"
+   },
+   {
+    "valor": "Mulish|22|600|28.33|0",
+    "n": 4,
+    "onde": [
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "· , distribuída em bancadas lineares;"
+   },
+   {
+    "valor": "Mulish|18|600|21.6|0",
+    "n": 3,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": "Mais do que criar ambientes bonitos, nosso propósito é dar vida a espaços com alma."
+   },
+   {
+    "valor": "Faberge|24|400|28.8|0",
+    "n": 3,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": "Quem somos"
+   },
+   {
+    "valor": "Mulish|18|600|21.78|0",
+    "n": 3,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": "Transformamos seu lar em um espaço que une estética, conforto e funcionalidade."
+   },
+   {
+    "valor": "Mulish|35|700|62|0",
+    "n": 2,
+    "onde": [
+     "home"
+    ],
+    "exemplo": "Mais que Design,"
+   },
+   {
+    "valor": "Inter|14|600|16.8|0",
+    "n": 2,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": "Enviar"
+   },
+   {
+    "valor": "Segoe UI|20|700|24|0",
+    "n": 2,
+    "onde": [
+     "sobre-nos",
+     "projetos"
+    ],
+    "exemplo": "@arq.isabellapires"
+   },
+   {
+    "valor": "Mulish|18|700|21.6|0",
+    "n": 2,
+    "onde": [
+     "sobre-nos",
+     "contato"
+    ],
+    "exemplo": "Siga-nos!"
+   },
+   {
+    "valor": "Faberge|24|400|29.04|0",
+    "n": 2,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": "Contato"
+   },
+   {
+    "valor": "Mulish|32|700|34.24|0",
+    "n": 2,
+    "onde": [
+     "projetos__ap-mm",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": "Detalhes do Projeto"
+   }
+  ]
+ },
+ "gaps": {
+  "desktop": [
+   {
+    "valor": 10,
+    "n": 295,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 32,
+    "n": 87,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 8,
+    "n": 64,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 12,
+    "n": 53,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 5,
+    "n": 52,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 14,
+    "n": 37,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 20,
+    "n": 24,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 24,
+    "n": 21,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 40,
+    "n": 18,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 60,
+    "n": 16,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 52,
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 100,
+    "n": 12,
+    "onde": [
+     "home",
+     "servicos",
+     "projetos",
+     "projetos__casa-ip",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 35,
+    "n": 10,
+    "onde": [
+     "sobre-nos",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 16,
+    "n": 10,
+    "onde": [
+     "servicos",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 26,
+    "n": 9,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip",
+     "projetos__ap-mm"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 30,
+    "n": 8,
+    "onde": [
+     "home",
+     "servicos",
+     "projetos__ap-mm",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 58,
+    "n": 6,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 25,
+    "n": 6,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 22,
+    "n": 6,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 18,
+    "n": 5,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 67,
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 159,
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 46,
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 120,
+    "n": 5,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 15,
+    "n": 5,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 80,
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 50,
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 48,
+    "n": 3,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 34,
+    "n": 2,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 37,
+    "n": 2,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 31,
+    "n": 2,
+    "onde": [
+     "sobre-nos",
+     "contato"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 110,
+    "n": 2,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 62,
+    "n": 2,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 72,
+    "n": 2,
+    "onde": [
+     "projetos__ap-mm",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   }
+  ],
+  "tablet": [
+   {
+    "valor": 10,
+    "n": 245,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 8,
+    "n": 64,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 32,
+    "n": 58,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 12,
+    "n": 38,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 24,
+    "n": 22,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 15,
+    "n": 21,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 40,
+    "n": 19,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 14,
+    "n": 18,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 60,
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 133,
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 42,
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 149,
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 16,
+    "n": 11,
+    "onde": [
+     "home",
+     "servicos",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 100,
+    "n": 11,
+    "onde": [
+     "servicos",
+     "projetos__casa-ip",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 35,
+    "n": 10,
+    "onde": [
+     "sobre-nos",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 26,
+    "n": 10,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip",
+     "projetos__ap-mm"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 20,
+    "n": 9,
+    "onde": [
+     "home",
+     "contato",
+     "artigos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 5,
+    "n": 7,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 30,
+    "n": 7,
+    "onde": [
+     "servicos",
+     "projetos__ap-mm",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 58,
+    "n": 6,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 18,
+    "n": 6,
+    "onde": [
+     "home",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 25,
+    "n": 6,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 46,
+    "n": 6,
+    "onde": [
+     "sobre-nos",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 22,
+    "n": 6,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 67,
+    "n": 6,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 159,
+    "n": 6,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 63,
+    "n": 4,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 83,
+    "n": 4,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 51,
+    "n": 4,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 80,
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 50,
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 48,
+    "n": 3,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 31,
+    "n": 3,
+    "onde": [
+     "sobre-nos",
+     "contato"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 34,
+    "n": 2,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 88,
+    "n": 2,
+    "onde": [
+     "sobre-nos",
+     "contato"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 6,
+    "n": 2,
+    "onde": [
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 62,
+    "n": 2,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   }
+  ],
+  "mobile": [
+   {
+    "valor": 10,
+    "n": 246,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 32,
+    "n": 60,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 8,
+    "n": 56,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 12,
+    "n": 43,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 24,
+    "n": 40,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 15,
+    "n": 21,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 40,
+    "n": 20,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 14,
+    "n": 18,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 52,
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 42,
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 60,
+    "n": 13,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 16,
+    "n": 11,
+    "onde": [
+     "home",
+     "servicos",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 20,
+    "n": 10,
+    "onde": [
+     "home",
+     "contato",
+     "artigos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 35,
+    "n": 10,
+    "onde": [
+     "sobre-nos",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 4,
+    "n": 10,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 26,
+    "n": 9,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip",
+     "projetos__ap-mm"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 30,
+    "n": 8,
+    "onde": [
+     "home",
+     "servicos",
+     "projetos__ap-mm",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 25,
+    "n": 8,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "projetos__casa-ip",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 5,
+    "n": 8,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 100,
+    "n": 8,
+    "onde": [
+     "servicos",
+     "projetos__casa-ip",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 22,
+    "n": 7,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 159,
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 63,
+    "n": 5,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 58,
+    "n": 5,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 34,
+    "n": 4,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 18,
+    "n": 4,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 83,
+    "n": 4,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 51,
+    "n": 4,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 80,
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 46,
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 50,
+    "n": 4,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 48,
+    "n": 3,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 62,
+    "n": 2,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   }
+  ]
+ },
+ "paddings": {
+  "desktop": [
+   {
+    "valor": 12,
+    "n": 108,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 16,
+    "n": 102,
+    "onde": [
+     "home",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 24,
+    "n": 92,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 5,
+    "n": 90,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 8,
+    "n": 86,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 20,
+    "n": 76,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "contato",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 1,
+    "n": 66,
+    "onde": [
+     "home",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 2,
+    "n": 66,
+    "onde": [
+     "home",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 100,
+    "n": 60,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 4,
+    "n": 42,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 52,
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 128,
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 120,
+    "n": 27,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 150,
+    "n": 22,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 32,
+    "n": 22,
+    "onde": [
+     "sobre-nos",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 40,
+    "n": 21,
+    "onde": [
+     "sobre-nos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 110,
+    "n": 16,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 60,
+    "n": 10,
+    "onde": [
+     "contato",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 200,
+    "n": 10,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 320,
+    "n": 10,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 15,
+    "n": 10,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 80,
+    "n": 9,
+    "onde": [
+     "sobre-nos",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 65,
+    "n": 8,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 76,
+    "n": 8,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 45,
+    "n": 6,
+    "onde": [
+     "sobre-nos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 26,
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 68,
+    "n": 4,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 36,
+    "n": 4,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": null
+   }
+  ],
+  "tablet": [
+   {
+    "valor": 16,
+    "n": 134,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 8,
+    "n": 86,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 32,
+    "n": 78,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 12,
+    "n": 78,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip",
+     "projetos__ap-mm"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 20,
+    "n": 76,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "contato",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 1,
+    "n": 66,
+    "onde": [
+     "home",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 2,
+    "n": 66,
+    "onde": [
+     "home",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 48,
+    "n": 45,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 4,
+    "n": 42,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 24,
+    "n": 36,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 150,
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 52,
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 10,
+    "n": 29,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 40,
+    "n": 21,
+    "onde": [
+     "sobre-nos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 60,
+    "n": 20,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "contato",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 100,
+    "n": 16,
+    "onde": [
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 15,
+    "n": 10,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 80,
+    "n": 9,
+    "onde": [
+     "sobre-nos",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 120,
+    "n": 8,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 110,
+    "n": 8,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 45,
+    "n": 7,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 36,
+    "n": 6,
+    "onde": [
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 26,
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 63,
+    "n": 3,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": null
+   }
+  ],
+  "mobile": [
+   {
+    "valor": 16,
+    "n": 148,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 32,
+    "n": 95,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 8,
+    "n": 87,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 20,
+    "n": 82,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "contato",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 12,
+    "n": 78,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip",
+     "projetos__ap-mm"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 24,
+    "n": 72,
+    "onde": [
+     "home",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip",
+     "projetos__ap-mm"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 1,
+    "n": 66,
+    "onde": [
+     "home",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 2,
+    "n": 66,
+    "onde": [
+     "home",
+     "contato",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 4,
+    "n": 42,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 48,
+    "n": 33,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 10,
+    "n": 32,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 52,
+    "n": 31,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 40,
+    "n": 22,
+    "onde": [
+     "sobre-nos",
+     "projetos__ap-mm",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 150,
+    "n": 20,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 45,
+    "n": 7,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 26,
+    "n": 5,
+    "onde": [
+     "sobre-nos",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 80,
+    "n": 4,
+    "onde": [
+     "home",
+     "projetos__ap-mm",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 30,
+    "n": 4,
+    "onde": [
+     "sobre-nos",
+     "projetos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 33,
+    "n": 4,
+    "onde": [
+     "sobre-nos",
+     "contato"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 36,
+    "n": 4,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 120,
+    "n": 3,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 60,
+    "n": 3,
+    "onde": [
+     "home",
+     "contato"
+    ],
+    "exemplo": null
+   }
+  ]
+ },
+ "larguras": {
+  "desktop": [
+   {
+    "valor": 1440,
+    "n": 186,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 875,
+    "n": 186,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 620,
+    "n": 173,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 1184,
+    "n": 105,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 368,
+    "n": 96,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 307,
+    "n": 91,
+    "onde": [
+     "projetos__casa-ip",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 560,
+    "n": 82,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 1240,
+    "n": 53,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 283,
+    "n": 53,
+    "onde": [
+     "sobre-nos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 855,
+    "n": 51,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 280,
+    "n": 49,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 379,
+    "n": 46,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 592,
+    "n": 45,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 241,
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 297,
+    "n": 30,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 416,
+    "n": 26,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 400,
+    "n": 25,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 200,
+    "n": 24,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 628,
+    "n": 24,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 595,
+    "n": 22,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   }
+  ],
+  "tablet": [
+   {
+    "valor": 700,
+    "n": 218,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 1000,
+    "n": 194,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 880,
+    "n": 184,
+    "onde": [
+     "sobre-nos",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 904,
+    "n": 169,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 426,
+    "n": 96,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 390,
+    "n": 60,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 680,
+    "n": 51,
+    "onde": [
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 328,
+    "n": 49,
+    "onde": [
+     "projetos__ap-mm",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 424,
+    "n": 47,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 716,
+    "n": 45,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 359,
+    "n": 40,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 566,
+    "n": 38,
+    "onde": [
+     "servicos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 936,
+    "n": 36,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 200,
+    "n": 33,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 378,
+    "n": 32,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 365,
+    "n": 32,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 968,
+    "n": 31,
+    "onde": [
+     "projetos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 760,
+    "n": 28,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 458,
+    "n": 24,
+    "onde": [
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 595,
+    "n": 22,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   }
+  ],
+  "mobile": [
+   {
+    "valor": 342,
+    "n": 637,
+    "onde": [
+     "home",
+     "servicos",
+     "contato",
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 294,
+    "n": 245,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 390,
+    "n": 199,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 310,
+    "n": 99,
+    "onde": [
+     "projetos__cozinha-la",
+     "artigos",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 358,
+    "n": 69,
+    "onde": [
+     "sobre-nos",
+     "projetos",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 322,
+    "n": 64,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+     "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+     "artigos__iluminacao-decorativa-x-iluminacao-funcional"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 326,
+    "n": 60,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 239,
+    "n": 49,
+    "onde": [
+     "projetos__casa-ip",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 288,
+    "n": 21,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "contato"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 1446,
+    "n": 15,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 305,
+    "n": 15,
+    "onde": [
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 318,
+    "n": 14,
+    "onde": [
+     "sobre-nos",
+     "projetos__casa-ip",
+     "artigos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 286,
+    "n": 13,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 262,
+    "n": 13,
+    "onde": [
+     "home",
+     "sobre-nos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 248,
+    "n": 13,
+    "onde": [
+     "contato"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 302,
+    "n": 12,
+    "onde": [
+     "home"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 249,
+    "n": 12,
+    "onde": [
+     "projetos__casa-ip",
+     "projetos__ap-mm",
+     "projetos__studio",
+     "projetos__cozinha-la"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 338,
+    "n": 11,
+    "onde": [
+     "sobre-nos"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 334,
+    "n": 10,
+    "onde": [
+     "home",
+     "sobre-nos",
+     "servicos",
+     "contato",
+     "projetos",
+     "projetos__casa-ip"
+    ],
+    "exemplo": null
+   },
+   {
+    "valor": 315,
+    "n": 9,
+    "onde": [
+     "home",
+     "artigos__vale-mais-a-pena-reformar-ou-construir",
+     "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+    ],
+    "exemplo": null
+   }
+  ]
+ },
+ "raios": [
+  {
+   "valor": "8px",
+   "n": 480,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "16px",
+   "n": 113,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "12px",
+   "n": 103,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "artigos"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "32px",
+   "n": 78,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "15px",
+   "n": 45,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "24px",
+   "n": 45,
+   "onde": [
+    "artigos__vale-mais-a-pena-reformar-ou-construir",
+    "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+    "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+    "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+    "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "10px",
+   "n": 42,
+   "onde": [
+    "home",
+    "contato",
+    "artigos"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "100px",
+   "n": 34,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "artigos"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "56px",
+   "n": 24,
+   "onde": [
+    "projetos__casa-ip",
+    "projetos__studio",
+    "projetos__cozinha-la"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "18px",
+   "n": 21,
+   "onde": [
+    "projetos",
+    "projetos__casa-ip",
+    "projetos__studio"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "35px",
+   "n": 18,
+   "onde": [
+    "projetos"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "21px",
+   "n": 12,
+   "onde": [
+    "sobre-nos",
+    "contato"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "20px",
+   "n": 12,
+   "onde": [
+    "projetos"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "4px",
+   "n": 12,
+   "onde": [
+    "projetos__casa-ip",
+    "projetos__ap-mm",
+    "projetos__studio",
+    "projetos__cozinha-la"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "999px",
+   "n": 10,
+   "onde": [
+    "artigos__vale-mais-a-pena-reformar-ou-construir",
+    "artigos__organize-sua-casa-com-olhar-de-arquiteto",
+    "artigos__o-que-muda-na-arquitetura-residencial-em-2026",
+    "artigos__iluminacao-decorativa-x-iluminacao-funcional",
+    "artigos__minimalismo-vs-maximalismo-qual-estilo-combina-com-voce"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "9px",
+   "n": 9,
+   "onde": [
+    "projetos__ap-mm"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "6px",
+   "n": 6,
+   "onde": [
+    "projetos__casa-ip",
+    "artigos"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "14px",
+   "n": 6,
+   "onde": [
+    "projetos__ap-mm"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "22px",
+   "n": 5,
+   "onde": [
+    "contato",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "13px",
+   "n": 3,
+   "onde": [
+    "projetos__ap-mm"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "17px",
+   "n": 3,
+   "onde": [
+    "projetos__cozinha-la"
+   ],
+   "exemplo": null
+  }
+ ],
+ "sombras": [
+  {
+   "valor": "rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(255, 255, 255, 0.15) 0px 0px 0px 1px",
+   "n": 90,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  },
+  {
+   "valor": "rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.06) 0px 10px 10px -3.75px",
+   "n": 15,
+   "onde": [
+    "home",
+    "sobre-nos",
+    "servicos",
+    "contato",
+    "projetos",
+    "projetos__casa-ip"
+   ],
+   "exemplo": null
+  }
+ ],
+ "bordas": [
+  {
+   "valor": "2px inset rgb(118, 118, 118)",
+   "n": 99,
+   "onde": [
+    "home",
+    "contato",
+    "artigos"
+   ],
+   "exemplo": null
+  }
+ ],
+ "molas": [
+  {
+   "bounce": 0.2,
+   "duracao": 0.4,
+   "onde": [
+    "g12rrN1mX.js",
+    "sBuWTkbUo.js",
+    "Ewb5uANoV.js",
+    "a6Nde7smU.js",
+    "nkDfbQNR8.js",
+    "eXDaQYx5n.js",
+    "alGJ1YU_X.js",
+    "iCmFNLdck.js",
+    "augiA20Il.js",
+    "Qv_x9EZNH.js",
+    "vXw5861FN.js"
+   ]
+  },
+  {
+   "bounce": 0.2,
+   "duracao": 0.8,
+   "onde": [
+    "sBuWTkbUo.js",
+    "iCmFNLdck.js"
+   ]
+  },
+  {
+   "bounce": 0.18350341907227397,
+   "duracao": 0.25,
+   "onde": [
+    "n8yL1JHdr.js",
+    "i15JnwUan.js",
+    "f4n4OEmqR.js",
+    "IItBHcQ2o.js"
+   ]
+  },
+  {
+   "bounce": 0,
+   "duracao": 0.5,
+   "onde": [
+    "XlJvYx7WH.js",
+    "vXw5861FN.js"
+   ]
+  },
+  {
+   "bounce": 0.25,
+   "duracao": 0.33,
+   "onde": [
+    "a6Nde7smU.js"
+   ]
+  },
+  {
+   "bounce": 0.25,
+   "duracao": 0.45,
+   "onde": [
+    "a6Nde7smU.js",
+    "Qv_x9EZNH.js"
+   ]
+  },
+  {
+   "bounce": 0,
+   "duracao": 0.17,
+   "onde": [
+    "f2cs68FR9.js"
+   ]
+  },
+  {
+   "bounce": 0,
+   "duracao": 0.25,
+   "onde": [
+    "IItBHcQ2o.js"
+   ]
+  },
+  {
+   "bounce": 0,
+   "duracao": 0.1,
+   "onde": [
+    "augiA20Il.js"
+   ]
+  },
+  {
+   "bounce": 0.1,
+   "duracao": 0.7,
+   "onde": [
+    "e8xPPqHpl.js"
+   ]
+  }
+ ]
+}

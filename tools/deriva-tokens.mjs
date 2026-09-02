@@ -66,14 +66,41 @@ const paddings = Object.fromEntries(BREAKPOINTS.map((b) => [b.nome, cria()]));
 const larguras = Object.fromEntries(BREAKPOINTS.map((b) => [b.nome, cria()]));
 const familias = cria();
 
+/**
+ * Cor e tipografia só contam onde o elemento REALMENTE PINTA TEXTO PRÓPRIO.
+ *
+ * Sem este corte a contagem vira ficção, por três motivos que se somam e que
+ * foram medidos, não supostos:
+ *
+ * 1. `color` é herdado e o navegador computa um valor para TODO elemento,
+ *    inclusive `div` de layout que não desenha letra nenhuma. Era daí que
+ *    saía `#0000ee` (314×): o azul de link padrão do navegador, em 6
+ *    elementos na home — nenhum deles com texto. Nunca foi decisão de
+ *    ninguém, é o valor inicial do UA.
+ * 2. `strong`, `span` e `a` dentro de um parágrafo herdam a cor do pai e
+ *    votam de novo. Eram 29% dos elementos com texto: um parágrafo com
+ *    quatro negritos contava cinco vezes a mesma decisão.
+ * 3. Estilo de terceiro entra como se fosse do site: `#6c757d` e `#212529`
+ *    são cinzas do Bootstrap, e `Segoe UI` é degrau de pilha de fallback.
+ *    Continuam aparecendo, mas agora com frequência honesta, e o relatório
+ *    mostra em que página estão — que é como se decide se é token ou
+ *    sujeira de widget.
+ *
+ * Caixa, espaçamento e forma continuam contando em todo elemento: ali o
+ * elemento sem texto é exatamente o que interessa (contêiner, moldura).
+ */
+const TAGS_INLINE = new Set(['strong', 'em', 'b', 'i', 'span', 'a', 'u', 'small', 'code', 'sup', 'sub', 'mark']);
+const pintaTextoProprio = (el) => Boolean(el.texto && el.texto.trim()) && !TAGS_INLINE.has(el.tag);
+
 for (const { pagina, bp, dados } of medidas) {
   for (const el of dados.elementos) {
-    if (el.cor) soma(cores, hex(el.cor), pagina, el.texto);
+    const comTexto = pintaTextoProprio(el);
+    if (el.cor && comTexto) soma(cores, hex(el.cor), pagina, el.texto);
     if (el.fundo) soma(fundos, hex(el.fundo), pagina, el.nomeFramer ?? el.tag);
     if (el.raio) soma(raios, el.raio, pagina);
     if (el.sombra) soma(sombras, el.sombra, pagina);
     if (el.borda) soma(bordas, el.borda, pagina);
-    if (el.fonte) {
+    if (el.fonte && comTexto) {
       soma(familias, el.fonte.familia, pagina);
       // A chave é o conjunto que define um estilo de texto. Duas linhas com
       // o mesmo tamanho e pesos diferentes são dois tokens, não um.
@@ -89,16 +116,30 @@ for (const { pagina, bp, dados } of medidas) {
 }
 
 // ── 3. molas, do fonte do Framer ───────────────────────────────────────
-/** A mesma curva do public/interacoes.js: oscilador harmônico amortecido. */
+/**
+ * A mesma curva do public/interacoes.js: oscilador harmônico amortecido.
+ *
+ * O ramo `zeta >= 1` não é preciosismo: sem ele, mola sem repique vira
+ * `linear(NaN, NaN, …)`, que é CSS inválido — o navegador descarta a
+ * declaração inteira e a animação volta calada para o default. Foram 4 das
+ * 10 molas do Framer, todas com bounce 0.
+ *
+ * Por que dá NaN: em bounce 0 o amortecimento é crítico (zeta = 1), então
+ * `omegaD = omega·sqrt(1 − zeta²)` é zero e a fórmula subamortecida divide
+ * por ele. A solução do caso crítico não tem seno nem cosseno — é
+ * `1 − e^(−ωt)(1 + ωt)`, que é o limite da outra quando zeta → 1.
+ */
 function curvaDeMola(duracao, bounce, quadros = 24) {
   const zeta = Math.max(0.05, 1 - bounce);
   const omega = 5 / (zeta * duracao);
-  const omegaD = omega * Math.sqrt(1 - zeta * zeta);
+  const omegaD = omega * Math.sqrt(Math.max(0, 1 - zeta * zeta));
   const v = [];
   for (let i = 0; i < quadros; i++) {
     const t = (i / (quadros - 1)) * duracao;
     const d = Math.exp(-zeta * omega * t);
-    v.push(1 - d * (Math.cos(omegaD * t) + (zeta * omega / omegaD) * Math.sin(omegaD * t)));
+    v.push(omegaD > 0
+      ? 1 - d * (Math.cos(omegaD * t) + (zeta * omega / omegaD) * Math.sin(omegaD * t))
+      : 1 - d * (1 + omega * t));
   }
   v[v.length - 1] = 1;
   return v;
@@ -132,7 +173,12 @@ const bloco = (titulo) => `\n  /* ${'─'.repeat(3)} ${titulo} ${'─'.repeat(Ma
 const L = [];
 L.push('/* ============================================================');
 L.push('   Tokens derivados — gerado por tools/deriva-tokens.mjs');
-L.push(`   Origem: ${medidas.length} arquivos _capturas/*/medidas.*.json`);
+// O glob não pode ser escrito literal: "_capturas/*/medidas" contém `*/`,
+// que FECHA o comentário CSS na terceira linha do arquivo. O resto do
+// cabeçalho vira lixo sintático e leva o bloco :root inteiro junto — o
+// navegador descartava as 517 custom properties e sobrava só o @media.
+// Aqui a barra é separada do asterisco por um espaço.
+L.push(`   Origem: ${medidas.length} arquivos _capturas/<pagina>/medidas.<bp>.json`);
 L.push('');
 L.push('   EDITE OS NOMES, NÃO OS VALORES. Todo valor aqui foi medido na');
 L.push('   captura do Framer. Trocar um valor à mão é reintroduzir memória');

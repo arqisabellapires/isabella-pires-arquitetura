@@ -16,3 +16,6 @@ _importar/
 # Runtime do Framer — código proprietário, material de estudo local
 _capturas/_runtime/
 _fonte-framer/
+
+# Gravações de referência das interações do Framer — pesadas, fora do versionamento
+_capturas/_videos/

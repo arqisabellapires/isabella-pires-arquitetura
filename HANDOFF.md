@@ -11,7 +11,10 @@ completo do projeto. Leia antes de tocar em qualquer coisa.
 > [PLANO.md](PLANO.md). As seções 4 e 5 abaixo descrevem o **estado da
 > ponte**; onde conflitarem com a spec, a spec manda.
 
-Último commit desta rodada: `029ce76`.
+**Fase 0 em andamento.** Feito: fichas de movimento (`33dbb86`), 404 dos
+artigos estancados e sitemap provisório no ar (`935f7ec`, verificado no
+domínio). Falta: terminar as gravações de referência, o backup e a
+propriedade no Search Console (§4.7).
 
 ---
 
@@ -202,7 +205,14 @@ Sem isso, carrossel e acordeão não têm o que mostrar.
 Hoje só `CASA IP` aparece. O mapa de variantes confirma os 4 estados e o
 componente controlador.
 
-- Controlador: `a6Nde7smU.js` — variantes `Casa IP`, `AP MM`, `STUDIO`, `COZINHA LA`
+> **Corrigido em 01/09/2026:** são **dois** carrosséis, não um.
+> `nkDfbQNR8.js` é o da **home** (existe nos 3 breakpoints, 1440×990 no
+> desktop). `a6Nde7smU.js` é o de **`/projetos/`** e só existe em **tablet e
+> mobile** — no desktop `/projetos/` mostra os 4 cards empilhados
+> (`Qv_x9EZNH.js`), sem carrossel. Medido no Framer vivo.
+
+- Controlador em `/projetos/` (tablet e mobile): `a6Nde7smU.js` — variantes
+  `Casa IP`, `AP MM`, `STUDIO`, `COZINHA LA`
 - Cards: `Qv_x9EZNH.js` — 16 variantes (projeto × breakpoint × hover/aberto)
 - Movimento: `spring damping 30, stiffness 400, mass 1`
 - Em `/projetos/` os 4 cards **estão no DOM** (`Casa IP - Desktop`,
@@ -216,14 +226,30 @@ projeto, `cozinha-la` inclusive.
 
 ### 4.3. Acordeão de serviços
 
-Trocar a classe **não muda nada** — testado. O painel aberto não tem conteúdo
-no DOM, então não há o que expandir. Precisa injetar os textos de
-`src/lib/conteudo.ts` primeiro e só então ligar o toggle.
+> **Corrigido em 01/09/2026 pela sonda de presença** (15 páginas × 3
+> breakpoints no Framer vivo, medindo elemento no DOM em vez de string no
+> CSS). O que estava escrito aqui atribuía o acordeão aos componentes
+> errados e à página errada. Ficha completa em
+> [`_capturas/motion-fichas.json`](_capturas/motion-fichas.json).
 
-- Componentes: `n8yL1JHdr.js`, `i15JnwUan.js`, `f4n4OEmqR.js` (`Open`/`Closed`)
-- Serviços nomeados em `iCmFNLdck.js`: `Arquitetura Residencial`,
-  `Arquitetura Comercial`, `Design de Interiores`
-- Movimento: `spring bounce .2 duration .4`
+- **O acordeão é o `iCmFNLdck.js` e vive em `/sobre-nos/`**, não em
+  `/servicos/` — medido em y≈2102, 1240×1055 no desktop, 936×1141 no tablet,
+  358×1591 no mobile. O título da seção é "Nossos Serviços", o que explica a
+  confusão. Cinco serviços: `Arquitetura Residencial`, `Arquitetura
+  Comercial`, `Design de Interiores`, `Consultoria de Decoração`,
+  `Ambientações`.
+- **`/servicos/` não tem máquina de estado nenhuma** além de cabeçalho,
+  rodapé e a seção CTA. A Fase 2 da spec (item 3) assume o contrário.
+- `n8yL1JHdr.js`, `i15JnwUan.js` e `f4n4OEmqR.js` **não são o acordeão**: são
+  os links **Home** (42×40), **Projetos** (59×40) e **Serviços** (63×40) do
+  cabeçalho, em y=25, nas 15 páginas, só no desktop. O par `Open`/`Closed`
+  deles é justamente o par inerte da trava descrita em §3 — trocar a classe
+  não muda nada, e ligar clique com `preventDefault` mataria a navegação.
+- Movimento do acordeão: `spring bounce .2 duration .4`, com uma segunda
+  transição `spring bounce .2 duration .8`. Medido: clicar num item muda a
+  altura do bloco (1591 → 1634 px no mobile), então o painel aberto **existe**
+  no Framer vivo. O que falta no DOM é o conteúdo, que está transcrito em
+  `src/lib/conteudo.ts`.
 
 ### 4.4. Motion no site todo
 
@@ -284,13 +310,31 @@ próximo passo é KV/Upstash, não afinar os números.
 
 ### 4.7. Lançamento
 
-- [ ] **Sitemap.** O do Astro não gera nada porque não há páginas em
-      `src/pages/`. Hoje `/sitemap-index.xml` responde 404 no domínio. Precisa
-      sair do pipeline ou ganhar páginas.
+- [x] **Sitemap provisório.** `public/sitemap-index.xml` +
+      `public/sitemap-0.xml` com as 15 páginas, no mesmo formato que o
+      `@astrojs/sitemap` vai gerar na Fase 3 — os nomes de arquivo são os
+      mesmos, então a troca não muda a URL enviada ao Search Console. Os 20
+      artigos em 302 ficam de fora de propósito: sitemap é lista de canônicas
+      que respondem 200.
 - [ ] **GA4 e Clarity** — variáveis existem no `.env`, falta injetar.
-- [ ] **301 das URLs antigas** (que tinham acento). O mapa está em
-      `tools/paginas.mjs`; os artigos guardam `slugAntigo` no frontmatter.
-- [ ] **Search Console** e cortar o Framer.
+- [x] **404 dos artigos estancados.** Eram **22**, não 20: além dos 20 sem
+      página, as URLs acentuadas de `iluminação-decorativa-x-iluminação-funcional`
+      e `minimalismo-vs.-maximalismo-...` também davam 404, porque `public/`
+      serve o caminho em ASCII. Essas duas ganharam **301** para a rota final;
+      os 20 sem página ganharam **302** para `/artigos`, que sai quando
+      `/artigos/[slug]` subir na Fase 2. Verificado no domínio: **35/35 URLs
+      do sitemap do Framer terminam em 200**.
+- [x] **Redirect quebrado consertado.** `/sobre-nós` dava 308 para `/sobre`,
+      que é 404 — URL indexada apontando para o vazio desde a virada do
+      domínio. Agora aponta para `/sobre-nos`.
+- [ ] **301 das demais URLs antigas.** O mapa está em `tools/paginas.mjs`; os
+      artigos guardam `slugAntigo` no frontmatter (12 dos 25).
+- [ ] **Search Console** — pendência externa, **não é trabalho de código**:
+      a propriedade é da conta da Isabella. Falta criar a propriedade de
+      domínio (ou de prefixo `https://www.isabellapiresarquitetura.com.br/`),
+      enviar `https://www.isabellapiresarquitetura.com.br/sitemap-index.xml`,
+      e conferir a cobertura depois que os 301/302 forem rastreados.
+- [ ] Cortar o Framer.
 
 ### 4.8. Dívidas menores
 

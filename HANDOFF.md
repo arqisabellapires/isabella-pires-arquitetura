@@ -13,8 +13,8 @@ completo do projeto. Leia antes de tocar em qualquer coisa.
 
 ## 0. Onde a execução parou — leia isto primeiro
 
-Estado em 01/09/2026, depois de 8 commits (`ce30647`…`e07ac7f`), todos na
-`main` e pushados.
+Estado em 02/09/2026, depois de 11 commits (`ce30647`…`883d465`), todos na
+`main` e pushados. **A Fase 0 fechou.**
 
 ### Fase 0 — antes que o Framer vença
 
@@ -25,35 +25,33 @@ Estado em 01/09/2026, depois de 8 commits (`ce30647`…`e07ac7f`), todos na
 | 404 dos artigos estancados | ✅ `935f7ec` · **35/35 URLs do sitemap do Framer terminam em 200**, verificado no domínio |
 | Sitemap provisório no ar | ✅ `935f7ec` · `/sitemap-index.xml` + `/sitemap-0.xml`, 15 páginas |
 | Conferência do sitemap do Framer (35 URLs) | ✅ 15 capturadas + exatamente os 20 artigos; nada mais sem captura |
-| Gravações de referência | ⏳ **rodando quando esta linha foi escrita** — ver abaixo |
-| Backup fora do repositório | ⬜ `tools/backup-framer.mjs` pronto; destino decidido: `~/backups/isabella-pires/` |
+| Gravações de referência | ✅ `f02617d` · **133/133 com movimento, zero paradas** (`tools/checa-gravacoes.mjs`) |
+| Backup fora do repositório | ✅ `~/backups/isabella-pires/framer-2026-09-02.tar.gz` — 298,8 MB, 800/800 arquivos conferidos, sha256 no manifesto |
 | Search Console | ⬜ **externo, não é código** — conta da Isabella; ver §4.7 |
 
-**A gravação estava rodando.** Comando:
+**Portão de saída da Fase 0: cumprido.** `node tools/checa-gravacoes.mjs`
+abre cada `.webm` no Chromium, amostra 4 quadros e mede a diferença entre
+eles — vídeo parado é gravação que não pegou a interação. Deu 133 de 133 com
+movimento.
 
-```bash
-FRAMER_BASE=https://authentic-learning-761482.framer.app node tools/grava-interacoes.mjs
-```
+O disco tinha 134 arquivos, e o 134º não era gravação faltando nem sobrando:
+era um `page@<hash>.webm` de **zero byte** que o Playwright deixa para trás.
+Foi apagado. Era ele a diferença entre os 133 esperados e os 134 em disco.
 
-São 133 vídeos em `_capturas/_videos/` (fora do git, ~85 MB). Antes de
-seguir, confira se terminou (`ls _capturas/_videos/ | wc -l` deve dar 133) e
-rode o verificador de lote descrito abaixo. Se tiver morrido no meio, rodar
-de novo é seguro: é idempotente por nome de arquivo.
-
-**Portão de saída da Fase 0** — "todas as gravações existem e abrem" deixou
-de ser promessa e virou medida: um script abre cada `.webm` no Chromium,
-amostra 4 quadros e acusa vídeo parado ou ilegível. Nas 45 do reveal deu
-**45/45 com movimento, zero paradas**. Falta rodar nas 133. O script está no
-scratchpad da sessão anterior; se não existir mais, são ~40 linhas: carrega o
-vídeo como data URI num `<video>`, faz `seek` em 4 tempos, desenha em
-`<canvas>` e compara `getImageData` entre quadros. Não há ffmpeg na máquina.
+O backup roda com `node tools/backup-framer.mjs` e é conferido, não
+prometido: o manifesto lista as cinco pastas com contagem e tamanho, e o
+script confere quantos arquivos entraram no tar contra os esperados
+(800/800). **Fica no mesmo disco** — protege contra o vencimento do Framer e
+contra apagar sem querer, não contra perder a máquina. Copiar para fora
+quando houver destino externo.
 
 ### Fase 1 — fundação
 
 | Ferramenta | Estado |
 |---|---|
-| `tools/extrai-medidas.mjs` | ✅ testado: 542 elementos (home desktop), 527 (home mobile) |
-| `tools/deriva-tokens.mjs` | ✅ escrito, **nunca rodou** — precisa dos 45 `medidas.*.json` |
+| `tools/extrai-medidas.mjs` | ✅ **rodado nas 45**: 10.816 elementos, 4,8 MB versionados, zero recursos falhados |
+| `tools/deriva-tokens.mjs` | ✅ **rodado**; três defeitos consertados (`883d465`) → `src/styles/tokens.derivados.css` |
+| `tools/valida-tokens.mjs` | ✅ novo — o portão do arquivo de tokens, no Chromium |
 | `tools/compara.mjs` | ✅ fumaça: painel, captura, `/novo/`, `/novo/servicos/` e asset, 200 nos cinco |
 | `tools/verifica-secao.mjs` | ✅ testado contra a ponte: 0,19% / 0,10% / 0,02% nos 3 breakpoints |
 | `tools/mede-dom.mjs` | ✅ medição compartilhada pelos dois acima |
@@ -61,22 +59,67 @@ vídeo como data URI num `<video>`, faz `seek` em 4 tempos, desenha em
 | `Base.astro`, `Seo.astro`, `JsonLd.astro`, `Cabecalho`, `Rodape`, `mola.ts` | ⬜ não começaram |
 | `docs/reconstruir-uma-secao.md` | ⬜ não começou |
 
+### As medidas, e o que elas custaram para ficar confiáveis
+
+`extrai-medidas.mjs` rodou nas 15 páginas × 3 breakpoints: **10.816
+elementos**, 4,8 MB de JSON versionado. Depois deste commit a especificação
+não depende mais da CDN do Framer — que é o ponto todo, com 30/09/2026 no
+calendário.
+
+Três conferências antes de versionar, porque medida sem procedência é
+memória com sotaque de número:
+
+- **Zero recursos falhados** nos 45 arquivos. Fonte e imagem ainda vieram do
+  `framerusercontent.com`. Se algum tivesse falhado, a tipografia medida
+  seria a do fallback, e ninguém perceberia depois.
+- **Determinístico**: rodar `servicos.desktop` de novo dá arquivo idêntico
+  byte a byte.
+- **Bate com o já testado**: home desktop 542, mobile 527.
+
+`deriva-tokens.mjs` nunca tinha rodado. Rodou, e os três defeitos que
+apareceram têm todos a mesma forma — **nenhum dava erro em lugar nenhum**,
+porque CSS inválido é descartado em silêncio:
+
+1. O cabeçalho gerado citava o glob das medidas, e a barra colada no
+   asterisco **fecha comentário em CSS**. Da terceira linha em diante o
+   arquivo era lixo sintático e o navegador jogava fora o `:root` inteiro —
+   as 517 custom properties. Só o `@media` do fim sobrevivia.
+2. Toda mola com bounce 0 saía com `NaN` no lugar dos pontos da curva:
+   amortecimento crítico divide por zero na fórmula subamortecida. Eram 4
+   das 10. **Vale além deste arquivo** — é a mesma `curvaDeMola()` que a
+   spec manda o `mola.ts` herdar.
+3. Cor e tipografia contavam elemento que não pinta texto. `color` é
+   herdado, então `div` de layout votava: daí vinha `#0000ee` com 314
+   ocorrências, que é o azul de link padrão do navegador. Mais
+   `strong`/`span`/`a` herdando do parágrafo e votando de novo — 29% dos
+   elementos com texto.
+
+Daí nasceu **`tools/valida-tokens.mjs`**, que abre o arquivo no Chromium e
+confere que o `:root` sobrevive ao parser, que nada virou `NaN` e que cada
+mola é aceita como easing de verdade. Foi testado contra os dois defeitos
+sintáticos reais e reprova os dois com saída 1 — portão que não sabe falhar
+não é portão.
+
+**Nomear os tokens é decisão do Gabriel.** `src/styles/tokens.css` continua
+intacto; o derivado saiu ao lado, com a procedência de cada valor em
+`_capturas/tokens-relatorio.json` (quantas vezes, em que páginas). O que
+sobrou de estranho lá não é defeito: `#6c757d` e `#212529` são cinzas do
+Bootstrap vindos de um widget, `Segoe UI` é degrau de pilha de fallback. É
+por frequência e procedência que se decide o que vira token e o que é
+sujeira de terceiro.
+
 **Próximo passo concreto, em ordem:**
 
-1. Conferir/terminar as gravações e rodar o verificador de lote nas 133.
-2. `node tools/backup-framer.mjs` — escreve pacote e manifesto com sha256 em
-   `~/backups/isabella-pires/`, e confere a contagem de arquivos dentro do
-   tar contra a esperada. Registrar o caminho aqui no HANDOFF. **Fica no
-   mesmo disco:** protege contra o vencimento do Framer e contra apagar sem
-   querer, não contra perda da máquina.
-3. `node tools/extrai-medidas.mjs` — as 45 combinações, ~15 min. Versionar os
-   `medidas.*.json` (é isso que mata a dependência da CDN do Framer para
-   sempre).
-4. `node tools/deriva-tokens.mjs` — sai em `src/styles/tokens.derivados.css`
-   e não encosta no `tokens.css` atual, que é da primeira tentativa e tem
-   valor de memória. Conferir o relatório em `_capturas/tokens-relatorio.json`
-   antes de nomear qualquer coisa.
-5. Só então cabeçalho e rodapé, que é o portão da Fase 1.
+1. O Gabriel nomeia os tokens (ou aprova nomear por papel) e então
+   `node tools/deriva-tokens.mjs --sobrescreve` substitui o `tokens.css`.
+2. `secoes.json` da home — o mapa `data-secao` → `nomeFramer`, que o
+   `verifica-secao.mjs` exige. Os nomes disponíveis saem do campo
+   `nomeFramer` das medidas: são **170 na home desktop**, e são os nomes que
+   a arquiteta deu ("Botão Primario", "Frame 3034"), não as classes
+   `framer-v-*` voláteis da armadilha §6.9.
+3. `Base.astro`, `Seo.astro`, `JsonLd.astro`, `mola.ts` e `motion.css`.
+4. `Cabecalho.astro` e `Rodape.astro` das medidas — o portão da Fase 1.
+5. `verifica-comportamento.mjs` e `docs/reconstruir-uma-secao.md`.
 
 ### O que a medição derrubou da spec e do próprio HANDOFF
 
@@ -97,13 +140,26 @@ ainda não sabe delas:
 Nenhuma das três foi levada para dentro da spec: mexer na spec é decisão do
 Gabriel, não de quem executa.
 
-### Lição de método desta rodada
+### Lições de método
 
-O gravador rodou 133 vídeos e mediu resposta em 5 — e o parado era o
-gravador, não o site. A causa: foi testado **numa ficha só** antes de soltar
-as 133, e essa ficha era um dos casos que já funcionavam. **Antes de
-qualquer rodada longa, teste em pelo menos um caso que você espera que
-falhe.**
+Da rodada anterior: o gravador rodou 133 vídeos e mediu resposta em 5 — e o
+parado era o gravador, não o site. A causa: foi testado **numa ficha só**
+antes de soltar as 133, e essa ficha era um dos casos que já funcionavam.
+**Antes de qualquer rodada longa, teste em pelo menos um caso que você
+espera que falhe.**
+
+Desta rodada, a mesma lição por outro caminho: os três defeitos do
+`deriva-tokens` **não davam erro em lugar nenhum**. Nem no Node, nem no
+navegador, nem numa leitura atenta do CSS gerado — que parecia impecável com
+o comentário de cabeçalho quebrado logo na terceira linha. Formatos que
+descartam o inválido em silêncio (CSS é o caso clássico) não têm portão de
+graça: **quem verifica é o consumidor real, não os olhos.** Foi abrir o
+arquivo no Chromium e perguntar "quantas propriedades chegaram?" que revelou
+os três de uma vez.
+
+E o corolário: `valida-tokens.mjs` só vale porque foi testado contra os
+defeitos reais e reprovou os dois. **Portão que nunca foi visto falhando não
+é portão, é decoração.**
 
 ---
 
@@ -167,6 +223,14 @@ node tools/diagnostica-diferenca.mjs /servicos/ mobile
 | `importa-framer.mjs` | Converte CSV do CMS do Framer em markdown |
 | `baixa-capas.mjs` | Baixa as capas do CMS para dentro da coleção do Astro |
 | `baixa-imagens-do-corpo.mjs` | Traz as imagens de dentro dos artigos e reescreve as referências |
+| `backup-framer.mjs` | Empacota as 5 pastas do Framer fora do git, com manifesto e sha256 |
+| `grava-interacoes.mjs` | Grava as interações do Framer vivo em `.webm` (Fase 0) |
+| `checa-gravacoes.mjs` | **Portão da Fase 0.** Abre cada vídeo e acusa gravação parada |
+| `extrai-medidas.mjs` | Captura → `medidas.<bp>.json`; a especificação medida |
+| `deriva-tokens.mjs` | Medidas → `tokens.derivados.css` + relatório de procedência |
+| `valida-tokens.mjs` | **Portão dos tokens.** Confere no Chromium que o CSS é válido |
+| `compara.mjs` | Lado a lado Framer × Astro, para o Gabriel aprovar |
+| `verifica-secao.mjs` | Portão por seção, com as diferenças de medida em texto |
 
 ---
 

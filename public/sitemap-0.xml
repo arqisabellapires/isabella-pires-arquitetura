@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap provisório da Fase 0: as 15 páginas que o domínio serve hoje.
+     Os 20 artigos ainda sem página respondem 302 para /artigos e por isso
+     NÃO entram aqui. Quando @astrojs/sitemap passar a gerar (Fase 3), ele
+     produz estes mesmos dois nomes de arquivo e substitui os dois. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/sobre-nos/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/servicos/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/contato/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/projetos/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/projetos/casa-ip/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/projetos/ap-mm/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/projetos/studio/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/projetos/cozinha-la/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/artigos/</loc>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/artigos/vale-mais-a-pena-reformar-ou-construir/</loc>
+    <lastmod>2026-03-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/artigos/organize-sua-casa-com-olhar-de-arquiteto/</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/artigos/o-que-muda-na-arquitetura-residencial-em-2026/</loc>
+    <lastmod>2026-01-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/artigos/iluminacao-decorativa-x-iluminacao-funcional/</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://www.isabellapiresarquitetura.com.br/artigos/minimalismo-vs-maximalismo-qual-estilo-combina-com-voce/</loc>
+    <lastmod>2026-05-12</lastmod>
+  </url>
+</urlset>

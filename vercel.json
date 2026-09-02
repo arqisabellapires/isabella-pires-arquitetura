@@ -1,24 +1,161 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    { "source": "/sobre-n%C3%B3s", "destination": "/sobre", "permanent": true },
-    { "source": "/servi%C3%A7os", "destination": "/servicos", "permanent": true },
-    { "source": "/artigos/blog", "destination": "/artigos", "permanent": true }
+    {
+      "source": "/sobre-n%C3%B3s",
+      "destination": "/sobre-nos",
+      "permanent": true
+    },
+    {
+      "source": "/servi%C3%A7os",
+      "destination": "/servicos",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/blog",
+      "destination": "/artigos",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/ilumina%C3%A7%C3%A3o-decorativa-x-ilumina%C3%A7%C3%A3o-funcional",
+      "destination": "/artigos/iluminacao-decorativa-x-iluminacao-funcional",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/minimalismo-vs.-maximalismo-qual-estilo-combina-com-voc%C3%AA",
+      "destination": "/artigos/minimalismo-vs-maximalismo-qual-estilo-combina-com-voce",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/antes-e-depois-de-uma-reforma-completa",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/arquitetura-e-o-futuro-das-cidades-inteligentes",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/casa-t%C3%A9rrea-com-conceito-aberto-moderno",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/como-ampliar-ambientes-pequenos-em-casa",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/como-usar-a-cor-do-ano-de-2026-sem-erros",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/decora%C3%A7%C3%A3o-afetiva-o-poder-das-mem%C3%B3rias",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/design-biof%C3%ADlico-plantas-nos-ambientes-residenciais",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/erros-comuns-em-obras-residenciais-e-como-evitar",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/espa%C3%A7os-comerciais-que-inspiram-clientes",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/guia-pr%C3%A1tico-para-escolher-revestimentos",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/ilumina%C3%A7%C3%A3o-ideal-para-cada-ambiente",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/mercado-imobili%C3%A1rio-e-impacto-na-arquitetura",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/novos-materiais-e-tecnologias-construtivas",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/passo-a-passo-de-um-projeto-arquitet%C3%B4nico",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/principais-feiras-e-eventos-de-arquitetura",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/quanto-custa-contratar-um-arquiteto",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/reformas-inteligentes-como-repaginar-o-lar-antes-do-natal-sem-grandes-obras",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/sustentabilidade-aplicada-na-arquitetura",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/tend%C3%AAncias-de-decora%C3%A7%C3%A3o-para-2025",
+      "destination": "/artigos",
+      "permanent": false
+    },
+    {
+      "source": "/artigos/tour-por-apartamento-de-80m%C2%B2-bem-otimizado",
+      "destination": "/artigos",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/fontes/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
       ]
     }
   ]

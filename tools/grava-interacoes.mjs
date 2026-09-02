@@ -103,8 +103,16 @@ const medeAlvo = (classes) => `(() => {
   // ocupam o mesmo ponto. Clicar nos dois é o mesmo clique e gasta o
   // orçamento de exploração — então desduplica por centro.
   const vistos = new Set();
-  const interativos = [...alvo.querySelectorAll('a, button, [role="button"], [data-framer-name]')]
+  const interativos = [...alvo.querySelectorAll('*')]
+    // O Framer marca o que é clicável com cursor: pointer. Sem isso o
+    // hambúrguer do menu escapa: é um <svg> sem data-framer-name.
+    .filter((e) => getComputedStyle(e).cursor === 'pointer' || ['A', 'BUTTON'].includes(e.tagName)
+                   || e.getAttribute('role') === 'button')
     .filter((e) => { const b = e.getBoundingClientRect(); return b.width > 8 && b.height > 8; })
+    // Controle é pequeno; card é grande. Em ordem de DOM as setas do
+    // carrossel vinham depois dos 4 cards e eram cortadas pelo limite.
+    .sort((a, b) => { const ba = a.getBoundingClientRect(), bb = b.getBoundingClientRect();
+                      return ba.width * ba.height - bb.width * bb.height; })
     .map((e) => { const b = e.getBoundingClientRect(); return {
       tag: e.tagName.toLowerCase(), nome: e.getAttribute('data-framer-name'),
       texto: (e.textContent || '').trim().replace(/\\s+/g, ' ').slice(0, 30),
@@ -144,10 +152,25 @@ async function encena(page, ficha, classes) {
     return m;
   };
 
+  const tipo = ficha.gatilho?.tipo;
+
+  // O reveal não tem componente nem classe: o alvo dele é a página inteira.
+  // Este caso vem antes de qualquer medida de alvo, senão a gravação termina
+  // sem rolar e o vídeo mostra a página parada — que foi o que aconteceu na
+  // primeira rodada, com as 45 gravações de reveal inúteis.
+  if (tipo === 'scroll') {
+    const altura = await page.evaluate(() => document.body.scrollHeight);
+    const passo = Math.round(page.viewportSize().height * 0.5);
+    for (let y = 0; y < altura; y += passo) {
+      await page.evaluate((v) => scrollTo({ top: v, behavior: 'instant' }), y);
+      await page.waitForTimeout(700);
+    }
+    passos.push({ rotulo: `rolou ${altura}px em passos de ${passo}px` });
+    return passos;
+  }
+
   const repouso = await mede('repouso');
   if (!repouso) return passos;
-
-  const tipo = ficha.gatilho?.tipo;
 
   if (tipo === 'nenhum') {
     // Prova por medida que trocar a classe não muda nada — é o que sustenta
@@ -212,16 +235,6 @@ async function encena(page, ficha, classes) {
     }
   }
 
-  if (tipo === 'scroll') {
-    // O reveal é a página inteira passando: rola em passos de meia tela.
-    const altura = await page.evaluate(() => document.body.scrollHeight);
-    for (let y = 0; y < altura; y += Math.round(page.viewportSize().height * 0.5)) {
-      await page.evaluate((v) => scrollTo({ top: v, behavior: 'instant' }), y);
-      await page.waitForTimeout(700);
-    }
-    passos.push({ rotulo: `rolou ${altura}px` });
-  }
-
   return passos;
 }
 
@@ -261,9 +274,14 @@ for (const ficha of arquivo.fichas) {
       if (bruto && existsSync(bruto)) renameSync(bruto, new URL(nome, DIR_VIDEOS).pathname);
 
       const mudou = new Set(passos.filter((p) => p.caixa).map((p) => `${p.caixa.w}x${p.caixa.h}`)).size > 1;
-      (ficha.medido[pagina.pasta] ??= {})[bp.nome] = { video: `_capturas/_videos/${nome}`, mudouGeometria: mudou, passos };
-      relatorio.push({ ficha: ficha.id, pagina: pagina.pasta, bp: bp.nome, passos: passos.length, mudou });
-      console.log(`${mudou ? '●' : '○'} ${nome.padEnd(58)} ${passos.length} passos`);
+      // O carrossel troca a classe da raiz e reordena os filhos por CSS
+      // order:. A caixa da raiz nunca muda — medir só geometria dava falso
+      // negativo em toda ficha de trocador.
+      const trocouVariante = new Set(passos.filter((p) => p.classes).map((p) => (p.classes || []).join(','))).size > 1;
+      (ficha.medido[pagina.pasta] ??= {})[bp.nome] = { video: `_capturas/_videos/${nome}`, mudouGeometria: mudou, trocouVariante, passos };
+      relatorio.push({ ficha: ficha.id, pagina: pagina.pasta, bp: bp.nome, passos: passos.length, mudou: mudou || trocouVariante });
+      const marca = mudou ? '●' : trocouVariante ? '◐' : '○';
+      console.log(`${marca} ${nome.padEnd(58)} ${passos.length} passos`);
     }
   }
 
@@ -275,6 +293,6 @@ await navegador.close();
 writeFileSync(CAMINHO_FICHAS, JSON.stringify(arquivo, null, 2) + '\n');
 
 const comMovimento = relatorio.filter((r) => r.mudou).length;
-console.log(`\n${relatorio.length} gravações · ${comMovimento} com mudança de geometria · ${relatorio.length - comMovimento} sem`);
+console.log(`\n${relatorio.length} gravações · ${comMovimento} com resposta medida (● geometria, ◐ variante) · ${relatorio.length - comMovimento} sem`);
 console.log('→ _capturas/_videos/  (fora do git — o backup é item da Fase 0)');
 console.log('→ _capturas/motion-fichas.json  (campo "medido")');

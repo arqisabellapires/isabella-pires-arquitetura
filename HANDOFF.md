@@ -11,10 +11,99 @@ completo do projeto. Leia antes de tocar em qualquer coisa.
 > [PLANO.md](PLANO.md). As seções 4 e 5 abaixo descrevem o **estado da
 > ponte**; onde conflitarem com a spec, a spec manda.
 
-**Fase 0 em andamento.** Feito: fichas de movimento (`33dbb86`), 404 dos
-artigos estancados e sitemap provisório no ar (`935f7ec`, verificado no
-domínio). Falta: terminar as gravações de referência, o backup e a
-propriedade no Search Console (§4.7).
+## 0. Onde a execução parou — leia isto primeiro
+
+Estado em 01/09/2026, depois de 8 commits (`ce30647`…`e07ac7f`), todos na
+`main` e pushados.
+
+### Fase 0 — antes que o Framer vença
+
+| Item | Estado |
+|---|---|
+| Barra "Edit Content" removida | ✅ `92588a9` |
+| Fichas de movimento — 17, cobrindo os 10 trocadores e os 5 pares | ✅ `33dbb86` · [`_capturas/motion-fichas.json`](_capturas/motion-fichas.json) |
+| 404 dos artigos estancados | ✅ `935f7ec` · **35/35 URLs do sitemap do Framer terminam em 200**, verificado no domínio |
+| Sitemap provisório no ar | ✅ `935f7ec` · `/sitemap-index.xml` + `/sitemap-0.xml`, 15 páginas |
+| Conferência do sitemap do Framer (35 URLs) | ✅ 15 capturadas + exatamente os 20 artigos; nada mais sem captura |
+| Gravações de referência | ⏳ **rodando quando esta linha foi escrita** — ver abaixo |
+| Backup fora do repositório | ⬜ `tools/backup-framer.mjs` pronto; destino decidido: `~/backups/isabella-pires/` |
+| Search Console | ⬜ **externo, não é código** — conta da Isabella; ver §4.7 |
+
+**A gravação estava rodando.** Comando:
+
+```bash
+FRAMER_BASE=https://authentic-learning-761482.framer.app node tools/grava-interacoes.mjs
+```
+
+São 133 vídeos em `_capturas/_videos/` (fora do git, ~85 MB). Antes de
+seguir, confira se terminou (`ls _capturas/_videos/ | wc -l` deve dar 133) e
+rode o verificador de lote descrito abaixo. Se tiver morrido no meio, rodar
+de novo é seguro: é idempotente por nome de arquivo.
+
+**Portão de saída da Fase 0** — "todas as gravações existem e abrem" deixou
+de ser promessa e virou medida: um script abre cada `.webm` no Chromium,
+amostra 4 quadros e acusa vídeo parado ou ilegível. Nas 45 do reveal deu
+**45/45 com movimento, zero paradas**. Falta rodar nas 133. O script está no
+scratchpad da sessão anterior; se não existir mais, são ~40 linhas: carrega o
+vídeo como data URI num `<video>`, faz `seek` em 4 tempos, desenha em
+`<canvas>` e compara `getImageData` entre quadros. Não há ffmpeg na máquina.
+
+### Fase 1 — fundação
+
+| Ferramenta | Estado |
+|---|---|
+| `tools/extrai-medidas.mjs` | ✅ testado: 542 elementos (home desktop), 527 (home mobile) |
+| `tools/deriva-tokens.mjs` | ✅ escrito, **nunca rodou** — precisa dos 45 `medidas.*.json` |
+| `tools/compara.mjs` | ✅ fumaça: painel, captura, `/novo/`, `/novo/servicos/` e asset, 200 nos cinco |
+| `tools/verifica-secao.mjs` | ✅ testado contra a ponte: 0,19% / 0,10% / 0,02% nos 3 breakpoints |
+| `tools/mede-dom.mjs` | ✅ medição compartilhada pelos dois acima |
+| `verifica-comportamento.mjs` | ⬜ não começou |
+| `Base.astro`, `Seo.astro`, `JsonLd.astro`, `Cabecalho`, `Rodape`, `mola.ts` | ⬜ não começaram |
+| `docs/reconstruir-uma-secao.md` | ⬜ não começou |
+
+**Próximo passo concreto, em ordem:**
+
+1. Conferir/terminar as gravações e rodar o verificador de lote nas 133.
+2. `node tools/backup-framer.mjs` — escreve pacote e manifesto com sha256 em
+   `~/backups/isabella-pires/`, e confere a contagem de arquivos dentro do
+   tar contra a esperada. Registrar o caminho aqui no HANDOFF. **Fica no
+   mesmo disco:** protege contra o vencimento do Framer e contra apagar sem
+   querer, não contra perda da máquina.
+3. `node tools/extrai-medidas.mjs` — as 45 combinações, ~15 min. Versionar os
+   `medidas.*.json` (é isso que mata a dependência da CDN do Framer para
+   sempre).
+4. `node tools/deriva-tokens.mjs` — sai em `src/styles/tokens.derivados.css`
+   e não encosta no `tokens.css` atual, que é da primeira tentativa e tem
+   valor de memória. Conferir o relatório em `_capturas/tokens-relatorio.json`
+   antes de nomear qualquer coisa.
+5. Só então cabeçalho e rodapé, que é o portão da Fase 1.
+
+### O que a medição derrubou da spec e do próprio HANDOFF
+
+Três correções nasceram de medir o Framer vivo, e a spec de reconstrução
+ainda não sabe delas:
+
+1. **O acordeão está em `/sobre-nos/`, não em `/servicos/`** (§4.3). A Fase 2
+   da spec, item 3, diz o contrário. `/servicos/` não tem máquina de estado
+   nenhuma além de cabeçalho, rodapé e CTA.
+2. **São dois carrosséis** (§4.2): `nkDfbQNR8` na home, nos 3 breakpoints, e
+   `a6Nde7smU` em `/projetos/`, só em tablet e mobile.
+3. **`variantes.json` mente sobre o menu de celular.** Ele dá o par
+   `framer-v-14nbjqd → framer-v-3h70cy` com altura 223. Medido no Framer
+   vivo: `framer-v-l6houv` (59 px) → `framer-v-jybs8a` (**519 px**). É a
+   armadilha §6.9 na prática — as classes `framer-v-*` não sobrevivem a uma
+   republicação. **Medida manda sobre fonte extraído.**
+
+Nenhuma das três foi levada para dentro da spec: mexer na spec é decisão do
+Gabriel, não de quem executa.
+
+### Lição de método desta rodada
+
+O gravador rodou 133 vídeos e mediu resposta em 5 — e o parado era o
+gravador, não o site. A causa: foi testado **numa ficha só** antes de soltar
+as 133, e essa ficha era um dos casos que já funcionavam. **Antes de
+qualquer rodada longa, teste em pelo menos um caso que você espera que
+falhe.**
 
 ---
 

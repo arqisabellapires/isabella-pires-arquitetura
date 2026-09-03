@@ -1,0 +1,109 @@
+---
+/**
+ * Página de serviços. Medida em _capturas/servicos/medidas.desktop.json:
+ * título "Nossos Serviços" 60px/600, e cinco blocos alternando lado —
+ * ímpares à direita (x=780), pares à esquerda (x=100) —, cada um com número
+ * 60px/400 Faberge, título 80px/400 Mulish e três parágrafos 18px.
+ *
+ * **Não tem acordeão.** O HANDOFF §4.3 corrigiu isso medindo o Framer vivo: o
+ * acordeão é o iCmFNLdck.js e vive em /sobre-nos/. A Fase 2 da spec, item 3,
+ * diz o contrário e está errada. Aqui não há máquina de estado nenhuma além
+ * de cabeçalho, rodapé e a seção final de CTA.
+ *
+ * Os textos vêm de conteudo.ts, transcritos do original — componente não tem
+ * copy, é regra da spec §4.1.
+ */
+import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
+import { servicos } from '~/lib/conteudo';
+---
+
+<Base
+  titulo="Nossos Serviços"
+  descricao="Arquitetura residencial e comercial, design de interiores, consultoria de decoração e ambientação em Maringá."
+>
+  <Cabecalho slot="cabecalho" />
+
+  <div class="servicos">
+    <nav class="migalhas" aria-label="Migalhas">
+      <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Nossos serviços</span>
+    </nav>
+
+    <h1 class="servicos__titulo">Nossos Serviços</h1>
+
+    <ol class="servicos__lista">
+      {servicos.map((servico, i) => (
+        <li class:list={['servico', i % 2 === 0 && 'servico--direita']} id={servico.slug}>
+          <p class="servico__numero" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
+          <h2 class="servico__titulo">
+            {servico.sobretitulo && <span class="servico__sobretitulo">{servico.sobretitulo}</span>}
+            {servico.titulo}
+          </h2>
+          {servico.paragrafos.map((p) => <p class="servico__texto">{p}</p>)}
+          <a class="servico__cta" href="/contato">Entrar em contato</a>
+        </li>
+      ))}
+    </ol>
+  </div>
+
+  <Rodape slot="rodape" />
+</Base>
+
+<style>
+  .servicos { margin-inline: auto; max-width: 1184px; padding: 120px 24px 64px; }
+  .migalhas {
+    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    margin-bottom: 48px;
+  }
+  .migalhas a { color: inherit; text-decoration: none; }
+  .servicos__titulo {
+    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 64px;
+  }
+  .servicos__lista { list-style: none; margin: 0; padding: 0; }
+
+  .servico { margin-bottom: 96px; max-width: 620px; }
+  /* Ímpares medidos em x=780, pares em x=100 — alternância do original. */
+  .servico--direita { margin-left: auto; }
+
+  .servico__numero {
+    font: 400 60px/1 'Faberge', 'Mulish', system-ui, sans-serif;
+    color: #a98c67;
+    margin: 0 0 24px;
+  }
+  .servico__titulo {
+    font: 400 80px/1.05 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  .servico__sobretitulo { display: block; }
+  .servico__texto {
+    font: 500 18px/1.6 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0 0 12px;
+  }
+  .servico__cta {
+    display: inline-block;
+    font: 700 18px/1.2 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    margin-top: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  @media (max-width: 1199.98px) {
+    .servico__titulo { font-size: 56px; }
+    .servicos__titulo { font-size: 44px; }
+  }
+  @media (max-width: 809.98px) {
+    .servicos { padding-top: 96px; }
+    .servicos__titulo { font-size: 36px; }
+    .servico { margin-bottom: 64px; }
+    .servico__titulo { font-size: 40px; }
+    .servico__numero { font-size: 44px; }
+  }
+</style>

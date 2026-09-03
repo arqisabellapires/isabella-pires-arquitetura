@@ -1,0 +1,246 @@
+---
+/**
+ * Sobre nós. Medida em _capturas/sobre-nos/medidas.desktop.json.
+ *
+ * **É aqui que vive o acordeão**, não em /servicos/ — corrigido no HANDOFF
+ * §4.3 medindo o Framer vivo (componente iCmFNLdck.js, y≈2102, título da
+ * seção "Nossos Serviços", o que explica a confusão da spec).
+ *
+ * O acordeão é <details>/<summary> nativo: abre sem JavaScript, funciona por
+ * teclado de graça e o `name` compartilhado faz um fechar o outro, que é o
+ * comportamento medido ("outrosFecham"). O movimento vem do CSS, não de
+ * script — a mola do original é spring bounce .2 / .4s.
+ */
+import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
+import { servicos } from '~/lib/conteudo';
+
+/* Diferenciais e valores: transcritos da captura, não inventados. */
+const diferenciais = [
+  { titulo: 'Transparência e Clareza', texto: 'Planejamento e custos sem surpresas.' },
+  { titulo: 'Presença Nacional', texto: 'Projetos em qualquer região do Brasil.' },
+  { titulo: 'Atendimento Humano', texto: 'Soluções sob medida para cada cliente.' },
+];
+
+const valores = [
+  {
+    titulo: 'Modernidade',
+    texto: 'Priorizamos soluções inovadoras e atuais, integrando tendências e tecnologia aos projetos.',
+  },
+  {
+    titulo: 'Empatia',
+    texto: 'Entendemos profundamente cada cliente, suas necessidades e o modo como vive os espaços.',
+  },
+  {
+    titulo: 'Constância',
+    texto: 'Agimos com disciplina e comprometimento, acompanhando cada etapa até a entrega.',
+  },
+];
+---
+
+<Base
+  titulo="Sobre nós"
+  descricao="Escritório de arquitetura em Maringá conduzido por Isabella Cito Pires: projetos residenciais, comerciais e de interiores."
+>
+  <Cabecalho slot="cabecalho" />
+
+  <div class="sobre">
+    <nav class="migalhas" aria-label="Migalhas">
+      <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Sobre nós</span>
+    </nav>
+
+    <h1 class="sobre__titulo">Sobre nós</h1>
+
+    <section class="historia">
+      <p class="sobre__rotulo">Quem somos</p>
+      <h2 class="historia__titulo">Nossa História</h2>
+      <p class="historia__texto">
+        No nosso escritório, conduzido por Isabella Cito Pires, cada projeto nasce da escuta
+        atenta de quem vai viver o espaço.
+      </p>
+      <p class="historia__texto">
+        Oferecemos também consultorias e ambientações personalizadas, do conceito ao
+        acompanhamento da obra.
+      </p>
+      <blockquote class="historia__citacao">
+        “Arquitetura é a arte de transformar espaços em experiências.”
+      </blockquote>
+
+      <ul class="diferenciais">
+        {diferenciais.map((d) => (
+          <li>
+            <h3>{d.titulo}</h3>
+            <p>{d.texto}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="valores">
+      <p class="sobre__rotulo">Princípios que nos movem</p>
+      <h2 class="valores__titulo">Nossos valores</h2>
+      <dl class="valores__lista">
+        {valores.map((v) => (
+          <div class="valores__item">
+            <dt>{v.titulo}</dt>
+            <dd>{v.texto}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="acordeao-secao">
+      <p class="sobre__rotulo">Nossos Serviços</p>
+      <h2 class="acordeao-secao__titulo">Nós entregamos apenas o nosso melhor</h2>
+
+      {/*
+        <details name> faz um item fechar o outro sem uma linha de script —
+        é o "outrosFecham" da ficha de movimento. O primeiro vem aberto,
+        como está na captura.
+      */}
+      <div class="acordeao">
+        {servicos.map((servico, i) => (
+          <details class="acordeao__item" name="servico" open={i === 0}>
+            <summary class="acordeao__gatilho">{servico.tituloCompleto}</summary>
+            <div class="acordeao__painel">
+              <p>{servico.resumoHome}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <Rodape slot="rodape" />
+</Base>
+
+<style>
+  .sobre { margin-inline: auto; max-width: 1184px; padding: 120px 24px 64px; }
+  .migalhas {
+    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    margin-bottom: 48px;
+  }
+  .migalhas a { color: inherit; text-decoration: none; }
+  .sobre__titulo {
+    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 64px;
+  }
+  .sobre__rotulo {
+    font: 400 24px/1.2 'Faberge', 'Mulish', system-ui, sans-serif;
+    color: #a98c67;
+    margin: 0 0 8px;
+  }
+
+  .historia { margin-bottom: 96px; }
+  .historia__titulo {
+    font: 700 38px/1.2 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 24px;
+  }
+  .historia__texto {
+    font: 600 18px/1.6 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0 0 16px;
+    max-width: 60ch;
+  }
+  .historia__citacao {
+    font: 700 18px/1.6 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    border-left: 3px solid #a98c67;
+    margin: 24px 0 40px;
+    padding-left: 16px;
+  }
+  .diferenciais {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .diferenciais h3 {
+    font: 400 26px/1.2 'Faberge', 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 6px;
+  }
+  .diferenciais p {
+    font: 400 20px/1.4 'Faberge', 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0;
+  }
+
+  .valores { margin-bottom: 96px; }
+  .valores__titulo {
+    font: 700 70px/1.05 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 40px;
+    text-wrap: balance;
+  }
+  .valores__lista { margin: 0; }
+  .valores__item {
+    border-top: 1px solid #ededed;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+    padding: 24px 0;
+  }
+  @media (min-width: 1200px) {
+    .valores__item { grid-template-columns: 320px 1fr; }
+  }
+  .valores__item dt {
+    font: 700 32px/1.2 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+  }
+  .valores__item dd {
+    font: 700 20px/1.6 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0;
+  }
+
+  .acordeao-secao__titulo {
+    font: 600 72px/1.05 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 48px;
+    text-wrap: balance;
+  }
+  .acordeao__item { border-bottom: 1px solid #ededed; }
+  .acordeao__gatilho {
+    cursor: pointer;
+    font: 700 18px/1.4 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    list-style: none;
+    padding: 24px 0;
+  }
+  .acordeao__gatilho::-webkit-details-marker { display: none; }
+  .acordeao__gatilho::after {
+    content: '+';
+    float: right;
+    font-weight: 400;
+  }
+  .acordeao__item[open] .acordeao__gatilho::after { content: '−'; }
+  .acordeao__gatilho:focus-visible { outline: 2px solid #a98c67; outline-offset: 2px; }
+  .acordeao__painel p {
+    font: 400 18px/1.6 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0;
+    max-width: 60ch;
+    padding-bottom: 24px;
+  }
+
+  @media (max-width: 1199.98px) {
+    .sobre__titulo { font-size: 44px; }
+    .valores__titulo { font-size: 48px; }
+    .acordeao-secao__titulo { font-size: 48px; }
+  }
+  @media (max-width: 809.98px) {
+    .sobre { padding-top: 96px; }
+    .sobre__titulo { font-size: 36px; }
+    .historia__titulo { font-size: 30px; }
+    .valores__titulo { font-size: 36px; }
+    .valores__item dt { font-size: 24px; }
+    .acordeao-secao__titulo { font-size: 32px; }
+  }
+</style>

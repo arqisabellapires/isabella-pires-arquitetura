@@ -1,0 +1,159 @@
+---
+/**
+ * Formulário de contato. Os 5 campos e os rótulos são os medidos em
+ * _capturas/contato/medidas.desktop.json (rótulos 14px/500 Inter); as opções
+ * do select saem dos <option> da própria captura, não de invenção.
+ *
+ * Funciona sem JavaScript: é um <form method="post"> de verdade, e a API já
+ * responde 303 com ?envio= quando o pedido não é fetch. O script abaixo só
+ * melhora a experiência de quem tem JS — se ele falhar, o formulário continua
+ * enviando.
+ *
+ * Os 11 campos-isca vêm de src/lib/antispam.ts, que reaproveita os mesmos
+ * nomes que o Framer já usava.
+ */
+import { CAMPOS_ISCA } from '~/lib/antispam';
+
+const servicos = [
+  'Arquitetura Residencial',
+  'Arquitetura Comercial',
+  'Design de Interiores',
+  'Consultoria de Decoração',
+  'Ambientação',
+];
+---
+
+<form class="form" method="post" action="/api/contato" novalidate>
+  <div class="form__campo">
+    <label for="nome">Qual é o seu nome?</label>
+    <input id="nome" name="nome" type="text" required autocomplete="name" maxlength="120" />
+  </div>
+
+  <div class="form__campo">
+    <label for="email">E-mail</label>
+    <input id="email" name="email" type="email" required autocomplete="email" maxlength="254" />
+  </div>
+
+  <div class="form__campo">
+    <label for="telefone">Telefone</label>
+    <input id="telefone" name="telefone" type="tel" autocomplete="tel" maxlength="40" />
+  </div>
+
+  <div class="form__campo">
+    <label for="servico">Qual serviço você procura?</label>
+    <select id="servico" name="servico">
+      <option value="" disabled selected>Selecione</option>
+      {servicos.map((s) => <option value={s}>{s}</option>)}
+    </select>
+  </div>
+
+  <div class="form__campo">
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" name="mensagem" required rows="5" maxlength="5000"></textarea>
+  </div>
+
+  {/* Iscas: fora da vista e fora do foco por teclado, nunca display:none em
+      campo que um leitor de tela precise ignorar — aria-hidden + tabindex. */}
+  <div class="form__iscas" aria-hidden="true">
+    {CAMPOS_ISCA.map((c) => (
+      <input type="text" name={c} tabindex="-1" autocomplete="off" />
+    ))}
+  </div>
+
+  <p class="form__estado" role="status" aria-live="polite" data-estado></p>
+
+  <button type="submit" class="form__enviar">Enviar</button>
+</form>
+
+<script>
+  /*
+    Progressive enhancement. Sem este script o form envia por POST normal e a
+    API devolve 303 com ?envio= — testado. Com ele, o visitante não perde a
+    página.
+  */
+  const form = document.querySelector<HTMLFormElement>('.form');
+  const estado = document.querySelector<HTMLElement>('[data-estado]');
+  const botao = document.querySelector<HTMLButtonElement>('.form__enviar');
+
+  if (form && estado && botao) {
+    form.addEventListener('submit', async (evento) => {
+      evento.preventDefault();
+      botao.disabled = true;
+      estado.textContent = 'Enviando…';
+      estado.dataset.tipo = 'carregando';
+
+      try {
+        const resposta = await fetch('/api/contato', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { accept: 'application/json' },
+        });
+        const dados = await resposta.json().catch(() => ({}));
+
+        if (resposta.ok) {
+          form.reset();
+          estado.textContent = 'Mensagem enviada. Responderemos em breve.';
+          estado.dataset.tipo = 'sucesso';
+        } else {
+          estado.textContent = dados.erro ?? 'Não foi possível enviar. Tente novamente.';
+          estado.dataset.tipo = 'erro';
+        }
+      } catch {
+        estado.textContent = 'Sem conexão. Tente novamente.';
+        estado.dataset.tipo = 'erro';
+      } finally {
+        botao.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .form { display: flex; flex-direction: column; gap: 20px; }
+  .form__campo { display: flex; flex-direction: column; gap: 8px; }
+  .form__campo label {
+    font: 500 14px/1.2 'Inter', system-ui, sans-serif;
+    color: #21201f;
+  }
+  .form__campo :is(input, select, textarea) {
+    font: 400 16px/1.4 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    background: #ffffff;
+    border: 1px solid #ededed;
+    border-radius: 6px;
+    padding: 12px 14px;
+    width: 100%;
+  }
+  .form__campo :is(input, select, textarea):focus-visible {
+    outline: 2px solid #a98c67;
+    outline-offset: 1px;
+  }
+  .form__campo textarea { resize: vertical; }
+
+  /* Iscas: invisíveis e inalcançáveis, sem sair do DOM. */
+  .form__iscas {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .form__enviar {
+    align-self: flex-start;
+    font: 600 14px/1.2 'Inter', system-ui, sans-serif;
+    color: #ffffff;
+    background: #341f04;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    padding: 14px 42px;
+  }
+  .form__enviar:disabled { opacity: 0.6; cursor: progress; }
+
+  .form__estado { margin: 0; font: 400 14px/1.4 'Mulish', system-ui, sans-serif; }
+  .form__estado:empty { display: none; }
+  .form__estado[data-tipo='erro'] { color: #b3261e; }
+  .form__estado[data-tipo='sucesso'] { color: #2e6b3e; }
+</style>

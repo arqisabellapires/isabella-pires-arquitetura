@@ -1,0 +1,127 @@
+---
+/**
+ * Página de contato. Medida em _capturas/contato/medidas.desktop.json:
+ * migalhas, título "Contato" 60px/600 Mulish, formulário à esquerda (x=175) e
+ * o bloco "Como nos encontrar" à direita (x=669), 49px/700.
+ *
+ * Os dados de contato vêm de site.ts, que por sua vez os extraiu desta mesma
+ * captura — não são digitados aqui.
+ *
+ * **O envio real está travado por quatro pendências fora do código**, todas
+ * listadas no HANDOFF §4.6: IPs autorizados na Brevo, BREVO_DESTINO_EMAIL
+ * vazio, domínio sem DKIM/DMARC e a lista de newsletter sem id. A página fica
+ * pronta; o envio passa a funcionar quando o Gabriel resolver na Brevo.
+ */
+import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
+import Contato from '~/components/formularios/Contato.astro';
+import { site } from '~/lib/site';
+
+const e = site.endereco;
+const enderecoCompleto = `${e.logradouro} - ${e.complemento} - ${e.bairro} - ${e.cidade}, ${e.estado} - ${e.cep}`;
+---
+
+<Base
+  titulo="Contato"
+  descricao="Fale com Isabella Pires Arquitetura em Maringá: projetos residenciais, comerciais e de interiores."
+>
+  <Cabecalho slot="cabecalho" />
+
+  <div class="contato">
+    <nav class="migalhas" aria-label="Migalhas">
+      <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Contato</span>
+    </nav>
+
+    <h1 class="contato__titulo">Contato</h1>
+
+    <div class="contato__colunas">
+      <section aria-label="Formulário de contato">
+        <Contato />
+      </section>
+
+      <section class="contato__dados">
+        <h2 class="contato__subtitulo">Como nos encontrar</h2>
+        <p class="contato__chamada">
+          Conte com a nossa equipe para resolver dúvidas e tirar seu projeto do papel.
+        </p>
+
+        <h3 class="contato__rotulo">Contato</h3>
+        <p class="contato__linha">
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+        <p class="contato__linha">
+          <a href={site.whatsapp} rel="noopener" target="_blank">{site.telefone}</a>
+        </p>
+
+        <h3 class="contato__rotulo">Endereço</h3>
+        <p class="contato__linha">{enderecoCompleto}</p>
+
+        <h3 class="contato__rotulo">Nossos Canais</h3>
+        <ul class="contato__canais">
+          <li><a href={site.redes.instagram} rel="me noopener" target="_blank">Instagram</a></li>
+          <li><a href={site.redes.facebook} rel="me noopener" target="_blank">Facebook</a></li>
+          <li><a href={site.redes.linkedin} rel="me noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <Rodape slot="rodape" />
+</Base>
+
+<style>
+  .contato { margin-inline: auto; max-width: 1184px; padding: 120px 24px 64px; }
+  .migalhas {
+    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    margin-bottom: 48px;
+  }
+  .migalhas a { color: inherit; text-decoration: none; }
+  .contato__titulo {
+    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 48px;
+  }
+  .contato__colunas {
+    display: grid;
+    gap: 64px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 1200px) {
+    .contato__colunas { grid-template-columns: 1fr 1fr; }
+  }
+  .contato__subtitulo {
+    font: 700 49px/1.1 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  .contato__chamada {
+    font: 500 19px/1.5 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0 0 32px;
+  }
+  .contato__rotulo {
+    font: 400 24px/1.2 'Faberge', 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    margin: 24px 0 8px;
+  }
+  .contato__linha {
+    font: 500 21px/1.5 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 6px;
+  }
+  .contato__linha a { color: inherit; text-decoration: none; }
+  .contato__linha a:hover { text-decoration: underline; }
+  .contato__canais { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
+  .contato__canais a {
+    font: 500 18px/1.4 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+  }
+  @media (max-width: 809.98px) {
+    .contato { padding-top: 96px; }
+    .contato__titulo { font-size: 36px; }
+    .contato__subtitulo { font-size: 32px; }
+  }
+</style>

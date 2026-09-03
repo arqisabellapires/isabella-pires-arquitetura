@@ -1,64 +1,111 @@
 ---
-import { site } from '~/lib/site';
-import { rodapeLinks } from '~/lib/conteudo';
+/**
+ * Rodapé — valores medidos em _capturas/home/medidas.desktop.json (y > 7190).
+ *
+ * Fundo #f0d9c7, três colunas: chamada em x=128, "Institucional" em x=720,
+ * "Informações" em x=1032. Títulos 32px/700 Mulish #21201f; links 16px/500
+ * Mulish #483b2a; a assinatura é 20px/500 Arboria.
+ */
+import { site, rodape } from '~/lib/site';
+
+const ano = new Date().getFullYear();
 ---
 
 <footer class="rodape">
-  <div class="container rodape__interno">
-    <div class="rodape__marca">
-      <p class="rodape__nome">{site.nomeCurto}</p>
-    </div>
+  <div class="rodape__interno">
+    <section class="rodape__chamada">
+      <p class="rodape__sobretitulo">Contate-nos</p>
+      <p class="rodape__titulo">Sobrou alguma dúvida?<br />Vamos conversar!</p>
+      <a class="rodape__botao" href="/contato">Quero agendar uma reunião</a>
+    </section>
 
     <nav class="rodape__coluna" aria-label="Institucional">
-      <p class="rotulo rodape__rotulo">Institucional</p>
-      <ul>
-        {rodapeLinks.institucional.map(({ rotulo, href }) => <li><a href={href}>{rotulo}</a></li>)}
+      <h2 class="rodape__coluna-titulo">Institucional</h2>
+      <ul class="rodape__lista">
+        {rodape.institucional.map(({ rotulo, href }) => (
+          <li><a href={href}>{rotulo}</a></li>
+        ))}
       </ul>
     </nav>
 
-    <nav class="rodape__coluna" aria-label="Informações">
-      <p class="rotulo rodape__rotulo">Informações</p>
-      <ul>
-        {rodapeLinks.informacoes.map(({ rotulo, href }) => <li><a href={href}>{rotulo}</a></li>)}
+    <section class="rodape__coluna" aria-labelledby="rodape-informacoes">
+      <h2 class="rodape__coluna-titulo" id="rodape-informacoes">Informações</h2>
+      <ul class="rodape__lista">
+        {/*
+          As três políticas não existem como página no Framer: os links
+          apontavam para lugar nenhum. Ficam como texto, não como link morto —
+          criar política jurídica é decisão do Gabriel, não de quem executa.
+        */}
+        {rodape.informacoes.map(({ rotulo, href }) => (
+          <li>{href ? <a href={href}>{rotulo}</a> : <span>{rotulo}</span>}</li>
+        ))}
       </ul>
-    </nav>
+    </section>
   </div>
 
-  <div class="container rodape__base">
-    <p>© 2025 Arquiteta Isabella Pires</p>
-  </div>
+  <p class="rodape__assinatura">
+    © {ano} Arquiteta Isabella Pires |
+    <a href={site.redes.instagram} rel="me noopener" target="_blank">
+      {site.redes.arroba}
+    </a>
+  </p>
 </footer>
 
 <style>
   .rodape {
-    margin-block-start: var(--secao-y);
-    padding-block-start: var(--esp-xl);
-    background-color: var(--cor-fundo-escuro);
-    color: color-mix(in srgb, var(--cor-sobre-escuro) 78%, transparent);
-    font-size: var(--texto-sm);
+    background: #f0d9c7;
+    padding: 64px 0 32px;
+    font-family: 'Mulish', system-ui, sans-serif;
   }
-  .rodape__interno { display: grid; gap: var(--esp-lg); padding-block-end: var(--esp-xl); }
-  .rodape__nome {
-    font-family: var(--fonte-titulo);
-    font-size: var(--texto-lg);
-    color: var(--cor-sobre-escuro);
-    letter-spacing: var(--entre-letras-caixa);
-    text-transform: uppercase;
+  .rodape__interno {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    margin-inline: auto;
+    max-width: 1184px;
+    padding-inline: 24px;
   }
-  .rodape__rotulo {
-    color: color-mix(in srgb, var(--cor-sobre-escuro) 55%, transparent);
-    margin-block-end: var(--esp-xs);
+  @media (min-width: 1200px) {
+    .rodape__interno { grid-template-columns: 1.6fr 1fr 1fr; }
   }
-  .rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--esp-2xs); }
-  .rodape a { text-decoration: none; color: inherit; transition: color var(--transicao-rapida); }
-  .rodape a:hover { color: var(--cor-acento-suave); }
-  .rodape__base {
-    padding-block: var(--esp-sm);
-    border-top: 1px solid color-mix(in srgb, var(--cor-sobre-escuro) 12%, transparent);
-    font-size: var(--texto-xs);
-    color: color-mix(in srgb, var(--cor-sobre-escuro) 55%, transparent);
+  .rodape__sobretitulo {
+    font: 600 20px/1.2 'Mulish', system-ui, sans-serif;
+    color: #483b2a;
+    margin: 0 0 8px;
   }
-  @media (min-width: 48rem) {
-    .rodape__interno { grid-template-columns: 2fr 1fr 1fr; gap: var(--esp-xl); }
+  .rodape__titulo {
+    font: 600 34px/1.2 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 24px;
   }
+  .rodape__botao {
+    display: inline-block;
+    font: 600 18px/1.2 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    border: 1px solid #483b2a;
+    border-radius: 999px;
+    padding: 16px 24px;
+    text-decoration: none;
+  }
+  .rodape__coluna-titulo {
+    font: 700 32px/1.2 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 16px;
+  }
+  .rodape__lista { list-style: none; margin: 0; padding: 0; }
+  .rodape__lista li { margin-bottom: 10px; }
+  .rodape__lista :is(a, span) {
+    font: 500 16px/1.4 'Mulish', system-ui, sans-serif;
+    color: #483b2a;
+    text-decoration: none;
+  }
+  .rodape__lista a:hover { text-decoration: underline; }
+  .rodape__assinatura {
+    font: 500 20px/1.4 'Arboria', 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 48px auto 0;
+    max-width: 1184px;
+    padding-inline: 24px;
+  }
+  .rodape__assinatura a { color: inherit; }
 </style>

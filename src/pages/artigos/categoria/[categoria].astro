@@ -1,0 +1,109 @@
+---
+/**
+ * Listagem por categoria. As 4 categorias saem dos 25 artigos importados do
+ * CMS do Framer, contadas — não escolhidas aqui.
+ *
+ * São páginas estáticas em vez de filtro em JavaScript: cada categoria vira
+ * URL própria, indexável, e a página continua sem script. É também o que
+ * permite ao Search Console ver "Dicas" e "Arquitetura na Prática" como
+ * conteúdo, e não como estado de uma SPA.
+ */
+import { getCollection } from 'astro:content';
+import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
+import CardArtigo from '~/components/artigos/CardArtigo.astro';
+import { categorias } from '~/lib/site';
+import { minutosDeLeitura, aSlug } from '~/lib/artigos';
+
+export async function getStaticPaths() {
+  const artigos = await getCollection('artigos', ({ data }) => data.publicado !== false);
+  const porCategoria = new Map<string, typeof artigos>();
+  for (const artigo of artigos) {
+    const chave = artigo.data.categoria;
+    porCategoria.set(chave, [...(porCategoria.get(chave) ?? []), artigo]);
+  }
+  return [...porCategoria].map(([categoria, lista]) => ({
+    params: { categoria: aSlug(categoria) },
+    props: { categoria, lista },
+  }));
+}
+
+const { categoria, lista } = Astro.props;
+
+const ordenados = [...lista].sort(
+  (a, b) => b.data.publicadoEm.valueOf() - a.data.publicadoEm.valueOf(),
+);
+const comMinutos = await Promise.all(
+  ordenados.map(async (artigo) => ({ artigo, minutos: await minutosDeLeitura(artigo) })),
+);
+---
+
+<Base
+  titulo={`${categoria} | Blog`}
+  descricao={`Artigos de ${categoria} por Isabella Pires, arquiteta em Maringá.`}
+>
+  <Cabecalho slot="cabecalho" />
+
+  <div class="listagem">
+    <nav class="migalhas" aria-label="Migalhas">
+      <a href="/">Início</a> <span aria-hidden="true">/</span>
+      <a href="/artigos">Blog</a> <span aria-hidden="true">/</span>
+      <span>{categoria}</span>
+    </nav>
+
+    <h1 class="listagem__titulo">{categoria}</h1>
+
+    <nav class="filtros" aria-label="Filtrar por categoria">
+      <a class="filtros__item" href="/artigos">Todos</a>
+      {categorias.map((c) => (
+        <a
+          class:list={['filtros__item', c === categoria && 'filtros__item--ativo']}
+          href={`/artigos/categoria/${aSlug(c)}`}
+          aria-current={c === categoria ? 'page' : undefined}
+        >{c}</a>
+      ))}
+    </nav>
+
+    <div class="grade">
+      {comMinutos.map(({ artigo, minutos }, i) => (
+        <CardArtigo artigo={artigo} minutos={minutos} prioritaria={i < 3} />
+      ))}
+    </div>
+  </div>
+
+  <Rodape slot="rodape" />
+</Base>
+
+<style>
+  .listagem { margin-inline: auto; max-width: 1184px; padding: 120px 24px 64px; }
+  .migalhas {
+    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    margin-bottom: 48px;
+  }
+  .migalhas a { color: inherit; text-decoration: none; }
+  .listagem__titulo {
+    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 40px;
+    text-wrap: balance;
+  }
+  .filtros { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 40px; }
+  .filtros__item {
+    font: 400 16px/1.4 'Inter', system-ui, sans-serif;
+    color: #5a5755;
+    text-decoration: none;
+  }
+  .filtros__item--ativo { color: #341f04; font-weight: 600; }
+  .grade { display: grid; gap: 40px; grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 1199.98px) {
+    .listagem__titulo { font-size: 44px; }
+    .grade { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 809.98px) {
+    .listagem { padding-top: 96px; }
+    .listagem__titulo { font-size: 32px; }
+    .grade { grid-template-columns: 1fr; }
+  }
+</style>

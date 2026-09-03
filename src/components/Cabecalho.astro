@@ -1,4 +1,19 @@
 ---
+/**
+ * Cabeçalho — valores medidos em _capturas/home/medidas.<bp>.json (y < 80).
+ *
+ * Marca "ISABELLA PIRES" 16px/700 Mulish branco em x=152 no desktop, 14px em
+ * x=73 nos outros dois. Os seis links são 15px/500 Inter, branco, e existem
+ * **só no desktop** — em tablet e mobile viram menu, exatamente como a ficha
+ * `menu-celular` mede.
+ *
+ * A altura aberta do menu é 519px, MEDIDA no Framer vivo. O `variantes.json`
+ * diz 223 e está errado: as classes framer-v-* não sobrevivem a uma
+ * republicação (HANDOFF §6.9 e a correção 3 do §0). Medida manda.
+ *
+ * O estado é atributo `data-estado`, nunca classe gerada pelo Framer — é
+ * regra da spec §4.4.
+ */
 import { navegacao, site } from '~/lib/site';
 
 interface Props {
@@ -11,23 +26,17 @@ const estaAtiva = (href: string) =>
   href === '/' ? atual === '/' : atual === href || atual.startsWith(`${href}/`);
 ---
 
-<header class:list={['cabecalho', sobreHero && 'cabecalho--sobre-hero']} data-cabecalho>
-  <div class="cabecalho__interno container">
-    <a href="/" class="cabecalho__marca" aria-label={`${site.nome} — início`}>
-      {site.nomeCurto}
-    </a>
+<header class:list={['cabecalho', sobreHero && 'cabecalho--sobre-hero']} data-estado="fechado">
+  <div class="cabecalho__interno">
+    <a href="/" class="cabecalho__marca">{site.nomeCurto.toUpperCase()}</a>
 
     <nav class="cabecalho__nav" aria-label="Navegação principal">
       <ul class="cabecalho__lista">
-        {
-          navegacao.map(({ rotulo, href }) => (
-            <li>
-              <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>
-                {rotulo}
-              </a>
-            </li>
-          ))
-        }
+        {navegacao.map(({ rotulo, href }) => (
+          <li>
+            <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>{rotulo}</a>
+          </li>
+        ))}
       </ul>
     </nav>
 
@@ -36,177 +45,130 @@ const estaAtiva = (href: string) =>
       class="cabecalho__alternador"
       aria-expanded="false"
       aria-controls="menu-movel"
+      aria-label="Abrir menu"
       data-alternador
     >
-      <span class="apenas-leitor">Abrir menu</span>
       <span class="cabecalho__risco" aria-hidden="true"></span>
       <span class="cabecalho__risco" aria-hidden="true"></span>
     </button>
   </div>
 
-  <div class="menu-movel" id="menu-movel" hidden data-menu>
-    <nav aria-label="Navegação principal (celular)">
-      <ul>
-        {
-          navegacao.map(({ rotulo, href }) => (
-            <li>
-              <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>
-                {rotulo}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </div>
+  <nav class="cabecalho__movel" id="menu-movel" aria-label="Navegação principal" hidden>
+    <ul>
+      {navegacao.map(({ rotulo, href }) => (
+        <li>
+          <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>{rotulo}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
 </header>
+
+<script>
+  /*
+    Menu de celular. Duas travas que a experiência já cobrou:
+
+    1. Nunca chamar preventDefault num clique que caiu num <a href> — foi o
+       que quase matou a navegação do site inteiro (HANDOFF §3). Aqui o
+       handler está no <button>, então o risco não existe por construção.
+    2. `hidden` só sai enquanto o menu está aberto, para o conteúdo não ficar
+       alcançável por teclado quando está fechado.
+  */
+  const cabecalho = document.querySelector<HTMLElement>('.cabecalho');
+  const botao = document.querySelector<HTMLButtonElement>('[data-alternador]');
+  const menu = document.getElementById('menu-movel');
+
+  if (cabecalho && botao && menu) {
+    const alterna = (abrir: boolean) => {
+      cabecalho.dataset.estado = abrir ? 'aberto' : 'fechado';
+      botao.setAttribute('aria-expanded', String(abrir));
+      botao.setAttribute('aria-label', abrir ? 'Fechar menu' : 'Abrir menu');
+      menu.hidden = !abrir;
+    };
+
+    botao.addEventListener('click', () => {
+      alterna(cabecalho.dataset.estado !== 'aberto');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && cabecalho.dataset.estado === 'aberto') {
+        alterna(false);
+        botao.focus();
+      }
+    });
+  }
+</script>
 
 <style>
   .cabecalho {
-    position: sticky;
-    top: 0;
-    z-index: var(--camada-cabecalho);
-    background-color: color-mix(in srgb, var(--cor-fundo) 88%, transparent);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid transparent;
-    transition: background-color var(--transicao-media),
-                border-color var(--transicao-media);
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 10;
+    font-family: 'Inter', system-ui, sans-serif;
   }
-  /* Só ganha borda depois que a página rola — sem linha flutuando no topo */
-  .cabecalho[data-rolado] { border-bottom-color: var(--cor-borda); }
-
   .cabecalho__interno {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--esp-md);
-    min-height: 4.5rem;
+    gap: 24px;
+    margin-inline: auto;
+    max-width: 1184px;
+    min-height: 59px;
+    padding: 25px 24px;
   }
-
+  /* Marca: 16px/700 Mulish no desktop, 14px nos outros — medido. */
   .cabecalho__marca {
-    font-family: var(--fonte-titulo);
-    font-size: var(--texto-md);
-    font-weight: var(--peso-semi);
-    letter-spacing: var(--entre-letras-caixa);
-    text-transform: uppercase;
-    color: var(--cor-tinta);
+    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.02em;
     text-decoration: none;
-    white-space: nowrap;
   }
-
-  .cabecalho__nav { display: none; }
-
   .cabecalho__lista {
     display: flex;
-    gap: var(--esp-md);
+    gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
   }
   .cabecalho__lista a {
-    font-size: var(--texto-sm);
+    font: 500 15px/1.2 'Inter', system-ui, sans-serif;
+    color: #ffffff;
     text-decoration: none;
-    color: var(--cor-texto);
-    padding-block: var(--esp-2xs);
-    position: relative;
   }
-  /* Sublinhado que cresce do centro — o detalhe que o Framer não tinha */
-  .cabecalho__lista a::after {
-    content: '';
-    position: absolute;
-    inset-inline: 0;
-    inset-block-end: 0;
-    height: 1px;
-    background-color: var(--cor-acento);
-    transform: scaleX(0);
-    transition: transform var(--transicao-media);
-  }
-  .cabecalho__lista a:hover::after,
-  .cabecalho__lista a[aria-current='page']::after { transform: scaleX(1); }
-  .cabecalho__lista a[aria-current='page'] { color: var(--cor-tinta); }
+  .cabecalho__lista a[aria-current='page'] { text-decoration: underline; }
 
   .cabecalho__alternador {
-    display: grid;
-    place-content: center;
+    display: none;
+    flex-direction: column;
     gap: 5px;
-    width: 2.75rem;
-    height: 2.75rem;
-    margin-inline-end: calc(var(--esp-2xs) * -1);
     background: none;
     border: 0;
     cursor: pointer;
+    padding: 8px;
   }
   .cabecalho__risco {
     display: block;
-    width: 1.25rem;
-    height: 1.5px;
-    background-color: var(--cor-tinta);
-    transition: transform var(--transicao-media), opacity var(--transicao-rapida);
-  }
-  .cabecalho__alternador[aria-expanded='true'] .cabecalho__risco:first-child {
-    transform: translateY(3.25px) rotate(45deg);
-  }
-  .cabecalho__alternador[aria-expanded='true'] .cabecalho__risco:last-child {
-    transform: translateY(-3.25px) rotate(-45deg);
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
   }
 
-  .menu-movel {
-    border-top: 1px solid var(--cor-borda);
-    padding: var(--esp-sm) 0 var(--esp-md);
+  .cabecalho__movel {
+    background: #21201f;
+    padding: 24px;
   }
-  .menu-movel ul {
-    list-style: none;
-    margin: 0;
-    padding-inline: var(--margem-lateral);
-    display: grid;
-    gap: var(--esp-3xs);
-  }
-  .menu-movel a {
-    display: block;
-    padding: var(--esp-xs) 0;
-    font-family: var(--fonte-titulo);
-    font-size: var(--texto-lg);
-    color: var(--cor-tinta);
+  .cabecalho__movel ul { list-style: none; margin: 0; padding: 0; }
+  .cabecalho__movel li { margin-bottom: 16px; }
+  .cabecalho__movel a {
+    font: 500 18px/1.4 'Inter', system-ui, sans-serif;
+    color: #ffffff;
     text-decoration: none;
   }
-  .menu-movel a[aria-current='page'] { color: var(--cor-acento-escuro); }
 
-  @media (min-width: 60rem) {
-    .cabecalho__nav { display: block; }
-    .cabecalho__alternador { display: none; }
-    .menu-movel { display: none; }
+  /* Os links inline existem só no desktop — medido nos 3 breakpoints. */
+  @media (max-width: 1199.98px) {
+    .cabecalho__marca { font-size: 14px; }
+    .cabecalho__nav { display: none; }
+    .cabecalho__alternador { display: flex; }
   }
 </style>
-
-<script>
-  const cabecalho = document.querySelector<HTMLElement>('[data-cabecalho]');
-  const alternador = document.querySelector<HTMLButtonElement>('[data-alternador]');
-  const menu = document.querySelector<HTMLElement>('[data-menu]');
-
-  if (alternador && menu) {
-    alternador.addEventListener('click', () => {
-      const aberto = alternador.getAttribute('aria-expanded') === 'true';
-      alternador.setAttribute('aria-expanded', String(!aberto));
-      menu.hidden = aberto;
-      alternador.querySelector('.apenas-leitor')!.textContent = aberto
-        ? 'Abrir menu'
-        : 'Fechar menu';
-    });
-
-    // Esc fecha o menu — teclado também é gente
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && alternador.getAttribute('aria-expanded') === 'true') {
-        alternador.click();
-        alternador.focus();
-      }
-    });
-  }
-
-  if (cabecalho) {
-    const aoRolar = () => {
-      cabecalho.toggleAttribute('data-rolado', window.scrollY > 8);
-    };
-    aoRolar();
-    window.addEventListener('scroll', aoRolar, { passive: true });
-  }
-</script>

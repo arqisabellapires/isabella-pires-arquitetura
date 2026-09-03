@@ -1,0 +1,64 @@
+---
+/**
+ * Card da grade de artigos. Medido em _capturas/artigos/medidas.desktop.json:
+ * título 20px/700 Mulish, categoria e tempo de leitura 16px/400, coluna de
+ * 283px numa grade de 3 (x=116, 536, 956).
+ *
+ * O "6min" da captura é tempo de leitura calculado, não escrito à mão: sai da
+ * contagem de palavras do próprio markdown, a 200 palavras por minuto.
+ */
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  artigo: CollectionEntry<'artigos'>;
+  minutos: number;
+  /** A primeira fileira carrega ansioso; o resto espera o scroll. */
+  prioritaria?: boolean;
+}
+const { artigo, minutos, prioritaria = false } = Astro.props;
+const d = artigo.data;
+---
+
+<article class="card">
+  <a class="card__link" href={`/artigos/${artigo.id}`}>
+    <Image
+      class="card__capa"
+      src={d.capa}
+      alt={d.capaAlt}
+      widths={[283, 566]}
+      sizes="(min-width: 1200px) 283px, (min-width: 810px) 45vw, 90vw"
+      loading={prioritaria ? 'eager' : 'lazy'}
+    />
+    <h2 class="card__titulo">{d.titulo}</h2>
+  </a>
+  <p class="card__meta">
+    <span class="card__categoria">{d.categoria}</span>
+    <span class="card__minutos">{minutos}min</span>
+  </p>
+</article>
+
+<style>
+  .card { display: flex; flex-direction: column; }
+  .card__link { text-decoration: none; color: inherit; }
+  .card__capa {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 283 / 220;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .card__titulo {
+    font: 700 20px/1.3 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 16px 0 0;
+  }
+  .card__meta {
+    display: flex;
+    gap: 24px;
+    font: 400 16px/1.4 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 8px 0 0;
+  }
+</style>

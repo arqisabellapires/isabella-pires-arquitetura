@@ -1,0 +1,101 @@
+/* ============================================================
+   Corpo do artigo — todo valor medido em
+   _capturas/artigos__vale-mais-a-pena-reformar-ou-construir/
+
+   Não editar por gosto: o que muda aqui muda contra a captura, e o
+   verifica-secao vai acusar. Melhoria visível vira anotação em
+   docs/melhorias-depois.md e só entra depois de a página estar idêntica.
+   ============================================================ */
+
+.artigo {
+  /* Largura do corpo medida: 875px desktop, 700 tablet, 342 mobile. */
+  --artigo-largura: 875px;
+  --artigo-margem: 24px;
+  margin-inline: auto;
+  max-width: var(--artigo-largura);
+  padding-inline: var(--artigo-margem);
+}
+
+@media (max-width: 1199.98px) {
+  .artigo { --artigo-largura: 700px; }
+}
+@media (max-width: 809.98px) {
+  .artigo { --artigo-largura: 390px; }
+}
+
+/* A data acima do título: 16px/400 Mulish, cinza medido #999999. */
+.artigo-data {
+  font: 400 16px/1.2 'Mulish', system-ui, sans-serif;
+  color: #999999;
+  margin: 0 0 8px;
+}
+
+.artigo-categoria {
+  font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
+  color: #a98c67;
+  text-transform: none;
+  margin: 0 0 8px;
+}
+
+/*
+  O Framer usava Inter nos headings do corpo do artigo e Mulish no texto —
+  duas famílias, medidas, não escolhidas aqui. Os tamanhos são os da captura:
+  h1 40/44, h2 30/42, h3 e h4 22/30.8.
+*/
+.artigo-corpo :is(h1, h2, h3, h4, h5, h6) {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  color: #000000;
+  margin: 32px 0 12px;
+  text-wrap: balance;
+}
+.artigo-corpo h1 { font-size: 40px; line-height: 44px; }
+.artigo-corpo h2 { font-size: 30px; line-height: 42px; }
+.artigo-corpo h3,
+.artigo-corpo h4 { font-size: 22px; line-height: 30.8px; }
+.artigo-corpo h5 { font-size: 18px; line-height: 25.2px; font-weight: 400; }
+.artigo-corpo h6 { font-size: 16px; line-height: 22.4px; }
+
+/* Corpo: 16px, altura de linha 25.6 (= 1.6), Mulish, #666666. */
+.artigo-corpo p,
+.artigo-corpo li {
+  font: 400 16px/25.6px 'Mulish', system-ui, sans-serif;
+  color: #666666;
+  margin: 0 0 16px;
+}
+
+.artigo-corpo strong { font-weight: 700; color: inherit; }
+
+.artigo-corpo a {
+  color: #341f04;
+  text-underline-offset: 2px;
+}
+
+.artigo-corpo :is(ul, ol) { margin: 0 0 16px; padding-left: 24px; }
+.artigo-corpo li { margin-bottom: 8px; }
+
+/*
+  As 19 imagens do corpo vêm em <img> cru dentro do markdown, com caminho
+  absoluto para /img-artigos/ — o Astro não resolve essas pelo image() do
+  schema. O alt veio VAZIO do Framer e continua vazio: texto é do Gabriel.
+*/
+.artigo-corpo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 24px 0;
+}
+
+.artigo-corpo blockquote {
+  margin: 24px 0;
+  padding-left: 16px;
+  border-left: 3px solid #a98c67;
+  color: #5a5755;
+}
+
+.artigo-capa {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 24px;
+}

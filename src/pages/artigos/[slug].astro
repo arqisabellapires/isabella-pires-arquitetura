@@ -1,0 +1,78 @@
+---
+/**
+ * Página de artigo. É o primeiro item da Fase 2 da spec por um motivo
+ * concreto: **20 dos 25 artigos estão em 302 provisório** desde a virada do
+ * domínio, e esta rota é o que devolve conteúdo real a essas URLs.
+ *
+ * O molde saiu de medir as 5 capturas de artigo, que compartilham layout:
+ * data 16px/400 #999, título, corpo 16px/25.6 Mulish #666, headings Inter.
+ * Detalhe em src/styles/artigo.css.
+ */
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
+import { site } from '~/lib/site';
+import '~/styles/artigo.css';
+
+export async function getStaticPaths() {
+  const artigos = await getCollection('artigos', ({ data }) => data.publicado !== false);
+  return artigos.map((artigo) => ({ params: { slug: artigo.id }, props: { artigo } }));
+}
+
+const { artigo } = Astro.props;
+const { Content } = await render(artigo);
+const d = artigo.data;
+
+const dataLegivel = (valor: Date) =>
+  new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }).format(valor);
+
+/*
+  O título e o resumo do artigo são a fonte do title/description. Não se
+  inventa copy: se o frontmatter trouxer seoTitulo/seoDescricao, mandam eles.
+*/
+const titulo = d.seoTitulo ?? d.titulo;
+const descricao = d.seoDescricao ?? d.resumo;
+---
+
+<Base
+  titulo={titulo}
+  descricao={descricao}
+  tipo="article"
+  publicadoEm={d.publicadoEm}
+  atualizadoEm={d.atualizadoEm}
+  autor={d.autor}
+>
+  <Cabecalho slot="cabecalho" />
+
+  <article class="artigo">
+    <p class="artigo-categoria">{d.categoria}</p>
+    <p class="artigo-data">
+      <time datetime={d.publicadoEm.toISOString()}>{dataLegivel(d.publicadoEm)}</time>
+    </p>
+
+    <h1 class="artigo-titulo">{d.titulo}</h1>
+
+    <Image class="artigo-capa" src={d.capa} alt={d.capaAlt} widths={[390, 700, 875]} sizes="(min-width: 1200px) 875px, (min-width: 810px) 700px, 100vw" loading="eager" />
+
+    <div class="artigo-corpo">
+      <Content />
+    </div>
+  </article>
+
+  <Rodape slot="rodape" />
+</Base>
+
+<style>
+  .artigo { padding-block: 120px 64px; }
+  .artigo-titulo {
+    font: 700 40px/44px 'Inter', system-ui, sans-serif;
+    color: #000000;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  @media (max-width: 809.98px) {
+    .artigo-titulo { font-size: 30px; line-height: 36px; }
+  }
+</style>

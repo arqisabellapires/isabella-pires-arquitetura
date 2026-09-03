@@ -28,103 +28,103 @@
     },
     {
       "source": "/artigos/antes-e-depois-de-uma-reforma-completa",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/antes-e-depois-de-uma-reforma-completa",
+      "permanent": true
     },
     {
       "source": "/artigos/arquitetura-e-o-futuro-das-cidades-inteligentes",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/arquitetura-e-o-futuro-das-cidades-inteligentes",
+      "permanent": true
     },
     {
       "source": "/artigos/casa-t%C3%A9rrea-com-conceito-aberto-moderno",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/casa-terrea-com-conceito-aberto-moderno",
+      "permanent": true
     },
     {
       "source": "/artigos/como-ampliar-ambientes-pequenos-em-casa",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/como-ampliar-ambientes-pequenos-em-casa",
+      "permanent": true
     },
     {
       "source": "/artigos/como-usar-a-cor-do-ano-de-2026-sem-erros",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/como-usar-a-cor-do-ano-de-2026-sem-erros",
+      "permanent": true
     },
     {
       "source": "/artigos/decora%C3%A7%C3%A3o-afetiva-o-poder-das-mem%C3%B3rias",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/decoracao-afetiva-o-poder-das-memorias",
+      "permanent": true
     },
     {
       "source": "/artigos/design-biof%C3%ADlico-plantas-nos-ambientes-residenciais",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/design-biofilico-plantas-nos-ambientes-residenciais",
+      "permanent": true
     },
     {
       "source": "/artigos/erros-comuns-em-obras-residenciais-e-como-evitar",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/erros-comuns-em-obras-residenciais-e-como-evitar",
+      "permanent": true
     },
     {
       "source": "/artigos/espa%C3%A7os-comerciais-que-inspiram-clientes",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/espacos-comerciais-que-inspiram-clientes",
+      "permanent": true
     },
     {
       "source": "/artigos/guia-pr%C3%A1tico-para-escolher-revestimentos",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/guia-pratico-para-escolher-revestimentos",
+      "permanent": true
     },
     {
       "source": "/artigos/ilumina%C3%A7%C3%A3o-ideal-para-cada-ambiente",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/iluminacao-ideal-para-cada-ambiente",
+      "permanent": true
     },
     {
       "source": "/artigos/mercado-imobili%C3%A1rio-e-impacto-na-arquitetura",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/mercado-imobiliario-e-impacto-na-arquitetura",
+      "permanent": true
     },
     {
       "source": "/artigos/novos-materiais-e-tecnologias-construtivas",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/novos-materiais-e-tecnologias-construtivas",
+      "permanent": true
     },
     {
       "source": "/artigos/passo-a-passo-de-um-projeto-arquitet%C3%B4nico",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/passo-a-passo-de-um-projeto-arquitetonico",
+      "permanent": true
     },
     {
       "source": "/artigos/principais-feiras-e-eventos-de-arquitetura",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/principais-feiras-e-eventos-de-arquitetura",
+      "permanent": true
     },
     {
       "source": "/artigos/quanto-custa-contratar-um-arquiteto",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/quanto-custa-contratar-um-arquiteto",
+      "permanent": true
     },
     {
       "source": "/artigos/reformas-inteligentes-como-repaginar-o-lar-antes-do-natal-sem-grandes-obras",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/reformas-inteligentes-como-repaginar-o-lar-antes-do-natal-sem-grandes-obras",
+      "permanent": true
     },
     {
       "source": "/artigos/sustentabilidade-aplicada-na-arquitetura",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/sustentabilidade-aplicada-na-arquitetura",
+      "permanent": true
     },
     {
       "source": "/artigos/tend%C3%AAncias-de-decora%C3%A7%C3%A3o-para-2025",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/tendencias-de-decoracao-para-2025",
+      "permanent": true
     },
     {
       "source": "/artigos/tour-por-apartamento-de-80m%C2%B2-bem-otimizado",
-      "destination": "/artigos",
-      "permanent": false
+      "destination": "/artigos/tour-por-apartamento-de-80m-bem-otimizado",
+      "permanent": true
     }
   ],
   "headers": [

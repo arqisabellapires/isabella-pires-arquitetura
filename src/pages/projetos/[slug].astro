@@ -1,0 +1,146 @@
+---
+/**
+ * Página de projeto. O conteúdo vem da coleção `projetos`, gerada por
+ * tools/extrai-projetos.mjs a partir das 4 capturas — **não há CMS de
+ * projetos no Framer** (HANDOFF §4.1: o grafo inteiro de módulos cita uma
+ * única coleção, "Blog").
+ *
+ * Layout medido em _capturas/projetos__casa-ip/medidas.desktop.json: hero
+ * 100px/700 Mulish, "Detalhes do Projeto" 40px/600, ficha técnica em 29px, e
+ * o corpo "Concepção e Processo" em 22px.
+ */
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
+
+export async function getStaticPaths() {
+  const projetos = await getCollection('projetos', ({ data }) => data.publicado !== false);
+  return projetos.map((projeto) => ({ params: { slug: projeto.id }, props: { projeto } }));
+}
+
+const { projeto } = Astro.props;
+const { Content } = await render(projeto);
+const d = projeto.data;
+---
+
+<Base titulo={d.titulo} descricao={d.seoDescricao ?? d.resumo}>
+  <Cabecalho slot="cabecalho" sobreHero />
+
+  <article class="projeto">
+    <header class="projeto__hero">
+      <Image
+        class="projeto__capa"
+        src={d.capa}
+        alt={d.capaAlt}
+        widths={[390, 1000, 1440]}
+        sizes="100vw"
+        loading="eager"
+      />
+      <h1 class="projeto__titulo">{d.titulo}</h1>
+    </header>
+
+    <div class="projeto__interno">
+      <section class="ficha" aria-label="Detalhes do projeto">
+        <h2 class="ficha__titulo">Detalhes do Projeto</h2>
+        <dl class="ficha__lista">
+          {d.ano && (<div><dt>Ano</dt><dd>{d.ano}</dd></div>)}
+          <div><dt>Autoria</dt><dd>Isabella Pires</dd></div>
+          {d.local && (<div><dt>Localização</dt><dd>{d.local}</dd></div>)}
+          <div><dt>Categoria</dt><dd>{d.categoria}</dd></div>
+        </dl>
+      </section>
+
+      <section class="concepcao">
+        <h2 class="concepcao__titulo">Concepção e Processo</h2>
+        <div class="concepcao__corpo"><Content /></div>
+      </section>
+
+      {d.galeria.length > 0 && (
+        <section class="galeria" aria-label="Galeria do projeto">
+          {d.galeria.map((item) => (
+            <Image
+              src={item.imagem}
+              alt={item.alt}
+              widths={[390, 700, 1200]}
+              sizes="(min-width: 1200px) 1136px, 100vw"
+              loading="lazy"
+            />
+          ))}
+        </section>
+      )}
+    </div>
+  </article>
+
+  <Rodape slot="rodape" />
+</Base>
+
+<style>
+  .projeto__hero { position: relative; }
+  .projeto__capa {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1440 / 882;
+    object-fit: cover;
+  }
+  .projeto__titulo {
+    position: absolute;
+    left: 24px;
+    bottom: 40px;
+    right: 24px;
+    font: 700 100px/1 'Mulish', system-ui, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .projeto__interno { margin-inline: auto; max-width: 1184px; padding: 64px 24px; }
+
+  .ficha__titulo,
+  .concepcao__titulo {
+    font: 600 40px/1.2 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 24px;
+  }
+  .ficha { margin-bottom: 64px; }
+  .ficha__lista { display: grid; gap: 16px; margin: 0; }
+  @media (min-width: 810px) {
+    .ficha__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .ficha__lista dt {
+    font: 600 29px/1.3 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+  }
+  .ficha__lista dd {
+    font: 700 29px/1.3 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0;
+  }
+
+  .concepcao__corpo :global(p) {
+    font: 600 22px/1.6 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0 0 16px;
+    max-width: 70ch;
+  }
+  .concepcao__corpo :global(strong) { font-weight: 900; color: #21201f; }
+
+  .galeria { display: grid; gap: 24px; margin-top: 64px; }
+  .galeria :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 1199.98px) {
+    .projeto__titulo { font-size: 64px; }
+    .ficha__titulo, .concepcao__titulo { font-size: 32px; }
+    .ficha__lista :is(dt, dd) { font-size: 22px; }
+  }
+  @media (max-width: 809.98px) {
+    .projeto__titulo { font-size: 36px; bottom: 24px; }
+    .concepcao__corpo :global(p) { font-size: 18px; }
+  }
+</style>

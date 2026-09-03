@@ -1,0 +1,294 @@
+---
+/**
+ * Home. Medida em _capturas/home/medidas.desktop.json (542 elementos).
+ *
+ * Os textos saem do HTML da captura, não do campo `texto` das medidas: a home
+ * tem títulos animados LETRA A LETRA, cada uma num <span> próprio, então a
+ * medida devolveria "B", "o", "n"… em vez da frase. É o mesmo motivo pelo
+ * qual o corpo dos projetos passou a sair do HTML.
+ *
+ * Seções, na ordem medida: hero (80px/700), sobre (60px/700), números,
+ * serviços, projetos em destaque, artigos recentes e CTA.
+ */
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
+import CardArtigo from '~/components/artigos/CardArtigo.astro';
+import { servicos } from '~/lib/conteudo';
+import { minutosDeLeitura } from '~/lib/artigos';
+
+const artigos = (await getCollection('artigos', ({ data }) => data.publicado !== false))
+  .sort((a, b) => b.data.publicadoEm.valueOf() - a.data.publicadoEm.valueOf())
+  .slice(0, 3);
+const recentes = await Promise.all(
+  artigos.map(async (artigo) => ({ artigo, minutos: await minutosDeLeitura(artigo) })),
+);
+
+const projetos = (await getCollection('projetos', ({ data }) => data.publicado !== false))
+  .sort((a, b) => a.data.ordem - b.data.ordem)
+  .slice(0, 3);
+
+/* Números medidos em y≈2000 na captura do desktop. */
+const numeros = [
+  { valor: '2024', rotulo: 'Início de um sonho independente' },
+  { valor: '+32', rotulo: 'Meses dedicados à arquitetura' },
+  { valor: '+10', rotulo: 'Projetos Residenciais e comerciais' },
+  { valor: '100%', rotulo: 'Foco em personalização' },
+];
+---
+
+<Base
+  titulo="Isabella Pires Arquitetura"
+  descricao="Arquitetura e interiores em Maringá: projetos residenciais, comerciais e reformas que traduzem quem você é."
+>
+  <Cabecalho slot="cabecalho" sobreHero />
+
+  <section class="hero">
+    <div class="hero__interno">
+      <h1 class="hero__titulo">Espaços que refletem<br />quem você realmente é</h1>
+      <p class="hero__texto">
+        Mais do que criar ambientes bonitos, nosso propósito é dar vida a espaços com alma.
+        Do primeiro esboço ao acabamento final, tudo é pensado para refletir sua história e
+        estilo de vida.
+      </p>
+      <p class="hero__acoes">
+        <a class="botao botao--primario" href="/contato">Entrar em contato</a>
+        <a class="botao botao--secundario" href="/projetos">Explorar Projetos</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="sobre">
+    <div class="interno">
+      <p class="rotulo">Sobre nós</p>
+      <h2 class="sobre__titulo">Mais que Design,<br />Um Estilo de Vida.</h2>
+      <p class="sobre__texto">
+        Nosso propósito é criar o incomum. Ambientes que emocionam, acolhem e refletem
+        autenticidade.
+      </p>
+      <blockquote class="sobre__citacao">
+        “Bons projetos não começam com plantas, mas com escuta. Todo espaço deve refletir
+        quem vive nele.”
+      </blockquote>
+      <a class="ligacao" href="/sobre-nos">Saiba mais sobre quem somos</a>
+    </div>
+  </section>
+
+  <section class="numeros" aria-label="Nossos números">
+    <dl class="interno numeros__lista">
+      {numeros.map((n) => (
+        <div class="numeros__item">
+          <dt class="numeros__valor">{n.valor}</dt>
+          <dd class="numeros__rotulo">{n.rotulo}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="secao">
+    <div class="interno">
+      <p class="rotulo">Serviços</p>
+      <h2 class="secao__titulo">Serviços pensados para você</h2>
+      <ul class="servicos-grade">
+        {servicos.map((s) => (
+          <li>
+            <h3>{s.tituloCompleto}</h3>
+            <p>{s.resumoHome}</p>
+            <a class="ligacao" href={`/servicos#${s.slug}`}>Saiba mais</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="interno">
+      <p class="rotulo">Projetos</p>
+      <h2 class="secao__titulo">Projetos que contam histórias</h2>
+      <ul class="projetos-grade">
+        {projetos.map((p) => (
+          <li>
+            <a href={`/projetos/${p.id}`}>
+              <Image
+                src={p.data.capa}
+                alt={p.data.capaAlt}
+                widths={[360, 720]}
+                sizes="(min-width: 1200px) 360px, 90vw"
+                loading="lazy"
+              />
+              <h3>{p.data.titulo}</h3>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a class="ligacao" href="/projetos">Explorar Projetos</a>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="interno">
+      <p class="rotulo">Arquitetura, Design &amp; Mercado</p>
+      <h2 class="secao__titulo">Histórias Recentes</h2>
+      <p class="secao__texto">Dicas e tendências para quem valoriza bons espaços.</p>
+      <div class="artigos-grade">
+        {recentes.map(({ artigo, minutos }) => (
+          <CardArtigo artigo={artigo} minutos={minutos} />
+        ))}
+      </div>
+      <a class="ligacao" href="/artigos">Ver todas as postagens</a>
+    </div>
+  </section>
+
+  <Rodape slot="rodape" />
+</Base>
+
+<style>
+  .interno { margin-inline: auto; max-width: 1184px; padding-inline: 24px; }
+  .rotulo {
+    font: 400 24px/1.2 'Faberge', 'Mulish', system-ui, sans-serif;
+    color: #a98c67;
+    margin: 0 0 8px;
+  }
+
+  .hero {
+    background: #21201f;
+    color: #ffffff;
+    padding: 200px 0 120px;
+  }
+  .hero__interno { margin-inline: auto; max-width: 1184px; padding-inline: 24px; }
+  .hero__titulo {
+    font: 700 80px/1.05 'Mulish', system-ui, sans-serif;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  .hero__texto {
+    font: 600 24px/1.5 'Mulish', system-ui, sans-serif;
+    margin: 0 0 32px;
+    max-width: 60ch;
+  }
+  .hero__acoes { display: flex; flex-wrap: wrap; gap: 16px; margin: 0; }
+
+  .botao {
+    display: inline-block;
+    font: 700 20px/1.2 'Mulish', system-ui, sans-serif;
+    border-radius: 999px;
+    padding: 16px 32px;
+    text-decoration: none;
+  }
+  .botao--primario { background: #ffffff; color: #21201f; }
+  .botao--secundario { border: 1px solid currentColor; color: #ffffff; }
+
+  .sobre { padding: 96px 0; }
+  .sobre__titulo {
+    font: 700 60px/1.1 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  .sobre__texto {
+    font: 400 18px/1.6 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0 0 24px;
+    max-width: 60ch;
+  }
+  .sobre__citacao {
+    font: 600 20px/1.6 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    border-left: 3px solid #a98c67;
+    margin: 0 0 24px;
+    max-width: 60ch;
+    padding-left: 16px;
+  }
+
+  .ligacao {
+    display: inline-block;
+    font: 700 20px/1.2 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    border-bottom: 1px solid currentColor;
+    text-decoration: none;
+  }
+
+  .numeros { background: #f0d9c7; padding: 64px 0; }
+  .numeros__lista {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin: 0;
+  }
+  .numeros__valor {
+    font: 700 42px/1.1 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+  }
+  .numeros__rotulo {
+    font: 600 20px/1.4 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 8px 0 0;
+  }
+
+  .secao { padding: 96px 0; }
+  .secao__titulo {
+    font: 700 70px/1.05 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  .secao__texto {
+    font: 400 18px/1.6 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0 0 40px;
+  }
+
+  .servicos-grade,
+  .projetos-grade {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+  }
+  .servicos-grade h3,
+  .projetos-grade h3 {
+    font: 700 24px/1.3 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 12px 0 8px;
+  }
+  .servicos-grade p {
+    font: 400 18px/1.6 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 0 0 12px;
+  }
+  .projetos-grade a { color: inherit; text-decoration: none; }
+  .projetos-grade :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .artigos-grade {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 1199.98px) {
+    .hero__titulo { font-size: 56px; }
+    .sobre__titulo { font-size: 44px; }
+    .secao__titulo { font-size: 48px; }
+    .artigos-grade { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 809.98px) {
+    .hero { padding: 140px 0 80px; }
+    .hero__titulo { font-size: 36px; }
+    .hero__texto { font-size: 18px; }
+    .sobre__titulo { font-size: 32px; }
+    .secao__titulo { font-size: 32px; }
+    .artigos-grade { grid-template-columns: 1fr; }
+  }
+</style>

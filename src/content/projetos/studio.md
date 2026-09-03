@@ -1,6 +1,6 @@
 ---
 titulo: "STUDIO"
-resumo: "O ponto de partida do projeto foi a análise do **terreno** e da relação entre áreas externas e internas. A partir disso, definiu-se a **setorização funcional**, garantindo clareza no uso dos espaços:"
+resumo: "A planta promove fluidez e aproveitamento máximo do espaço, unindo funcionalidade e leveza visual."
 capa: ./studio/01.png
 capaAlt: ""  # TODO(gabriel): descrever a imagem
 galeria:

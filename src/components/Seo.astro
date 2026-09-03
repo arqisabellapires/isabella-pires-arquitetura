@@ -28,21 +28,15 @@ const imagemAbsoluta = new URL(imagem, site.url).href;
 // Evita "Isabella Pires Arquitetura | Isabella Pires Arquitetura" na home.
 const tituloCompleto = titulo === site.nome ? titulo : `${titulo} | ${site.nome}`;
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': tipo === 'article' ? 'BlogPosting' : 'WebPage',
-  headline: titulo,
-  description: descricao,
-  url: canonica,
-  image: imagemAbsoluta,
-  inLanguage: site.idioma,
-  ...(tipo === 'article' && {
-    datePublished: publicadoEm?.toISOString(),
-    dateModified: (atualizadoEm ?? publicadoEm)?.toISOString(),
-    author: { '@type': 'Person', name: autor ?? site.autora },
-    publisher: { '@type': 'Organization', name: site.nome, url: site.url },
-  }),
-};
+/*
+  O JSON-LD saiu daqui para o JsonLd.astro.
+
+  Este componente emitia um BlogPosting por conta própria, e o JsonLd.astro
+  emite Article para a mesma página — dois blocos concorrentes descrevendo o
+  mesmo conteúdo, que é ambiguidade que o Google não tem como resolver. Agora
+  existe uma fonte só, e ela tem endereço e área atendida.
+*/
+
 ---
 
 <title>{tituloCompleto}</title>
@@ -63,4 +57,3 @@ const jsonLd = {
 <meta name="twitter:description" content={descricao} />
 <meta name="twitter:image" content={imagemAbsoluta} />
 
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

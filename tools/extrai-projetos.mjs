@@ -45,6 +45,8 @@ const achaArquivo = (src) => {
 };
 
 const semAlt = [];
+/** Guarda os resumos já usados, para duas páginas não terem a mesma description. */
+const resumosUsados = new Set();
 
 for (const { slug, pasta, categoria, ordem } of PROJETOS) {
   const arquivo = join('_capturas', pasta, 'medidas.desktop.json');
@@ -128,7 +130,22 @@ for (const { slug, pasta, categoria, ordem } of PROJETOS) {
   if (!copiadas.length) { console.error(`${slug}: nenhuma imagem copiada`); continue; }
 
   const [capa, ...galeria] = copiadas;
-  const resumo = corpo[0] ? corpo[0].slice(0, 240) : `Projeto ${titulo}.`;
+  /*
+    O resumo não pode ser sempre o primeiro parágrafo: Casa IP e Studio abrem
+    com o MESMO texto na captura, e duas rotas com a mesma description é
+    conteúdo duplicado aos olhos do Google. Então escolhe-se o primeiro
+    parágrafo que ainda não foi usado por outro projeto.
+  */
+  // Itens de lista (começam com "·") são fragmento, não frase: servem de
+  // corpo, não de description. Só entram se não sobrar mais nada.
+  const frases = corpo.filter((p) => !p.trimStart().startsWith('·'));
+  const candidatos = frases.length ? [...frases, ...corpo] : corpo;
+  const inedito = candidatos.find((p) => !resumosUsados.has(p.slice(0, 80)));
+  const escolhido = inedito ?? corpo[0];
+  if (escolhido) resumosUsados.add(escolhido.slice(0, 80));
+  const resumo = escolhido
+    ? escolhido.replace(/\*\*/g, '').replace(/^·\s*/, '').slice(0, 240)
+    : `Projeto ${titulo}.`;
 
   const fm = [
     '---',

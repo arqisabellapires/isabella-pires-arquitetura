@@ -4,6 +4,7 @@ import '~/styles/tokens.css';
 import '~/styles/base.css';
 
 import Seo from '~/components/Seo.astro';
+import JsonLd from '~/components/JsonLd.astro';
 import { site } from '~/lib/site';
 
 interface Props {
@@ -44,6 +45,14 @@ const clarity = import.meta.env.PUBLIC_CLARITY_ID;
     <meta name="theme-color" content="#fbf7f4" />
 
     <Seo {...props} />
+
+    {/*
+      LocalBusiness em TODA página, com endereço e área atendida. O site não
+      tinha nenhum dado estruturado, e sem cidade associada não concorre por
+      "arquitetura Maringá" — que a pesquisa de SEO apontou como a única busca
+      que ele tem chance real de ganhar.
+    */}
+    <JsonLd tipo="negocio" />
   </head>
 
   <body>

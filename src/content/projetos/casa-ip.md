@@ -1,6 +1,6 @@
 ---
 titulo: "RESIDÊNCIA IP"
-resumo: "O ponto de partida do projeto foi a análise do **terreno** e da relação entre áreas externas e internas. A partir disso, definiu-se a **setorização funcional**, garantindo clareza no uso dos espaços:"
+resumo: "O ponto de partida do projeto foi a análise do terreno e da relação entre áreas externas e internas. A partir disso, definiu-se a setorização funcional, garantindo clareza no uso dos espaços:"
 capa: ./casa-ip/01.png
 capaAlt: ""  # TODO(gabriel): descrever a imagem
 galeria:

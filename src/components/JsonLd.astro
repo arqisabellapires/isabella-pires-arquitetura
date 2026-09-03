@@ -1,0 +1,88 @@
+---
+/**
+ * Dados estruturados. O site não tinha nenhum — zero JSON-LD nas 15 páginas,
+ * medido em §2.2 da spec —, e é o que faz o Google associar o negócio a
+ * Maringá.
+ *
+ * O tipo é `ArchitecturalService`, que existe no schema.org e é mais preciso
+ * que `LocalBusiness` genérico; `additionalType` mantém a compatibilidade com
+ * quem só entende o genérico.
+ *
+ * Todos os dados vêm de site.ts, que os extraiu da captura de /contato/.
+ * Nada aqui foi digitado à mão.
+ */
+import { site } from '~/lib/site';
+
+interface Props {
+  tipo?: 'negocio' | 'artigo' | 'migalhas';
+  titulo?: string;
+  descricao?: string;
+  imagem?: string;
+  publicadoEm?: Date;
+  atualizadoEm?: Date;
+  autor?: string;
+  migalhas?: { nome: string; href: string }[];
+}
+
+const { tipo = 'negocio', titulo, descricao, imagem, publicadoEm, atualizadoEm, autor, migalhas } =
+  Astro.props;
+
+const e = site.endereco;
+
+const negocio = {
+  '@context': 'https://schema.org',
+  '@type': 'ArchitecturalService',
+  additionalType: 'https://schema.org/ProfessionalService',
+  '@id': `${site.url}/#negocio`,
+  name: site.nome,
+  description: site.descricao,
+  url: site.url,
+  telephone: site.telefoneE164,
+  email: site.email,
+  image: new URL(site.imagemPadrao, site.url).href,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: `${e.logradouro} - ${e.complemento}`,
+    addressLocality: e.cidade,
+    addressRegion: e.estado,
+    postalCode: e.cep,
+    addressCountry: e.pais,
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Maringá' },
+    { '@type': 'State', name: 'Paraná' },
+  ],
+  founder: { '@type': 'Person', name: site.autora },
+  sameAs: [site.redes.instagram, site.redes.facebook, site.redes.linkedin],
+  knowsLanguage: site.idioma,
+};
+
+const artigo = publicadoEm && {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: titulo,
+  description: descricao,
+  image: imagem ? new URL(imagem, site.url).href : undefined,
+  datePublished: publicadoEm.toISOString(),
+  dateModified: (atualizadoEm ?? publicadoEm).toISOString(),
+  author: { '@type': 'Person', name: autor ?? site.autora },
+  publisher: { '@id': `${site.url}/#negocio` },
+  mainEntityOfPage: Astro.url.href,
+  inLanguage: site.idioma,
+};
+
+const trilha = migalhas && {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: migalhas.map((m, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: m.nome,
+    item: new URL(m.href, site.url).href,
+  })),
+};
+
+const dados = tipo === 'artigo' ? artigo : tipo === 'migalhas' ? trilha : negocio;
+---
+
+{dados && <script type="application/ld+json" set:html={JSON.stringify(dados)} />}

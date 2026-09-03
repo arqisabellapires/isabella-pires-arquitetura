@@ -1,6 +1,6 @@
 ---
 titulo: "AP MM"
-resumo: "O Projeto parte da necessidade de **modernizar e integrar a sala de estar e jantar**, criando um espaço aconchegante, prático e visualmente elegante. A setorização organiza os usos de forma clara:"
+resumo: "O Projeto parte da necessidade de modernizar e integrar a sala de estar e jantar, criando um espaço aconchegante, prático e visualmente elegante. A setorização organiza os usos de forma clara:"
 capa: ./ap-mm/01.png
 capaAlt: ""  # TODO(gabriel): descrever a imagem
 galeria:

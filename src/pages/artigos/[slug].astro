@@ -13,6 +13,7 @@ import { Image } from 'astro:assets';
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
+import JsonLd from '~/components/JsonLd.astro';
 import { site } from '~/lib/site';
 import '~/styles/artigo.css';
 
@@ -46,7 +47,29 @@ const descricao = d.seoDescricao ?? d.resumo;
 >
   <Cabecalho slot="cabecalho" />
 
+  {/* Article + BreadcrumbList, além do LocalBusiness que o Base já injeta. */}
+  <JsonLd
+    tipo="artigo"
+    titulo={d.titulo}
+    descricao={descricao}
+    publicadoEm={d.publicadoEm}
+    atualizadoEm={d.atualizadoEm}
+    autor={d.autor}
+  />
+  <JsonLd
+    tipo="migalhas"
+    migalhas={[
+      { nome: 'Início', href: '/' },
+      { nome: 'Blog', href: '/artigos' },
+      { nome: d.titulo, href: `/artigos/${artigo.id}` },
+    ]}
+  />
+
   <article class="artigo">
+    <nav class="migalhas" aria-label="Migalhas">
+      <a href="/">Início</a> <span aria-hidden="true">/</span>
+      <a href="/artigos">Blog</a>
+    </nav>
     <p class="artigo-categoria">{d.categoria}</p>
     <p class="artigo-data">
       <time datetime={d.publicadoEm.toISOString()}>{dataLegivel(d.publicadoEm)}</time>
@@ -66,6 +89,12 @@ const descricao = d.seoDescricao ?? d.resumo;
 
 <style>
   .artigo { padding-block: 120px 64px; }
+  .migalhas {
+    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
+    color: #341f04;
+    margin-bottom: 32px;
+  }
+  .migalhas a { color: inherit; text-decoration: none; }
   .artigo-titulo {
     font: 700 40px/44px 'Inter', system-ui, sans-serif;
     color: #000000;

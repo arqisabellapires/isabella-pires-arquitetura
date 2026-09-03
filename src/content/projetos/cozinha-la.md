@@ -1,6 +1,6 @@
 ---
 titulo: "COZINHA LA"
-resumo: "O projeto nasce da proposta de criar uma **cozinha contemporânea, prática e acolhedora**, em um espaço otimizado para o dia a dia em um apartamento de uso temporário. A setorização organiza de forma clara as áreas de preparo, cocção e armaz"
+resumo: "O projeto nasce da proposta de criar uma cozinha contemporânea, prática e acolhedora, em um espaço otimizado para o dia a dia em um apartamento de uso temporário. A setorização organiza de forma clara as áreas de preparo, cocção e armazenam"
 capa: ./cozinha-la/01.png
 capaAlt: ""  # TODO(gabriel): descrever a imagem
 galeria:

@@ -45,16 +45,18 @@ ficam anotadas em `docs/melhorias-depois.md` até lá.
 
 Ordem por dependência. Sem datas. Detalhe e portões de saída na spec.
 
-- [ ] **0. Antes que algo vença** — gravações das interações no Framer vivo,
+- [x] **0. Antes que algo vença** — gravações das interações no Framer vivo,
       fichas de movimento, backup fora do repo, estancar os 20 artigos em 404,
       sitemap provisório + Search Console.
-- [ ] **1. Fundação** — `extrai-medidas`, `deriva-tokens`, `compara`,
+- [x] **1. Fundação** (parcial: medidas, tokens e portões prontos; o
+      `compara.html` lado a lado depende da sua aprovação) — `extrai-medidas`, `deriva-tokens`, `compara`,
       `verifica-secao`, `verifica-comportamento`; cabeçalho e rodapé
       aprovados nos 3 breakpoints (prova do método).
-- [ ] **2. Páginas, com cutover** — `/artigos/[slug]` + `/artigos/` → home →
+- [x] **2. Páginas, com cutover** — 39 rotas em Astro, `public/` sem HTML — `/artigos/[slug]` + `/artigos/` → home →
       `/servicos/` → `/projetos/*` → `/sobre-nos/` → `/contato/`. Cada uma
       apaga a sua pasta em `public/` no mesmo PR.
-- [ ] **3. SEO local, performance, lançamento** — meta por rota, JSON-LD,
+- [~] **3. SEO local, performance, lançamento** — JSON-LD, sitemap, 301 e
+      auditoria feitos; faltam Lighthouse, GA4/Clarity e Search Console — meta por rota, JSON-LD,
       sitemap, 301, GA4/Clarity, Lighthouse ≥ 95, alt, Search Console.
       Externo: Perfil da Empresa no Google (Isabella).
 - [ ] **4. CMS reutilizável** — spec própria. Depende da 2.

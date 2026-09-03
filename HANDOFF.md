@@ -3,165 +3,127 @@
 Migração do site do Framer para código próprio. Este documento é o estado
 completo do projeto. Leia antes de tocar em qualquer coisa.
 
-> **Rumo decidido em 01/09/2026:** reconstruir em Astro usando as capturas
-> como especificação medida, com cutover página por página, e CMS de blog
-> próprio e reutilizável. O site estático em `public/` é a ponte, não o
-> destino. Desenho, fases e portões em
-> [docs/superpowers/specs/](docs/superpowers/specs/) e resumo em
-> [PLANO.md](PLANO.md). As seções 4 e 5 abaixo descrevem o **estado da
-> ponte**; onde conflitarem com a spec, a spec manda.
+> **A ponte acabou em 03/09/2026.** O HTML processado do Framer que ficava em
+> `public/` foi substituído, página por página, por rotas Astro — não existe
+> mais. As Fases 0, 1 e 2 da spec estão fechadas.
+>
+> Desenho e fases em [docs/superpowers/specs/](docs/superpowers/specs/),
+> resumo em [PLANO.md](PLANO.md). **Aviso de leitura:** as seções 3 e 4
+> abaixo descreviam o estado da ponte e estão em boa parte obsoletas; o que
+> vale é a seção 0. Onde conflitarem, a seção 0 e a spec mandam.
 
 ## 0. Onde a execução parou — leia isto primeiro
 
-Estado em 02/09/2026, depois de 11 commits (`ce30647`…`883d465`), todos na
-`main` e pushados. **A Fase 0 fechou.**
+Estado em 03/09/2026, depois de 19 commits, todos na `main` e pushados.
+**As Fases 0, 1 e 2 fecharam. O site inteiro é Astro; não existe mais um
+único `.html` do Framer no ar.**
 
-### Fase 0 — antes que o Framer vença
+### O que mudou nesta rodada, em número
 
-| Item | Estado |
-|---|---|
-| Barra "Edit Content" removida | ✅ `92588a9` |
-| Fichas de movimento — 17, cobrindo os 10 trocadores e os 5 pares | ✅ `33dbb86` · [`_capturas/motion-fichas.json`](_capturas/motion-fichas.json) |
-| 404 dos artigos estancados | ✅ `935f7ec` · **35/35 URLs do sitemap do Framer terminam em 200**, verificado no domínio |
-| Sitemap provisório no ar | ✅ `935f7ec` · `/sitemap-index.xml` + `/sitemap-0.xml`, 15 páginas |
-| Conferência do sitemap do Framer (35 URLs) | ✅ 15 capturadas + exatamente os 20 artigos; nada mais sem captura |
-| Gravações de referência | ✅ `f02617d` · **133/133 com movimento, zero paradas** (`tools/checa-gravacoes.mjs`) |
-| Backup fora do repositório | ✅ `~/backups/isabella-pires/framer-2026-09-02.tar.gz` — 298,8 MB, 800/800 arquivos conferidos, sha256 no manifesto |
-| Search Console | ⬜ **externo, não é código** — conta da Isabella; ver §4.7 |
+| | Antes (Framer processado) | Agora (Astro) |
+|---|---|---|
+| Páginas | 15 HTML estáticos | **39 rotas** |
+| HTML por página | 250–630 KB | **17 KB de média, 36 no pior caso** |
+| JavaScript | 3 DOMs + runtime | **4 KB no site inteiro** |
+| `<h1>` | 0 em 10 das 15 páginas | **1 em todas as 39** |
+| `<title>` | igual em 5 páginas | **único em todas** |
+| JSON-LD | nenhum | **89 blocos, todos válidos** |
+| `public/` | ~180 MB | **19 MB** (fontes, imagens de artigo, robots) |
+| Artigos no ar | 5 (20 em 302) | **25, com 301 para o artigo real** |
 
-**Portão de saída da Fase 0: cumprido.** `node tools/checa-gravacoes.mjs`
-abre cada `.webm` no Chromium, amostra 4 quadros e mede a diferença entre
-eles — vídeo parado é gravação que não pegou a interação. Deu 133 de 133 com
-movimento.
+### Portões, todos medidos
 
-O disco tinha 134 arquivos, e o 134º não era gravação faltando nem sobrando:
-era um `page@<hash>.webm` de **zero byte** que o Playwright deixa para trás.
-Foi apagado. Era ele a diferença entre os 133 esperados e os 134 em disco.
+```bash
+npx astro build                # 39 páginas
+node tools/audita-paginas.mjs  # estrutura, metadados, a11y — passa
+node tools/valida-tokens.mjs   # o CSS de tokens é válido no Chromium
+```
 
-O backup roda com `node tools/backup-framer.mjs` e é conferido, não
-prometido: o manifesto lista as cinco pastas com contagem e tamanho, e o
-script confere quantos arquivos entraram no tar contra os esperados
-(800/800). **Fica no mesmo disco** — protege contra o vencimento do Framer e
-contra apagar sem querer, não contra perder a máquina. Copiar para fora
-quando houver destino externo.
+`audita-paginas.mjs` é novo e substitui o `audita-lighthouse.mjs` que o
+`package.json` citava e nunca existiu. Ele mede `<h1>` único,
+title/description únicos no site, `lang`, canonical, `alt` em toda imagem,
+hierarquia de heading sem salto e ausência de `framer-`. Foi testado contra
+defeito injetado e reprova com saída 1.
 
-### Fase 1 — fundação
+**O que ele não mede, e por que:** Performance, LCP e CLS precisam do
+Lighthouse, que não está instalado — instalar dependência grande é decisão
+sua. Rode o PageSpeed Insights sobre o domínio depois do deploy, ou
+`npm i -D lighthouse` se quiser no build.
 
-| Ferramenta | Estado |
-|---|---|
-| `tools/extrai-medidas.mjs` | ✅ **rodado nas 45**: 10.816 elementos, 4,8 MB versionados, zero recursos falhados |
-| `tools/deriva-tokens.mjs` | ✅ **rodado**; três defeitos consertados (`883d465`) → `src/styles/tokens.derivados.css` |
-| `tools/valida-tokens.mjs` | ✅ novo — o portão do arquivo de tokens, no Chromium |
-| `tools/compara.mjs` | ✅ fumaça: painel, captura, `/novo/`, `/novo/servicos/` e asset, 200 nos cinco |
-| `tools/verifica-secao.mjs` | ✅ testado contra a ponte: 0,19% / 0,10% / 0,02% nos 3 breakpoints |
-| `tools/mede-dom.mjs` | ✅ medição compartilhada pelos dois acima |
-| `verifica-comportamento.mjs` | ⬜ não começou |
-| `Base.astro`, `Seo.astro`, `JsonLd.astro`, `Cabecalho`, `Rodape`, `mola.ts` | ⬜ não começaram |
-| `docs/reconstruir-uma-secao.md` | ⬜ não começou |
+### As quatro travas da Brevo caíram
 
-### As medidas, e o que elas custaram para ficar confiáveis
+O §4.6 listava o formulário como bloqueado por quatro coisas fora do código.
+Fui conferir: **as quatro já estavam resolvidas** — você mexeu na Brevo desde
+que aquilo foi escrito. A API responde 200, o destino e a lista (id 3) estão
+preenchidos, e o domínio consta autenticado.
 
-`extrai-medidas.mjs` rodou nas 15 páginas × 3 breakpoints: **10.816
-elementos**, 4,8 MB de JSON versionado. Depois deste commit a especificação
-não depende mais da CDN do Framer — que é o ponto todo, com 30/09/2026 no
-calendário.
+Então o formulário foi testado contra a API real, não em simulação: campo
+faltando → 422, e-mail inválido → 422, isca preenchida → 200 silencioso,
+**envio válido → 200 e e-mail entregue**, newsletter → 200, sem JavaScript →
+303. O 403 das primeiras tentativas era a proteção CSRF do Astro recusando
+POST sem `Origin` — comportamento correto.
 
-Três conferências antes de versionar, porque medida sem procedência é
-memória com sotaque de número:
+### O que falta, em ordem
 
-- **Zero recursos falhados** nos 45 arquivos. Fonte e imagem ainda vieram do
-  `framerusercontent.com`. Se algum tivesse falhado, a tipografia medida
-  seria a do fallback, e ninguém perceberia depois.
-- **Determinístico**: rodar `servicos.desktop` de novo dá arquivo idêntico
-  byte a byte.
-- **Bate com o já testado**: home desktop 542, mobile 527.
+**Decisões suas, que eu não podia tomar:**
 
-`deriva-tokens.mjs` nunca tinha rodado. Rodou, e os três defeitos que
-apareceram têm todos a mesma forma — **nenhum dava erro em lugar nenhum**,
-porque CSS inválido é descartado em silêncio:
+1. **Os `alt` das 20 imagens de projeto.** Estão vazios com `TODO(gabriel)`
+   no frontmatter de `src/content/projetos/*.md`. Texto é seu; não inventei.
+2. **Nomear os tokens.** `src/styles/tokens.derivados.css` tem os 517 valores
+   medidos, com procedência em `_capturas/tokens-relatorio.json`. O
+   `tokens.css` atual segue intacto. Quando decidir os nomes:
+   `node tools/deriva-tokens.mjs --sobrescreve`.
+   Vale olhar: `#6c757d` e `#212529` são cinzas do Bootstrap vindos de um
+   widget e `Segoe UI` é degrau de fallback — provavelmente sujeira, não
+   token.
+3. **As três páginas de política** (Termos, Privacidade, Cookies). No Framer
+   os links do rodapé apontavam para lugar nenhum; viraram texto, não link
+   morto. Criar política jurídica não é trabalho de quem executa.
+4. **`PUBLIC_GA4_ID` e `PUBLIC_CLARITY_ID`** não existem no `.env`. O
+   `Base.astro` já injeta os dois quando as variáveis aparecerem.
 
-1. O cabeçalho gerado citava o glob das medidas, e a barra colada no
-   asterisco **fecha comentário em CSS**. Da terceira linha em diante o
-   arquivo era lixo sintático e o navegador jogava fora o `:root` inteiro —
-   as 517 custom properties. Só o `@media` do fim sobrevivia.
-2. Toda mola com bounce 0 saía com `NaN` no lugar dos pontos da curva:
-   amortecimento crítico divide por zero na fórmula subamortecida. Eram 4
-   das 10. **Vale além deste arquivo** — é a mesma `curvaDeMola()` que a
-   spec manda o `mola.ts` herdar.
-3. Cor e tipografia contavam elemento que não pinta texto. `color` é
-   herdado, então `div` de layout votava: daí vinha `#0000ee` com 314
-   ocorrências, que é o azul de link padrão do navegador. Mais
-   `strong`/`span`/`a` herdando do parágrafo e votando de novo — 29% dos
-   elementos com texto.
+**Externo, não é código:**
 
-Daí nasceu **`tools/valida-tokens.mjs`**, que abre o arquivo no Chromium e
-confere que o `:root` sobrevive ao parser, que nada virou `NaN` e que cada
-mola é aceita como easing de verdade. Foi testado contra os dois defeitos
-sintáticos reais e reprova os dois com saída 1 — portão que não sabe falhar
-não é portão.
+5. **Search Console** — criar a propriedade (conta da Isabella) e enviar
+   `https://www.isabellapiresarquitetura.com.br/sitemap-index.xml`, que agora
+   é gerado de verdade pelo `@astrojs/sitemap` com as 39 URLs.
+6. **Perfil da Empresa no Google**, com site, telefone e categoria
+   "Arquiteto". É o item de maior efeito para "arquitetura Maringá" e não
+   depende de nós.
 
-**Nomear os tokens é decisão do Gabriel.** `src/styles/tokens.css` continua
-intacto; o derivado saiu ao lado, com a procedência de cada valor em
-`_capturas/tokens-relatorio.json` (quantas vezes, em que páginas). O que
-sobrou de estranho lá não é defeito: `#6c757d` e `#212529` são cinzas do
-Bootstrap vindos de um widget, `Segoe UI` é degrau de pilha de fallback. É
-por frequência e procedência que se decide o que vira token e o que é
-sujeira de terceiro.
+**Trabalho de código que sobrou:**
 
-**Próximo passo concreto, em ordem:**
-
-1. O Gabriel nomeia os tokens (ou aprova nomear por papel) e então
-   `node tools/deriva-tokens.mjs --sobrescreve` substitui o `tokens.css`.
-2. `secoes.json` da home — o mapa `data-secao` → `nomeFramer`, que o
-   `verifica-secao.mjs` exige. Os nomes disponíveis saem do campo
-   `nomeFramer` das medidas: são **170 na home desktop**, e são os nomes que
-   a arquiteta deu ("Botão Primario", "Frame 3034"), não as classes
-   `framer-v-*` voláteis da armadilha §6.9.
-3. `Base.astro`, `Seo.astro`, `JsonLd.astro`, `mola.ts` e `motion.css`.
-4. `Cabecalho.astro` e `Rodape.astro` das medidas — o portão da Fase 1.
-5. `verifica-comportamento.mjs` e `docs/reconstruir-uma-secao.md`.
-
-### O que a medição derrubou da spec e do próprio HANDOFF
-
-Três correções nasceram de medir o Framer vivo, e a spec de reconstrução
-ainda não sabe delas:
-
-1. **O acordeão está em `/sobre-nos/`, não em `/servicos/`** (§4.3). A Fase 2
-   da spec, item 3, diz o contrário. `/servicos/` não tem máquina de estado
-   nenhuma além de cabeçalho, rodapé e CTA.
-2. **São dois carrosséis** (§4.2): `nkDfbQNR8` na home, nos 3 breakpoints, e
-   `a6Nde7smU` em `/projetos/`, só em tablet e mobile.
-3. **`variantes.json` mente sobre o menu de celular.** Ele dá o par
-   `framer-v-14nbjqd → framer-v-3h70cy` com altura 223. Medido no Framer
-   vivo: `framer-v-l6houv` (59 px) → `framer-v-jybs8a` (**519 px**). É a
-   armadilha §6.9 na prática — as classes `framer-v-*` não sobrevivem a uma
-   republicação. **Medida manda sobre fonte extraído.**
-
-Nenhuma das três foi levada para dentro da spec: mexer na spec é decisão do
-Gabriel, não de quem executa.
+7. **Deploy e conferência no domínio.** Nada disto foi para produção nesta
+   rodada — está tudo na `main`, buildando. Falta ver de pé.
+8. **Comparação lado a lado.** A spec §5.3 diz que quem aprova é você
+   olhando o `compara.html`, por seção e breakpoint. Eu **não posso aprovar
+   no seu lugar**, então nenhuma página foi marcada como aceita — só como
+   construída a partir das medidas e passando nos portões objetivos.
+9. **Fases 4 e 5** — o CMS de blog (spec própria) e os 40 posts. Nem
+   começaram.
 
 ### Lições de método
 
-Da rodada anterior: o gravador rodou 133 vídeos e mediu resposta em 5 — e o
-parado era o gravador, não o site. A causa: foi testado **numa ficha só**
-antes de soltar as 133, e essa ficha era um dos casos que já funcionavam.
-**Antes de qualquer rodada longa, teste em pelo menos um caso que você
-espera que falhe.**
+Da rodada das gravações: teste a rodada longa em pelo menos um caso que você
+espera que **falhe**, antes de soltar.
 
-Desta rodada, a mesma lição por outro caminho: os três defeitos do
-`deriva-tokens` **não davam erro em lugar nenhum**. Nem no Node, nem no
-navegador, nem numa leitura atenta do CSS gerado — que parecia impecável com
-o comentário de cabeçalho quebrado logo na terceira linha. Formatos que
-descartam o inválido em silêncio (CSS é o caso clássico) não têm portão de
-graça: **quem verifica é o consumidor real, não os olhos.** Foi abrir o
-arquivo no Chromium e perguntar "quantas propriedades chegaram?" que revelou
-os três de uma vez.
+Dos tokens: **quem verifica é o consumidor real, não os olhos.** Os três
+defeitos do `deriva-tokens` não davam erro em lugar nenhum — CSS inválido é
+descartado em silêncio. Foi abrir o arquivo no Chromium e perguntar "quantas
+propriedades chegaram?" que revelou os três.
 
-E o corolário: `valida-tokens.mjs` só vale porque foi testado contra os
-defeitos reais e reprovou os dois. **Portão que nunca foi visto falhando não
-é portão, é decoração.**
+Desta rodada, uma nova e cara: **medida serve para geometria, não para
+prosa.** O `medidas.json` guarda um elemento por caixa, então um `<p>` com
+`<strong>` dentro vira três entradas e o texto do negrito some do parágrafo —
+os projetos saíram com "a análise do e da relação", sem a palavra "terreno".
+Pior: a home anima títulos **letra a letra**, cada uma num `<span>`, e os
+quatro projetos chegaram a se chamar "I" porque o rodapé tem um "ISABELLA"
+decorativo a 110px. Para texto, a fonte é o HTML da captura; a medida é para
+caixa, fonte e cor.
 
----
+E o corolário de sempre: portão que nunca foi visto falhando é decoração. O
+`audita-paginas.mjs` e o `valida-tokens.mjs` foram os dois testados contra
+defeito injetado antes de eu confiar neles.
 
 ## 1. O que é o projeto
 
@@ -231,10 +193,16 @@ node tools/diagnostica-diferenca.mjs /servicos/ mobile
 | `valida-tokens.mjs` | **Portão dos tokens.** Confere no Chromium que o CSS é válido |
 | `compara.mjs` | Lado a lado Framer × Astro, para o Gabriel aprovar |
 | `verifica-secao.mjs` | Portão por seção, com as diferenças de medida em texto |
+| `audita-paginas.mjs` | **Portão do site construído.** h1, title, alt, hierarquia, zero framer- |
+| `extrai-projetos.mjs` | As 4 capturas de projeto viram a coleção `projetos` |
 
 ---
 
 ## 3. Estado atual
+
+> **Obsoleta desde 03/09/2026.** Esta seção descreve o site estático
+> processado, que não existe mais. Fica como registro do que foi medido na
+> época. O estado corrente é a seção 0.
 
 ### Verificado
 
@@ -308,9 +276,10 @@ public/img-artigos/  19 imagens de dentro dos artigos, WebP (versionado)
 
 ## 4. O que falta
 
-> Esta seção descreve o que falta **no site estático que está no ar**. O
-> plano de substituí-lo está na spec; itens daqui só valem enquanto a
-> página correspondente não tiver sido reconstruída.
+> **Quase toda obsoleta desde 03/09/2026:** o site estático foi substituído,
+> então os itens que falavam dele não se aplicam mais. Sobrevivem como
+> referência os fatos medidos sobre o Framer (§4.2, §4.3, §4.4) e as
+> pendências externas (§4.7). O que falta de verdade está na seção 0.
 
 Em ordem de dependência: os itens 1 e 2 destravam vários outros.
 
@@ -599,8 +568,12 @@ Tudo em `.env` (ignorado pelo git). `.env.example` é o formulário em branco.
 `PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`,
 `SUPABASE_DATABASE_PASSWORD`.
 
-**Faltam:** `BREVO_DESTINO_EMAIL`, `BREVO_LISTA_NEWSLETTER_ID`,
-`PUBLIC_GA4_ID`, `PUBLIC_CLARITY_ID`.
+**Preenchidas desde então:** `BREVO_DESTINO_EMAIL` e
+`BREVO_LISTA_NEWSLETTER_ID` (= 3). Verificado em 03/09/2026: a API da Brevo
+responde 200, o domínio consta autenticado, e o formulário entrega e-mail de
+verdade.
+
+**Faltam:** `PUBLIC_GA4_ID`, `PUBLIC_CLARITY_ID`.
 
 Na Vercel já estão (produção, preview e dev): `BREVO_API_KEY` (encrypted),
 `BREVO_REMETENTE_EMAIL`, `BREVO_REMETENTE_NOME`. Variável nova só vale a

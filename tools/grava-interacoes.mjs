@@ -13,7 +13,7 @@
  * dizer se *parece* igual. Quem responde isso é o Gabriel, olhando o vídeo.
  *
  * O alvo de cada ficha é encontrado pelas classes de variante do componente
- * em public/motion.json — o mesmo caminho que a sonda de presença usou para
+ * em _capturas/motion.json — o mesmo caminho que a sonda de presença usou para
  * escrever as fichas. Nada de seletor adivinhado.
  *
  * Saídas:
@@ -42,7 +42,7 @@ const DIR_VIDEOS = new URL('../_capturas/_videos/', import.meta.url);
 mkdirSync(DIR_VIDEOS, { recursive: true });
 
 const arquivo = JSON.parse(readFileSync(CAMINHO_FICHAS, 'utf8'));
-const motion = JSON.parse(readFileSync(new URL('../public/motion.json', import.meta.url), 'utf8'));
+const motion = JSON.parse(readFileSync(new URL('../_capturas/motion.json', import.meta.url), 'utf8'));
 
 /** componente (arquivo .js) → classes de variante dele */
 const CLASSES_DE = Object.fromEntries(

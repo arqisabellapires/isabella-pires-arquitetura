@@ -3,7 +3,7 @@
  * Inventário do que se move no Framer — a varredura que o item 4.4 pede.
  *
  *   node tools/inventario-motion.mjs            # relatório em texto
- *   node tools/inventario-motion.mjs --json     # public/motion.json
+ *   node tools/inventario-motion.mjs --json     # _capturas/motion.json
  *
  * O `extrai-variantes.mjs` responde "quais pares repouso→resposta existem",
  * e só enxerga par cujo NOME tem hover/aberto. Isso deixa de fora a classe
@@ -151,8 +151,8 @@ for (const arquivo of percorre(RAIZ)) {
 }
 
 if (JSON_SAIDA) {
-  writeFileSync('public/motion.json', JSON.stringify(componentes, null, 2));
-  console.log(`✓ ${componentes.length} componentes em public/motion.json`);
+  writeFileSync('_capturas/motion.json', JSON.stringify(componentes, null, 2));
+  console.log(`✓ ${componentes.length} componentes em _capturas/motion.json`);
   process.exit(0);
 }
 

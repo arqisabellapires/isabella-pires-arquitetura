@@ -14,7 +14,7 @@
  * o HTML não usa — são justamente os estados de hover e aberto. Com o mapa
  * abaixo, reviver a interação é trocar a classe.
  *
- * Saída: public/variantes.json (esta tabela é fato sobre o design, não
+ * Saída: _capturas/variantes.json (esta tabela é fato sobre o design, não
  * código do Framer)
  */
 import { readdirSync, readFileSync, writeFileSync, statSync, existsSync } from 'node:fs';
@@ -137,7 +137,7 @@ for (const c of componentes) {
 
 const comHover = pares.filter((p) => p.gatilho === 'hover').length;
 const comAberto = pares.filter((p) => p.gatilho === 'clique').length;
-writeFileSync('public/variantes.json', JSON.stringify({ pares }, null, 1));
+writeFileSync('_capturas/variantes.json', JSON.stringify({ pares }, null, 1));
 
 console.log(`✓ ${componentes.length} componentes, ${componentes.reduce((n, c) => n + c.variantes.length, 0)} variantes`);
 console.log(`✓ ${pares.length} pares: ${comHover} de hover, ${comAberto} de clique\n`);

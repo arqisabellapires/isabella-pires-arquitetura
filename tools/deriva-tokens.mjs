@@ -153,7 +153,7 @@ function deFisica({ damping, stiffness, mass = 1 }) {
 const linear = (duracao, bounce) =>
   `linear(${curvaDeMola(duracao, bounce).map((v) => Math.round(v * 10000) / 10000).join(', ')})`;
 
-const motion = JSON.parse(readFileSync('public/motion.json', 'utf8'));
+const motion = JSON.parse(readFileSync('_capturas/motion.json', 'utf8'));
 const molas = new Map();
 for (const comp of motion) {
   for (const t of comp.transicoes ?? []) {

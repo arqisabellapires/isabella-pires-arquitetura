@@ -21,7 +21,7 @@ if (!existsSync(REF)) {
   process.exit(1);
 }
 const esperado = JSON.parse(readFileSync(REF, 'utf8'));
-const mapa = JSON.parse(readFileSync('public/carrossel.json', 'utf8'));
+const mapa = JSON.parse(readFileSync('_capturas/carrossel.json', 'utf8'));
 const TODAS = Object.keys(mapa.projetos);
 const SEL = TODAS.map((c) => '.' + c).join(',');
 

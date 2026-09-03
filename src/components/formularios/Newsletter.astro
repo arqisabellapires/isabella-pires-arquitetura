@@ -1,0 +1,110 @@
+---
+/**
+ * Newsletter. Textos extraídos de _capturas/artigos/desktop.html:
+ * "Acompanhe-nos através de nossa Newsletter!", "Inscreva-se" e
+ * "Sem spam, você pode se desinscrever a qualquer momento."
+ *
+ * Envia sem JavaScript, como o de contato. Verificado contra a API real da
+ * Brevo: assinatura devolve 200 e o contato entra na lista.
+ */
+import { CAMPOS_ISCA } from '~/lib/antispam';
+---
+
+<section class="news" aria-labelledby="news-titulo">
+  <h2 class="news__titulo" id="news-titulo">Acompanhe-nos através de nossa Newsletter!</h2>
+
+  <form class="news__form" method="post" action="/api/newsletter" novalidate>
+    <label class="news__rotulo" for="news-email">Seu melhor e-mail</label>
+    <div class="news__linha">
+      <input
+        id="news-email"
+        name="email"
+        type="email"
+        required
+        autocomplete="email"
+        maxlength="254"
+        placeholder="voce@exemplo.com"
+      />
+      <button type="submit">Inscreva-se</button>
+    </div>
+
+    <div class="news__iscas" aria-hidden="true">
+      {CAMPOS_ISCA.map((c) => <input type="text" name={c} tabindex="-1" autocomplete="off" />)}
+    </div>
+
+    <p class="news__aviso">Sem spam, você pode se desinscrever a qualquer momento.</p>
+    <p class="news__estado" role="status" aria-live="polite" data-news-estado></p>
+  </form>
+</section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.news__form');
+  const estado = document.querySelector<HTMLElement>('[data-news-estado]');
+
+  if (form && estado) {
+    form.addEventListener('submit', async (evento) => {
+      evento.preventDefault();
+      estado.textContent = 'Enviando…';
+      try {
+        const r = await fetch('/api/newsletter', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { accept: 'application/json' },
+        });
+        if (r.ok) { form.reset(); estado.textContent = 'Pronto! Você está inscrito.'; }
+        else { const d = await r.json().catch(() => ({})); estado.textContent = d.erro ?? 'Não foi possível inscrever.'; }
+      } catch { estado.textContent = 'Sem conexão. Tente novamente.'; }
+    });
+  }
+</script>
+
+<style>
+  .news { background: #f0d9c7; border-radius: 12px; margin-top: 64px; padding: 40px 32px; }
+  .news__titulo {
+    font: 700 32px/1.2 'Mulish', system-ui, sans-serif;
+    color: #21201f;
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  .news__rotulo {
+    display: block;
+    font: 500 14px/1.2 'Inter', system-ui, sans-serif;
+    color: #483b2a;
+    margin-bottom: 8px;
+  }
+  .news__linha { display: flex; flex-wrap: wrap; gap: 12px; }
+  .news__linha input {
+    flex: 1 1 260px;
+    font: 400 16px/1.4 'Mulish', system-ui, sans-serif;
+    background: #ffffff;
+    border: 1px solid #e0cbb8;
+    border-radius: 999px;
+    padding: 14px 20px;
+  }
+  .news__linha button {
+    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
+    background: #341f04;
+    color: #ffffff;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    padding: 14px 32px;
+  }
+  .news__iscas {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .news__aviso {
+    font: 400 14px/1.4 'Mulish', system-ui, sans-serif;
+    color: #5a5755;
+    margin: 12px 0 0;
+  }
+  .news__estado { font: 400 14px/1.4 'Mulish', system-ui, sans-serif; margin: 8px 0 0; }
+  .news__estado:empty { display: none; }
+  @media (max-width: 809.98px) {
+    .news__titulo { font-size: 24px; }
+  }
+</style>

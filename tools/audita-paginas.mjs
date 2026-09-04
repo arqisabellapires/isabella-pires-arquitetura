@@ -47,6 +47,65 @@ for (const f of arquivos) {
     canonica: document.querySelector('link[rel="canonical"]')?.href ?? '',
     imgs: document.querySelectorAll('img').length,
     imgsSemAlt: [...document.querySelectorAll('img')].filter((i) => !i.hasAttribute('alt')).length,
+    /*
+      Contraste de texto sobre o fundo real.
+
+      Existe porque o título da home foi para o preview ILEGÍVEL: marrom
+      #341f04 sobre fundo #21201f. O base.css pinta todo h1..h4 com a cor de
+      tinta, e isso vence a herança de uma seção escura — quem não declara
+      `color` explícito herda o marrom. Build, estrutura e metadados passavam;
+      só o olho pegava.
+
+      O limite é 3:1, que é o mínimo da WCAG para texto grande. Não é
+      auditoria de acessibilidade completa: é rede para "texto sumiu no
+      fundo", que é o defeito que aconteceu.
+    */
+    semContraste: (() => {
+      const lum = (c) => {
+        const [r, g, b] = c.match(/\d+/g).slice(0, 3).map((v) => {
+          const s = +v / 255;
+          return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+        });
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      };
+      /*
+        Devolve null quando há imagem atrás — texto sobre foto é decisão de
+        composição, e o contraste real depende do pixel, não do CSS. Sem esta
+        saída o verificador acusava os 4 títulos de projeto como "branco sobre
+        branco", quando eles estão perfeitamente legíveis sobre a capa.
+      */
+      const fundoDe = (el) => {
+        for (let n = el; n; n = n.parentElement) {
+          const cs = getComputedStyle(n);
+          if (cs.backgroundImage && cs.backgroundImage !== 'none') return null;
+          if (n.previousElementSibling?.tagName === 'IMG' || n.parentElement?.querySelector(':scope > img')) return null;
+          const bg = cs.backgroundColor;
+          if (bg && !/rgba\(0, 0, 0, 0\)|transparent/.test(bg)) return bg;
+        }
+        return 'rgb(255, 255, 255)';
+      };
+      const ruins = [];
+      for (const el of document.querySelectorAll('h1, h2, h3, p, a, li, span')) {
+        const t = el.textContent?.trim();
+        /*
+          Pular elemento com filhos serve para não medir o contêiner no lugar
+          do texto — mas "tem filho" não é o mesmo que "tem filho com texto".
+          O <h1> do herói tem um <br> dentro, e por causa disso o verificador
+          passou batido justamente pelo bug que o motivou. Só pula quando
+          algum filho carrega texto próprio.
+        */
+        if (!t) continue;
+        if ([...el.children].some((f) => f.textContent?.trim())) continue;
+        const cs = getComputedStyle(el);
+        if (cs.display === 'none' || cs.visibility === 'hidden' || +cs.opacity === 0) continue;
+        const cor = cs.color, fundo = fundoDe(el);
+        if (!cor.startsWith('rgb') || !fundo) continue;
+        const [a, b] = [lum(cor), lum(fundo)].sort((x, y) => y - x);
+        const razao = (a + 0.05) / (b + 0.05);
+        if (razao < 3) ruins.push({ tag: el.tagName.toLowerCase(), texto: t.slice(0, 28), cor, fundo, razao: razao.toFixed(2) });
+      }
+      return ruins.slice(0, 4);
+    })(),
     // Hierarquia: um h3 não pode aparecer antes de existir um h2.
     saltos: (() => {
       const níveis = [...document.querySelectorAll('h1,h2,h3,h4,h5,h6')].map((h) => +h.tagName[1]);
@@ -57,6 +116,7 @@ for (const f of arquivos) {
   }));
 
   if (r.h1 !== 1) problemas.push(`${rota}: ${r.h1} <h1> (deve ser exatamente 1)`);
+  for (const c of r.semContraste) problemas.push(`${rota}: contraste ${c.razao}:1 em <${c.tag}> "${c.texto}" (${c.cor} sobre ${c.fundo})`);
   if (!r.title) problemas.push(`${rota}: sem <title>`);
   if (!r.descricao) problemas.push(`${rota}: sem meta description`);
   if (!r.lang) problemas.push(`${rota}: <html> sem lang`);

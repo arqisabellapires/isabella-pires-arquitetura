@@ -100,12 +100,26 @@ const estaAtiva = (href: string) =>
 </script>
 
 <style>
+  /*
+    A cor do cabeçalho depende do que está ATRÁS dele.
+
+    O componente sempre pintou tudo de branco, e a classe
+    `cabecalho--sobre-hero` não fazia nada — então nas páginas internas, que
+    têm fundo claro, o menu inteiro ficava branco sobre bege: invisível. Foi
+    assim que foi parar no preview.
+
+    Agora o padrão é a tinta escura, e o branco só entra sobre o herói
+    escuro da home e sobre a foto de capa dos projetos, que é onde ele de
+    fato precisa ser claro.
+  */
   .cabecalho {
     position: absolute;
     inset: 0 0 auto;
     z-index: 10;
     font-family: 'Inter', system-ui, sans-serif;
+    --cabecalho-cor: #21201f;
   }
+  .cabecalho--sobre-hero { --cabecalho-cor: #ffffff; }
   .cabecalho__interno {
     display: flex;
     align-items: center;
@@ -119,7 +133,7 @@ const estaAtiva = (href: string) =>
   /* Marca: 16px/700 Mulish no desktop, 14px nos outros — medido. */
   .cabecalho__marca {
     font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    color: #ffffff;
+    color: var(--cabecalho-cor);
     letter-spacing: 0.02em;
     text-decoration: none;
   }
@@ -132,7 +146,7 @@ const estaAtiva = (href: string) =>
   }
   .cabecalho__lista a {
     font: 500 15px/1.2 'Inter', system-ui, sans-serif;
-    color: #ffffff;
+    color: var(--cabecalho-cor);
     text-decoration: none;
   }
   .cabecalho__lista a[aria-current='page'] { text-decoration: underline; }
@@ -150,7 +164,7 @@ const estaAtiva = (href: string) =>
     display: block;
     width: 22px;
     height: 2px;
-    background: #ffffff;
+    background: var(--cabecalho-cor);
   }
 
   .cabecalho__movel {

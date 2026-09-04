@@ -160,6 +160,14 @@ const numeros = [
   .hero__interno { margin-inline: auto; max-width: 1184px; padding-inline: 24px; }
   .hero__titulo {
     font: 700 80px/1.05 'Mulish', system-ui, sans-serif;
+    /*
+      `color` explícito, não herdado: o base.css pinta TODO h1..h4 com
+      --cor-tinta (#341f04, marrom escuro), e isso vence a herança do
+      .hero, que é branco. Sem esta linha o título do herói sai marrom
+      sobre fundo #21201f — ilegível, e foi assim que ele foi para o
+      preview. Vale para qualquer título sobre fundo escuro.
+    */
+    color: #ffffff;
     margin: 0 0 24px;
     text-wrap: balance;
   }

@@ -73,6 +73,24 @@ await nav.close();
 for (const [t, rotas] of titles) if (rotas.length > 1) problemas.push(`<title> repetido em ${rotas.length}: "${t.slice(0, 50)}" → ${rotas.slice(0, 3).join(', ')}`);
 for (const [d, rotas] of descricoes) if (rotas.length > 1) problemas.push(`description repetida em ${rotas.length} rotas → ${rotas.slice(0, 3).join(', ')}`);
 
+/*
+  Redirects: os do vercel.json não podem apontar para si mesmos.
+
+  Aconteceu de verdade e só apareceu no preview: ao converter os 302 dos
+  artigos em 301, 10 slugs que JÁ eram ASCII viraram redirect para a própria
+  URL — loop infinito. A página abria por acaso com barra final, então o build
+  passava e o portão de estrutura também. Redirect é configuração, não HTML:
+  nenhuma auditoria de página pegaria.
+*/
+try {
+  const vercel = JSON.parse(readFileSync('vercel.json', 'utf8'));
+  for (const r of vercel.redirects ?? []) {
+    if (decodeURIComponent(r.source) === decodeURIComponent(r.destination)) {
+      problemas.push(`vercel.json: redirect em loop, ${decodeURIComponent(r.source)} → ele mesmo`);
+    }
+  }
+} catch { /* sem vercel.json, nada a conferir */ }
+
 console.log(`${arquivos.length} páginas · média ${Math.round(somaKB / arquivos.length)} KB · maior ${maiorKB} KB`);
 console.log(`imagens sem atributo alt: ${semAlt}`);
 if (problemas.length) {

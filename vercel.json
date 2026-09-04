@@ -27,28 +27,8 @@
       "permanent": true
     },
     {
-      "source": "/artigos/antes-e-depois-de-uma-reforma-completa",
-      "destination": "/artigos/antes-e-depois-de-uma-reforma-completa",
-      "permanent": true
-    },
-    {
-      "source": "/artigos/arquitetura-e-o-futuro-das-cidades-inteligentes",
-      "destination": "/artigos/arquitetura-e-o-futuro-das-cidades-inteligentes",
-      "permanent": true
-    },
-    {
       "source": "/artigos/casa-t%C3%A9rrea-com-conceito-aberto-moderno",
       "destination": "/artigos/casa-terrea-com-conceito-aberto-moderno",
-      "permanent": true
-    },
-    {
-      "source": "/artigos/como-ampliar-ambientes-pequenos-em-casa",
-      "destination": "/artigos/como-ampliar-ambientes-pequenos-em-casa",
-      "permanent": true
-    },
-    {
-      "source": "/artigos/como-usar-a-cor-do-ano-de-2026-sem-erros",
-      "destination": "/artigos/como-usar-a-cor-do-ano-de-2026-sem-erros",
       "permanent": true
     },
     {
@@ -59,11 +39,6 @@
     {
       "source": "/artigos/design-biof%C3%ADlico-plantas-nos-ambientes-residenciais",
       "destination": "/artigos/design-biofilico-plantas-nos-ambientes-residenciais",
-      "permanent": true
-    },
-    {
-      "source": "/artigos/erros-comuns-em-obras-residenciais-e-como-evitar",
-      "destination": "/artigos/erros-comuns-em-obras-residenciais-e-como-evitar",
       "permanent": true
     },
     {
@@ -87,33 +62,8 @@
       "permanent": true
     },
     {
-      "source": "/artigos/novos-materiais-e-tecnologias-construtivas",
-      "destination": "/artigos/novos-materiais-e-tecnologias-construtivas",
-      "permanent": true
-    },
-    {
       "source": "/artigos/passo-a-passo-de-um-projeto-arquitet%C3%B4nico",
       "destination": "/artigos/passo-a-passo-de-um-projeto-arquitetonico",
-      "permanent": true
-    },
-    {
-      "source": "/artigos/principais-feiras-e-eventos-de-arquitetura",
-      "destination": "/artigos/principais-feiras-e-eventos-de-arquitetura",
-      "permanent": true
-    },
-    {
-      "source": "/artigos/quanto-custa-contratar-um-arquiteto",
-      "destination": "/artigos/quanto-custa-contratar-um-arquiteto",
-      "permanent": true
-    },
-    {
-      "source": "/artigos/reformas-inteligentes-como-repaginar-o-lar-antes-do-natal-sem-grandes-obras",
-      "destination": "/artigos/reformas-inteligentes-como-repaginar-o-lar-antes-do-natal-sem-grandes-obras",
-      "permanent": true
-    },
-    {
-      "source": "/artigos/sustentabilidade-aplicada-na-arquitetura",
-      "destination": "/artigos/sustentabilidade-aplicada-na-arquitetura",
       "permanent": true
     },
     {

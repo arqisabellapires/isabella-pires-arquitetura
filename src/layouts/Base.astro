@@ -30,10 +30,17 @@ const clarity = import.meta.env.PUBLIC_CLARITY_ID;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- A fonte do corpo entra no caminho crítico; as demais podem esperar. -->
+    <!--
+      A fonte do corpo entra no caminho crítico; as demais podem esperar.
+      Este é o subset latin da Mulish (U+0000-00FF cobre o pt-BR), o mesmo
+      arquivo que o Framer servia. O caminho anterior apontava para um nome
+      do Google Fonts que não existe em disco e dava 404 — preload de arquivo
+      inexistente é pior que preload nenhum: custa uma requisição e ainda
+      avisa o navegador que a fonte é urgente.
+    -->
     <link
       rel="preload"
-      href="/fontes/mulish-latin-wght-normal.woff2"
+      href="/fontes/gstatic/mulish/v18/1Ptvg83HX_SGhgqk3wot.woff2"
       as="font"
       type="font/woff2"
       crossorigin

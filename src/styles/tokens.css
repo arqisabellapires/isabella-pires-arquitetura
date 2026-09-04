@@ -23,7 +23,9 @@
 
   /* ─── Tipografia ──────────────────────────────────────── */
   --fonte-titulo:  'Cairo Play', Georgia, serif;
-  --fonte-corpo:   'Mulish Variable', 'Mulish', system-ui, -apple-system, sans-serif;
+  /* 'Mulish Variable' não existe: o arquivo variável nunca esteve em disco.
+     A Mulish estática, essa existe, em 16 arquivos por subset e peso. */
+  --fonte-corpo:   'Mulish', system-ui, -apple-system, sans-serif;
   --fonte-mono:    'Fragment Mono', ui-monospace, 'SF Mono', monospace;
 
   /* Escala fluida: cresce de 360px a 1440px de viewport.

@@ -19,7 +19,7 @@
  * `framer-`, toda imagem com atributo alt, e JSON-LD que faz parse.
  */
 import { chromium } from '/home/gabfelix/dev/portfolio/node_modules/playwright/index.mjs';
-import { readFileSync, statSync } from 'node:fs';
+import { readFileSync, statSync, existsSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 
 const arquivos = execSync('find dist/client -name "*.html"').toString().trim().split('\n').filter(Boolean);
@@ -82,6 +82,24 @@ for (const [d, rotas] of descricoes) if (rotas.length > 1) problemas.push(`descr
   passava e o portão de estrutura também. Redirect é configuração, não HTML:
   nenhuma auditoria de página pegaria.
 */
+/*
+  Fontes e preloads: todo arquivo citado tem que existir.
+
+  Também só apareceu no deploy. O fontes.css era da primeira tentativa e
+  apontava para cinco nomes do Google Fonts que nunca estiveram em disco —
+  as 97 fontes reais têm nomes hasheados, em subpastas. Resultado: 404 em
+  todas, e o site inteiro renderizava na fonte do sistema. O build não
+  reclama porque url() dentro de CSS é string, não import.
+*/
+const css = existsSync('src/styles/fontes.css') ? readFileSync('src/styles/fontes.css', 'utf8') : '';
+for (const m of css.matchAll(/url\('([^']+)'\)/g)) {
+  if (!existsSync(`public${m[1]}`)) problemas.push(`fontes.css aponta para arquivo inexistente: ${m[1]}`);
+}
+const base = existsSync('src/layouts/Base.astro') ? readFileSync('src/layouts/Base.astro', 'utf8') : '';
+for (const m of base.matchAll(/rel="preload"[\s\S]{0,120}?href="([^"]+)"/g)) {
+  if (m[1].startsWith('/') && !existsSync(`public${m[1]}`)) problemas.push(`preload de arquivo inexistente: ${m[1]}`);
+}
+
 try {
   const vercel = JSON.parse(readFileSync('vercel.json', 'utf8'));
   for (const r of vercel.redirects ?? []) {

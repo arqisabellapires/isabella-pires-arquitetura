@@ -99,7 +99,7 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   </section>
 
   <section class="numeros" aria-label="Nossos números" data-revela>
-    <dl class="numeros__lista">
+    <dl class="numeros__lista" data-revela-filhos>
       {numerosHome.map((n) => (
         <div class="numeros__item">
           <dt class="numeros__valor">{n.valor}</dt>
@@ -114,7 +114,7 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
       <RotuloSecao>Projetos</RotuloSecao>
       <h2 class="titulo-secao">Projetos que contam histórias</h2>
     </header>
-    <ul class="projetos__lista">
+    <ul class="projetos__lista" data-revela-filhos>
       {projetos.map((p) => (
         <li class="projeto-card">
           <a href={`/projetos/${p.id}`}>
@@ -141,7 +141,7 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
       <RotuloSecao>Serviços</RotuloSecao>
       <h2 class="titulo-secao">Serviços pensados para você</h2>
     </header>
-    <ol class="servicos__lista">
+    <ol class="servicos__lista" data-revela-filhos>
       {servicos.map((s, i) => (
         <li class="servico-item">
           <span class="servico-item__numero">{String(i + 1).padStart(2, '0')}</span>
@@ -169,7 +169,7 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
       <h2 class="titulo-secao">Histórias Recentes</h2>
       <p class="secao__apoio">Dicas e tendências para quem valoriza bons espaços.</p>
     </header>
-    <div class="blog__grade">
+    <div class="blog__grade" data-revela-filhos>
       {recentes.map(({ artigo, minutos }) => (
         <CardArtigo artigo={artigo} minutos={minutos} variante="compacto" />
       ))}
@@ -287,7 +287,10 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     display: inline-block;
     font: var(--fig-peso-forte) var(--fig-t-corpo-p) / 1.2 var(--fig-fonte-corpo);
     text-decoration: none;
+    /* A ficha `ver-todas-postagens` mede spring damping 60 / stiffness 500. */
+    transition: transform var(--dur-ver-todas-postagens) var(--mola-ver-todas-postagens);
   }
+  .ligacao:hover { transform: translateX(4px); }
 
   .sobre,
   .projetos,
@@ -377,6 +380,7 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     position: relative;
     text-decoration: none;
   }
+  /* Ficha `carrossel-home` na entrada, `card-projeto-hover` no mouse. */
   .projeto-card :global(img) {
     display: block;
     height: 674px;
@@ -384,6 +388,10 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     transition: transform var(--dur-card-projeto-hover) var(--mola-card-projeto-hover);
     width: 100%;
   }
+  .projeto-card__texto {
+    transition: transform var(--dur-carrossel-home) var(--mola-carrossel-home);
+  }
+  .projeto-card a:hover .projeto-card__texto { transform: translateY(-4px); }
   .projeto-card a:hover :global(img) { transform: scale(1.03); }
   .projeto-card a::after {
     content: '';
@@ -420,11 +428,14 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     padding: 0;
   }
   .servico-item { display: flex; gap: var(--fig-e-lg); }
+  /* Ficha `servicos-numerados-home`: spring bounce 0.2 / 0.4s. */
   .servico-item__numero {
     color: #8d7252;
     flex: none;
     font: var(--fig-peso-normal) var(--fig-t-servico-num) / 1 var(--fig-fonte-display);
+    transition: transform var(--dur-servicos-numerados-home) var(--mola-servicos-numerados-home);
   }
+  .servico-item:hover .servico-item__numero { transform: translateY(-3px); }
   .servico-item__titulo {
     color: var(--fig-tinta);
     font: var(--fig-peso-semi) var(--fig-t-corpo-g) / 1.2 var(--fig-fonte-corpo);
@@ -461,18 +472,6 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   /* ─── Aparição ao rolar ───────────────────────────────────
      A ficha `reveal-entrada` mede spring bounce 0.2 / 0.8s, com filhos
      escalonados em 0.2/0.4/0.6s. Aqui vai a versão de seção. */
-  [data-revela] {
-    animation: revela linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 60%;
-  }
-  @keyframes revela {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    [data-revela] { animation: none; }
-  }
 
   @media (max-width: 1199.98px) {
     .heroi { min-height: 640px; }

@@ -73,7 +73,7 @@ const d = projeto.data;
       </section>
 
       {d.galeria.length > 0 && (
-        <section class="galeria" aria-label="Galeria do projeto">
+        <section class="galeria" aria-label="Galeria do projeto" data-revela-filhos>
           {d.galeria.map((item) => (
             <Image
               src={item.imagem}
@@ -204,12 +204,15 @@ const d = projeto.data;
   .concepcao__corpo :global(strong) { color: var(--fig-cinza-900); font-weight: 800; }
 
   .galeria { display: grid; gap: var(--fig-e-lg); margin-top: var(--fig-e-2xl); }
+  /* Ficha `galeria-casa-ip`: spring bounce 0.2 / 0.4s. */
   .galeria :global(img) {
     border-radius: var(--fig-raio-xl);
     display: block;
     height: auto;
+    transition: transform var(--dur-galeria-casa-ip) var(--mola-galeria-casa-ip);
     width: 100%;
   }
+  .galeria :global(img):hover { transform: scale(1.01); }
 
   /* ─── Outros projetos ─────────────────────────────────────*/
   .outros {
@@ -249,6 +252,9 @@ const d = projeto.data;
     padding: 0;
   }
   .outros__grade a { color: inherit; display: block; text-decoration: none; }
+  /* Ficha `card-projeto-abre`: spring bounce 0.2 / 0.4s. */
+  .outros__grade :global(img) { transition: transform var(--dur-card-projeto-abre) var(--mola-card-projeto-abre); }
+  .outros__grade a:hover :global(img) { transform: scale(1.02); }
   .outros__grade :global(img) {
     border-radius: var(--fig-raio-lg);
     display: block;

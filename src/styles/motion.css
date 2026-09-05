@@ -83,3 +83,16 @@
     --dur-spinner-carregando-artigos: 1ms;
   }
 }
+
+/* ------------------------------------------------------------
+   Duas das 17 molas ficam sem uso, de propósito:
+
+   `carrossel-projetos` só existia em tablet e celular, porque no Framer os
+   cards não cabiam lado a lado. A grade responsiva resolve o mesmo problema
+   sem prender o conteúdo atrás de um controle — reproduzir o carrossel seria
+   copiar a limitação, não o design.
+
+   `spinner-carregando-artigos` está marcado "nao-reproduzir" na própria
+   ficha: era o spinner do CMS do Framer buscando os posts em JavaScript.
+   Aqui os 25 artigos vêm no HTML, então não há espera para animar.
+   ------------------------------------------------------------ */

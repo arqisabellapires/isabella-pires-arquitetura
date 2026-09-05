@@ -1,0 +1,53 @@
+/* ============================================================
+   Aparição ao rolar — a ficha `reveal-entrada`
+
+   A interação mais presente do site do Framer: "elementos deslizam e
+   aparecem conforme você rola", em todas as 15 páginas e nos 3 breakpoints.
+   A ficha mede spring bounce 0.2 / 0.8s, com filhos escalonados em
+   0.2 / 0.4 / 0.6s.
+
+   Feito com `animation-timeline: view()`, que é scroll-driven nativo: não
+   custa JavaScript, não observa nada, e o navegador desliga sozinho quando
+   a aba não está visível. Onde `view()` não existe, o seletor @supports
+   deixa tudo visível — degradar para "aparece" é o certo, nunca para
+   "some".
+
+   A curva é a mola de verdade, vinda de motion.css. Antes disto o site
+   usava `linear` genérico, que chega ao destino e para; a mola passa de 1 e
+   volta, e é essa sobra que dá o "vivo" que o Framer tinha.
+   ============================================================ */
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /*
+      `entry` sozinho não cobre o elemento que JÁ está na tela quando a
+      página carrega: ele nunca "entra", então a animação fica congelada no
+      quadro 0 e o bloco não aparece nunca. Foi o que aconteceu com o último
+      bloco de /servicos e /sobre-nos.
+
+      `cover` resolve: a faixa passa a ser medida enquanto o elemento cruza
+      a viewport, e quem já está visível no carregamento aparece de imediato.
+    */
+    [data-revela] {
+      animation: revela-entrada var(--dur-reveal-entrada) var(--mola-reveal-entrada) both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 32%;
+    }
+
+    /* Escalonamento: os três primeiros filhos entram em 0.2/0.4/0.6s, como
+       a ficha mede. Feito com atraso na faixa de scroll, não no tempo. */
+    [data-revela-filhos] > * {
+      animation: revela-entrada var(--dur-reveal-entrada) var(--mola-reveal-entrada) both;
+      animation-timeline: view();
+      animation-range: entry-crossing 0% entry-crossing 100%;
+    }
+    [data-revela-filhos] > *:nth-child(2) { animation-range: entry-crossing 5% entry-crossing 100%; }
+    [data-revela-filhos] > *:nth-child(3) { animation-range: entry-crossing 10% entry-crossing 100%; }
+    [data-revela-filhos] > *:nth-child(n + 4) { animation-range: entry-crossing 15% entry-crossing 100%; }
+  }
+}
+
+@keyframes revela-entrada {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}

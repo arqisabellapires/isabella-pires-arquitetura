@@ -167,18 +167,6 @@ const fotos = [
   .servico:nth-child(even) .servico__cta { color: var(--fig-primaria-ativa); }
   .servico__cta:hover { text-decoration: underline; }
 
-  [data-revela] {
-    animation: revela linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 55%;
-  }
-  @keyframes revela {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    [data-revela] { animation: none; }
-  }
 
   @media (max-width: 1199.98px) {
     .servico,

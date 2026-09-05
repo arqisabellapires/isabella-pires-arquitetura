@@ -76,7 +76,7 @@ const regrasFiltro = categorias
       ))}
     </div>
 
-    <ul class="lista">
+    <ul class="lista" data-revela-filhos>
       {projetos.map((p, i) => (
         <li class:list={['card', i === 0 && 'card--destaque']} data-categoria={p.data.categoria} data-revela>
           <a href={`/projetos/${p.id}`}>
@@ -242,18 +242,6 @@ const regrasFiltro = categorias
     font: var(--fig-peso-forte) var(--fig-f-corpo) / 1.2 var(--fig-fonte-corpo);
   }
 
-  [data-revela] {
-    animation: revela linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 55%;
-  }
-  @keyframes revela {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    [data-revela] { animation: none; }
-  }
 
   @media (max-width: 1199.98px) {
     .cabeca__selo { display: none; }

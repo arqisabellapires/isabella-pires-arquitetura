@@ -57,7 +57,7 @@ const comMinutos = await Promise.all(
       desde o começo — o Google indexa os 25, e quem não tem JS vê todos
       igual. É o mesmo princípio dos filtros de projeto.
     */}
-    <div class="grade">
+    <div class="grade" data-revela-filhos>
       {comMinutos.slice(0, 6).map(({ artigo, minutos }, i) => (
         <CardArtigo artigo={artigo} minutos={minutos} prioritaria={i < 2} />
       ))}

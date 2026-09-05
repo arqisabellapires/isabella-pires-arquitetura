@@ -82,6 +82,8 @@ import { CAMPOS_ISCA } from '~/lib/antispam';
     padding: 14px 20px;
   }
   .news__linha button {
+    /* Ficha `newsletter-artigos`: spring bounce 0.1 / 0.7s. */
+    transition: transform var(--dur-newsletter-artigos) var(--mola-newsletter-artigos);
     font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
     background: #341f04;
     color: #ffffff;

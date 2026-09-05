@@ -1,18 +1,21 @@
 ---
 /**
- * Listagem de projetos. Medida em _capturas/projetos/medidas.desktop.json:
- * título "Projetos" 60px/600, cards com nome 64px/400 e "Ver projeto"
- * 20px/700, alternando lado.
+ * Projetos — reconstruída contra o Figma (node 1:762), medidas em
+ * `_figma/projetos-lista-medidas.json`.
  *
- * **No desktop são 4 cards empilhados, não carrossel** — o HANDOFF §4.2
- * corrigiu isso medindo: o controlador a6Nde7smU só existe em tablet e
- * mobile. Aqui a grade responsiva cobre os três breakpoints sem script, que
- * é melhor do que reproduzir um carrossel que só existia por limitação de
- * espaço.
+ * O card estava invertido: o site punha a foto em cima e o texto abaixo. No
+ * design a **foto é o fundo** — 557px no primeiro card, 450px nos demais —
+ * com véu escuro por cima e o texto posicionado dentro dela. É o que dá o
+ * peso editorial da página.
  *
- * O hover do card é a ÚNICA interação de hover do site inteiro (medido: 2/18
- * em /projetos/, 0/8 na home). Feito em CSS puro com :hover e :focus-within,
- * como a spec §4.4 manda — sem JavaScript.
+ * Os filtros de categoria não existiam. Existem agora e filtram de verdade,
+ * sem JavaScript: cada pastilha é um <label> de um <input type=radio>
+ * escondido, e uma regra por categoria (gerada no frontmatter, porque
+ * depende do conteúdo) esconde os cards que não pertencem à marcada.
+ *
+ * As categorias são as REAIS das coleções (Residencial, Comercial,
+ * Interiores), não as do Figma — o design listava "Especializado", que não
+ * corresponde a nenhum projeto.
  */
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
@@ -20,10 +23,27 @@ import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
+import Migalhas from '~/components/Migalhas.astro';
 
 const projetos = (await getCollection('projetos', ({ data }) => data.publicado !== false)).sort(
   (a, b) => a.data.ordem - b.data.ordem,
 );
+
+/* As categorias que de fato existem, na ordem em que aparecem. */
+const categorias = [...new Set(projetos.map((p) => p.data.categoria))];
+
+/* Uma regra por categoria: com o rádio daquela categoria marcado, some com
+   todo card que não a tenha. Escrito aqui porque depende do conteúdo. */
+const regrasFiltro = categorias
+  .map((c) => {
+    const id = `cat-${c.toLowerCase()}`;
+    return [
+      `#${id}:checked ~ .lista .card:not([data-categoria='${c}']) { display: none; }`,
+      `#${id}:checked ~ .filtros [for='${id}'] { background: var(--fig-primaria-ativa); color: var(--fig-cinza-50); }`,
+      `#${id}:checked ~ .filtros [for='cat-todos'] { background: #fff; color: var(--fig-primaria-ativa); }`,
+    ].join('\n');
+  })
+  .join('\n');
 ---
 
 <Base
@@ -32,29 +52,47 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
 >
   <Cabecalho slot="cabecalho" />
 
-  <div class="projetos">
-    <nav class="migalhas" aria-label="Migalhas">
-      <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Projetos</span>
-    </nav>
+  <header class="cabeca">
+    <div class="cabeca__interno">
+      <Migalhas itens={[{ rotulo: 'Início', href: '/' }, { rotulo: 'Projetos' }]} />
+      <h1 class="cabeca__titulo">Projetos</h1>
+    </div>
+    <img class="cabeca__selo" src="/imagens/figma/selo-marca.webp" alt="" width="328" height="328" loading="lazy" />
+  </header>
 
-    <h1 class="projetos__titulo">Projetos</h1>
+  <div class="conteudo">
+    <style set:html={regrasFiltro}></style>
+    {/* Os rádios vivem AQUI, irmãos da lista: é isso que faz o seletor `~`
+        alcançar os cards. Dentro de um <fieldset> eles não alcançariam. */}
+    <input class="visualmente-oculto" type="radio" name="categoria" id="cat-todos" checked />
+    {categorias.map((c) => (
+      <input class="visualmente-oculto" type="radio" name="categoria" id={`cat-${c.toLowerCase()}`} />
+    ))}
 
-    <ul class="projetos__lista">
-      {projetos.map((projeto) => (
-        <li class="cartao">
-          <a class="cartao__link" href={`/projetos/${projeto.id}`}>
+    <div class="filtros" role="group" aria-label="Filtrar projetos por categoria">
+      <label class="filtro" for="cat-todos">Todos</label>
+      {categorias.map((c) => (
+        <label class="filtro" for={`cat-${c.toLowerCase()}`}>{c}</label>
+      ))}
+    </div>
+
+    <ul class="lista">
+      {projetos.map((p, i) => (
+        <li class:list={['card', i === 0 && 'card--destaque']} data-categoria={p.data.categoria} data-revela>
+          <a href={`/projetos/${p.id}`}>
             <Image
-              class="cartao__imagem"
-              src={projeto.data.capa}
-              alt={projeto.data.capaAlt}
-              widths={[390, 700, 1136]}
-              sizes="(min-width: 1200px) 1136px, 100vw"
-              loading="lazy"
+              class="card__foto"
+              src={p.data.capa}
+              alt={p.data.capaAlt}
+              widths={[900, 1624]}
+              sizes="(min-width: 1200px) 1624px, 94vw"
+              loading={i === 0 ? 'eager' : 'lazy'}
             />
-            <div class="cartao__texto">
-              <h2 class="cartao__titulo">{projeto.data.titulo}</h2>
-              <p class="cartao__resumo">{projeto.data.resumo}</p>
-              <span class="cartao__cta">Ver projeto</span>
+            <div class="card__texto">
+              <p class="card__tag">{p.data.categoria}</p>
+              <h2 class="card__titulo">{p.data.titulo}</h2>
+              <p class="card__resumo">{p.data.resumo}</p>
+              <span class="card__cta">Ver projeto</span>
             </div>
           </a>
         </li>
@@ -63,82 +101,166 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   </div>
 
   <div slot="rodape">
-
     <Wordmark />
-
-    <Rodape />
-
+    <Rodape variante="escuro" />
   </div>
 </Base>
 
 <style>
-  .projetos { margin-inline: auto; max-width: 1184px; padding: 120px 24px 64px; }
-  .migalhas {
-    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    margin-bottom: 48px;
+  .cabeca {
+    align-items: flex-start;
+    border-bottom: 1px solid var(--fig-primaria-ativa);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
   }
-  .migalhas a { color: inherit; text-decoration: none; }
-  .projetos__titulo {
-    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 64px;
+  .cabeca__interno { display: flex; flex-direction: column; gap: var(--fig-e-3xl); }
+  .cabeca__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
+    margin: 0;
   }
-  .projetos__lista { display: grid; gap: 64px; list-style: none; margin: 0; padding: 0; }
+  .cabeca__selo { flex: none; height: auto; max-width: 328px; opacity: 0.9; width: 20vw; }
 
-  .cartao__link {
-    color: inherit;
+  .conteudo {
+    margin-inline: auto;
+    max-width: var(--fig-largura-canvas);
+    padding: var(--fig-e-2xl) var(--fig-margem-interna) var(--fig-e-5xl);
+  }
+
+  /* ─── Filtros ─────────────────────────────────────────────
+     Pastilhas de raio 8: a ativa é sólida marrom, as outras têm
+     contorno de 1px. Node 1:778. */
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fig-e-md);
+    margin: 0 0 var(--fig-e-2xl);
+    padding: 0;
+  }
+  .visualmente-oculto {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  .filtro {
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid var(--fig-primaria-ativa);
+    border-radius: var(--fig-raio-sm);
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.2 var(--fig-fonte-corpo);
+    padding: var(--fig-e-sm) var(--fig-e-lg);
+    text-decoration: none;
+    transition: background var(--dur-filtros-categoria-artigos) var(--mola-filtros-categoria-artigos),
+                color var(--dur-filtros-categoria-artigos) var(--mola-filtros-categoria-artigos);
+  }
+  .filtro:hover { background: var(--fig-fundo-pessego); color: var(--fig-primaria-ativa); }
+  /* O rótulo ativo é sólido: fundo marrom, texto claro. Sem isto o hover
+     pinta o fundo por cima e o texto some — foi o que aconteceu. */
+  #cat-todos:checked ~ .filtros [for='cat-todos']:hover {
+    background: var(--fig-primaria-ativa);
+    color: var(--fig-cinza-50);
+  }
+  /* O rádio checado pinta o seu rótulo — e é ele quem esconde os cards
+     que não são da categoria. Filtragem real, sem uma linha de JavaScript. */
+  #cat-todos:checked ~ .filtros [for='cat-todos'] { background: var(--fig-primaria-ativa); color: var(--fig-cinza-50); }
+  input[name='categoria']:focus-visible ~ .filtros .filtro { outline: 2px solid transparent; }
+
+  /* ─── Cards ───────────────────────────────────────────────*/
+  .lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-xl);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .card a {
+    border-radius: 33px;
+    color: #fff;
     display: block;
+    overflow: clip;
     position: relative;
     text-decoration: none;
   }
-  .cartao__imagem {
+  .card :global(.card__foto) {
     display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1136 / 557;
+    height: 450px;
     object-fit: cover;
-    border-radius: 12px;
-    /*
-      557 → 367px é a altura medida do estado de hover no variantes.json.
-      A mola do original é spring damping 30 / stiffness 400; aqui a transição
-      é de transform, que não força layout.
-    */
-    transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+    transition: transform var(--dur-card-projeto-hover) var(--mola-card-projeto-hover);
+    width: 100%;
   }
-  .cartao__link:hover .cartao__imagem,
-  .cartao__link:focus-visible .cartao__imagem { transform: scale(1.02); }
+  .card--destaque :global(.card__foto) { height: 557px; }
+  .card a:hover :global(.card__foto),
+  .card a:focus-visible :global(.card__foto) { transform: scale(1.03); }
 
-  .cartao__texto { padding-top: 24px; }
-  .cartao__titulo {
-    font: 400 64px/1.05 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 12px;
+  /* O véu é mais forte nos cards menores: o design usa .39 no primeiro e
+     .75 nos demais, porque neles o texto compete com mais imagem. */
+  .card a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 0.6);
   }
-  .cartao__resumo {
-    font: 600 21px/1.5 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0 0 16px;
-    max-width: 60ch;
+  .card--destaque a::after { background: rgb(0 0 0 / 0.39); }
+
+  .card__texto {
+    left: clamp(var(--fig-e-lg), 10vw, 196px);
+    max-width: 720px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
   }
-  .cartao__cta {
-    font: 700 20px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
+  .card__tag {
+    background: rgb(255 255 255 / 0.16);
+    border-radius: var(--fig-raio-xs);
+    display: inline-block;
+    font: var(--fig-peso-medio) var(--fig-t-meta) / 1.2 var(--fig-fonte-ui);
+    margin: 0 0 var(--fig-e-sm);
+    padding: var(--fig-e-2xs) var(--fig-e-sm);
+  }
+  .card__titulo {
+    color: #fff;
+    font: var(--fig-peso-medio) var(--fig-f-card-titulo) / 1.05 var(--fig-fonte-ui);
+    margin: 0 0 var(--fig-e-sm);
+  }
+  .card__resumo {
+    color: rgb(255 255 255 / 0.86);
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.45 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-md);
+    max-width: 640px;
+  }
+  .card__cta {
     border-bottom: 1px solid currentColor;
+    font: var(--fig-peso-forte) var(--fig-f-corpo) / 1.2 var(--fig-fonte-corpo);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .cartao__imagem { transition: none; }
-    .cartao__link:hover .cartao__imagem { transform: none; }
+  [data-revela] {
+    animation: revela linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
   }
+  @keyframes revela {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-revela] { animation: none; }
+  }
+
   @media (max-width: 1199.98px) {
-    .projetos__titulo { font-size: 44px; }
-    .cartao__titulo { font-size: 44px; }
+    .cabeca__selo { display: none; }
+    .card :global(.card__foto),
+    .card--destaque :global(.card__foto) { height: 380px; }
   }
   @media (max-width: 809.98px) {
-    .projetos { padding-top: 96px; }
-    .projetos__titulo { font-size: 36px; }
-    .cartao__titulo { font-size: 32px; }
-    .cartao__resumo { font-size: 18px; }
+    .card :global(.card__foto),
+    .card--destaque :global(.card__foto) { height: 320px; }
+    .card__texto { left: var(--fig-e-lg); right: var(--fig-e-lg); }
   }
 </style>

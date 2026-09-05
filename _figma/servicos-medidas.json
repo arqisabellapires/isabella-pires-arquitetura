@@ -1,0 +1,192 @@
+{
+  "_origem": "mcp__figma__get_design_context, fileKey w03gcodehy5qey828y58hS, nodeId 1:548, em 05/09/2026",
+  "_nota": "Valores lidos do Figma. Comparados com https://www.isabellapiresarquitetura.com.br/servicos no mesmo dia.",
+  "menu_topo": {
+    "node": "1:64",
+    "altura": 151,
+    "altura_na_pagina": 133,
+    "padding": "40px 100px",
+    "borda_inferior": "1px solid #352005",
+    "logo": {
+      "largura": 56.223,
+      "altura": 73
+    },
+    "itens": [
+      "Início",
+      "Serviços",
+      "Projetos",
+      "Blog",
+      "Sobre nós",
+      "Contato"
+    ],
+    "item_fonte": "Arboria Medium 24px",
+    "item_cor": "#352005",
+    "item_padding": "8px 12px",
+    "gap": 32,
+    "dropdown": [
+      "Serviços tem seta (Icone Arrow down 32px)"
+    ]
+  },
+  "cabecalho_pagina": {
+    "node": "1:550",
+    "padding": "80px 100px",
+    "gap": 22,
+    "borda_inferior": "1px solid #352005",
+    "migalhas": {
+      "fonte": "Arboria Bold 21px",
+      "icone": "fa-house 24x34",
+      "cor_inicio": "#212529",
+      "cor_atual": "#352005",
+      "gap": 8
+    },
+    "titulo": {
+      "texto": "Nossos Serviços",
+      "fonte": "Mulish SemiBold 100px",
+      "cor": "#352005"
+    },
+    "gap_migalhas_titulo": 67,
+    "selo_circular": {
+      "node": "1:563",
+      "tamanho": 328,
+      "left": 1371,
+      "top": 34
+    }
+  },
+  "lista_servicos": {
+    "node": "1:614",
+    "padding_topo": 114,
+    "padding_lateral": 100,
+    "gap_entre_servicos": 165,
+    "cada_servico": {
+      "altura": 609,
+      "gap_imagem_texto": 120,
+      "padding_lateral": 110,
+      "imagem": {
+        "largura": 697,
+        "altura": 587,
+        "radius": 32
+      },
+      "coluna_texto": {
+        "largura": 659,
+        "gap": "32 nos dois primeiros, 60 nos tres ultimos"
+      },
+      "numero": {
+        "fonte": "Faberge Regular 60px",
+        "cor_texto": "#eee",
+        "padding": "4px 24px",
+        "radius": 12,
+        "fundo_alterna": [
+          "#a98d67 (impares)",
+          "#352005 (pares)"
+        ]
+      },
+      "titulo": {
+        "fonte": "Mulish Regular 100px",
+        "cor_alterna": [
+          "black (01)",
+          "#a98d67 (02, 04)",
+          "#352005 (03, 05)"
+        ],
+        "largura": 548
+      },
+      "paragrafos": {
+        "fonte": "Mulish SemiBold/Medium 18px",
+        "cor": "#6c757d",
+        "line_height": 1.214,
+        "gap": 16,
+        "largura": "531-538"
+      },
+      "cta": {
+        "texto": "Entrar em contato",
+        "fonte": "Mulish Bold 18px",
+        "cor_alterna": [
+          "#a98d67",
+          "#352005"
+        ]
+      }
+    },
+    "alternancia": "01 img-esq / 02 img-dir / 03 img-esq / 04 img-dir / 05 img-esq"
+  },
+  "wordmark": {
+    "node": "1:685",
+    "texto": "ISABELLA PIRES",
+    "fonte": "Faberge Regular 192px",
+    "tracking": 19.2,
+    "altura": 367,
+    "cor": "black",
+    "alinhamento": "center",
+    "padding_y": 31
+  },
+  "rodape": {
+    "node": "1:687",
+    "fundo": "#a98d67",
+    "padding": "100px 128px",
+    "padding_interno_lateral": 110,
+    "cta": {
+      "titulo": "Sobrou alguma dúvida?\nVamos conversar!",
+      "fonte_titulo": "Faberge Regular 44px",
+      "cor_titulo": "#eee",
+      "rotulo": "Contate-nos",
+      "fonte_rotulo": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer)",
+      "botao": {
+        "texto": "Quero agendar uma reunião",
+        "fundo": "rgba(255,255,255,0.73)",
+        "cor": "#352005",
+        "padding": "12px 24px",
+        "radius": 16,
+        "fonte": "Segoe UI Semibold 20px (SANEAR)"
+      }
+    },
+    "colunas": {
+      "gap": 132,
+      "Institucional": {
+        "titulo_fonte": "Faberge Regular 32px",
+        "itens_fonte": "Arboria Medium 16px",
+        "itens_cor": "rgba(255,255,255,0.8)",
+        "itens": [
+          "Início",
+          "Serviços",
+          "Projetos",
+          "Sobre nós",
+          "Blog",
+          "Contato"
+        ]
+      },
+      "Informações": {
+        "itens": [
+          "Termos de uso",
+          "Políticas de Privacidade",
+          "Políticas de Cookies"
+        ]
+      }
+    },
+    "divisor": {
+      "largura": 1444
+    },
+    "copyright": {
+      "texto": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+      "fonte": "Arboria Medium 20px"
+    },
+    "redes": [
+      "Instagram",
+      "Facebook",
+      "Tiktok",
+      "Youtube",
+      "Linkedin"
+    ],
+    "rede_tamanho": 40,
+    "rede_gap": 12
+  },
+  "divergencias_medidas_contra_o_site_no_ar": [
+    "O site NAO tem nenhuma imagem em /servicos (0 tags <img>); o Figma tem 5 fotos de 697x587 radius 32.",
+    "Sem alternancia esquerda/direita: o site empilha texto em coluna unica de max-width 1184.",
+    "Titulo da pagina: Figma Mulish SemiBold 100px; site 600 60px.",
+    "Titulo do servico: Figma Mulish Regular 100px; site 400 80px.",
+    "Numero: Figma tem fundo colorido alternado com radius 12 e padding; site e so texto solto.",
+    "Menu: Figma Arboria Medium 24px com borda inferior e altura 133-151; site usa Mulish.",
+    "Rodape: Figma tem fundo #a98d67 com CTA, 5 redes sociais e divisor; conferir o do site.",
+    "Wordmark ISABELLA PIRES 192px Faberge com tracking 19.2 — conferir se existe no site.",
+    "Cor dos paragrafos: Figma #6c757d; site #5a5755.",
+    "Faberge, Arboria: ausentes do projeto. Segoe UI deve ser saneada, nao reproduzida."
+  ]
+}

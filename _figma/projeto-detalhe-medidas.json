@@ -1,0 +1,288 @@
+{
+  "_origem": "mcp__figma__get_design_context, fileKey w03gcodehy5qey828y58hS, nodeId 1:954, em 05/09/2026",
+  "_nota": "Valores lidos do Figma. Comparados com https://www.isabellapiresarquitetura.com.br/projetos/casa-ip no mesmo dia. Layout deste quadro e todo em posicao absoluta (nao auto-layout).",
+  "quadro": {
+    "node": "1:954",
+    "largura": 1920,
+    "altura_total_aprox": 6400,
+    "fundo": "#fbf7f4"
+  },
+  "menu_topo": {
+    "node": "1:64",
+    "altura_na_pagina": 133,
+    "altura_componente": 151,
+    "padding": "40px 100px",
+    "borda_inferior": "1px solid #352005",
+    "posicao": "absolute left 0 top 0",
+    "logo": {
+      "largura": 56.223,
+      "altura": 73
+    },
+    "itens": [
+      "Início",
+      "Serviços",
+      "Projetos",
+      "Blog",
+      "Sobre nós",
+      "Contato"
+    ],
+    "item_fonte": "Arboria Medium 24px",
+    "item_cor": "#352005",
+    "item_padding": "8px 12px",
+    "gap": 32
+  },
+  "hero": {
+    "node": "1:963",
+    "imagem": {
+      "largura": 1920,
+      "altura": 1152,
+      "left": 0,
+      "top": 133,
+      "radius": 0,
+      "gradiente": "linear-gradient(156.5deg, rgba(0,0,0,0.6) 29.481%, rgba(0,0,0,0.222) 86.185%)"
+    },
+    "titulo": {
+      "node": "1:967",
+      "texto": "CASA IP",
+      "fonte": "Faberge Regular 100px",
+      "cor": "#eee",
+      "line_height": "normal",
+      "left": 772,
+      "top": 654,
+      "alinhamento": "centralizado horizontalmente sobre a foto"
+    }
+  },
+  "ficha_tecnica": {
+    "node": "1:990",
+    "comportamento": "coluna sticky (position sticky top 0) dentro de um trilho de 5106px de altura",
+    "left": 115,
+    "top": 1382,
+    "largura": 593,
+    "padding_topo": 39,
+    "gap_titulo_para_lista": 46,
+    "titulo": {
+      "node": "1:991",
+      "texto": "Detalhes do Projeto",
+      "fonte": "Mulish SemiBold 40px",
+      "cor": "#21201f",
+      "line_height": 0.97
+    },
+    "lista": {
+      "node": "1:992",
+      "gap": 32,
+      "linha": {
+        "gap_rotulo_valor": 32,
+        "largura_rotulo": 200,
+        "largura_valor": 820,
+        "rotulo_fonte": "Segoe UI Semibold 29px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+        "rotulo_cor": "#21201f",
+        "rotulo_line_height": 0.97,
+        "valor_fonte": "Segoe UI Bold 29px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+        "valor_cor": "#887769",
+        "divisor": "linha de 2px, largura total"
+      },
+      "campos": [
+        { "rotulo": "Cliente", "valor": "José Arthur" },
+        { "rotulo": "Serviço", "valor": "Design de Interiores" },
+        { "rotulo": "Tamanho", "valor": "240x654" },
+        { "rotulo": "Valor", "valor": "R$320.000,00" },
+        { "rotulo": "Data", "valor": "2024" }
+      ]
+    }
+  },
+  "corpo_texto": {
+    "node": "1:955",
+    "left": 818,
+    "top": 1382,
+    "largura": 1003,
+    "altura": 2072.853,
+    "gap_entre_secoes": 50,
+    "secoes": [
+      {
+        "node": "1:956",
+        "titulo": "Contexto",
+        "titulo_fonte": "Mulish Regular 40px",
+        "titulo_cor": "#21201f",
+        "titulo_line_height": 0.97,
+        "titulo_largura": 246,
+        "gap_titulo_corpo": 35
+      },
+      {
+        "node": "1:960",
+        "titulo": "Conclusão",
+        "titulo_fonte": "Segoe UI Semibold 40px (SANEAR: Segoe UI e fallback do designer, nao reproduzir; a irma 'Contexto' usa Mulish Regular)",
+        "titulo_cor": "#21201f",
+        "titulo_line_height": 0.97,
+        "titulo_largura": 246,
+        "gap_titulo_corpo": 35
+      }
+    ],
+    "paragrafos": {
+      "fonte": "Faberge Regular 24px",
+      "fonte_container": "Montserrat Medium (herdada, sobrescrita por Faberge nos paragrafos)",
+      "cor": "black",
+      "line_height": 26.325,
+      "nota": "Texto de lorem/placeholder do designer (chá de casa nova) — nao e o conteudo real do projeto"
+    },
+    "imagem_intercalada": {
+      "node": "1:959",
+      "largura": 935,
+      "altura": 560.852,
+      "radius": 56,
+      "gradiente": "linear-gradient(156.5deg, rgba(0,0,0,0.6) 29.481%, rgba(0,0,0,0.222) 86.185%)"
+    }
+  },
+  "imagem_larga": {
+    "node": "1:968",
+    "left": 100,
+    "top": 3550,
+    "largura": 1720,
+    "altura": 1031,
+    "radius": 56,
+    "gradiente": "linear-gradient(156.5deg, rgba(0,0,0,0.6) 29.481%, rgba(0,0,0,0.222) 86.185%)"
+  },
+  "outros_projetos": {
+    "node": "1:969",
+    "left": 100,
+    "top": 4729,
+    "largura": 1767,
+    "gap_cabecalho_grade": 62,
+    "cabecalho": {
+      "node": "1:970",
+      "padding": 8,
+      "titulo": {
+        "texto": "Outros Projetos",
+        "fonte": "Mulish Bold 48px",
+        "cor": "black"
+      },
+      "botao": {
+        "texto": "Ver todos",
+        "largura": 418,
+        "fundo": "#a98d67",
+        "cor": "#ffffff",
+        "fonte": "Arboria Bold 20px",
+        "padding": "12px 24px",
+        "radius": 4
+      }
+    },
+    "grade": {
+      "node": "1:973",
+      "colunas": 3,
+      "gap": 100,
+      "card": {
+        "gap_imagem_titulo": 32,
+        "imagem": {
+          "largura": 523,
+          "altura": 545,
+          "radius": 16
+        },
+        "titulo_fonte": "Faberge Regular 40px",
+        "titulo_cor": "#262626"
+      },
+      "titulos": [
+        "AP MM",
+        "STUDIO",
+        "COZINHA LA"
+      ]
+    }
+  },
+  "wordmark": {
+    "node": "1:1014",
+    "texto": "ISABELLA PIRES",
+    "fonte": "Faberge Regular 192px",
+    "tracking": 19.2,
+    "altura": 367,
+    "cor": "black",
+    "alinhamento": "center",
+    "left": 177,
+    "top": 5587,
+    "largura": 1560,
+    "padding_y": 31
+  },
+  "rodape": {
+    "node": "1:989",
+    "top": 6007,
+    "fundo": "#989694 (divergente: na tela de listagem o mesmo rodape aparece com #3a2e26)",
+    "padding": "52px 128px",
+    "padding_interno_lateral": 110,
+    "gap_blocos": 32,
+    "cta": {
+      "rotulo": "Contate-nos",
+      "fonte_rotulo": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "cor_rotulo": "#e9e2da",
+      "titulo": "Sobrou alguma dúvida?\nVamos conversar!",
+      "fonte_titulo": "Faberge Regular 44px",
+      "cor_titulo": "#eee",
+      "botao": {
+        "texto": "Quero agendar uma reunião",
+        "fundo": "rgba(255,255,255,0.73)",
+        "cor": "#352005",
+        "padding": "12px 24px",
+        "radius": 16,
+        "fonte": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)"
+      }
+    },
+    "colunas": {
+      "gap": 132,
+      "gap_itens": 12,
+      "Institucional": {
+        "altura": 265,
+        "titulo_fonte": "Faberge Regular 32px",
+        "titulo_cor": "#eee",
+        "itens_fonte": "Arboria Medium 16px",
+        "itens_cor": "rgba(255,255,255,0.8)",
+        "itens": [
+          "Início",
+          "Serviços",
+          "Projetos",
+          "Sobre nós",
+          "Blog",
+          "Contato"
+        ]
+      },
+      "Informações": {
+        "altura": 187.562,
+        "itens": [
+          "Termos de uso",
+          "Políticas de Privacidade",
+          "Políticas de Cookies"
+        ]
+      }
+    },
+    "divisor": {
+      "largura": 1444
+    },
+    "copyright": {
+      "texto": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+      "fonte": "Arboria Medium 20px",
+      "cor": "rgba(255,255,255,0.8)"
+    },
+    "redes": [
+      "Instagram",
+      "Facebook",
+      "Tiktok",
+      "Youtube",
+      "Linkedin"
+    ],
+    "rede_tamanho": 40,
+    "rede_gap": 12
+  },
+  "divergencias_medidas_contra_o_site_no_ar": [
+    "Estrutura: Figma tem DUAS COLUNAS lado a lado — ficha tecnica sticky de 593px a esquerda (left 115) e corpo de texto de 1003px a direita (left 818); o site empilha tudo em coluna unica de max-width 1184 (.projeto__interno), sem sticky.",
+    "Titulo do hero: Figma Faberge Regular 100px cor #eee, centralizado sobre a foto (left 772); site Mulish 700 100px #ffffff ancorado no canto inferior esquerdo (left 24, bottom 40).",
+    "Hero: Figma 1920x1152 com gradiente diagonal 156.5deg de rgba(0,0,0,0.6) a rgba(0,0,0,0.222); site usa aspect-ratio 1440/882 e NAO tem gradiente nenhum sobre a imagem.",
+    "Ficha tecnica — campos completamente diferentes. Figma: Cliente, Serviço, Tamanho, Valor, Data (5 linhas com divisor de 2px entre elas, rotulo 200px + valor 820px). Site: Ano, Autoria, Localização, Categoria (4 campos, grade de 2 colunas, sem divisores).",
+    "Ficha tecnica — cor do valor: Figma #887769; site #21201f. Tamanho 29px bate nos dois, mas so isso.",
+    "Titulo 'Detalhes do Projeto': Figma Mulish SemiBold 40px line-height 0.97; site 600 40px line-height 1.2 — tamanho e peso batem, entrelinha nao.",
+    "Secao de corpo: Figma tem DUAS secoes tituladas, 'Contexto' e 'Conclusão' (40px), com uma imagem de 935x560.852 radius 56 entre elas; o site tem UMA secao chamada 'Concepção e Processo'.",
+    "Corpo dos paragrafos: Figma Faberge Regular 24px line-height 26.325 (~1.1) cor black; site Mulish 600 22px line-height 1.6 cor #5a5755.",
+    "Bloco 'Outros Projetos' (node 1:969: titulo Mulish Bold 48px + botao 'Ver todos' 418px #a98d67 radius 4 + grade de 3 cards 523x545 radius 16 com titulo Faberge 40px #262626) NAO EXISTE no site.",
+    "Imagem larga de 1720x1031 radius 56 (node 1:968) ausente: o site tem uma galeria em grade com gap 24 e radius 8.",
+    "Contagem de imagens: /projetos/casa-ip no ar tem apenas 2 tags <img>; o Figma pede no minimo 6 (hero + imagem no meio do texto + imagem larga + 3 cards de outros projetos).",
+    "Radius das imagens: Figma 56px no corpo e 16px nos cards de outros projetos; site 8px na galeria.",
+    "Wordmark ISABELLA PIRES 192px Faberge tracking 19.2 (node 1:1014) — conferir se existe no site.",
+    "Rodape: cor de fundo do Figma nesta tela e #989694, divergindo do #3a2e26 da propria tela de listagem — inconsistencia interna do design, sanear escolhendo uma.",
+    "Texto do corpo no Figma e placeholder do designer sobre 'chá de casa nova', nao conteudo real de projeto — nao copiar.",
+    "Faberge, Arboria e Montserrat ausentes do projeto. Segoe UI (titulo 'Conclusão', rotulos e valores da ficha, rodape) deve ser saneada, nao reproduzida."
+  ]
+}

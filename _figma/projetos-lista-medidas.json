@@ -1,0 +1,275 @@
+{
+  "_origem": "mcp__figma__get_design_context, fileKey w03gcodehy5qey828y58hS, nodeId 1:762, em 05/09/2026",
+  "_nota": "Valores lidos do Figma. Comparados com https://www.isabellapiresarquitetura.com.br/projetos no mesmo dia.",
+  "quadro": {
+    "node": "1:762",
+    "largura": 1920,
+    "fundo": "#fbf7f4",
+    "gap_entre_blocos": 60
+  },
+  "menu_topo": {
+    "node": "1:765",
+    "altura": 151,
+    "padding": "40px 100px",
+    "borda_inferior": "1px solid #352005",
+    "logo": {
+      "largura": 56.223,
+      "altura": 73
+    },
+    "itens": [
+      "Início",
+      "Serviços",
+      "Projetos",
+      "Blog",
+      "Sobre nós",
+      "Contato"
+    ],
+    "item_fonte": "Arboria Medium 24px",
+    "item_cor": "#352005",
+    "item_padding": "8px 12px",
+    "gap": 32,
+    "dropdown": [
+      "Serviços tem seta (Icone Arrow down 32px)"
+    ]
+  },
+  "cabecalho_pagina": {
+    "node": "1:766",
+    "padding": "80px 100px",
+    "gap": 67,
+    "borda_inferior": "1px solid #352005",
+    "migalhas": {
+      "node": "1:769",
+      "texto": "Início / Projetos",
+      "fonte": "Arboria Bold 21px",
+      "icone": "fa-house 24x34",
+      "cor_inicio": "#212529",
+      "cor_atual": "#352005",
+      "gap": 8
+    },
+    "titulo": {
+      "node": "1:777",
+      "texto": "Projetos",
+      "fonte": "Mulish SemiBold 100px",
+      "cor": "#352005",
+      "line_height": "normal"
+    },
+    "selo_circular": {
+      "node": "1:818",
+      "tamanho": 328,
+      "left": 1371,
+      "top": 173
+    }
+  },
+  "filtros": {
+    "node": "1:778",
+    "gap": 16,
+    "botao": {
+      "padding": "12px 24px",
+      "radius": 8,
+      "fonte": "Segoe UI Bold/Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)"
+    },
+    "ativo": {
+      "node": "1:779",
+      "texto": "Todos",
+      "fundo": "#352005",
+      "cor": "#eee"
+    },
+    "inativos": {
+      "textos": [
+        "Residencial",
+        "Comercial",
+        "Especializado"
+      ],
+      "fundo": "#fff",
+      "borda": "1px solid #352005",
+      "cor": "#352005"
+    }
+  },
+  "lista_projetos": {
+    "node": "1:783",
+    "padding": "40px 100px 100px",
+    "gap_lista_para_botao": 100,
+    "gap_entre_cards": 32,
+    "largura_card": 1624,
+    "cada_card": {
+      "radius_imagem": 33,
+      "altura_primeiro": 557,
+      "altura_demais": 450,
+      "overlay_primeiro": "rgba(0,0,0,0.39)",
+      "overlay_demais": "rgba(0,0,0,0.75)",
+      "opacidade_texto_demais": 0.81,
+      "titulo": {
+        "fonte": "Arboria Medium 64px",
+        "cor": "#ffffff",
+        "left": 196,
+        "top_primeiro": 264.5,
+        "top_demais": 193.5
+      },
+      "resumo": {
+        "fonte_primeiro": "Segoe UI Semibold 21px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+        "fonte_demais": "Segoe UI Regular 18px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+        "destaque_em_negrito": "Segoe UI Bold",
+        "cor": "rgba(255,255,255,0.92)",
+        "left": 1016,
+        "largura_primeiro": 544,
+        "largura_demais": 512,
+        "top_primeiro": 252,
+        "top_demais": 221
+      },
+      "selo_categoria": {
+        "texto": "Residencial",
+        "fonte": "DM Sans SemiBold 20px, opsz 14",
+        "fundo": "rgba(255,255,255,0.76)",
+        "borda": "1px solid #352005",
+        "cor": "#352005",
+        "padding": "12px 24px",
+        "radius": 8,
+        "posicao_primeiro": "left 68, top 53",
+        "posicao_demais": "left 196, top 255"
+      },
+      "cta_primeiro": {
+        "node": "1:791",
+        "texto": "Ver projeto",
+        "fundo": "#eee",
+        "opacidade": 0.93,
+        "cor": "#352005",
+        "fonte": "Segoe UI Bold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+        "padding": "12px 24px",
+        "radius": 8,
+        "left": 1016,
+        "top": 372
+      }
+    },
+    "cards": [
+      {
+        "node": "1:788",
+        "titulo": "CASA IP",
+        "altura": 557,
+        "tem_cta": true
+      },
+      {
+        "node": "1:796",
+        "titulo": "STUDIO",
+        "altura": 450,
+        "tem_cta": false
+      },
+      {
+        "node": "1:803",
+        "titulo": "COZINHA LA",
+        "altura": 450,
+        "tem_cta": false
+      },
+      {
+        "node": "1:810",
+        "titulo": "AP MM",
+        "altura": 450,
+        "tem_cta": false
+      }
+    ],
+    "botao_carregar_mais": {
+      "node": "1:814",
+      "texto": "Carregar mais",
+      "fundo": "#352005",
+      "cor": "#eee",
+      "fonte": "Segoe UI Bold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "padding": "12px 24px",
+      "radius": 8
+    }
+  },
+  "wordmark": {
+    "node": "1:816",
+    "texto": "ISABELLA PIRES",
+    "fonte": "Faberge Regular 192px",
+    "tracking": 19.2,
+    "altura": 367,
+    "cor": "black",
+    "alinhamento": "center",
+    "padding_y": 31
+  },
+  "rodape": {
+    "node": "1:817",
+    "fundo": "#3a2e26",
+    "padding": "52px 128px",
+    "padding_interno_lateral": 110,
+    "gap_blocos": 32,
+    "cta": {
+      "rotulo": "Contate-nos",
+      "fonte_rotulo": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "cor_rotulo": "#e9e2da",
+      "titulo": "Sobrou alguma dúvida?\nVamos conversar!",
+      "fonte_titulo": "Faberge Regular 44px",
+      "cor_titulo": "#eee",
+      "botao": {
+        "texto": "Quero agendar uma reunião",
+        "fundo": "rgba(255,255,255,0.73)",
+        "cor": "#352005",
+        "padding": "12px 24px",
+        "radius": 16,
+        "fonte": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)"
+      }
+    },
+    "colunas": {
+      "gap": 132,
+      "gap_itens": 12,
+      "Institucional": {
+        "altura": 265,
+        "titulo_fonte": "Faberge Regular 32px",
+        "titulo_cor": "#eee",
+        "itens_fonte": "Arboria Medium 16px",
+        "itens_cor": "rgba(255,255,255,0.8)",
+        "itens": [
+          "Início",
+          "Serviços",
+          "Projetos",
+          "Sobre nós",
+          "Blog",
+          "Contato"
+        ]
+      },
+      "Informações": {
+        "altura": 187.562,
+        "itens": [
+          "Termos de uso",
+          "Políticas de Privacidade",
+          "Políticas de Cookies"
+        ]
+      }
+    },
+    "divisor": {
+      "largura": 1444
+    },
+    "copyright": {
+      "texto": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+      "fonte": "Arboria Medium 20px",
+      "cor": "rgba(255,255,255,0.8)"
+    },
+    "redes": [
+      "Instagram",
+      "Facebook",
+      "Tiktok",
+      "Youtube",
+      "Linkedin"
+    ],
+    "rede_tamanho": 40,
+    "rede_gap": 12
+  },
+  "divergencias_medidas_contra_o_site_no_ar": [
+    "Layout do card: Figma tem imagem de fundo (557px o primeiro, 450px os demais) com overlay escuro e TODO o texto por cima em posicao absoluta; o site empilha imagem com aspect-ratio 1136/557 e joga titulo/resumo/CTA ABAIXO da imagem, em .cartao__texto com padding-top 24.",
+    "Titulo da pagina: Figma Mulish SemiBold 100px cor #352005; site 600 60px cor #21201f (src/pages/projetos/index.astro, .projetos__titulo).",
+    "Titulo do card: Figma Arboria Medium 64px branco sobre a foto; site Mulish 400 64px cor #21201f abaixo da foto — familia e cor divergem, so o tamanho bate.",
+    "Filtros de categoria (Todos / Residencial / Comercial / Especializado, node 1:778, padding 12x24 radius 8) NAO EXISTEM no site: o HTML no ar nao tem nenhuma barra de filtro.",
+    "Botao 'Carregar mais' (node 1:814, fundo #352005, radius 8) tambem nao existe no site — a lista renderiza todos os projetos de uma vez.",
+    "Selo de categoria 'Residencial' sobre a foto (fundo rgba(255,255,255,0.76), borda #352005, radius 8) ausente no site.",
+    "CTA 'Ver projeto': Figma e um botao solido #eee radius 8 padding 12x24 dentro da foto; site e um <span> com border-bottom 1px, fonte Mulish 700 20px #341f04.",
+    "Radius da imagem: Figma 33px; site 12px (.cartao__imagem).",
+    "Largura util: Figma card de 1624px dentro de 1920 (padding lateral 100); site max-width 1184px com padding 24.",
+    "Gap entre cards: Figma 32; site 64.",
+    "Migalhas: Figma Arboria Bold 21px com icone fa-house 24x34; site Mulish 700 16px sem icone.",
+    "Selo circular de 328px (node 1:818, left 1371 top 173) ausente no site.",
+    "Contagem de imagens: /projetos no ar tem 4 tags <img> (uma por projeto); o Figma tem 4 fotos-fundo, entao a contagem bate, mas o papel delas e outro (fundo com overlay vs. figura empilhada).",
+    "Menu topo: Figma Arboria Medium 24px, altura 151, borda inferior #352005; site usa Mulish.",
+    "Rodape: Figma fundo #3a2e26 com CTA, 2 colunas, divisor de 1444 e 5 redes sociais; conferir o do site.",
+    "Wordmark ISABELLA PIRES 192px Faberge tracking 19.2 — conferir se existe no site.",
+    "Faberge, Arboria e DM Sans ausentes do projeto. Segoe UI (filtros, resumos, CTAs, rodape) deve ser saneada, nao reproduzida."
+  ]
+}

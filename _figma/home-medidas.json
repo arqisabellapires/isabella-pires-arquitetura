@@ -1,0 +1,221 @@
+{
+  "_origem": "mcp__figma__get_design_context, fileKey w03gcodehy5qey828y58hS, nodeId 1:176, em 05/09/2026. Bruto em _figma/home-design-context.json.",
+  "_nota": "Comparado com https://www.isabellapiresarquitetura.com.br/ no mesmo dia.",
+  "pagina": {
+    "fundo": "#fbf7f4",
+    "padding_lateral": 180,
+    "largura_canvas": 1920
+  },
+  "componente_rotulo_de_secao": {
+    "_uso": "Repete-se em Sobre, Serviços, Projetos, Blog e CTA. Vale virar componente.",
+    "estrutura": "linha horizontal de 62px + texto, gap 24",
+    "fonte": "Faberge Regular 24px",
+    "cor_varia": [
+      "#a98d67 (primary light)",
+      "#887769 (secundary active)"
+    ]
+  },
+  "hero": {
+    "node": "1:177",
+    "altura": 913,
+    "largura": 1920,
+    "fundo_base": "white",
+    "imagem": {
+      "node": "1:178",
+      "altura": 1152,
+      "posicao": "topo esquerda, cobre 118.36% da altura, offset -21.17%"
+    },
+    "gradiente": "linear-gradient(156.5deg, rgba(0,0,0,0.52) 29.48%, rgba(0,0,0,0.192) 86.19%)",
+    "caixa_central": {
+      "node": "1:180",
+      "largura": 1344,
+      "altura": 592,
+      "left": 288,
+      "top": 223,
+      "padding_lateral": 332,
+      "fundo": "rgba(0,0,0,0.21)",
+      "radius": 16
+    },
+    "conteudo": {
+      "largura": 882,
+      "gap": 60
+    },
+    "titulo": {
+      "node": "1:183",
+      "fonte": "Mulish Bold 80px",
+      "line_height": 0.97,
+      "cor": "white",
+      "duas_linhas": [
+        "Espaços que refletem",
+        "quem você realmente é"
+      ],
+      "detalhe": "a palavra 'realmente' e #eee, o resto branco"
+    },
+    "subtitulo": {
+      "node": "1:184",
+      "fonte": "Segoe UI Semibold 24px (SANEAR: Segoe UI e fallback do designer)",
+      "cor": "#eaeaea"
+    },
+    "gap_titulo_subtitulo": 32,
+    "botoes": {
+      "gap": 32,
+      "ambos_flex_1": true,
+      "primario_texto": {
+        "texto": "Entrar em contato",
+        "fundo": "#eee",
+        "cor": "#352005",
+        "padding": "16px 24px",
+        "radius": 8,
+        "fonte": "Segoe UI Bold 24px (SANEAR)",
+        "tracking": 1.2
+      },
+      "secundario": {
+        "texto": "Explorar Projetos",
+        "fundo": "#a98d67",
+        "cor": "white",
+        "altura": 54,
+        "padding": "12px 24px",
+        "radius": 8,
+        "fonte": "Segoe UI Bold 24px (SANEAR)"
+      }
+    }
+  },
+  "menu_topo": {
+    "node": "1:179",
+    "altura": 151,
+    "padding": "40px 100px",
+    "sobre_o_hero": "absoluto no topo, sem fundo — o texto e claro (#eee) sobre a foto",
+    "logo": {
+      "largura": 56.223,
+      "altura": 73,
+      "espelhado_vertical": true
+    },
+    "itens": [
+      "Início",
+      "Serviços",
+      "Projetos",
+      "Blog",
+      "Sobre nós",
+      "Contato"
+    ],
+    "item_fonte": "Arboria Medium 24px",
+    "item_cor_no_hero": "#eee",
+    "item_cor_nas_internas": "#352005",
+    "item_padding": "8px 12px",
+    "gap": 32,
+    "dropdown_servicos": "tem seta (Icone Arrow down 32px), gap 4"
+  },
+  "sobre": {
+    "node": "1:189",
+    "padding_y": 140,
+    "coluna_texto": {
+      "node": "1:190",
+      "largura": 705,
+      "gap": 60,
+      "radius": 12
+    }
+  },
+  "numeros": {
+    "node": "1:209",
+    "posicao": "absoluta, top 2009",
+    "padding_lateral": 120,
+    "gap": 30,
+    "largura": 1920,
+    "fonte_valor": "Faberge Regular 66px",
+    "fonte_rotulo": "Faberge Regular 28px",
+    "cor": "#352005",
+    "line_height": 0.97,
+    "gap_interno": 32,
+    "itens": [
+      {
+        "valor": "2024",
+        "rotulo": "Início de um sonho independente"
+      },
+      {
+        "valor": "+32",
+        "rotulo": "Meses dedicados à arquitetura"
+      }
+    ]
+  },
+  "projetos_carrossel": {
+    "node": "1:223",
+    "padding_y": 150,
+    "gap": 60,
+    "card": {
+      "node": "1:310",
+      "largura": 921,
+      "altura": 674,
+      "radius": 8,
+      "gradiente": "linear-gradient(179.88deg, rgba(0,0,0,0.084) 0.15%, rgba(0,0,0,0.35) 68.31%)",
+      "texto": {
+        "left": 86,
+        "top": 492,
+        "largura": 681,
+        "gap": 8
+      }
+    }
+  },
+  "servicos": {
+    "node": "1:300",
+    "padding": "100px topo, 161px base",
+    "gap": 60,
+    "rotulo": {
+      "texto": "Serviços",
+      "fonte": "Faberge Regular 24px",
+      "cor": "#a98d67"
+    },
+    "titulo": {
+      "fonte": "Mulish SemiBold 70px",
+      "cor": "#1a1a1a"
+    }
+  },
+  "cta_contato": {
+    "node": "1:332",
+    "fundo": "rgba(240,217,199,0.25)",
+    "padding": "120px topo, 180px base",
+    "largura": 1920,
+    "rotulo": {
+      "texto": "Entre em contato",
+      "fonte": "Faberge Regular 24px",
+      "cor": "#887769"
+    },
+    "formulario": {
+      "campos_node": [
+        "1:337",
+        "1:338",
+        "1:340",
+        "1:341",
+        "1:342"
+      ],
+      "botao": "1:343"
+    }
+  },
+  "blog": {
+    "node": "1:351",
+    "altura": 779,
+    "padding_y": 150,
+    "largura": 1920,
+    "rotulo": {
+      "fonte": "Faberge Regular 24px",
+      "cor": "#a98d67"
+    }
+  },
+  "wordmark": {
+    "node": "1:414",
+    "texto": "ISABELLA PIRES",
+    "padding_y": 31,
+    "_ver": "medidas iguais as de servicos-medidas.json: Faberge 192px, tracking 19.2, altura 367"
+  },
+  "divergencias_medidas_contra_o_site_no_ar": [
+    "Hero: Figma tem foto de fundo com gradiente diagonal e caixa central de 1344x592 com fundo rgba(0,0,0,0.21) e radius 16. O site tem fundo chapado #21201f, sem foto e sem caixa.",
+    "Hero titulo: Figma Mulish Bold 80px line-height 0.97 com a palavra 'realmente' em #eee. O site tem 700 80px/1.05 sem o destaque da palavra.",
+    "Hero botoes: Figma sao dois botoes flex-1 (ocupam metade cada) com radius 8, um #eee e outro #a98d67. O site tem botoes pill (radius 999px) branco e outlined.",
+    "Menu: Figma Arboria Medium 24px, altura 151, itens com padding 8px 12px e gap 32, com dropdown em Servicos. O site usa Mulish e nao tem dropdown.",
+    "Numeros: Figma Faberge 66px/28px em #352005, absolutos com padding lateral 120. O site usa Mulish e fundo #f0d9c7.",
+    "Rotulo de secao: Figma tem linha de 62px + texto Faberge 24px. No site o rotulo usa 'Faberge' declarada mas SEM @font-face, entao cai em fallback.",
+    "Titulo de secao: Figma Mulish SemiBold 70px #1a1a1a. O site usa 600 60px #21201f.",
+    "Projetos: Figma tem card de 921x674 com gradiente e texto sobreposto no rodape do card. Conferir contra a grade do site.",
+    "CTA: Figma tem fundo rgba(240,217,199,0.25) com formulario de 5 campos embutido na home. Conferir se o site tem esse formulario na home.",
+    "Padding lateral da pagina: Figma 180px. O site usa max-width 1184 com padding 24."
+  ]
+}

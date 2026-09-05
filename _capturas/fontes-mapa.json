@@ -1,0 +1,602 @@
+[
+  {
+    "arquivo": "public/fontes/framer/05KsVHGDmqXSBXM4yRZ65P8i0s.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Italic",
+    "postscript": "Inter-BlackItalic",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/0SEEmmWc3vovhaai4RlRQSWRrz0.woff2",
+    "familia": "Inter Display SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/1K3W8DizY3v4emK8Mb08YHxTbs.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold",
+    "postscript": "Inter-Bold",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/2A4Xx7CngadFGlVV4xrO06OBHY.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold Italic",
+    "postscript": "Inter-BoldItalic",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/2uIBiALfCHVpWbHqRMZutfT7giU.woff2",
+    "familia": "Inter Display",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/3ZmXbBKToJifDV9gwcifVd1tEY.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Italic",
+    "postscript": "Inter-BlackItalic",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold Italic",
+    "postscript": "Inter-BoldItalic",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold",
+    "postscript": "Inter-Bold",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/5A3Ce6C9YYmCjpQx9M4inSaKU.woff2",
+    "familia": "Inter Medium",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Medium",
+    "peso": 500,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/5HcVoGak8k5agFJSaKa4floXVu0.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Black",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2",
+    "familia": "Inter",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/6mJuEAguuIuMog10gGvH5d3cl8.woff2",
+    "familia": "Inter Medium",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Medium",
+    "peso": 500,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/867QObYax8ANsfX4TGEVU9YiCM.woff2",
+    "familia": "Inter",
+    "subfamilia": "Italic",
+    "postscript": "Inter-Italic",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/A0Wcc7NgXMjUuFdquHDrIZpzZw0.woff2",
+    "familia": "Inter SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "Inter-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/CfMzU8w2e7tHgF4T4rATMPuWosA.woff2",
+    "familia": "Inter",
+    "subfamilia": "Italic",
+    "postscript": "Inter-Italic",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/DF7bjCRmStYPqSb945lAlMfCCVQ.woff2",
+    "familia": "Inter Display",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/DOfvtmE1UplCq161m6Hj8CSQYg.woff2",
+    "familia": "Inter",
+    "subfamilia": "Italic",
+    "postscript": "Inter-Italic",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/DXD0Q7LSl7HEvDzucnyLnGBHM.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold",
+    "postscript": "Inter-Bold",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/DolVirEGb34pEXEp8t8FQBSK4.woff2",
+    "familia": "Inter Medium",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Medium",
+    "peso": 500,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold",
+    "postscript": "Inter-Bold",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/EOr0mi4hNtlgWNn9if640EZzXCo.woff2",
+    "familia": "Inter",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/FNfhX3dt4ChuLJq2PwdlxHO7PU.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Italic",
+    "postscript": "Inter-BlackItalic",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/GIryZETIX4IFypco5pYZONKhJIo.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold",
+    "postscript": "Inter-Bold",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+    "familia": "Inter",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/H89BbHkbHDzlxZzxi8uPzTsp90.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold Italic",
+    "postscript": "Inter-BoldItalic",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2",
+    "familia": "Inter",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/MJ3N6lfN4iP5Um8rJGqLYl03tE.woff2",
+    "familia": "Inter Display SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/NeGmSOXrPBfEFIy5YZeHq17LEDA.woff2",
+    "familia": "Inter SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "Inter-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2",
+    "familia": "Inter",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/Oyn2ZbENFdnW7mt2Lzjk1h9Zb9k.woff2",
+    "familia": "Inter",
+    "subfamilia": "Italic",
+    "postscript": "Inter-Italic",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/P2Bw01CtL0b9wqygO0sSVogWbo.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Black",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/PfdOpgzFf7N2Uye9JX7xRKYTgSc.woff2",
+    "familia": "Inter Display SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/Qx95Xyt0Ka3SGhinnbXIGpEIyP4.woff2",
+    "familia": "Inter Medium",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Medium",
+    "peso": 500,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/QxmhnWTzLtyjIiZcfaLIJ8EFBXU.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold Italic",
+    "postscript": "Inter-BoldItalic",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/U9LaDDmbRhzX3sB8g8glTy5feTE.woff2",
+    "familia": "Inter Display",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/UjlFhCnUjxhNfep4oYBPqnEssyo.woff2",
+    "familia": "Inter Medium",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Medium",
+    "peso": 500,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/VgYFWiwsAC5OYxAycRXXvhze58.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold",
+    "postscript": "Inter-Bold",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/WZ367JPwf9bRW6LdTHN8rXgSjw.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold Italic",
+    "postscript": "Inter-BoldItalic",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/X5hj6qzcHUYv7h1390c8Rhm6550.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Black",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2",
+    "familia": "Inter",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/Zwfz6xbVe5pmcWRJRgBDHnMkOkI.woff2",
+    "familia": "Inter Display",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/b6Y37FthZeALduNqHicBT6FutY.woff2",
+    "familia": "Inter",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/bHYNJqzTyl2lqvmMiRRS6Y16Es.woff2",
+    "familia": "Inter Display",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/cRJyLNuTJR5jbyKzGi33wU9cqIQ.woff2",
+    "familia": "Inter SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "Inter-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/cdAe8hgZ1cMyLu9g005pAW3xMo.woff2",
+    "familia": "Inter",
+    "subfamilia": "Italic",
+    "postscript": "Inter-Italic",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/cugnVhSraaRyANCaUtI5FV17wk.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Black",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/efTfQcBJ53kM2pB1hezSZ3RDUFs.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Italic",
+    "postscript": "Inter-BlackItalic",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/gQhNpS3tN86g8RcVKYUUaKt2oMQ.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Black",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/gazZKZuUEtvr9ULhdA4SprP0AZ0.woff2",
+    "familia": "Inter Display SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/gcnfba68tfm7qAyrWRCf9r34jg.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Italic",
+    "postscript": "Inter-BlackItalic",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/hyOgCu0Xnghbimh0pE8QTvtt2AU.woff2",
+    "familia": "Inter SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "Inter-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/ia3uin3hQWqDrVloC1zEtYHWw.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold Italic",
+    "postscript": "Inter-BoldItalic",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/ky8ovPukK4dJ1Pxq74qGhOqCYI.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Italic",
+    "postscript": "Inter-BlackItalic",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/lEJLP4R0yuCaMCjSXYHtJw72M.woff2",
+    "familia": "Inter SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "Inter-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/mkY5Sgyq51ik0AMrSBwhm9DJg.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Black",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/oYaAX5himiTPYuN8vLWnqBbfD2s.woff2",
+    "familia": "Inter SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "Inter-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/otTaNuNpVK4RbdlT7zDDdKvQBA.woff2",
+    "familia": "Inter Medium",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Medium",
+    "peso": 500,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/pKRFNWFoZl77qYCAIp84lN1h944.woff2",
+    "familia": "Inter",
+    "subfamilia": "Italic",
+    "postscript": "Inter-Italic",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/pe8RoujoPxuTZhqoNzYqHX2MXA.woff2",
+    "familia": "Inter Display SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/qQHxgTnEk6Czu1yW4xS82HQWFOk.woff2",
+    "familia": "Inter Display SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/rZ5DdENNqIdFTIyQQiP5isO7M.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Black",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/tKtBcDnBMevsEEJKdNGhhkLzYo.woff2",
+    "familia": "Inter",
+    "subfamilia": "Italic",
+    "postscript": "Inter-Italic",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/tUSCtfYVM1I1IchuyCwz9gDdQ.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold",
+    "postscript": "Inter-Bold",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/tVew2LzXJ1t7QfxP1gdTIdj2o0g.woff2",
+    "familia": "Inter Display",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/teGhWnhH3bCqefKGsIsqFy3hK8.woff2",
+    "familia": "Inter Display SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/u6gJwDuwB143kpNK1T1MDKDWkMc.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold Italic",
+    "postscript": "Inter-BoldItalic",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/vFzuJY0c65av44uhEKB6vyjFMg.woff2",
+    "familia": "Inter",
+    "subfamilia": "Italic",
+    "postscript": "Inter-Italic",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/vQyevYAyHtARFwPqUzQGpnDs.woff2",
+    "familia": "Inter",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/vebZUMjGyKkYsfcY73iwWTzLNag.woff2",
+    "familia": "Inter Display",
+    "subfamilia": "Regular",
+    "postscript": "InterDisplay-Regular",
+    "peso": 400,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/vvNSqIj42qeQ2bvCRBIWKHscrc.woff2",
+    "familia": "Inter Black",
+    "subfamilia": "Italic",
+    "postscript": "Inter-BlackItalic",
+    "peso": 900,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2",
+    "familia": "Inter",
+    "subfamilia": "Bold Italic",
+    "postscript": "Inter-BoldItalic",
+    "peso": 700,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/xYYWaj7wCU5zSQH0eXvSaS19wo.woff2",
+    "familia": "Inter Medium",
+    "subfamilia": "Regular",
+    "postscript": "Inter-Medium",
+    "peso": 500,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/framer/yDtI2UI8XcEg1W2je9XPN3Noo.woff2",
+    "familia": "Inter SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "Inter-SemiBold",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/terceiros/fontshare/wf/6U2SGH566NSNERG6RGEV3DSNEK7DL2RF/JRDYRKMSAW2H35IWEQIPL67HAJQ35MG5/JNU3GNMUBPWW6V6JTED3S27XL5HN7NM5.woff2",
+    "familia": "Manrope SemiBold",
+    "subfamilia": "Regular",
+    "postscript": "false",
+    "peso": 600,
+    "italico": false
+  },
+  {
+    "arquivo": "public/fontes/terceiros/fontshare/wf/BNWG6MUI4RTC6WEND2VPDH4MHMIVU3XZ/R5YXY5FMVG6PXU36GNEEA24MIPMEPGSM/CIM4KQCLZSMMLWPVH25IDDSTY4ENPHEY.woff2",
+    "familia": "Manrope Medium",
+    "subfamilia": "Regular",
+    "postscript": "false",
+    "peso": 500,
+    "italico": false
+  }
+]

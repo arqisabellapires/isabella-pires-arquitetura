@@ -1,6 +1,12 @@
 ---
 import '~/styles/fontes.css';
 import '~/styles/tokens.css';
+/* Os tokens do Figma entram DEPOIS dos antigos: onde os dois falam da mesma
+   coisa, o design manda. Ver docs/PLANO-FIGMA.md. */
+import '~/styles/tokens.figma.css';
+/* As 17 molas do Framer, viradas em linear() nativo. Gerado; ver
+   tools/mola-para-css.mjs. */
+import '~/styles/motion.css';
 import '~/styles/base.css';
 
 import Seo from '~/components/Seo.astro';

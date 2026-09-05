@@ -1,0 +1,85 @@
+/* ============================================================
+   Movimento — gerado por tools/mola-para-css.mjs
+
+   NÃO EDITE À MÃO. Cada curva é a mola que o Framer usava de verdade,
+   medida no site vivo e guardada em _capturas/motion-fichas.json.
+
+   Regerar:  node tools/mola-para-css.mjs --escreve
+   ============================================================ */
+
+:root {
+  /* Elementos entram deslizando quando cruzam o viewport */
+  --mola-reveal-entrada: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-reveal-entrada: 0.8s;
+  /* Menu de celular abre e fecha */
+  --mola-menu-celular: linear(0, 0.0162, 0.0571, 0.1137, 0.1793, 0.2489, 0.3192, 0.3879, 0.4533, 0.5145, 0.571, 0.6225, 0.6691, 0.711, 0.7483, 0.7814, 0.8106, 0.8363, 0.8587, 0.8783, 0.8954, 0.9102, 0.9231, 0.9342, 1);
+  --dur-menu-celular: 0.23s;
+  /* Links Home / Projetos / Serviços do cabeçalho têm par Open/Closed */
+  --mola-nav-desktop-estado: linear(0, 0.0242, 0.0852, 0.1685, 0.2631, 0.3611, 0.4571, 0.5472, 0.6293, 0.7021, 0.7653, 0.8191, 0.864, 0.9008, 0.9304, 0.9537, 0.9718, 0.9853, 0.9952, 1.0022, 1.0069, 1.0097, 1.0112, 1.0118, 1);
+  --dur-nav-desktop-estado: 0.23s;
+  /* Rodapé muda de variante conforme a família da página */
+  --mola-rodape-por-pagina: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-rodape-por-pagina: 0.4s;
+  /* Seção CTA 'ISABELLA PIRES' antes do rodapé */
+  --mola-cta-antes-do-rodape: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-cta-antes-do-rodape: 0.4s;
+  /* Botão Enviar do formulário: loading, success, error, disabled */
+  --mola-botao-enviar: linear(0, 0.0162, 0.0571, 0.1137, 0.1793, 0.2489, 0.3192, 0.3879, 0.4533, 0.5145, 0.571, 0.6225, 0.6691, 0.711, 0.7483, 0.7814, 0.8106, 0.8363, 0.8587, 0.8783, 0.8954, 0.9102, 0.9231, 0.9342, 1);
+  --dur-botao-enviar: 0.2s;
+  /* Lista numerada de serviços da home troca de item */
+  --mola-servicos-numerados-home: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-servicos-numerados-home: 0.4s;
+  /* Carrossel de projetos da home */
+  --mola-carrossel-home: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-carrossel-home: 0.4s;
+  /* Carrossel da página /projetos/ (só tablet e mobile) */
+  --mola-carrossel-projetos: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-carrossel-projetos: 0.4s;
+  /* Card de projeto expande no hover (desktop) */
+  --mola-card-projeto-hover: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-card-projeto-hover: 0.4s;
+  /* Card de projeto abre no clique (mobile) */
+  --mola-card-projeto-abre: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-card-projeto-abre: 0.4s;
+  /* Bloco de 12 variantes na página do projeto Casa IP */
+  --mola-galeria-casa-ip: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-galeria-casa-ip: 0.4s;
+  /* Acordeão 'Nossos Serviços', em /sobre-nos/ */
+  --mola-acordeao-servicos: linear(0, 0.0252, 0.0887, 0.1752, 0.2733, 0.3746, 0.4734, 0.5657, 0.6492, 0.7228, 0.7861, 0.8394, 0.8833, 0.9188, 0.9468, 0.9685, 0.9847, 0.9965, 1.0047, 1.0101, 1.0133, 1.0148, 1.0152, 1.0147, 1);
+  --dur-acordeao-servicos: 0.4s;
+  /* Filtro de categoria da listagem de artigos */
+  --mola-filtros-categoria-artigos: linear(0, 0.0162, 0.0571, 0.1137, 0.1793, 0.2489, 0.3192, 0.3879, 0.4533, 0.5145, 0.571, 0.6225, 0.6691, 0.711, 0.7483, 0.7814, 0.8106, 0.8363, 0.8587, 0.8783, 0.8954, 0.9102, 0.9231, 0.9342, 1);
+  --dur-filtros-categoria-artigos: 0.5s;
+  /* Botão 'Inscreva-se' da newsletter na listagem de artigos */
+  --mola-newsletter-artigos: linear(0, 0.02, 0.0704, 0.1396, 0.2191, 0.3025, 0.3856, 0.4653, 0.5397, 0.6077, 0.6687, 0.7228, 0.77, 0.8108, 0.8458, 0.8754, 0.9002, 0.9209, 0.938, 0.9519, 0.9632, 0.9723, 0.9796, 0.9853, 1);
+  --dur-newsletter-artigos: 0.7s;
+  /* Link 'Ver todas as postagens' no rodapé do artigo */
+  --mola-ver-todas-postagens: linear(0, 0.009, 0.0319, 0.0639, 0.1016, 0.1424, 0.1848, 0.2275, 0.2696, 0.3107, 0.3504, 0.3884, 0.4247, 0.4592, 0.4918, 0.5227, 0.5518, 0.5792, 0.605, 0.6293, 0.6521, 0.6735, 0.6937, 0.7126, 1);
+  --dur-ver-todas-postagens: 0.153s;
+  /* Spinner 'Loading' da listagem de artigos */
+  --mola-spinner-carregando-artigos: linear(0, 0.0162, 0.0571, 0.1137, 0.1793, 0.2489, 0.3192, 0.3879, 0.4533, 0.5145, 0.571, 0.6225, 0.6691, 0.711, 0.7483, 0.7814, 0.8106, 0.8363, 0.8587, 0.8783, 0.8954, 0.9102, 0.9231, 0.9342, 1);
+  --dur-spinner-carregando-artigos: 0.4s;
+}
+
+/* Quem pediu menos movimento, recebe menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-reveal-entrada: 1ms;
+    --dur-menu-celular: 1ms;
+    --dur-nav-desktop-estado: 1ms;
+    --dur-rodape-por-pagina: 1ms;
+    --dur-cta-antes-do-rodape: 1ms;
+    --dur-botao-enviar: 1ms;
+    --dur-servicos-numerados-home: 1ms;
+    --dur-carrossel-home: 1ms;
+    --dur-carrossel-projetos: 1ms;
+    --dur-card-projeto-hover: 1ms;
+    --dur-card-projeto-abre: 1ms;
+    --dur-galeria-casa-ip: 1ms;
+    --dur-acordeao-servicos: 1ms;
+    --dur-filtros-categoria-artigos: 1ms;
+    --dur-newsletter-artigos: 1ms;
+    --dur-ver-todas-postagens: 1ms;
+    --dur-spinner-carregando-artigos: 1ms;
+  }
+}

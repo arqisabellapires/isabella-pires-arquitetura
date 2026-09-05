@@ -1,0 +1,141 @@
+/* ============================================================
+   Tokens do Figma — Isabella Pires Arquitetura
+
+   Origem: arquivo Figma w03gcodehy5qey828y58hS, as 7 telas, extraídas em
+   05/09/2026 para _figma/. Os valores saem de lá, não da memória.
+
+   Duas coisas foram SANEADAS de propósito, e é importante que continuem
+   saneadas se este arquivo for regerado:
+
+   1. 'Segoe UI' aparece 28 vezes no design. Não é decisão de design — é a
+      fonte de sistema do computador do designer entrando como fallback.
+      Onde o Figma diz Segoe UI, aqui diz Mulish.
+   2. Tamanhos quebrados (31px, 71px, 50px) são texto redimensionado à mão
+      no canvas. Foram encaixados na escala.
+
+   E o design é canvas fixo de 1920. Nada aqui é responsivo por si: os
+   tokens fluidos abaixo interpolam entre o mobile e o valor do Figma, que
+   é o valor de desktop.
+   ============================================================ */
+
+:root {
+  /* ─── Cor: a paleta da marca ──────────────────────────────
+     Os quatro primeiros são variáveis nomeadas no próprio Figma. */
+  --fig-primaria-ativa:    #352005;  /* marrom escuro — títulos, menu */
+  --fig-primaria-media:    #483b2a;
+  --fig-primaria-clara:    #a98d67;  /* caramelo — botões, rótulos, rodapé */
+  --fig-secundaria-ativa:  #887769;
+
+  --fig-cinza-50:          #eeeeee;  /* texto sobre fundo escuro */
+  --fig-cinza-700:         #5b5855;
+  --fig-cinza-900:         #21201f;
+
+  /* Fundos — literais no design, sem variável */
+  --fig-fundo:             #fbf7f4;  /* areia clara, fundo do site */
+  --fig-fundo-quente:      #f8efe9;  /* faixa do formulário de contato */
+  --fig-fundo-pessego:     #f0d9c7;
+  --fig-fundo-cartao:      #fdfdfd;
+  --fig-fundo-escuro:      #3a2e26;  /* rodapé */
+
+  --fig-tinta:             #1a1a1a;  /* títulos de seção */
+  --fig-tinta-suave:       #262626;
+  --fig-texto:             #6c757d;  /* corpo, parágrafos */
+  --fig-texto-meta:        #716d69;  /* data, autor */
+  --fig-borda:             #ced4da;
+
+  /* Véus sobre imagem, medidos no Figma */
+  --fig-veu-hero:          rgba(0, 0, 0, 0.21);
+  --fig-veu-destaque:      rgba(240, 217, 199, 0.2);
+  --fig-veu-acordeao:      rgba(240, 217, 199, 0.45);
+  --fig-veu-cta:           rgba(240, 217, 199, 0.25);
+  --fig-gradiente-hero:    linear-gradient(156.5deg, rgba(0,0,0,0.52) 29.48%, rgba(0,0,0,0.192) 86.19%);
+  --fig-gradiente-card:    linear-gradient(179.88deg, rgba(0,0,0,0.084) 0.15%, rgba(0,0,0,0.35) 68.31%);
+
+  /* ─── Tipografia ──────────────────────────────────────────
+     Faberge e Arboria são alias: ver src/styles/fontes.css. */
+  --fig-fonte-display: 'Faberge', 'Cormorant Garamond', Georgia, serif;
+  --fig-fonte-ui:      'Arboria', 'Jost', system-ui, sans-serif;
+  --fig-fonte-corpo:   'Mulish', system-ui, -apple-system, sans-serif;
+  --fig-fonte-apoio:   'Montserrat', system-ui, sans-serif;
+
+  /* Escala do Figma (desktop), já saneada. O nome diz o papel, não o px,
+     porque o px muda entre breakpoints e o papel não. */
+  --fig-t-wordmark:  192px;  /* ISABELLA PIRES */
+  --fig-t-titulo-pagina: 100px;
+  --fig-t-titulo-secao:   70px;
+  --fig-t-numero:         66px;  /* 2024, +32 */
+  --fig-t-hero:           80px;
+  --fig-t-card-titulo:    64px;
+  --fig-t-servico-num:    60px;
+  --fig-t-destaque:       48px;
+  --fig-t-subtitulo:      44px;
+  --fig-t-rodape-col:     32px;
+  --fig-t-rotulo:         24px;  /* rótulo de seção, itens de menu */
+  --fig-t-corpo-g:        22px;
+  --fig-t-corpo:          20px;
+  --fig-t-corpo-p:        18px;
+  --fig-t-meta:           16px;
+
+  /* Fluida: interpola do celular ao 1920 do Figma. */
+  --fig-f-wordmark:      clamp(3rem,   -1rem + 16vw,  12rem);
+  --fig-f-titulo-pagina: clamp(2.5rem,  0.6rem + 6.5vw, 6.25rem);
+  --fig-f-titulo-secao:  clamp(2rem,    0.9rem + 4vw,   4.375rem);
+  --fig-f-hero:          clamp(2.25rem, 0.9rem + 5vw,   5rem);
+  --fig-f-card-titulo:   clamp(1.75rem, 0.8rem + 3.6vw, 4rem);
+  --fig-f-numero:        clamp(2.25rem, 1.2rem + 3.4vw, 4.125rem);
+  --fig-f-subtitulo:     clamp(1.5rem,  1rem + 1.8vw,   2.75rem);
+  --fig-f-rotulo:        clamp(1rem,    0.9rem + 0.5vw, 1.5rem);
+  --fig-f-corpo:         clamp(1rem,    0.95rem + 0.3vw, 1.25rem);
+
+  --fig-peso-normal: 400;
+  --fig-peso-medio:  500;
+  --fig-peso-semi:   600;
+  --fig-peso-forte:  700;
+
+  /* O design usa 0.97 nos títulos grandes — apertado de propósito. */
+  --fig-altura-titulo: 0.97;
+  --fig-altura-corpo:  1.214;
+  --fig-altura-solta:  1.6;
+  --fig-tracking-wordmark: 19.2px;
+  --fig-tracking-botao:    1.2px;
+
+  /* ─── Espaço ──────────────────────────────────────────────
+     Os gaps que o Figma de fato usa. */
+  --fig-e-2xs:  4px;
+  --fig-e-xs:   8px;
+  --fig-e-sm:  12px;
+  --fig-e-md:  16px;
+  --fig-e-lg:  24px;
+  --fig-e-xl:  32px;
+  --fig-e-2xl: 40px;
+  --fig-e-3xl: 60px;
+  --fig-e-4xl: 80px;
+  --fig-e-5xl: 100px;
+  --fig-e-6xl: 120px;
+  --fig-e-7xl: 132px;
+  --fig-e-8xl: 165px;
+
+  /* Respiro vertical entre seções: 140–150px no Figma. */
+  --fig-secao-y: clamp(3.5rem, 1.5rem + 6vw, 9.375rem);
+
+  /* ─── Layout ──────────────────────────────────────────────
+     O Figma é 1920 com 180 de padding lateral: 1560 de conteúdo. */
+  --fig-largura-canvas:  1920px;
+  --fig-largura-conteudo: 1560px;
+  --fig-largura-texto:    659px;
+  --fig-margem-lateral:  clamp(1.25rem, -0.5rem + 9.4vw, 11.25rem);
+  --fig-margem-interna:  clamp(1rem, 0.2rem + 5.2vw, 6.25rem);
+
+  --fig-menu-altura:      151px;
+  --fig-menu-altura-int:  133px;  /* nas páginas internas */
+
+  /* ─── Forma ───────────────────────────────────────────────*/
+  --fig-raio-xs:  4px;
+  --fig-raio-sm:  8px;
+  --fig-raio-md: 12px;
+  --fig-raio-lg: 16px;
+  --fig-raio-xl: 32px;
+  --fig-raio-pill: 999px;
+
+  --fig-sombra-cartao: 2px 2px 2px rgba(0, 0, 0, 0.24);
+}

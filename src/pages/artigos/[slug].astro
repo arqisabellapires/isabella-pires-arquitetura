@@ -14,6 +14,7 @@ import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
+import Migalhas from '~/components/Migalhas.astro';
 import JsonLd from '~/components/JsonLd.astro';
 import { site } from '~/lib/site';
 import '~/styles/artigo.css';
@@ -67,10 +68,7 @@ const descricao = d.seoDescricao ?? d.resumo;
   />
 
   <article class="artigo">
-    <nav class="migalhas" aria-label="Migalhas">
-      <a href="/">Início</a> <span aria-hidden="true">/</span>
-      <a href="/artigos">Blog</a>
-    </nav>
+    <Migalhas itens={[{ rotulo: 'Início', href: '/' }, { rotulo: 'Blog', href: '/artigos' }, { rotulo: d.titulo }]} />
     <p class="artigo-categoria">{d.categoria}</p>
     <p class="artigo-data">
       <time datetime={d.publicadoEm.toISOString()}>{dataLegivel(d.publicadoEm)}</time>
@@ -95,20 +93,81 @@ const descricao = d.seoDescricao ?? d.resumo;
 </Base>
 
 <style>
-  .artigo { padding-block: 120px 64px; }
-  .migalhas {
-    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    margin-bottom: 32px;
+  /*
+    O artigo é a ÚNICA tela sem desenho no Figma — o design tem detalhe de
+    projeto, mas nenhum post individual. Então esta página é derivada: usa a
+    mesma gramática do detalhe de projeto (mesma escala de título, mesmo
+    corpo, mesmas cores) numa coluna de leitura. Nada aqui é inventado
+    visualmente; é o sistema de tokens aplicado a um caso que o design não
+    cobriu.
+  */
+  .artigo {
+    margin-inline: auto;
+    max-width: 875px;
+    padding: var(--fig-e-4xl) var(--fig-margem-interna) var(--fig-secao-y);
   }
-  .migalhas a { color: inherit; text-decoration: none; }
+  .artigo-categoria {
+    align-self: flex-start;
+    background: #8d7252;
+    border-radius: var(--fig-raio-xs);
+    color: var(--fig-cinza-50);
+    display: inline-block;
+    font: var(--fig-peso-normal) var(--fig-t-meta) / 1.4 var(--fig-fonte-display);
+    margin: var(--fig-e-2xl) 0 var(--fig-e-sm);
+    padding: var(--fig-e-2xs) var(--fig-e-lg);
+  }
+  .artigo-data {
+    color: var(--fig-texto-meta);
+    font: var(--fig-peso-forte) var(--fig-t-meta) / 1.4 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-md);
+  }
   .artigo-titulo {
-    font: 700 40px/44px 'Inter', system-ui, sans-serif;
-    color: #000000;
-    margin: 0 0 24px;
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) clamp(2rem, 1.2rem + 3vw, 3.75rem) / 1.1 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-2xl);
     text-wrap: balance;
   }
-  @media (max-width: 809.98px) {
-    .artigo-titulo { font-size: 30px; line-height: 36px; }
+  .artigo :global(.artigo-capa) {
+    border-radius: var(--fig-raio-xl);
+    display: block;
+    height: auto;
+    margin-bottom: var(--fig-e-2xl);
+    width: 100%;
+  }
+
+  .artigo-corpo :global(h2) {
+    color: var(--fig-cinza-900);
+    font: var(--fig-peso-semi) clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem) / 1.2 var(--fig-fonte-corpo);
+    margin: var(--fig-e-2xl) 0 var(--fig-e-md);
+  }
+  .artigo-corpo :global(h3) {
+    color: var(--fig-cinza-900);
+    font: var(--fig-peso-semi) clamp(1.25rem, 1rem + 0.9vw, 1.75rem) / 1.25 var(--fig-fonte-corpo);
+    margin: var(--fig-e-xl) 0 var(--fig-e-sm);
+  }
+  .artigo-corpo :global(p),
+  .artigo-corpo :global(li) {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) clamp(1.0625rem, 0.98rem + 0.4vw, 1.25rem) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+  }
+  .artigo-corpo :global(p) { margin: 0 0 var(--fig-e-md); }
+  .artigo-corpo :global(ul),
+  .artigo-corpo :global(ol) { margin: 0 0 var(--fig-e-md); padding-left: var(--fig-e-lg); }
+  .artigo-corpo :global(li) { margin-bottom: var(--fig-e-2xs); }
+  .artigo-corpo :global(strong) { color: var(--fig-cinza-900); font-weight: 800; }
+  .artigo-corpo :global(a) { color: var(--fig-primaria-ativa); }
+  .artigo-corpo :global(img) {
+    border-radius: var(--fig-raio-lg);
+    display: block;
+    height: auto;
+    margin: var(--fig-e-xl) 0;
+    width: 100%;
+  }
+  .artigo-corpo :global(blockquote) {
+    border-left: 6px solid #8d7252;
+    color: var(--fig-primaria-media);
+    font: italic var(--fig-peso-semi) var(--fig-f-corpo) / 1.5 var(--fig-fonte-corpo);
+    margin: var(--fig-e-xl) 0;
+    padding-left: var(--fig-e-md);
   }
 </style>

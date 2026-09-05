@@ -183,8 +183,10 @@ foram todas resolvidas.
 **Está de pé para você ver**, sem precisar de login:
 https://isabella-pires-arquitetura-85flo9qx0.vercel.app
 
-O site oficial (`www.isabellapiresarquitetura.com.br`) **continua com o site
-antigo** — a troca não foi feita, e é decisão sua.
+> **Correção (05/09/2026):** este documento dizia que o site oficial
+> continuava com o Framer. **Não continua.**
+> `www.isabellapiresarquitetura.com.br` responde 23 KB de Astro pela Vercel
+> — a troca já aconteceu, e é o site novo que a cliente vê.
 
 ---
 
@@ -192,6 +194,12 @@ antigo** — a troca não foi feita, e é decisão sua.
 
 Você disse que ficou "bem diferente do design proposto". Aqui está o
 diagnóstico honesto do que falta.
+
+> **Atualização de 05/09/2026:** esta seção descrevia o estado antes da
+> rodada do Figma. As animações **foram implementadas** (15 das 17 molas), e
+> a maior diferença não era o motion: era que **três das quatro fontes do
+> design nunca carregaram**. Ver [PLANO-FIGMA.md](PLANO-FIGMA.md). O texto
+> abaixo fica como registro do diagnóstico anterior.
 
 ### 5.1. As animações não foram implementadas — esta é a maior diferença
 

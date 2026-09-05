@@ -43,6 +43,59 @@ ponte, não o destino: vai sendo substituído a cada página aprovada.
 inventados. Melhorias visíveis só depois de a página estar idêntica, e
 ficam anotadas em `docs/melhorias-depois.md` até lá.
 
+## Rumo revisado (05/09/2026): o Figma é a fonte de verdade
+
+O plano original mandava reconstruir medindo as capturas do Framer. Isso
+mudou: **o design existe em Figma** (`w03gcodehy5qey828y58hS`), e o design é
+uma fonte melhor que a renderização do Framer — traz a intenção, nomeada e
+navegável, em vez das esquisitices da ferramenta.
+
+A divisão passou a ser:
+
+| Assunto | Fonte de verdade |
+|---|---|
+| Layout, tipografia, cor, espaçamento | **Figma**, extraído para `_figma/` |
+| Animação | `_capturas/motion-fichas.json` (o Figma não tem motion) |
+| Texto | HTML das capturas e `conteudo.ts` |
+| Responsivo | Decisão nossa: **o Figma só tem 1920px** |
+
+Detalhe em [docs/PLANO-FIGMA.md](docs/PLANO-FIGMA.md).
+
+### O que foi entregue nessa rodada
+
+- **Fase A — tipografia.** Das quatro famílias do design, só Mulish
+  carregava; o `fontes.css` trazia 73 faces de Inter, que o design não usa.
+  Faberge e Arboria não são livres: entraram Cormorant Garamond e Jost como
+  substitutas, sob alias com o nome original.
+- **Fase B — tokens e motion.** `tokens.figma.css` (88 valores) e
+  `motion.css` (as 17 molas em `linear()` nativo). `motion` e `lenis` saíram
+  do `package.json`.
+- **Fase C — cabeçalho, rodapé, wordmark.**
+- **Fase D — as 7 telas**, todas entre 94% e 111% da altura do Figma.
+- **Fase E — as animações**, 15 das 17 molas aplicadas.
+- **Fase F — rotas, responsivo, portões.**
+
+### Portões (todos provados com o defeito dentro)
+
+```bash
+npx astro build                      # 39 páginas
+node tools/valida-fontes.mjs         # as 12 famílias carregam no Chromium
+node tools/valida-tokens.mjs         # o CSS de tokens sobrevive ao parser
+node tools/audita-paginas.mjs        # estrutura, metadados, contraste real
+node tools/verifica-revela.mjs       # nada fica invisível ao rolar
+node tools/verifica-responsivo.mjs   # nada vaza para o lado
+node tools/tira-foto.mjs             # fotografa o dist servido
+```
+
+### O que continua pendente
+
+- **Os 20 `alt` de imagem de projeto.** Texto é do Gabriel; não se inventa.
+- **As três páginas de política** (Termos, Privacidade, Cookies).
+- **Lighthouse, GA4 e Search Console.**
+- **O CMS de blog** — módulo à parte, decidido em 05/09/2026.
+- **O push.** A conta `gabrielfeelix` tem leitura mas não escrita no
+  repositório da cliente; os commits estão locais.
+
 ## Fases
 
 Ordem por dependência. Sem datas. Detalhe e portões de saída na spec.

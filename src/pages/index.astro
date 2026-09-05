@@ -187,14 +187,17 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   /* ─── Herói ────────────────────────────────────────────────
      913px de altura, foto sangrando por trás com gradiente diagonal, e a
      caixa de texto com véu por cima. Tudo medido no node 1:177/1:180. */
+  /* A caixa não é centrada: no Figma ela começa em y=223 de 913, ou seja,
+     encostada no topo depois do menu. Alinhar ao topo com o padding do
+     menu reproduz isso e continua valendo em telas mais baixas. */
   .heroi {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-height: 913px;
     overflow: clip;
-    padding: var(--fig-menu-altura) var(--fig-margem-interna) var(--fig-e-3xl);
+    padding: 223px var(--fig-margem-interna) var(--fig-e-3xl);
   }
   .heroi__foto {
     position: absolute;
@@ -237,10 +240,12 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   }
   /* O design pinta só a palavra "realmente" em #eee. */
   .heroi__titulo em { color: var(--fig-cinza-50); font-style: normal; }
+  /* 24px no Figma; a escala de corpo parava em 20 e o texto ficava miúdo
+     dentro da caixa. */
   .heroi__texto {
     margin: calc(var(--fig-e-xl) - var(--fig-e-3xl)) 0 0;
     color: #eaeaea;
-    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.4 var(--fig-fonte-corpo);
+    font: var(--fig-peso-semi) clamp(1.0625rem, 0.9rem + 0.7vw, 1.5rem) / 1.4 var(--fig-fonte-corpo);
   }
   .heroi__acoes {
     display: flex;

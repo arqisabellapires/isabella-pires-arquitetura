@@ -25,3 +25,4 @@ _capturas/_videos/
 
 # Fotos de conferência: geradas por tools/tira-foto.mjs, pesam e regeneram.
 _figma/fotos/
+_figma/telas/

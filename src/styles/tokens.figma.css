@@ -60,15 +60,15 @@
 
   /* Escala do Figma (desktop), já saneada. O nome diz o papel, não o px,
      porque o px muda entre breakpoints e o papel não. */
-  --fig-t-wordmark:  192px;  /* ISABELLA PIRES */
-  --fig-t-titulo-pagina: 100px;
+  --fig-t-wordmark:  110px;  /* ISABELLA PIRES — medido no Framer */
+  --fig-t-titulo-pagina:  60px;  /* Framer */
   --fig-t-titulo-secao:   70px;
-  --fig-t-numero:         66px;  /* 2024, +32 */
+  --fig-t-numero:         42px;  /* 2024, +32 — Framer */
   --fig-t-hero:           80px;
   --fig-t-card-titulo:    64px;
   --fig-t-servico-num:    60px;
   --fig-t-destaque:       48px;
-  --fig-t-subtitulo:      44px;
+  --fig-t-subtitulo:      34px;  /* Framer */
   --fig-t-rodape-col:     32px;
   --fig-t-rotulo:         24px;  /* rótulo de seção, itens de menu */
   --fig-t-corpo-g:        22px;
@@ -76,14 +76,30 @@
   --fig-t-corpo-p:        18px;
   --fig-t-meta:           16px;
 
-  /* Fluida: interpola do celular ao 1920 do Figma. */
-  --fig-f-wordmark:      clamp(3rem,   -1rem + 16vw,  12rem);
-  --fig-f-titulo-pagina: clamp(2.5rem,  0.6rem + 6.5vw, 6.25rem);
+  /*
+    Fluida — e o teto agora é o TAMANHO DO FRAMER, não o do Figma.
+
+    O Figma é desenhado num canvas de 1920 e o Framer renderiza a 1440. Onde
+    os dois discordam, vale o Framer: é a régua de tamanho deste projeto
+    (decisão do Gabriel — Figma manda na forma, Framer manda no tamanho).
+    As diferenças medidas a 1440px eram grandes o bastante para mudar a
+    página: menu 151 contra 90, título de página 100 contra 60, wordmark 192
+    contra 110.
+
+    Onde os dois concordam (herói 80, título de seção 70, título de card 64,
+    número de serviço 60, corpo 18–20) o teto não mudou.
+  */
+  --fig-f-wordmark:      clamp(3rem,   -1.6rem + 11.5vw, 6.875rem);
+  --fig-f-titulo-pagina: clamp(2.25rem, 0.9rem + 3.7vw,  3.75rem);
   --fig-f-titulo-secao:  clamp(2rem,    0.9rem + 4vw,   4.375rem);
   --fig-f-hero:          clamp(2.25rem, 0.9rem + 5vw,   5rem);
   --fig-f-card-titulo:   clamp(1.75rem, 0.8rem + 3.6vw, 4rem);
-  --fig-f-numero:        clamp(2.25rem, 1.2rem + 3.4vw, 4.125rem);
-  --fig-f-subtitulo:     clamp(1.5rem,  1rem + 1.8vw,   2.75rem);
+  /* Título de serviço na página de Serviços: 80px no Framer — maior que o
+     título da própria página (60), que é o contrário do que a escala do
+     Figma sugeria. */
+  --fig-f-titulo-servico: clamp(2.25rem, 1.1rem + 3.2vw, 5rem);
+  --fig-f-numero:        clamp(2rem,    1.1rem + 2.5vw,  2.625rem);
+  --fig-f-subtitulo:     clamp(1.5rem,  1.1rem + 1.4vw,  2.125rem);
   --fig-f-rotulo:        clamp(1rem,    0.9rem + 0.5vw, 1.5rem);
   --fig-f-corpo:         clamp(1rem,    0.95rem + 0.3vw, 1.25rem);
 
@@ -126,8 +142,10 @@
   --fig-margem-lateral:  clamp(1.25rem, -0.5rem + 9.4vw, 11.25rem);
   --fig-margem-interna:  clamp(1rem, 0.2rem + 5.2vw, 6.25rem);
 
-  --fig-menu-altura:      151px;
-  --fig-menu-altura-int:  133px;  /* nas páginas internas */
+  /* 90px no Framer, igual em todas as páginas — o Figma desenha 151/133 no
+     canvas de 1920, o que a 1440 daria 113. Vale o Framer. */
+  --fig-menu-altura:       90px;
+  --fig-menu-altura-int:   90px;
 
   /* ─── Forma ───────────────────────────────────────────────*/
   --fig-raio-xs:  4px;

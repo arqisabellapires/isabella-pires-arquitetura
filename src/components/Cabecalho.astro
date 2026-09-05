@@ -115,8 +115,11 @@ const estaAtiva = (href: string) =>
     align-items: center;
     justify-content: space-between;
     gap: var(--fig-e-lg);
-    min-height: var(--fig-menu-altura-int);
-    padding: var(--fig-e-2xl) var(--fig-margem-interna);
+    min-height: var(--fig-menu-altura);
+    /* 24px em cima e embaixo: é o que o Framer usa para fechar os 90px de
+       menu com o monograma de 42. O Figma desenha 40, mas num canvas de
+       1920 e com o monograma em 73. */
+    padding: var(--fig-e-lg) var(--fig-margem-interna);
     border-bottom: 1px solid var(--fig-primaria-ativa);
     background: var(--fig-fundo);
     --menu-cor: var(--fig-primaria-ativa);
@@ -135,8 +138,10 @@ const estaAtiva = (href: string) =>
   .cabecalho__logo { display: flex; flex: none; }
   .cabecalho__logo img {
     display: block;
-    width: 56px;
-    height: 73px;
+    /* 33×42 no Framer. O 56×73 do Figma é a medida do canvas de 1920 e
+       estourava os 90px de altura do menu. */
+    width: 33px;
+    height: 42px;
     /* O Figma espelha o monograma na vertical (-scale-y-100). */
     transform: scaleY(-1);
   }
@@ -210,6 +215,6 @@ const estaAtiva = (href: string) =>
   @media (max-width: 1199.98px) {
     .cabecalho__nav { display: none; }
     .cabecalho__alternador { display: flex; }
-    .cabecalho__logo img { width: 40px; height: 52px; }
+    .cabecalho__logo img { width: 28px; height: 36px; }
   }
 </style>

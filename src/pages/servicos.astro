@@ -49,7 +49,7 @@ const fotos = [
   <ol class="lista">
     {servicos.map((servico, i) => (
       <li class:list={['servico', i % 2 === 1 && 'servico--invertido']} id={servico.slug} data-revela>
-        <img class="servico__foto" src={fotos[i]} alt="" loading="lazy" width="697" height="587" />
+        <img class="servico__foto" src={fotos[i]} alt="" loading="lazy" width="560" height="587" />
 
         <div class="servico__texto">
           <p class="servico__numero" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
@@ -109,11 +109,13 @@ const fotos = [
   /* Pares: a imagem vai para a direita. */
   .servico--invertido { flex-direction: row-reverse; }
 
+  /* 560×587 no Framer. A altura já batia; a largura ia a 697 e deixava a
+     foto larga demais em relação ao texto. */
   .servico__foto {
     border-radius: var(--fig-raio-xl);
-    flex: 1 1 697px;
+    flex: 1 1 560px;
     height: 587px;
-    max-width: 697px;
+    max-width: 560px;
     object-fit: cover;
   }
 
@@ -141,7 +143,7 @@ const fotos = [
 
   .servico__titulo {
     color: #000;
-    font: var(--fig-peso-normal) var(--fig-f-titulo-pagina) / 1.05 var(--fig-fonte-corpo);
+    font: var(--fig-peso-normal) var(--fig-f-titulo-servico) / 1.05 var(--fig-fonte-corpo);
     margin: 0;
     text-wrap: balance;
   }

@@ -1,5 +1,10 @@
 # Isabella Pires Arquitetura — plano
 
+> **Chegando agora? Comece por
+> [HANDOFF-PROXIMO.md](HANDOFF-PROXIMO.md)** — o que fazer a seguir, as
+> armadilhas e as decisões já tomadas. Este documento aqui é histórico.
+
+
 > **Contexto completo, para quem está chegando:
 > [docs/ENTENDA-O-PROJETO.md](docs/ENTENDA-O-PROJETO.md).**
 > **Estado corrente do repositório, ferramentas e armadilhas: [HANDOFF.md](HANDOFF.md).**

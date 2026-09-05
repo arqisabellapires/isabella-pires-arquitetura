@@ -5,6 +5,10 @@ fazendo, por quê, o que já deu errado e o que ainda falta**, sem assumir
 conhecimento prévio. Se você só vai ler um arquivo deste repositório, leia
 este.
 
+> **Se você é o próximo agente, comece por
+> [../HANDOFF-PROXIMO.md](../HANDOFF-PROXIMO.md).** Este documento explica o
+> porquê do projeto; aquele diz o que fazer agora.
+
 Os outros dois documentos são complementares: o [HANDOFF.md](../HANDOFF.md)
 tem o estado técnico corrente e as armadilhas; o
 [PLANO.md](../PLANO.md) tem as fases. Este aqui é o "por quê".

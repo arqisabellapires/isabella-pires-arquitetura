@@ -1,5 +1,10 @@
 # Handoff — Isabella Pires Arquitetura
 
+> **Chegando agora? Comece por
+> [HANDOFF-PROXIMO.md](HANDOFF-PROXIMO.md)** — o que fazer a seguir, as
+> armadilhas e as decisões já tomadas. Este documento aqui é histórico.
+
+
 Migração do site do Framer para código próprio. Este documento é o estado
 completo do projeto. Leia antes de tocar em qualquer coisa.
 

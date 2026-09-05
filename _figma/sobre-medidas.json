@@ -1,0 +1,469 @@
+{
+  "_origem": "mcp__figma__get_design_context, fileKey w03gcodehy5qey828y58hS, nodeId 1:1363, em 05/09/2026",
+  "_nota": "Valores lidos do Figma. Comparados com https://www.isabellapiresarquitetura.com.br/sobre-nos no mesmo dia.",
+  "pagina": {
+    "node": "1:1363",
+    "largura": 1920,
+    "fundo": "#fbf7f4"
+  },
+  "menu_topo": {
+    "node": "1:64",
+    "altura": 151,
+    "altura_na_pagina": 133,
+    "padding": "40px 100px",
+    "borda_inferior": "1px solid #352005",
+    "logo": {
+      "largura": 56.223,
+      "altura": 73
+    },
+    "itens": [
+      "Início",
+      "Serviços",
+      "Projetos",
+      "Blog",
+      "Sobre nós",
+      "Contato"
+    ],
+    "item_fonte": "Arboria Medium 24px",
+    "item_cor": "#352005",
+    "item_padding": "8px 12px",
+    "gap": 32
+  },
+  "cabecalho_pagina": {
+    "node": "1:1365",
+    "padding": "80px 100px",
+    "gap": 67,
+    "borda_inferior": "1px solid #352005",
+    "migalhas": {
+      "node": "1:1368",
+      "texto": "Início / Sobre nós",
+      "fonte": "Arboria Bold 21px",
+      "icone": "fa-house 24x34",
+      "cor_inicio": "#212529",
+      "cor_atual": "#352005",
+      "gap": 8
+    },
+    "titulo": {
+      "node": "1:1376",
+      "texto": "Sobre nós",
+      "fonte": "Mulish SemiBold 100px",
+      "cor": "#352005"
+    }
+  },
+  "corpo": {
+    "node": "1:1377",
+    "padding": "114px 100px",
+    "gap_entre_secoes": 130,
+    "alinhamento": "center"
+  },
+  "nossa_historia": {
+    "node": "1:1378",
+    "gap_entre_colunas": 68,
+    "foto": {
+      "node": "1:1379",
+      "largura": 349,
+      "altura": 524,
+      "radius": 32,
+      "transformacao": "rotate(180deg) scaleY(-1)"
+    },
+    "coluna_texto": {
+      "node": "1:1380",
+      "largura": 705,
+      "padding": "20px 0 20px 20px",
+      "radius": 12,
+      "gap": 40,
+      "tag": {
+        "texto": "Quem somos",
+        "fonte": "Faberge Regular 24px",
+        "cor": "#a98d67",
+        "traco": "linha de 62px, gap 24"
+      },
+      "titulo": {
+        "texto": "Nossa História",
+        "fonte": "Mulish Bold 70px",
+        "line_height": "85px",
+        "cor": "#1a1a1a"
+      },
+      "gap_tag_titulo": 12,
+      "paragrafos": {
+        "fonte": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+        "cor": "rgba(48,48,48,0.8)",
+        "quantidade": 2,
+        "texto_1": "No nosso escritório, conduzido por Isabella Cito Pires, transformamos ideias em projetos arquitetônicos e de interiores que unem estética, funcionalidade e personalidade. Cada espaço é planejado para valorizar o estilo de vida e criar ambientes únicos, seja residencial ou comercial.",
+        "texto_2": "Oferecemos também, consultorias e ambientações personalizadas, garantindo soluções práticas e duradouras, sempre com atenção aos desejos e necessidades de cada cliente."
+      },
+      "citacao": {
+        "node": "1:1390",
+        "texto": "“Arquitetura é a arte de transformar espaços em experiências inesquecíveis”",
+        "fonte": "Segoe UI Bold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+        "cor": "rgba(0,0,0,0.8)",
+        "barra": "6px de largura, fundo #352005, radius 100px, gap 8"
+      }
+    },
+    "divisor_vertical": {
+      "node": "1:1391",
+      "largura": 3,
+      "fundo": "#352005",
+      "radius": 100
+    },
+    "faixa_de_selos": {
+      "node": "1:1392",
+      "largura": 389,
+      "padding_topo": 45,
+      "gap_entre_selos": 42,
+      "quantidade": 3,
+      "divisor_entre_selos": "linha de 338px",
+      "cada_selo": {
+        "gap_titulo_texto": 14,
+        "titulo_fonte": "Faberge Regular 32px",
+        "titulo_cor": "#352005",
+        "texto_fonte": "Faberge Regular 24px",
+        "texto_cor": "rgba(72,59,42,0.83)",
+        "line_height": 0.97
+      },
+      "itens": [
+        {
+          "node": "1:1394",
+          "titulo": "Transparência e Clareza",
+          "texto": "Planejamento e custos sem surpresas."
+        },
+        {
+          "node": "1:1398",
+          "titulo": "Presença Nacional",
+          "texto": "Projetos em qualquer região do Brasil."
+        },
+        {
+          "node": "1:1402",
+          "titulo": "Atendimento Humano",
+          "texto": "Soluções sob medida para cada cliente."
+        }
+      ]
+    }
+  },
+  "nossos_valores": {
+    "node": "1:1404",
+    "_atencao": "NAO e acordeao. E uma lista de 3 linhas separadas por divisores de 2px, tudo sempre visivel.",
+    "largura": 1920,
+    "fundo": "rgba(240,217,199,0.2)",
+    "padding": "92px 131px",
+    "gap": 60,
+    "tag": {
+      "texto": "Princípios que nos movem",
+      "fonte": "Faberge Regular 24px",
+      "cor": "#a98d67",
+      "traco": "linha de 62px, gap 24"
+    },
+    "titulo": {
+      "texto": "Nossos valores",
+      "fonte": "Mulish Bold 70px",
+      "line_height": "85px",
+      "cor": "#1a1a1a"
+    },
+    "divisor": "linha de 2px em largura total, antes e entre cada item",
+    "cada_item": {
+      "layout": "justify-between, titulo a esquerda e texto a direita",
+      "titulo_fonte": "Mulish Regular 40px",
+      "titulo_cor": "#21201f",
+      "titulo_line_height": 0.97,
+      "texto_fonte": "Mulish Bold 22px",
+      "texto_cor": "#a98d67",
+      "texto_largura": 820
+    },
+    "itens": [
+      {
+        "node": "1:1411",
+        "titulo": "Modernidade",
+        "texto": "Priorizamos soluções inovadoras e atuais, integrando tecnologia e tendências para criar projetos funcionais e cheios de estilo."
+      },
+      {
+        "node": "1:1415",
+        "titulo": "Empatia",
+        "texto": "Entendemos profundamente cada cliente, suas necessidades e preferências, para criar ambientes que refletem essência e proporcionam conforto."
+      },
+      {
+        "node": "1:1419",
+        "titulo": "Constância",
+        "texto": "Agimos com disciplina e comprometimento, acompanhando cada detalhe do projeto para garantir qualidade e resultados consistentes."
+      }
+    ]
+  },
+  "acordeao_servicos": {
+    "node": "1:1422",
+    "_atencao": "ESTE e o acordeao da tela, com 5 itens de servico — nao os 3 valores.",
+    "titulo": {
+      "node": "1:1424",
+      "texto": "Nós entregamos apenas o nosso melhor",
+      "fonte": "Mulish Regular 72px",
+      "cor": "#21201f",
+      "alinhamento": "center",
+      "padding": "40px 80px 47px"
+    },
+    "gap_titulo_conteudo": 34,
+    "linha": {
+      "node": "1:1425",
+      "gap_lista_imagem": 80
+    },
+    "lista": {
+      "node": "1:1427",
+      "gap_entre_itens": 37
+    },
+    "item_aberto": {
+      "node": "1:1428",
+      "rotulo": "Arquitetura Comercial",
+      "fundo": "rgba(240,217,199,0.45)",
+      "padding": "26px 32px",
+      "radius": 16,
+      "gap": 24,
+      "rotulo_fonte": "Mulish Regular 18px",
+      "rotulo_cor": "#21201f",
+      "seta": "Icone Arrow down 32px, rotate(180deg)",
+      "corpo_fonte": "Mulish Regular 18px",
+      "corpo_cor": "#353332",
+      "corpo_opacidade": 0.85,
+      "corpo_texto": "Um projeto residencial transforma o lar, unindo estética, conforto e funcionalidade.\n Começa com briefing, levantamento e estudo das necessidades do cliente.\n Define conceito, cores, materiais, mobiliário e disposição dos ambientes.\n Inclui imagens 3D, detalhamentos técnicos, lista de compras e acompanhamento."
+    },
+    "item_fechado": {
+      "altura": 81,
+      "borda": "2px solid #696969",
+      "padding": "85px 32px",
+      "radius": 16,
+      "rotulo_fonte": "Arboria Bold 18px",
+      "rotulo_cor": "#444",
+      "seta": "Icone Arrow down 32px"
+    },
+    "itens": [
+      {
+        "node": "1:1428",
+        "rotulo": "Arquitetura Comercial",
+        "estado": "aberto"
+      },
+      {
+        "node": "1:1435",
+        "rotulo": "Arquitetura Residencial",
+        "estado": "fechado"
+      },
+      {
+        "node": "1:1439",
+        "rotulo": "Design de Interiores",
+        "estado": "fechado"
+      },
+      {
+        "node": "1:1443",
+        "rotulo": "Consultoria de Decoração",
+        "estado": "fechado"
+      },
+      {
+        "node": "1:1447",
+        "rotulo": "Ambientações",
+        "estado": "fechado"
+      }
+    ],
+    "imagem_lateral": {
+      "node": "1:1451",
+      "largura": 953,
+      "altura": 724,
+      "radius": 32,
+      "object_fit": "cover"
+    }
+  },
+  "timeline_passos": {
+    "node": "1:1452",
+    "quantidade": 4,
+    "gap_entre_passos": 37,
+    "gap_passo_titulo_secao": 41,
+    "cada_passo": {
+      "largura": 648,
+      "padding": "40px 32px",
+      "radius": 16,
+      "gap": 24,
+      "divisor_inferior": "linha de 2px em largura total",
+      "numero_fonte": "Segoe UI Bold 90px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "titulo_fonte": "Arboria Bold 32px",
+      "titulo_cor": "#887769",
+      "texto_fonte": "Segoe UI Semibold 18px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "texto_cor": "#716d69",
+      "texto_opacidade": 0.85
+    },
+    "alternancia": "01 e 03 alinhados a esquerda (numero #a98d67); 02 e 04 alinhados a direita (numero #352005)",
+    "titulo_secao": {
+      "node": "1:1465",
+      "padding_lateral": 81,
+      "tag": {
+        "texto": "Passo a passo",
+        "fonte": "Faberge Regular 24px",
+        "cor": "#a98d67",
+        "traco": "linha de 62px, gap 24"
+      },
+      "titulo": {
+        "texto": "Nós temos um método simples,\nmas rápido e efetivo",
+        "fonte": "Mulish Medium 60px",
+        "line_height": "85px",
+        "cor": "#483b2a"
+      },
+      "gap": 12
+    },
+    "passos": [
+      {
+        "node": "1:1456",
+        "numero": "01",
+        "numero_cor": "#a98d67",
+        "alinhamento": "esquerda",
+        "titulo": "Briefing e Levantamento",
+        "texto": "Conversamos com você para entender estilo de vida, necessidades e expectativas, e realizamos medições e registro completo do espaço."
+      },
+      {
+        "node": "1:1470",
+        "numero": "02",
+        "numero_cor": "#352005",
+        "alinhamento": "direita",
+        "titulo": "Desenvolvimento do Conceito",
+        "texto": "Criamos o conceito do projeto, definindo paleta de cores, materiais, mobiliário e disposição dos ambientes."
+      },
+      {
+        "node": "1:1479",
+        "numero": "03",
+        "numero_cor": "#a98d67",
+        "alinhamento": "esquerda",
+        "titulo": "Detalhamentos Técnicos e Planejamento",
+        "texto": "Elaboramos plantas, projetos de marcenaria, iluminação e revestimentos, além de lista de compras e fornecedores para garantir precisão."
+      },
+      {
+        "node": "1:1488",
+        "numero": "04",
+        "numero_cor": "#352005",
+        "alinhamento": "direita",
+        "titulo": "Execução e Ambientação",
+        "texto": "Acompanhamos a implementação, garantindo que cada detalhe seja fiel ao projeto e que o resultado final seja funcional e harmonioso."
+      }
+    ]
+  },
+  "feed_instagram": {
+    "node": "1:1497",
+    "largura": 1767,
+    "gap": 62,
+    "cabecalho": {
+      "node": "1:1498",
+      "padding": 8,
+      "arroba": {
+        "texto": "@Isabellapires",
+        "fonte": "Segoe UI Bold 48px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+        "cor": "black"
+      },
+      "botao": {
+        "texto": "Siga-nos no instagram!",
+        "largura": 418,
+        "fundo": "#a98d67",
+        "cor": "#ffffff",
+        "padding": "12px 24px",
+        "radius": 4,
+        "fonte": "Arboria Bold 20px"
+      }
+    },
+    "fotos": {
+      "quantidade": 4,
+      "largura": 422,
+      "altura": 590,
+      "radius": 32,
+      "object_fit": "cover",
+      "distribuicao": "justify-between",
+      "nodes": [
+        "1:1502",
+        "1:1505",
+        "1:1508",
+        "1:1511"
+      ]
+    }
+  },
+  "wordmark": {
+    "node": "1:1515",
+    "texto": "ISABELLA PIRES",
+    "fonte": "Faberge Regular 192px",
+    "tracking": 19.2,
+    "altura": 367,
+    "cor": "black",
+    "alinhamento": "center",
+    "padding_y": 31
+  },
+  "rodape": {
+    "node": "1:1516",
+    "fundo": "#a98d67",
+    "padding": "52px 128px",
+    "padding_interno_lateral": 110,
+    "gap": 32,
+    "_nota": "variante clara: nesta tela o rodape usa fundo #a98d67, diferente do #3a2e26 da tela de Blog",
+    "cta": {
+      "titulo": "Sobrou alguma dúvida?\nVamos conversar!",
+      "fonte_titulo": "Faberge Regular 44px",
+      "cor_titulo": "#eee",
+      "rotulo": "Contate-nos",
+      "cor_rotulo": "#e9e2da",
+      "fonte_rotulo": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "botao": {
+        "texto": "Quero agendar uma reunião",
+        "fundo": "rgba(255,255,255,0.73)",
+        "cor": "#352005",
+        "padding": "12px 24px",
+        "radius": 16,
+        "fonte": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)"
+      }
+    },
+    "colunas": {
+      "gap": 132,
+      "Institucional": {
+        "altura": 265,
+        "gap": 12,
+        "titulo_fonte": "Faberge Regular 32px",
+        "itens_fonte": "Arboria Medium 16px",
+        "itens": [
+          "Início",
+          "Serviços",
+          "Projetos",
+          "Sobre nós",
+          "Blog",
+          "Contato"
+        ]
+      },
+      "Informações": {
+        "itens": [
+          "Termos de uso",
+          "Políticas de Privacidade",
+          "Políticas de Cookies"
+        ]
+      }
+    },
+    "divisor": {
+      "largura": 1444
+    },
+    "copyright": {
+      "texto": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+      "fonte": "Arboria Medium 20px"
+    },
+    "redes": [
+      "Instagram",
+      "Facebook",
+      "Tiktok",
+      "Youtube",
+      "Linkedin"
+    ],
+    "rede_tamanho": 40,
+    "rede_gap": 12
+  },
+  "divergencias_medidas_contra_o_site_no_ar": [
+    "Faltam DUAS secoes inteiras no site: a timeline de 4 passos numerados 01-04 (blocos de 648px, padding 40px 32px, radius 16, numero Segoe UI Bold 90px alternando #a98d67 e #352005, titulo Arboria Bold 32px #887769, alternando esquerda/direita) e o feed Instagram (@Isabellapires 48px + botao 'Siga-nos no instagram!' 418px fundo #a98d67 radius 4 + 4 fotos de 422x590 radius 32). Nenhuma das duas tem qualquer vestigio em sobre-nos.astro.",
+    "A pagina no ar tem ZERO tags <img>. O Figma pede a foto da Isabella 349x524 radius 32, a imagem lateral do acordeao 953x724 radius 32 e as 4 fotos do Instagram 422x590 — 6 imagens ao todo.",
+    "'Nossos valores' NAO e acordeao no Figma, e uma lista de 3 linhas sempre abertas com divisores de 2px em largura total. O site ja acerta isso (usa <dl>), mas as medidas divergem: titulo do item Figma Mulish Regular 40px #21201f, site Mulish Bold 32px; texto Figma Mulish Bold 22px cor #a98d67 largura 820, site Mulish Bold 20px cor #5a5755. A cor do texto e a mais grave: o Figma pinta o paragrafo de dourado, o site de cinza.",
+    "Falta o fundo da secao de valores: Figma tem faixa de 1920px com fundo rgba(240,217,199,0.2) e padding 92px 131px. No site a secao e transparente, sem faixa.",
+    "O acordeao do site tem os itens errados. Figma: 5 servicos com rotulos 'Arquitetura Comercial' (aberto), 'Arquitetura Residencial', 'Design de Interiores', 'Consultoria de Decoracao', 'Ambientacoes'. O site puxa de servicos.tituloCompleto — conferir se bate. Item aberto no Figma tem fundo rgba(240,217,199,0.45), padding 26px 32px, radius 16; item fechado tem borda 2px #696969, altura 81, radius 16. O site nao tem fundo, nem borda, nem radius: usa so um border-bottom 1px #ededed.",
+    "Titulo do acordeao: Figma 'Nós entregamos apenas o nosso melhor' Mulish Regular 72px centralizado; site Mulish 600 72px alinhado a esquerda. Peso e alinhamento errados.",
+    "Falta a imagem lateral do acordeao (953x724 radius 32, gap 80 da lista). No Figma o acordeao ocupa so a coluna esquerda; no site ocupa a largura toda.",
+    "Faixa de 3 selos: Figma coloca coluna de 389px a direita da foto, com divisor vertical de 3px #352005 radius 100, separada por linhas de 338px, titulo Faberge Regular 32px #352005 e texto Faberge Regular 24px rgba(72,59,42,0.83), line-height 0.97. O site usa grid auto-fit abaixo do texto, sem divisor vertical, com titulo 26px e texto 20px.",
+    "Titulo 'Nossa Historia': Figma Mulish Bold 70px line-height 85px cor #1a1a1a; site Mulish 700 38px. Quase metade do tamanho.",
+    "Paragrafos da historia: Figma 20px cor rgba(48,48,48,0.8) em coluna de 705px; site 18px cor #5a5755 limitado a 60ch. Os textos tambem foram encurtados no site — o Figma tem paragrafos bem mais longos.",
+    "Citacao: Figma tem barra de 6px #352005 radius 100 e fonte 20px cor rgba(0,0,0,0.8); site tem border-left 3px #a98c67, fonte 18px cor #341f04.",
+    "Cabecalho de pagina: Figma tem faixa dedicada padding 80px 100px com borda inferior 1px #352005, gap 67, migalhas Arboria Bold 21px com icone fa-house. Site nao tem faixa nem icone, e usa Mulish 700 16px.",
+    "Titulo 'Sobre nos': Figma Mulish SemiBold 100px cor #352005; site 600 60px cor #21201f.",
+    "Larguras: Figma trabalha em 1920 com padding 114px 100px e gap 130 entre secoes; site fecha em max-width 1184 com padding 120px 24px.",
+    "Rodape: nesta tela o Figma usa fundo #a98d67 (na tela de Blog usa #3a2e26). Conferir qual variante o componente Rodape.astro implementa.",
+    "Faberge e Arboria ausentes do projeto. Segoe UI aparece nos paragrafos da historia, na citacao, nos numeros da timeline, nos textos dos passos e no @Isabellapires — tudo isso deve ser saneado, nao reproduzido."
+  ]
+}

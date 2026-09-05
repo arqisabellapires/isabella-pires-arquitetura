@@ -1,0 +1,354 @@
+{
+  "_origem": "mcp__figma__get_design_context, fileKey w03gcodehy5qey828y58hS, nodeId 1:1643, em 05/09/2026",
+  "_nota": "Valores lidos do Figma. Comparados com https://www.isabellapiresarquitetura.com.br/contato no mesmo dia.",
+  "pagina": {
+    "node": "1:1643",
+    "largura": 1920,
+    "fundo": "#fbf7f4"
+  },
+  "menu_topo": {
+    "node": "1:64",
+    "altura": 151,
+    "altura_na_pagina": 133,
+    "padding": "40px 100px",
+    "borda_inferior": "1px solid #352005",
+    "logo": {
+      "largura": 56.223,
+      "altura": 73
+    },
+    "itens": [
+      "Início",
+      "Serviços",
+      "Projetos",
+      "Blog",
+      "Sobre nós",
+      "Contato"
+    ],
+    "item_fonte": "Arboria Medium 24px",
+    "item_cor": "#352005",
+    "item_padding": "8px 12px",
+    "gap": 32
+  },
+  "cabecalho_pagina": {
+    "node": "1:1645",
+    "padding": "80px 100px",
+    "gap": 67,
+    "borda_inferior": "1px solid #352005",
+    "migalhas": {
+      "node": "1:1648",
+      "texto": "Início / Fale conosco",
+      "fonte": "Arboria Bold 21px",
+      "icone": "fa-house 24x34",
+      "cor_inicio": "#212529",
+      "cor_atual": "#352005",
+      "gap": 8
+    },
+    "titulo": {
+      "node": "1:1656",
+      "texto": "Fale conosco",
+      "fonte": "Mulish SemiBold 100px",
+      "cor": "#352005"
+    },
+    "selo_circular": {
+      "node": "1:1730",
+      "tamanho": 328,
+      "left": 1371,
+      "top": 155
+    }
+  },
+  "corpo": {
+    "node": "1:1657",
+    "padding_lateral": 100,
+    "gap_entre_secoes": 160,
+    "alinhamento": "center"
+  },
+  "faixa_formulario": {
+    "node": "1:1658",
+    "largura": 1920,
+    "altura": 937,
+    "fundo": "#f8efe9",
+    "padding_y": 26,
+    "gap_formulario_dados": 120,
+    "alinhamento": "center"
+  },
+  "formulario": {
+    "node": "1:1659",
+    "largura": 533.417,
+    "fundo": "#fdfdfd",
+    "padding": 32,
+    "radius": 8,
+    "sombra": "drop-shadow(2px 2px 2px rgba(0,0,0,0.24))",
+    "gap": 24,
+    "gap_entre_campos": 16,
+    "gap_rotulo_campo": 6,
+    "rotulo": {
+      "fonte": "Segoe UI Bold 16px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "cor": "#212529",
+      "line_height": "24px"
+    },
+    "campo": {
+      "altura": 38,
+      "fundo": "#ffffff",
+      "borda": "1px solid #ced4da",
+      "radius": 4,
+      "padding": "6.5px 13px 7.5px",
+      "fonte_valor": "Segoe UI Regular 16px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "cor_placeholder": "#939ba2",
+      "line_height": "24px",
+      "placeholder_no_figma": "vazio (nenhum texto de placeholder foi desenhado)"
+    },
+    "campos": [
+      {
+        "node": "1:1662",
+        "rotulo": "Qual é o seu nome?",
+        "tipo": "texto",
+        "altura": 38
+      },
+      {
+        "node": "1:1663",
+        "rotulo": "E-mail",
+        "tipo": "texto",
+        "altura": 38
+      },
+      {
+        "node": "1:1665",
+        "rotulo": "Telefone",
+        "tipo": "texto",
+        "altura": 38
+      },
+      {
+        "node": "1:1666",
+        "rotulo": "Qual serviço você procura?",
+        "tipo": "select",
+        "altura": 38,
+        "icone": "fa:caret-down 24x24 a direita",
+        "opcoes_no_figma": "nenhuma opcao desenhada"
+      },
+      {
+        "node": "1:1667",
+        "rotulo": "Mensagem",
+        "tipo": "textarea",
+        "altura": 107,
+        "alinhamento_conteudo": "topo"
+      }
+    ],
+    "botao": {
+      "node": "1:1668",
+      "texto": "Receber proposta personalizada",
+      "fundo": "#a98d67",
+      "cor": "#ffffff",
+      "padding": "12px 24px",
+      "radius": 8,
+      "fonte": "Arboria Bold 20px",
+      "alinhamento": "center"
+    }
+  },
+  "como_nos_encontrar": {
+    "node": "1:1669",
+    "gap": 60,
+    "cabecalho": {
+      "node": "1:1670",
+      "largura": 548,
+      "gap": 14,
+      "titulo": {
+        "texto": "Como nos encontrar",
+        "fonte": "Faberge Regular 60px",
+        "cor": "#352005",
+        "line_height": 1.214
+      },
+      "chamada": {
+        "texto": "Conte com a nossa equipe para resolver dúvidas, orientar processos ou ouvir sugestões.",
+        "fonte": "Mulish Medium 19px",
+        "cor": "#6c757d",
+        "line_height": 1.214
+      }
+    },
+    "blocos": {
+      "node": "1:1673",
+      "gap": 32,
+      "rotulo_fonte": "Faberge Regular 24px",
+      "rotulo_cor": "#191919",
+      "rotulo_line_height": 1.214
+    },
+    "contato": {
+      "node": "1:1674",
+      "rotulo": "Contato",
+      "gap": 16,
+      "gap_itens": 12,
+      "formato": "lista com marcador (list-disc)",
+      "itens_fonte": "Mulish Medium 21px",
+      "itens_cor": "#6d6e6f",
+      "itens_line_height": 1.214,
+      "itens": [
+        "atendimento@isabellapires.com.br",
+        "(44) 3346-2300"
+      ]
+    },
+    "endereco": {
+      "node": "1:1679",
+      "rotulo": "Endereço",
+      "gap": 16,
+      "largura_container": 317,
+      "largura_texto": 486,
+      "texto": "Av. Pioneiro Alício Arantes Campolina, 2527 -  Jardim Canada, Maringá - PR, 87083-020",
+      "fonte": "Mulish Medium 19px",
+      "cor": "#6d6e6f",
+      "line_height": 1.214,
+      "formato": "lista com marcador (list-disc)"
+    },
+    "nossos_canais": {
+      "node": "1:1683",
+      "rotulo": "Nossos Canais",
+      "rotulo_fonte": "Faberge Regular 18px",
+      "rotulo_cor": "#191919",
+      "gap": 24,
+      "icones": {
+        "quantidade": 5,
+        "tamanho": 40,
+        "gap": 12,
+        "padding_lateral": 24,
+        "redes": [
+          "Instagram",
+          "Facebook",
+          "Tiktok",
+          "Youtube",
+          "Linkedin"
+        ]
+      }
+    }
+  },
+  "feed_instagram": {
+    "node": "1:1710",
+    "largura": 1767,
+    "gap": 62,
+    "cabecalho": {
+      "node": "1:1711",
+      "padding": 8,
+      "arroba": {
+        "texto": "@Isabellapires",
+        "fonte": "Mulish Bold 48px",
+        "cor": "black",
+        "_nota": "aqui e Mulish Bold; na tela Sobre nos o mesmo elemento e Segoe UI Bold"
+      },
+      "botao": {
+        "texto": "Siga-nos no instagram!",
+        "largura": 418,
+        "fundo": "#a98d67",
+        "cor": "#ffffff",
+        "padding": "12px 24px",
+        "radius": 4,
+        "fonte": "Arboria Bold 20px"
+      }
+    },
+    "fotos": {
+      "quantidade": 4,
+      "largura": 422,
+      "altura": 590,
+      "radius": 32,
+      "object_fit": "cover",
+      "distribuicao": "justify-between",
+      "nodes": [
+        "1:1715",
+        "1:1718",
+        "1:1721",
+        "1:1724"
+      ]
+    }
+  },
+  "wordmark": {
+    "node": "1:1728",
+    "texto": "ISABELLA PIRES",
+    "fonte": "Faberge Regular 192px",
+    "tracking": 19.2,
+    "altura": 367,
+    "cor": "black",
+    "alinhamento": "center",
+    "padding_y": 31
+  },
+  "rodape": {
+    "node": "1:1729",
+    "fundo": "#f8efe9",
+    "padding": "52px 128px",
+    "padding_interno_lateral": 110,
+    "gap": 32,
+    "_nota": "TERCEIRA variante de rodape: aqui o fundo e claro (#f8efe9) e os textos ficam escuros (#352005 / #483b2a). Blog usa #3a2e26 e Sobre nos usa #a98d67.",
+    "cta": {
+      "titulo": "Sobrou alguma dúvida?\nVamos conversar!",
+      "fonte_titulo": "Faberge Regular 44px",
+      "cor_titulo": "#352005",
+      "rotulo": "Contate-nos",
+      "cor_rotulo": "#a98d67",
+      "fonte_rotulo": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "botao": {
+        "texto": "Quero agendar uma reunião",
+        "fundo": "rgba(255,255,255,0.73)",
+        "cor": "#352005",
+        "padding": "12px 24px",
+        "radius": 16,
+        "fonte": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)"
+      }
+    },
+    "colunas": {
+      "gap": 132,
+      "Institucional": {
+        "altura": 265,
+        "gap": 12,
+        "titulo_fonte": "Faberge Regular 32px",
+        "titulo_cor": "#352005",
+        "itens_fonte": "Arboria Medium 16px",
+        "itens_cor": "#483b2a",
+        "itens": [
+          "Início",
+          "Serviços",
+          "Projetos",
+          "Sobre nós",
+          "Blog",
+          "Contato"
+        ]
+      },
+      "Informações": {
+        "altura": 187.562,
+        "itens": [
+          "Termos de uso",
+          "Políticas de Privacidade",
+          "Políticas de Cookies"
+        ]
+      }
+    },
+    "divisor": {
+      "largura": 1444
+    },
+    "copyright": {
+      "texto": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+      "fonte": "Arboria Medium 20px",
+      "cor": "#352005"
+    },
+    "redes": [
+      "Instagram",
+      "Facebook",
+      "Tiktok",
+      "Youtube",
+      "Linkedin"
+    ],
+    "rede_tamanho": 40,
+    "rede_gap": 12
+  },
+  "divergencias_medidas_contra_o_site_no_ar": [
+    "O formulario nao tem cartao: Figma e um card de 533.417px com fundo #fdfdfd, padding 32, radius 8 e drop-shadow(2px 2px 2px rgba(0,0,0,0.24)), assentado sobre faixa de 1920x937 fundo #f8efe9. No site o formulario e solto na pagina, sem cartao, sem sombra e sem faixa de fundo.",
+    "Titulo da pagina errado no texto e no tamanho: Figma diz 'Fale conosco' em Mulish SemiBold 100px cor #352005 (migalha 'Início / Fale conosco'). O site diz 'Contato' em Mulish 600 60px cor #21201f, e a migalha tambem diz 'Contato'.",
+    "Botao de envio: Figma 'Receber proposta personalizada', fundo #a98d67, cor branca, padding 12px 24px, radius 8, Arboria Bold 20px. O site tem so 'Enviar', com padding 14px 42px e fonte Inter 600 14px. Rotulo, cor, fonte e medidas — tudo diferente.",
+    "Rotulos dos campos: Figma Segoe UI Bold 16px cor #212529 line-height 24px; site Inter 500 14px. Os textos dos rotulos batem ('Qual é o seu nome?', 'E-mail', 'Telefone', 'Qual serviço você procura?', 'Mensagem'), mas peso e tamanho nao.",
+    "Campos: Figma tem altura fixa 38px, borda 1px #ced4da, radius 4, padding 6.5px 13px 7.5px; textarea de 107px. O site usa padding 12px 14px sem altura fixa e textarea rows=5. O select do Figma traz icone fa:caret-down 24x24; no site e um <select> nativo com 'Selecione' como primeira opcao — placeholder que nao existe no Figma.",
+    "Falta o feed Instagram inteiro: @Isabellapires Mulish Bold 48px + botao 'Siga-nos no instagram!' de 418px fundo #a98d67 radius 4 + 4 fotos de 422x590 radius 32, bloco de 1767px de largura. Nada disso esta em contato.astro.",
+    "A pagina no ar tem ZERO tags <img>; o Figma pede 4 fotos do Instagram e os 5 icones de rede de 40px.",
+    "'Nossos Canais': Figma lista CINCO icones de 40px (Instagram, Facebook, Tiktok, Youtube, Linkedin) com gap 12 e padding lateral 24. O site lista TRES links de texto (Instagram, Facebook, LinkedIn) em Mulish 500 18px — faltam Tiktok e Youtube, e nao ha icones.",
+    "Titulo 'Como nos encontrar': Figma Faberge Regular 60px cor #352005 largura 548; site Mulish 700 49px cor #21201f. Familia, peso e tamanho errados.",
+    "Blocos de contato e endereco sao listas com marcador no Figma (list-disc), fonte Mulish Medium 21px (contato) e 19px (endereco) cor #6d6e6f. No site sao paragrafos sem marcador, 21px cor #21201f. A cor e o marcador divergem.",
+    "Rotulos 'Contato' e 'Endereco' sao Faberge Regular 24px #191919 no Figma; 'Nossos Canais' e menor, Faberge Regular 18px. O site usa 24px uniforme para os tres, cor #341f04.",
+    "Layout de duas colunas: Figma separa formulario e dados por gap de 120 dentro de faixa centralizada de 1920; site usa grid 1fr 1fr com gap 64 dentro de max-width 1184.",
+    "Wordmark 'ISABELLA PIRES' 192px Faberge tracking 19.2 altura 367 ausente do site.",
+    "Rodape: esta tela usa a variante CLARA (fundo #f8efe9, textos #352005/#483b2a), enquanto Blog usa #3a2e26 e Sobre nos usa #a98d67. Sao tres variantes do mesmo componente — decidir qual o Rodape.astro implementa.",
+    "Cabecalho de pagina: Figma tem faixa padding 80px 100px, borda inferior 1px #352005, gap 67, migalhas Arboria Bold 21px com icone fa-house e o selo circular de 328px em left 1371/top 155. Site nao tem faixa, nem icone, nem selo.",
+    "Faberge e Arboria ausentes do projeto. Segoe UI aparece em todos os rotulos e campos do formulario e no rodape — deve ser saneada, nao reproduzida."
+  ]
+}

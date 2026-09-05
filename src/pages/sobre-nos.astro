@@ -282,7 +282,9 @@ const fotosInstagram = [
     text-wrap: balance;
   }
   .entrega__linha { display: flex; gap: var(--fig-e-4xl); align-items: center; }
-  .acordeao { display: flex; flex: 1 1 46%; flex-direction: column; gap: var(--fig-e-md); min-width: 380px; }
+  /* min-width fixo somado ao flex-basis da foto estourava a linha em
+     1440px. Percentual nos dois lados não estoura em largura nenhuma. */
+  .acordeao { display: flex; flex: 1 1 46%; flex-direction: column; gap: var(--fig-e-md); min-width: 0; }
   .acordeao__item {
     border: 2px solid #696969;
     border-radius: var(--fig-raio-lg);
@@ -315,9 +317,9 @@ const fotosInstagram = [
     border-radius: var(--fig-raio-xl);
     flex: 1 1 54%;
     height: 724px;
-    max-width: 953px;
+    max-width: 100%;
+    min-width: 0;
     object-fit: cover;
-    width: 100%;
   }
 
   /* ─── Método ──────────────────────────────────────────────*/

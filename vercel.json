@@ -75,6 +75,26 @@
       "source": "/artigos/tour-por-apartamento-de-80m%C2%B2-bem-otimizado",
       "destination": "/artigos/tour-por-apartamento-de-80m-bem-otimizado",
       "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/artigos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/artigos/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/sobre",
+      "destination": "/sobre-nos",
+      "permanent": true
+    },
+    {
+      "source": "/fale-conosco",
+      "destination": "/contato",
+      "permanent": true
     }
   ],
   "headers": [

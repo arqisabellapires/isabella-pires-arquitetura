@@ -1,0 +1,325 @@
+---
+/**
+ * "Histórias Recentes" — carrossel de projetos da home (Figma node 1:223).
+ *
+ * A forma vem da imagem em `_figma/secoes/home-1223-historias-recentes.png`,
+ * não das medidas: card central de 817×545 destacado, e as duas peças
+ * vizinhas aparecendo cortadas nas bordas com 451px de altura e um véu preto
+ * de 20% por cima. Abaixo, as bolinhas de posição (15px, gap 13); e mais
+ * abaixo o nome do projeto em Faberge 48px com o local em 30px, ladeado
+ * pelas setas ← e → (32×49).
+ *
+ * A versão anterior desta seção eram três cards empilhados na vertical —
+ * mesma altura de página, forma completamente diferente. Daí a regra do
+ * handoff: altura não é evidência de fidelidade.
+ *
+ * Sem JavaScript o carrossel continua legível: é uma lista rolável com
+ * scroll-snap, e as setas são âncoras para os slides. O script só troca o
+ * estado ativo (destaque, bolinha, legenda) para quem tem JS.
+ */
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  projetos: CollectionEntry<'projetos'>[];
+}
+const { projetos } = Astro.props;
+
+/*
+  O carrossel abre no segundo projeto, não no primeiro.
+
+  No design as duas peças vizinhas aparecem cortadas nas bordas — e isso só
+  existe se houver um slide de cada lado do ativo. Abrindo no primeiro, a
+  esquerda fica vazia e a seção perde a forma. Com dois ou menos projetos o
+  efeito não existe de qualquer jeito, e aí vale abrir no primeiro.
+*/
+const inicial = projetos.length > 2 ? 1 : 0;
+---
+
+<div class="carrossel" data-carrossel>
+  <ul class="carrossel__trilho" data-trilho data-desloca={inicial > 0 ? '' : undefined}>
+    {projetos.map((p, i) => (
+      <li class="carrossel__slide" id={`slide-${p.id}`} data-slide data-ativo={i === inicial ? '' : undefined}>
+        <a href={`/projetos/${p.id}`} class="carrossel__foto">
+          <Image
+            src={p.data.capa}
+            alt={p.data.capaAlt}
+            widths={[817, 1634]}
+            sizes="(min-width: 1200px) 817px, 90vw"
+            loading={i <= inicial + 2 ? 'eager' : 'lazy'}
+          />
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <ol class="carrossel__bolinhas" data-bolinhas>
+    {projetos.map((p, i) => (
+      <li>
+        <button
+          type="button"
+          class="carrossel__bolinha"
+          data-ir={i}
+          data-ativo={i === inicial ? '' : undefined}
+          aria-label={`Ir para ${p.data.titulo}`}
+        ></button>
+      </li>
+    ))}
+  </ol>
+
+  <div class="carrossel__rodape">
+    <button type="button" class="carrossel__seta" data-anterior aria-label="Projeto anterior">
+      <svg viewBox="0 0 32 49" width="32" height="49" aria-hidden="true" focusable="false">
+        <path d="M30 2 6 24.5 30 47" fill="none" stroke="currentColor" stroke-width="4"
+              stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    {/* Uma legenda só, trocada pelo script — no design há um único par
+        título/local por vez, centrado entre as setas. */}
+    <p class="carrossel__legenda" data-legenda aria-live="polite">
+      <span class="carrossel__titulo" data-titulo>{projetos[inicial]?.data.titulo}</span>
+      <span class="carrossel__local" data-local>{projetos[inicial]?.data.local}</span>
+    </p>
+
+    <button type="button" class="carrossel__seta" data-proximo aria-label="Próximo projeto">
+      <svg viewBox="0 0 32 49" width="32" height="49" aria-hidden="true" focusable="false">
+        <path d="M2 2 26 24.5 2 47" fill="none" stroke="currentColor" stroke-width="4"
+              stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+
+  {/* O script lê daqui os títulos e locais, para não montar HTML no cliente. */}
+  <script type="application/json" data-legendas set:html={JSON.stringify(
+    projetos.map((p) => ({ titulo: p.data.titulo, local: p.data.local ?? '' })),
+  )} />
+</div>
+
+<script>
+  /*
+    Estado do carrossel. O scroll-snap é quem manda: as setas e as bolinhas
+    só chamam scrollIntoView, e um IntersectionObserver decide qual slide
+    está ativo. Assim arrastar com o dedo, rolar com trackpad e clicar na
+    seta convergem para o mesmo caminho, sem estado duplicado.
+  */
+  document.querySelectorAll<HTMLElement>('[data-carrossel]').forEach((raiz) => {
+    const trilho = raiz.querySelector<HTMLElement>('[data-trilho]');
+    const slides = [...raiz.querySelectorAll<HTMLElement>('[data-slide]')];
+    const bolinhas = [...raiz.querySelectorAll<HTMLElement>('[data-ir]')];
+    const elTitulo = raiz.querySelector<HTMLElement>('[data-titulo]');
+    const elLocal = raiz.querySelector<HTMLElement>('[data-local]');
+    const legendas: { titulo: string; local: string }[] = JSON.parse(
+      raiz.querySelector<HTMLElement>('[data-legendas]')?.textContent || '[]',
+    );
+    if (!trilho || slides.length === 0) return;
+
+    /* Começa no slide que o servidor marcou como ativo, não em 0 — senão a
+       primeira interação pula um. */
+    let atual = Math.max(0, slides.findIndex((s) => s.hasAttribute('data-ativo')));
+
+    const marcar = (i: number) => {
+      if (i === atual) return;
+      atual = i;
+      slides.forEach((s, n) => s.toggleAttribute('data-ativo', n === i));
+      bolinhas.forEach((b, n) => b.toggleAttribute('data-ativo', n === i));
+      if (elTitulo && legendas[i]) elTitulo.textContent = legendas[i].titulo;
+      if (elLocal && legendas[i]) elLocal.textContent = legendas[i].local;
+    };
+
+    const irPara = (i: number) => {
+      soltarDeslocamento();
+      const alvo = slides[(i + slides.length) % slides.length];
+      alvo?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    };
+
+    /* O slide ativo é o que está mais perto do centro do trilho. O
+       threshold alto evita que uma peça lateral, sempre parcialmente
+       visível por design, roube o estado. */
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        entradas.forEach((e) => {
+          if (e.isIntersecting && e.intersectionRatio > 0.6) {
+            marcar(slides.indexOf(e.target as HTMLElement));
+          }
+        });
+      },
+      { root: trilho, threshold: [0.6, 0.9] },
+    );
+    slides.forEach((s) => observador.observe(s));
+
+    /*
+      O deslocamento em CSS já entrega o slide inicial centrado. Na primeira
+      navegação ele sai de cena: a partir daí quem centra é o scroll, e
+      manter a margem negativa deixaria um vão à esquerda.
+    */
+    const soltarDeslocamento = () => {
+      if (!trilho.hasAttribute('data-desloca')) return;
+      const antes = slides[0].getBoundingClientRect().left;
+      trilho.removeAttribute('data-desloca');
+      trilho.scrollLeft += slides[0].getBoundingClientRect().left - antes;
+    };
+
+    raiz.querySelector('[data-anterior]')?.addEventListener('click', () => irPara(atual - 1));
+    raiz.querySelector('[data-proximo]')?.addEventListener('click', () => irPara(atual + 1));
+    bolinhas.forEach((b, i) => b.addEventListener('click', () => irPara(i)));
+  });
+</script>
+
+<style>
+  .carrossel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--fig-e-2xl);
+  }
+
+  /* O trilho sangra para fora do conteúdo: é isso que deixa as peças
+     vizinhas cortadas nas bordas da tela, como no design. O padding lateral
+     de 50% menos meio card centra o primeiro e o último slide. */
+  .carrossel__trilho {
+    display: flex;
+    gap: var(--fig-e-5xl);
+    list-style: none;
+    margin: 0;
+    padding: 0 max(var(--fig-e-md), calc(50% - 817px / 2));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    width: 100vw;
+    max-width: 100vw;
+  }
+  /*
+    O primeiro slide entra com uma margem negativa de um slide inteiro (817 +
+    100 de gap), o que empurra o trilho e deixa o ativo — o segundo — no
+    centro já na primeira pintura, sem esperar JavaScript.
+
+    Fazer isso por `scrollIntoView` no carregamento funciona no navegador,
+    mas some na fotografia de página inteira do Playwright, que redesenha os
+    contêineres roláveis a partir do zero. Resolvendo em CSS, o que se
+    fotografa é o que se vê.
+  */
+  .carrossel__trilho[data-desloca] > .carrossel__slide:first-child {
+    margin-left: calc((817px + var(--fig-e-5xl)) * -1);
+  }
+  .carrossel__trilho::-webkit-scrollbar { display: none; }
+
+  .carrossel__slide {
+    flex: none;
+    scroll-snap-align: center;
+    width: min(817px, 90vw);
+  }
+
+  /* Peça lateral: 451px de altura contra os 545px do card ativo, e o véu
+     preto de 20% que o design usa para empurrá-la para trás. */
+  .carrossel__foto {
+    display: block;
+    border-radius: var(--fig-raio-sm);
+    overflow: clip;
+    position: relative;
+  }
+  .carrossel__foto::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 0.2);
+    transition: opacity var(--dur-carrossel-home, 0.6s) var(--mola-carrossel-home, ease);
+  }
+  .carrossel__slide[data-ativo] .carrossel__foto::after { opacity: 0; }
+
+  .carrossel__foto :global(img) {
+    display: block;
+    width: 100%;
+    height: 451px;
+    object-fit: cover;
+    transition: height var(--dur-carrossel-home, 0.6s) var(--mola-carrossel-home, ease);
+  }
+  .carrossel__slide[data-ativo] .carrossel__foto :global(img) { height: 545px; }
+
+  .carrossel__bolinhas {
+    display: flex;
+    gap: 13px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .carrossel__bolinha {
+    background: var(--fig-primaria-clara);
+    border: 0;
+    border-radius: var(--fig-raio-pill);
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    padding: 0;
+    width: 15px;
+  }
+  .carrossel__bolinha[data-ativo] { background: var(--fig-primaria-ativa); }
+  .carrossel__bolinha:focus-visible {
+    outline: 2px solid var(--fig-primaria-ativa);
+    outline-offset: 3px;
+  }
+
+  .carrossel__rodape {
+    align-items: center;
+    display: flex;
+    gap: var(--fig-e-xs);
+    justify-content: center;
+  }
+  .carrossel__seta {
+    background: none;
+    border: 0;
+    color: var(--fig-tinta);
+    cursor: pointer;
+    display: grid;
+    padding: var(--fig-e-xs);
+    place-items: center;
+    transition: transform var(--dur-carrossel-home, 0.6s) var(--mola-carrossel-home, ease);
+  }
+  .carrossel__seta:hover { transform: scale(1.1); }
+  .carrossel__seta:focus-visible {
+    outline: 2px solid var(--fig-primaria-ativa);
+    outline-offset: 2px;
+  }
+
+  .carrossel__legenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    text-align: center;
+    width: 537px;
+    max-width: 60vw;
+  }
+  .carrossel__titulo {
+    color: #262626;
+    font: var(--fig-peso-normal) 48px / 1.2 var(--fig-fonte-display);
+  }
+  .carrossel__local {
+    color: #525252;
+    font: var(--fig-peso-normal) 30px / 1.2 var(--fig-fonte-corpo);
+  }
+
+  @media (max-width: 1199.98px) {
+    .carrossel__foto :global(img) { height: 320px; }
+    .carrossel__slide[data-ativo] .carrossel__foto :global(img) { height: 400px; }
+    .carrossel__trilho { gap: var(--fig-e-2xl); }
+    .carrossel__titulo { font-size: 34px; }
+    .carrossel__local { font-size: 20px; }
+  }
+  @media (max-width: 809.98px) {
+    .carrossel__foto :global(img),
+    .carrossel__slide[data-ativo] .carrossel__foto :global(img) { height: 260px; }
+    .carrossel__seta svg { width: 20px; height: 31px; }
+    .carrossel__titulo { font-size: 26px; }
+    .carrossel__local { font-size: 17px; }
+  }
+
+  /* Quem pediu menos movimento não ganha o crescimento do card nem o
+     scroll suave — o carrossel continua navegável, só não anima. */
+  @media (prefers-reduced-motion: reduce) {
+    .carrossel__foto :global(img),
+    .carrossel__foto::after,
+    .carrossel__seta { transition: none; }
+  }
+</style>

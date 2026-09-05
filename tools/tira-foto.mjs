@@ -61,7 +61,46 @@ for (const rota of ALVOS) {
   await pagina.addStyleTag({
     content: '*, *::before, *::after { animation: none !important; opacity: 1 !important; }',
   });
-  await pagina.evaluate(() => new Promise((r) => setTimeout(r, 200)));
+
+  /* As imagens preguiçosas abaixo da dobra nunca entram no viewport com
+     `fullPage`, e saem como retângulo cinza. Força o carregamento delas. */
+  await pagina.evaluate(async () => {
+    document.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; });
+    await Promise.all([...document.images]
+      .filter((i) => !i.complete)
+      .map((i) => new Promise((r) => { i.onload = i.onerror = r; })));
+  });
+
+  /*
+    Carrosséis com scroll-snap posicionam o slide inicial por JavaScript,
+    depois que a página carrega. Sem esperar por isso, a foto pega o trilho
+    ainda no começo e o card ativo aparece fora do centro — parece defeito
+    de layout e não é.
+
+    Esperar "o scroll parar de mudar" não serve: no instante em que a espera
+    começa ele ainda está em zero e parado, e a espera termina antes de o
+    script rolar. O que se espera aqui é o slide marcado como ativo estar de
+    fato centrado no trilho.
+  */
+  await pagina.evaluate(() => new Promise((pronto) => {
+    const trilhos = [...document.querySelectorAll('[data-trilho]')];
+    if (trilhos.length === 0) return pronto();
+
+    const centrado = (trilho) => {
+      const ativo = trilho.querySelector('[data-ativo]');
+      if (!ativo) return true;
+      const t = trilho.getBoundingClientRect();
+      const a = ativo.getBoundingClientRect();
+      return Math.abs((a.left + a.width / 2) - (t.left + t.width / 2)) < 2;
+    };
+
+    const tique = setInterval(() => {
+      if (trilhos.every(centrado)) { clearInterval(tique); pronto(); }
+    }, 100);
+    setTimeout(() => { clearInterval(tique); pronto(); }, 4000);
+  }));
+
+  await pagina.evaluate(() => new Promise((r) => setTimeout(r, 300)));
   await pagina.screenshot({ path: `_figma/fotos/${nome}`, fullPage: true });
   console.log(`  ${resp.status()}  ${rota} → _figma/fotos/${nome}`);
 }

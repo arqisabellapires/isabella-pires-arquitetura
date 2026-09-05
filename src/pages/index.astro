@@ -21,21 +21,22 @@ import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
 import RotuloSecao from '~/components/RotuloSecao.astro';
-import CardArtigo from '~/components/artigos/CardArtigo.astro';
+import CardArtigoHome from '~/components/artigos/CardArtigoHome.astro';
+import CarrosselProjetos from '~/components/CarrosselProjetos.astro';
+import AcordeaoServicos from '~/components/AcordeaoServicos.astro';
 import Contato from '~/components/formularios/Contato.astro';
-import { servicos, numerosHome } from '~/lib/conteudo';
-import { minutosDeLeitura } from '~/lib/artigos';
+import { numerosHome } from '~/lib/conteudo';
 
 const artigos = (await getCollection('artigos', ({ data }) => data.publicado !== false))
   .sort((a, b) => b.data.publicadoEm.valueOf() - a.data.publicadoEm.valueOf())
-  .slice(0, 3);
-const recentes = await Promise.all(
-  artigos.map(async (artigo) => ({ artigo, minutos: await minutosDeLeitura(artigo) })),
-);
+  .slice(0, 6);
+/* O card da home não mostra tempo de leitura (o design não tem), então não
+   há por que ler o corpo de cada artigo aqui. */
 
+/* Sem `slice`: o carrossel mostra todos, e as peças vizinhas cortadas nas
+   bordas só existem se houver o que cortar. */
 const projetos = (await getCollection('projetos', ({ data }) => data.publicado !== false))
-  .sort((a, b) => a.data.ordem - b.data.ordem)
-  .slice(0, 3);
+  .sort((a, b) => a.data.ordem - b.data.ordem);
 ---
 
 <Base
@@ -109,72 +110,67 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     </dl>
   </section>
 
+  {/* "Histórias Recentes" — carrossel (node 1:223). O rótulo é "Serviços"
+      no Figma, não "Projetos": o designer reaproveitou o rótulo da seção
+      seguinte. Mantenho o do design; se estiver errado é texto, e texto é
+      decisão do Gabriel. */}
   <section class="projetos" data-revela>
-    <header class="secao__cabeca">
-      <RotuloSecao>Projetos</RotuloSecao>
-      <h2 class="titulo-secao">Projetos que contam histórias</h2>
+    <header class="secao__cabeca secao__cabeca--centro">
+      <RotuloSecao>Serviços</RotuloSecao>
+      <h2 class="titulo-secao">Histórias Recentes</h2>
     </header>
-    <ul class="projetos__lista" data-revela-filhos>
-      {projetos.map((p) => (
-        <li class="projeto-card">
-          <a href={`/projetos/${p.id}`}>
-            <Image
-              src={p.data.capa}
-              alt={p.data.capaAlt}
-              widths={[720, 1440]}
-              sizes="(min-width: 1200px) 921px, 92vw"
-              loading="lazy"
-            />
-            <div class="projeto-card__texto">
-              <h3>{p.data.titulo}</h3>
-              <p>{p.data.resumo}</p>
-            </div>
-          </a>
+    <CarrosselProjetos projetos={projetos} />
+  </section>
+
+  {/* Acordeão horizontal (node 1:300): título à esquerda, botão
+      "Solicitar Proposta" à direita alinhado com ele, painéis embaixo. */}
+  <section class="servicos" data-revela>
+    <header class="servicos__cabeca">
+      <div class="secao__cabeca">
+        <RotuloSecao>Serviços</RotuloSecao>
+        <h2 class="titulo-secao">Serviços pensados<br />para você</h2>
+      </div>
+      <a class="botao botao--caramelo servicos__proposta" href="/contato">Solicitar Proposta</a>
+    </header>
+    <AcordeaoServicos />
+  </section>
+
+  {/* node 1:332 — duas colunas: cartão do formulário à esquerda (533px),
+      texto à direita (705px), gap 104. Era título em cima e formulário
+      largo embaixo; é o "form desproporcional" que o Gabriel apontou. */}
+  <section class="cta" data-revela>
+    <div class="cta__interno">
+      <div class="cta__form"><Contato /></div>
+      <div class="cta__texto">
+        <RotuloSecao cor="secundaria">Entre em contato</RotuloSecao>
+        <h2 class="titulo-secao cta__titulo">Vamos conversar sobre<br />seu próximo projeto?</h2>
+        <p class="cta__apoio">
+          Conte um pouco sobre o que você sonha para o seu espaço. Nossa equipe vai preparar
+          uma proposta feita sob medida para você.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* node 1:351 — texto à esquerda, carrossel de cards verticais à direita
+      escorrendo para fora da borda. Era um bloco centrado com três cards
+      horizontais largos embaixo. */}
+  <section class="blog" data-revela>
+    <div class="blog__texto">
+      <RotuloSecao>Blog</RotuloSecao>
+      <h2 class="titulo-secao blog__titulo">
+        Arquitetura,<br />Design &amp; <em>Mercado</em>
+      </h2>
+      <p class="blog__apoio">Dicas e tendências para quem valoriza bons espaços.</p>
+      <a class="botao botao--caramelo blog__acesso" href="/artigos">Acessar blog</a>
+    </div>
+    <ul class="blog__trilho">
+      {artigos.map((artigo) => (
+        <li class="blog__item">
+          <CardArtigoHome artigo={artigo} />
         </li>
       ))}
     </ul>
-    <a class="ligacao" href="/projetos">Explorar Projetos</a>
-  </section>
-
-  <section class="servicos" data-revela>
-    <header class="secao__cabeca">
-      <RotuloSecao>Serviços</RotuloSecao>
-      <h2 class="titulo-secao">Serviços pensados para você</h2>
-    </header>
-    <ol class="servicos__lista" data-revela-filhos>
-      {servicos.map((s, i) => (
-        <li class="servico-item">
-          <span class="servico-item__numero">{String(i + 1).padStart(2, '0')}</span>
-          <div>
-            <h3 class="servico-item__titulo">{s.tituloCompleto}</h3>
-            <p class="servico-item__resumo">{s.resumoHome}</p>
-            <a class="ligacao" href={`/servicos#${s.slug}`}>Saiba mais</a>
-          </div>
-        </li>
-      ))}
-    </ol>
-  </section>
-
-  <section class="cta" data-revela>
-    <div class="cta__interno">
-      <RotuloSecao cor="secundaria">Entre em contato</RotuloSecao>
-      <h2 class="titulo-secao">Vamos conversar sobre seu próximo projeto?</h2>
-      <Contato />
-    </div>
-  </section>
-
-  <section class="blog" data-revela>
-    <header class="secao__cabeca">
-      <RotuloSecao>Arquitetura, Design &amp; Mercado</RotuloSecao>
-      <h2 class="titulo-secao">Histórias Recentes</h2>
-      <p class="secao__apoio">Dicas e tendências para quem valoriza bons espaços.</p>
-    </header>
-    <div class="blog__grade" data-revela-filhos>
-      {recentes.map(({ artigo, minutos }) => (
-        <CardArtigo artigo={artigo} minutos={minutos} variante="compacto" />
-      ))}
-    </div>
-    <a class="ligacao" href="/artigos">Ver todas as postagens</a>
   </section>
 
   <div slot="rodape">
@@ -297,14 +293,15 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   }
   .ligacao:hover { transform: translateX(4px); }
 
+  /* `.projetos` e `.blog` ficam de fora: os dois têm trilho que sangra até
+     a borda da tela, e um container centrado cortaria justamente o efeito. */
   .sobre,
-  .projetos,
-  .servicos,
-  .blog {
+  .servicos {
     margin-inline: auto;
     max-width: var(--fig-largura-conteudo);
     padding-inline: var(--fig-margem-interna);
   }
+  .projetos { margin-inline: auto; max-width: var(--fig-largura-canvas); }
 
   /* ─── Sobre ───────────────────────────────────────────────*/
   .sobre {
@@ -365,114 +362,118 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     margin: 0;
   }
 
-  /* ─── Projetos ────────────────────────────────────────────
-     Card de 921×674: a foto é fundo, o texto entra por cima com o
-     gradiente do design garantindo contraste. */
-  .projetos { padding-block: var(--fig-secao-y); }
-  .projetos__lista {
+  /* ─── Histórias Recentes (carrossel) ─────────────────────
+     O trilho sangra até a borda da tela — por isso a seção não recebe
+     `padding-inline`, só o cabeçalho. O layout está em CarrosselProjetos. */
+  .projetos {
     display: flex;
     flex-direction: column;
-    gap: var(--fig-e-2xl);
-    list-style: none;
-    margin: 0 0 var(--fig-e-2xl);
-    padding: 0;
+    gap: var(--fig-e-3xl);
+    padding-block: var(--fig-secao-y);
   }
-  .projeto-card a {
-    display: block;
-    border-radius: var(--fig-raio-sm);
-    color: #fff;
-    overflow: clip;
-    position: relative;
-    text-decoration: none;
-  }
-  /* Ficha `carrossel-home` na entrada, `card-projeto-hover` no mouse. */
-  .projeto-card :global(img) {
-    display: block;
-    height: 674px;
-    object-fit: cover;
-    transition: transform var(--dur-card-projeto-hover) var(--mola-card-projeto-hover);
-    width: 100%;
-  }
-  .projeto-card__texto {
-    transition: transform var(--dur-carrossel-home) var(--mola-carrossel-home);
-  }
-  .projeto-card a:hover .projeto-card__texto { transform: translateY(-4px); }
-  .projeto-card a:hover :global(img) { transform: scale(1.03); }
-  .projeto-card a::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--fig-gradiente-card);
-  }
-  .projeto-card__texto {
-    position: absolute;
-    bottom: var(--fig-e-4xl);
-    left: var(--fig-e-4xl);
-    max-width: 681px;
-    z-index: 1;
-  }
-  .projeto-card__texto h3 {
-    color: #fff;
-    font: var(--fig-peso-medio) var(--fig-f-card-titulo) / 1.1 var(--fig-fonte-ui);
-    margin: 0 0 var(--fig-e-xs);
-  }
-  .projeto-card__texto p {
-    color: rgb(255 255 255 / 0.86);
-    font: var(--fig-peso-medio) var(--fig-t-corpo-p) / var(--fig-altura-corpo) var(--fig-fonte-corpo);
-    margin: 0;
+  .secao__cabeca--centro {
+    align-items: center;
+    padding-inline: var(--fig-margem-interna);
+    text-align: center;
   }
 
-  /* ─── Serviços ────────────────────────────────────────────*/
-  .servicos { padding-block: var(--fig-secao-y); }
-  .servicos__lista {
-    display: grid;
+  /* ─── Serviços (acordeão) ─────────────────────────────────
+     Cabeçalho em duas pontas: título à esquerda, "Solicitar Proposta" à
+     direita alinhado ao topo do bloco de texto (node 1:301). */
+  .servicos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-3xl);
+    padding-block: var(--fig-e-5xl) var(--fig-e-8xl);
+  }
+  .servicos__cabeca {
+    align-items: center;
+    display: flex;
     gap: var(--fig-e-2xl);
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between;
   }
-  .servico-item { display: flex; gap: var(--fig-e-lg); }
-  /* Ficha `servicos-numerados-home`: spring bounce 0.2 / 0.4s. */
-  .servico-item__numero {
-    color: #8d7252;
-    flex: none;
-    font: var(--fig-peso-normal) var(--fig-t-servico-num) / 1 var(--fig-fonte-display);
-    transition: transform var(--dur-servicos-numerados-home) var(--mola-servicos-numerados-home);
-  }
-  .servico-item:hover .servico-item__numero { transform: translateY(-3px); }
-  .servico-item__titulo {
-    color: var(--fig-tinta);
-    font: var(--fig-peso-semi) var(--fig-t-corpo-g) / 1.2 var(--fig-fonte-corpo);
-    margin: 0 0 var(--fig-e-xs);
-  }
-  .servico-item__resumo {
-    color: var(--fig-texto);
-    font: var(--fig-peso-normal) var(--fig-t-corpo-p) / var(--fig-altura-corpo) var(--fig-fonte-corpo);
-    margin: 0 0 var(--fig-e-sm);
-  }
+  .servicos__proposta { flex: none; }
 
-  /* ─── CTA com formulário ──────────────────────────────────*/
+  /* ─── CTA com formulário ──────────────────────────────────
+     Duas colunas do node 1:333: cartão de 533px, texto de 705px, gap 104.
+     A faixa é de largura total; o par é que se centra dentro dela. */
   .cta {
     background: var(--fig-veu-cta);
     padding: var(--fig-e-6xl) var(--fig-margem-interna) var(--fig-e-8xl);
   }
   .cta__interno {
+    align-items: start;
     display: flex;
-    flex-direction: column;
-    gap: var(--fig-e-lg);
+    gap: var(--fig-e-7xl);
+    justify-content: center;
     margin-inline: auto;
     max-width: var(--fig-largura-conteudo);
   }
-
-  /* ─── Blog ────────────────────────────────────────────────*/
-  .blog { padding-block: var(--fig-secao-y); }
-  .blog__grade {
-    display: grid;
-    gap: var(--fig-e-xl);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-bottom: var(--fig-e-2xl);
+  .cta__form { flex: none; width: 533px; }
+  .cta__texto {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-sm);
+    max-width: 705px;
+    padding-block: var(--fig-e-lg);
   }
+  /* O título do CTA é Faberge no design (não Mulish, como as outras
+     seções) — node 1:349, 71px. */
+  .cta__titulo {
+    font-family: var(--fig-fonte-display);
+    margin-bottom: var(--fig-e-lg);
+  }
+  .cta__apoio {
+    color: rgb(48 48 48 / 0.8);
+    font: var(--fig-peso-semi) var(--fig-t-corpo) / var(--fig-altura-corpo) var(--fig-fonte-corpo);
+    margin: 0;
+    max-width: 586px;
+  }
+
+  /* ─── Blog ────────────────────────────────────────────────
+     Texto à esquerda, fileira de cards verticais à direita escorrendo para
+     fora da borda (node 1:352). Como o trilho vaza para a direita, a seção
+     abre o padding só à esquerda. */
+  .blog {
+    align-items: center;
+    display: flex;
+    gap: var(--fig-e-2xl);
+    padding: var(--fig-secao-y) 0 var(--fig-secao-y) var(--fig-margem-lateral);
+  }
+  .blog__texto {
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    gap: var(--fig-e-lg);
+    width: 415px;
+  }
+  /* Faberge 50px no design, e "Mercado" em caramelo — o <em> carrega a cor,
+     não itálico. */
+  .blog__titulo {
+    font: var(--fig-peso-normal) 50px / 1.214 var(--fig-fonte-display);
+    margin: 0;
+  }
+  .blog__titulo em { color: #8d7252; font-style: normal; }
+  .blog__apoio {
+    color: var(--fig-cinza-900);
+    font: var(--fig-peso-medio) var(--fig-t-corpo) / 1.214 var(--fig-fonte-corpo);
+    margin: 0;
+  }
+  .blog__acesso { align-self: start; margin-top: var(--fig-e-md); }
+
+  .blog__trilho {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    min-width: 0;
+    overflow-x: auto;
+    padding: var(--fig-e-md) var(--fig-margem-interna) var(--fig-e-md) 0;
+    scroll-snap-type: x proximate;
+    scrollbar-width: none;
+  }
+  .blog__trilho::-webkit-scrollbar { display: none; }
+  .blog__item { flex: none; scroll-snap-align: start; }
 
   /* ─── Aparição ao rolar ───────────────────────────────────
      A ficha `reveal-entrada` mede spring bounce 0.2 / 0.8s, com filhos
@@ -482,14 +483,22 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     .heroi { min-height: 640px; }
     .sobre { flex-direction: column; align-items: stretch; }
     .sobre__foto { max-width: 100%; }
-    .projeto-card :global(img) { height: 420px; }
-    .projeto-card__texto { bottom: var(--fig-e-lg); left: var(--fig-e-lg); right: var(--fig-e-lg); }
+    /* Cabeçalho do acordeão empilha: o botão não cabe ao lado de um título
+       de 70px em telas médias. */
+    .servicos__cabeca { align-items: flex-start; flex-direction: column; gap: var(--fig-e-lg); }
+    .cta__interno { flex-direction: column; align-items: center; gap: var(--fig-e-3xl); }
+    .cta__form { width: min(533px, 100%); }
+    .cta__texto { max-width: 533px; }
+    .blog { flex-direction: column; align-items: stretch; padding-inline: var(--fig-margem-interna) 0; }
+    .blog__texto { width: auto; }
+    .blog__titulo { font-size: 38px; }
   }
   @media (max-width: 809.98px) {
     .heroi { min-height: 560px; padding-inline: var(--fig-e-md); }
     .heroi__caixa { padding: var(--fig-e-xl) var(--fig-e-md); min-height: 0; }
     .heroi__acoes { flex-direction: column; }
     .numeros__item { flex-direction: column; gap: var(--fig-e-xs); }
-    .projeto-card :global(img) { height: 300px; }
+    .blog__titulo { font-size: 30px; }
+    .servicos { padding-block: var(--fig-e-3xl) var(--fig-e-4xl); }
   }
 </style>

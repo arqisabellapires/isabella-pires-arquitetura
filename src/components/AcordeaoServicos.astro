@@ -1,0 +1,267 @@
+---
+/**
+ * Acordeão horizontal de serviços da home (Figma node 1:309).
+ *
+ * Forma conferida em `_figma/secoes/home-1300-servicos.png`: o serviço ativo
+ * ocupa um painel de 921×674 com a foto inteira, o número num círculo
+ * caramelo de 60px no alto à esquerda, uma seta `>` no meio da borda direita
+ * e o título/resumo em branco sobre o gradiente; os outros quatro viram
+ * faixas de 142px (a última, 137px) com a mesma foto cortada, véu mais forte
+ * e o número num círculo branco 85%.
+ *
+ * A versão anterior era uma grade de texto com o número solto ao lado — sem
+ * imagem, sem acordeão, sem botão.
+ *
+ * Sem JavaScript: o alvo é `:has(:checked)` sobre rádios de verdade, então o
+ * acordeão funciona só com HTML e CSS, inclusive por teclado (setas do
+ * teclado navegam o grupo de rádios nativamente). Não há script nenhum aqui.
+ */
+import { servicos } from '~/lib/conteudo';
+
+/* As fotos já vieram do Figma nomeadas pelo slug do serviço — a ordem do
+   `conteudo.ts` é a mesma dos painéis 1..5 do design. */
+const foto = (slug: string) => `/imagens/figma/servico--${slug}.webp`;
+---
+
+<div class="acordeao">
+  {servicos.map((s, i) => (
+    <div class="acordeao__painel">
+      <input
+        class="acordeao__radio"
+        type="radio"
+        name="servico-home"
+        id={`acordeao-${s.slug}`}
+        checked={i === 0}
+      />
+      {/* O rótulo cobre o painel inteiro: é ele que troca o ativo ao clique.
+          O texto acessível fica no <span> visualmente escondido, porque o
+          título visível só existe no painel aberto. */}
+      <label class="acordeao__gatilho" for={`acordeao-${s.slug}`}>
+        <span class="vis-oculto">Ver {s.tituloCompleto}</span>
+      </label>
+
+      <img
+        class="acordeao__foto"
+        src={foto(s.slug)}
+        alt=""
+        loading={i === 0 ? 'eager' : 'lazy'}
+        width="921"
+        height="674"
+      />
+
+      <span class="acordeao__numero" aria-hidden="true">{i + 1}</span>
+
+      <div class="acordeao__texto">
+        <h3 class="acordeao__titulo">{s.tituloCompleto}</h3>
+        <p class="acordeao__resumo">{s.resumoHome}</p>
+        <a class="acordeao__ligacao" href={`/servicos#${s.slug}`}>
+          Saiba mais sobre {s.tituloCompleto}
+        </a>
+      </div>
+
+      <svg class="acordeao__seta" viewBox="0 0 24 44" aria-hidden="true" focusable="false">
+        <path d="M4 4 20 22 4 40" fill="none" stroke="currentColor" stroke-width="4"
+              stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+  ))}
+</div>
+
+<style>
+  .acordeao {
+    display: flex;
+    gap: 18px;
+    height: 674px;
+    width: 100%;
+  }
+
+  .acordeao__painel {
+    border-radius: var(--fig-raio-sm);
+    flex: 142 1 0;
+    min-width: 0;
+    overflow: clip;
+    position: relative;
+    /* A ficha `servicos-numerados-home` é a que rege esta troca. */
+    transition: flex-grow var(--dur-servicos-numerados-home, 0.4s)
+                var(--mola-servicos-numerados-home, ease);
+  }
+  /* O painel ativo pesa 921 contra os 142 das faixas — a mesma proporção do
+     design, mas em `flex-grow`, então a soma se ajusta a qualquer largura. */
+  .acordeao__painel:has(.acordeao__radio:checked) { flex-grow: 921; }
+
+  .acordeao__radio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .acordeao__gatilho {
+    cursor: pointer;
+    inset: 0;
+    position: absolute;
+    z-index: 2;
+  }
+  /* O foco do rádio escondido tem que aparecer em algum lugar: aparece no
+     painel, que é o que a pessoa está de fato escolhendo. */
+  .acordeao__painel:has(.acordeao__radio:focus-visible) {
+    outline: 3px solid var(--fig-primaria-ativa);
+    outline-offset: 3px;
+  }
+  /* No painel aberto o rótulo sai da frente do link "Saiba mais". */
+  .acordeao__painel:has(.acordeao__radio:checked) .acordeao__gatilho { inset: 0 0 190px 0; }
+
+  .acordeao__foto {
+    display: block;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+  }
+  /* Véu: mais forte nas faixas fechadas (0,12→0,5) do que no painel aberto
+     (0,084→0,35), como no design. */
+  .acordeao__painel::after {
+    background: linear-gradient(179.19deg, rgb(0 0 0 / 0.12) 0.15%, rgb(0 0 0 / 0.5) 68.31%);
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+  }
+  .acordeao__painel:has(.acordeao__radio:checked)::after {
+    background: var(--fig-gradiente-card);
+  }
+
+  .acordeao__numero {
+    align-items: center;
+    background: rgb(255 255 255 / 0.85);
+    border-radius: var(--fig-raio-pill);
+    color: var(--fig-primaria-ativa);
+    display: flex;
+    font: var(--fig-peso-forte) 32px / 1 var(--fig-fonte-ui);
+    height: 60px;
+    justify-content: center;
+    left: 38px;
+    position: absolute;
+    top: 50px;
+    width: 60px;
+    z-index: 2;
+  }
+  .acordeao__painel:has(.acordeao__radio:checked) .acordeao__numero {
+    background: var(--fig-primaria-clara);
+    color: #fff;
+    font-size: 40px;
+  }
+
+  /* O texto só existe no painel aberto. Nas faixas ele sai do fluxo e fica
+     inacessível ao foco, para o Tab não parar em link invisível. */
+  .acordeao__texto {
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-xs);
+    left: 86px;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    width: min(681px, calc(100% - 172px));
+    z-index: 2;
+  }
+  .acordeao__painel:has(.acordeao__radio:checked) .acordeao__texto {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--dur-servicos-numerados-home, 0.4s) ease 0.15s;
+  }
+  .acordeao__titulo {
+    color: #fff;
+    font: var(--fig-peso-forte) 31px / 1.2 var(--fig-fonte-ui);
+    margin: 0;
+  }
+  .acordeao__resumo {
+    color: rgb(255 255 255 / 0.99);
+    font: var(--fig-peso-normal) 22px / var(--fig-altura-corpo) var(--fig-fonte-corpo);
+    margin: 0;
+  }
+  .acordeao__ligacao {
+    color: #fff;
+    font: var(--fig-peso-forte) var(--fig-t-meta) / 1.4 var(--fig-fonte-corpo);
+    margin-top: var(--fig-e-xs);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    width: fit-content;
+  }
+
+  /* A seta `>` fica no meio da borda direita do painel aberto — no design é
+     o que sinaliza "há mais para o lado". */
+  .acordeao__seta {
+    color: rgb(255 255 255 / 0.9);
+    height: 44px;
+    opacity: 0;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    translate: 0 -50%;
+    width: 24px;
+    z-index: 2;
+  }
+  .acordeao__painel:has(.acordeao__radio:checked) .acordeao__seta { opacity: 1; }
+
+  .vis-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1199.98px) {
+    .acordeao { height: 520px; }
+    .acordeao__texto { left: var(--fig-e-2xl); bottom: var(--fig-e-2xl); width: calc(100% - 80px); }
+    .acordeao__titulo { font-size: 24px; }
+    .acordeao__resumo { font-size: 17px; }
+    .acordeao__numero { left: var(--fig-e-md); top: var(--fig-e-md); height: 44px; width: 44px; font-size: 22px; }
+    .acordeao__painel:has(.acordeao__radio:checked) .acordeao__numero { font-size: 28px; }
+    .acordeao__painel:has(.acordeao__radio:checked) .acordeao__gatilho { inset: 0 0 160px 0; }
+  }
+
+  /* Abaixo de 810px o acordeão horizontal não cabe: cinco faixas de 142px já
+     somam 710px só de fechadas. Vira uma pilha de cartões, cada um com sua
+     foto e seu texto — mesma informação, forma que cabe. */
+  @media (max-width: 809.98px) {
+    .acordeao {
+      display: grid;
+      gap: var(--fig-e-md);
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+    .acordeao__painel,
+    .acordeao__painel:has(.acordeao__radio:checked) { flex: none; height: 380px; }
+    .acordeao__painel::after,
+    .acordeao__painel:has(.acordeao__radio:checked)::after { background: var(--fig-gradiente-card); }
+    .acordeao__gatilho,
+    .acordeao__painel:has(.acordeao__radio:checked) .acordeao__gatilho { display: none; }
+    .acordeao__seta { display: none; }
+    .acordeao__texto,
+    .acordeao__painel:has(.acordeao__radio:checked) .acordeao__texto {
+      opacity: 1;
+      visibility: visible;
+      left: var(--fig-e-lg);
+      bottom: var(--fig-e-lg);
+      width: calc(100% - 48px);
+    }
+    .acordeao__numero,
+    .acordeao__painel:has(.acordeao__radio:checked) .acordeao__numero {
+      background: var(--fig-primaria-clara);
+      color: #fff;
+      font-size: 22px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .acordeao__painel,
+    .acordeao__painel:has(.acordeao__radio:checked) .acordeao__texto { transition: none; }
+  }
+</style>

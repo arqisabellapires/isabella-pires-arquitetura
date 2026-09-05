@@ -1,0 +1,114 @@
+---
+/**
+ * Card de artigo do carrossel da home (Figma node 1:362).
+ *
+ * Não é variante do `CardArtigo` da listagem: lá o card é horizontal, com
+ * imagem ao lado e selo de categoria; aqui é um retângulo em pé de 285×339,
+ * raio 12, com a foto de fundo sob um véu preto de 38% e o **título e a data
+ * por cima da foto**, encostados na base. Duas formas diferentes, dois
+ * componentes — forçar uma prop `variante` aqui só esconderia isso.
+ *
+ * O título corta em duas linhas (`line-clamp`), como no design, onde a
+ * primeira manchete termina em reticências.
+ */
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  artigo: CollectionEntry<'artigos'>;
+}
+const { artigo } = Astro.props;
+const d = artigo.data;
+
+/* Por extenso, como no design ("25 de abril de 2025"). */
+const data = d.publicadoEm.toLocaleDateString('pt-BR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<article class="cartao">
+  <a class="cartao__link" href={`/artigos/${artigo.id}`}>
+    <Image
+      class="cartao__capa"
+      src={d.capa}
+      alt={d.capaAlt}
+      widths={[285, 570]}
+      sizes="285px"
+      loading="lazy"
+    />
+    <div class="cartao__texto">
+      <h3 class="cartao__titulo">{d.titulo}</h3>
+      <p class="cartao__data">{data}</p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .cartao__link {
+    border-radius: var(--fig-raio-md);
+    color: #fff;
+    display: block;
+    height: 339px;
+    overflow: clip;
+    position: relative;
+    text-decoration: none;
+    width: 285px;
+  }
+  .cartao :global(.cartao__capa) {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--dur-card-projeto-hover, 0.4s)
+                var(--mola-card-projeto-hover, ease);
+    width: 100%;
+  }
+  .cartao__link:hover :global(.cartao__capa) { transform: scale(1.04); }
+
+  /* Véu de 38% do design. Um gradiente por cima dele segura o contraste do
+     texto na base sem escurecer a foto inteira. */
+  .cartao__link::after {
+    background:
+      linear-gradient(to top, rgb(0 0 0 / 0.55) 0%, rgb(0 0 0 / 0) 55%),
+      rgb(0 0 0 / 0.38);
+    content: '';
+    inset: 0;
+    position: absolute;
+  }
+
+  .cartao__texto {
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-md);
+    left: 31px;
+    position: absolute;
+    right: 31px;
+    z-index: 1;
+  }
+  .cartao__titulo {
+    color: #fff;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font: var(--fig-peso-semi) var(--fig-t-meta) / 1.875 var(--fig-fonte-corpo);
+    letter-spacing: -0.32px;
+    margin: 0;
+    overflow: hidden;
+  }
+  .cartao__data {
+    color: #d8d8e5;
+    font: var(--fig-peso-medio) 17.55px / 1.5 var(--fig-fonte-corpo);
+    margin: 0;
+  }
+
+  .cartao__link:focus-visible {
+    outline: 3px solid var(--fig-primaria-ativa);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cartao :global(.cartao__capa) { transition: none; }
+  }
+</style>

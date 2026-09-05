@@ -65,7 +65,7 @@ const { fotos } = Astro.props;
   .instagram__fotos {
     display: grid;
     gap: var(--fig-e-xl);
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -79,10 +79,11 @@ const { fotos } = Astro.props;
   }
 
   @media (max-width: 1199.98px) {
-    .instagram__fotos img { height: 420px; }
+    .instagram__fotos img { height: 300px; }
     .instagram__botao { min-width: 0; }
   }
   @media (max-width: 809.98px) {
-    .instagram__fotos img { height: 320px; }
+    .instagram__fotos { grid-template-columns: repeat(2, 1fr); }
+    .instagram__fotos img { height: 220px; }
   }
 </style>

@@ -48,6 +48,20 @@ for (const rota of ALVOS) {
   const nome = (rota === '/' ? 'home' : rota.replace(/^\//, '').replace(/\//g, '-')) + `.${bp}.png`;
   const resp = await pagina.goto(`http://localhost:${porta}${rota}`, { waitUntil: 'networkidle' });
   await pagina.evaluate(() => document.fonts.ready);
+  /*
+    A aparição ao rolar é `animation-timeline: view()`, e o `fullPage` do
+    Playwright captura o documento inteiro num quadro só, sem rolar: tudo
+    abaixo da primeira tela sai em opacity 0, ou seja, BRANCO. A página está
+    certa e a fotografia é que mente — isso quase passou por defeito de
+    layout aqui.
+
+    A saída é desligar a animação só para a foto. O que se quer fotografar é
+    o layout, e o layout é o estado final da animação.
+  */
+  await pagina.addStyleTag({
+    content: '*, *::before, *::after { animation: none !important; opacity: 1 !important; }',
+  });
+  await pagina.evaluate(() => new Promise((r) => setTimeout(r, 200)));
   await pagina.screenshot({ path: `_figma/fotos/${nome}`, fullPage: true });
   console.log(`  ${resp.status()}  ${rota} → _figma/fotos/${nome}`);
 }

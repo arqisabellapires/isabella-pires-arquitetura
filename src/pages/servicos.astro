@@ -1,23 +1,35 @@
 ---
 /**
- * Página de serviços. Medida em _capturas/servicos/medidas.desktop.json:
- * título "Nossos Serviços" 60px/600, e cinco blocos alternando lado —
- * ímpares à direita (x=780), pares à esquerda (x=100) —, cada um com número
- * 60px/400 Faberge, título 80px/400 Mulish e três parágrafos 18px.
+ * Nossos Serviços — reconstruída contra o Figma (node 1:548), medidas em
+ * `_figma/servicos-medidas.json`.
  *
- * **Não tem acordeão.** O HANDOFF §4.3 corrigiu isso medindo o Framer vivo: o
- * acordeão é o iCmFNLdck.js e vive em /sobre-nos/. A Fase 2 da spec, item 3,
- * diz o contrário e está errada. Aqui não há máquina de estado nenhuma além
- * de cabeçalho, rodapé e a seção final de CTA.
+ * A versão anterior não tinha **nenhuma imagem**: era texto empilhado numa
+ * coluna de 1184px. O design é uma lista de cinco blocos de 609px de altura,
+ * cada um com foto de 697×587 e raio 32, alternando o lado — ímpar com a
+ * imagem à esquerda, par à direita — e 165px de respiro entre eles.
  *
- * Os textos vêm de conteudo.ts, transcritos do original — componente não tem
- * copy, é regra da spec §4.1.
+ * O número do serviço não é texto solto: é uma pastilha com fundo alternando
+ * entre o caramelo (#a98d67) e o marrom escuro (#352005), raio 12. O título
+ * também alterna de cor, na mesma cadência.
+ *
+ * Não tem acordeão: isso foi medido no Framer vivo e vive em /sobre-nos/.
+ * Os textos vêm de conteudo.ts — componente não carrega copy.
  */
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
+import Migalhas from '~/components/Migalhas.astro';
 import { servicos } from '~/lib/conteudo';
+
+/* As fotos saíram do próprio Figma e estão na ordem dos serviços. */
+const fotos = [
+  '/imagens/figma/servico--arquitetura-residencial.webp',
+  '/imagens/figma/servico--arquitetura-comercial.webp',
+  '/imagens/figma/servico--design-de-interiores.webp',
+  '/imagens/figma/servico--consultoria-de-decoracao.webp',
+  '/imagens/figma/servico--ambientacao.webp',
+];
 ---
 
 <Base
@@ -26,91 +38,155 @@ import { servicos } from '~/lib/conteudo';
 >
   <Cabecalho slot="cabecalho" />
 
-  <div class="servicos">
-    <nav class="migalhas" aria-label="Migalhas">
-      <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Nossos serviços</span>
-    </nav>
+  <header class="cabeca">
+    <div class="cabeca__interno">
+      <Migalhas itens={[{ rotulo: 'Início', href: '/' }, { rotulo: 'Nossos Serviços' }]} />
+      <h1 class="cabeca__titulo">Nossos Serviços</h1>
+    </div>
+    <img class="cabeca__selo" src="/imagens/figma/selo-marca.webp" alt="" width="328" height="328" loading="lazy" />
+  </header>
 
-    <h1 class="servicos__titulo">Nossos Serviços</h1>
+  <ol class="lista">
+    {servicos.map((servico, i) => (
+      <li class:list={['servico', i % 2 === 1 && 'servico--invertido']} id={servico.slug} data-revela>
+        <img class="servico__foto" src={fotos[i]} alt="" loading="lazy" width="697" height="587" />
 
-    <ol class="servicos__lista">
-      {servicos.map((servico, i) => (
-        <li class:list={['servico', i % 2 === 0 && 'servico--direita']} id={servico.slug}>
+        <div class="servico__texto">
           <p class="servico__numero" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
           <h2 class="servico__titulo">
             {servico.sobretitulo && <span class="servico__sobretitulo">{servico.sobretitulo}</span>}
             {servico.titulo}
           </h2>
-          {servico.paragrafos.map((p) => <p class="servico__texto">{p}</p>)}
+          {servico.paragrafos.map((p) => <p class="servico__paragrafo">{p}</p>)}
           <a class="servico__cta" href="/contato">Entrar em contato</a>
-        </li>
-      ))}
-    </ol>
-  </div>
+        </div>
+      </li>
+    ))}
+  </ol>
 
   <div slot="rodape">
-
     <Wordmark />
-
     <Rodape />
-
   </div>
 </Base>
 
 <style>
-  .servicos { margin-inline: auto; max-width: 1184px; padding: 120px 24px 64px; }
-  .migalhas {
-    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    margin-bottom: 48px;
+  /* ─── Cabeçalho da página ─────────────────────────────────
+     80px/100px de padding, borda inferior de 1px e o selo circular de
+     328px no canto direito — node 1:550. */
+  .cabeca {
+    align-items: flex-start;
+    border-bottom: 1px solid var(--fig-primaria-ativa);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
   }
-  .migalhas a { color: inherit; text-decoration: none; }
-  .servicos__titulo {
-    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 64px;
+  .cabeca__interno { display: flex; flex-direction: column; gap: var(--fig-e-3xl); }
+  .cabeca__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
+    margin: 0;
   }
-  .servicos__lista { list-style: none; margin: 0; padding: 0; }
+  .cabeca__selo { flex: none; height: auto; max-width: 328px; opacity: 0.9; width: 20vw; }
 
-  .servico { margin-bottom: 96px; max-width: 620px; }
-  /* Ímpares medidos em x=780, pares em x=100 — alternância do original. */
-  .servico--direita { margin-left: auto; }
+  /* ─── Lista ───────────────────────────────────────────────*/
+  .lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-8xl);
+    list-style: none;
+    margin: 0 auto;
+    max-width: var(--fig-largura-canvas);
+    padding: var(--fig-e-6xl) var(--fig-margem-interna);
+  }
 
+  .servico {
+    align-items: center;
+    display: flex;
+    gap: var(--fig-e-6xl);
+    justify-content: center;
+  }
+  /* Pares: a imagem vai para a direita. */
+  .servico--invertido { flex-direction: row-reverse; }
+
+  .servico__foto {
+    border-radius: var(--fig-raio-xl);
+    flex: 1 1 697px;
+    height: 587px;
+    max-width: 697px;
+    object-fit: cover;
+  }
+
+  .servico__texto {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-xl);
+    flex: 1 1 659px;
+    max-width: 659px;
+  }
+
+  /* A pastilha do número alterna de cor a cada serviço. */
   .servico__numero {
-    font: 400 60px/1 'Faberge', 'Mulish', system-ui, sans-serif;
-    color: #a98c67;
-    margin: 0 0 24px;
+    align-self: flex-start;
+    background: var(--fig-primaria-clara);
+    border-radius: var(--fig-raio-md);
+    color: var(--fig-cinza-50);
+    font: var(--fig-peso-normal) var(--fig-t-servico-num) / 1.2 var(--fig-fonte-display);
+    margin: 0;
+    padding: var(--fig-e-2xs) var(--fig-e-lg);
   }
+  .servico:nth-child(even) .servico__numero { background: var(--fig-primaria-ativa); }
+
   .servico__titulo {
-    font: 400 80px/1.05 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 24px;
+    color: #000;
+    font: var(--fig-peso-normal) var(--fig-f-titulo-pagina) / 1.05 var(--fig-fonte-corpo);
+    margin: 0;
     text-wrap: balance;
   }
   .servico__sobretitulo { display: block; }
-  .servico__texto {
-    font: 500 18px/1.6 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0 0 12px;
+  .servico:nth-child(2) .servico__titulo,
+  .servico:nth-child(4) .servico__titulo { color: var(--fig-primaria-clara); }
+  .servico:nth-child(3) .servico__titulo,
+  .servico:nth-child(5) .servico__titulo { color: var(--fig-primaria-ativa); }
+
+  .servico__paragrafo {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) clamp(1rem, 0.94rem + 0.28vw, 1.125rem) / 1.5 var(--fig-fonte-corpo);
+    margin: 0;
+    max-width: 538px;
   }
+
   .servico__cta {
-    display: inline-block;
-    font: 700 18px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    margin-top: 16px;
+    align-self: flex-start;
+    color: var(--fig-primaria-clara);
+    font: var(--fig-peso-forte) clamp(1rem, 0.94rem + 0.28vw, 1.125rem) / 1.4 var(--fig-fonte-corpo);
     text-decoration: none;
-    border-bottom: 1px solid currentColor;
+  }
+  .servico:nth-child(even) .servico__cta { color: var(--fig-primaria-ativa); }
+  .servico__cta:hover { text-decoration: underline; }
+
+  [data-revela] {
+    animation: revela linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+  }
+  @keyframes revela {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-revela] { animation: none; }
   }
 
   @media (max-width: 1199.98px) {
-    .servico__titulo { font-size: 56px; }
-    .servicos__titulo { font-size: 44px; }
+    .servico,
+    .servico--invertido { flex-direction: column; align-items: stretch; gap: var(--fig-e-2xl); }
+    .servico__foto { height: 420px; max-width: 100%; }
+    .servico__texto { max-width: 100%; }
+    .cabeca__selo { display: none; }
   }
   @media (max-width: 809.98px) {
-    .servicos { padding-top: 96px; }
-    .servicos__titulo { font-size: 36px; }
-    .servico { margin-bottom: 64px; }
-    .servico__titulo { font-size: 40px; }
-    .servico__numero { font-size: 44px; }
+    .lista { gap: var(--fig-e-4xl); }
+    .servico__foto { height: 280px; }
   }
 </style>

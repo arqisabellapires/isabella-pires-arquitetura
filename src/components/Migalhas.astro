@@ -1,21 +1,53 @@
 ---
-interface Props { atual: string }
-const { atual } = Astro.props;
+/**
+ * Migalhas — Figma node 1:554: ícone de casa (24×34), depois "Início /" em
+ * cinza-azulado e a página atual no marrom da marca, tudo em Arboria Bold
+ * 21px, com 8px de espaço.
+ *
+ * Aceita a lista inteira para servir também às páginas de projeto e artigo,
+ * que têm um nível a mais.
+ */
+interface Item {
+  rotulo: string;
+  href?: string;
+}
+interface Props {
+  itens: Item[];
+}
+const { itens } = Astro.props;
 ---
-<nav class="migalhas container" aria-label="Você está aqui">
+
+<nav class="migalhas" aria-label="Você está aqui">
+  <img class="migalhas__casa" src="/icones/fa-house.svg" alt="" width="24" height="34" />
   <ol>
-    <li><a href="/">Início</a></li>
-    <li aria-current="page">{atual}</li>
+    {itens.map((item, i) => (
+      <li aria-current={i === itens.length - 1 ? 'page' : undefined}>
+        {item.href ? <a href={item.href}>{item.rotulo}</a> : item.rotulo}
+      </li>
+    ))}
   </ol>
 </nav>
+
 <style>
-  .migalhas { padding-block-start: var(--esp-md); }
-  .migalhas ol {
-    list-style: none; margin: 0; padding: 0;
-    display: flex; gap: var(--esp-2xs); flex-wrap: wrap;
-    font-size: var(--texto-sm); color: var(--cor-texto-suave);
+  .migalhas {
+    align-items: center;
+    display: flex;
+    gap: var(--fig-e-xs);
   }
-  .migalhas li + li::before { content: '/'; margin-inline-end: var(--esp-2xs); opacity: 0.5; }
-  .migalhas a { text-decoration: none; }
-  .migalhas a:hover { color: var(--cor-acento-escuro); }
+  .migalhas__casa { flex: none; height: 26px; width: auto; }
+  .migalhas ol {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font: var(--fig-peso-forte) clamp(0.9375rem, 0.8rem + 0.5vw, 1.3125rem) / 1.2 var(--fig-fonte-ui);
+    gap: var(--fig-e-2xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .migalhas li { color: #212529; }
+  .migalhas li + li::before { content: '/'; margin-inline-end: var(--fig-e-2xs); }
+  .migalhas li[aria-current='page'] { color: var(--fig-primaria-ativa); }
+  .migalhas a { color: inherit; text-decoration: none; }
+  .migalhas a:hover { text-decoration: underline; }
 </style>

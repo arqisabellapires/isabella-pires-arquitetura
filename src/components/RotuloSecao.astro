@@ -1,0 +1,38 @@
+---
+/**
+ * O rótulo que abre cada seção: uma linha de 62px, e ao lado a palavra em
+ * Faberge 24px. Figma nodes 1:193, 1:303, 1:346, 1:355 — repete-se em Sobre,
+ * Projetos, Serviços, Blog e CTA, sempre igual.
+ *
+ * A cor alterna entre o caramelo (#a98d67) e o secundário (#887769); é a
+ * única variação, e por isso é a única prop.
+ */
+interface Props {
+  cor?: 'clara' | 'secundaria';
+}
+const { cor = 'clara' } = Astro.props;
+---
+
+<p class="rotulo" data-cor={cor}>
+  <span class="rotulo__linha" aria-hidden="true"></span>
+  <slot />
+</p>
+
+<style>
+  .rotulo {
+    align-items: center;
+    color: var(--fig-primaria-clara);
+    display: flex;
+    font: var(--fig-peso-normal) var(--fig-f-rotulo) / 1.2 var(--fig-fonte-display);
+    gap: var(--fig-e-lg);
+    margin: 0;
+  }
+  .rotulo[data-cor='secundaria'] { color: var(--fig-secundaria-ativa); }
+  .rotulo__linha {
+    background: currentColor;
+    display: block;
+    flex: none;
+    height: 1px;
+    width: 62px;
+  }
+</style>

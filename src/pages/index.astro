@@ -1,14 +1,18 @@
 ---
 /**
- * Home. Medida em _capturas/home/medidas.desktop.json (542 elementos).
+ * Home — reconstruída contra o Figma (node 1:176), medidas em
+ * `_figma/home-medidas.json` e no bruto `_figma/home-design-context.json`.
  *
- * Os textos saem do HTML da captura, não do campo `texto` das medidas: a home
- * tem títulos animados LETRA A LETRA, cada uma num <span> próprio, então a
- * medida devolveria "B", "o", "n"… em vez da frase. É o mesmo motivo pelo
- * qual o corpo dos projetos passou a sair do HTML.
+ * A versão anterior era uma simplificação: herói de fundo chapado, sem foto,
+ * sem a caixa central, tudo em coluna de 1184px. O design é outro — herói de
+ * 913px com foto e gradiente diagonal, caixa de 1344×592 com véu por cima, e
+ * seções que alternam texto e imagem em 1560px de conteúdo.
  *
- * Seções, na ordem medida: hero (80px/700), sobre (60px/700), números,
- * serviços, projetos em destaque, artigos recentes e CTA.
+ * O texto continua vindo de `conteudo.ts` e das coleções: o Figma tem
+ * placeholder do designer em alguns pontos, e copy não se inventa.
+ *
+ * Ordem das seções, como no Figma: herói · sobre · números · projetos ·
+ * serviços · CTA com formulário · blog · wordmark · rodapé.
  */
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
@@ -16,8 +20,10 @@ import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
+import RotuloSecao from '~/components/RotuloSecao.astro';
 import CardArtigo from '~/components/artigos/CardArtigo.astro';
-import { servicos } from '~/lib/conteudo';
+import Contato from '~/components/formularios/Contato.astro';
+import { servicos, numerosHome } from '~/lib/conteudo';
 import { minutosDeLeitura } from '~/lib/artigos';
 
 const artigos = (await getCollection('artigos', ({ data }) => data.publicado !== false))
@@ -30,14 +36,6 @@ const recentes = await Promise.all(
 const projetos = (await getCollection('projetos', ({ data }) => data.publicado !== false))
   .sort((a, b) => a.data.ordem - b.data.ordem)
   .slice(0, 3);
-
-/* Números medidos em y≈2000 na captura do desktop. */
-const numeros = [
-  { valor: '2024', rotulo: 'Início de um sonho independente' },
-  { valor: '+32', rotulo: 'Meses dedicados à arquitetura' },
-  { valor: '+10', rotulo: 'Projetos Residenciais e comerciais' },
-  { valor: '100%', rotulo: 'Foco em personalização' },
-];
 ---
 
 <Base
@@ -46,40 +44,63 @@ const numeros = [
 >
   <Cabecalho slot="cabecalho" sobreHero />
 
-  <section class="hero">
-    <div class="hero__interno">
-      <h1 class="hero__titulo">Espaços que refletem<br />quem você realmente é</h1>
-      <p class="hero__texto">
-        Mais do que criar ambientes bonitos, nosso propósito é dar vida a espaços com alma.
-        Do primeiro esboço ao acabamento final, tudo é pensado para refletir sua história e
-        estilo de vida.
-      </p>
-      <p class="hero__acoes">
-        <a class="botao botao--primario" href="/contato">Entrar em contato</a>
-        <a class="botao botao--secundario" href="/projetos">Explorar Projetos</a>
-      </p>
+  <section class="heroi">
+    <img
+      class="heroi__foto"
+      src="/imagens/figma/home--image381.webp"
+      alt=""
+      width="1920"
+      height="1152"
+      fetchpriority="high"
+    />
+    <div class="heroi__caixa">
+      <div class="heroi__conteudo">
+        <h1 class="heroi__titulo">
+          Espaços que refletem<br />quem você <em>realmente</em> é
+        </h1>
+        <p class="heroi__texto">
+          Mais do que criar ambientes bonitos, nosso propósito é dar vida a espaços com alma.
+          Do primeiro esboço ao acabamento final, tudo é pensado para refletir sua história
+          e estilo de vida.
+        </p>
+        <p class="heroi__acoes">
+          <a class="botao botao--claro" href="/contato">Entrar em contato</a>
+          <a class="botao botao--caramelo" href="/projetos">Explorar Projetos</a>
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="sobre">
-    <div class="interno">
-      <p class="rotulo">Sobre nós</p>
-      <h2 class="sobre__titulo">Mais que Design,<br />Um Estilo de Vida.</h2>
-      <p class="sobre__texto">
+  <section class="sobre" data-revela>
+    <div class="sobre__texto">
+      <RotuloSecao>Sobre nós</RotuloSecao>
+      <h2 class="titulo-secao">Mais que Design,<br />Um Estilo de Vida.</h2>
+      <p class="sobre__paragrafo">
         Nosso propósito é criar o incomum. Ambientes que emocionam, acolhem e refletem
-        autenticidade.
+        autenticidade, traduzindo não apenas estética e funcionalidade, mas também histórias,
+        valores e modos de viver. Cada detalhe é pensado para unir beleza e praticidade,
+        resultando em espaços que fazem sentido, acolhem quem chega e permanecem impactantes
+        com o tempo.
       </p>
       <blockquote class="sobre__citacao">
-        “Bons projetos não começam com plantas, mas com escuta. Todo espaço deve refletir
-        quem vive nele.”
+        Acreditamos que cada espaço conta uma história — e a sua merece ser contada com
+        cuidado, escuta e personalidade.
       </blockquote>
       <a class="ligacao" href="/sobre-nos">Saiba mais sobre quem somos</a>
     </div>
+    <img
+      class="sobre__foto"
+      src="/imagens/figma/home--unsplash2-d4-laq-alb-da.webp"
+      alt=""
+      loading="lazy"
+      width="705"
+      height="637"
+    />
   </section>
 
-  <section class="numeros" aria-label="Nossos números">
-    <dl class="interno numeros__lista">
-      {numeros.map((n) => (
+  <section class="numeros" aria-label="Nossos números" data-revela>
+    <dl class="numeros__lista">
+      {numerosHome.map((n) => (
         <div class="numeros__item">
           <dt class="numeros__valor">{n.valor}</dt>
           <dd class="numeros__rotulo">{n.rotulo}</dd>
@@ -88,222 +109,383 @@ const numeros = [
     </dl>
   </section>
 
-  <section class="secao">
-    <div class="interno">
-      <p class="rotulo">Serviços</p>
-      <h2 class="secao__titulo">Serviços pensados para você</h2>
-      <ul class="servicos-grade">
-        {servicos.map((s) => (
-          <li>
-            <h3>{s.tituloCompleto}</h3>
-            <p>{s.resumoHome}</p>
-            <a class="ligacao" href={`/servicos#${s.slug}`}>Saiba mais</a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section class="secao">
-    <div class="interno">
-      <p class="rotulo">Projetos</p>
-      <h2 class="secao__titulo">Projetos que contam histórias</h2>
-      <ul class="projetos-grade">
-        {projetos.map((p) => (
-          <li>
-            <a href={`/projetos/${p.id}`}>
-              <Image
-                src={p.data.capa}
-                alt={p.data.capaAlt}
-                widths={[360, 720]}
-                sizes="(min-width: 1200px) 360px, 90vw"
-                loading="lazy"
-              />
+  <section class="projetos" data-revela>
+    <header class="secao__cabeca">
+      <RotuloSecao>Projetos</RotuloSecao>
+      <h2 class="titulo-secao">Projetos que contam histórias</h2>
+    </header>
+    <ul class="projetos__lista">
+      {projetos.map((p) => (
+        <li class="projeto-card">
+          <a href={`/projetos/${p.id}`}>
+            <Image
+              src={p.data.capa}
+              alt={p.data.capaAlt}
+              widths={[720, 1440]}
+              sizes="(min-width: 1200px) 921px, 92vw"
+              loading="lazy"
+            />
+            <div class="projeto-card__texto">
               <h3>{p.data.titulo}</h3>
-            </a>
-          </li>
-        ))}
-      </ul>
-      <a class="ligacao" href="/projetos">Explorar Projetos</a>
+              <p>{p.data.resumo}</p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a class="ligacao" href="/projetos">Explorar Projetos</a>
+  </section>
+
+  <section class="servicos" data-revela>
+    <header class="secao__cabeca">
+      <RotuloSecao>Serviços</RotuloSecao>
+      <h2 class="titulo-secao">Serviços pensados para você</h2>
+    </header>
+    <ol class="servicos__lista">
+      {servicos.map((s, i) => (
+        <li class="servico-item">
+          <span class="servico-item__numero">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3 class="servico-item__titulo">{s.tituloCompleto}</h3>
+            <p class="servico-item__resumo">{s.resumoHome}</p>
+            <a class="ligacao" href={`/servicos#${s.slug}`}>Saiba mais</a>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="cta" data-revela>
+    <div class="cta__interno">
+      <RotuloSecao cor="secundaria">Entre em contato</RotuloSecao>
+      <h2 class="titulo-secao">Vamos conversar sobre seu próximo projeto?</h2>
+      <Contato />
     </div>
   </section>
 
-  <section class="secao">
-    <div class="interno">
-      <p class="rotulo">Arquitetura, Design &amp; Mercado</p>
-      <h2 class="secao__titulo">Histórias Recentes</h2>
-      <p class="secao__texto">Dicas e tendências para quem valoriza bons espaços.</p>
-      <div class="artigos-grade">
-        {recentes.map(({ artigo, minutos }) => (
-          <CardArtigo artigo={artigo} minutos={minutos} />
-        ))}
-      </div>
-      <a class="ligacao" href="/artigos">Ver todas as postagens</a>
+  <section class="blog" data-revela>
+    <header class="secao__cabeca">
+      <RotuloSecao>Arquitetura, Design &amp; Mercado</RotuloSecao>
+      <h2 class="titulo-secao">Histórias Recentes</h2>
+      <p class="secao__apoio">Dicas e tendências para quem valoriza bons espaços.</p>
+    </header>
+    <div class="blog__grade">
+      {recentes.map(({ artigo, minutos }) => (
+        <CardArtigo artigo={artigo} minutos={minutos} />
+      ))}
     </div>
+    <a class="ligacao" href="/artigos">Ver todas as postagens</a>
   </section>
 
   <div slot="rodape">
-
     <Wordmark />
-
     <Rodape />
-
   </div>
 </Base>
 
 <style>
-  .interno { margin-inline: auto; max-width: 1184px; padding-inline: 24px; }
-  .rotulo {
-    font: 400 24px/1.2 'Faberge', 'Mulish', system-ui, sans-serif;
-    color: #a98c67;
-    margin: 0 0 8px;
+  /* ─── Herói ────────────────────────────────────────────────
+     913px de altura, foto sangrando por trás com gradiente diagonal, e a
+     caixa de texto com véu por cima. Tudo medido no node 1:177/1:180. */
+  .heroi {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 913px;
+    overflow: clip;
+    padding: var(--fig-menu-altura) var(--fig-margem-interna) var(--fig-e-3xl);
   }
+  .heroi__foto {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+  .heroi::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--fig-gradiente-hero);
+    z-index: -1;
+  }
+  .heroi__caixa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--fig-veu-hero);
+    border-radius: var(--fig-raio-lg);
+    max-width: 1344px;
+    min-height: 592px;
+    padding: var(--fig-e-3xl) var(--fig-margem-interna);
+    width: 100%;
+  }
+  .heroi__conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--fig-e-3xl);
+    max-width: 882px;
+    text-align: center;
+  }
+  .heroi__titulo {
+    margin: 0;
+    color: #fff;
+    font: var(--fig-peso-forte) var(--fig-f-hero) / var(--fig-altura-titulo) var(--fig-fonte-corpo);
+  }
+  /* O design pinta só a palavra "realmente" em #eee. */
+  .heroi__titulo em { color: var(--fig-cinza-50); font-style: normal; }
+  .heroi__texto {
+    margin: calc(var(--fig-e-xl) - var(--fig-e-3xl)) 0 0;
+    color: #eaeaea;
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.4 var(--fig-fonte-corpo);
+  }
+  .heroi__acoes {
+    display: flex;
+    gap: var(--fig-e-xl);
+    margin: 0;
+    width: 100%;
+  }
+  .botao {
+    border-radius: var(--fig-raio-sm);
+    flex: 1;
+    font: var(--fig-peso-forte) var(--fig-f-rotulo) / 1 var(--fig-fonte-corpo);
+    letter-spacing: var(--fig-tracking-botao);
+    padding: var(--fig-e-md) var(--fig-e-lg);
+    text-align: center;
+    text-decoration: none;
+    transition: transform var(--dur-cta-antes-do-rodape) var(--mola-cta-antes-do-rodape);
+  }
+  .botao:hover { transform: translateY(-2px); }
+  .botao--claro { background: var(--fig-cinza-50); color: var(--fig-primaria-ativa); }
+  .botao--caramelo { background: var(--fig-primaria-clara); color: #fff; }
 
-  .hero {
-    background: #21201f;
-    color: #ffffff;
-    padding: 200px 0 120px;
-  }
-  .hero__interno { margin-inline: auto; max-width: 1184px; padding-inline: 24px; }
-  .hero__titulo {
-    font: 700 80px/1.05 'Mulish', system-ui, sans-serif;
-    /*
-      `color` explícito, não herdado: o base.css pinta TODO h1..h4 com
-      --cor-tinta (#341f04, marrom escuro), e isso vence a herança do
-      .hero, que é branco. Sem esta linha o título do herói sai marrom
-      sobre fundo #21201f — ilegível, e foi assim que ele foi para o
-      preview. Vale para qualquer título sobre fundo escuro.
-    */
-    color: #ffffff;
-    margin: 0 0 24px;
+  /* ─── Blocos gerais ───────────────────────────────────────*/
+  .titulo-secao {
+    margin: 0;
+    color: var(--fig-tinta);
+    font: var(--fig-peso-forte) var(--fig-f-titulo-secao) / 1.21 var(--fig-fonte-corpo);
     text-wrap: balance;
   }
-  .hero__texto {
-    font: 600 24px/1.5 'Mulish', system-ui, sans-serif;
-    margin: 0 0 32px;
-    max-width: 60ch;
+  .secao__cabeca {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-sm);
+    margin-bottom: var(--fig-e-3xl);
   }
-  .hero__acoes { display: flex; flex-wrap: wrap; gap: 16px; margin: 0; }
-
-  .botao {
+  .secao__apoio {
+    margin: 0;
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) var(--fig-t-corpo-p) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+  }
+  .ligacao {
+    align-self: flex-start;
+    border-bottom: 1px solid currentColor;
+    color: var(--fig-primaria-ativa);
     display: inline-block;
-    font: 700 20px/1.2 'Mulish', system-ui, sans-serif;
-    border-radius: 999px;
-    padding: 16px 32px;
+    font: var(--fig-peso-forte) var(--fig-t-corpo-p) / 1.2 var(--fig-fonte-corpo);
     text-decoration: none;
   }
-  .botao--primario { background: #ffffff; color: #21201f; }
-  .botao--secundario { border: 1px solid currentColor; color: #ffffff; }
 
-  .sobre { padding: 96px 0; }
-  .sobre__titulo {
-    font: 700 60px/1.1 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 24px;
-    text-wrap: balance;
+  .sobre,
+  .projetos,
+  .servicos,
+  .blog {
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+    padding-inline: var(--fig-margem-interna);
+  }
+
+  /* ─── Sobre ───────────────────────────────────────────────*/
+  .sobre {
+    display: flex;
+    align-items: center;
+    gap: var(--fig-e-3xl);
+    justify-content: space-between;
+    padding-block: var(--fig-secao-y);
   }
   .sobre__texto {
-    font: 400 18px/1.6 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0 0 24px;
-    max-width: 60ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-lg);
+    max-width: 705px;
   }
+  .sobre__paragrafo {
+    margin: 0;
+    color: rgb(48 48 48 / 0.8);
+    font: var(--fig-peso-normal) var(--fig-t-corpo-p) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    max-width: 586px;
+  }
+  /* O design usa uma barra de 6px com raio 100 à esquerda da citação. */
   .sobre__citacao {
-    font: 600 20px/1.6 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    border-left: 3px solid #a98c67;
-    margin: 0 0 24px;
-    max-width: 60ch;
-    padding-left: 16px;
+    border-left: 6px solid var(--fig-primaria-ativa);
+    border-radius: var(--fig-raio-pill);
+    color: var(--fig-primaria-media);
+    font: italic var(--fig-peso-semi) var(--fig-t-corpo) / 1.5 var(--fig-fonte-corpo);
+    margin: 0;
+    max-width: 586px;
+    padding-left: var(--fig-e-md);
+  }
+  .sobre__foto {
+    border-radius: var(--fig-raio-md);
+    flex: none;
+    height: auto;
+    max-width: 46%;
+    object-fit: cover;
   }
 
-  .ligacao {
-    display: inline-block;
-    font: 700 20px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    border-bottom: 1px solid currentColor;
-    text-decoration: none;
-  }
-
-  .numeros { background: #f0d9c7; padding: 64px 0; }
+  /* ─── Números ─────────────────────────────────────────────
+     Faberge 66px sobre o valor, 28px no rótulo — node 1:209. */
+  .numeros { padding: var(--fig-e-3xl) var(--fig-margem-interna); }
   .numeros__lista {
     display: grid;
-    gap: 32px;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    margin: 0;
+    gap: var(--fig-e-3xl);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin: 0 auto;
+    max-width: var(--fig-largura-conteudo);
   }
+  .numeros__item { display: flex; align-items: flex-start; gap: var(--fig-e-xl); }
   .numeros__valor {
-    font: 700 42px/1.1 'Mulish', system-ui, sans-serif;
-    color: #341f04;
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-normal) var(--fig-f-numero) / var(--fig-altura-titulo) var(--fig-fonte-display);
   }
   .numeros__rotulo {
-    font: 600 20px/1.4 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 8px 0 0;
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-normal) var(--fig-f-rotulo) / var(--fig-altura-titulo) var(--fig-fonte-display);
+    margin: 0;
   }
 
-  .secao { padding: 96px 0; }
-  .secao__titulo {
-    font: 700 70px/1.05 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 24px;
-    text-wrap: balance;
-  }
-  .secao__texto {
-    font: 400 18px/1.6 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0 0 40px;
-  }
-
-  .servicos-grade,
-  .projetos-grade {
-    display: grid;
-    gap: 32px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* ─── Projetos ────────────────────────────────────────────
+     Card de 921×674: a foto é fundo, o texto entra por cima com o
+     gradiente do design garantindo contraste. */
+  .projetos { padding-block: var(--fig-secao-y); }
+  .projetos__lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-2xl);
     list-style: none;
-    margin: 0 0 32px;
+    margin: 0 0 var(--fig-e-2xl);
     padding: 0;
   }
-  .servicos-grade h3,
-  .projetos-grade h3 {
-    font: 700 24px/1.3 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 12px 0 8px;
-  }
-  .servicos-grade p {
-    font: 400 18px/1.6 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0 0 12px;
-  }
-  .projetos-grade a { color: inherit; text-decoration: none; }
-  .projetos-grade :global(img) {
+  .projeto-card a {
     display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
+    border-radius: var(--fig-raio-sm);
+    color: #fff;
+    overflow: clip;
+    position: relative;
+    text-decoration: none;
+  }
+  .projeto-card :global(img) {
+    display: block;
+    height: 674px;
     object-fit: cover;
-    border-radius: 8px;
+    transition: transform var(--dur-card-projeto-hover) var(--mola-card-projeto-hover);
+    width: 100%;
+  }
+  .projeto-card a:hover :global(img) { transform: scale(1.03); }
+  .projeto-card a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--fig-gradiente-card);
+  }
+  .projeto-card__texto {
+    position: absolute;
+    bottom: var(--fig-e-4xl);
+    left: var(--fig-e-4xl);
+    max-width: 681px;
+    z-index: 1;
+  }
+  .projeto-card__texto h3 {
+    color: #fff;
+    font: var(--fig-peso-medio) var(--fig-f-card-titulo) / 1.1 var(--fig-fonte-ui);
+    margin: 0 0 var(--fig-e-xs);
+  }
+  .projeto-card__texto p {
+    color: rgb(255 255 255 / 0.86);
+    font: var(--fig-peso-medio) var(--fig-t-corpo-p) / var(--fig-altura-corpo) var(--fig-fonte-corpo);
+    margin: 0;
   }
 
-  .artigos-grade {
+  /* ─── Serviços ────────────────────────────────────────────*/
+  .servicos { padding-block: var(--fig-secao-y); }
+  .servicos__lista {
     display: grid;
-    gap: 40px;
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 32px;
+    gap: var(--fig-e-2xl);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .servico-item { display: flex; gap: var(--fig-e-lg); }
+  .servico-item__numero {
+    color: var(--fig-primaria-clara);
+    flex: none;
+    font: var(--fig-peso-normal) var(--fig-t-servico-num) / 1 var(--fig-fonte-display);
+  }
+  .servico-item__titulo {
+    color: var(--fig-tinta);
+    font: var(--fig-peso-semi) var(--fig-t-corpo-g) / 1.2 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-xs);
+  }
+  .servico-item__resumo {
+    color: var(--fig-texto);
+    font: var(--fig-peso-normal) var(--fig-t-corpo-p) / var(--fig-altura-corpo) var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-sm);
+  }
+
+  /* ─── CTA com formulário ──────────────────────────────────*/
+  .cta {
+    background: var(--fig-veu-cta);
+    padding: var(--fig-e-6xl) var(--fig-margem-interna) var(--fig-e-8xl);
+  }
+  .cta__interno {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-lg);
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+  }
+
+  /* ─── Blog ────────────────────────────────────────────────*/
+  .blog { padding-block: var(--fig-secao-y); }
+  .blog__grade {
+    display: grid;
+    gap: var(--fig-e-xl);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: var(--fig-e-2xl);
+  }
+
+  /* ─── Aparição ao rolar ───────────────────────────────────
+     A ficha `reveal-entrada` mede spring bounce 0.2 / 0.8s, com filhos
+     escalonados em 0.2/0.4/0.6s. Aqui vai a versão de seção. */
+  [data-revela] {
+    animation: revela linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+  @keyframes revela {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-revela] { animation: none; }
   }
 
   @media (max-width: 1199.98px) {
-    .hero__titulo { font-size: 56px; }
-    .sobre__titulo { font-size: 44px; }
-    .secao__titulo { font-size: 48px; }
-    .artigos-grade { grid-template-columns: repeat(2, 1fr); }
+    .heroi { min-height: 640px; }
+    .sobre { flex-direction: column; align-items: stretch; }
+    .sobre__foto { max-width: 100%; }
+    .projeto-card :global(img) { height: 420px; }
+    .projeto-card__texto { bottom: var(--fig-e-lg); left: var(--fig-e-lg); right: var(--fig-e-lg); }
   }
   @media (max-width: 809.98px) {
-    .hero { padding: 140px 0 80px; }
-    .hero__titulo { font-size: 36px; }
-    .hero__texto { font-size: 18px; }
-    .sobre__titulo { font-size: 32px; }
-    .secao__titulo { font-size: 32px; }
-    .artigos-grade { grid-template-columns: 1fr; }
+    .heroi { min-height: 560px; padding-inline: var(--fig-e-md); }
+    .heroi__caixa { padding: var(--fig-e-xl) var(--fig-e-md); min-height: 0; }
+    .heroi__acoes { flex-direction: column; }
+    .numeros__item { flex-direction: column; gap: var(--fig-e-xs); }
+    .projeto-card :global(img) { height: 300px; }
   }
 </style>

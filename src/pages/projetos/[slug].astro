@@ -203,7 +203,21 @@ const d = projeto.data;
   }
   .concepcao__corpo :global(strong) { color: var(--fig-cinza-900); font-weight: 800; }
 
-  .galeria { display: grid; gap: var(--fig-e-lg); margin-top: var(--fig-e-2xl); }
+  /*
+    A galeria fica na COLUNA DA DIREITA, sob o texto — é onde o Figma põe as
+    fotos, dentro do fluxo do Contexto.
+
+    Sem isto ela caía na segunda linha da grade, ou seja, na coluna estreita
+    de 593 sob a ficha: as fotos ficavam com 468px de largura e o lado
+    direito da página abria um vão de mais de mil pixels. A grade tem três
+    filhos e só duas colunas, e era o terceiro que quebrava a linha.
+  */
+  .galeria {
+    display: grid;
+    gap: var(--fig-e-lg);
+    grid-column: 2;
+    margin-top: var(--fig-e-2xl);
+  }
   /* Ficha `galeria-casa-ip`: spring bounce 0.2 / 0.4s. */
   .galeria :global(img) {
     border-radius: var(--fig-raio-xl);
@@ -255,23 +269,27 @@ const d = projeto.data;
   /* Ficha `card-projeto-abre`: spring bounce 0.2 / 0.4s. */
   .outros__grade :global(img) { transition: transform var(--dur-card-projeto-abre) var(--mola-card-projeto-abre); }
   .outros__grade a:hover :global(img) { transform: scale(1.02); }
+  /* No Figma o card de "Outros Projetos" é DEITADO — mais largo que alto,
+     com a legenda logo abaixo. Com 545px de altura numa coluna de 413 ele
+     ficava em pé, e o nome do projeto caía longe da foto. */
   .outros__grade :global(img) {
+    aspect-ratio: 4 / 3;
     border-radius: var(--fig-raio-lg);
     display: block;
-    height: 545px;
+    height: auto;
     object-fit: cover;
     width: 100%;
   }
   .outros__grade h3 {
     color: var(--fig-tinta-suave);
-    font: var(--fig-peso-normal) clamp(1.5rem, 1.1rem + 1.2vw, 2.5rem) / 1.2 var(--fig-fonte-display);
-    margin: var(--fig-e-xl) 0 0;
+    font: var(--fig-peso-normal) clamp(1.25rem, 1rem + 0.9vw, 1.75rem) / 1.2 var(--fig-fonte-display);
+    margin: var(--fig-e-md) 0 0;
   }
 
   @media (max-width: 1199.98px) {
     .projeto__interno { grid-template-columns: 1fr; gap: var(--fig-e-2xl); }
     .ficha { position: static; }
     .outros__botao { min-width: 0; }
-    .outros__grade :global(img) { height: 380px; }
+    .outros__grade :global(img) { aspect-ratio: 3 / 2; }
   }
 </style>

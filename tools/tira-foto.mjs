@@ -62,13 +62,28 @@ for (const rota of ALVOS) {
     content: '*, *::before, *::after { animation: none !important; opacity: 1 !important; }',
   });
 
-  /* As imagens preguiçosas abaixo da dobra nunca entram no viewport com
-     `fullPage`, e saem como retângulo cinza. Força o carregamento delas. */
+  /*
+    As imagens preguiçosas abaixo da dobra nunca entram no viewport com
+    `fullPage`, e saem como retângulo cinza — o que já me fez ler "imagem
+    faltando" onde a página estava certa, duas vezes.
+
+    Trocar `loading` para `eager` não basta: o navegador começa a buscar
+    depois, e imagens que entram na fila DURANTE a espera escapavam de um
+    `Promise.all` tirado uma vez só. Aqui a espera repete até não sobrar
+    nenhuma incompleta.
+  */
   await pagina.evaluate(async () => {
     document.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; });
-    await Promise.all([...document.images]
-      .filter((i) => !i.complete)
-      .map((i) => new Promise((r) => { i.onload = i.onerror = r; })));
+    const prazo = Date.now() + 15000;
+    for (;;) {
+      const faltando = [...document.images].filter((i) => !i.complete);
+      if (faltando.length === 0 || Date.now() > prazo) break;
+      await Promise.all(faltando.map((i) => new Promise((r) => {
+        i.onload = i.onerror = r;
+        setTimeout(r, 3000);
+      })));
+    }
+    await Promise.all([...document.images].map((i) => i.decode().catch(() => {})));
   });
 
   /*

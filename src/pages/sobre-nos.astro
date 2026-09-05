@@ -22,8 +22,8 @@ import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
 import Migalhas from '~/components/Migalhas.astro';
 import RotuloSecao from '~/components/RotuloSecao.astro';
+import FeedInstagram from '~/components/FeedInstagram.astro';
 import { servicos, selosSobre, valores, passosMetodo } from '~/lib/conteudo';
-import { site } from '~/lib/site';
 
 const fotosInstagram = [
   '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms0.webp',
@@ -141,19 +141,7 @@ const fotosInstagram = [
     </ol>
   </section>
 
-  <section class="instagram" data-revela>
-    <header class="instagram__cabeca">
-      <p class="instagram__arroba">{site.redes.arroba}</p>
-      <a class="instagram__botao" href={site.redes.instagram} rel="noopener noreferrer" target="_blank">
-        Siga-nos no Instagram!
-      </a>
-    </header>
-    <ul class="instagram__fotos">
-      {fotosInstagram.map((src) => (
-        <li><img src={src} alt="" width="422" height="590" loading="lazy" /></li>
-      ))}
-    </ul>
-  </section>
+  <FeedInstagram fotos={fotosInstagram} />
 
   <div slot="rodape">
     <Wordmark />
@@ -368,49 +356,6 @@ const fotosInstagram = [
     opacity: 0.85;
   }
 
-  /* ─── Instagram ───────────────────────────────────────────*/
-  .instagram {
-    margin-inline: auto;
-    max-width: var(--fig-largura-canvas);
-    padding: 0 var(--fig-margem-interna) var(--fig-secao-y);
-  }
-  .instagram__cabeca {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--fig-e-lg);
-    justify-content: space-between;
-    margin-bottom: var(--fig-e-3xl);
-  }
-  .instagram__arroba {
-    color: #000;
-    font: var(--fig-peso-forte) clamp(1.75rem, 1rem + 2.4vw, 3rem) / 1.1 var(--fig-fonte-corpo);
-    margin: 0;
-  }
-  .instagram__botao {
-    background: var(--fig-primaria-clara);
-    border-radius: var(--fig-raio-xs);
-    color: #fff;
-    font: var(--fig-peso-forte) var(--fig-t-corpo) / 1.2 var(--fig-fonte-ui);
-    padding: var(--fig-e-sm) var(--fig-e-lg);
-    text-align: center;
-    text-decoration: none;
-  }
-  .instagram__fotos {
-    display: grid;
-    gap: var(--fig-e-xl);
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .instagram__fotos img {
-    border-radius: var(--fig-raio-xl);
-    display: block;
-    height: 590px;
-    object-fit: cover;
-    width: 100%;
-  }
 
   [data-revela] {
     animation: revela linear both;
@@ -434,10 +379,8 @@ const fotosInstagram = [
     .valor { flex-direction: column; gap: var(--fig-e-sm); }
     .valor__titulo { width: auto; }
     .passo, .passo--direita { max-width: 100%; margin-left: 0; }
-    .instagram__fotos img { height: 420px; }
-  }
+    }
   @media (max-width: 809.98px) {
     .selo + .selo { border-left: 0; padding-left: 0; }
-    .instagram__fotos img { height: 320px; }
-  }
+    }
 </style>

@@ -62,7 +62,7 @@ const servicos = [
 
   <p class="form__estado" role="status" aria-live="polite" data-estado></p>
 
-  <button type="submit" class="form__enviar">Enviar</button>
+  <button type="submit" class="form__enviar">Receber proposta personalizada</button>
 </form>
 
 <script>
@@ -109,23 +109,34 @@ const servicos = [
 </script>
 
 <style>
-  .form { display: flex; flex-direction: column; gap: 20px; }
-  .form__campo { display: flex; flex-direction: column; gap: 8px; }
+  /* Cartão do Figma (node 1:1659): fundo quase branco, raio 8 e a sombra
+     curta de 2px que o design usa para descolar da faixa creme. */
+  .form {
+    background: var(--fig-fundo-cartao);
+    border-radius: var(--fig-raio-sm);
+    box-shadow: var(--fig-sombra-cartao);
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-md);
+    padding: var(--fig-e-xl);
+  }
+  .form__campo { display: flex; flex-direction: column; gap: 6px; }
   .form__campo label {
-    font: 500 14px/1.2 'Inter', system-ui, sans-serif;
-    color: #21201f;
+    color: #212529;
+    font: var(--fig-peso-forte) var(--fig-t-meta) / 1.5 var(--fig-fonte-corpo);
   }
   .form__campo :is(input, select, textarea) {
-    font: 400 16px/1.4 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    background: #ffffff;
-    border: 1px solid #ededed;
-    border-radius: 6px;
-    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid var(--fig-borda);
+    border-radius: var(--fig-raio-xs);
+    color: var(--fig-cinza-900);
+    font: var(--fig-peso-normal) var(--fig-t-meta) / 1.5 var(--fig-fonte-corpo);
+    padding: 7px 13px;
     width: 100%;
   }
+  .form__campo textarea { min-height: 107px; }
   .form__campo :is(input, select, textarea):focus-visible {
-    outline: 2px solid #a98c67;
+    outline: 2px solid var(--fig-primaria-clara);
     outline-offset: 1px;
   }
   .form__campo textarea { resize: vertical; }
@@ -141,18 +152,20 @@ const servicos = [
   }
 
   .form__enviar {
-    align-self: flex-start;
-    font: 600 14px/1.2 'Inter', system-ui, sans-serif;
-    color: #ffffff;
-    background: #341f04;
+    background: var(--fig-primaria-clara);
     border: 0;
-    border-radius: 999px;
+    border-radius: var(--fig-raio-sm);
+    color: #fff;
     cursor: pointer;
-    padding: 14px 42px;
+    font: var(--fig-peso-forte) var(--fig-t-corpo) / 1.2 var(--fig-fonte-ui);
+    padding: var(--fig-e-sm) var(--fig-e-lg);
+    transition: transform var(--dur-botao-enviar) var(--mola-botao-enviar);
+    width: 100%;
   }
+  .form__enviar:hover:not(:disabled) { transform: translateY(-1px); }
   .form__enviar:disabled { opacity: 0.6; cursor: progress; }
 
-  .form__estado { margin: 0; font: 400 14px/1.4 'Mulish', system-ui, sans-serif; }
+  .form__estado { margin: 0; font: var(--fig-peso-normal) var(--fig-t-meta) / 1.4 var(--fig-fonte-corpo); }
   .form__estado:empty { display: none; }
   .form__estado[data-tipo='erro'] { color: #b3261e; }
   .form__estado[data-tipo='sucesso'] { color: #2e6b3e; }

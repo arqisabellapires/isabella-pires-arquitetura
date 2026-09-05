@@ -1,0 +1,88 @@
+---
+/**
+ * O feed do Instagram que fecha as telas de Sobre nós (node 1:1497) e
+ * Contato (node 1:1710): o arroba grande à esquerda, o botão caramelo à
+ * direita, e quatro fotos de 422×590 com raio 32.
+ *
+ * As fotos são as do design — não são o feed real. Quando houver integração
+ * com o Instagram, é aqui que ela entra; o layout já está no lugar.
+ *
+ * Detalhe do design que não reproduzo: o arroba aparece em Segoe UI Bold na
+ * tela de Sobre e em Mulish Bold na de Contato. Segoe UI é o fallback do
+ * computador do designer, então Mulish vale para as duas.
+ */
+import { site } from '~/lib/site';
+
+interface Props {
+  fotos: string[];
+}
+const { fotos } = Astro.props;
+---
+
+<section class="instagram">
+  <header class="instagram__cabeca">
+    <p class="instagram__arroba">{site.redes.arroba}</p>
+    <a class="instagram__botao" href={site.redes.instagram} rel="noopener noreferrer" target="_blank">
+      Siga-nos no Instagram!
+    </a>
+  </header>
+  <ul class="instagram__fotos">
+    {fotos.map((src) => (
+      <li><img src={src} alt="" width="422" height="590" loading="lazy" /></li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .instagram {
+    margin-inline: auto;
+    max-width: var(--fig-largura-canvas);
+    padding: 0 var(--fig-margem-interna) var(--fig-secao-y);
+  }
+  .instagram__cabeca {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fig-e-lg);
+    justify-content: space-between;
+    margin-bottom: var(--fig-e-3xl);
+  }
+  .instagram__arroba {
+    color: #000;
+    font: var(--fig-peso-forte) clamp(1.75rem, 1rem + 2.4vw, 3rem) / 1.1 var(--fig-fonte-corpo);
+    margin: 0;
+  }
+  .instagram__botao {
+    background: var(--fig-primaria-clara);
+    border-radius: var(--fig-raio-xs);
+    color: #fff;
+    font: var(--fig-peso-forte) var(--fig-t-corpo) / 1.2 var(--fig-fonte-ui);
+    min-width: 418px;
+    padding: var(--fig-e-sm) var(--fig-e-lg);
+    text-align: center;
+    text-decoration: none;
+  }
+  .instagram__fotos {
+    display: grid;
+    gap: var(--fig-e-xl);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .instagram__fotos img {
+    border-radius: var(--fig-raio-xl);
+    display: block;
+    height: 590px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  @media (max-width: 1199.98px) {
+    .instagram__fotos img { height: 420px; }
+    .instagram__botao { min-width: 0; }
+  }
+  @media (max-width: 809.98px) {
+    .instagram__fotos img { height: 320px; }
+  }
+</style>

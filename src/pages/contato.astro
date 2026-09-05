@@ -1,134 +1,200 @@
 ---
 /**
- * Página de contato. Medida em _capturas/contato/medidas.desktop.json:
- * migalhas, título "Contato" 60px/600 Mulish, formulário à esquerda (x=175) e
- * o bloco "Como nos encontrar" à direita (x=669), 49px/700.
+ * Contato — reconstruída contra o Figma (node 1:1643), medidas em
+ * `_figma/contato-medidas.json`.
  *
- * Os dados de contato vêm de site.ts, que por sua vez os extraiu desta mesma
- * captura — não são digitados aqui.
+ * O que mudou: o título é **"Fale conosco"**, não "Contato" (o menu diz
+ * Contato, a página diz Fale conosco — é assim no design). O formulário
+ * ganhou o cartão que o Figma desenha, sobre uma faixa creme #f8efe9 de
+ * 937px, com os dados de contato ao lado. E entrou o feed do Instagram, que
+ * não existia.
  *
- * **O envio real está travado por quatro pendências fora do código**, todas
- * listadas no HANDOFF §4.6: IPs autorizados na Brevo, BREVO_DESTINO_EMAIL
- * vazio, domínio sem DKIM/DMARC e a lista de newsletter sem id. A página fica
- * pronta; o envio passa a funcionar quando o Gabriel resolver na Brevo.
+ * Os dados de contato vêm de `site.ts` — são os reais, não os do design, que
+ * traz um telefone e um e-mail de exemplo.
  */
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
+import Migalhas from '~/components/Migalhas.astro';
+import FeedInstagram from '~/components/FeedInstagram.astro';
 import Contato from '~/components/formularios/Contato.astro';
 import { site } from '~/lib/site';
 
-const e = site.endereco;
-const enderecoCompleto = `${e.logradouro} - ${e.complemento} - ${e.bairro} - ${e.cidade}, ${e.estado} - ${e.cep}`;
+const fotos = [
+  '/imagens/figma/contato--unsplash-gwd-zp-xup-ms0.webp',
+  '/imagens/figma/contato--unsplash-gwd-zp-xup-ms1.webp',
+  '/imagens/figma/contato--unsplash-gwd-zp-xup-ms2.webp',
+  '/imagens/figma/contato--unsplash-gwd-zp-xup-ms3.webp',
+];
+
+const redes = [
+  { nome: 'Instagram', href: site.redes.instagram, icone: '/icones/instagram.svg' },
+  { nome: 'Facebook', href: site.redes.facebook, icone: '/icones/facebook.svg' },
+  { nome: 'LinkedIn', href: site.redes.linkedin, icone: '/icones/linkedin.svg' },
+];
+
+const { endereco } = site;
 ---
 
 <Base
-  titulo="Contato"
-  descricao="Fale com Isabella Pires Arquitetura em Maringá: projetos residenciais, comerciais e de interiores."
+  titulo="Fale conosco"
+  descricao="Fale com o escritório de Isabella Pires: arquitetura e design de interiores em Maringá. Conte seu projeto e receba uma proposta personalizada."
 >
   <Cabecalho slot="cabecalho" />
 
-  <div class="contato">
-    <nav class="migalhas" aria-label="Migalhas">
-      <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Contato</span>
-    </nav>
-
-    <h1 class="contato__titulo">Contato</h1>
-
-    <div class="contato__colunas">
-      <section aria-label="Formulário de contato">
-        <Contato />
-      </section>
-
-      <section class="contato__dados">
-        <h2 class="contato__subtitulo">Como nos encontrar</h2>
-        <p class="contato__chamada">
-          Conte com a nossa equipe para resolver dúvidas e tirar seu projeto do papel.
-        </p>
-
-        <h3 class="contato__rotulo">Contato</h3>
-        <p class="contato__linha">
-          <a href={`mailto:${site.email}`}>{site.email}</a>
-        </p>
-        <p class="contato__linha">
-          <a href={site.whatsapp} rel="noopener" target="_blank">{site.telefone}</a>
-        </p>
-
-        <h3 class="contato__rotulo">Endereço</h3>
-        <p class="contato__linha">{enderecoCompleto}</p>
-
-        <h3 class="contato__rotulo">Nossos Canais</h3>
-        <ul class="contato__canais">
-          <li><a href={site.redes.instagram} rel="me noopener" target="_blank">Instagram</a></li>
-          <li><a href={site.redes.facebook} rel="me noopener" target="_blank">Facebook</a></li>
-          <li><a href={site.redes.linkedin} rel="me noopener" target="_blank">LinkedIn</a></li>
-        </ul>
-      </section>
+  <header class="cabeca">
+    <div class="cabeca__interno">
+      <Migalhas itens={[{ rotulo: 'Início', href: '/' }, { rotulo: 'Fale conosco' }]} />
+      <h1 class="cabeca__titulo">Fale conosco</h1>
     </div>
-  </div>
+    <img class="cabeca__selo" src="/imagens/figma/selo-marca.webp" alt="" width="328" height="328" loading="lazy" />
+  </header>
+
+  <section class="faixa">
+    <div class="faixa__interno">
+      <div class="faixa__form">
+        <Contato />
+      </div>
+
+      <div class="canais">
+        <div class="canais__cabeca">
+          <h2 class="canais__titulo">Como nos encontrar</h2>
+          <p class="canais__chamada">
+            Conte com a nossa equipe para resolver dúvidas, orientar processos ou ouvir
+            sugestões.
+          </p>
+        </div>
+
+        <div class="canais__bloco">
+          <h3 class="canais__rotulo">Contato</h3>
+          <ul class="canais__lista">
+            <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+            <li><a href={`tel:${site.telefoneE164}`}>{site.telefone}</a></li>
+          </ul>
+        </div>
+
+        <div class="canais__bloco">
+          <h3 class="canais__rotulo">Endereço</h3>
+          <p class="canais__endereco">
+            {endereco.logradouro}<br />
+            {endereco.bairro} — {endereco.cidade}/{endereco.estado}<br />
+            CEP {endereco.cep}
+          </p>
+        </div>
+
+        <div class="canais__bloco">
+          <h3 class="canais__rotulo">Redes sociais</h3>
+          <ul class="canais__redes">
+            {redes.map(({ nome, href, icone }) => (
+              <li>
+                <a href={href} rel="noopener noreferrer" target="_blank" aria-label={nome}>
+                  <img src={icone} alt="" width="40" height="40" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeedInstagram fotos={fotos} />
 
   <div slot="rodape">
-
     <Wordmark />
-
     <Rodape />
-
   </div>
 </Base>
 
 <style>
-  .contato { margin-inline: auto; max-width: 1184px; padding: 120px 24px 64px; }
-  .migalhas {
-    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    margin-bottom: 48px;
+  .cabeca {
+    align-items: flex-start;
+    border-bottom: 1px solid var(--fig-primaria-ativa);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
   }
-  .migalhas a { color: inherit; text-decoration: none; }
-  .contato__titulo {
-    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 48px;
+  .cabeca__interno { display: flex; flex-direction: column; gap: var(--fig-e-3xl); }
+  .cabeca__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
+    margin: 0;
   }
-  .contato__colunas {
-    display: grid;
-    gap: 64px;
-    grid-template-columns: 1fr;
+  .cabeca__selo { flex: none; height: auto; max-width: 328px; opacity: 0.9; width: 20vw; }
+
+  /* ─── Faixa creme com o cartão ────────────────────────────
+     #f8efe9, 937px de altura no design. Node 1:1658. */
+  .faixa {
+    background: var(--fig-fundo-quente);
+    margin-bottom: var(--fig-secao-y);
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
   }
-  @media (min-width: 1200px) {
-    .contato__colunas { grid-template-columns: 1fr 1fr; }
+  .faixa__interno {
+    align-items: center;
+    display: flex;
+    gap: var(--fig-e-6xl);
+    justify-content: center;
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
   }
-  .contato__subtitulo {
-    font: 700 49px/1.1 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 16px;
-    text-wrap: balance;
+  .faixa__form { flex: 1 1 533px; max-width: 533px; }
+
+  /* ─── Como nos encontrar ──────────────────────────────────*/
+  .canais {
+    display: flex;
+    flex: 1 1 548px;
+    flex-direction: column;
+    gap: var(--fig-e-xl);
+    max-width: 548px;
   }
-  .contato__chamada {
-    font: 500 19px/1.5 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0 0 32px;
+  .canais__cabeca { display: flex; flex-direction: column; gap: 14px; }
+  .canais__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-normal) clamp(2rem, 1.2rem + 2.4vw, 3.75rem) / 1.21 var(--fig-fonte-display);
+    margin: 0;
   }
-  .contato__rotulo {
-    font: 400 24px/1.2 'Faberge', 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    margin: 24px 0 8px;
+  .canais__chamada {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) var(--fig-f-corpo) / var(--fig-altura-corpo) var(--fig-fonte-corpo);
+    margin: 0;
   }
-  .contato__linha {
-    font: 500 21px/1.5 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 6px;
+  .canais__bloco { display: flex; flex-direction: column; gap: var(--fig-e-md); }
+  .canais__rotulo {
+    color: #191919;
+    font: var(--fig-peso-normal) var(--fig-f-rotulo) / var(--fig-altura-corpo) var(--fig-fonte-display);
+    margin: 0;
   }
-  .contato__linha a { color: inherit; text-decoration: none; }
-  .contato__linha a:hover { text-decoration: underline; }
-  .contato__canais { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
-  .contato__canais a {
-    font: 500 18px/1.4 'Mulish', system-ui, sans-serif;
-    color: #341f04;
+  .canais__lista {
+    color: #6d6e6f;
+    display: flex;
+    flex-direction: column;
+    font: var(--fig-peso-medio) var(--fig-f-corpo) / var(--fig-altura-corpo) var(--fig-fonte-corpo);
+    gap: var(--fig-e-sm);
+    margin: 0;
+    padding-left: var(--fig-e-lg);
   }
-  @media (max-width: 809.98px) {
-    .contato { padding-top: 96px; }
-    .contato__titulo { font-size: 36px; }
-    .contato__subtitulo { font-size: 32px; }
+  .canais__lista a { color: inherit; text-decoration: none; }
+  .canais__lista a:hover { text-decoration: underline; }
+  .canais__endereco {
+    color: #6d6e6f;
+    font: var(--fig-peso-medio) var(--fig-f-corpo) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    margin: 0;
+    max-width: 317px;
+  }
+  .canais__redes {
+    display: flex;
+    gap: var(--fig-e-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .canais__redes img { display: block; height: 40px; width: 40px; }
+
+  @media (max-width: 1199.98px) {
+    .cabeca__selo { display: none; }
+    .faixa__interno { flex-direction: column; align-items: stretch; gap: var(--fig-e-2xl); }
+    .faixa__form,
+    .canais { max-width: 100%; }
   }
 </style>

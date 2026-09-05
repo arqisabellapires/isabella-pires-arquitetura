@@ -88,11 +88,16 @@ const regrasFiltro = categorias
               sizes="(min-width: 1200px) 1624px, 94vw"
               loading={i === 0 ? 'eager' : 'lazy'}
             />
+            {/* Duas colunas sobre a foto, como no Figma (1:789/1:790): o
+                nome grande à esquerda, e o resumo com o botão à direita. A
+                etiqueta de categoria fica solta no alto à esquerda. */}
+            <p class="card__tag">{p.data.categoria}</p>
             <div class="card__texto">
-              <p class="card__tag">{p.data.categoria}</p>
               <h2 class="card__titulo">{p.data.titulo}</h2>
-              <p class="card__resumo">{p.data.resumo}</p>
-              <span class="card__cta">Ver projeto</span>
+              <div class="card__coluna">
+                <p class="card__resumo">{p.data.resumo}</p>
+                <span class="card__cta">Ver projeto</span>
+              </div>
             </div>
           </a>
         </li>
@@ -208,38 +213,55 @@ const regrasFiltro = categorias
   }
   .card--destaque a::after { background: rgb(0 0 0 / 0.39); }
 
+  /* O Figma posiciona tudo em absoluto sobre a foto: nome em left:196, o
+     resumo em left:1016 com 544 de largura. Em grade de duas colunas isso
+     vira proporção em vez de px fixo, e continua valendo em telas menores. */
   .card__texto {
-    left: clamp(var(--fig-e-lg), 10vw, 196px);
-    max-width: 720px;
+    align-items: center;
+    display: grid;
+    gap: clamp(var(--fig-e-2xl), 6vw, 120px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 544px);
+    inset: 0 clamp(var(--fig-e-lg), 5vw, 68px);
+    padding-inline: clamp(0px, 4vw, 128px);
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     z-index: 1;
   }
+  .card__coluna { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
   /* Véu translúcido não garante contraste: sobre foto clara o branco
      sumia. Fundo sólido resolve e continua discreto. */
+  /* Etiqueta: no design é branca a 76% com borda escura, no alto à
+     esquerda (left:68, top:53), fora do bloco de texto. */
   .card__tag {
-    background: rgb(53 32 5 / 0.85);
-    border-radius: var(--fig-raio-xs);
-    display: inline-block;
-    font: var(--fig-peso-medio) var(--fig-t-meta) / 1.2 var(--fig-fonte-ui);
-    margin: 0 0 var(--fig-e-sm);
-    padding: var(--fig-e-2xs) var(--fig-e-sm);
+    background: rgb(255 255 255 / 0.88);
+    border: 1px solid var(--fig-primaria-ativa);
+    border-radius: var(--fig-raio-sm);
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-t-meta) / 1.2 var(--fig-fonte-ui);
+    left: clamp(var(--fig-e-lg), 5vw, 68px);
+    margin: 0;
+    padding: var(--fig-e-xs) var(--fig-e-lg);
+    position: absolute;
+    top: clamp(var(--fig-e-lg), 4vw, 53px);
+    z-index: 2;
   }
   .card__titulo {
     color: #fff;
     font: var(--fig-peso-medio) var(--fig-f-card-titulo) / 1.05 var(--fig-fonte-ui);
-    margin: 0 0 var(--fig-e-sm);
+    margin: 0;
   }
+  /* 21px no Figma e no Framer. */
   .card__resumo {
-    color: rgb(255 255 255 / 0.86);
-    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.45 var(--fig-fonte-corpo);
-    margin: 0 0 var(--fig-e-md);
-    max-width: 640px;
+    color: rgb(255 255 255 / 0.92);
+    font: var(--fig-peso-semi) 21px / 1.45 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-lg);
   }
+  /* No design é um botão claro preenchido (1:791), não um link sublinhado. */
   .card__cta {
-    border-bottom: 1px solid currentColor;
-    font: var(--fig-peso-forte) var(--fig-f-corpo) / 1.2 var(--fig-fonte-corpo);
+    background: var(--fig-cinza-50);
+    border-radius: var(--fig-raio-sm);
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-forte) var(--fig-t-corpo) / 1.2 var(--fig-fonte-corpo);
+    padding: var(--fig-e-sm) var(--fig-e-lg);
   }
 
 
@@ -247,8 +269,56 @@ const regrasFiltro = categorias
     .cabeca__selo { display: none; }
     .card :global(.card__foto),
     .card--destaque :global(.card__foto) { height: 380px; }
+    /* Uma coluna só: as duas do design não cabem, e o resumo espremido
+       ficaria ilegível. O nome fica em cima, o resto embaixo — ancorados na
+       base, para não passarem por baixo da etiqueta de categoria. */
+    .card__texto {
+      align-content: end;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--fig-e-sm);
+      inset: auto var(--fig-e-lg) var(--fig-e-lg);
+      padding: 0;
+    }
   }
   @media (max-width: 809.98px) {
+    /* Card mais alto no celular: o resumo inteiro sobre a foto não cabe em
+       380px, e cortar texto é pior que crescer o card. */
+    /* No celular o texto deixa de ficar sobre a foto: sobreposto, ou ele
+       vaza para fora do card, ou espreme a foto até virar tarja. Foto em
+       cima, texto embaixo sobre o fundo escuro do card. */
+    .card :global(.card__foto),
+    .card--destaque :global(.card__foto) { height: 260px; }
+    /* Fora da foto o véu não alcança, e o texto branco ficava sobre o
+       fundo claro da página. O card ganha fundo escuro próprio. */
+    .card > a {
+      display: block;
+      background: var(--fig-fundo-escuro);
+      border-radius: var(--fig-raio-xl);
+      overflow: clip;
+    }
+    .card a::after { inset: 0 0 auto; height: 260px; }
+    .card__texto {
+      inset: auto;
+      position: static;
+      gap: var(--fig-e-sm);
+      padding: var(--fig-e-lg);
+    }
+    .card__tag { position: static; margin: var(--fig-e-lg) 0 0 var(--fig-e-lg); display: inline-block; }
+    .card__resumo { font-size: var(--fig-t-corpo-p); }
+    /* No celular a etiqueta desce para junto do nome: presa no alto, ela
+       cruzava por cima do título quando o resumo empurrava o bloco para
+       cima. Fica acima da pilha, alinhada com ela. */
+    .card__tag {
+      bottom: auto;
+      left: var(--fig-e-lg);
+      top: var(--fig-e-lg);
+    }
+    /* O bloco começa abaixo da etiqueta: `inset` só na base deixava o nome
+       subir até a altura dela quando o resumo era longo. */
+    .card__texto {
+      inset: calc(var(--fig-e-lg) + 52px) var(--fig-e-lg) var(--fig-e-lg);
+      align-content: end;
+    }
     .card :global(.card__foto),
     .card--destaque :global(.card__foto) { height: 320px; }
     .card__texto { left: var(--fig-e-lg); right: var(--fig-e-lg); }

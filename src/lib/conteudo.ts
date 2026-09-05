@@ -102,3 +102,54 @@ export const rodapeLinks = {
     { rotulo: 'Políticas de Cookies', href: '/politica-de-cookies' },
   ],
 } as const;
+
+/**
+ * Conteúdo da página Sobre nós, transcrito do Figma (node 1:1363).
+ * O design é a fonte destes textos; nada aqui foi reescrito.
+ */
+export const selosSobre = [
+  { titulo: 'Transparência e Clareza', texto: 'Planejamento e custos sem surpresas.' },
+  { titulo: 'Presença Nacional', texto: 'Projetos em qualquer região do Brasil.' },
+  { titulo: 'Atendimento Humano', texto: 'Soluções sob medida para cada cliente.' },
+] as const;
+
+export const valores = [
+  {
+    titulo: 'Modernidade',
+    texto:
+      'Priorizamos soluções inovadoras e atuais, integrando tecnologia e tendências para criar projetos funcionais e cheios de estilo.',
+  },
+  {
+    titulo: 'Empatia',
+    texto:
+      'Entendemos profundamente cada cliente, suas necessidades e preferências, para criar ambientes que refletem essência e proporcionam conforto.',
+  },
+  {
+    titulo: 'Constância',
+    texto:
+      'Agimos com disciplina e comprometimento, acompanhando cada detalhe do projeto para garantir qualidade e resultados consistentes.',
+  },
+] as const;
+
+export const passosMetodo = [
+  {
+    titulo: 'Briefing e Levantamento',
+    texto:
+      'Conversamos com você para entender estilo de vida, necessidades e expectativas, e realizamos medições e registro completo do espaço.',
+  },
+  {
+    titulo: 'Desenvolvimento do Conceito',
+    texto:
+      'Criamos o conceito do projeto, definindo paleta de cores, materiais, mobiliário e disposição dos ambientes.',
+  },
+  {
+    titulo: 'Detalhamentos Técnicos e Planejamento',
+    texto:
+      'Elaboramos plantas, projetos de marcenaria, iluminação e revestimentos, além de lista de compras e fornecedores para garantir precisão.',
+  },
+  {
+    titulo: 'Execução e Ambientação',
+    texto:
+      'Acompanhamos a implementação, garantindo que cada detalhe seja fiel ao projeto e que o resultado final seja funcional e harmonioso.',
+  },
+] as const;

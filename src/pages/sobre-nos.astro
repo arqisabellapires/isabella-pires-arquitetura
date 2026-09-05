@@ -1,253 +1,443 @@
 ---
 /**
- * Sobre nós. Medida em _capturas/sobre-nos/medidas.desktop.json.
+ * Sobre nós — reconstruída contra o Figma (node 1:1363), medidas em
+ * `_figma/sobre-medidas.json`.
  *
- * **É aqui que vive o acordeão**, não em /servicos/ — corrigido no HANDOFF
- * §4.3 medindo o Framer vivo (componente iCmFNLdck.js, y≈2102, título da
- * seção "Nossos Serviços", o que explica a confusão da spec).
+ * É a tela mais rica do design, e a que estava mais longe: faltavam **duas
+ * seções inteiras** (a timeline do método, 01–04, e o feed do Instagram) e a
+ * página não tinha uma única imagem — o design pede seis.
  *
- * O acordeão é <details>/<summary> nativo: abre sem JavaScript, funciona por
- * teclado de graça e o `name` compartilhado faz um fechar o outro, que é o
- * comportamento medido ("outrosFecham"). O movimento vem do CSS, não de
- * script — a mola do original é spring bounce .2 / .4s.
+ * Uma correção de leitura que vale registrar, porque uma medição anterior
+ * errou: **"Nossos valores" não é acordeão.** São três linhas sempre
+ * abertas, separadas por divisores de 2px, sobre uma faixa
+ * rgba(240,217,199,.2). O acordeão de verdade é a seção "Nós entregamos
+ * apenas o nosso melhor", com os cinco serviços — e esse é feito com
+ * <details>, recurso nativo, sem JavaScript.
+ *
+ * Os textos vêm de `conteudo.ts`, transcritos do próprio Figma.
  */
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
-import { servicos } from '~/lib/conteudo';
+import Migalhas from '~/components/Migalhas.astro';
+import RotuloSecao from '~/components/RotuloSecao.astro';
+import { servicos, selosSobre, valores, passosMetodo } from '~/lib/conteudo';
+import { site } from '~/lib/site';
 
-/* Diferenciais e valores: transcritos da captura, não inventados. */
-const diferenciais = [
-  { titulo: 'Transparência e Clareza', texto: 'Planejamento e custos sem surpresas.' },
-  { titulo: 'Presença Nacional', texto: 'Projetos em qualquer região do Brasil.' },
-  { titulo: 'Atendimento Humano', texto: 'Soluções sob medida para cada cliente.' },
-];
-
-const valores = [
-  {
-    titulo: 'Modernidade',
-    texto: 'Priorizamos soluções inovadoras e atuais, integrando tendências e tecnologia aos projetos.',
-  },
-  {
-    titulo: 'Empatia',
-    texto: 'Entendemos profundamente cada cliente, suas necessidades e o modo como vive os espaços.',
-  },
-  {
-    titulo: 'Constância',
-    texto: 'Agimos com disciplina e comprometimento, acompanhando cada etapa até a entrega.',
-  },
+const fotosInstagram = [
+  '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms0.webp',
+  '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms1.webp',
+  '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms2.webp',
+  '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms3.webp',
 ];
 ---
 
 <Base
   titulo="Sobre nós"
-  descricao="Escritório de arquitetura em Maringá conduzido por Isabella Cito Pires: projetos residenciais, comerciais e de interiores."
+  descricao="Conheça o escritório de Isabella Pires: arquitetura e design de interiores em Maringá, com projetos que unem estética, funcionalidade e personalidade."
 >
   <Cabecalho slot="cabecalho" />
 
-  <div class="sobre">
-    <nav class="migalhas" aria-label="Migalhas">
-      <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Sobre nós</span>
-    </nav>
+  <header class="cabeca">
+    <div class="cabeca__interno">
+      <Migalhas itens={[{ rotulo: 'Início', href: '/' }, { rotulo: 'Sobre nós' }]} />
+      <h1 class="cabeca__titulo">Sobre nós</h1>
+    </div>
+    <img class="cabeca__selo" src="/imagens/figma/selo-marca.webp" alt="" width="328" height="328" loading="lazy" />
+  </header>
 
-    <h1 class="sobre__titulo">Sobre nós</h1>
-
-    <section class="historia">
-      <p class="sobre__rotulo">Quem somos</p>
-      <h2 class="historia__titulo">Nossa História</h2>
-      <p class="historia__texto">
-        No nosso escritório, conduzido por Isabella Cito Pires, cada projeto nasce da escuta
-        atenta de quem vai viver o espaço.
+  <section class="historia" data-revela>
+    <img
+      class="historia__foto"
+      src="/imagens/figma/sobre--foto2911.webp"
+      alt="Isabella Cito Pires, arquiteta responsável pelo escritório"
+      width="349"
+      height="524"
+    />
+    <div class="historia__texto">
+      <RotuloSecao>Quem somos</RotuloSecao>
+      <h2 class="titulo-secao">Nossa História</h2>
+      <p class="paragrafo">
+        No nosso escritório, conduzido por Isabella Cito Pires, transformamos ideias em
+        projetos arquitetônicos e de interiores que unem estética, funcionalidade e
+        personalidade. Cada espaço é planejado para valorizar o estilo de vida e criar
+        ambientes únicos.
       </p>
-      <p class="historia__texto">
-        Oferecemos também consultorias e ambientações personalizadas, do conceito ao
-        acompanhamento da obra.
+      <p class="paragrafo">
+        Oferecemos também consultorias e ambientações personalizadas, garantindo soluções
+        práticas e duradouras, sempre com atenção aos desejos e necessidades de cada cliente.
       </p>
       <blockquote class="historia__citacao">
-        “Arquitetura é a arte de transformar espaços em experiências.”
+        “Arquitetura é a arte de transformar espaços em experiências inesquecíveis”
       </blockquote>
+    </div>
+  </section>
 
-      <ul class="diferenciais">
-        {diferenciais.map((d) => (
-          <li>
-            <h3>{d.titulo}</h3>
-            <p>{d.texto}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
+  <section class="selos" aria-label="Nossos diferenciais" data-revela>
+    {selosSobre.map((s) => (
+      <div class="selo">
+        <h3 class="selo__titulo">{s.titulo}</h3>
+        <p class="selo__texto">{s.texto}</p>
+      </div>
+    ))}
+  </section>
 
-    <section class="valores">
-      <p class="sobre__rotulo">Princípios que nos movem</p>
-      <h2 class="valores__titulo">Nossos valores</h2>
+  <section class="valores" data-revela>
+    <div class="valores__interno">
+      <RotuloSecao>Princípios que nos movem</RotuloSecao>
+      <h2 class="titulo-secao">Nossos valores</h2>
       <dl class="valores__lista">
         {valores.map((v) => (
-          <div class="valores__item">
-            <dt>{v.titulo}</dt>
-            <dd>{v.texto}</dd>
+          <div class="valor">
+            <dt class="valor__titulo">{v.titulo}</dt>
+            <dd class="valor__texto">{v.texto}</dd>
           </div>
         ))}
       </dl>
-    </section>
+    </div>
+  </section>
 
-    <section class="acordeao-secao">
-      <p class="sobre__rotulo">Nossos Serviços</p>
-      <h2 class="acordeao-secao__titulo">Nós entregamos apenas o nosso melhor</h2>
-
-      {/*
-        <details name> faz um item fechar o outro sem uma linha de script —
-        é o "outrosFecham" da ficha de movimento. O primeiro vem aberto,
-        como está na captura.
-      */}
+  <section class="entrega" data-revela>
+    <h2 class="entrega__titulo">Nós entregamos apenas o nosso melhor</h2>
+    <div class="entrega__linha">
       <div class="acordeao">
-        {servicos.map((servico, i) => (
-          <details class="acordeao__item" name="servico" open={i === 0}>
-            <summary class="acordeao__gatilho">{servico.tituloCompleto}</summary>
-            <div class="acordeao__painel">
-              <p>{servico.resumoHome}</p>
-            </div>
+        {servicos.map((s, i) => (
+          <details class="acordeao__item" open={i === 1}>
+            <summary class="acordeao__rotulo">
+              {s.tituloCompleto}
+              <img class="acordeao__seta" src="/icones/seta-baixo.svg" alt="" width="32" height="32" />
+            </summary>
+            <p class="acordeao__texto">{s.resumoHome}</p>
           </details>
         ))}
       </div>
-    </section>
-  </div>
+      <img
+        class="entrega__foto"
+        src="/imagens/figma/sobre--unsplash-gwd-zp-xup-ms0.webp"
+        alt=""
+        width="953"
+        height="724"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <section class="metodo" data-revela>
+    <header class="metodo__cabeca">
+      <RotuloSecao>Passo a passo</RotuloSecao>
+      <h2 class="titulo-secao">Nós temos um método simples,<br />mas rápido e efetivo</h2>
+    </header>
+    <ol class="metodo__lista">
+      {passosMetodo.map((p, i) => (
+        <li class:list={['passo', i % 2 === 1 && 'passo--direita']}>
+          <span class="passo__numero" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3 class="passo__titulo">{p.titulo}</h3>
+            <p class="passo__texto">{p.texto}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="instagram" data-revela>
+    <header class="instagram__cabeca">
+      <p class="instagram__arroba">{site.redes.arroba}</p>
+      <a class="instagram__botao" href={site.redes.instagram} rel="noopener noreferrer" target="_blank">
+        Siga-nos no Instagram!
+      </a>
+    </header>
+    <ul class="instagram__fotos">
+      {fotosInstagram.map((src) => (
+        <li><img src={src} alt="" width="422" height="590" loading="lazy" /></li>
+      ))}
+    </ul>
+  </section>
 
   <div slot="rodape">
-
     <Wordmark />
-
     <Rodape />
-
   </div>
 </Base>
 
 <style>
-  .sobre { margin-inline: auto; max-width: 1184px; padding: 120px 24px 64px; }
-  .migalhas {
-    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    margin-bottom: 48px;
+  .cabeca {
+    align-items: flex-start;
+    border-bottom: 1px solid var(--fig-primaria-ativa);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
   }
-  .migalhas a { color: inherit; text-decoration: none; }
-  .sobre__titulo {
-    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 64px;
+  .cabeca__interno { display: flex; flex-direction: column; gap: var(--fig-e-3xl); }
+  .cabeca__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
+    margin: 0;
   }
-  .sobre__rotulo {
-    font: 400 24px/1.2 'Faberge', 'Mulish', system-ui, sans-serif;
-    color: #a98c67;
-    margin: 0 0 8px;
+  .cabeca__selo { flex: none; height: auto; max-width: 328px; opacity: 0.9; width: 20vw; }
+
+  .titulo-secao {
+    color: var(--fig-tinta);
+    font: var(--fig-peso-forte) var(--fig-f-titulo-secao) / 1.21 var(--fig-fonte-corpo);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .paragrafo {
+    color: rgb(48 48 48 / 0.8);
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    margin: 0;
   }
 
-  .historia { margin-bottom: 96px; }
-  .historia__titulo {
-    font: 700 38px/1.2 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 24px;
+  /* ─── Nossa História ──────────────────────────────────────*/
+  .historia {
+    align-items: center;
+    display: flex;
+    gap: 68px;
+    justify-content: center;
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+    padding: var(--fig-e-6xl) var(--fig-margem-interna) var(--fig-e-4xl);
+  }
+  .historia__foto {
+    border-radius: var(--fig-raio-xl);
+    flex: none;
+    height: 524px;
+    object-fit: cover;
+    width: 349px;
   }
   .historia__texto {
-    font: 600 18px/1.6 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0 0 16px;
-    max-width: 60ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-lg);
+    max-width: 705px;
   }
   .historia__citacao {
-    font: 700 18px/1.6 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    border-left: 3px solid #a98c67;
-    margin: 24px 0 40px;
-    padding-left: 16px;
+    border-left: 6px solid var(--fig-primaria-clara);
+    color: var(--fig-primaria-media);
+    font: italic var(--fig-peso-semi) var(--fig-f-corpo) / 1.5 var(--fig-fonte-corpo);
+    margin: 0;
+    padding-left: var(--fig-e-md);
   }
-  .diferenciais {
+
+  /* ─── Selos ───────────────────────────────────────────────*/
+  .selos {
     display: grid;
-    gap: 24px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--fig-e-2xl);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+    padding: var(--fig-e-2xl) var(--fig-margem-interna);
+  }
+  .selo + .selo { border-left: 1px solid var(--fig-borda); padding-left: var(--fig-e-2xl); }
+  .selo__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-forte) var(--fig-t-corpo-g) / 1.2 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-xs);
+  }
+  .selo__texto {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) var(--fig-t-corpo-p) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    margin: 0;
+  }
+
+  /* ─── Nossos valores ──────────────────────────────────────
+     Três linhas sempre abertas, com divisor de 2px. Não é acordeão. */
+  .valores {
+    background: var(--fig-veu-destaque);
+    margin-block: var(--fig-secao-y);
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
+  }
+  .valores__interno {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-3xl);
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+  }
+  .valores__lista { display: flex; flex-direction: column; margin: 0; }
+  .valor {
+    align-items: flex-start;
+    border-top: 2px solid var(--fig-primaria-clara);
+    display: flex;
+    gap: var(--fig-e-2xl);
+    justify-content: space-between;
+    padding: var(--fig-e-lg) 0;
+  }
+  .valor:last-child { border-bottom: 2px solid var(--fig-primaria-clara); }
+  .valor__titulo {
+    color: var(--fig-primaria-clara);
+    flex: none;
+    font: var(--fig-peso-forte) clamp(1.5rem, 1rem + 1.6vw, 2.5rem) / 1.15 var(--fig-fonte-corpo);
+    width: min(38%, 400px);
+  }
+  .valor__texto {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) var(--fig-f-corpo) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    margin: 0;
+    max-width: 700px;
+  }
+
+  /* ─── Acordeão de serviços ────────────────────────────────
+     <details> nativo: abre sem JavaScript. A mola vem da ficha
+     `acordeao-servicos`, medida no Framer vivo. */
+  .entrega {
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+    padding: 0 var(--fig-margem-interna) var(--fig-secao-y);
+  }
+  .entrega__titulo {
+    color: var(--fig-cinza-900);
+    font: var(--fig-peso-normal) clamp(2rem, 1rem + 3.6vw, 4.5rem) / 1.15 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-2xl);
+    text-align: center;
+    text-wrap: balance;
+  }
+  .entrega__linha { display: flex; gap: var(--fig-e-4xl); align-items: center; }
+  .acordeao { display: flex; flex: 1 1 46%; flex-direction: column; gap: var(--fig-e-md); min-width: 380px; }
+  .acordeao__item {
+    border: 2px solid #696969;
+    border-radius: var(--fig-raio-lg);
+    padding: var(--fig-e-lg) var(--fig-e-xl);
+    transition: background var(--dur-acordeao-servicos) var(--mola-acordeao-servicos);
+  }
+  .acordeao__item[open] { background: var(--fig-veu-acordeao); border-color: transparent; }
+  .acordeao__rotulo {
+    align-items: center;
+    color: var(--fig-cinza-900);
+    cursor: pointer;
+    display: flex;
+    font: var(--fig-peso-normal) var(--fig-f-corpo) / 1.3 var(--fig-fonte-corpo);
+    gap: var(--fig-e-lg);
+    justify-content: space-between;
+    list-style: none;
+  }
+  .acordeao__rotulo::-webkit-details-marker { display: none; }
+  .acordeao__seta {
+    flex: none;
+    transition: transform var(--dur-acordeao-servicos) var(--mola-acordeao-servicos);
+  }
+  .acordeao__item[open] .acordeao__seta { transform: rotate(180deg); }
+  .acordeao__texto {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) var(--fig-t-meta) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    margin: var(--fig-e-sm) 0 0;
+  }
+  .entrega__foto {
+    border-radius: var(--fig-raio-xl);
+    flex: 1 1 54%;
+    height: 724px;
+    max-width: 953px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  /* ─── Método ──────────────────────────────────────────────*/
+  .metodo {
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+    padding: 0 var(--fig-margem-interna) var(--fig-secao-y);
+  }
+  .metodo__cabeca { display: flex; flex-direction: column; gap: var(--fig-e-sm); margin-bottom: var(--fig-e-2xl); }
+  .metodo__lista { display: flex; flex-direction: column; gap: var(--fig-e-md); list-style: none; margin: 0; padding: 0; }
+  .passo {
+    align-items: flex-start;
+    border-bottom: 2px solid var(--fig-borda);
+    display: flex;
+    gap: var(--fig-e-lg);
+    max-width: 648px;
+    padding: var(--fig-e-2xl) var(--fig-e-xl);
+  }
+  /* 02 e 04 vão para a direita, como no design. */
+  .passo--direita { margin-left: auto; }
+  .passo__numero {
+    color: var(--fig-primaria-clara);
+    flex: none;
+    font: var(--fig-peso-forte) clamp(2.5rem, 1.4rem + 3.6vw, 5.625rem) / 1 var(--fig-fonte-corpo);
+  }
+  .passo--direita .passo__numero { color: var(--fig-primaria-ativa); }
+  .passo__titulo {
+    color: var(--fig-secundaria-ativa);
+    font: var(--fig-peso-forte) clamp(1.25rem, 0.9rem + 1.1vw, 2rem) / 1.2 var(--fig-fonte-ui);
+    margin: 0 0 var(--fig-e-xs);
+  }
+  .passo__texto {
+    color: var(--fig-texto-meta);
+    font: var(--fig-peso-semi) var(--fig-t-corpo-p) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  /* ─── Instagram ───────────────────────────────────────────*/
+  .instagram {
+    margin-inline: auto;
+    max-width: var(--fig-largura-canvas);
+    padding: 0 var(--fig-margem-interna) var(--fig-secao-y);
+  }
+  .instagram__cabeca {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fig-e-lg);
+    justify-content: space-between;
+    margin-bottom: var(--fig-e-3xl);
+  }
+  .instagram__arroba {
+    color: #000;
+    font: var(--fig-peso-forte) clamp(1.75rem, 1rem + 2.4vw, 3rem) / 1.1 var(--fig-fonte-corpo);
+    margin: 0;
+  }
+  .instagram__botao {
+    background: var(--fig-primaria-clara);
+    border-radius: var(--fig-raio-xs);
+    color: #fff;
+    font: var(--fig-peso-forte) var(--fig-t-corpo) / 1.2 var(--fig-fonte-ui);
+    padding: var(--fig-e-sm) var(--fig-e-lg);
+    text-align: center;
+    text-decoration: none;
+  }
+  .instagram__fotos {
+    display: grid;
+    gap: var(--fig-e-xl);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  .diferenciais h3 {
-    font: 400 26px/1.2 'Faberge', 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 6px;
-  }
-  .diferenciais p {
-    font: 400 20px/1.4 'Faberge', 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0;
+  .instagram__fotos img {
+    border-radius: var(--fig-raio-xl);
+    display: block;
+    height: 590px;
+    object-fit: cover;
+    width: 100%;
   }
 
-  .valores { margin-bottom: 96px; }
-  .valores__titulo {
-    font: 700 70px/1.05 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 40px;
-    text-wrap: balance;
+  [data-revela] {
+    animation: revela linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
   }
-  .valores__lista { margin: 0; }
-  .valores__item {
-    border-top: 1px solid #ededed;
-    display: grid;
-    gap: 24px;
-    grid-template-columns: 1fr;
-    padding: 24px 0;
+  @keyframes revela {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: none; }
   }
-  @media (min-width: 1200px) {
-    .valores__item { grid-template-columns: 320px 1fr; }
-  }
-  .valores__item dt {
-    font: 700 32px/1.2 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-  }
-  .valores__item dd {
-    font: 700 20px/1.6 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0;
-  }
-
-  .acordeao-secao__titulo {
-    font: 600 72px/1.05 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 48px;
-    text-wrap: balance;
-  }
-  .acordeao__item { border-bottom: 1px solid #ededed; }
-  .acordeao__gatilho {
-    cursor: pointer;
-    font: 700 18px/1.4 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    list-style: none;
-    padding: 24px 0;
-  }
-  .acordeao__gatilho::-webkit-details-marker { display: none; }
-  .acordeao__gatilho::after {
-    content: '+';
-    float: right;
-    font-weight: 400;
-  }
-  .acordeao__item[open] .acordeao__gatilho::after { content: '−'; }
-  .acordeao__gatilho:focus-visible { outline: 2px solid #a98c67; outline-offset: 2px; }
-  .acordeao__painel p {
-    font: 400 18px/1.6 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0;
-    max-width: 60ch;
-    padding-bottom: 24px;
+  @media (prefers-reduced-motion: reduce) {
+    [data-revela] { animation: none; }
   }
 
   @media (max-width: 1199.98px) {
-    .sobre__titulo { font-size: 44px; }
-    .valores__titulo { font-size: 48px; }
-    .acordeao-secao__titulo { font-size: 48px; }
+    .cabeca__selo { display: none; }
+    .historia { flex-direction: column; align-items: stretch; gap: var(--fig-e-2xl); }
+    .historia__foto { height: 420px; width: 100%; }
+    .entrega__linha { flex-direction: column; }
+    .entrega__foto { height: 420px; max-width: 100%; width: 100%; }
+    .valor { flex-direction: column; gap: var(--fig-e-sm); }
+    .valor__titulo { width: auto; }
+    .passo, .passo--direita { max-width: 100%; margin-left: 0; }
+    .instagram__fotos img { height: 420px; }
   }
   @media (max-width: 809.98px) {
-    .sobre { padding-top: 96px; }
-    .sobre__titulo { font-size: 36px; }
-    .historia__titulo { font-size: 30px; }
-    .valores__titulo { font-size: 36px; }
-    .valores__item dt { font-size: 24px; }
-    .acordeao-secao__titulo { font-size: 32px; }
+    .selo + .selo { border-left: 0; padding-left: 0; }
+    .instagram__fotos img { height: 320px; }
   }
 </style>

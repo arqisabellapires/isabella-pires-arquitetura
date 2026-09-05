@@ -12,6 +12,12 @@ completo do projeto. Leia antes de tocar em qualquer coisa.
 > abaixo descreviam o estado da ponte e estão em boa parte obsoletas; o que
 > vale é a seção 0. Onde conflitarem, a seção 0 e a spec mandam.
 
+> **Novo por aqui?** Leia
+> [docs/ENTENDA-O-PROJETO.md](docs/ENTENDA-O-PROJETO.md) primeiro: explica o
+> que era o Framer, o que é Astro, por que a primeira tentativa falhou, o que
+> ainda está diferente do original (as animações, principalmente) e o que se
+> propõe a seguir. Este HANDOFF é o estado técnico; aquele é o porquê.
+
 ## 0. Onde a execução parou — leia isto primeiro
 
 Estado em 03/09/2026, depois de 19 commits, todos na `main` e pushados.

@@ -1,5 +1,7 @@
 # Isabella Pires Arquitetura — plano
 
+> **Contexto completo, para quem está chegando:
+> [docs/ENTENDA-O-PROJETO.md](docs/ENTENDA-O-PROJETO.md).**
 > **Estado corrente do repositório, ferramentas e armadilhas: [HANDOFF.md](HANDOFF.md).**
 > **Desenho completo e fases: [docs/superpowers/specs/](docs/superpowers/specs/).**
 

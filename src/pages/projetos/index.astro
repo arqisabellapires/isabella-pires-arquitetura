@@ -102,7 +102,7 @@ const regrasFiltro = categorias
 
   <div slot="rodape">
     <Wordmark />
-    <Rodape variante="escuro" />
+    <Rodape />
   </div>
 </Base>
 
@@ -216,8 +216,10 @@ const regrasFiltro = categorias
     transform: translateY(-50%);
     z-index: 1;
   }
+  /* Véu translúcido não garante contraste: sobre foto clara o branco
+     sumia. Fundo sólido resolve e continua discreto. */
   .card__tag {
-    background: rgb(255 255 255 / 0.16);
+    background: rgb(53 32 5 / 0.85);
     border-radius: var(--fig-raio-xs);
     display: inline-block;
     font: var(--fig-peso-medio) var(--fig-t-meta) / 1.2 var(--fig-fonte-ui);

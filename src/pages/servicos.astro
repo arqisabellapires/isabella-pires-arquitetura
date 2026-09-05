@@ -126,9 +126,11 @@ const fotos = [
   }
 
   /* A pastilha do número alterna de cor a cada serviço. */
+  /* O design usa #a98d67 aqui, mas com o texto #eee isso dá 2,70:1. O
+     #8d7252 é o mesmo caramelo meio tom abaixo e passa em contraste. */
   .servico__numero {
     align-self: flex-start;
-    background: var(--fig-primaria-clara);
+    background: #8d7252;
     border-radius: var(--fig-raio-md);
     color: var(--fig-cinza-50);
     font: var(--fig-peso-normal) var(--fig-t-servico-num) / 1.2 var(--fig-fonte-display);

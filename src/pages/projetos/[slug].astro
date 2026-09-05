@@ -1,13 +1,24 @@
 ---
 /**
- * Página de projeto. O conteúdo vem da coleção `projetos`, gerada por
- * tools/extrai-projetos.mjs a partir das 4 capturas — **não há CMS de
- * projetos no Framer** (HANDOFF §4.1: o grafo inteiro de módulos cita uma
- * única coleção, "Blog").
+ * Página de projeto — reconstruída contra o Figma (node 1:954), medidas em
+ * `_figma/projeto-detalhe-medidas.json`.
  *
- * Layout medido em _capturas/projetos__casa-ip/medidas.desktop.json: hero
- * 100px/700 Mulish, "Detalhes do Projeto" 40px/600, ficha técnica em 29px, e
- * o corpo "Concepção e Processo" em 22px.
+ * Três mudanças estruturais em relação ao que existia:
+ *
+ * 1. **Duas colunas.** A ficha técnica é uma coluna sticky de 593px à
+ *    esquerda e o texto corre em 1003px à direita. Antes era tudo empilhado
+ *    numa coluna só.
+ * 2. **O herói tem gradiente**, e o título é Faberge 100px centralizado
+ *    sobre a foto — não Mulish no canto inferior. Sem o gradiente o menu
+ *    claro ficava ilegível sobre fotos claras, que é o defeito que o portão
+ *    de contraste acusou nas quatro páginas de projeto.
+ * 3. **"Outros Projetos"** fecha a página, com três cards e o botão "Ver
+ *    todos" — não existia.
+ *
+ * A ficha mantém os campos REAIS da coleção (Ano, Autoria, Localização,
+ * Categoria). O Figma pede Cliente, Serviço, Tamanho, Valor e Data — mas
+ * publicar o valor de um projeto é decisão de negócio da cliente, e os
+ * outros campos não existem no conteúdo.
  */
 import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
@@ -18,10 +29,13 @@ import Wordmark from '~/components/Wordmark.astro';
 
 export async function getStaticPaths() {
   const projetos = await getCollection('projetos', ({ data }) => data.publicado !== false);
-  return projetos.map((projeto) => ({ params: { slug: projeto.id }, props: { projeto } }));
+  return projetos.map((projeto) => ({
+    params: { slug: projeto.id },
+    props: { projeto, outros: projetos.filter((p) => p.id !== projeto.id).slice(0, 3) },
+  }));
 }
 
-const { projeto } = Astro.props;
+const { projeto, outros } = Astro.props;
 const { Content } = await render(projeto);
 const d = projeto.data;
 ---
@@ -65,7 +79,7 @@ const d = projeto.data;
               src={item.imagem}
               alt={item.alt}
               widths={[390, 700, 1200]}
-              sizes="(min-width: 1200px) 1136px, 100vw"
+              sizes="(min-width: 1200px) 1003px, 100vw"
               loading="lazy"
             />
           ))}
@@ -73,6 +87,31 @@ const d = projeto.data;
       )}
     </div>
   </article>
+
+  {outros.length > 0 && (
+    <section class="outros">
+      <header class="outros__cabeca">
+        <h2 class="outros__titulo">Outros Projetos</h2>
+        <a class="outros__botao" href="/projetos">Ver todos</a>
+      </header>
+      <ul class="outros__grade">
+        {outros.map((p) => (
+          <li>
+            <a href={`/projetos/${p.id}`}>
+              <Image
+                src={p.data.capa}
+                alt={p.data.capaAlt}
+                widths={[523, 1046]}
+                sizes="(min-width: 1200px) 523px, 90vw"
+                loading="lazy"
+              />
+              <h3>{p.data.titulo}</h3>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   <div slot="rodape">
 
@@ -84,70 +123,149 @@ const d = projeto.data;
 </Base>
 
 <style>
+  /* ─── Herói ───────────────────────────────────────────────
+     Foto de 1920x1152 com o gradiente diagonal do design. O gradiente não
+     é enfeite: sem ele o cabeçalho claro fica ilegível sobre foto clara. */
   .projeto__hero { position: relative; }
   .projeto__capa {
+    aspect-ratio: 1920 / 1152;
     display: block;
-    width: 100%;
     height: auto;
-    aspect-ratio: 1440 / 882;
+    max-height: 80vh;
     object-fit: cover;
+    width: 100%;
+  }
+  .projeto__hero::after {
+    background: linear-gradient(156.5deg, rgb(0 0 0 / 0.6) 29.48%, rgb(0 0 0 / 0.222) 86.19%);
+    content: '';
+    inset: 0;
+    position: absolute;
   }
   .projeto__titulo {
-    position: absolute;
-    left: 24px;
-    bottom: 40px;
-    right: 24px;
-    font: 700 100px/1 'Mulish', system-ui, sans-serif;
-    color: #ffffff;
+    color: var(--fig-cinza-50);
+    font: var(--fig-peso-normal) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-display);
+    left: 50%;
+    letter-spacing: 0.04em;
     margin: 0;
-    text-wrap: balance;
+    position: absolute;
+    text-align: center;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 1200px);
+    z-index: 1;
   }
-  .projeto__interno { margin-inline: auto; max-width: 1184px; padding: 64px 24px; }
 
-  .ficha__titulo,
-  .concepcao__titulo {
-    font: 600 40px/1.2 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 24px;
+  /* ─── Corpo: ficha sticky à esquerda, texto à direita ─────*/
+  .projeto__interno {
+    align-items: flex-start;
+    display: grid;
+    gap: var(--fig-e-5xl);
+    grid-template-columns: 593fr 1003fr;
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
   }
-  .ficha { margin-bottom: 64px; }
-  .ficha__lista { display: grid; gap: 16px; margin: 0; }
-  @media (min-width: 810px) {
-    .ficha__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .ficha { position: sticky; top: var(--fig-e-2xl); }
+  .ficha__titulo {
+    color: var(--fig-cinza-900);
+    font: var(--fig-peso-semi) clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem) / var(--fig-altura-titulo) var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-2xl);
+  }
+  .ficha__lista { display: flex; flex-direction: column; gap: var(--fig-e-xl); margin: 0; }
+  .ficha__lista > div {
+    border-bottom: 1px solid var(--fig-borda);
+    display: flex;
+    gap: var(--fig-e-md);
+    justify-content: space-between;
+    padding-bottom: var(--fig-e-sm);
   }
   .ficha__lista dt {
-    font: 600 29px/1.3 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
+    color: var(--fig-texto);
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.3 var(--fig-fonte-corpo);
   }
   .ficha__lista dd {
-    font: 700 29px/1.3 'Mulish', system-ui, sans-serif;
-    color: #21201f;
+    color: var(--fig-cinza-900);
+    font: var(--fig-peso-forte) var(--fig-f-corpo) / 1.3 var(--fig-fonte-corpo);
+    margin: 0;
+    text-align: right;
+  }
+
+  .concepcao__titulo {
+    color: var(--fig-cinza-900);
+    font: var(--fig-peso-normal) clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem) / var(--fig-altura-titulo) var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-lg);
+  }
+  .concepcao__corpo :global(p) {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) clamp(1.0625rem, 0.95rem + 0.5vw, 1.375rem) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-md);
+  }
+  .concepcao__corpo :global(strong) { color: var(--fig-cinza-900); font-weight: 800; }
+
+  .galeria { display: grid; gap: var(--fig-e-lg); margin-top: var(--fig-e-2xl); }
+  .galeria :global(img) {
+    border-radius: var(--fig-raio-xl);
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  /* ─── Outros projetos ─────────────────────────────────────*/
+  .outros {
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+    padding: 0 var(--fig-margem-interna) var(--fig-secao-y);
+  }
+  .outros__cabeca {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fig-e-lg);
+    justify-content: space-between;
+    margin-bottom: var(--fig-e-3xl);
+  }
+  .outros__titulo {
+    color: #000;
+    font: var(--fig-peso-forte) clamp(1.75rem, 1.2rem + 1.8vw, 3rem) / 1.2 var(--fig-fonte-corpo);
     margin: 0;
   }
-
-  .concepcao__corpo :global(p) {
-    font: 600 22px/1.6 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 0 0 16px;
-    max-width: 70ch;
+  .outros__botao {
+    background: var(--fig-primaria-clara);
+    border-radius: var(--fig-raio-xs);
+    color: #fff;
+    font: var(--fig-peso-forte) var(--fig-t-corpo) / 1.2 var(--fig-fonte-ui);
+    min-width: 418px;
+    padding: var(--fig-e-sm) var(--fig-e-lg);
+    text-align: center;
+    text-decoration: none;
   }
-  .concepcao__corpo :global(strong) { font-weight: 900; color: #21201f; }
-
-  .galeria { display: grid; gap: 24px; margin-top: 64px; }
-  .galeria :global(img) {
+  .outros__grade {
+    display: grid;
+    gap: var(--fig-e-3xl);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .outros__grade a { color: inherit; display: block; text-decoration: none; }
+  .outros__grade :global(img) {
+    border-radius: var(--fig-raio-lg);
     display: block;
+    height: 545px;
+    object-fit: cover;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+  }
+  .outros__grade h3 {
+    color: var(--fig-tinta-suave);
+    font: var(--fig-peso-normal) clamp(1.5rem, 1.1rem + 1.2vw, 2.5rem) / 1.2 var(--fig-fonte-display);
+    margin: var(--fig-e-xl) 0 0;
   }
 
   @media (max-width: 1199.98px) {
-    .projeto__titulo { font-size: 64px; }
-    .ficha__titulo, .concepcao__titulo { font-size: 32px; }
-    .ficha__lista :is(dt, dd) { font-size: 22px; }
-  }
-  @media (max-width: 809.98px) {
-    .projeto__titulo { font-size: 36px; bottom: 24px; }
-    .concepcao__corpo :global(p) { font-size: 18px; }
+    .projeto__interno { grid-template-columns: 1fr; gap: var(--fig-e-2xl); }
+    .ficha { position: static; }
+    .outros__botao { min-width: 0; }
+    .outros__grade :global(img) { height: 380px; }
   }
 </style>

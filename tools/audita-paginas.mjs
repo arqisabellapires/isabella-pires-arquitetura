@@ -21,9 +21,35 @@
 import { chromium } from '/home/gabfelix/dev/portfolio/node_modules/playwright/index.mjs';
 import { readFileSync, statSync, existsSync } from 'node:fs';
 import { execSync } from 'node:child_process';
+import { createServer } from 'node:http';
+import { join, extname } from 'node:path';
 
 const arquivos = execSync('find dist/client -name "*.html"').toString().trim().split('\n').filter(Boolean);
 if (!arquivos.length) { console.error('sem dist/client — rode `npx astro build` antes'); process.exit(1); }
+
+/*
+  As páginas são SERVIDAS, não injetadas com setContent.
+
+  Com setContent o <link rel="stylesheet"> externo nunca é buscado: o
+  navegador só enxerga o CSS inline. O verificador de contraste então media
+  a cor de elementos cujo estilo não tinha chegado, e acusava "branco sobre
+  branco" em botões que na página real são brancos sobre caramelo. Portão
+  que dá alarme falso treina a gente a ignorá-lo, que é pior do que não ter
+  portão.
+*/
+const TIPOS = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript',
+  '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp', '.avif': 'image/avif', '.woff2': 'font/woff2' };
+const servidor = createServer((req, res) => {
+  let alvo = join('dist/client', decodeURIComponent(req.url.split('?')[0]));
+  if (!extname(alvo)) alvo = join(alvo, 'index.html');
+  try {
+    res.writeHead(200, { 'content-type': TIPOS[extname(alvo)] ?? 'application/octet-stream' });
+    res.end(readFileSync(alvo));
+  } catch { res.writeHead(404).end(); }
+});
+await new Promise((r) => servidor.listen(0, r));
+const PORTA = servidor.address().port;
 
 const nav = await chromium.launch();
 const pg = await nav.newPage();
@@ -38,7 +64,7 @@ for (const f of arquivos) {
   somaKB += kb; maiorKB = Math.max(maiorKB, kb);
   const rota = f.replace('dist/client', '').replace('/index.html', '') || '/';
 
-  await pg.setContent(html, { waitUntil: 'domcontentloaded' });
+  await pg.goto(`http://localhost:${PORTA}${rota}`, { waitUntil: 'networkidle' });
   const r = await pg.evaluate(() => ({
     h1: document.querySelectorAll('h1').length,
     title: document.title.trim(),
@@ -75,6 +101,21 @@ for (const f of arquivos) {
         branco", quando eles estão perfeitamente legíveis sobre a capa.
       */
       const fundoDe = (el) => {
+        /*
+          Elemento posicionado sobre uma imagem que ele não contém — o menu
+          claro por cima da foto do herói é o caso — também é "texto sobre
+          foto", e medir a cor do <body> ali dá 1,09:1 num menu que na tela
+          está perfeitamente legível. Testa por geometria: se algum <img> da
+          página cobre o retângulo deste elemento, o contraste é do pixel.
+        */
+        const r = el.getBoundingClientRect();
+        if (r.width && r.height) {
+          for (const img of document.images) {
+            const q = img.getBoundingClientRect();
+            if (!q.width || !q.height) continue;
+            if (r.left >= q.left - 1 && r.right <= q.right + 1 && r.top >= q.top - 1 && r.bottom <= q.bottom + 1) return null;
+          }
+        }
         for (let n = el; n; n = n.parentElement) {
           const cs = getComputedStyle(n);
           if (cs.backgroundImage && cs.backgroundImage !== 'none') return null;
@@ -129,6 +170,7 @@ for (const f of arquivos) {
   if (r.descricao) descricoes.set(r.descricao, [...(descricoes.get(r.descricao) ?? []), rota]);
 }
 await nav.close();
+servidor.close();
 
 for (const [t, rotas] of titles) if (rotas.length > 1) problemas.push(`<title> repetido em ${rotas.length}: "${t.slice(0, 50)}" → ${rotas.slice(0, 3).join(', ')}`);
 for (const [d, rotas] of descricoes) if (rotas.length > 1) problemas.push(`description repetida em ${rotas.length} rotas → ${rotas.slice(0, 3).join(', ')}`);

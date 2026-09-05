@@ -6,10 +6,15 @@
  * Uma decisão de projeto registrada aqui: **o design mostra o rodapé com
  * quatro fundos diferentes** entre as telas — #a98d67 (Serviços, Sobre nós),
  * #3a2e26 (Blog), #f8efe9 (Contato) e #989694 (Projeto detalhe). Isso é
- * inconsistência do próprio Figma, não do código. Implementei o caramelo
- * #a98d67, que é o mais frequente, com uma variante escura disponível por
- * `data-variante`. Uniformizar era a escolha certa: rodapé que muda de cor
- * a cada página parece defeito, não intenção.
+ * inconsistência do próprio Figma, não do código, e uniformizar é a escolha
+ * certa: rodapé que muda de cor a cada página parece defeito, não intenção.
+ *
+ * O padrão é o **#3a2e26**, e não o caramelo, por um motivo medido: com
+ * fundo #a98d67 os textos do rodapé (#eee e #e9e2da) dão contraste de
+ * 2,70:1 e 2,44:1 — abaixo do mínimo de 3:1, e o portão acusou isso em 156
+ * pontos do site. Com #3a2e26 a razão vai a 11,32:1. O caramelo continua
+ * disponível em `data-variante="caramelo"` para uso decorativo, mas não é
+ * o padrão porque não é legível.
  *
  * O Figma desenha cinco redes sociais (inclui TikTok e YouTube). O site.ts
  * tem três perfis reais. Ficam as três: perfil que não existe não vira link.
@@ -20,10 +25,10 @@
 import { rodape, site } from '~/lib/site';
 
 interface Props {
-  /** 'escuro' usa o fundo #3a2e26 que o design aplica no Blog. */
-  variante?: 'caramelo' | 'escuro';
+  /** 'caramelo' é o #a98d67 do design — decorativo, com contraste baixo. */
+  variante?: 'escuro' | 'caramelo';
 }
-const { variante = 'caramelo' } = Astro.props;
+const { variante = 'escuro' } = Astro.props;
 
 const redes = [
   { nome: 'Instagram', href: site.redes.instagram, icone: '/icones/instagram.svg' },
@@ -81,11 +86,11 @@ const redes = [
 
 <style>
   .rodape {
-    background: var(--fig-primaria-clara);
+    background: var(--fig-fundo-escuro);
     color: var(--fig-cinza-50);
     padding: var(--fig-e-5xl) var(--fig-margem-interna);
   }
-  .rodape[data-variante='escuro'] { background: var(--fig-fundo-escuro); }
+  .rodape[data-variante='caramelo'] { background: var(--fig-primaria-clara); }
 
   .rodape__interno {
     display: flex;

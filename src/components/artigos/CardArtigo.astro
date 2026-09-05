@@ -1,11 +1,24 @@
 ---
 /**
- * Card da grade de artigos. Medido em _capturas/artigos/medidas.desktop.json:
- * título 20px/700 Mulish, categoria e tempo de leitura 16px/400, coluna de
- * 283px numa grade de 3 (x=116, 536, 956).
+ * Card de artigo — reconstruído contra o Figma (node 1:1116), medidas em
+ * `_figma/blog-medidas.json`.
  *
- * O "6min" da captura é tempo de leitura calculado, não escrito à mão: sai da
- * contagem de palavras do próprio markdown, a 200 palavras por minuto.
+ * O card é **horizontal**: imagem de 385×333 com raio 32 à esquerda, coluna
+ * de texto de 507px à direita, gap 24. A grade da listagem é 2 por fileira,
+ * não 3 colunas verticais.
+ *
+ * O selo de categoria muda de cor por categoria — é o que dá ritmo à página.
+ * As cores saem do design; as categorias são as quatro reais das coleções,
+ * não as seis do Figma (que listava "Finanças", "Imobiliária", "Tutoriais",
+ * que não existem no conteúdo).
+ *
+ * A meta é data · autora, com um círculo de 4px separando (o design mostra
+ * também a hora; ver o comentário abaixo). O "6min" de tempo de leitura,
+ * que o site exibia, não existe no design — continua disponível na prop,
+ * apenas não é mostrado.
+ *
+ * `variante="compacto"` empilha o card, para a home, onde ele divide a
+ * largura com outros dois.
  */
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
@@ -15,50 +28,122 @@ interface Props {
   minutos: number;
   /** A primeira fileira carrega ansioso; o resto espera o scroll. */
   prioritaria?: boolean;
+  variante?: 'horizontal' | 'compacto';
 }
-const { artigo, minutos, prioritaria = false } = Astro.props;
+const { artigo, prioritaria = false, variante = 'horizontal' } = Astro.props;
 const d = artigo.data;
+
+/*
+  O design mostra data · hora · autora. A hora sai fora: as datas do
+  conteúdo não têm hora de verdade — todas caem no mesmo horário por
+  conversão de fuso, e repetir "21:00" em 25 artigos é ruído, não dado.
+*/
+const data = d.publicadoEm.toLocaleDateString('pt-BR');
 ---
 
-<article class="card">
+<article class="card" data-variante={variante}>
   <a class="card__link" href={`/artigos/${artigo.id}`}>
     <Image
       class="card__capa"
       src={d.capa}
       alt={d.capaAlt}
-      widths={[283, 566]}
-      sizes="(min-width: 1200px) 283px, (min-width: 810px) 45vw, 90vw"
+      widths={[385, 770]}
+      sizes="(min-width: 1200px) 385px, (min-width: 810px) 45vw, 90vw"
       loading={prioritaria ? 'eager' : 'lazy'}
     />
-    <h2 class="card__titulo">{d.titulo}</h2>
+    <div class="card__texto">
+      <h2 class="card__titulo">{d.titulo}</h2>
+      <p class="card__meta">
+        <span>{data}</span>
+        <span class="card__ponto" aria-hidden="true"></span>
+        <span>Isabella Pires</span>
+      </p>
+      <p class="card__selo" data-categoria={d.categoria}>{d.categoria}</p>
+      {d.resumo && <p class="card__resumo">{d.resumo}</p>}
+      <span class="card__cta">Ler mais</span>
+    </div>
   </a>
-  <p class="card__meta">
-    <span class="card__categoria">{d.categoria}</span>
-    <span class="card__minutos">{minutos}min</span>
-  </p>
 </article>
 
 <style>
-  .card { display: flex; flex-direction: column; }
-  .card__link { text-decoration: none; color: inherit; }
-  .card__capa {
+  .card__link {
+    color: inherit;
+    display: flex;
+    gap: var(--fig-e-lg);
+    text-decoration: none;
+  }
+  .card[data-variante='compacto'] .card__link { flex-direction: column; }
+
+  .card :global(.card__capa) {
+    border-radius: var(--fig-raio-xl);
     display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 283 / 220;
+    flex: none;
+    height: 333px;
     object-fit: cover;
-    border-radius: 8px;
+    transition: transform var(--dur-card-projeto-hover) var(--mola-card-projeto-hover);
+    width: clamp(220px, 32%, 385px);
+  }
+  .card[data-variante='compacto'] :global(.card__capa) { height: 240px; width: 100%; }
+  .card__link:hover :global(.card__capa) { transform: scale(1.02); }
+
+  .card__texto {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-sm);
+    min-width: 0;
   }
   .card__titulo {
-    font: 700 20px/1.3 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 16px 0 0;
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-normal) clamp(1.375rem, 1.1rem + 0.9vw, 2.0625rem) / 1.15 var(--fig-fonte-display);
+    margin: 0;
+    text-wrap: balance;
   }
   .card__meta {
+    align-items: center;
+    color: var(--fig-texto-meta);
     display: flex;
-    gap: 24px;
-    font: 400 16px/1.4 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 8px 0 0;
+    flex-wrap: wrap;
+    font: var(--fig-peso-forte) var(--fig-t-meta) / var(--fig-altura-corpo) var(--fig-fonte-corpo);
+    gap: var(--fig-e-xs);
+    margin: 0;
+  }
+  .card__ponto {
+    background: currentColor;
+    border-radius: 50%;
+    display: block;
+    height: 4px;
+    width: 4px;
+  }
+
+  /* O selo muda de cor por categoria: é o que dá ritmo à grade. */
+  .card__selo {
+    align-self: flex-start;
+    background: #8d7252;
+    border-radius: var(--fig-raio-xs);
+    color: var(--fig-cinza-50);
+    font: var(--fig-peso-normal) var(--fig-t-meta) / 1.4 var(--fig-fonte-display);
+    margin: 0;
+    padding: var(--fig-e-2xs) var(--fig-e-lg);
+  }
+  .card__selo[data-categoria='Dicas'] { background: var(--fig-primaria-ativa); }
+  .card__selo[data-categoria='Notícias'] { background: var(--fig-secundaria-ativa); }
+  .card__selo[data-categoria='Projetos & Portfólios'] { background: var(--fig-primaria-media); }
+
+  .card__resumo {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) var(--fig-t-corpo-p) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    margin: 0;
+    max-width: 507px;
+  }
+  .card__cta {
+    border-bottom: 1px solid currentColor;
+    align-self: flex-start;
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-forte) var(--fig-t-meta) / 1.4 var(--fig-fonte-corpo);
+  }
+
+  @media (max-width: 809.98px) {
+    .card__link { flex-direction: column; }
+    .card :global(.card__capa) { height: 240px; width: 100%; }
   }
 </style>

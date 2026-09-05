@@ -18,6 +18,7 @@ import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
+import Migalhas from '~/components/Migalhas.astro';
 import CardArtigo from '~/components/artigos/CardArtigo.astro';
 import Newsletter from '~/components/formularios/Newsletter.astro';
 import { categorias } from '~/lib/site';
@@ -39,12 +40,9 @@ const comMinutos = await Promise.all(
   <Cabecalho slot="cabecalho" />
 
   <div class="listagem">
-    <nav class="migalhas" aria-label="Migalhas">
-      <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Blog</span>
-    </nav>
+    <Migalhas itens={[{ rotulo: 'Início', href: '/' }, { rotulo: 'Blog' }]} />
 
-    <p class="listagem__rotulo">Blog</p>
-    <h1 class="listagem__titulo">Dicas e notícias para quem realmente se destaca.</h1>
+    <h1 class="listagem__titulo">Blog</h1>
 
     <nav class="filtros" aria-label="Filtrar por categoria">
       <a class="filtros__item filtros__item--ativo" href="/artigos" aria-current="page">Todos</a>
@@ -74,53 +72,50 @@ const comMinutos = await Promise.all(
 <style>
   .listagem {
     margin-inline: auto;
-    max-width: 1184px;
-    padding: 120px 24px 64px;
-  }
-  .migalhas {
-    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    color: #341f04;
-    margin-bottom: 48px;
-  }
-  .migalhas a { color: inherit; text-decoration: none; }
-  .listagem__rotulo {
-    font: 600 60px/1.1 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 24px;
+    max-width: var(--fig-largura-conteudo);
+    padding: var(--fig-e-4xl) var(--fig-margem-interna) var(--fig-secao-y);
   }
   .listagem__titulo {
-    font: 500 64px/1.1 'Manrope', 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 48px;
-    max-width: 20ch;
-    text-wrap: balance;
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
+    margin: var(--fig-e-3xl) 0 var(--fig-e-2xl);
   }
+
+  /* Pastilhas: a ativa é sólida, as outras têm contorno. Node 1:1108.
+     Continuam sendo links por rota — cada categoria tem URL própria, o que
+     vale mais para busca do que filtrar no cliente. */
   .filtros {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
-    margin-bottom: 40px;
+    gap: var(--fig-e-md);
+    margin-bottom: var(--fig-e-3xl);
   }
   .filtros__item {
-    font: 400 16px/1.4 'Inter', system-ui, sans-serif;
-    color: #5a5755;
+    background: #fff;
+    border: 1px solid var(--fig-primaria-ativa);
+    border-radius: var(--fig-raio-sm);
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.2 var(--fig-fonte-corpo);
+    padding: var(--fig-e-sm) var(--fig-e-lg);
     text-decoration: none;
+    transition: background var(--dur-filtros-categoria-artigos) var(--mola-filtros-categoria-artigos);
   }
-  .filtros__item--ativo { color: #341f04; font-weight: 600; }
+  .filtros__item:hover { background: var(--fig-fundo-pessego); }
+  .filtros__item--ativo {
+    background: var(--fig-primaria-ativa);
+    border-color: var(--fig-primaria-ativa);
+    color: var(--fig-cinza-50);
+  }
+
+  /* Duas por fileira, como no design — não três colunas. */
   .grade {
     display: grid;
-    gap: 40px 40px;
-    grid-template-columns: repeat(3, 1fr);
+    gap: var(--fig-e-3xl) var(--fig-e-lg);
+    grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+    margin-bottom: var(--fig-secao-y);
   }
-  @media (max-width: 1199.98px) {
-    .listagem__rotulo { font-size: 44px; }
-    .listagem__titulo { font-size: 44px; }
-    .grade { grid-template-columns: repeat(2, 1fr); }
-  }
+
   @media (max-width: 809.98px) {
-    .listagem { padding-top: 96px; }
-    .listagem__rotulo { font-size: 32px; }
-    .listagem__titulo { font-size: 32px; }
     .grade { grid-template-columns: 1fr; }
   }
 </style>

@@ -171,7 +171,7 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     </header>
     <div class="blog__grade">
       {recentes.map(({ artigo, minutos }) => (
-        <CardArtigo artigo={artigo} minutos={minutos} />
+        <CardArtigo artigo={artigo} minutos={minutos} variante="compacto" />
       ))}
     </div>
     <a class="ligacao" href="/artigos">Ver todas as postagens</a>

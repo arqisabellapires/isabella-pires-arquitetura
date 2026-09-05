@@ -47,7 +47,7 @@ const comMinutos = await Promise.all(
   <Cabecalho slot="cabecalho" />
 
   <div class="listagem">
-    <nav class="migalhas" aria-label="Migalhas">
+    <nav class="migalhas migalhas--antiga" aria-label="Migalhas">
       <a href="/">Início</a> <span aria-hidden="true">/</span>
       <a href="/artigos">Blog</a> <span aria-hidden="true">/</span>
       <span>{categoria}</span>
@@ -96,14 +96,32 @@ const comMinutos = await Promise.all(
     margin: 0 0 40px;
     text-wrap: balance;
   }
-  .filtros { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 40px; }
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fig-e-md);
+    margin-bottom: var(--fig-e-3xl);
+  }
   .filtros__item {
-    font: 400 16px/1.4 'Inter', system-ui, sans-serif;
-    color: #5a5755;
+    background: #fff;
+    border: 1px solid var(--fig-primaria-ativa);
+    border-radius: var(--fig-raio-sm);
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.2 var(--fig-fonte-corpo);
+    padding: var(--fig-e-sm) var(--fig-e-lg);
     text-decoration: none;
   }
-  .filtros__item--ativo { color: #341f04; font-weight: 600; }
-  .grade { display: grid; gap: 40px; grid-template-columns: repeat(3, 1fr); }
+  .filtros__item--ativo {
+    background: var(--fig-primaria-ativa);
+    border-color: var(--fig-primaria-ativa);
+    color: var(--fig-cinza-50);
+  }
+  .grade {
+    display: grid;
+    gap: var(--fig-e-3xl) var(--fig-e-lg);
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    margin-bottom: var(--fig-secao-y);
+  }
   @media (max-width: 1199.98px) {
     .listagem__titulo { font-size: 44px; }
     .grade { grid-template-columns: repeat(2, 1fr); }

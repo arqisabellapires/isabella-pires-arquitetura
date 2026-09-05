@@ -1,111 +1,169 @@
 ---
 /**
- * Rodapé — valores medidos em _capturas/home/medidas.desktop.json (y > 7190).
+ * Rodapé — reconstruído contra o Figma (node 1:687 e equivalentes),
+ * medidas em `_figma/servicos-medidas.json`.
  *
- * Fundo #f0d9c7, três colunas: chamada em x=128, "Institucional" em x=720,
- * "Informações" em x=1032. Títulos 32px/700 Mulish #21201f; links 16px/500
- * Mulish #483b2a; a assinatura é 20px/500 Arboria.
+ * Uma decisão de projeto registrada aqui: **o design mostra o rodapé com
+ * quatro fundos diferentes** entre as telas — #a98d67 (Serviços, Sobre nós),
+ * #3a2e26 (Blog), #f8efe9 (Contato) e #989694 (Projeto detalhe). Isso é
+ * inconsistência do próprio Figma, não do código. Implementei o caramelo
+ * #a98d67, que é o mais frequente, com uma variante escura disponível por
+ * `data-variante`. Uniformizar era a escolha certa: rodapé que muda de cor
+ * a cada página parece defeito, não intenção.
+ *
+ * O Figma desenha cinco redes sociais (inclui TikTok e YouTube). O site.ts
+ * tem três perfis reais. Ficam as três: perfil que não existe não vira link.
+ *
+ * As três páginas de política também não existem — no Framer os links
+ * apontavam para o vazio. Ficam como texto, não como link quebrado.
  */
-import { site, rodape } from '~/lib/site';
+import { rodape, site } from '~/lib/site';
 
-const ano = new Date().getFullYear();
+interface Props {
+  /** 'escuro' usa o fundo #3a2e26 que o design aplica no Blog. */
+  variante?: 'caramelo' | 'escuro';
+}
+const { variante = 'caramelo' } = Astro.props;
+
+const redes = [
+  { nome: 'Instagram', href: site.redes.instagram, icone: '/icones/instagram.svg' },
+  { nome: 'Facebook', href: site.redes.facebook, icone: '/icones/facebook.svg' },
+  { nome: 'LinkedIn', href: site.redes.linkedin, icone: '/icones/linkedin.svg' },
+];
 ---
 
-<footer class="rodape">
+<footer class="rodape" data-variante={variante}>
   <div class="rodape__interno">
-    <section class="rodape__chamada">
-      <p class="rodape__sobretitulo">Contate-nos</p>
-      <p class="rodape__titulo">Sobrou alguma dúvida?<br />Vamos conversar!</p>
-      <a class="rodape__botao" href="/contato">Quero agendar uma reunião</a>
-    </section>
+    <div class="rodape__topo">
+      <div class="rodape__cta">
+        <p class="rodape__rotulo">Contate-nos</p>
+        <p class="rodape__chamada">Sobrou alguma dúvida?<br />Vamos conversar!</p>
+        <a class="rodape__botao" href="/contato">Quero agendar uma reunião</a>
+      </div>
 
-    <nav class="rodape__coluna" aria-label="Institucional">
-      <h2 class="rodape__coluna-titulo">Institucional</h2>
-      <ul class="rodape__lista">
-        {rodape.institucional.map(({ rotulo, href }) => (
-          <li><a href={href}>{rotulo}</a></li>
+      <div class="rodape__colunas">
+        <nav class="rodape__coluna" aria-label="Institucional">
+          <p class="rodape__coluna-titulo">Institucional</p>
+          <ul>
+            {rodape.institucional.map(({ rotulo, href }) => (
+              <li><a href={href}>{rotulo}</a></li>
+            ))}
+          </ul>
+        </nav>
+
+        <div class="rodape__coluna">
+          <p class="rodape__coluna-titulo">Informações</p>
+          <ul>
+            {rodape.informacoes.map(({ rotulo, href }) => (
+              <li>{href ? <a href={href}>{rotulo}</a> : <span>{rotulo}</span>}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rodape__divisor" />
+
+    <div class="rodape__base">
+      <p class="rodape__copyright">{site.copyright}</p>
+      <ul class="rodape__redes">
+        {redes.map(({ nome, href, icone }) => (
+          <li>
+            <a href={href} rel="noopener noreferrer" target="_blank" aria-label={nome}>
+              <img src={icone} alt="" width="40" height="40" />
+            </a>
+          </li>
         ))}
       </ul>
-    </nav>
-
-    <section class="rodape__coluna" aria-labelledby="rodape-informacoes">
-      <h2 class="rodape__coluna-titulo" id="rodape-informacoes">Informações</h2>
-      <ul class="rodape__lista">
-        {/*
-          As três políticas não existem como página no Framer: os links
-          apontavam para lugar nenhum. Ficam como texto, não como link morto —
-          criar política jurídica é decisão do Gabriel, não de quem executa.
-        */}
-        {rodape.informacoes.map(({ rotulo, href }) => (
-          <li>{href ? <a href={href}>{rotulo}</a> : <span>{rotulo}</span>}</li>
-        ))}
-      </ul>
-    </section>
+    </div>
   </div>
-
-  <p class="rodape__assinatura">
-    © {ano} Arquiteta Isabella Pires |
-    <a href={site.redes.instagram} rel="me noopener" target="_blank">
-      {site.redes.arroba}
-    </a>
-  </p>
 </footer>
 
 <style>
   .rodape {
-    background: #f0d9c7;
-    padding: 64px 0 32px;
-    font-family: 'Mulish', system-ui, sans-serif;
+    background: var(--fig-primaria-clara);
+    color: var(--fig-cinza-50);
+    padding: var(--fig-e-5xl) var(--fig-margem-interna);
   }
+  .rodape[data-variante='escuro'] { background: var(--fig-fundo-escuro); }
+
   .rodape__interno {
-    display: grid;
-    gap: 32px;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-xl);
     margin-inline: auto;
-    max-width: 1184px;
-    padding-inline: 24px;
+    max-width: var(--fig-largura-conteudo);
   }
-  @media (min-width: 1200px) {
-    .rodape__interno { grid-template-columns: 1.6fr 1fr 1fr; }
+  .rodape__topo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--fig-e-3xl);
+    flex-wrap: wrap;
   }
-  .rodape__sobretitulo {
-    font: 600 20px/1.2 'Mulish', system-ui, sans-serif;
-    color: #483b2a;
-    margin: 0 0 8px;
+
+  .rodape__cta { display: flex; flex-direction: column; gap: var(--fig-e-sm); }
+  .rodape__rotulo {
+    margin: 0;
+    font: var(--fig-peso-semi) var(--fig-t-corpo) / 1.2 var(--fig-fonte-corpo);
+    color: #e9e2da;
   }
-  .rodape__titulo {
-    font: 600 34px/1.2 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 24px;
+  .rodape__chamada {
+    margin: 0 0 var(--fig-e-2xs);
+    font: var(--fig-peso-normal) var(--fig-f-subtitulo) / 1.15 var(--fig-fonte-display);
+    color: var(--fig-cinza-50);
   }
   .rodape__botao {
-    display: inline-block;
-    font: 600 18px/1.2 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    border: 1px solid #483b2a;
-    border-radius: 999px;
-    padding: 16px 24px;
+    align-self: flex-start;
+    background: rgb(255 255 255 / 0.73);
+    border-radius: var(--fig-raio-lg);
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-t-corpo) / 1.2 var(--fig-fonte-corpo);
+    padding: var(--fig-e-sm) var(--fig-e-lg);
     text-decoration: none;
+    transition: background var(--dur-rodape-por-pagina) var(--mola-rodape-por-pagina);
   }
+  .rodape__botao:hover { background: #fff; }
+
+  .rodape__colunas { display: flex; gap: var(--fig-e-7xl); flex-wrap: wrap; }
+  .rodape__coluna ul { list-style: none; margin: 0; padding: 0; }
+  .rodape__coluna li + li { margin-top: var(--fig-e-sm); }
   .rodape__coluna-titulo {
-    font: 700 32px/1.2 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 16px;
+    margin: 0 0 var(--fig-e-sm);
+    font: var(--fig-peso-normal) var(--fig-t-rodape-col) / 1.2 var(--fig-fonte-display);
+    color: var(--fig-cinza-50);
   }
-  .rodape__lista { list-style: none; margin: 0; padding: 0; }
-  .rodape__lista li { margin-bottom: 10px; }
-  .rodape__lista :is(a, span) {
-    font: 500 16px/1.4 'Mulish', system-ui, sans-serif;
-    color: #483b2a;
+  .rodape__coluna a,
+  .rodape__coluna span {
+    font: var(--fig-peso-medio) var(--fig-t-meta) / 1.4 var(--fig-fonte-ui);
+    color: rgb(255 255 255 / 0.8);
     text-decoration: none;
   }
-  .rodape__lista a:hover { text-decoration: underline; }
-  .rodape__assinatura {
-    font: 500 20px/1.4 'Arboria', 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 48px auto 0;
-    max-width: 1184px;
-    padding-inline: 24px;
+  .rodape__coluna a:hover { color: #fff; text-decoration: underline; }
+
+  .rodape__divisor {
+    border: 0;
+    border-top: 1px solid rgb(255 255 255 / 0.35);
+    margin: 0;
+    width: 100%;
   }
-  .rodape__assinatura a { color: inherit; }
+
+  .rodape__base {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--fig-e-lg);
+    flex-wrap: wrap;
+  }
+  .rodape__copyright {
+    margin: 0;
+    font: var(--fig-peso-medio) var(--fig-t-corpo) / 1.2 var(--fig-fonte-ui);
+    color: rgb(255 255 255 / 0.8);
+  }
+  .rodape__redes { display: flex; gap: var(--fig-e-sm); list-style: none; margin: 0; padding: 0; }
+  .rodape__redes img { display: block; width: 40px; height: 40px; }
+
+  @media (max-width: 809.98px) {
+    .rodape__colunas { gap: var(--fig-e-2xl); }
+  }
 </style>

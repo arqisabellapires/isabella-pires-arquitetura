@@ -55,7 +55,7 @@ export const site = {
  * `/sobre-nos`, `./artigos/blog` → `/artigos`.
  */
 export const navegacao = [
-  { rotulo: 'Home', href: '/' },
+  { rotulo: 'Início', href: '/' },
   { rotulo: 'Serviços', href: '/servicos' },
   { rotulo: 'Projetos', href: '/projetos' },
   { rotulo: 'Blog', href: '/artigos' },

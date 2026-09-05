@@ -15,6 +15,7 @@ import { Image } from 'astro:assets';
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
+import Wordmark from '~/components/Wordmark.astro';
 import CardArtigo from '~/components/artigos/CardArtigo.astro';
 import { servicos } from '~/lib/conteudo';
 import { minutosDeLeitura } from '~/lib/artigos';
@@ -141,7 +142,13 @@ const numeros = [
     </div>
   </section>
 
-  <Rodape slot="rodape" />
+  <div slot="rodape">
+
+    <Wordmark />
+
+    <Rodape />
+
+  </div>
 </Base>
 
 <style>

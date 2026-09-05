@@ -19,6 +19,7 @@ import { Image } from 'astro:assets';
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
+import Wordmark from '~/components/Wordmark.astro';
 
 const projetos = (await getCollection('projetos', ({ data }) => data.publicado !== false)).sort(
   (a, b) => a.data.ordem - b.data.ordem,
@@ -61,7 +62,13 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     </ul>
   </div>
 
-  <Rodape slot="rodape" />
+  <div slot="rodape">
+
+    <Wordmark />
+
+    <Rodape />
+
+  </div>
 </Base>
 
 <style>

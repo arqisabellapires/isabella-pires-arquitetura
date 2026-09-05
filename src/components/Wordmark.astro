@@ -1,0 +1,38 @@
+---
+/**
+ * O "ISABELLA PIRES" gigante que fecha todas as 7 telas, logo acima do
+ * rodapé. Figma node 1:685 / 1:414: Faberge Regular 192px, tracking 19,2px,
+ * caixa de 367px de altura, centralizado.
+ *
+ * É decorativo — o nome do escritório já está no <title>, no JSON-LD e no
+ * rodapé. Por isso `aria-hidden`: repetir isso num leitor de tela é ruído,
+ * não informação.
+ *
+ * Uma armadilha registrada do projeto passa por aqui: nas capturas do
+ * Framer este wordmark tem cada letra numa caixa separada, e por isso os
+ * quatro projetos chegaram a se chamar "I" numa extração anterior. Aqui é
+ * um texto só.
+ */
+---
+
+<div class="wordmark" aria-hidden="true">
+  <span>ISABELLA PIRES</span>
+</div>
+
+<style>
+  .wordmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: var(--fig-e-xl) var(--fig-margem-interna);
+    width: 100%;
+  }
+  .wordmark span {
+    color: var(--fig-tinta);
+    font: var(--fig-peso-normal) var(--fig-f-wordmark) / 1.1 var(--fig-fonte-display);
+    letter-spacing: 0.1em;
+    text-align: center;
+    white-space: nowrap;
+  }
+</style>

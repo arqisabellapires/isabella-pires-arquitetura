@@ -17,6 +17,7 @@ import { getCollection } from 'astro:content';
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
+import Wordmark from '~/components/Wordmark.astro';
 import CardArtigo from '~/components/artigos/CardArtigo.astro';
 import Newsletter from '~/components/formularios/Newsletter.astro';
 import { categorias } from '~/lib/site';
@@ -61,7 +62,13 @@ const comMinutos = await Promise.all(
     <Newsletter />
   </div>
 
-  <Rodape slot="rodape" />
+  <div slot="rodape">
+
+    <Wordmark />
+
+    <Rodape />
+
+  </div>
 </Base>
 
 <style>

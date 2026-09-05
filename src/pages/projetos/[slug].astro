@@ -14,6 +14,7 @@ import { Image } from 'astro:assets';
 import Base from '~/layouts/Base.astro';
 import Cabecalho from '~/components/Cabecalho.astro';
 import Rodape from '~/components/Rodape.astro';
+import Wordmark from '~/components/Wordmark.astro';
 
 export async function getStaticPaths() {
   const projetos = await getCollection('projetos', ({ data }) => data.publicado !== false);
@@ -73,7 +74,13 @@ const d = projeto.data;
     </div>
   </article>
 
-  <Rodape slot="rodape" />
+  <div slot="rodape">
+
+    <Wordmark />
+
+    <Rodape />
+
+  </div>
 </Base>
 
 <style>

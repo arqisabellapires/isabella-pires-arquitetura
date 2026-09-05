@@ -22,3 +22,6 @@ _fonte-framer/
 
 # Gravações de referência das interações do Framer — pesadas, fora do versionamento
 _capturas/_videos/
+
+# Fotos de conferência: geradas por tools/tira-foto.mjs, pesam e regeneram.
+_figma/fotos/

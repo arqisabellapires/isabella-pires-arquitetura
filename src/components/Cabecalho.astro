@@ -1,23 +1,28 @@
 ---
 /**
- * Cabeçalho — valores medidos em _capturas/home/medidas.<bp>.json (y < 80).
+ * Cabeçalho — reconstruído contra o Figma (node 1:64 / 1:179), medidas em
+ * `_figma/servicos-medidas.json` e `_figma/home-medidas.json`.
  *
- * Marca "ISABELLA PIRES" 16px/700 Mulish branco em x=152 no desktop, 14px em
- * x=73 nos outros dois. Os seis links são 15px/500 Inter, branco, e existem
- * **só no desktop** — em tablet e mobile viram menu, exatamente como a ficha
- * `menu-celular` mede.
+ * Duas coisas que o design faz e a versão anterior não fazia:
  *
- * A altura aberta do menu é 519px, MEDIDA no Framer vivo. O `variantes.json`
- * diz 223 e está errado: as classes framer-v-* não sobrevivem a uma
- * republicação (HANDOFF §6.9 e a correção 3 do §0). Medida manda.
+ * 1. **O logo é a monograma em SVG** (56,22 × 73, espelhado na vertical),
+ *    não a palavra "ISABELLA PIRES" em texto. O wordmark existe, mas é
+ *    outro elemento, gigante, logo acima do rodapé.
+ * 2. **A cor depende do que está atrás.** Sobre o herói da home o menu é
+ *    claro (#eee) e não tem borda; nas páginas internas é escuro (#352005)
+ *    sobre o fundo areia, com uma borda inferior de 1px. Foi exatamente
+ *    isso que já quebrou uma vez — menu branco sobre bege, invisível.
  *
- * O estado é atributo `data-estado`, nunca classe gerada pelo Framer — é
- * regra da spec §4.4.
+ * A altura muda entre as duas situações: 151px sobre o herói, 133px nas
+ * internas. Está no Figma, e é o tipo de detalhe que dá o "cheiro" certo.
+ *
+ * O menu de celular usa a mola medida no Framer vivo (damping 40, mass 1,
+ * stiffness 400), já convertida em `linear()` por tools/mola-para-css.mjs.
  */
 import { navegacao, site } from '~/lib/site';
 
 interface Props {
-  /** Sobre hero escura o cabeçalho começa transparente e claro. */
+  /** Sobre herói escuro o cabeçalho fica claro e sem borda. */
   sobreHero?: boolean;
 }
 const { sobreHero = false } = Astro.props;
@@ -26,53 +31,56 @@ const estaAtiva = (href: string) =>
   href === '/' ? atual === '/' : atual === href || atual.startsWith(`${href}/`);
 ---
 
-<header class:list={['cabecalho', sobreHero && 'cabecalho--sobre-hero']} data-estado="fechado">
-  <div class="cabecalho__interno">
-    <a href="/" class="cabecalho__marca">{site.nomeCurto.toUpperCase()}</a>
+<header class:list={['cabecalho', sobreHero && 'cabecalho--claro']} data-estado="fechado">
+  <a class="cabecalho__logo" href="/" aria-label={`${site.nomeCurto} — início`}>
+    <img src="/icones/logo-ip.svg" alt="" width="56" height="73" />
+  </a>
 
-    <nav class="cabecalho__nav" aria-label="Navegação principal">
-      <ul class="cabecalho__lista">
-        {navegacao.map(({ rotulo, href }) => (
-          <li>
-            <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>{rotulo}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-
-    <button
-      type="button"
-      class="cabecalho__alternador"
-      aria-expanded="false"
-      aria-controls="menu-movel"
-      aria-label="Abrir menu"
-      data-alternador
-    >
-      <span class="cabecalho__risco" aria-hidden="true"></span>
-      <span class="cabecalho__risco" aria-hidden="true"></span>
-    </button>
-  </div>
-
-  <nav class="cabecalho__movel" id="menu-movel" aria-label="Navegação principal" hidden>
-    <ul>
+  <nav class="cabecalho__nav" aria-label="Navegação principal">
+    <ul class="cabecalho__lista">
       {navegacao.map(({ rotulo, href }) => (
-        <li>
+        <li class="cabecalho__item">
           <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>{rotulo}</a>
+          {rotulo === 'Serviços' && (
+            <img class="cabecalho__seta" src="/icones/seta-baixo.svg" alt="" width="32" height="32" />
+          )}
         </li>
       ))}
     </ul>
   </nav>
+
+  <button
+    type="button"
+    class="cabecalho__alternador"
+    aria-expanded="false"
+    aria-controls="menu-movel"
+    aria-label="Abrir menu"
+    data-alternador
+  >
+    <span class="cabecalho__risco" aria-hidden="true"></span>
+    <span class="cabecalho__risco" aria-hidden="true"></span>
+  </button>
 </header>
+
+<nav class="menu-movel" id="menu-movel" aria-label="Navegação principal" hidden>
+  <ul>
+    {navegacao.map(({ rotulo, href }) => (
+      <li>
+        <a href={href} aria-current={estaAtiva(href) ? 'page' : undefined}>{rotulo}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
 
 <script>
   /*
-    Menu de celular. Duas travas que a experiência já cobrou:
+    Duas travas que este projeto já pagou para aprender:
 
-    1. Nunca chamar preventDefault num clique que caiu num <a href> — foi o
-       que quase matou a navegação do site inteiro (HANDOFF §3). Aqui o
-       handler está no <button>, então o risco não existe por construção.
-    2. `hidden` só sai enquanto o menu está aberto, para o conteúdo não ficar
-       alcançável por teclado quando está fechado.
+    1. Nunca `preventDefault` num clique que caiu num <a href> — foi o que
+       quase matou a navegação inteira. Aqui o handler vive no <button>,
+       então o risco não existe por construção.
+    2. `hidden` só sai enquanto está aberto, para o menu fechado não ficar
+       alcançável por teclado.
   */
   const cabecalho = document.querySelector<HTMLElement>('.cabecalho');
   const botao = document.querySelector<HTMLButtonElement>('[data-alternador]');
@@ -83,12 +91,12 @@ const estaAtiva = (href: string) =>
       cabecalho.dataset.estado = abrir ? 'aberto' : 'fechado';
       botao.setAttribute('aria-expanded', String(abrir));
       botao.setAttribute('aria-label', abrir ? 'Fechar menu' : 'Abrir menu');
-      menu.hidden = !abrir;
+      if (abrir) menu.hidden = false;
+      else setTimeout(() => { menu.hidden = true; }, 240);
+      menu.dataset.estado = abrir ? 'aberto' : 'fechado';
     };
 
-    botao.addEventListener('click', () => {
-      alterna(cabecalho.dataset.estado !== 'aberto');
-    });
+    botao.addEventListener('click', () => alterna(cabecalho.dataset.estado !== 'aberto'));
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && cabecalho.dataset.estado === 'aberto') {
@@ -100,89 +108,108 @@ const estaAtiva = (href: string) =>
 </script>
 
 <style>
-  /*
-    A cor do cabeçalho depende do que está ATRÁS dele.
-
-    O componente sempre pintou tudo de branco, e a classe
-    `cabecalho--sobre-hero` não fazia nada — então nas páginas internas, que
-    têm fundo claro, o menu inteiro ficava branco sobre bege: invisível. Foi
-    assim que foi parar no preview.
-
-    Agora o padrão é a tinta escura, e o branco só entra sobre o herói
-    escuro da home e sobre a foto de capa dos projetos, que é onde ele de
-    fato precisa ser claro.
-  */
   .cabecalho {
-    position: absolute;
-    inset: 0 0 auto;
+    position: relative;
     z-index: 10;
-    font-family: 'Inter', system-ui, sans-serif;
-    --cabecalho-cor: #21201f;
-  }
-  .cabecalho--sobre-hero { --cabecalho-cor: #ffffff; }
-  .cabecalho__interno {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    margin-inline: auto;
-    max-width: 1184px;
-    min-height: 59px;
-    padding: 25px 24px;
+    gap: var(--fig-e-lg);
+    min-height: var(--fig-menu-altura-int);
+    padding: var(--fig-e-2xl) var(--fig-margem-interna);
+    border-bottom: 1px solid var(--fig-primaria-ativa);
+    background: var(--fig-fundo);
+    --menu-cor: var(--fig-primaria-ativa);
   }
-  /* Marca: 16px/700 Mulish no desktop, 14px nos outros — medido. */
-  .cabecalho__marca {
-    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    color: var(--cabecalho-cor);
-    letter-spacing: 0.02em;
-    text-decoration: none;
+
+  /* Sobre o herói: claro, sem fundo, sem borda, e por cima da imagem. */
+  .cabecalho--claro {
+    position: absolute;
+    inset: 0 0 auto;
+    min-height: var(--fig-menu-altura);
+    border-bottom: 0;
+    background: transparent;
+    --menu-cor: var(--fig-cinza-50);
   }
+
+  .cabecalho__logo { display: flex; flex: none; }
+  .cabecalho__logo img {
+    display: block;
+    width: 56px;
+    height: 73px;
+    /* O Figma espelha o monograma na vertical (-scale-y-100). */
+    transform: scaleY(-1);
+  }
+  .cabecalho--claro .cabecalho__logo img { filter: brightness(0) invert(1); }
+
   .cabecalho__lista {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: var(--fig-e-xl);
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  .cabecalho__lista a {
-    font: 500 15px/1.2 'Inter', system-ui, sans-serif;
-    color: var(--cabecalho-cor);
-    text-decoration: none;
+  .cabecalho__item {
+    display: flex;
+    align-items: center;
+    gap: var(--fig-e-2xs);
   }
-  .cabecalho__lista a[aria-current='page'] { text-decoration: underline; }
+  .cabecalho__item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--fig-e-xs) var(--fig-e-sm);
+    font: var(--fig-peso-medio) var(--fig-f-rotulo) / 1.2 var(--fig-fonte-ui);
+    color: var(--menu-cor);
+    text-decoration: none;
+    transition: opacity var(--dur-nav-desktop-estado) var(--mola-nav-desktop-estado);
+  }
+  .cabecalho__item a:hover { opacity: 0.72; }
+  .cabecalho__item a[aria-current='page'] { text-decoration: underline; text-underline-offset: 6px; }
+
+  .cabecalho__seta { width: 32px; height: 32px; flex: none; }
+  .cabecalho--claro .cabecalho__seta { filter: brightness(0) invert(1); }
 
   .cabecalho__alternador {
     display: none;
     flex-direction: column;
     gap: 5px;
+    padding: var(--fig-e-xs);
     background: none;
     border: 0;
     cursor: pointer;
-    padding: 8px;
   }
   .cabecalho__risco {
     display: block;
-    width: 22px;
+    width: 24px;
     height: 2px;
-    background: var(--cabecalho-cor);
+    background: var(--menu-cor);
   }
 
-  .cabecalho__movel {
-    background: #21201f;
-    padding: 24px;
+  /*
+    O menu de celular: 59px fechado, 519px aberto — medido no Framer vivo,
+    não deduzido das classes do Framer, que não sobrevivem a republicação.
+  */
+  .menu-movel {
+    overflow: hidden;
+    max-height: 0;
+    background: var(--fig-primaria-ativa);
+    transition: max-height var(--dur-menu-celular) var(--mola-menu-celular);
   }
-  .cabecalho__movel ul { list-style: none; margin: 0; padding: 0; }
-  .cabecalho__movel li { margin-bottom: 16px; }
-  .cabecalho__movel a {
-    font: 500 18px/1.4 'Inter', system-ui, sans-serif;
-    color: #ffffff;
+  .menu-movel[data-estado='aberto'] { max-height: 519px; }
+  .menu-movel ul { list-style: none; margin: 0; padding: var(--fig-e-lg); }
+  .menu-movel li + li { margin-top: var(--fig-e-md); }
+  .menu-movel a {
+    font: var(--fig-peso-medio) var(--fig-t-corpo) / 1.4 var(--fig-fonte-ui);
+    color: var(--fig-cinza-50);
     text-decoration: none;
   }
 
   /* Os links inline existem só no desktop — medido nos 3 breakpoints. */
   @media (max-width: 1199.98px) {
-    .cabecalho__marca { font-size: 14px; }
     .cabecalho__nav { display: none; }
     .cabecalho__alternador { display: flex; }
+    .cabecalho__logo img { width: 40px; height: 52px; }
   }
 </style>

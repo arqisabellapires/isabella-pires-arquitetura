@@ -87,16 +87,31 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
         Acreditamos que cada espaço conta uma história — e a sua merece ser contada com
         cuidado, escuta e personalidade.
       </blockquote>
-      <a class="ligacao" href="/sobre-nos">Saiba mais sobre quem somos</a>
+      <a class="botao botao--caramelo sobre__acao" href="/sobre-nos">
+        Saiba mais sobre quem somos
+      </a>
     </div>
-    <img
-      class="sobre__foto"
-      src="/imagens/figma/home--unsplash2-d4-laq-alb-da.webp"
-      alt=""
-      loading="lazy"
-      width="705"
-      height="637"
-    />
+    {/* Duas fotos no design (nodes 1:203 e 1:204), não uma: um quadrado de
+        320×321 ao lado do texto e outra de 373×402 mais abaixo, ambas com
+        raio 32. A versão anterior tinha uma foto larga de 705px. */}
+    <div class="sobre__fotos">
+      <img
+        class="sobre__foto sobre__foto--alta"
+        src="/imagens/figma/home--unsplash-gwd-zp-xup-ms0.webp"
+        alt=""
+        loading="lazy"
+        width="320"
+        height="321"
+      />
+      <img
+        class="sobre__foto sobre__foto--baixa"
+        src="/imagens/figma/home--unsplash-gwd-zp-xup-ms1.webp"
+        alt=""
+        loading="lazy"
+        width="373"
+        height="402"
+      />
+    </div>
   </section>
 
   <section class="numeros" aria-label="Nossos números" data-revela>
@@ -307,15 +322,17 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   .sobre {
     display: flex;
     align-items: center;
-    gap: var(--fig-e-3xl);
+    gap: var(--fig-e-2xl);
     justify-content: space-between;
     padding-block: var(--fig-secao-y);
   }
   .sobre__texto {
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     gap: var(--fig-e-lg);
     max-width: 705px;
+    min-width: 0;
   }
   .sobre__paragrafo {
     margin: 0;
@@ -324,26 +341,50 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     max-width: 586px;
   }
   /* O design usa uma barra de 6px com raio 100 à esquerda da citação. */
+  /* A barra é um filho com raio próprio: `border-radius` na citação
+     arredondava a caixa inteira e deformava a barra. */
   .sobre__citacao {
-    border-left: 6px solid var(--fig-primaria-ativa);
-    border-radius: var(--fig-raio-pill);
-    color: var(--fig-primaria-media);
-    font: italic var(--fig-peso-semi) var(--fig-t-corpo) / 1.5 var(--fig-fonte-corpo);
+    color: var(--fig-cinza-700);
+    display: flex;
+    font: italic var(--fig-peso-semi) var(--fig-t-corpo) / 1.4 var(--fig-fonte-corpo);
+    gap: var(--fig-e-xs);
     margin: 0;
     max-width: 586px;
-    padding-left: var(--fig-e-md);
+  }
+  .sobre__citacao::before {
+    background: var(--fig-primaria-ativa);
+    border-radius: var(--fig-raio-pill);
+    content: '';
+    flex: none;
+    width: 6px;
+  }
+  .sobre__acao { align-self: start; margin-top: var(--fig-e-md); }
+
+  /* As duas fotos do design, deslocadas uma da outra — a de baixo desce e
+     avança para a direita, como no Figma (1:203 em y=173, 1:204 em y=1288
+     do canvas, ou seja, bem abaixo). */
+  .sobre__fotos {
+    display: flex;
+    flex: none;
+    align-items: flex-start;
+    gap: var(--fig-e-2xl);
   }
   .sobre__foto {
-    border-radius: var(--fig-raio-md);
-    flex: none;
+    border-radius: var(--fig-raio-xl);
     height: auto;
-    max-width: 46%;
     object-fit: cover;
   }
+  .sobre__foto--alta { width: 320px; }
+  .sobre__foto--baixa { width: 373px; margin-top: var(--fig-e-6xl); }
 
   /* ─── Números ─────────────────────────────────────────────
      Faberge 66px sobre o valor, 28px no rótulo — node 1:209. */
-  .numeros { padding: var(--fig-e-3xl) var(--fig-margem-interna); }
+  /* Faixa pêssego de largura total (node 1:206, #f0d9c7, 422px de altura),
+     com os números por cima. A versão anterior não tinha fundo nenhum. */
+  .numeros {
+    background: var(--fig-fundo-pessego);
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
+  }
   .numeros__lista {
     display: grid;
     gap: var(--fig-e-3xl);
@@ -482,7 +523,12 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   @media (max-width: 1199.98px) {
     .heroi { min-height: 640px; }
     .sobre { flex-direction: column; align-items: stretch; }
-    .sobre__foto { max-width: 100%; }
+    /* As duas fotos dividem a linha e encolhem juntas: em larguras estreitas
+       os 320+373 fixos do design estouram a tela. */
+    .sobre__fotos { gap: var(--fig-e-md); }
+    .sobre__foto { min-width: 0; }
+    .sobre__foto--alta { flex: 320 1 0; width: auto; }
+    .sobre__foto--baixa { flex: 373 1 0; width: auto; margin-top: var(--fig-e-2xl); }
     /* Cabeçalho do acordeão empilha: o botão não cabe ao lado de um título
        de 70px em telas médias. */
     .servicos__cabeca { align-items: flex-start; flex-direction: column; gap: var(--fig-e-lg); }

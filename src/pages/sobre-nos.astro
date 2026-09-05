@@ -72,15 +72,19 @@ const fotosInstagram = [
         “Arquitetura é a arte de transformar espaços em experiências inesquecíveis”
       </blockquote>
     </div>
-  </section>
 
-  <section class="selos" aria-label="Nossos diferenciais" data-revela>
-    {selosSobre.map((s) => (
-      <div class="selo">
-        <h3 class="selo__titulo">{s.titulo}</h3>
-        <p class="selo__texto">{s.texto}</p>
-      </div>
-    ))}
+    {/* No Figma (1:1391–1:1392) os três diferenciais são uma COLUNA à
+        direita do texto, separada por uma barra vertical de 3px, com um
+        traço horizontal sob cada item. Estavam numa faixa horizontal
+        abaixo da seção. */}
+    <div class="selos" aria-label="Nossos diferenciais">
+      {selosSobre.map((s) => (
+        <div class="selo">
+          <h3 class="selo__titulo">{s.titulo}</h3>
+          <p class="selo__texto">{s.texto}</p>
+        </div>
+      ))}
+    </div>
   </section>
 
   <section class="valores" data-revela>
@@ -209,23 +213,29 @@ const fotosInstagram = [
   }
 
   /* ─── Selos ───────────────────────────────────────────────*/
+  /* Coluna de 389px à direita do texto, com a barra de 3px do design
+     fazendo a separação (node 1:1391). */
   .selos {
-    display: grid;
-    gap: var(--fig-e-2xl);
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    margin-inline: auto;
-    max-width: var(--fig-largura-conteudo);
-    padding: var(--fig-e-2xl) var(--fig-margem-interna);
+    border-left: 3px solid var(--fig-primaria-ativa);
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    gap: 42px;
+    padding: var(--fig-e-2xl) 0 var(--fig-e-2xl) var(--fig-e-2xl);
+    width: 389px;
   }
-  .selo + .selo { border-left: 1px solid var(--fig-borda); padding-left: var(--fig-e-2xl); }
+  /* Traço horizontal sob cada item, como no design — o último também
+     tem, então não é separador entre itens. */
+  .selo { border-bottom: 1px solid var(--fig-borda); padding-bottom: var(--fig-e-lg); }
+  /* Faberge 32px no título e 24px no apoio (1:1394/1:1395). */
   .selo__titulo {
     color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-forte) var(--fig-t-corpo-g) / 1.2 var(--fig-fonte-corpo);
-    margin: 0 0 var(--fig-e-xs);
+    font: var(--fig-peso-normal) var(--fig-t-rodape-col) / 1.1 var(--fig-fonte-display);
+    margin: 0 0 14px;
   }
   .selo__texto {
-    color: var(--fig-texto);
-    font: var(--fig-peso-medio) var(--fig-t-corpo-p) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+    color: rgb(72 59 42 / 0.83);
+    font: var(--fig-peso-normal) var(--fig-t-rotulo) / 1.2 var(--fig-fonte-display);
     margin: 0;
   }
 
@@ -371,6 +381,11 @@ const fotosInstagram = [
     .passo, .passo--direita { max-width: 100%; margin-left: 0; }
     }
   @media (max-width: 809.98px) {
-    .selo + .selo { border-left: 0; padding-left: 0; }
+    .selos {
+      border-left: 0;
+      padding: 0;
+      width: auto;
+      gap: var(--fig-e-lg);
+    }
     }
 </style>

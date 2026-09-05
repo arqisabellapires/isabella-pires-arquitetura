@@ -1,0 +1,285 @@
+{
+  "_origem": "mcp__figma__get_design_context, fileKey w03gcodehy5qey828y58hS, nodeId 1:1093, em 05/09/2026",
+  "_nota": "Valores lidos do Figma. Comparados com https://www.isabellapiresarquitetura.com.br/artigos no mesmo dia. No Figma a rota se chama /blog.",
+  "pagina": {
+    "node": "1:1093",
+    "largura": 1920,
+    "fundo": "#fbf7f4"
+  },
+  "menu_topo": {
+    "node": "1:64",
+    "altura": 151,
+    "altura_na_pagina": 133,
+    "padding": "40px 100px",
+    "borda_inferior": "1px solid #352005",
+    "logo": {
+      "largura": 56.223,
+      "altura": 73
+    },
+    "itens": [
+      "Início",
+      "Serviços",
+      "Projetos",
+      "Blog",
+      "Sobre nós",
+      "Contato"
+    ],
+    "item_fonte": "Arboria Medium 24px",
+    "item_cor": "#352005",
+    "item_padding": "8px 12px",
+    "gap": 32,
+    "dropdown": [
+      "Serviços tem seta (Icone Arrow down 32px)"
+    ]
+  },
+  "cabecalho_pagina": {
+    "node": "1:1095",
+    "padding": "80px 100px",
+    "gap": 67,
+    "borda_inferior": "1px solid #352005",
+    "migalhas": {
+      "node": "1:1098",
+      "texto": "Início / Blog",
+      "fonte": "Arboria Bold 21px",
+      "icone": "fa-house 24x34",
+      "cor_inicio": "#212529",
+      "cor_atual": "#352005",
+      "gap": 8
+    },
+    "titulo": {
+      "node": "1:1106",
+      "texto": "Blog",
+      "fonte": "Mulish SemiBold 100px",
+      "cor": "#352005",
+      "line_height": "normal"
+    },
+    "selo_circular": {
+      "node": "1:1230",
+      "tamanho": 328,
+      "left": 1371,
+      "top": 155
+    }
+  },
+  "corpo": {
+    "node": "1:1107",
+    "padding_topo": 60,
+    "padding_lateral": 100,
+    "gap_entre_blocos": 100,
+    "alinhamento": "center"
+  },
+  "filtros_categoria": {
+    "node": "1:1108",
+    "gap": 16,
+    "formato": "pílulas em linha",
+    "cada_pilula": {
+      "padding": "12px 24px",
+      "radius": 8,
+      "fonte_ativa": "Segoe UI Bold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "fonte_inativa": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "alinhamento_texto": "center"
+    },
+    "estado_ativo": {
+      "node": "1:1109",
+      "rotulo": "Todos",
+      "fundo": "#352005",
+      "cor_texto": "#eee",
+      "borda": "nenhuma"
+    },
+    "estado_inativo": {
+      "fundo": "#ffffff",
+      "cor_texto": "#352005",
+      "borda": "1px solid #352005"
+    },
+    "rotulos": [
+      "Todos",
+      "Finanças",
+      "Imobiliária",
+      "Dicas",
+      "Tutoriais",
+      "Arquitetura"
+    ],
+    "nodes": [
+      "1:1109",
+      "1:1110",
+      "1:1111",
+      "1:1112",
+      "1:1113",
+      "1:1114"
+    ]
+  },
+  "grade_cards": {
+    "formato": "3 fileiras de 2 cards (2x3), NAO e grade de 3 colunas",
+    "nodes_fileiras": [
+      "1:1115",
+      "1:1152",
+      "1:1189"
+    ],
+    "gap_entre_cards_na_fileira": 24,
+    "gap_entre_fileiras": 100,
+    "card_e_horizontal": "imagem a esquerda, texto a direita"
+  },
+  "card": {
+    "node_exemplo": "1:1116",
+    "gap_imagem_texto": 24,
+    "imagem": {
+      "node": "1:1117",
+      "largura": 385,
+      "altura": 333,
+      "radius": 32,
+      "object_fit": "cover"
+    },
+    "coluna_texto": {
+      "node": "1:1121",
+      "gap": 30,
+      "gap_titulo_meta": 12
+    },
+    "titulo": {
+      "texto": "Como ter o seu primeiro apartamento dos sonhos?",
+      "fonte": "Faberge Regular 33px",
+      "cor": "#352005",
+      "largura": 507,
+      "line_height": "normal"
+    },
+    "meta": {
+      "node": "1:1124",
+      "gap": 8,
+      "fonte": "Mulish Bold 16px",
+      "cor": "#716d69",
+      "line_height": 1.214,
+      "separador": "Ellipse 4, círculo de 4px",
+      "campos": [
+        "25/03/2025",
+        "14:53",
+        "Isabella Pires"
+      ]
+    },
+    "selo_categoria": {
+      "padding": "4px 24px",
+      "radius": 4,
+      "fonte": "Faberge Regular 24px",
+      "cores_por_categoria": {
+        "Finanças": "fundo #a98d67, texto #eee",
+        "Comercial": "fundo #f0d9c7, texto #483b2a",
+        "Imobiliária": "fundo #352005, texto #eee",
+        "Dicas": "fundo #887769, texto #eee",
+        "Tutorial": "fundo #483b2a, texto #eee",
+        "Arquitetura": "fundo #d0cac4, texto #352005"
+      }
+    },
+    "resumo": {
+      "texto": "Discuta sobre o impacto da gestão financeira e como ela consegue levar você até os seus maiores objetivos!",
+      "fonte": "Mulish Medium 18px",
+      "cor": "#6c757d",
+      "line_height": 1.214,
+      "largura": 413
+    },
+    "cta": {
+      "texto": "Ler mais",
+      "fonte": "Mulish Bold 18px",
+      "cor": "#a98d67",
+      "line_height": 1.214
+    }
+  },
+  "botao_carregar_mais": {
+    "node": "1:1226",
+    "texto": "Carregar mais",
+    "fundo": "#352005",
+    "cor": "#eee",
+    "padding": "12px 24px",
+    "radius": 8,
+    "fonte": "Segoe UI Bold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)"
+  },
+  "wordmark": {
+    "node": "1:1228",
+    "texto": "ISABELLA PIRES",
+    "fonte": "Faberge Regular 192px",
+    "tracking": 19.2,
+    "altura": 367,
+    "cor": "black",
+    "alinhamento": "center",
+    "padding_y": 31
+  },
+  "rodape": {
+    "node": "1:129",
+    "fundo": "#3a2e26",
+    "padding": "52px 128px",
+    "padding_interno_lateral": 110,
+    "gap": 32,
+    "cta": {
+      "titulo": "Sobrou alguma dúvida?\nVamos conversar!",
+      "fonte_titulo": "Faberge Regular 44px",
+      "cor_titulo": "#eee",
+      "rotulo": "Contate-nos",
+      "cor_rotulo": "#e9e2da",
+      "fonte_rotulo": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)",
+      "botao": {
+        "texto": "Quero agendar uma reunião",
+        "fundo": "rgba(255,255,255,0.73)",
+        "cor": "#352005",
+        "padding": "12px 24px",
+        "radius": 16,
+        "fonte": "Segoe UI Semibold 20px (SANEAR: Segoe UI e fallback do designer, nao reproduzir)"
+      }
+    },
+    "colunas": {
+      "gap": 132,
+      "Institucional": {
+        "altura": 265,
+        "gap": 12,
+        "titulo_fonte": "Faberge Regular 32px",
+        "titulo_cor": "#eee",
+        "itens_fonte": "Arboria Medium 16px",
+        "itens_cor": "rgba(255,255,255,0.8)",
+        "itens": [
+          "Início",
+          "Serviços",
+          "Projetos",
+          "Sobre nós",
+          "Blog",
+          "Contato"
+        ]
+      },
+      "Informações": {
+        "altura": 187.562,
+        "itens": [
+          "Termos de uso",
+          "Políticas de Privacidade",
+          "Políticas de Cookies"
+        ]
+      }
+    },
+    "divisor": {
+      "largura": 1444
+    },
+    "copyright": {
+      "texto": "© 2025 Arquiteta Isabella Pires | CPNJ - 12.345.678/0001-23",
+      "fonte": "Arboria Medium 20px",
+      "cor": "rgba(255,255,255,0.8)"
+    },
+    "redes": [
+      "Instagram",
+      "Facebook",
+      "Tiktok",
+      "Youtube",
+      "Linkedin"
+    ],
+    "rede_tamanho": 40,
+    "rede_gap": 12
+  },
+  "divergencias_medidas_contra_o_site_no_ar": [
+    "A grade e outra: Figma tem 2 cards por fileira em cartao HORIZONTAL (imagem 385x333 radius 32 a esquerda + coluna de texto de 507px a direita, gap 24). O site usa grade VERTICAL de 3 colunas (grid-template-columns: repeat(3,1fr), gap 40) com a capa em cima, aspect-ratio 283/220 e radius 8. Card inteiro precisa ser refeito.",
+    "Filtros: Figma sao pilulas com padding 12px 24px, radius 8, borda 1px #352005 e fundo branco (ativo: fundo #352005, texto #eee), gap 16. No site sao links de texto puro, sem fundo e sem borda: font 400 16px Inter, cor #5a5755, gap 24, ativo so muda para 600 e #341f04.",
+    "Titulo da pagina: Figma so 'Blog' em Mulish SemiBold 100px cor #352005. O site tem DOIS titulos — rotulo 'Blog' 600 60px e um h1 'Dicas e noticias para quem realmente se destaca.' 500 64px Manrope, que nao existe no Figma. Manrope tambem nao e uma das quatro familias do design (Faberge, Arboria, Montserrat, Mulish).",
+    "Titulo do card: Figma Faberge Regular 33px cor #352005 largura 507; site Mulish Bold 20px cor #21201f. Fator de 1.65x no tamanho e familia trocada.",
+    "O selo de categoria colorido nao existe no site. Figma tem pilula com padding 4px 24px, radius 4, Faberge Regular 24px e SEIS fundos distintos por categoria (#a98d67, #f0d9c7, #352005, #887769, #483b2a, #d0cac4). O site imprime a categoria como texto solto 400 16px #5a5755 ao lado do tempo de leitura.",
+    "Meta do card diverge por completo: Figma mostra data, hora e autor (Mulish Bold 16px #716d69, separados por circulos de 4px). O site mostra categoria e '6min' de tempo de leitura — dado que nao existe no Figma.",
+    "Faltam no site o resumo do artigo (Mulish Medium 18px #6c757d, largura 413) e o CTA 'Ler mais' (Mulish Bold 18px #a98d67); ambos estao em todo card do Figma.",
+    "Botao 'Carregar mais' (fundo #352005, radius 8, padding 12px 24px) nao existe no site — a listagem imprime todos os artigos de uma vez e ainda inclui um bloco Newsletter que nao esta no Figma.",
+    "Wordmark 'ISABELLA PIRES' 192px Faberge tracking 19.2 altura 367 ausente do site.",
+    "Contagem de imagens: /artigos no ar tem apenas 1 tag <img>; o Figma pede 6 capas de 385x333. /sobre-nos e /contato tem ZERO imagens.",
+    "Larguras: Figma e canvas de 1920 com padding lateral 100 e conteudo de ate 1720; o site fecha em max-width 1184 com padding 24. O cartao horizontal do Figma nem cabe nessa caixa.",
+    "Cabecalho da pagina: Figma tem faixa dedicada com padding 80px 100px, borda inferior 1px #352005, gap 67 entre migalhas e titulo, e o selo circular de 328px em left 1371/top 155. Nada disso existe no site.",
+    "Migalhas: Figma Arboria Bold 21px com icone fa-house 24x34; site Mulish 700 16px sem icone.",
+    "Faberge e Arboria continuam ausentes do projeto. Segoe UI (filtros, botao) deve ser saneada, nao reproduzida."
+  ]
+}

@@ -2,16 +2,16 @@
 titulo: "COZINHA LA"
 resumo: "O projeto nasce da proposta de criar uma cozinha contemporânea, prática e acolhedora, em um espaço otimizado para o dia a dia em um apartamento de uso temporário. A setorização organiza de forma clara as áreas de preparo, cocção e armazenam"
 capa: ./cozinha-la/01.png
-capaAlt: ""  # TODO(gabriel): descrever a imagem
+capaAlt: "Cozinha em corredor, toda branca: duas bancadas paralelas, fogão ao centro, cuba à direita e janela alta ao fundo."
 galeria:
   - imagem: ./cozinha-la/02.png
-    alt: ""  # TODO(gabriel)
+    alt: "A mesma cozinha vista do outro extremo: prateleiras abertas sob janelas basculantes, cantinho do café na bancada e porta de vidro ao fundo."
   - imagem: ./cozinha-la/03.png
-    alt: ""  # TODO(gabriel)
+    alt: "Trecho da bancada da cuba, com escorredor de louça, armários suspensos e geladeira de inox à direita."
   - imagem: ./cozinha-la/04.jpg
-    alt: ""  # TODO(gabriel)
+    alt: "Sala de estar e jantar integradas, com sofá cinza em primeiro plano e mesa de jantar de madeira diante de painel ripado."
   - imagem: ./cozinha-la/05.png
-    alt: ""  # TODO(gabriel)
+    alt: "Ambiente integrado: mesa redonda posta em primeiro plano, cama atrás de painel divisório com TV, sofá junto à janela e cozinha à direita."
 categoria: "Interiores"
 ano: 2024
 local: "Brasil"

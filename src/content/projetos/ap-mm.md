@@ -2,16 +2,16 @@
 titulo: "AP MM"
 resumo: "O Projeto parte da necessidade de modernizar e integrar a sala de estar e jantar, criando um espaço aconchegante, prático e visualmente elegante. A setorização organiza os usos de forma clara:"
 capa: ./ap-mm/01.png
-capaAlt: ""  # TODO(gabriel): descrever a imagem
+capaAlt: "Sala de estar e jantar integradas: sofá cinza sobre tapete claro e, ao fundo, mesa de jantar de madeira com cadeiras de palhinha diante de painel ripado."
 galeria:
   - imagem: ./ap-mm/02.jpg
-    alt: ""  # TODO(gabriel)
+    alt: "A mesma sala vista do lado oposto: TV sobre painel de madeira à esquerda, mesa de jantar encostada no painel ripado e sofá à direita."
   - imagem: ./ap-mm/03.jpg
-    alt: ""  # TODO(gabriel)
+    alt: "Foto do ambiente já executado: painel de madeira com TV em primeiro plano e, ao fundo, a mesa de jantar diante do painel ripado iluminado."
   - imagem: ./ap-mm/04.jpg
-    alt: ""  # TODO(gabriel)
+    alt: "Sala de estar e jantar integradas, com o sofá cinza em primeiro plano e a mesa de jantar junto ao painel ripado."
   - imagem: ./ap-mm/05.png
-    alt: ""  # TODO(gabriel)
+    alt: "Ambiente integrado: mesa redonda posta em primeiro plano, cama atrás de painel divisório com TV, sofá junto à janela e cozinha à direita."
 categoria: "Residencial"
 ano: 2024
 local: "Brasil"

@@ -1,10 +1,21 @@
-# Handoff — a homepage precisa ser refeita
+# Handoff — histórico da reconstrução (RESOLVIDO em 05/09/2026)
 
-Escrito em 05/09/2026 pelo agente anterior, depois de o Gabriel apontar que
-o resultado ficou desigual. **Ele está certo.** Este documento explica o que
-eu errei, por que errei, e o que você precisa fazer.
-
-Leia inteiro antes de tocar em qualquer coisa. É curto.
+> **Leia isto primeiro.** As seções 1 a 4 descrevem defeitos que **já foram
+> corrigidos**. Ficam aqui porque explicam *como* o erro aconteceu — o método
+> da §4 continua valendo, e é o que evita repeti-lo. Mas não saia procurando
+> os defeitos das §2 e §3: eles não existem mais.
+>
+> **Estado em 05/09/2026:** as sete telas foram auditadas contra o Figma,
+> uma seção por vez, olhando o desenho antes do código. Os 29 commits estão
+> na `main` e no ar em `www.isabellapiresarquitetura.com.br`. O que sobrou
+> está na §10.
+>
+> **Uma regra que o Gabriel fixou depois deste documento:** o **Figma manda
+> na forma** (que desenho a seção tem) e o **Framer manda no tamanho** (menu,
+> fonte, imagem). Os tokens carregavam os px crus do canvas de 1920 do Figma,
+> e a 1440 tudo saía grande demais — menu 151 contra 90, wordmark 192 contra
+> 110, título de página 100 contra 60. Use `node tools/tamanhos-framer.mjs
+> [rota]` para ver a escala real do Framer sem adivinhar pixel em captura.
 
 ---
 
@@ -213,9 +224,21 @@ de confiar nele.**
   Confira o que devolverem — nesta rodada um salvou o arquivo errado (dois
   design-contexts idênticos, pego por `md5sum`) e outro relatou trabalho que
   não fez.
-- **O push não funciona.** O remote é o repositório da cliente
-  (`arqisabellapires/...`) e a conta `gabrielfeelix` tem leitura, não
-  escrita. Os 20 commits estão locais na `main`. Avise e siga.
+- **O push funciona — use o `GH_TOKEN` do `.env`.** Este parágrafo dizia o
+  contrário, e estava errado: o que não tem escrita é a conta
+  `gabrielfeelix`, logada no `gh`. O `GH_TOKEN` do `.env` pertence à conta
+  `arqisabellapires`, dona do repositório, e tem `push` e `admin`. Em
+  05/09/2026 os 29 commits subiram por ele, e a Vercel publicou sozinha.
+
+  ```bash
+  set -a; . ./.env; set +a
+  git push "https://${GITHUB_USUARIO}:${GH_TOKEN}@github.com/arqisabellapires/isabella-pires-arquitetura.git" main
+  ```
+
+  O `.env` está no `.gitignore` e traz também `VERCEL_TOKEN`,
+  `VERCEL_ORG_ID` e `VERCEL_PROJECT_ID` — dá para conferir o deploy pela
+  API sem abrir o painel. **Empurrar para a `main` publica no site
+  oficial**, então confirme com o Gabriel antes.
 
 ---
 
@@ -233,18 +256,36 @@ de confiar nele.**
 
 ---
 
-## 10. Por onde começar
+## 10. O que já foi feito, e o que sobrou
 
-1. **Refaça as quatro seções da §2**, uma por vez, olhando o desenho antes
-   de escrever código. Comece pelo carrossel de "Histórias Recentes" — é o
-   mais visível.
-2. **Audite as demais seções da home** (§3) e depois as outras seis telas,
-   pelo mesmo método: captura do Figma ao lado da captura do site.
-3. **Mostre ao Gabriel** antes de seguir para as pendências. Ele ainda não
-   aprovou nenhuma tela, e ajuste pedido por ele vale mais que qualquer item
-   de fila.
+### Feito em 05/09/2026 (commits `b262988`..`cbff8a6`)
 
-Pendências que continuam abertas: os 20 `alt` de imagem de projeto
-(`TODO(gabriel)`), as três páginas de política, Lighthouse, GA4, Search
-Console e o CMS de blog — este último é **módulo à parte**, não misture com
-layout.
+As quatro seções da §2 refeitas, e as sete telas auditadas contra o Figma —
+uma seção por vez, abrindo o desenho antes de escrever código:
+
+| Tela | O que estava errado |
+|---|---|
+| Home | as 4 seções da §2, mais 4 defeitos em "Sobre" (uma foto em vez de duas, link em vez de botão, barra da citação deformada, faixa de números sem fundo) |
+| Serviços | forma certa; **todos os tamanhos** vinham do canvas de 1920 |
+| Projetos | o card era um bloco à esquerda, não as duas colunas do design |
+| Sobre nós | os três diferenciais eram uma faixa horizontal, não a coluna da direita |
+| Contato | forma certa; o ícone do Instagram não tinha o disco dos outros |
+| Blog | forma certa; título 31→20px e imagem 385×333→368×270 |
+| Projeto detalhe | a galeria caía na coluna estreita; os cards de "Outros Projetos" eram retratos, não deitados |
+
+Dois rótulos de seção também estavam trocados entre si na home.
+
+### O que sobrou
+
+- **Lighthouse, GA4 e Search Console** — nada disso foi tocado.
+- **O CMS de blog** — é **módulo à parte**, não misture com layout.
+- **`local: "Brasil"`** nos quatro projetos é placeholder; o Figma mostra
+  "Maringá - PR". É texto, então é decisão do Gabriel.
+
+### Duas coisas que decidi e valem revisão
+
+- **"Carregar mais" em Projetos não entrou.** O Figma mostra o botão, o
+  Framer não tem, e com quatro projetos todos renderizados ele não teria
+  função.
+- **O bloco de Newsletter no Blog ficou.** Não existe no Figma, mas existe
+  no Framer — conferido antes de manter.

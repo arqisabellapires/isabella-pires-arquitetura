@@ -2,16 +2,16 @@
 titulo: "RESIDÊNCIA IP"
 resumo: "O ponto de partida do projeto foi a análise do terreno e da relação entre áreas externas e internas. A partir disso, definiu-se a setorização funcional, garantindo clareza no uso dos espaços:"
 capa: ./casa-ip/01.png
-capaAlt: ""  # TODO(gabriel): descrever a imagem
+capaAlt: "Home office com escrivaninha de madeira, computador e cadeira preta, diante de prateleiras suspensas em metal escuro e madeira; à esquerda, janela com persiana."
 galeria:
   - imagem: ./casa-ip/02.png
-    alt: ""  # TODO(gabriel)
+    alt: "Sala de estar com boiserie cinza, sofá claro entre duas poltronas, luminárias de mesa gêmeas e quadro grande na parede."
   - imagem: ./casa-ip/03.jpg
-    alt: ""  # TODO(gabriel)
+    alt: "Banheiro com box amplo de vidro, metais dourados e nicho embutido; à direita, bancada de terrazzo com cuba dourada e espelho hexagonal."
   - imagem: ./casa-ip/04.jpg
-    alt: ""  # TODO(gabriel)
+    alt: "Sala de estar e jantar integradas: sofá cinza sobre tapete claro e, ao fundo, mesa de jantar de madeira com cadeiras de palhinha diante de painel ripado."
   - imagem: ./casa-ip/05.png
-    alt: ""  # TODO(gabriel)
+    alt: "Ambiente integrado de apartamento compacto: mesa redonda em primeiro plano, cama atrás de painel divisório com TV, sofá junto à janela e cozinha à direita."
 categoria: "Residencial"
 ano: 2024
 local: "Brasil"

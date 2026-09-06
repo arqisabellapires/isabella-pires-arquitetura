@@ -2,16 +2,16 @@
 titulo: "STUDIO"
 resumo: "A planta promove fluidez e aproveitamento máximo do espaço, unindo funcionalidade e leveza visual."
 capa: ./studio/01.png
-capaAlt: ""  # TODO(gabriel): descrever a imagem
+capaAlt: "Ambiente integrado de studio: mesa redonda posta em primeiro plano, cama ao fundo atrás de painel divisório e cozinha compacta à direita."
 galeria:
   - imagem: ./studio/02.jpg
-    alt: ""  # TODO(gabriel)
+    alt: "Sala ampla com sofá em L sobre tapete geométrico e, ao fundo, cozinha com esquadrias pretas e mesa de jantar redonda junto à parede de pedra."
   - imagem: ./studio/03.png
-    alt: ""  # TODO(gabriel)
+    alt: "A mesma sala vista do lado da cozinha: armários de madeira, janelas altas, iluminação linear no teto e o sofá à direita."
   - imagem: ./studio/04.jpg
-    alt: ""  # TODO(gabriel)
+    alt: "Sala de estar e jantar integradas, com sofá cinza em primeiro plano e mesa de jantar de madeira diante de painel ripado."
   - imagem: ./studio/05.png
-    alt: ""  # TODO(gabriel)
+    alt: "Home office com bancada em L de madeira sob janela com persiana preta, cadeira de escritório e prateleiras à direita."
 categoria: "Comercial"
 ano: 2024
 local: "Brasil"

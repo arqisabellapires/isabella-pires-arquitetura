@@ -1,0 +1,172 @@
+---
+/**
+ * Termos de uso — rota já linkada no rodapé, que até agora dava 404.
+ *
+ * Escrito para este site, não copiado de modelo: fala do que existe aqui —
+ * o formulário de contato, o blog, a galeria de projetos e a newsletter — e
+ * não promete nada que o site não faça (não há área logada, não há venda
+ * online, não há comentários).
+ *
+ * O ponto que mais importa para uma arquiteta é o §3: as imagens dos projetos
+ * são autorais e não podem ser reaproveitadas. Vale mais aqui do que qualquer
+ * cláusula genérica de responsabilidade.
+ *
+ * Não é peça jurídica revisada. Antes de valer como contrato, o Gabriel deve
+ * passar por advogado — marcado no fim da página e no HANDOFF.
+ */
+import Politica from '~/layouts/Politica.astro';
+import { site } from '~/lib/site';
+
+const secoes = [
+  { id: 'aceite', rotulo: 'Ao usar o site' },
+  { id: 'o-que-e', rotulo: 'O que este site é' },
+  { id: 'propriedade', rotulo: 'Imagens e textos' },
+  { id: 'uso', rotulo: 'Como usar' },
+  { id: 'contato-form', rotulo: 'Formulário e newsletter' },
+  { id: 'links', rotulo: 'Links para fora' },
+  { id: 'disponibilidade', rotulo: 'Disponibilidade' },
+  { id: 'responsabilidade', rotulo: 'Limites de responsabilidade' },
+  { id: 'mudancas', rotulo: 'Mudanças nestes termos' },
+  { id: 'foro', rotulo: 'Lei aplicável' },
+];
+---
+
+<Politica
+  titulo="Termos de uso"
+  descricao="As regras de uso do site da Isabella Pires Arquitetura: o que ele oferece, o que você pode fazer com o conteúdo e quais são os limites."
+  atualizadoEm="6 de setembro de 2026"
+  secoes={secoes}
+>
+  <p>
+    Estes termos valem para qualquer pessoa que acesse este site. São curtos e diretos
+    de propósito: descrevem o que o site oferece e o que se espera de quem o usa.
+  </p>
+
+  <h2 id="aceite">Ao usar o site</h2>
+  <p>
+    Navegar por aqui significa concordar com estes termos e com a <a href="/politica-de-privacidade">Política de Privacidade</a>. Se você não
+    concordar com algum ponto, o caminho é não usar o site.
+  </p>
+
+  <h2 id="o-que-e">O que este site é</h2>
+  <p>
+    É o site institucional do escritório <strong>{site.nome}</strong>, em {site.endereco.cidade}/{site.endereco.estado}. Serve para apresentar os serviços de
+    arquitetura e design de interiores, mostrar projetos já realizados, publicar artigos
+    e receber pedidos de contato.
+  </p>
+  <p>
+    <strong>O que ele não é:</strong> não há venda de produtos ou serviços pelo site, não
+    há área restrita ou cadastro de usuário, e nada aqui é orçamento, proposta comercial
+    ou contrato. Preço, prazo e escopo de um projeto só existem em proposta assinada.
+  </p>
+  <p>
+    Os artigos do blog são conteúdo informativo e refletem a opinião do escritório.
+    Não substituem a análise de um profissional para o seu caso.
+  </p>
+
+  <h2 id="propriedade">Imagens e textos</h2>
+  <p>
+    <strong>Todo o conteúdo deste site é protegido por direito autoral</strong> — projetos,
+    imagens, renderizações, plantas, textos, artigos, a marca e o logotipo. A titularidade
+    é do escritório ou de quem nos licenciou o uso.
+  </p>
+  <p>Sem autorização por escrito, <strong>não é permitido</strong>:</p>
+  <ul>
+    <li>reproduzir imagens de projetos em outro site, rede social ou material impresso;</li>
+    <li>usar as imagens como referência comercial de terceiros, portfólio alheio ou material publicitário;</li>
+    <li>copiar textos e artigos, na íntegra ou em trechos relevantes, sem citar a fonte e o link;</li>
+    <li>modificar as imagens, remover créditos ou usá-las para treinar sistemas automatizados;</li>
+    <li>usar a marca ou o logotipo de forma que sugira parceria ou endosso inexistente.</li>
+  </ul>
+  <p>
+    <strong>O que é permitido sem pedir:</strong> compartilhar o link de uma página, e citar
+    um trecho curto de um artigo desde que com atribuição clara e link para o original.
+  </p>
+  <p>
+    Para qualquer outro uso — imprensa, parceria, publicação —, escreva para <a href={`mailto:${site.email}`}>{site.email}</a>. Em geral autorizamos; só
+    queremos saber onde e como.
+  </p>
+
+  <h2 id="uso">Como usar</h2>
+  <p>Ao usar o site, você concorda em não:</p>
+  <ul>
+    <li>tentar invadir, sobrecarregar ou interromper o funcionamento do site;</li>
+    <li>usar robôs ou raspadores para extrair conteúdo em massa;</li>
+    <li>enviar pelo formulário conteúdo ilegal, ofensivo, publicidade não solicitada ou arquivos maliciosos;</li>
+    <li>se passar por outra pessoa ou informar dados de contato que não são seus.</li>
+  </ul>
+
+  <h2 id="contato-form">Formulário e newsletter</h2>
+  <p>
+    Ao enviar o formulário, você declara que os dados informados são verdadeiros e que
+    o contato é seu. Recebemos a mensagem por e-mail e respondemos assim que possível —
+    mas <strong>o envio não garante prazo de resposta</strong> nem cria vínculo entre nós.
+  </p>
+  <p>
+    A newsletter só chega para quem pediu, e toda mensagem traz um link para cancelar.
+    Cancelar é imediato e não afeta em nada seu acesso ao site.
+  </p>
+
+  <h2 id="links">Links para fora</h2>
+  <p>
+    O site tem links para nossos perfis em redes sociais e para o WhatsApp. Ao clicar,
+    você passa a estar sob as regras dessas plataformas. Não temos controle sobre o
+    conteúdo, a disponibilidade ou as práticas de privacidade delas.
+  </p>
+
+  <h2 id="disponibilidade">Disponibilidade</h2>
+  <p>
+    Fazemos o possível para manter o site no ar e atualizado, mas ele pode ficar
+    indisponível por manutenção, falha técnica ou problema no serviço de hospedagem.
+    Não garantimos funcionamento ininterrupto nem ausência de erros.
+  </p>
+  <p>
+    Podemos alterar, suspender ou encerrar qualquer parte do site a qualquer momento,
+    inclusive artigos e páginas de projeto.
+  </p>
+
+  <h2 id="responsabilidade">Limites de responsabilidade</h2>
+  <p>
+    O conteúdo do site é informativo. Decisões de obra, reforma, compra de material ou
+    contratação tomadas apenas com base no que se lê aqui são de responsabilidade de
+    quem as toma.
+  </p>
+  <p>
+    As imagens de projeto incluem <strong>renderizações e simulações</strong>. Elas
+    representam a intenção de projeto e podem diferir do resultado construído, que depende
+    de obra, fornecedores e escolhas do cliente.
+  </p>
+  <p>
+    Nada nestes termos afasta os direitos que o Código de Defesa do Consumidor garante
+    a você.
+  </p>
+
+  <h2 id="mudancas">Mudanças nestes termos</h2>
+  <p>
+    Estes termos podem ser atualizados. A data no topo da página sempre mostra a última
+    revisão, e continuar usando o site depois de uma mudança significa concordar com a
+    versão nova.
+  </p>
+
+  <h2 id="foro">Lei aplicável</h2>
+  <p>
+    Estes termos são regidos pela lei brasileira. Fica eleito o foro da comarca de {site.endereco.cidade}/{site.endereco.estado} para resolver qualquer questão
+    decorrente deles, ressalvado o direito do consumidor de acionar o foro do seu
+    próprio domicílio.
+  </p>
+  <p>
+    Dúvidas sobre estes termos: <a href={`mailto:${site.email}`}>{site.email}</a>.
+  </p>
+
+  {/* Este aviso é deliberado: o texto acima é específico e honesto, mas foi
+      escrito por quem programou o site, não por advogado. Some daqui no dia
+      em que passar por revisão jurídica. */}
+  <div class="destaque destaque--revisao">
+    <p>
+      <strong>Aviso.</strong> Este texto foi redigido com base no funcionamento real
+      do site e na legislação brasileira, mas ainda <strong>não passou por revisão
+      jurídica</strong>. Se você é a responsável pelo escritório e está lendo isto,
+      vale submetê-lo a um advogado antes de tratá-lo como definitivo.
+    </p>
+  </div>
+</Politica>

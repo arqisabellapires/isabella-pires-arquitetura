@@ -1,0 +1,224 @@
+---
+/**
+ * Política de Privacidade — rota já linkada no rodapé (`conteudo.ts`), que
+ * até agora dava 404.
+ *
+ * O texto foi escrito a partir do que o site DE FATO faz, não de um modelo
+ * genérico: os dados listados são exatamente os cinco campos do formulário
+ * de contato (`components/formularios/Contato.astro`), o envio é o da API em
+ * `pages/api/contato.ts`, e os terceiros citados são os que estão no
+ * `.env` — Brevo para o e-mail e Vercel para a hospedagem.
+ *
+ * ATENÇÃO ao mexer: o texto diz que o site NÃO usa ferramenta de estatística,
+ * e hoje é verdade — `PUBLIC_GA4_ID` e `PUBLIC_CLARITY_ID` estão vazios, e o
+ * `Base.astro` só injeta os scripts se elas tiverem valor. **No dia em que o
+ * GA4 ou o Clarity forem ligados, esta página e a de cookies mentem** — e aí
+ * é preciso, além de corrigir o texto, colocar um aviso de consentimento,
+ * porque cookie de medição depende de aceitação.
+ *
+ * Não é peça jurídica revisada: é uma base honesta e específica, que descreve
+ * o tratamento real e cita a LGPD onde ela se aplica. Antes de publicar como
+ * definitiva, o Gabriel deve passar por advogado — está marcado no fim da
+ * página e no HANDOFF.
+ */
+import Politica from '~/layouts/Politica.astro';
+import { site } from '~/lib/site';
+
+const secoes = [
+  { id: 'quem-somos', rotulo: 'Quem trata seus dados' },
+  { id: 'dados', rotulo: 'Que dados coletamos' },
+  { id: 'finalidade', rotulo: 'Para que usamos' },
+  { id: 'base-legal', rotulo: 'Com que base legal' },
+  { id: 'compartilhamento', rotulo: 'Com quem compartilhamos' },
+  { id: 'prazo', rotulo: 'Por quanto tempo guardamos' },
+  { id: 'direitos', rotulo: 'Seus direitos' },
+  { id: 'seguranca', rotulo: 'Segurança' },
+  { id: 'mudancas', rotulo: 'Mudanças nesta política' },
+  { id: 'contato', rotulo: 'Como falar conosco' },
+];
+---
+
+<Politica
+  titulo="Política de Privacidade"
+  descricao="Como o escritório Isabella Pires Arquitetura coleta, usa e protege os dados pessoais de quem entra em contato pelo site."
+  atualizadoEm="6 de setembro de 2026"
+  secoes={secoes}
+>
+  <p>
+    Esta política explica o que acontece com os seus dados quando você usa este site
+    — em especial quando preenche o formulário de contato. Ela descreve o que o site
+    realmente faz, e é escrita para ser lida, não para ser assinada sem ler.
+  </p>
+
+  <h2 id="quem-somos">Quem trata seus dados</h2>
+  <div class="destaque">
+    <p>
+      <strong>{site.nome}</strong><br />
+      {site.endereco.logradouro}, {site.endereco.bairro}<br />
+      {site.endereco.cidade} — {site.endereco.estado}, CEP {site.endereco.cep}<br />
+      E-mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+    <p>
+      Somos o <strong>controlador</strong> dos dados, na definição da Lei Geral de
+      Proteção de Dados (Lei nº 13.709/2018): somos nós que decidimos o que é
+      coletado e para quê.
+    </p>
+  </div>
+
+  <h2 id="dados">Que dados coletamos</h2>
+  <h3>Dados que você nos entrega</h3>
+  <p>
+    São os campos do formulário de contato — e apenas eles. Nenhum outro dado é
+    pedido em nenhum ponto do site:
+  </p>
+  <ul>
+    <li><strong>Nome</strong> — para saber como te chamar na resposta;</li>
+    <li><strong>E-mail</strong> — para responder;</li>
+    <li><strong>Telefone</strong> — opcional, se você preferir contato por WhatsApp ou ligação;</li>
+    <li><strong>Serviço de interesse</strong> — para já entender do que se trata;</li>
+    <li><strong>Mensagem</strong> — o que você escrever.</li>
+  </ul>
+  <p>
+    Se você se inscrever na newsletter do blog, coletamos <strong>apenas o e-mail</strong>.
+  </p>
+
+  <h3>Dados coletados automaticamente</h3>
+  <p>
+    <strong>Hoje o site não usa nenhuma ferramenta de estatística.</strong> Não há Google
+    Analytics, nem mapa de calor, nem cookie de medição — só o necessário para as
+    páginas carregarem. O detalhe está na <a href="/politica-de-cookies">Política de Cookies</a>.
+  </p>
+  <p>
+    Se isso mudar, esta política e a de cookies mudam junto, com a data no topo
+    atualizada, e a medição passará a depender da sua aceitação.
+  </p>
+  <p>
+    <strong>Não coletamos dados sensíveis</strong> (origem racial, saúde, opinião política,
+    biometria) nem dados de crianças e adolescentes. Não use o formulário para enviar
+    esse tipo de informação.
+  </p>
+
+  <h2 id="finalidade">Para que usamos</h2>
+  <ul>
+    <li>Responder à sua mensagem e preparar uma proposta;</li>
+    <li>Dar continuidade à conversa sobre um projeto;</li>
+    <li>Enviar a newsletter, se você tiver pedido.</li>
+  </ul>
+  <p>
+    <strong>Não vendemos seus dados</strong>, não os cedemos para publicidade de terceiros e
+    não usamos seu e-mail para disparos que você não pediu.
+  </p>
+
+  <h2 id="base-legal">Com que base legal</h2>
+  <p>A LGPD exige uma justificativa para cada tratamento. As nossas são:</p>
+  <ul>
+    <li>
+      <strong>Procedimentos preliminares a um contrato</strong> (art. 7º, V) — quando você
+      pede uma proposta, tratar seus dados é o que permite respondê-la;
+    </li>
+    <li>
+      <strong>Consentimento</strong> (art. 7º, I) — para a newsletter, que só é enviada a
+      quem pediu;
+    </li>
+    <li>
+      <strong>Legítimo interesse</strong> (art. 7º, IX) — para manter o site em pé e
+      protegido contra abuso, como o envio automatizado de formulários por robôs.
+    </li>
+  </ul>
+
+  <h2 id="compartilhamento">Com quem compartilhamos</h2>
+  <p>
+    Só com quem é necessário para o site funcionar. São fornecedores de tecnologia,
+    que tratam os dados por nossa conta e não podem usá-los para fins próprios:
+  </p>
+  <ul>
+    <li><strong>Vercel</strong> — hospeda o site e o entrega ao seu navegador;</li>
+    <li><strong>Brevo</strong> — envia as mensagens do formulário para o nosso e-mail e cuida da newsletter;</li>
+  </ul>
+  <p>
+    Não há, hoje, nenhum serviço de estatística ou publicidade recebendo dados
+    deste site.
+  </p>
+  <p>
+    Alguns desses serviços mantêm servidores fora do Brasil, o que caracteriza
+    <strong>transferência internacional de dados</strong> (art. 33 da LGPD). Escolhemos
+    fornecedores que oferecem cláusulas contratuais de proteção equivalentes às
+    exigidas aqui.
+  </p>
+  <p>
+    Fora isso, só compartilhamos dados se a lei ou uma ordem judicial obrigar.
+  </p>
+
+  <h2 id="prazo">Por quanto tempo guardamos</h2>
+  <ul>
+    <li>
+      <strong>Mensagens de contato:</strong> enquanto durar a conversa e por até
+      <strong>5 anos</strong> depois, prazo que a lei civil dá para discutir um contrato;
+    </li>
+    <li>
+      <strong>E-mail da newsletter:</strong> até você se descadastrar — o link está em toda
+      mensagem que enviamos;
+    </li>
+  </ul>
+  <p>Passado o prazo, os dados são apagados ou anonimizados.</p>
+
+  <h2 id="direitos">Seus direitos</h2>
+  <p>
+    A LGPD (art. 18) garante que você possa, a qualquer momento, pedir para:
+  </p>
+  <ul>
+    <li><strong>Confirmar</strong> se tratamos dados seus, e <strong>acessar</strong> quais são;</li>
+    <li><strong>Corrigir</strong> dados incompletos ou desatualizados;</li>
+    <li><strong>Eliminar</strong> os dados que tratamos com base no seu consentimento;</li>
+    <li><strong>Portar</strong> os dados para outro fornecedor;</li>
+    <li><strong>Revogar o consentimento</strong> — sem que isso invalide o que foi feito antes;</li>
+    <li><strong>Saber com quem</strong> compartilhamos seus dados;</li>
+    <li><strong>Se opor</strong> a um tratamento que você considere indevido.</li>
+  </ul>
+  <p>
+    Escreva para <a href={`mailto:${site.email}`}>{site.email}</a> e respondemos em até
+    <strong>15 dias</strong>. Pode ser que peçamos algo que confirme sua identidade — é para
+    não entregar seus dados a outra pessoa.
+  </p>
+
+  <h2 id="seguranca">Segurança</h2>
+  <p>
+    O site é servido inteiramente por conexão criptografada (HTTPS), e o acesso às
+    mensagens recebidas é restrito a quem trabalha no escritório. O formulário tem
+    proteção contra envio automatizado por robôs.
+  </p>
+  <p>
+    Nenhum sistema é imune a incidentes. Se acontecer algum que possa trazer risco
+    relevante a você, comunicaremos você e a Autoridade Nacional de Proteção de Dados,
+    como manda o art. 48 da LGPD.
+  </p>
+
+  <h2 id="mudancas">Mudanças nesta política</h2>
+  <p>
+    Se o site passar a fazer algo diferente com os dados, este texto muda junto — e a
+    data no topo da página muda com ele. Alterações relevantes são avisadas no próprio
+    site.
+  </p>
+
+  <h2 id="contato">Como falar conosco</h2>
+  <p>
+    Qualquer dúvida sobre privacidade, ou para exercer os direitos acima: <a href={`mailto:${site.email}`}>{site.email}</a>. Se preferir,
+    use a <a href="/contato">página de contato</a>.
+  </p>
+  <p>
+    Você também pode reclamar diretamente à <a href="https://www.gov.br/anpd/" rel="noopener noreferrer" target="_blank">Autoridade
+    Nacional de Proteção de Dados (ANPD)</a>.
+  </p>
+
+  {/* Este aviso é deliberado: o texto acima é específico e honesto, mas foi
+      escrito por quem programou o site, não por advogado. Some daqui no dia
+      em que passar por revisão jurídica. */}
+  <div class="destaque destaque--revisao">
+    <p>
+      <strong>Aviso.</strong> Este texto foi redigido com base no funcionamento real
+      do site e na legislação brasileira, mas ainda <strong>não passou por revisão
+      jurídica</strong>. Se você é a responsável pelo escritório e está lendo isto,
+      vale submetê-lo a um advogado antes de tratá-lo como definitivo.
+    </p>
+  </div>
+</Politica>

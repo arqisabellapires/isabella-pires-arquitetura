@@ -277,7 +277,22 @@ Dois rótulos de seção também estavam trocados entre si na home.
 
 ### O que sobrou
 
-- **Lighthouse, GA4 e Search Console** — nada disso foi tocado.
+- **Lighthouse e Search Console** — nada disso foi tocado.
+- **GA4 e Clarity estão desligados**, e as três páginas legais dizem isso ao
+  visitante. `PUBLIC_GA4_ID` e `PUBLIC_CLARITY_ID` estão vazias no `.env`, o
+  `Base.astro` só injeta os scripts se elas tiverem valor, e o site no ar não
+  faz **nenhuma** requisição a domínio de terceiro (conferido com Playwright).
+  **No dia em que ligar qualquer uma das duas**, é preciso, na mesma leva:
+  1. corrigir `/politica-de-cookies` e `/politica-de-privacidade`, que hoje
+     afirmam que não há medição;
+  2. colocar um aviso de consentimento — cookie de medição só pode rodar
+     depois do aceite, e hoje não existe essa tela.
+- **As três páginas legais não passaram por advogado.** Cada uma fecha com um
+  aviso dizendo isso, em `.destaque--revisao`. Quando a revisão acontecer,
+  apague o aviso das três.
+- **O CNPJ não está em lugar nenhum do código.** O rodapé do Figma mostra um
+  número de exemplo (`12.345.678/0001-23`); o real nunca foi passado. Se
+  precisar aparecer, peça ao Gabriel.
 - **O CMS de blog** — é **módulo à parte**, não misture com layout.
 - **`local: "Brasil"`** nos quatro projetos é placeholder; o Figma mostra
   "Maringá - PR". É texto, então é decisão do Gabriel.

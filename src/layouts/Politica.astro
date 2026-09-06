@@ -1,0 +1,234 @@
+---
+/**
+ * Molde das três páginas legais: Termos de uso, Política de Privacidade e
+ * Política de Cookies.
+ *
+ * As três são a mesma página com texto diferente, então o molde é um só —
+ * mexer no espaçamento de uma mexe nas três, que é o que se quer.
+ *
+ * A identidade vem do resto do site, não de um estilo novo: o mesmo cabeçalho
+ * de página interna (migalhas, título e o selo circular), a mesma faixa
+ * pêssego do rodapé de Sobre nós, os mesmos tokens de tipografia. A única
+ * liberdade tomada aqui é o índice lateral — página legal é longa, e sem ele
+ * a pessoa rola no escuro.
+ *
+ * O texto jurídico em si mora em cada página, não aqui: é o que muda.
+ */
+import Base from '~/layouts/Base.astro';
+import Cabecalho from '~/components/Cabecalho.astro';
+import Rodape from '~/components/Rodape.astro';
+import Wordmark from '~/components/Wordmark.astro';
+import Migalhas from '~/components/Migalhas.astro';
+
+interface Props {
+  titulo: string;
+  descricao: string;
+  /** Data da última revisão do texto, para o aviso do topo. */
+  atualizadoEm: string;
+  /** Os `<h2>` da página, na ordem, para montar o índice lateral. */
+  secoes: { id: string; rotulo: string }[];
+}
+const { titulo, descricao, atualizadoEm, secoes } = Astro.props;
+---
+
+<Base titulo={titulo} descricao={descricao}>
+  <Cabecalho slot="cabecalho" />
+
+  <header class="cabeca">
+    <div class="cabeca__interno">
+      <Migalhas itens={[{ rotulo: 'Início', href: '/' }, { rotulo: titulo }]} />
+      <h1 class="cabeca__titulo">{titulo}</h1>
+      <p class="cabeca__data">Última atualização: {atualizadoEm}</p>
+    </div>
+    <img
+      class="cabeca__selo"
+      src="/imagens/figma/selo-marca.webp"
+      alt=""
+      width="328"
+      height="328"
+      loading="lazy"
+    />
+  </header>
+
+  <div class="politica">
+    {/* Índice: `position: sticky` acompanha a rolagem no desktop e vira uma
+        lista comum no celular, onde não há coluna para ele. */}
+    <nav class="indice" aria-labelledby="indice-titulo">
+      <h2 class="indice__titulo" id="indice-titulo">Nesta página</h2>
+      <ol class="indice__lista">
+        {secoes.map((s) => (
+          <li><a href={`#${s.id}`}>{s.rotulo}</a></li>
+        ))}
+      </ol>
+    </nav>
+
+    <article class="texto">
+      <slot />
+    </article>
+  </div>
+
+  <div slot="rodape">
+    <Wordmark />
+    <Rodape />
+  </div>
+</Base>
+
+<style>
+  /* ─── Cabeçalho da página ─────────────────────────────────
+     O mesmo de Contato, Projetos e Sobre nós — página legal não é lugar
+     para inventar um cabeçalho próprio. */
+  .cabeca {
+    align-items: flex-start;
+    border-bottom: 1px solid var(--fig-primaria-ativa);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--fig-e-4xl) var(--fig-margem-interna);
+  }
+  .cabeca__interno { display: flex; flex-direction: column; gap: var(--fig-e-lg); }
+  .cabeca__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
+    margin: 0;
+  }
+  .cabeca__data {
+    color: var(--fig-texto-meta);
+    font: var(--fig-peso-medio) var(--fig-t-meta) / 1.4 var(--fig-fonte-corpo);
+    margin: 0;
+  }
+  .cabeca__selo { flex: none; height: auto; max-width: 328px; opacity: 0.9; width: 20vw; }
+
+  /* ─── Duas colunas: índice e texto ────────────────────────*/
+  .politica {
+    display: grid;
+    gap: clamp(var(--fig-e-2xl), 5vw, 100px);
+    grid-template-columns: 260px minmax(0, 1fr);
+    margin-inline: auto;
+    /* 1180 em vez dos 1560 do conteúdo: com o texto travado em 75ch por
+       legibilidade, o container largo só abria um vão morto à direita. */
+    max-width: 1180px;
+    padding: var(--fig-e-4xl) var(--fig-margem-interna) var(--fig-secao-y);
+  }
+
+  .indice {
+    align-self: start;
+    border-left: 3px solid var(--fig-primaria-clara);
+    padding-left: var(--fig-e-lg);
+    position: sticky;
+    top: var(--fig-e-2xl);
+  }
+  .indice__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-normal) var(--fig-t-rotulo) / 1.2 var(--fig-fonte-display);
+    margin: 0 0 var(--fig-e-md);
+  }
+  .indice__lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fig-e-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .indice__lista a {
+    color: var(--fig-texto);
+    font: var(--fig-peso-medio) var(--fig-t-meta) / 1.4 var(--fig-fonte-corpo);
+    text-decoration: none;
+    transition: color var(--dur-ver-todas-postagens, 0.3s) var(--mola-ver-todas-postagens, ease);
+  }
+  .indice__lista a:hover { color: var(--fig-primaria-ativa); text-decoration: underline; }
+  .indice__lista a:focus-visible {
+    outline: 2px solid var(--fig-primaria-ativa);
+    outline-offset: 3px;
+  }
+
+  /* ─── Corpo do texto ──────────────────────────────────────
+     Medida de leitura confortável, na mesma família e no mesmo corpo do
+     resto do site. Não é o `artigo.css`: lá o corpo é medido contra a
+     captura do Framer, e página legal não tem captura. */
+  .texto { max-width: 72ch; }
+
+  .texto :global(h2) {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-normal) clamp(1.5rem, 1.2rem + 1vw, 2rem) / 1.2 var(--fig-fonte-display);
+    margin: var(--fig-e-2xl) 0 var(--fig-e-md);
+    /* O link do índice não pode parar com o título colado no menu. */
+    scroll-margin-top: calc(var(--fig-menu-altura) + var(--fig-e-lg));
+  }
+  .texto :global(h2:first-child) { margin-top: 0; }
+
+  .texto :global(h3) {
+    color: var(--fig-tinta);
+    font: var(--fig-peso-semi) var(--fig-t-corpo-g) / 1.3 var(--fig-fonte-corpo);
+    margin: var(--fig-e-xl) 0 var(--fig-e-xs);
+  }
+
+  .texto :global(p),
+  .texto :global(li) {
+    color: var(--fig-texto);
+    font: var(--fig-peso-normal) var(--fig-t-corpo-p) / var(--fig-altura-solta) var(--fig-fonte-corpo);
+  }
+  .texto :global(p) { margin: 0 0 var(--fig-e-md); }
+
+  .texto :global(ul),
+  .texto :global(ol) { margin: 0 0 var(--fig-e-md); padding-left: var(--fig-e-lg); }
+  .texto :global(li) { margin-bottom: var(--fig-e-xs); }
+  .texto :global(li)::marker { color: var(--fig-primaria-clara); }
+
+  .texto :global(strong) { color: var(--fig-tinta); font-weight: var(--fig-peso-semi); }
+
+  .texto :global(a) {
+    color: #8d7252;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Bloco destacado para o "quem é o controlador" e afins — a mesma faixa
+     pêssego que a home usa nos números. */
+  .texto :global(.destaque) {
+    background: var(--fig-veu-cta);
+    border-radius: var(--fig-raio-sm);
+    margin: var(--fig-e-lg) 0;
+    padding: var(--fig-e-lg);
+  }
+  .texto :global(.destaque p:last-child) { margin-bottom: 0; }
+
+  /* O aviso de "ainda não passou por advogado" fecha a página, discreto mas
+     legível: fundo neutro e uma barra caramelo à esquerda. */
+  .texto :global(.destaque--revisao) {
+    background: var(--fig-cinza-50);
+    border-left: 3px solid var(--fig-primaria-clara);
+    margin-top: var(--fig-e-2xl);
+  }
+
+  /* Tabela de cookies: no celular ela rola sozinha em vez de espremer. */
+  .texto :global(.tabela-rolavel) { overflow-x: auto; margin: 0 0 var(--fig-e-lg); }
+  .texto :global(table) {
+    border-collapse: collapse;
+    min-width: 520px;
+    width: 100%;
+  }
+  .texto :global(th),
+  .texto :global(td) {
+    border-bottom: 1px solid var(--fig-borda);
+    padding: var(--fig-e-sm) var(--fig-e-md) var(--fig-e-sm) 0;
+    text-align: left;
+    vertical-align: top;
+  }
+  .texto :global(th) {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-t-meta) / 1.3 var(--fig-fonte-corpo);
+  }
+  .texto :global(td) {
+    color: var(--fig-texto);
+    font: var(--fig-peso-normal) var(--fig-t-meta) / 1.5 var(--fig-fonte-corpo);
+  }
+
+  @media (max-width: 1199.98px) {
+    .cabeca__selo { display: none; }
+    /* O índice vira um bloco acima do texto: em coluna estreita ele não
+       cabe ao lado, e grudado no topo atrapalharia a leitura. */
+    .politica { grid-template-columns: minmax(0, 1fr); gap: var(--fig-e-2xl); }
+    .indice { position: static; }
+    .indice__lista { flex-direction: row; flex-wrap: wrap; gap: var(--fig-e-sm) var(--fig-e-lg); }
+  }
+</style>

@@ -1,0 +1,140 @@
+---
+/**
+ * Política de Cookies — rota já linkada no rodapé, que até agora dava 404.
+ *
+ * Esta página é curta porque o site é honesto: **hoje ele não usa cookie
+ * nenhum**. Conferido, não presumido — `Base.astro` só injeta GA4 e Clarity
+ * se `PUBLIC_GA4_ID` e `PUBLIC_CLARITY_ID` tiverem valor, e as duas estão
+ * vazias; o HTML no ar não traz `googletagmanager` nem `clarity.ms`.
+ *
+ * A tabela lista o que EXISTE hoje, e a seção final descreve o que passará a
+ * valer quando a medição for ligada. Escrever agora uma política cheia de
+ * cookies que não existem seria mais fácil e seria mentira.
+ *
+ * **No dia em que o GA4 ou o Clarity entrarem**, esta página precisa mudar
+ * junto — e o site vai precisar de um aviso de consentimento, porque cookie
+ * de medição só pode rodar depois do aceite.
+ */
+import Politica from '~/layouts/Politica.astro';
+import { site } from '~/lib/site';
+
+const secoes = [
+  { id: 'o-que-sao', rotulo: 'O que são cookies' },
+  { id: 'o-que-usamos', rotulo: 'O que este site usa hoje' },
+  { id: 'terceiros', rotulo: 'Conteúdo de terceiros' },
+  { id: 'controle', rotulo: 'Como controlar' },
+  { id: 'futuro', rotulo: 'Se isso mudar' },
+  { id: 'contato', rotulo: 'Dúvidas' },
+];
+---
+
+<Politica
+  titulo="Política de Cookies"
+  descricao="Que cookies o site da Isabella Pires Arquitetura usa — e por que a resposta, hoje, é praticamente nenhum."
+  atualizadoEm="6 de setembro de 2026"
+  secoes={secoes}
+>
+  <div class="destaque">
+    <p>
+      <strong>Resumo:</strong> este site não usa cookies de rastreamento, de publicidade
+      nem de estatística. Não há Google Analytics, não há mapa de calor, não há pixel
+      de rede social. Por isso você não vê aqui aquele aviso de cookies pedindo
+      aceitação — não haveria o que aceitar.
+    </p>
+  </div>
+
+  <h2 id="o-que-sao">O que são cookies</h2>
+  <p>
+    Cookies são arquivinhos que um site guarda no seu navegador para lembrar de algo
+    entre uma página e outra — que você está logado, qual idioma escolheu, ou, no caso
+    dos cookies de rastreamento, por onde você andou.
+  </p>
+  <p>
+    Tecnologias parecidas fazem o mesmo papel com outro nome:
+    <em>localStorage</em>, <em>sessionStorage</em> e pixels de rastreamento.
+    Quando esta página fala em cookies, vale para todas elas.
+  </p>
+
+  <h2 id="o-que-usamos">O que este site usa hoje</h2>
+  <p>
+    Nenhum cookie é gravado quando você navega, lê um artigo ou envia o formulário.
+    O que existe é apenas o necessário para as páginas serem entregues:
+  </p>
+  <div class="tabela-rolavel">
+    <table>
+      <thead>
+        <tr>
+          <th>Origem</th>
+          <th>Para quê</th>
+          <th>Guarda algo no seu navegador?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vercel (hospedagem)</td>
+          <td>Entregar as páginas e proteger contra ataques e sobrecarga</td>
+          <td>Não em uso normal de navegação</td>
+        </tr>
+        <tr>
+          <td>Formulário de contato</td>
+          <td>Enviar sua mensagem ao escritório</td>
+          <td>Não — os dados vão direto no envio, nada fica no navegador</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Os dados que você digita no formulário são tratados como descreve a <a href="/politica-de-privacidade">Política de Privacidade</a>.
+  </p>
+
+  <h2 id="terceiros">Conteúdo de terceiros</h2>
+  <p>
+    As fontes tipográficas e as imagens são servidas pelo próprio site, e não por
+    serviços externos — o que evita que outras empresas vejam sua visita.
+  </p>
+  <p>
+    Quando você clica em um link para o nosso <strong>Instagram</strong>,
+    <strong>Facebook</strong>, <strong>LinkedIn</strong> ou <strong>WhatsApp</strong>, você
+    sai daqui e passa a valer a política de cookies dessas plataformas, sobre a qual
+    não temos controle. Enquanto você não clicar, elas não recebem nada deste site.
+  </p>
+
+  <h2 id="controle">Como controlar</h2>
+  <p>
+    Como não gravamos cookies, não há o que desativar aqui. Ainda assim, todo navegador
+    permite bloquear ou apagar cookies de qualquer site — normalmente em
+    <em>Configurações → Privacidade e segurança</em>. Bloquear tudo não atrapalha a
+    navegação neste site.
+  </p>
+
+  <h2 id="futuro">Se isso mudar</h2>
+  <p>
+    É possível que no futuro o escritório queira entender quais páginas são mais
+    lidas, para decidir o que produzir. Se isso acontecer:
+  </p>
+  <ul>
+    <li>esta página será atualizada <strong>antes</strong>, com a lista do que passa a ser gravado;</li>
+    <li>a data no topo vai mudar;</li>
+    <li>
+      aparecerá um <strong>aviso pedindo sua aceitação</strong>, e a medição só começará
+      depois que você aceitar — recusar continuará permitindo usar o site inteiro.
+    </li>
+  </ul>
+
+  <h2 id="contato">Dúvidas</h2>
+  <p>
+    Qualquer pergunta sobre esta política: <a href={`mailto:${site.email}`}>{site.email}</a>, ou pela <a href="/contato">página de contato</a>.
+  </p>
+
+  {/* Este aviso é deliberado: o texto acima é específico e honesto, mas foi
+      escrito por quem programou o site, não por advogado. Some daqui no dia
+      em que passar por revisão jurídica. */}
+  <div class="destaque destaque--revisao">
+    <p>
+      <strong>Aviso.</strong> Este texto foi redigido com base no funcionamento real
+      do site e na legislação brasileira, mas ainda <strong>não passou por revisão
+      jurídica</strong>. Se você é a responsável pelo escritório e está lendo isto,
+      vale submetê-lo a um advogado antes de tratá-lo como definitivo.
+    </p>
+  </div>
+</Politica>

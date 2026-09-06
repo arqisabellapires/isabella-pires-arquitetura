@@ -36,10 +36,10 @@ const secoes = [
 >
   <div class="destaque">
     <p>
-      <strong>Resumo:</strong> este site não usa cookies de rastreamento, de publicidade
-      nem de estatística. Não há Google Analytics, não há mapa de calor, não há pixel
-      de rede social. Por isso você não vê aqui aquele aviso de cookies pedindo
-      aceitação — não haveria o que aceitar.
+      <strong>Resumo:</strong> este site não usa cookies de publicidade nem vende dados.
+      Os únicos cookies que podem existir são os de <strong>estatística</strong>, e eles
+      só funcionam se você aceitar — enquanto você não aceitar, nada é gravado e nenhum
+      dado sai daqui.
     </p>
   </div>
 
@@ -50,16 +50,17 @@ const secoes = [
     dos cookies de rastreamento, por onde você andou.
   </p>
   <p>
-    Tecnologias parecidas fazem o mesmo papel com outro nome:
-    <em>localStorage</em>, <em>sessionStorage</em> e pixels de rastreamento.
+    Tecnologias parecidas fazem o mesmo papel com outro nome: <em>localStorage</em>, <em>sessionStorage</em> e pixels de rastreamento.
     Quando esta página fala em cookies, vale para todas elas.
   </p>
 
   <h2 id="o-que-usamos">O que este site usa hoje</h2>
   <p>
-    Nenhum cookie é gravado quando você navega, lê um artigo ou envia o formulário.
-    O que existe é apenas o necessário para as páginas serem entregues:
+    <strong>Neste momento, nenhum.</strong> As ferramentas de estatística estão
+    desativadas, e por isso você não vê o aviso de cookies ao entrar. Se elas forem
+    ligadas, o aviso aparece e nada roda antes do seu aceite.
   </p>
+  <p>O que existe é apenas o necessário para as páginas serem entregues:</p>
   <div class="tabela-rolavel">
     <table>
       <thead>
@@ -80,6 +81,15 @@ const secoes = [
           <td>Enviar sua mensagem ao escritório</td>
           <td>Não — os dados vão direto no envio, nada fica no navegador</td>
         </tr>
+        <tr>
+          <td>Sua escolha sobre cookies</td>
+          <td>Lembrar se você aceitou ou recusou, para não perguntar de novo</td>
+          <td>
+            Sim, se você responder ao aviso — um único registro
+            (<code>ip-consentimento-medicao</code>) no seu navegador, que nunca é
+            enviado a ninguém
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -93,8 +103,7 @@ const secoes = [
     serviços externos — o que evita que outras empresas vejam sua visita.
   </p>
   <p>
-    Quando você clica em um link para o nosso <strong>Instagram</strong>,
-    <strong>Facebook</strong>, <strong>LinkedIn</strong> ou <strong>WhatsApp</strong>, você
+    Quando você clica em um link para o nosso <strong>Instagram</strong>, <strong>Facebook</strong>, <strong>LinkedIn</strong> ou <strong>WhatsApp</strong>, você
     sai daqui e passa a valer a política de cookies dessas plataformas, sobre a qual
     não temos controle. Enquanto você não clicar, elas não recebem nada deste site.
   </p>
@@ -102,22 +111,43 @@ const secoes = [
   <h2 id="controle">Como controlar</h2>
   <p>
     Como não gravamos cookies, não há o que desativar aqui. Ainda assim, todo navegador
-    permite bloquear ou apagar cookies de qualquer site — normalmente em
-    <em>Configurações → Privacidade e segurança</em>. Bloquear tudo não atrapalha a
+    permite bloquear ou apagar cookies de qualquer site — normalmente em <em>Configurações → Privacidade e segurança</em>. Bloquear tudo não atrapalha a
     navegação neste site.
   </p>
 
-  <h2 id="futuro">Se isso mudar</h2>
+  <h2 id="futuro">Se a medição for ligada</h2>
   <p>
-    É possível que no futuro o escritório queira entender quais páginas são mais
-    lidas, para decidir o que produzir. Se isso acontecer:
+    É possível que o escritório passe a querer entender quais páginas são mais lidas,
+    para decidir o que produzir. As duas ferramentas previstas para isso são:
   </p>
   <ul>
-    <li>esta página será atualizada <strong>antes</strong>, com a lista do que passa a ser gravado;</li>
-    <li>a data no topo vai mudar;</li>
     <li>
-      aparecerá um <strong>aviso pedindo sua aceitação</strong>, e a medição só começará
-      depois que você aceitar — recusar continuará permitindo usar o site inteiro.
+      <strong>Google Analytics 4 (GA4)</strong>, do Google — mede quantas pessoas
+      visitam cada página, de onde vêm e quanto tempo ficam. Grava cookies próprios
+      (<code>_ga</code> e <code>_ga_*</code>), que duram até 2 anos, e trabalha com o
+      seu endereço de IP anonimizado;
+    </li>
+    <li>
+      <strong>Microsoft Clarity</strong>, da Microsoft — registra de forma agregada como
+      as pessoas rolam e clicam nas páginas, para revelar trechos confusos. Grava
+      cookies próprios (<code>_clck</code> e <code>_clsk</code>), que duram até 1 ano.
+    </li>
+  </ul>
+  <p>
+    As duas são fornecedores fora do Brasil, o que caracteriza transferência
+    internacional de dados, e as duas analisam o comportamento de navegação de forma <strong>agregada</strong> — servem para saber que “40 pessoas leram este artigo”, não
+    para identificar quem são.
+  </p>
+  <p>Quando forem ligadas:</p>
+  <ul>
+    <li>esta página será atualizada <strong>antes</strong>, e a data no topo vai mudar;</li>
+    <li>
+      aparecerá um <strong>aviso pedindo sua aceitação</strong>, e nenhum dos dois carrega
+      antes disso — nem o script, nem o cookie;
+    </li>
+    <li>
+      <strong>recusar continua permitindo usar o site inteiro</strong>, sem perda de
+      nenhuma função, e a recusa fica registrada para não perguntarmos de novo.
     </li>
   </ul>
 

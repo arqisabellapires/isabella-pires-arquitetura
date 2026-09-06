@@ -31,7 +31,9 @@ const secoes = [
   { id: 'base-legal', rotulo: 'Com que base legal' },
   { id: 'compartilhamento', rotulo: 'Com quem compartilhamos' },
   { id: 'prazo', rotulo: 'Por quanto tempo guardamos' },
+  { id: 'menores', rotulo: 'Crianças e adolescentes' },
   { id: 'direitos', rotulo: 'Seus direitos' },
+  { id: 'encarregado', rotulo: 'Encarregado pelos dados' },
   { id: 'seguranca', rotulo: 'Segurança' },
   { id: 'mudancas', rotulo: 'Mudanças nesta política' },
   { id: 'contato', rotulo: 'Como falar conosco' },
@@ -84,13 +86,19 @@ const secoes = [
 
   <h3>Dados coletados automaticamente</h3>
   <p>
-    <strong>Hoje o site não usa nenhuma ferramenta de estatística.</strong> Não há Google
-    Analytics, nem mapa de calor, nem cookie de medição — só o necessário para as
-    páginas carregarem. O detalhe está na <a href="/politica-de-cookies">Política de Cookies</a>.
+    <strong>Neste momento, nenhum.</strong> As ferramentas de estatística do site estão
+    desativadas — não há Google Analytics, nem mapa de calor, nem cookie de medição.
   </p>
   <p>
-    Se isso mudar, esta política e a de cookies mudam junto, com a data no topo
-    atualizada, e a medição passará a depender da sua aceitação.
+    Quando forem ligadas, serão o <strong>Google Analytics 4</strong> e o <strong>Microsoft Clarity</strong>, e as duas só passam a funcionar <strong>depois que você aceitar</strong> no aviso que aparecerá na tela. Elas
+    registram de forma agregada páginas visitadas, tempo de permanência, tipo de
+    dispositivo e região aproximada — dados que servem para saber que “40 pessoas leram
+    este artigo”, não quem são elas. O IP é anonimizado. O detalhe de cada cookie está
+    na <a href="/politica-de-cookies">Política de Cookies</a>.
+  </p>
+  <p>
+    <strong>Recusar não tira nenhuma função do site</strong>, e a sua escolha fica
+    guardada no seu próprio navegador para não perguntarmos de novo.
   </p>
   <p>
     <strong>Não coletamos dados sensíveis</strong> (origem racial, saúde, opinião política,
@@ -118,7 +126,7 @@ const secoes = [
     </li>
     <li>
       <strong>Consentimento</strong> (art. 7º, I) — para a newsletter, que só é enviada a
-      quem pediu;
+      quem pediu, e para os cookies de estatística, que só rodam depois do aceite;
     </li>
     <li>
       <strong>Legítimo interesse</strong> (art. 7º, IX) — para manter o site em pé e
@@ -134,14 +142,17 @@ const secoes = [
   <ul>
     <li><strong>Vercel</strong> — hospeda o site e o entrega ao seu navegador;</li>
     <li><strong>Brevo</strong> — envia as mensagens do formulário para o nosso e-mail e cuida da newsletter;</li>
+    <li>
+      <strong>Google Analytics 4</strong> (Google) e <strong>Microsoft Clarity</strong>
+      (Microsoft) — estatísticas de uso, <strong>somente se você aceitar</strong>. Hoje
+      estão desativados e não recebem nada.
+    </li>
   </ul>
   <p>
-    Não há, hoje, nenhum serviço de estatística ou publicidade recebendo dados
-    deste site.
+    Nenhum serviço de publicidade recebe dados deste site, em nenhuma hipótese.
   </p>
   <p>
-    Alguns desses serviços mantêm servidores fora do Brasil, o que caracteriza
-    <strong>transferência internacional de dados</strong> (art. 33 da LGPD). Escolhemos
+    Alguns desses serviços mantêm servidores fora do Brasil, o que caracteriza <strong>transferência internacional de dados</strong> (art. 33 da LGPD). Escolhemos
     fornecedores que oferecem cláusulas contratuais de proteção equivalentes às
     exigidas aqui.
   </p>
@@ -152,15 +163,30 @@ const secoes = [
   <h2 id="prazo">Por quanto tempo guardamos</h2>
   <ul>
     <li>
-      <strong>Mensagens de contato:</strong> enquanto durar a conversa e por até
-      <strong>5 anos</strong> depois, prazo que a lei civil dá para discutir um contrato;
+      <strong>Mensagens de contato:</strong> enquanto durar a conversa e por até <strong>5 anos</strong> depois, prazo que a lei civil dá para discutir um contrato;
     </li>
     <li>
       <strong>E-mail da newsletter:</strong> até você se descadastrar — o link está em toda
       mensagem que enviamos;
     </li>
+    <li>
+      <strong>Dados de estatística</strong>, quando ativos: pelo prazo de retenção da
+      própria ferramenta — até 14 meses no GA4 e até 1 ano no Clarity.
+    </li>
   </ul>
   <p>Passado o prazo, os dados são apagados ou anonimizados.</p>
+
+  <h2 id="menores">Crianças e adolescentes</h2>
+  <p>
+    Este site é dirigido a adultos que buscam serviços de arquitetura. Não coletamos
+    intencionalmente dados de menores de 18 anos, e o formulário não deve ser preenchido
+    por eles sem que um responsável esteja ciente.
+  </p>
+  <p>
+    Se tomarmos conhecimento de que recebemos dados de uma criança ou adolescente sem o
+    consentimento previsto no art. 14 da LGPD, apagamos o registro. Se você é
+    responsável e identificou algo assim, escreva para <a href={`mailto:${site.email}`}>{site.email}</a>.
+  </p>
 
   <h2 id="direitos">Seus direitos</h2>
   <p>
@@ -176,10 +202,21 @@ const secoes = [
     <li><strong>Se opor</strong> a um tratamento que você considere indevido.</li>
   </ul>
   <p>
-    Escreva para <a href={`mailto:${site.email}`}>{site.email}</a> e respondemos em até
-    <strong>15 dias</strong>. Pode ser que peçamos algo que confirme sua identidade — é para
+    Escreva para <a href={`mailto:${site.email}`}>{site.email}</a> e respondemos em até <strong>15 dias</strong>. Pode ser que peçamos algo que confirme sua identidade — é para
     não entregar seus dados a outra pessoa.
   </p>
+
+  <h2 id="encarregado">Encarregado pelos dados</h2>
+  <p>
+    O art. 41 da LGPD pede que o controlador indique a quem se dirigir sobre proteção
+    de dados. Num escritório deste porte, esse canal é a própria responsável:
+  </p>
+  <div class="destaque">
+    <p>
+      <strong>Isabella Cito Pires</strong> — encarregada pelo tratamento de dados<br />
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+  </div>
 
   <h2 id="seguranca">Segurança</h2>
   <p>

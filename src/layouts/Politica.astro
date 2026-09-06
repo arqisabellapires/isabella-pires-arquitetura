@@ -176,6 +176,17 @@ const { titulo, descricao, atualizadoEm, secoes } = Astro.props;
 
   .texto :global(strong) { color: var(--fig-tinta); font-weight: var(--fig-peso-semi); }
 
+  /* Nome técnico de cookie (`_ga`, `_clck`) aparece no texto; sem tratamento
+     ele se confundia com o corpo. */
+  .texto :global(code) {
+    background: var(--fig-cinza-50);
+    border-radius: var(--fig-raio-xs);
+    color: var(--fig-primaria-ativa);
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    padding: 0.1em 0.35em;
+  }
+
   .texto :global(a) {
     color: #8d7252;
     text-decoration: underline;

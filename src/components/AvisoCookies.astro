@@ -1,0 +1,143 @@
+---
+/**
+ * Aviso de cookies — e ele **funciona de verdade**, não é enfeite.
+ *
+ * O problema que este componente resolve: o `Base.astro` injetava GA4 e
+ * Clarity assim que as variáveis de ambiente tivessem valor, sem perguntar
+ * nada a ninguém. Hoje as duas estão vazias, então na prática não há
+ * rastreamento — mas no dia em que forem preenchidas o site passaria a
+ * rastrear sem consentimento, o que a LGPD não permite para cookie de
+ * medição.
+ *
+ * Como funciona: os scripts de medição NÃO ficam mais no HTML. Eles são
+ * injetados por `src/lib/consentimento.ts` apenas depois do aceite. Recusar
+ * não injeta nada, e a escolha fica em `localStorage` para não perguntar de
+ * novo a cada página.
+ *
+ * O banner só aparece se houver medição configurada. Sem GA4 e sem Clarity
+ * não há o que consentir, e mostrar o aviso seria teatro — é o que a
+ * Política de Cookies afirma, e ela precisa continuar verdadeira.
+ */
+interface Props {
+  /** Falso quando não há nenhuma ferramenta de medição configurada. */
+  ativo: boolean;
+}
+const { ativo } = Astro.props;
+---
+
+{ativo && (
+  <div
+    class="aviso"
+    data-aviso-cookies
+    role="dialog"
+    aria-labelledby="aviso-cookies-titulo"
+    aria-describedby="aviso-cookies-texto"
+    hidden
+  >
+    <div class="aviso__interno">
+      <div class="aviso__texto">
+        <h2 class="aviso__titulo" id="aviso-cookies-titulo">Um minuto sobre cookies</h2>
+        <p id="aviso-cookies-texto">
+          Gostaríamos de entender quais páginas são mais lidas, para escrever
+          melhor. Para isso usamos cookies de estatística — e só com a sua
+          permissão. Recusar não muda nada no site. <a href="/politica-de-cookies">Ler a política</a>.
+        </p>
+      </div>
+      <div class="aviso__acoes">
+        <button type="button" class="aviso__botao aviso__botao--recusar" data-recusar>
+          Recusar
+        </button>
+        <button type="button" class="aviso__botao aviso__botao--aceitar" data-aceitar>
+          Aceitar
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+<style>
+  /*
+    O aviso encosta na base da tela numa faixa creme, com a mesma linguagem
+    do resto do site — não é a caixa preta genérica de banner de cookie.
+    `position: fixed` com `inset-inline: 0` mantém ele acima do rodapé sem
+    empurrar o conteúdo.
+  */
+  .aviso {
+    background: var(--fig-fundo-cartao);
+    border-top: 1px solid var(--fig-primaria-clara);
+    bottom: 0;
+    box-shadow: 0 -4px 24px rgb(53 32 5 / 0.12);
+    inset-inline: 0;
+    position: fixed;
+    z-index: 100;
+  }
+  .aviso[hidden] { display: none; }
+
+  .aviso__interno {
+    align-items: center;
+    display: flex;
+    gap: var(--fig-e-2xl);
+    justify-content: space-between;
+    margin-inline: auto;
+    max-width: var(--fig-largura-conteudo);
+    padding: var(--fig-e-lg) var(--fig-margem-interna);
+  }
+
+  .aviso__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-normal) var(--fig-t-rotulo) / 1.2 var(--fig-fonte-display);
+    margin: 0 0 var(--fig-e-2xs);
+  }
+  .aviso__texto p {
+    color: var(--fig-texto);
+    font: var(--fig-peso-normal) var(--fig-t-meta) / 1.5 var(--fig-fonte-corpo);
+    margin: 0;
+    max-width: 68ch;
+  }
+  .aviso__texto a {
+    color: #8d7252;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .aviso__acoes { display: flex; flex: none; gap: var(--fig-e-sm); }
+
+  .aviso__botao {
+    border-radius: var(--fig-raio-sm);
+    cursor: pointer;
+    font: var(--fig-peso-forte) var(--fig-t-meta) / 1.2 var(--fig-fonte-corpo);
+    padding: var(--fig-e-sm) var(--fig-e-lg);
+    transition: transform var(--dur-botao-enviar, 0.3s) var(--mola-botao-enviar, ease);
+  }
+  .aviso__botao:hover { transform: translateY(-1px); }
+  .aviso__botao:focus-visible {
+    outline: 2px solid var(--fig-primaria-ativa);
+    outline-offset: 2px;
+  }
+
+  /* Recusar tem o mesmo peso visual de aceitar: esconder a recusa num link
+     cinza é padrão escuro, e a LGPD pede escolha livre. */
+  .aviso__botao--recusar {
+    background: transparent;
+    border: 1px solid var(--fig-primaria-ativa);
+    color: var(--fig-primaria-ativa);
+  }
+  .aviso__botao--aceitar {
+    background: var(--fig-primaria-clara);
+    border: 1px solid var(--fig-primaria-clara);
+    color: #fff;
+  }
+
+  @media (max-width: 809.98px) {
+    .aviso__interno {
+      align-items: stretch;
+      flex-direction: column;
+      gap: var(--fig-e-md);
+    }
+    .aviso__acoes > * { flex: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aviso__botao { transition: none; }
+  }
+</style>

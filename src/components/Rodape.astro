@@ -9,12 +9,22 @@
  * inconsistência do próprio Figma, não do código, e uniformizar é a escolha
  * certa: rodapé que muda de cor a cada página parece defeito, não intenção.
  *
- * O padrão é o **#3a2e26**, e não o caramelo, por um motivo medido: com
- * fundo #a98d67 os textos do rodapé (#eee e #e9e2da) dão contraste de
- * 2,70:1 e 2,44:1 — abaixo do mínimo de 3:1, e o portão acusou isso em 156
- * pontos do site. Com #3a2e26 a razão vai a 11,32:1. O caramelo continua
- * disponível em `data-variante="caramelo"` para uso decorativo, mas não é
- * o padrão porque não é legível.
+ * **O padrão é o pêssego #f0d9c7, medido no site de referência.**
+ *
+ * Antes era #3a2e26 escuro, e a razão registrada aqui era de contraste: com
+ * fundo caramelo #a98d67 os textos claros davam 2,70:1, abaixo do mínimo. A
+ * conclusão estava certa mas a alternativa era falsa — a escolha foi tratada
+ * como "caramelo ou escuro", e o site de referência não usa nenhum dos dois:
+ * usa o **pêssego**, com o texto ESCURO por cima. Medido em
+ * `_capturas/home/medidas.desktop.json`: fundo rgb(240,217,199), títulos
+ * rgb(33,32,31) e links rgb(72,59,42).
+ *
+ * E o contraste passa com folga: #483b2a sobre #f0d9c7 dá 7,99:1, e #21201f
+ * dá 11,97:1. Inverter o texto em vez de escurecer o fundo resolve os dois
+ * lados — fidelidade e legibilidade.
+ *
+ * O caramelo continua em `data-variante="caramelo"` e o escuro em
+ * `data-variante="escuro"`, mas nenhum dos dois é o padrão.
  *
  * O Figma desenha cinco redes sociais (inclui TikTok e YouTube). O site.ts
  * tem três perfis reais. Ficam as três: perfil que não existe não vira link.
@@ -25,10 +35,11 @@
 import { rodape, site } from '~/lib/site';
 
 interface Props {
-  /** 'caramelo' é o #a98d67 do design — decorativo, com contraste baixo. */
-  variante?: 'escuro' | 'caramelo';
+  /** O padrão é 'pessego', medido na referência. Os outros dois são do
+      Figma e ficam disponíveis, mas têm contraste pior. */
+  variante?: 'pessego' | 'escuro' | 'caramelo';
 }
-const { variante = 'escuro' } = Astro.props;
+const { variante = 'pessego' } = Astro.props;
 
 const redes = [
   { nome: 'Instagram', href: site.redes.instagram, icone: '/icones/instagram.svg' },
@@ -86,11 +97,14 @@ const redes = [
 
 <style>
   .rodape {
-    background: var(--fig-fundo-escuro);
-    color: var(--fig-cinza-50);
-    padding: var(--fig-e-5xl) var(--fig-margem-interna);
+    background: var(--fig-fundo-pessego);
+    color: #21201f;
+    /* 52px no topo é o que a referência mede entre a borda do rodapé e o
+       "Contate-nos"; com os 100px de antes o rodapé ia a 584 contra 485. */
+    padding: var(--fig-e-3xl) var(--fig-margem-interna) var(--fig-e-2xl);
   }
   .rodape[data-variante='caramelo'] { background: var(--fig-primaria-clara); }
+  .rodape[data-variante='escuro'] { background: var(--fig-fundo-escuro); }
 
   .rodape__interno {
     display: flex;
@@ -111,12 +125,12 @@ const redes = [
   .rodape__rotulo {
     margin: 0;
     font: var(--fig-peso-semi) var(--fig-t-corpo) / 1.2 var(--fig-fonte-corpo);
-    color: #e9e2da;
+    color: #483b2a;
   }
   .rodape__chamada {
     margin: 0 0 var(--fig-e-2xs);
     font: var(--fig-peso-normal) var(--fig-f-subtitulo) / 1.15 var(--fig-fonte-display);
-    color: var(--fig-cinza-50);
+    color: #21201f;
   }
   .rodape__botao {
     align-self: flex-start;
@@ -135,16 +149,17 @@ const redes = [
   .rodape__coluna li + li { margin-top: var(--fig-e-sm); }
   .rodape__coluna-titulo {
     margin: 0 0 var(--fig-e-sm);
-    font: var(--fig-peso-normal) var(--fig-t-rodape-col) / 1.2 var(--fig-fonte-display);
-    color: var(--fig-cinza-50);
+    /* 32px/700 em Mulish na referência, não Faberge 400. */
+    font: var(--fig-peso-forte) var(--fig-t-rodape-col) / 1.2 var(--fig-fonte-corpo);
+    color: #21201f;
   }
   .rodape__coluna a,
   .rodape__coluna span {
     font: var(--fig-peso-medio) var(--fig-t-meta) / 1.4 var(--fig-fonte-ui);
-    color: rgb(255 255 255 / 0.8);
+    color: #483b2a;
     text-decoration: none;
   }
-  .rodape__coluna a:hover { color: #fff; text-decoration: underline; }
+  .rodape__coluna a:hover { color: #21201f; text-decoration: underline; }
 
   .rodape__divisor {
     border: 0;
@@ -163,7 +178,7 @@ const redes = [
   .rodape__copyright {
     margin: 0;
     font: var(--fig-peso-medio) var(--fig-t-corpo) / 1.2 var(--fig-fonte-ui);
-    color: rgb(255 255 255 / 0.8);
+    color: #483b2a;
   }
   .rodape__redes { display: flex; gap: var(--fig-e-sm); list-style: none; margin: 0; padding: 0; }
   .rodape__redes img { display: block; width: 40px; height: 40px; }

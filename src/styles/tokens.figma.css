@@ -101,6 +101,10 @@
   --fig-f-numero:        clamp(2rem,    1.1rem + 2.5vw,  2.625rem);
   --fig-f-subtitulo:     clamp(1.5rem,  1.1rem + 1.4vw,  2.125rem);
   --fig-f-rotulo:        clamp(1rem,    0.9rem + 0.5vw, 1.5rem);
+  /* Item de menu: 15px na referência a 1440. O rótulo de seção usa o token
+     acima e é bem maior (24 no Figma), então os dois não podem compartilhar
+     o mesmo valor — compartilhavam, e o menu saía a 22px. */
+  --fig-f-menu:          clamp(0.875rem, 0.82rem + 0.2vw, 0.9375rem);
   --fig-f-corpo:         clamp(1rem,    0.95rem + 0.3vw, 1.25rem);
 
   --fig-peso-normal: 400;

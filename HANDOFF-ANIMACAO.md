@@ -1,282 +1,201 @@
-# Handoff — auditoria de movimento, reconferência geral e CMS do blog
+# Handoff — o que a auditoria de movimento respondeu, e o que sobrou
 
-Atualizado em 07/09/2026. Este documento existe porque o trabalho abaixo é
-caro em contexto (vídeo vira imagem, e são 133 arquivos) e merece uma sessão
-limpa só para ele.
-
-**Cole este arquivo numa sessão nova e comece por aqui.**
-
-São **três frentes**, nesta ordem de prioridade:
-
-1. **Reconferir cada seção e cada efeito** contra o site de referência do
-   Framer e os vídeos (§2, §3, §4);
-2. **Refazer a cara do blog** seguindo o **Framer, não o Figma** (§5);
-3. **Construir o CMS** para a Isabella publicar no blog sozinha (§6).
+Atualizado em 07/09/2026, depois da sessão que executou as três frentes do
+handoff anterior. **As três foram feitas.** Este documento agora registra o
+que se descobriu e o que continua aberto.
 
 ---
 
 ## 1. As regras que regem este projeto
 
-Fixadas pelo Gabriel, e já aplicadas no resto do site:
+Inalteradas:
 
 - **O Figma manda na FORMA** — que desenho a seção tem.
 - **O Framer manda no TAMANHO** — altura de menu, corpo de fonte, imagem.
-- **Os vídeos mandam no MOVIMENTO** — é o que falta fazer.
-- **No BLOG, o Framer manda em tudo**, inclusive na forma. Ver §5.
+- **Os vídeos mandam no MOVIMENTO.**
+- **No BLOG, o Framer manda em tudo**, forma inclusive.
 
-### As três fontes de verdade
+### Ferramenta nova: ler vídeo sem estourar contexto
 
-| Fonte | Onde | Serve para |
-|---|---|---|
-| **Site de referência (Framer)** | https://authentic-learning-761482.framer.app/ | tamanho, e a forma do blog |
-| **Capturas do Framer** | `_capturas/<rota>/medidas.*.json` | o mesmo, offline e medível |
-| **HTML do Framer** | `_capturas/<rota>/desktop.html` (e tablet/mobile) | ler a ESTRUTURA de cada tela |
-| **JS do Framer** | `_fonte-framer/` | 116 arquivos `.js` — **não tem HTML**, é o bundle |
-| **Figma** | fileKey `w03gcodehy5qey828y58hS` | forma das outras seis telas |
-| **Vídeos** | `_capturas/_videos/` | movimento |
-
-**Dois avisos sobre essas fontes:**
-
-1. A URL do Framer responde 200, mas o Playwright dá **timeout** com
-   `waitUntil: 'networkidle'` — o Framer mantém conexões abertas. Use
-   `domcontentloaded` + `waitForTimeout`, ou prefira as capturas locais.
-2. `_fonte-framer/` **não contém HTML** — são 116 arquivos `.js` do bundle do
-   Framer, úteis só para caçar a implementação de uma animação específica. Para
-   ler a estrutura de uma tela, use `_capturas/<rota>/desktop.html`.
-
-Ferramenta pronta para o lado do tamanho:
+**Não há ffmpeg nesta máquina** (nem binário, nem pacote npm; instalar pede
+sudo). O handoff anterior sugeria ffmpeg — ignore.
 
 ```bash
-node tools/tamanhos-framer.mjs [rota]   # escala de texto, menu e imagens
+node tools/quadros-video.mjs <arquivo.webm> [n] [saida.png]
 ```
+
+Decodifica o webm no Chromium do Playwright e monta uma tira PNG com N
+quadros carimbados com o instante. Duas armadilhas já resolvidas dentro
+dela: `file://` não decodifica (precisa de HTTP **com `Range`**), e
+`page.setContent()` espera o vídeo inteiro e dá timeout.
+
+> O Playwright **não está** no `node_modules` deste projeto. As ferramentas o
+> importam por caminho absoluto de um repo vizinho:
+> `/home/gabfelix/dev/portfolio/node_modules/playwright/index.mjs`.
 
 ---
 
-## 2. O que o Gabriel descreveu, e ainda não foi conferido
+## 2. As três lembranças do Gabriel — respondidas
 
-Ele apontou três comportamentos de memória. **Nenhum foi verificado contra os
-vídeos** — comece por eles:
+### 2.1. Zoom interno nas imagens ao rolar — **NÃO EXISTE**
 
-### 2.1. Zoom interno nas imagens ao rolar (seção de Serviços)
+> "as imagens iam dando um zoom interno bem legal, cada uma."
 
-> "Eu ia descendo, scrollando o mouse pra baixo, e as imagens iam dando um
-> zoom interno bem legal, cada uma."
+**Medido, não olhado.** Escrevi um comparador que estima a escala interna
+quadro a quadro compensando a rolagem. Resultado: **escala 1.000** com erro
+~0, tanto no acordeão de `/sobre-nos` quanto nos cards de `/servicos` —
+inclusive nos 400 ms logo depois de um passo de rolagem de 391 px, que é
+exatamente onde um `animation-timeline: view()` apareceria.
 
-Vídeo: `_capturas/_videos/servicos.desktop.acordeao-servicos.webm` e
-`servicos.*.reveal-entrada.webm`.
+O controle (`projetos.desktop.card-projeto-hover.webm`) mostra crescimento
+óbvio no mesmo instrumento, então a medição **detecta movimento real quando
+ele existe**. Não há zoom ao rolar. Nada a implementar.
 
-Hoje o acordeão da home tem transição de `flex-grow`, e as fotos de
-`/servicos` não têm zoom nenhum ao rolar. Se o vídeo confirmar, é
-provavelmente um `scale()` ancorado no progresso da rolagem
-(`animation-timeline: view()`, que o projeto já usa).
+A impressão provavelmente vem do hover dos cards de projeto (§2.3), que
+cresce de verdade.
 
-### 2.2. Texto fixo à esquerda em "Sobre nós"
+### 2.2. Texto fixo à esquerda em "Sobre nós" — **CONFIRMADA, mas é à DIREITA**
 
-> "Tem uma seção que tem o *sticky* na esquerda. O texto fica fixo na esquerda
-> e vai descendo e na direita tem algumas coisas. Era mais ou menos assim, e a
-> gente fez um pouco diferente."
+Confirmada no vídeo `sobre-nos.desktop.reveal-entrada.webm`: entre 10,8 s e
+12,2 s o bloco "Passo a passo / Nós temos um método simples" fica parado na
+mesma altura da janela enquanto 01→02 e 03→04 passam.
 
-Vídeo: `_capturas/_videos/sobre-nos.desktop.reveal-entrada.webm`.
+**A lateralidade estava trocada na lembrança:** no Framer o texto fixo está à
+**direita** (x=785) e os passos rolam à **esquerda** (x=132..753).
 
-Candidata mais provável: a seção do **método em quatro passos** (01–04) ou a
-de **Nossos valores**. Hoje nenhuma das duas tem `position: sticky`.
+**Já implementado** em `src/pages/sobre-nos.astro`, em duas colunas. Duas
+armadilhas que ficaram registradas no código:
 
-### 2.3. Carrosséis e hover
+- um ancestral com `transform` (o `data-revela`) vira o bloco de contenção do
+  `position: sticky` e solta o grude no meio da rolagem;
+- o percurso de um sticky é `altura da linha − altura do elemento`.
 
-> "Poder ver como é que funciona os carrosséis, quando você passa um mouse em
-> algum lugar."
+### 2.3. Carrosséis e hover — **JÁ ESTAVA CERTO**
 
-Vídeos: `carrossel-home`, `card-projeto-hover`, `galeria-casa-ip`,
-`ver-todas-postagens`, `filtros-categoria-artigos`, `nav-desktop-estado`.
+O carrossel do Framer é slide ativo maior e centralizado, vizinhos menores e
+esmaecidos, quatro bolinhas, setas e legenda. `CarrosselProjetos.astro` já
+faz exatamente isso (545 px no ativo contra 451 px nos vizinhos, véu de 20%
+que some no ativo) e já usa a mola medida. Nada a mudar.
 
----
+**Uma diferença pequena, deixada de propósito:** no Framer o card de projeto
+**cresce em altura** no hover e empurra a página; o nosso dá `scale(1.03)` na
+foto dentro de uma caixa fixa de 450 px. O efeito é equivalente e não
+reflowa a página. Se um dia for para igualar, é aqui.
 
-## 3. Onde estão os vídeos
+### Correção ao handoff anterior
 
-```
-_capturas/_videos/   133 arquivos .webm, 123 MB
-                     padrão: <rota>.<breakpoint>.<ficha>.webm
-```
-
-As 13 fichas, cada uma em desktop/tablet/mobile:
-
-```
-acordeao-servicos      botao-enviar           card-projeto-hover
-carrossel-home         cta-antes-do-rodape    filtros-categoria-artigos
-galeria-casa-ip        nav-desktop-estado     newsletter-artigos
-reveal-entrada         rodape-por-pagina      servicos-numerados-home
-ver-todas-postagens
-```
-
-As **17 molas já medidas** estão em `_capturas/motion-fichas.json` e viraram
-`linear()` nativo em `src/styles/motion.css` (gerado por
-`tools/mola-para-css.mjs`). Ou seja: a *curva* de várias animações já está
-certa. O que falta é conferir **o que** é animado, e em quais seções.
-
-**Sugestão de método, para não estourar contexto:** extraia 3–4 quadros-chave
-de cada vídeo com `ffmpeg` e monte uma tira, em vez de olhar o vídeo inteiro.
-Um vídeo de 6s a 30fps são 180 imagens; 4 quadros bastam para ler um zoom ou
-um sticky.
+`_capturas/_videos/servicos.desktop.acordeao-servicos.webm` **não existe**. O
+acordeão foi capturado em **`sobre-nos`**; `/servicos` só tem
+`cta-antes-do-rodape` e `reveal-entrada`.
 
 ---
 
-## 4. O que já está conferido — não refaça
+## 3. O blog seguindo o Framer — **FEITO**
 
-Todas as sete telas foram auditadas contra o Figma (forma) e o Framer
-(tamanho) em 05–06/09/2026. Ver `HANDOFF-PROXIMO.md` §10 para a tabela do que
-estava errado em cada uma.
+O herói do Framer tem **dois** blocos, não um, e faltava o segundo inteiro:
 
-Em 06/09 entraram, contra o **site de referência**:
+| | Framer | Antes | Agora |
+|---|---|---|---|
+| rótulo | "Blog" 60px Mulish 600, à esquerda | era o `<h1>` | `<p>`, mantido |
+| manchete | **64px Manrope 500**, centralizada, tracking −0.06em | **não existia** | é o `<h1>` |
 
-| | Era | Virou |
-|---|---|---|
-| rodapé | `#3a2e26` escuro, 584px | pêssego `#f0d9c7`, 484px, texto escuro |
-| títulos de coluna | Faberge 400 | Mulish 700 |
-| menu | 22px | 15px (token `--fig-f-menu` próprio) |
-| herói | 913px, caixa em y=169 | 900px, caixa em y=110 |
+A manchete é "Dicas e notícias para quem realmente se destaca."
 
-O contraste do rodapé claro foi medido: `#483b2a` sobre `#f0d9c7` dá 7,99:1.
+A **Manrope** já estava em `fontes.css`, servida do próprio domínio, sem uso
+em lugar nenhum — agora é usada e **entrou no `tools/valida-fontes.mjs`**
+(13 famílias, todas passam).
+
+O site continua sem **nenhuma** requisição externa no navegador do visitante,
+como a Política de Cookies promete.
+
+⚠️ `src/styles/artigo.css` continua com o aviso de não editar por gosto — foi
+medida contra a captura e não foi tocada.
 
 ---
 
-## 5. O blog segue o FRAMER, não o Figma
+## 4. O CMS — **FEITO**
 
-**Decisão do Gabriel, em 07/09/2026:** a cara do blog tem de ser a do site de
-referência do Framer. Onde o Figma discordar, o Framer vence — na forma
-também, não só no tamanho. Esta é a única parte do site onde a regra da §1 se
-inverte.
+Decisões do Gabriel (07/09/2026): **Supabase**, **dois acessos** (Isabella e
+Gabriel), e — deixado a meu critério — **rebuild por webhook**, porque o
+projeto é `output: 'static'` e o conteúdo muda uma vez por mês.
 
-Vale para as duas telas:
+**O projeto Supabase do `.env` estava vazio** (zero tabelas), apesar das
+quatro credenciais válidas. Não havia nada a aproveitar.
 
-- **listagem** — `/artigos` (referência: `_capturas/artigos/`)
-- **artigo** — `/artigos/<slug>` (referência:
-  `_capturas/artigos__vale-mais-a-pena-reformar-ou-construir/`)
-
-### O que já se sabe que difere
-
-Medido com `node tools/tamanhos-framer.mjs artigos`, ainda **não corrigido**:
-
-| | Framer | Nosso hoje |
-|---|---|---|
-| título da página | **64px Manrope 500** | 60px Mulish, e o texto é só "Blog" |
-| subtítulo | "Dicas e notícias para quem realmente se destaca." | **não existe** |
-| card: título | 20px Mulish 700 | 20px Mulish 700 ✓ (corrigido em 05/09) |
-| card: imagem | 368×270 r8 | 368×270 r8 ✓ (corrigido em 05/09) |
-
-Sobre a fonte: **Manrope já está em `src/styles/fontes.css`** (2 arquivos,
-servidos do próprio domínio) — só não é usada em lugar nenhum ainda, e **não
-consta na lista do `tools/valida-fontes.mjs`**. Se o blog passar a usá-la,
-acrescente-a ao portão, senão ninguém percebe se ela quebrar.
-
-Continue servindo do próprio domínio: hoje o site não faz **nenhuma**
-requisição externa (conferido com Playwright: zero hosts), e a Política de
-Cookies afirma isso ao visitante. Puxar fonte do Google Fonts quebraria essa
-promessa.
-
-⚠️ **O corpo do artigo tem regra própria.** `src/styles/artigo.css` já foi
-medido contra a captura do Framer e traz um aviso no topo dizendo para não
-editar por gosto. Confira antes de mexer: pode ser que já esteja certo.
-
-### Como conferir
+O que existe agora:
 
 ```bash
-node tools/tamanhos-framer.mjs artigos          # escala do Framer
-node tools/tira-foto.mjs /artigos               # o nosso
+node tools/migra-supabase.mjs                  # aplica supabase/migracoes/
+node tools/importa-artigos.mjs                 # carga inicial (idempotente)
+node tools/cria-editor.mjs <email> "<Nome>"    # cria/redefine acesso
 ```
-E o HTML do Framer, para ler a estrutura: `_capturas/artigos/desktop.html`.
+
+- **A promessa do `content.config.ts` foi cumprida:** o `glob()` virou
+  `artigosDoSupabase()` e **as páginas não mudaram** — exceto `width`/`height`
+  no `<Image>`, que o Astro exige de imagem remota.
+- Os 25 artigos e as 25 capas estão no banco. Os markdown em
+  `src/content/artigos/` são **acervo**, não são mais lidos no build.
+- O painel: `/painel/entrar`, `/painel`, `/painel/artigo`. Fora do sitemap,
+  `Disallow` no robots, `noindex` nas três.
+- `/api/publica` dispara o Deploy Hook, e **confere que quem pediu é
+  editor** antes — a URL do hook é segredo e não vai para o navegador.
+
+### Três armadilhas que já custaram tempo aqui
+
+1. **RLS recursiva.** Política de `editores` que consulta `editores` entra em
+   recursão infinita ("infinite recursion detected"). Resolvido com
+   `public.e_editor()`, `security definer` (migração 004). **Política nova
+   deve usar a função, não um `exists`.**
+2. **`innerHTML` não recebe o `data-astro-cid`** do escopo, e o CSS escopado
+   não o alcança — a lista do painel saía sem borda e com título de 60px. O
+   estilo dela é `is:global` de propósito.
+3. **`<Image>` exige `width`/`height` de imagem remota.** Daí
+   `capa_largura`/`capa_altura` no banco, medidos no upload.
+
+O corpo do artigo é **HTML**, gravado e servido como HTML — não passa por
+`renderMarkdown`, que envolveria linhas soltas em `<p>` e estragaria a
+marcação que a `artigo.css` foi medida para estilizar.
+
+### O que falta no CMS
+
+- **Entregar a senha à Isabella.** As duas contas existem, mas a senha dela
+  foi gerada nesta sessão e **não foi entregue**. Rode
+  `node tools/cria-editor.mjs arqisabellapires@gmail.com "Isabella Pires"`
+  para gerar outra e passe por canal seguro; ela troca depois.
+- **Ninguém testou o painel no celular dela.** Foi conferido em 1280px.
+- Um editor de texto rico seria mais gentil que o campo de HTML. Hoje ela
+  precisa escrever `<p>` e `<h2>` na mão.
+- Apagar artigo não existe no painel (só despublicar).
 
 ---
 
-## 6. O CMS do blog
-
-**Objetivo:** a Isabella publicar um artigo sozinha, sem mexer em código nem
-pedir deploy.
-
-### O que já está preparado
-
-`src/content.config.ts` foi escrito com essa troca em mente. O comentário no
-topo diz:
-
-> O `loader` é o ponto de troca entre a V1 e a V2. Hoje: lê markdown de
-> `src/content/`. Na Fase 5 (CMS): este `glob()` vira um loader que consulta o
-> Supabase. Os schemas e as páginas que consomem `getCollection()` não mudam.
-
-Ou seja: **trocar a fonte dos dados não deve exigir tocar nas páginas.** Se
-você se pegar reescrevendo `/artigos` para o CMS funcionar, parou algo errado.
-
-O schema de `artigos` já tem tudo que um editor precisa: `titulo`, `resumo`,
-`capa` + `capaAlt`, `publicadoEm`, `atualizadoEm`, `autor`, `categoria`,
-`tags`, `publicado`, `destaque`, `seoTitulo`, `seoDescricao` e `slugAntigo`.
-
-O `.env` já traz `PUBLIC_SUPABASE_URL`, `PUBLIC_SUPABASE_ANON_KEY`,
-`SUPABASE_SERVICE_ROLE_KEY` e `SUPABASE_DATABASE_PASSWORD`, e as **quatro
-estão preenchidas** (conferido em 07/09). Ou seja, já existe um projeto
-Supabase de pé em algum lugar — descubra o que tem dentro antes de criar
-tabela nova.
-
-O pacote `@supabase/supabase-js` **não está instalado**.
-
-### Decisões que são do Gabriel, não suas
-
-Pergunte antes de escolher:
-
-1. **Supabase mesmo, ou um CMS pronto?** O `.env` sugere Supabase, mas
-   Decap/Sveltia (que commitam markdown no próprio repo, sem banco) resolvem o
-   caso de uma autora que publica um artigo por mês — e sem custo de banco.
-2. **Como o site atualiza ao publicar?** Rebuild por webhook, ou renderização
-   sob demanda? Hoje o site é SSR na Vercel, então as duas cabem.
-3. **Quem entra?** Só a Isabella, ou mais gente? Isso define se precisa de
-   papéis ou se basta um login.
-
-### Limites
-
-- **Não misture com layout.** O CMS é módulo à parte; se estiver mexendo em
-  CSS de artigo por causa do CMS, separou errado.
-- **Imagem tem `alt` obrigatório** no schema, e o portão `audita-paginas`
-  reprova imagem sem `alt`. O editor precisa pedir a descrição — não deixe
-  cair um `alt` vazio no banco.
-- **Texto é da cliente.** O CMS não inventa copy nem gera artigo.
-
----
-
-## 7. Estado do resto
-
-- **No ar:** `www.isabellapiresarquitetura.com.br`, deploy automático da
-  Vercel a cada push na `main`.
-- **Push funciona** com o `GH_TOKEN` do `.env` (conta `arqisabellapires`).
-  Ver `HANDOFF-PROXIMO.md` §8 — **empurrar publica no site oficial**.
-- **Os 20 `alt`** de projeto foram escritos olhando cada imagem.
-- **As três páginas de política** existem, com banner de consentimento que
-  de fato controla GA4/Clarity. Nenhuma passou por advogado (cada uma avisa
-  isso no rodapé da própria página).
-- **CNPJ:** não existe no código. O Gabriel vai perguntar à cliente se ela
-  tem — pode ser que ela seja informal. Até lá, não invente número.
-
-Pendências antigas: **Lighthouse** e **Search Console** — nenhum dos dois foi
-tocado.
-
----
-
-## 8. Os portões
+## 5. Os portões
 
 ```bash
-npx astro build                      # 42 páginas
-node tools/valida-fontes.mjs
+npx astro build                      # 45 páginas (42 + 3 do painel)
+node tools/valida-fontes.mjs         # 13 famílias
 node tools/audita-paginas.mjs
 node tools/verifica-revela.mjs
 node tools/verifica-responsivo.mjs
 node tools/tira-foto.mjs [--bp tablet|mobile] [/rota]
 node tools/tamanhos-framer.mjs [rota]
+node tools/quadros-video.mjs <video.webm> [n]
 ```
 
-Todos passam hoje. **E nenhum deles mede animação** — é a mesma armadilha do
-§7 do outro handoff: passar nos portões não é evidência de que o movimento
-está certo. Só o vídeo lado a lado responde isso.
+Todos passam. **E nenhum deles mede animação** — continua valendo: passar nos
+portões não é evidência de que o movimento está certo.
 
-Duas armadilhas do `tira-foto` que já foram consertadas e vale conhecer, para
-não reintroduzir:
+Um portão ficou mais honesto nesta sessão: `audita-paginas` lia título e
+descrição do **DOM vivo**, e como as páginas do painel redirecionam para o
+login, as três reportavam o título da tela de entrada — uma duplicata que não
+existia. Agora lê do arquivo.
 
-- ele fotografava antes de o carrossel se posicionar (hoje o posicionamento
-  inicial é resolvido em CSS, e a ferramenta espera o slide ativo centrar);
-- ele fotografava com imagens preguiçosas ainda cinzas, o que me fez ler
-  "imagem faltando" em duas páginas onde não faltava nada.
+---
+
+## 6. Estado do resto
+
+- **No ar:** `www.isabellapiresarquitetura.com.br`, deploy automático a cada
+  push na `main`. **Empurrar publica no site oficial.**
+- **Os commits desta sessão estão locais.** Confira antes de empurrar.
+- **CNPJ:** continua sem existir no código. Não invente número.
+- Pendências antigas, ainda intocadas: **Lighthouse** e **Search Console**.

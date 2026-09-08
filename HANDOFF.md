@@ -1,8 +1,8 @@
 # Handoff — Isabella Pires Arquitetura
 
-> **Chegando agora? Comece por
-> [HANDOFF-PROXIMO.md](HANDOFF-PROXIMO.md)** — o que fazer a seguir, as
-> armadilhas e as decisões já tomadas. Este documento aqui é histórico.
+> **Chegando agora? Comece por [HANDOFF-AGORA.md](HANDOFF-AGORA.md)**
+> — o estado atual e o que falta. Este documento é histórico.
+
 
 
 Migração do site do Framer para código próprio. Este documento é o estado

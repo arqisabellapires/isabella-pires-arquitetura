@@ -1,5 +1,9 @@
 # Handoff — o que a auditoria de movimento respondeu, e o que sobrou
 
+> **Chegando agora? Comece por [HANDOFF-AGORA.md](HANDOFF-AGORA.md)**
+> — o estado atual e o que falta. Este documento é histórico.
+
+
 Atualizado em 07/09/2026, depois da sessão que executou as três frentes do
 handoff anterior. **As três foram feitas.** Este documento agora registra o
 que se descobriu e o que continua aberto.

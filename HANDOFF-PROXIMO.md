@@ -1,5 +1,9 @@
 # Handoff — histórico da reconstrução (RESOLVIDO em 05/09/2026)
 
+> **Chegando agora? Comece por [HANDOFF-AGORA.md](HANDOFF-AGORA.md)**
+> — o estado atual e o que falta. Este documento é histórico.
+
+
 > **Leia isto primeiro.** As seções 1 a 4 descrevem defeitos que **já foram
 > corrigidos**. Ficam aqui porque explicam *como* o erro aconteceu — o método
 > da §4 continua valendo, e é o que evita repeti-lo. Mas não saia procurando

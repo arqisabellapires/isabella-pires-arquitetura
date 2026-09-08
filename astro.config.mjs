@@ -8,7 +8,13 @@ export default defineConfig({
   site: 'https://www.isabellapiresarquitetura.com.br',
   output: 'static',
   adapter: vercel(),
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    /* O painel do blog é área de trabalho da cliente, não conteúdo: fora do
+       sitemap. As páginas dele também mandam `noindex`, e o robots.txt
+       proíbe — três camadas, porque uma URL de painel indexada é convite. */
+    sitemap({ filter: (pagina) => !pagina.includes('/painel') }),
+  ],
   prefetch: { prefetchAll: true, defaultStrategy: 'viewport' },
   image: {
     // Formatos modernos primeiro; o fallback é resolvido pelo <picture>.

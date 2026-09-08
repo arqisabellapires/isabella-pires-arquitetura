@@ -1,0 +1,117 @@
+---
+/**
+ * Entrada do painel do blog.
+ *
+ * Fora do sitemap (astro.config), proibida no robots.txt e com `noindex`.
+ * Quem entra são as duas pessoas cadastradas em `editores` — a permissão de
+ * escrever vem da RLS do banco, não desta tela.
+ */
+import Base from '~/layouts/Base.astro';
+---
+
+<Base titulo="Entrar no painel" descricao="Acesso à área de edição do blog de Isabella Pires." noindex>
+  <main class="entrada">
+    <h1 class="entrada__titulo">Painel do blog</h1>
+    <p class="entrada__ajuda">Entre para escrever e publicar artigos.</p>
+
+    <form class="entrada__form" id="form">
+      <label class="campo">
+        <span class="campo__rotulo">E-mail</span>
+        <input class="campo__caixa" type="email" name="email" required autocomplete="username" />
+      </label>
+
+      <label class="campo">
+        <span class="campo__rotulo">Senha</span>
+        <input class="campo__caixa" type="password" name="senha" required autocomplete="current-password" />
+      </label>
+
+      <button class="entrada__botao" type="submit">Entrar</button>
+      <p class="entrada__erro" id="erro" role="alert" hidden></p>
+    </form>
+  </main>
+</Base>
+
+<script>
+  import { supabase } from '~/lib/supabase-navegador';
+
+  const form = document.getElementById('form') as HTMLFormElement;
+  const erro = document.getElementById('erro') as HTMLParagraphElement;
+
+  // Quem já entrou não precisa ver esta tela de novo.
+  supabase.auth.getSession().then(({ data }) => {
+    if (data.session) window.location.href = '/painel';
+  });
+
+  form.addEventListener('submit', async (evento) => {
+    evento.preventDefault();
+    const botao = form.querySelector('button')!;
+    botao.disabled = true;
+    erro.hidden = true;
+
+    const dados = new FormData(form);
+    const { error } = await supabase.auth.signInWithPassword({
+      email: String(dados.get('email')),
+      password: String(dados.get('senha')),
+    });
+
+    if (error) {
+      // Mensagem genérica de propósito: dizer "este e-mail não existe"
+      // entrega a quem tenta adivinhar quais e-mails são válidos.
+      erro.textContent = 'E-mail ou senha incorretos.';
+      erro.hidden = false;
+      botao.disabled = false;
+      return;
+    }
+    window.location.href = '/painel';
+  });
+</script>
+
+<style>
+  .entrada {
+    margin-inline: auto;
+    max-width: 420px;
+    padding: var(--fig-e-6xl) var(--fig-margem-interna);
+  }
+  .entrada__titulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-semi) var(--fig-f-titulo-secao) / 1.2 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-sm);
+  }
+  .entrada__ajuda {
+    color: var(--fig-texto-meta);
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.6 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-e-2xl);
+  }
+  .entrada__form { display: flex; flex-direction: column; gap: var(--fig-e-lg); }
+  .campo { display: flex; flex-direction: column; gap: var(--fig-e-xs); }
+  .campo__rotulo {
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-forte) var(--fig-t-corpo-p) / 1.4 var(--fig-fonte-corpo);
+  }
+  .campo__caixa {
+    background: #fff;
+    border: 1px solid var(--fig-borda);
+    border-radius: var(--fig-raio-sm);
+    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.4 var(--fig-fonte-corpo);
+    padding: var(--fig-e-md);
+  }
+  .campo__caixa:focus-visible {
+    outline: 2px solid var(--fig-primaria-ativa);
+    outline-offset: 1px;
+  }
+  .entrada__botao {
+    background: var(--fig-primaria-ativa);
+    border: 0;
+    border-radius: var(--fig-raio-sm);
+    color: #fff;
+    cursor: pointer;
+    font: var(--fig-peso-forte) var(--fig-f-corpo) / 1 var(--fig-fonte-corpo);
+    padding: var(--fig-e-md);
+  }
+  .entrada__botao[disabled] { opacity: 0.6; cursor: progress; }
+  .entrada__erro {
+    color: #a4243b;
+    font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1.5 var(--fig-fonte-corpo);
+    margin: 0;
+  }
+</style>

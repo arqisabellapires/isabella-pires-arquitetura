@@ -166,8 +166,21 @@ for (const f of arquivos) {
   if (r.imgsSemAlt) { problemas.push(`${rota}: ${r.imgsSemAlt} <img> sem atributo alt`); semAlt += r.imgsSemAlt; }
   if (r.saltos > 1) problemas.push(`${rota}: hierarquia de heading salta ${r.saltos} níveis`);
 
-  titles.set(r.title, [...(titles.get(r.title) ?? []), rota]);
-  if (r.descricao) descricoes.set(r.descricao, [...(descricoes.get(r.descricao) ?? []), rota]);
+  /*
+    Título e descrição saem do HTML DO ARQUIVO, não do DOM vivo.
+
+    Motivo: as páginas do /painel mandam para /painel/entrar quem não está
+    logado, e o `pg.evaluate` roda DEPOIS desse redirecionamento — as três
+    reportavam o título da tela de entrada e o portão acusava duplicata que
+    não existe. O arquivo não mente.
+  */
+  const doArquivo = (re) => (re.exec(html)?.[1] ?? '').trim();
+  const tituloReal = doArquivo(/<title>([^<]*)<\/title>/i) || r.title;
+  const descricaoReal =
+    doArquivo(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i) || r.descricao;
+
+  titles.set(tituloReal, [...(titles.get(tituloReal) ?? []), rota]);
+  if (descricaoReal) descricoes.set(descricaoReal, [...(descricoes.get(descricaoReal) ?? []), rota]);
 }
 await nav.close();
 servidor.close();

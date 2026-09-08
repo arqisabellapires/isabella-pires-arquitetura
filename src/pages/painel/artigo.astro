@@ -1,0 +1,223 @@
+---
+/**
+ * Escreve ou edita um artigo.
+ *
+ * Sem `?slug=` é artigo novo; com, carrega o existente.
+ *
+ * Duas regras que a tela cobra, e por quê:
+ *
+ * 1. **A descrição da capa é obrigatória.** O portão `audita-paginas`
+ *    reprova imagem sem `alt`, e o banco também (capa_alt é NOT NULL). Se o
+ *    editor não pedisse, o build quebraria depois — melhor cobrar aqui.
+ * 2. **Publicar dispara o rebuild.** O site é estático; sem o hook o artigo
+ *    fica no banco e não aparece. Quem chama é a rota /api/publica, porque
+ *    a URL do hook é segredo e não pode ir para o navegador.
+ */
+import Base from '~/layouts/Base.astro';
+import { categorias } from '~/lib/site';
+---
+
+<Base titulo="Escrever artigo" descricao="Formulário para escrever, editar e publicar um artigo do blog." noindex>
+  <main class="editor">
+    <a class="editor__voltar" href="/painel">← Voltar</a>
+    <h1 class="editor__titulo" id="cabecalho">Novo artigo</h1>
+
+    <form class="editor__form" id="form">
+      <label class="campo">
+        <span class="campo__rotulo">Título</span>
+        <input class="campo__caixa" name="titulo" maxlength="120" required />
+      </label>
+
+      <label class="campo">
+        <span class="campo__rotulo">Resumo</span>
+        <span class="campo__dica">Aparece no card da listagem e no Google. Até 300 caracteres.</span>
+        <textarea class="campo__caixa" name="resumo" maxlength="300" rows="3" required></textarea>
+      </label>
+
+      <div class="dupla">
+        <label class="campo">
+          <span class="campo__rotulo">Categoria</span>
+          <select class="campo__caixa" name="categoria">
+            {categorias.map((c) => <option value={c}>{c}</option>)}
+          </select>
+        </label>
+        <label class="campo">
+          <span class="campo__rotulo">Data de publicação</span>
+          <input class="campo__caixa" type="date" name="publicadoEm" required />
+        </label>
+      </div>
+
+      <label class="campo">
+        <span class="campo__rotulo">Imagem de capa</span>
+        <input class="campo__caixa" type="file" name="capa" accept="image/jpeg,image/png,image/webp" />
+        <img class="editor__previa" id="previa" alt="" hidden />
+      </label>
+
+      <label class="campo">
+        <span class="campo__rotulo">Descrição da capa <em>(obrigatória)</em></span>
+        <span class="campo__dica">
+          Descreva a imagem para quem não a enxerga — é o que um leitor de tela vai ler.
+        </span>
+        <input class="campo__caixa" name="capaAlt" required />
+      </label>
+
+      <label class="campo">
+        <span class="campo__rotulo">Texto do artigo</span>
+        <span class="campo__dica">
+          Aceita HTML: &lt;p&gt; para parágrafo, &lt;h2&gt; para subtítulo, &lt;strong&gt; para negrito.
+        </span>
+        <textarea class="campo__caixa campo__caixa--alta" name="corpo" rows="18" required></textarea>
+      </label>
+
+      <label class="marcar">
+        <input type="checkbox" name="publicado" checked />
+        <span>Publicar no site (desmarque para guardar como rascunho)</span>
+      </label>
+
+      <div class="editor__rodape">
+        <button class="botao-principal" type="submit" id="salvar">Salvar</button>
+        <p class="editor__estado" id="estado" role="status"></p>
+      </div>
+    </form>
+  </main>
+</Base>
+
+<script>
+  import { supabase, exigeSessao } from '~/lib/supabase-navegador';
+
+  const form = document.getElementById('form') as HTMLFormElement;
+  const estado = document.getElementById('estado')!;
+  const previa = document.getElementById('previa') as HTMLImageElement;
+  const salvar = document.getElementById('salvar') as HTMLButtonElement;
+
+  const sessao = await exigeSessao();
+  if (sessao) {
+    const slugEditado = new URLSearchParams(location.search).get('slug');
+
+    /** Título → slug: sem acento, sem pontuação, palavras ligadas por hífen. */
+    const aSlug = (texto: string) =>
+      texto.normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+    // ── carrega o artigo existente ──
+    let capaAtual: { url: string; largura: number | null; altura: number | null } | null = null;
+    if (slugEditado) {
+      document.getElementById('cabecalho')!.textContent = 'Editar artigo';
+      const { data } = await supabase.from('artigos').select('*').eq('slug', slugEditado).single();
+      if (data) {
+        form.titulo.value = data.titulo;
+        form.resumo.value = data.resumo;
+        form.categoria.value = data.categoria;
+        form.publicadoEm.value = String(data.publicado_em).slice(0, 10);
+        form.capaAlt.value = data.capa_alt;
+        form.corpo.value = data.corpo ?? '';
+        form.publicado.checked = data.publicado;
+        capaAtual = { url: data.capa, largura: data.capa_largura, altura: data.capa_altura };
+        previa.src = data.capa;
+        previa.hidden = false;
+      }
+    } else {
+      form.publicadoEm.value = new Date().toISOString().slice(0, 10);
+    }
+
+    // ── prévia da capa escolhida ──
+    form.capa.addEventListener('change', () => {
+      const arquivo = (form.capa as HTMLInputElement).files?.[0];
+      if (arquivo) { previa.src = URL.createObjectURL(arquivo); previa.hidden = false; }
+    });
+
+    form.addEventListener('submit', async (evento) => {
+      evento.preventDefault();
+      salvar.disabled = true;
+      estado.textContent = 'Salvando…';
+
+      try {
+        const titulo = String(form.titulo.value).trim();
+        const slug = slugEditado ?? aSlug(titulo);
+        const arquivo = (form.capa as HTMLInputElement).files?.[0];
+
+        let capa = capaAtual?.url;
+        let largura = capaAtual?.largura ?? null;
+        let altura = capaAtual?.altura ?? null;
+
+        if (arquivo) {
+          // O <Image> exige largura e altura de imagem remota; medimos aqui,
+          // no navegador, antes de enviar.
+          const medida = await new Promise<{ w: number; h: number }>((ok, falha) => {
+            const img = new Image();
+            img.onload = () => ok({ w: img.naturalWidth, h: img.naturalHeight });
+            img.onerror = () => falha(new Error('não consegui ler a imagem'));
+            img.src = URL.createObjectURL(arquivo);
+          });
+          largura = medida.w;
+          altura = medida.h;
+
+          const nome = `${slug}-${Date.now()}.${arquivo.name.split('.').pop()}`;
+          const { error: erroUp } = await supabase.storage.from('artigos')
+            .upload(`capas/${nome}`, arquivo, { contentType: arquivo.type, upsert: true });
+          if (erroUp) throw new Error(`envio da capa: ${erroUp.message}`);
+          capa = supabase.storage.from('artigos').getPublicUrl(`capas/${nome}`).data.publicUrl;
+        }
+
+        if (!capa) throw new Error('escolha uma imagem de capa.');
+
+        const linha = {
+          slug,
+          titulo,
+          resumo: String(form.resumo.value).trim(),
+          capa,
+          capa_largura: largura,
+          capa_altura: altura,
+          capa_alt: String(form.capaAlt.value).trim(),
+          corpo: String(form.corpo.value),
+          categoria: String(form.categoria.value),
+          publicado_em: new Date(String(form.publicadoEm.value)).toISOString(),
+          publicado: (form.publicado as HTMLInputElement).checked,
+          criado_por: sessao.user.id,
+        };
+
+        const { error } = await supabase.from('artigos').upsert(linha, { onConflict: 'slug' });
+        if (error) throw new Error(error.message);
+
+        // Rascunho não precisa de build: ele não aparece no site.
+        if (linha.publicado) {
+          estado.textContent = 'Salvo. Atualizando o site…';
+          await fetch('/api/publica', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+              authorization: `Bearer ${sessao.access_token}`,
+            },
+          }).catch(() => {});
+        }
+
+        window.location.href = '/painel?publicado=sim';
+      } catch (e) {
+        estado.textContent = `Não deu certo: ${(e as Error).message}`;
+        salvar.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .editor { margin-inline: auto; max-width: 760px; padding: var(--fig-e-4xl) var(--fig-margem-interna) var(--fig-secao-y); }
+  .editor__voltar { color: var(--fig-primaria-ativa); font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1 var(--fig-fonte-corpo); text-decoration: none; }
+  .editor__titulo { color: var(--fig-primaria-ativa); font: var(--fig-peso-semi) var(--fig-f-titulo-secao) / 1.2 var(--fig-fonte-corpo); margin: var(--fig-e-md) 0 var(--fig-e-2xl); }
+  .editor__form { display: flex; flex-direction: column; gap: var(--fig-e-lg); }
+  .dupla { display: grid; gap: var(--fig-e-lg); grid-template-columns: 1fr 1fr; }
+  .campo { display: flex; flex-direction: column; gap: var(--fig-e-xs); }
+  .campo__rotulo { color: var(--fig-primaria-ativa); font: var(--fig-peso-forte) var(--fig-t-corpo-p) / 1.4 var(--fig-fonte-corpo); }
+  .campo__dica { color: var(--fig-texto-meta); font: var(--fig-peso-semi) 0.875rem / 1.5 var(--fig-fonte-corpo); }
+  .campo__caixa { background: #fff; border: 1px solid var(--fig-borda); border-radius: var(--fig-raio-sm); font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.5 var(--fig-fonte-corpo); padding: var(--fig-e-md); width: 100%; }
+  .campo__caixa--alta { font-family: var(--fig-fonte-ui, monospace); line-height: 1.7; }
+  .campo__caixa:focus-visible { outline: 2px solid var(--fig-primaria-ativa); outline-offset: 1px; }
+  .editor__previa { border-radius: var(--fig-raio-sm); margin-top: var(--fig-e-sm); max-height: 220px; object-fit: cover; width: 100%; }
+  .marcar { align-items: center; color: var(--fig-tinta); display: flex; font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1.4 var(--fig-fonte-corpo); gap: var(--fig-e-sm); }
+  .editor__rodape { align-items: center; display: flex; gap: var(--fig-e-lg); }
+  .botao-principal { background: var(--fig-primaria-ativa); border: 0; border-radius: var(--fig-raio-sm); color: #fff; cursor: pointer; font: var(--fig-peso-forte) var(--fig-t-corpo-p) / 1 var(--fig-fonte-corpo); padding: var(--fig-e-md) var(--fig-e-2xl); }
+  .botao-principal[disabled] { cursor: progress; opacity: 0.6; }
+  .editor__estado { color: var(--fig-texto-meta); font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1.4 var(--fig-fonte-corpo); margin: 0; }
+
+  @media (max-width: 599.98px) { .dupla { grid-template-columns: 1fr; } }
+</style>

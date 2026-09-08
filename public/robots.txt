@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Painel de edição do blog — área de trabalho, não conteúdo.
+Disallow: /painel
+
 Sitemap: https://www.isabellapiresarquitetura.com.br/sitemap-index.xml

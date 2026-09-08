@@ -1,40 +1,76 @@
 ---
 /**
- * Lista dos artigos, com o estado de cada um (publicado ou rascunho).
+ * Lista dos artigos, na forma do CMS do Framer: tabela larga, tema escuro,
+ * uma coluna por campo. As capturas do Framer que o Gabriel mandou são a
+ * referência — menos o painel "Agent", que ele pediu para não existir.
  *
  * Tudo acontece no navegador, com a chave anônima: a RLS do banco é quem
  * decide o que ela pode ver e mudar. Rascunho só aparece para editor.
  */
 import Base from '~/layouts/Base.astro';
+import '~/styles/painel.css';
 ---
 
-<Base titulo="Seus artigos" descricao="Lista dos artigos do blog, com o estado de publicação de cada um." noindex>
-  <main class="painel">
-    <header class="painel__topo">
-      <div>
-        <h1 class="painel__titulo">Seus artigos</h1>
-        <p class="painel__quem" id="quem"></p>
-      </div>
-      <div class="painel__acoes">
-        <a class="botao-principal" href="/painel/artigo">Escrever artigo</a>
-        <button class="botao-simples" id="sair" type="button">Sair</button>
+<Base titulo="Painel — artigos" descricao="Lista dos artigos do blog." noindex>
+  <div class="pnl">
+    <header class="pnl-topo">
+      <span class="pnl-topo__marca">CMS</span>
+      <p class="pnl-topo__nome">Website — Isabella Pires</p>
+      <div class="pnl-topo__acoes">
+        <a class="pnl-btn" href="/artigos" target="_blank" rel="noopener">Ver o blog</a>
+        <button class="pnl-btn" id="sair" type="button">Sair</button>
+        <a class="pnl-btn pnl-btn--azul" href="/painel/artigo">Novo artigo</a>
       </div>
     </header>
 
-    <p class="painel__aviso" id="aviso" role="status" hidden></p>
+    <div class="pnl-corpo">
+      <aside class="pnl-lado">
+        <input class="pnl-lado__busca" id="busca" type="search" placeholder="Buscar…" aria-label="Buscar artigo pelo título" />
+        <div class="pnl-lado__item">
+          Blog <span class="pnl-lado__conta" id="conta"></span>
+        </div>
+        <p class="pnl-lado__quem" id="quem"></p>
+      </aside>
 
-    <div class="lista" id="lista">
-      <p class="lista__vazio">Carregando…</p>
+      <main class="pnl-area">
+        <p class="pnl-aviso" id="aviso" role="status" hidden></p>
+
+        <div class="pnl-rolagem">
+          <table class="pnl-tabela">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Status</th>
+                <th>Slug</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Data</th>
+                <th>Capa</th>
+                <th>Tempo de leitura</th>
+                <th>Meta Description</th>
+                <th>Keywords</th>
+                <th>Editado</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="linhas">
+              <tr><td class="pnl-tabela__vazio" colspan="12">Carregando…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
     </div>
-  </main>
+  </div>
 </Base>
 
 <script>
   import { supabase, exigeSessao } from '~/lib/supabase-navegador';
 
-  const lista = document.getElementById('lista')!;
+  const linhas = document.getElementById('linhas')!;
   const quem = document.getElementById('quem')!;
+  const conta = document.getElementById('conta')!;
   const aviso = document.getElementById('aviso')!;
+  const busca = document.getElementById('busca') as HTMLInputElement;
 
   const sessao = await exigeSessao();
   if (sessao) {
@@ -45,40 +81,84 @@ import Base from '~/layouts/Base.astro';
       window.location.href = '/painel/entrar';
     });
 
-    const dataBR = (iso: string) =>
-      new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
-        .format(new Date(iso));
+    const escapa = (s: string) =>
+      String(s ?? '').replace(/[<>&"]/g, (c) =>
+        ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c]!);
+
+    // O `publicado_em` é timestamptz gravado em UTC. Formatar no fuso local
+    // do navegador joga o dia para trás (12/05 vira 11/05), então lemos a
+    // data em UTC — que é a que a Isabella digitou no editor.
+    const dataBR = (iso: string | null) =>
+      iso
+        ? new Intl.DateTimeFormat('pt-BR', {
+            day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'UTC',
+          }).format(new Date(iso))
+        : '—';
+
+    /** A capa é gravada como URL completa; só o acervo antigo teria caminho. */
+    const urlCapa = (capa: string) =>
+      /^https?:\/\//.test(capa)
+        ? capa
+        : supabase.storage.from('artigos').getPublicUrl(capa).data.publicUrl;
+
+    type Artigo = {
+      slug: string; titulo: string; publicado: boolean; publicado_em: string;
+      atualizado_em: string | null; categoria: string; autor: string;
+      capa: string; capa_alt: string; tempo_leitura: number | null;
+      seo_descricao: string | null; tags: string[] | null;
+    };
+
+    let todos: Artigo[] = [];
+
+    function desenha(lista: Artigo[]) {
+      conta.textContent = String(todos.length);
+
+      if (!lista.length) {
+        linhas.innerHTML =
+          `<tr><td class="pnl-tabela__vazio" colspan="12">${
+            todos.length ? 'Nenhum artigo com esse título.' : 'Nenhum artigo ainda.'
+          }</td></tr>`;
+        return;
+      }
+
+      linhas.innerHTML = lista.map((a) => {
+        const editar = `/painel/artigo?slug=${encodeURIComponent(a.slug)}`;
+        const chaves = (a.tags ?? []).join(', ');
+        return `
+        <tr>
+          <td><a class="pnl-tabela__titulo" href="${editar}" title="${escapa(a.titulo)}">${escapa(a.titulo)}</a></td>
+          <td><span class="pnl-tag ${a.publicado ? 'pnl-tag--live' : 'pnl-tag--draft'}">${a.publicado ? 'Live' : 'Rascunho'}</span></td>
+          <td><span class="pnl-tabela__corte" title="${escapa(a.slug)}">${escapa(a.slug)}</span></td>
+          <td>${escapa(a.autor)}</td>
+          <td>${escapa(a.categoria)}</td>
+          <td class="pnl-num">${dataBR(a.publicado_em)}</td>
+          <td><img class="pnl-tabela__capa" src="${escapa(urlCapa(a.capa))}" alt="${escapa(a.capa_alt)}" loading="lazy" /></td>
+          <td class="pnl-num">${a.tempo_leitura ?? '—'}</td>
+          <td><span class="pnl-tabela__corte" title="${escapa(a.seo_descricao ?? '')}">${escapa(a.seo_descricao ?? '—')}</span></td>
+          <td><span class="pnl-tabela__corte" title="${escapa(chaves)}">${escapa(chaves || '—')}</span></td>
+          <td class="pnl-num">${dataBR(a.atualizado_em)}</td>
+          <td><a class="pnl-btn" href="${editar}">Editar</a></td>
+        </tr>`;
+      }).join('');
+    }
+
+    busca.addEventListener('input', () => {
+      const q = busca.value.trim().toLowerCase();
+      desenha(q ? todos.filter((a) => a.titulo.toLowerCase().includes(q)) : todos);
+    });
 
     async function carrega() {
       const { data, error } = await supabase
         .from('artigos')
-        .select('slug, titulo, publicado, publicado_em, categoria')
+        .select('slug, titulo, publicado, publicado_em, atualizado_em, categoria, autor, capa, capa_alt, tempo_leitura, seo_descricao, tags')
         .order('publicado_em', { ascending: false });
 
       if (error) {
-        lista.innerHTML = '<p class="lista__vazio">Não consegui carregar os artigos.</p>';
+        linhas.innerHTML = '<tr><td class="pnl-tabela__vazio" colspan="12">Não consegui carregar os artigos.</td></tr>';
         return;
       }
-      if (!data?.length) {
-        lista.innerHTML = '<p class="lista__vazio">Nenhum artigo ainda.</p>';
-        return;
-      }
-
-      lista.innerHTML = data.map((a) => `
-        <article class="item">
-          <div class="item__texto">
-            <h2 class="item__titulo">${a.titulo.replace(/</g, '&lt;')}</h2>
-            <p class="item__meta">
-              <span class="etiqueta ${a.publicado ? 'etiqueta--no-ar' : 'etiqueta--rascunho'}">
-                ${a.publicado ? 'No ar' : 'Rascunho'}
-              </span>
-              <span>${a.categoria}</span>
-              <span>${dataBR(a.publicado_em)}</span>
-            </p>
-          </div>
-          <a class="botao-simples" href="/painel/artigo?slug=${encodeURIComponent(a.slug)}">Editar</a>
-        </article>
-      `).join('');
+      todos = (data ?? []) as Artigo[];
+      desenha(todos);
     }
 
     // Se o build ainda está rodando, avisa — senão ela publica e acha que
@@ -91,40 +171,3 @@ import Base from '~/layouts/Base.astro';
     await carrega();
   }
 </script>
-
-<style>
-  .painel { margin-inline: auto; max-width: 1000px; padding: var(--fig-e-4xl) var(--fig-e-xl) var(--fig-secao-y); }
-  .painel__topo { align-items: flex-start; display: flex; flex-wrap: wrap; gap: var(--fig-e-lg); justify-content: space-between; margin-bottom: var(--fig-e-2xl); }
-  .painel__titulo { color: var(--fig-primaria-ativa); font: var(--fig-peso-semi) var(--fig-f-titulo-secao) / 1.2 var(--fig-fonte-corpo); margin: 0; }
-  .painel__quem { color: var(--fig-texto-meta); font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1.5 var(--fig-fonte-corpo); margin: var(--fig-e-xs) 0 0; }
-  .painel__acoes { display: flex; gap: var(--fig-e-md); }
-  .painel__aviso { background: var(--fig-fundo-pessego); border-radius: var(--fig-raio-sm); color: var(--fig-primaria-ativa); font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1.5 var(--fig-fonte-corpo); margin: 0 0 var(--fig-e-lg); padding: var(--fig-e-md); }
-
-  .botao-principal { background: var(--fig-primaria-ativa); border-radius: var(--fig-raio-sm); color: #fff; font: var(--fig-peso-forte) var(--fig-t-corpo-p) / 1 var(--fig-fonte-corpo); padding: var(--fig-e-md) var(--fig-e-lg); text-decoration: none; }
-  .botao-simples { background: #fff; border: 1px solid var(--fig-primaria-ativa); border-radius: var(--fig-raio-sm); color: var(--fig-primaria-ativa); cursor: pointer; font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1 var(--fig-fonte-corpo); padding: var(--fig-e-md) var(--fig-e-lg); text-decoration: none; }
-
-  .lista { display: flex; flex-direction: column; gap: var(--fig-e-md); }
-</style>
-
-<!--
-  A lista é montada por script (innerHTML), e esses elementos NÃO recebem o
-  atributo de escopo que o Astro põe no que vem do template — então o estilo
-  escopado simplesmente não os alcança: os cartões saíam sem borda e os
-  títulos com 60px. Por isso estas regras são globais, e por isso os nomes
-  são específicos (`.item__`, `.etiqueta`), para não vazarem em outra tela.
--->
-<style is:global>
-  .lista__vazio { color: var(--fig-texto-meta); font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.6 var(--fig-fonte-corpo); }
-  .item { align-items: center; background: #fff; border: 1px solid var(--fig-borda); border-radius: var(--fig-raio-sm); display: flex; gap: var(--fig-e-lg); justify-content: space-between; padding: var(--fig-e-lg); }
-  .item__texto { min-width: 0; }
-  .item__titulo { color: var(--fig-tinta); font: var(--fig-peso-forte) var(--fig-t-corpo-p) / 1.3 var(--fig-fonte-corpo); margin: 0 0 var(--fig-e-xs); }
-  .item__meta { align-items: center; color: var(--fig-texto-meta); display: flex; flex-wrap: wrap; font: var(--fig-peso-semi) 0.875rem / 1.4 var(--fig-fonte-corpo); gap: var(--fig-e-sm); margin: 0; }
-  .item .botao-simples { background: #fff; border: 1px solid var(--fig-primaria-ativa); border-radius: var(--fig-raio-sm); color: var(--fig-primaria-ativa); flex: none; font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1 var(--fig-fonte-corpo); padding: var(--fig-e-md) var(--fig-e-lg); text-decoration: none; }
-  .etiqueta { border-radius: 999px; font-weight: 700; padding: 2px 10px; }
-  .etiqueta--no-ar { background: #e6f0e2; color: #2f5d2a; }
-  .etiqueta--rascunho { background: #f3e6cf; color: #7a5a1e; }
-
-  @media (max-width: 599.98px) {
-    .item { align-items: stretch; flex-direction: column; }
-  }
-</style>

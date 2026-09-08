@@ -42,6 +42,9 @@ const artigos = defineCollection({
       autor: z.string().default('Isabella Pires'),
       categoria: z.string().default('Arquitetura'),
       tags: z.array(z.string()).default([]),
+      // Minutos de leitura: o painel calcula do corpo, mas a Isabella pode
+      // corrigir à mão. Nulo nos artigos antigos que nunca passaram por lá.
+      tempoLeitura: z.number().int().positive().nullable().optional(),
       /** Falso mantém o artigo fora da listagem, do sitemap e do build. */
       publicado: z.boolean().default(true),
       destaque: z.boolean().default(false),

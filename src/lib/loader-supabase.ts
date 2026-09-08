@@ -38,6 +38,7 @@ type LinhaArtigo = {
   autor: string;
   categoria: string;
   tags: string[];
+  tempo_leitura: number | null;
   publicado: boolean;
   destaque: boolean;
   seo_titulo: string | null;
@@ -94,6 +95,7 @@ export function artigosDoSupabase(): Loader {
           autor: linha.autor,
           categoria: linha.categoria,
           tags: linha.tags ?? [],
+          tempoLeitura: linha.tempo_leitura ?? null,
           publicado: linha.publicado,
           destaque: linha.destaque,
           ...(linha.seo_titulo ? { seoTitulo: linha.seo_titulo } : {}),

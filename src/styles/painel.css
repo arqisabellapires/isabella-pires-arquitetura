@@ -1,0 +1,323 @@
+/**
+ * Tema do painel — escuro, espelhando o CMS do Framer.
+ *
+ * Vive à parte dos tokens do site (tokens.figma.css) de propósito: o site da
+ * Isabella é claro e foi medido contra o Framer; o painel é ferramenta
+ * interna e segue as capturas do CMS que o Gabriel mandou. Nada aqui deve
+ * vazar para as páginas públicas.
+ *
+ * As cores foram tiradas das capturas: fundo quase preto, linhas de 1px
+ * muito sutis, texto secundário bem apagado, e o azul do Framer no botão
+ * principal.
+ */
+:root {
+  --p-fundo:        #0d0d0f;
+  --p-fundo-barra:  #141416;
+  --p-fundo-campo:  #1a1a1d;
+  --p-fundo-linha:  #121214;
+  --p-fundo-hover:  #1c1c20;
+  --p-borda:        #2a2a2f;
+  --p-borda-forte:  #3a3a41;
+  --p-texto:        #ededf0;
+  --p-texto-meta:   #8a8a94;
+  --p-texto-fraco:  #5f5f68;
+  --p-azul:         #0099ff;
+  --p-azul-fundo:   #0b84e0;
+  --p-verde:        #3ecf8e;
+  --p-verde-fundo:  rgba(62, 207, 142, 0.12);
+  --p-ambar:        #e8b339;
+  --p-ambar-fundo:  rgba(232, 179, 57, 0.12);
+  --p-vermelho:     #f87171;
+
+  --p-raio:      6px;
+  --p-raio-g:    10px;
+  --p-fonte:     'Mulish', system-ui, -apple-system, sans-serif;
+  --p-barra-h:   56px;
+}
+
+/* O painel pinta a página inteira: o Base.astro é claro por padrão. */
+body:has(.pnl) {
+  background: var(--p-fundo);
+  color: var(--p-texto);
+}
+
+.pnl,
+.pnl * { box-sizing: border-box; }
+
+/* O link "Pular para o conteúdo" do Base.astro fica fora do .pnl e mantém o
+   fundo creme do site; sem isto ele herda a cor clara do tema escuro e o
+   portão audita-paginas reprova o contraste. */
+body:has(.pnl) .pular-conteudo {
+  background: var(--p-fundo-barra);
+  color: var(--p-texto);
+}
+
+.pnl {
+  color: var(--p-texto);
+  font-family: var(--p-fonte);
+  min-height: 100vh;
+}
+
+/* ─── Barra do topo ─────────────────────────────────────────── */
+.pnl-topo {
+  align-items: center;
+  background: var(--p-fundo-barra);
+  border-bottom: 1px solid var(--p-borda);
+  display: flex;
+  gap: 16px;
+  height: var(--p-barra-h);
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.pnl-topo__marca {
+  align-items: center;
+  color: var(--p-texto);
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 8px;
+  text-decoration: none;
+}
+.pnl-topo__nome {
+  color: var(--p-texto);
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.pnl-topo__nome span { color: var(--p-texto-meta); font-weight: 500; }
+.pnl-topo__acoes { align-items: center; display: flex; gap: 8px; }
+
+/* ─── Botões ────────────────────────────────────────────────── */
+.pnl-btn {
+  background: var(--p-fundo-campo);
+  border: 1px solid var(--p-borda);
+  border-radius: var(--p-raio);
+  color: var(--p-texto);
+  cursor: pointer;
+  font: 600 13px/1 var(--p-fonte);
+  padding: 8px 14px;
+  text-decoration: none;
+  transition: background 120ms, border-color 120ms;
+  white-space: nowrap;
+}
+.pnl-btn:hover { background: var(--p-fundo-hover); border-color: var(--p-borda-forte); }
+.pnl-btn--azul {
+  background: var(--p-azul);
+  border-color: var(--p-azul);
+  color: #fff;
+}
+.pnl-btn--azul:hover { background: var(--p-azul-fundo); border-color: var(--p-azul-fundo); }
+.pnl-btn--perigo:hover { border-color: var(--p-vermelho); color: var(--p-vermelho); }
+.pnl-btn[disabled] { cursor: progress; opacity: 0.55; }
+.pnl-btn--icone {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  padding: 8px;
+  width: 34px;
+}
+
+/* ─── Corpo com barra lateral ───────────────────────────────── */
+.pnl-corpo {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: calc(100vh - var(--p-barra-h));
+}
+.pnl-lado {
+  border-right: 1px solid var(--p-borda);
+  padding: 16px 12px;
+}
+.pnl-lado__busca {
+  background: var(--p-fundo-campo);
+  border: 1px solid var(--p-borda);
+  border-radius: var(--p-raio);
+  color: var(--p-texto);
+  font: 500 13px/1 var(--p-fonte);
+  margin-bottom: 16px;
+  padding: 9px 12px;
+  width: 100%;
+}
+.pnl-lado__busca::placeholder { color: var(--p-texto-fraco); }
+.pnl-lado__item {
+  align-items: center;
+  background: var(--p-fundo-hover);
+  border-radius: var(--p-raio);
+  color: var(--p-texto);
+  display: flex;
+  font: 600 13px/1 var(--p-fonte);
+  gap: 8px;
+  padding: 10px 12px;
+}
+.pnl-lado__conta { color: var(--p-texto-fraco); margin-left: auto; font-weight: 500; }
+.pnl-lado__quem {
+  border-top: 1px solid var(--p-borda);
+  color: var(--p-texto-fraco);
+  font-size: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  word-break: break-all;
+}
+
+/* ─── Área principal ────────────────────────────────────────── */
+.pnl-area { display: flex; flex-direction: column; min-width: 0; }
+.pnl-ferramentas {
+  align-items: center;
+  border-bottom: 1px solid var(--p-borda);
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+}
+.pnl-aviso {
+  background: var(--p-verde-fundo);
+  border-bottom: 1px solid var(--p-borda);
+  color: var(--p-verde);
+  font: 600 13px/1.4 var(--p-fonte);
+  margin: 0;
+  padding: 10px 16px;
+}
+.pnl-aviso--erro { background: rgba(248,113,113,0.12); color: var(--p-vermelho); }
+
+/* ─── Tabela ────────────────────────────────────────────────── */
+.pnl-rolagem { overflow-x: auto; }
+.pnl-tabela {
+  border-collapse: collapse;
+  min-width: 1100px;
+  width: 100%;
+}
+.pnl-tabela th {
+  background: var(--p-fundo);
+  border-bottom: 1px solid var(--p-borda);
+  color: var(--p-texto-meta);
+  font: 600 13px/1 var(--p-fonte);
+  padding: 14px 16px;
+  position: sticky;
+  text-align: left;
+  top: 0;
+  white-space: nowrap;
+  z-index: 5;
+}
+.pnl-tabela td {
+  border-bottom: 1px solid var(--p-borda);
+  color: var(--p-texto);
+  font: 500 13px/1.4 var(--p-fonte);
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+.pnl-tabela tbody tr:hover { background: var(--p-fundo-linha); }
+.pnl-tabela__titulo {
+  color: var(--p-texto);
+  display: block;
+  font-weight: 600;
+  max-width: 320px;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pnl-tabela__titulo:hover { color: var(--p-azul); }
+.pnl-tabela__corte {
+  color: var(--p-texto-meta);
+  display: block;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pnl-tabela__capa {
+  border: 1px solid var(--p-borda);
+  border-radius: 4px;
+  height: 30px;
+  object-fit: cover;
+  width: 52px;
+}
+.pnl-tabela__vazio {
+  color: var(--p-texto-meta);
+  font: 500 14px/1 var(--p-fonte);
+  padding: 48px 16px;
+  text-align: center;
+}
+.pnl-num { color: var(--p-texto-meta); }
+
+/* Etiqueta de status, no formato do Framer: texto colorido em pílula. */
+.pnl-tag {
+  border-radius: 5px;
+  display: inline-block;
+  font: 600 12px/1 var(--p-fonte);
+  padding: 5px 9px;
+  white-space: nowrap;
+}
+.pnl-tag--live   { background: var(--p-verde-fundo); color: var(--p-verde); }
+.pnl-tag--draft  { background: var(--p-ambar-fundo); color: var(--p-ambar); }
+
+/* ─── Formulário do editor ──────────────────────────────────── */
+.pnl-form { max-width: 980px; padding: 24px; width: 100%; }
+.pnl-linha {
+  align-items: start;
+  border-bottom: 1px solid var(--p-borda);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 150px 1fr;
+  padding: 14px 0;
+}
+.pnl-linha__rotulo {
+  color: var(--p-texto-meta);
+  font: 600 13px/2.2 var(--p-fonte);
+}
+.pnl-campo {
+  background: var(--p-fundo-campo);
+  border: 1px solid var(--p-borda);
+  border-radius: var(--p-raio);
+  color: var(--p-texto);
+  font: 500 13px/1.5 var(--p-fonte);
+  padding: 9px 12px;
+  width: 100%;
+}
+.pnl-campo::placeholder { color: var(--p-texto-fraco); }
+.pnl-campo:focus-visible {
+  border-color: var(--p-azul);
+  outline: none;
+}
+textarea.pnl-campo { resize: vertical; }
+.pnl-dica { color: var(--p-texto-fraco); font-size: 12px; margin: 6px 0 0; }
+.pnl-dica a { color: var(--p-azul); }
+.pnl-erro { color: var(--p-vermelho); font-size: 12px; margin: 6px 0 0; }
+
+.pnl-duplo { display: grid; gap: 10px; grid-template-columns: 1fr auto; }
+.pnl-auto {
+  align-items: center;
+  color: var(--p-texto-fraco);
+  display: flex;
+  font: 500 12px/1 var(--p-fonte);
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.pnl-capa { align-items: start; display: flex; gap: 12px; }
+.pnl-capa__previa {
+  border: 1px solid var(--p-borda);
+  border-radius: var(--p-raio);
+  height: 68px;
+  object-fit: cover;
+  width: 110px;
+}
+
+.pnl-rodape {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  padding: 20px 0 40px;
+}
+.pnl-estado { color: var(--p-texto-meta); font: 500 13px/1 var(--p-fonte); margin: 0; }
+
+/* ─── Celular ───────────────────────────────────────────────── */
+@media (max-width: 899.98px) {
+  .pnl-corpo { grid-template-columns: 1fr; }
+  .pnl-lado { border-bottom: 1px solid var(--p-borda); border-right: 0; }
+  .pnl-linha { gap: 6px; grid-template-columns: 1fr; }
+  .pnl-linha__rotulo { line-height: 1.4; }
+  .pnl-topo__nome { display: none; }
+  .pnl-form { padding: 16px; }
+}

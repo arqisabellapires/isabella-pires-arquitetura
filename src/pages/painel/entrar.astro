@@ -7,10 +7,11 @@
  * escrever vem da RLS do banco, não desta tela.
  */
 import Base from '~/layouts/Base.astro';
+import '~/styles/painel.css';
 ---
 
 <Base titulo="Entrar no painel" descricao="Acesso à área de edição do blog de Isabella Pires." noindex>
-  <main class="entrada">
+  <main class="pnl entrada">
     <h1 class="entrada__titulo">Painel do blog</h1>
     <p class="entrada__ajuda">Entre para escrever e publicar artigos.</p>
 
@@ -67,53 +68,53 @@ import Base from '~/layouts/Base.astro';
 </script>
 
 <style>
-  /* Caixa estreita: a --fig-margem-interna vai a 100px no desktop e foi medida
-     para as seções largas do site — aqui ela comia metade do campo útil. */
+  /* Segue o tema escuro do painel (painel.css); só o arranjo é daqui. */
   .entrada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-inline: auto;
-    max-width: 34rem;
-    padding: var(--fig-e-6xl) var(--fig-e-xl);
+    max-width: 30rem;
+    min-height: 100vh;
+    padding: var(--fig-e-2xl) var(--fig-e-xl);
   }
   .entrada__titulo {
-    color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-semi) var(--fig-f-titulo-secao) / 1.2 var(--fig-fonte-corpo);
-    margin: 0 0 var(--fig-e-sm);
+    color: var(--p-texto);
+    font: 700 30px/1.2 var(--p-fonte);
+    margin: 0 0 8px;
   }
   .entrada__ajuda {
-    color: var(--fig-texto-meta);
-    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.6 var(--fig-fonte-corpo);
-    margin: 0 0 var(--fig-e-2xl);
+    color: var(--p-texto-meta);
+    font: 500 15px/1.6 var(--p-fonte);
+    margin: 0 0 32px;
   }
-  .entrada__form { display: flex; flex-direction: column; gap: var(--fig-e-lg); }
-  .campo { display: flex; flex-direction: column; gap: var(--fig-e-xs); }
-  .campo__rotulo {
-    color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-forte) var(--fig-t-corpo-p) / 1.4 var(--fig-fonte-corpo);
-  }
+  .entrada__form { display: flex; flex-direction: column; gap: 18px; }
+  .campo { display: flex; flex-direction: column; gap: 7px; }
+  .campo__rotulo { color: var(--p-texto-meta); font: 600 13px/1.4 var(--p-fonte); }
   .campo__caixa {
-    background: #fff;
-    border: 1px solid var(--fig-borda);
-    border-radius: var(--fig-raio-sm);
-    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.4 var(--fig-fonte-corpo);
-    padding: var(--fig-e-md);
+    background: var(--p-fundo-campo);
+    border: 1px solid var(--p-borda);
+    border-radius: var(--p-raio);
+    color: var(--p-texto);
+    font: 500 15px/1.4 var(--p-fonte);
+    padding: 11px 13px;
   }
-  .campo__caixa:focus-visible {
-    outline: 2px solid var(--fig-primaria-ativa);
-    outline-offset: 1px;
-  }
+  .campo__caixa:focus-visible { border-color: var(--p-azul); outline: none; }
   .entrada__botao {
-    background: var(--fig-primaria-ativa);
+    background: var(--p-azul);
     border: 0;
-    border-radius: var(--fig-raio-sm);
+    border-radius: var(--p-raio);
     color: #fff;
     cursor: pointer;
-    font: var(--fig-peso-forte) var(--fig-f-corpo) / 1 var(--fig-fonte-corpo);
-    padding: var(--fig-e-md);
+    font: 700 15px/1 var(--p-fonte);
+    margin-top: 6px;
+    padding: 13px;
   }
-  .entrada__botao[disabled] { opacity: 0.6; cursor: progress; }
+  .entrada__botao:hover { background: var(--p-azul-fundo); }
+  .entrada__botao[disabled] { cursor: progress; opacity: 0.6; }
   .entrada__erro {
-    color: #a4243b;
-    font: var(--fig-peso-semi) var(--fig-t-corpo-p) / 1.5 var(--fig-fonte-corpo);
+    color: var(--p-vermelho);
+    font: 600 13px/1.5 var(--p-fonte);
     margin: 0;
   }
 </style>

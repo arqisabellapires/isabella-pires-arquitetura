@@ -42,7 +42,15 @@ const comMinutos = await Promise.all(
   <div class="listagem">
     <Migalhas itens={[{ rotulo: 'Início', href: '/' }, { rotulo: 'Blog' }]} />
 
-    <h1 class="listagem__titulo">Blog</h1>
+    {/*
+      No blog o Framer manda na FORMA, não só no tamanho (decisão de
+      07/09/2026). E lá o herói tem DOIS blocos, não um:
+      "Blog" à esquerda, e a manchete centralizada abaixo. Medido em
+      _capturas/artigos/medidas.desktop.json.
+    */}
+    <p class="listagem__rotulo">Blog</p>
+
+    <h1 class="listagem__manchete">Dicas e notícias para quem realmente se destaca.</h1>
 
     <nav class="filtros" aria-label="Filtrar por categoria">
       <a class="filtros__item filtros__item--ativo" href="/artigos" aria-current="page">Todos</a>
@@ -92,10 +100,26 @@ const comMinutos = await Promise.all(
     max-width: var(--fig-largura-conteudo);
     padding: var(--fig-e-4xl) var(--fig-margem-interna) var(--fig-secao-y);
   }
-  .listagem__titulo {
+  /* "Blog": 60px Mulish 600, rgb(52,31,4), à esquerda (x=100, y=240 no
+     Framer). Continua sendo o rótulo da página, mas não é mais o <h1> —
+     quem titula é a manchete abaixo. */
+  .listagem__rotulo {
     color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
-    margin: var(--fig-e-3xl) 0 var(--fig-e-2xl);
+    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.2 var(--fig-fonte-corpo);
+    margin: var(--fig-e-3xl) 0 0;
+  }
+
+  /* Manchete do herói: 64px Manrope 500, tracking -0.06em, entrelinha 110%,
+     centralizada, preta, largura ~698px. Medida no Framer (y=491.8).
+     A Manrope já estava em fontes.css, servida do próprio domínio — este é o
+     primeiro lugar do site que a usa. */
+  .listagem__manchete {
+    color: #000;
+    font: 500 clamp(2rem, 1.1rem + 2.9vw, 4rem) / 1.1 'Manrope', var(--fig-fonte-corpo);
+    letter-spacing: -0.06em;
+    margin: var(--fig-e-3xl) auto var(--fig-e-2xl);
+    max-width: 698px;
+    text-align: center;
   }
 
   /* Pastilhas: a ativa é sólida, as outras têm contorno. Node 1:1108.

@@ -127,10 +127,19 @@ const fotosInstagram = [
     </div>
   </section>
 
-  <section class="metodo" data-revela>
+  {/*
+    O `data-revela` saiu da <section> e desceu para o cabeçalho e a lista.
+    Motivo: `revela.css` anima `transform`, e um ancestral transformado vira o
+    bloco de contenção do `position: sticky` — o cabeçalho grudava dentro da
+    seção em vez de na janela, e se soltava no meio da rolagem. Medido: com o
+    `data-revela` na seção, o topo ia de 130px para -222px; sem ele, fica.
+  */}
+  <section class="metodo">
     <header class="metodo__cabeca">
-      <RotuloSecao>Passo a passo</RotuloSecao>
-      <h2 class="titulo-secao">Nós temos um método simples,<br />mas rápido e efetivo</h2>
+      <div data-revela>
+        <RotuloSecao>Passo a passo</RotuloSecao>
+        <h2 class="titulo-secao">Nós temos um método simples,<br />mas rápido e efetivo</h2>
+      </div>
     </header>
     <ol class="metodo__lista" data-revela-filhos>
       {passosMetodo.map((p, i) => (
@@ -333,10 +342,53 @@ const fotosInstagram = [
   }
 
   /* ─── Método ──────────────────────────────────────────────*/
+  /*
+    Duas colunas, com o cabeçalho FIXO à direita enquanto os passos 01–04
+    rolam à esquerda. Medido no vídeo
+    `_capturas/_videos/sobre-nos.desktop.reveal-entrada.webm`: entre 10,8s e
+    12,2s o bloco "Passo a passo / Nós temos um método simples" permanece na
+    mesma posição da janela enquanto 01→02 e depois 03→04 passam por ele.
+
+    A geometria vem de `_capturas/sobre-nos/medidas.desktop.json`: os passos
+    ocupam x=132..753 e o cabeçalho começa em x=785 — daí as duas colunas.
+    Os passos vão de y=3458 a y=4644, ou seja, o cabeçalho fica preso por
+    ~1200px de rolagem.
+
+    Atenção: `position: sticky` só funciona se NENHUM ancestral tiver
+    `overflow` diferente de `visible`. Por isso o grude vive na coluna, e não
+    na seção.
+  */
   .metodo {
     margin-inline: auto;
     max-width: var(--fig-largura-conteudo);
     padding: 0 var(--fig-margem-interna) var(--fig-secao-y);
+  }
+  @media (min-width: 1200px) {
+    .metodo {
+      align-items: start;
+      display: grid;
+      /* 621px de passos + 555px de cabeçalho, na proporção do Framer. */
+      grid-template-columns: minmax(0, 648fr) minmax(0, 555fr);
+      column-gap: var(--fig-e-2xl);
+    }
+    /* O cabeçalho é a 2ª coluna, mas vem antes no HTML: leitor de tela e
+       teclado continuam ouvindo o título antes da lista que ele descreve. */
+    .metodo__cabeca {
+      grid-column: 2;
+      grid-row: 1;
+      position: sticky;
+      /* abaixo do menu de 90px, com respiro */
+      top: calc(90px + var(--fig-e-2xl));
+      margin-bottom: 0;
+      /* Sem isto o item de grade se estica até a altura da linha (365px em
+         vez dos ~180px do conteúdo), e o grude acaba cedo: o percurso de um
+         sticky é `altura da linha − altura do elemento`. Encolhendo o
+         cabeçalho, ele acompanha os quatro passos até o fim. */
+      align-self: start;
+    }
+    .metodo__lista { grid-column: 1; grid-row: 1; }
+    /* Em duas colunas os passos já não alternam: todos ficam à esquerda. */
+    .metodo .passo--direita { margin-left: 0; }
   }
   .metodo__cabeca { display: flex; flex-direction: column; gap: var(--fig-e-sm); margin-bottom: var(--fig-e-2xl); }
   .metodo__lista { display: flex; flex-direction: column; gap: var(--fig-e-md); list-style: none; margin: 0; padding: 0; }

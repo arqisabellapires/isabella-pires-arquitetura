@@ -25,6 +25,7 @@ const EXIGIDAS = [
   ['Montserrat', 500], ['Montserrat', 600],
   ['Faberge', 400],   // alias -> Cormorant Garamond
   ['Arboria', 500],   // alias -> Jost
+  ['Manrope', 500],   // manchete do herói de /artigos (o blog segue o Framer)
 ];
 
 const TIPOS = { '.css': 'text/css', '.woff2': 'font/woff2', '.woff': 'font/woff' };

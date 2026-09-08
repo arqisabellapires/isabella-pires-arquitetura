@@ -73,13 +73,13 @@ export const rodape = {
     { rotulo: 'Blog', href: '/artigos' },
     { rotulo: 'Contato', href: '/contato' },
   ],
-  // As três páginas de política não existem no Framer: os links estavam no
-  // rodapé apontando para lugar nenhum. Ficam listadas para o Gabriel decidir
-  // se cria as páginas ou tira os links — não se inventa política jurídica.
+  // O Framer não tinha estas três páginas — os links do rodapé apontavam para
+  // lugar nenhum. As páginas foram escritas depois (src/pages/*.astro) e os
+  // links passam a apontar para elas.
   informacoes: [
-    { rotulo: 'Termos de uso', href: null },
-    { rotulo: 'Políticas de Privacidade', href: null },
-    { rotulo: 'Políticas de Cookies', href: null },
+    { rotulo: 'Termos de uso', href: '/termos-de-uso' },
+    { rotulo: 'Políticas de Privacidade', href: '/politica-de-privacidade' },
+    { rotulo: 'Políticas de Cookies', href: '/politica-de-cookies' },
   ],
 } as const;
 

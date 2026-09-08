@@ -43,10 +43,15 @@ const data = d.publicadoEm.toLocaleDateString('pt-BR');
 
 <article class="card" data-variante={variante}>
   <a class="card__link" href={`/artigos/${artigo.id}`}>
+    {/* width/height só vão quando a capa é remota (vem do CMS): o <Image>
+        exige as duas para não deixar a página pular. Com arquivo local o
+        Astro mede sozinho, e passar undefined é inofensivo. */}
     <Image
       class="card__capa"
       src={d.capa}
       alt={d.capaAlt}
+      width={d.capaLargura ?? undefined}
+      height={d.capaAltura ?? undefined}
       widths={[385, 770]}
       sizes="(min-width: 1200px) 385px, (min-width: 810px) 45vw, 90vw"
       loading={prioritaria ? 'eager' : 'lazy'}

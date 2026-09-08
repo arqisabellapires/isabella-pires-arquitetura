@@ -76,7 +76,7 @@ const descricao = d.seoDescricao ?? d.resumo;
 
     <h1 class="artigo-titulo">{d.titulo}</h1>
 
-    <Image class="artigo-capa" src={d.capa} alt={d.capaAlt} widths={[390, 700, 875]} sizes="(min-width: 1200px) 875px, (min-width: 810px) 700px, 100vw" loading="eager" />
+    <Image class="artigo-capa" src={d.capa} alt={d.capaAlt} width={d.capaLargura ?? undefined} height={d.capaAltura ?? undefined} widths={[390, 700, 875]} sizes="(min-width: 1200px) 875px, (min-width: 810px) 700px, 100vw" loading="eager" />
 
     <div class="artigo-corpo">
       <Content />

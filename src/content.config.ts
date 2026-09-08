@@ -1,21 +1,41 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { artigosDoSupabase } from './lib/loader-supabase';
 
 /**
- * O `loader` é o ponto de troca entre a V1 e a V2.
+ * O `loader` é o ponto de troca entre a V1 e a V2. **A troca aconteceu.**
  *
- * Hoje: lê markdown de src/content/.
- * Na Fase 5 (CMS): este glob() vira um loader que consulta o Supabase.
- * Os schemas e as páginas que consomem getCollection() não mudam.
+ * Antes: lia markdown de src/content/artigos/.
+ * Agora: `artigosDoSupabase()` consulta o banco. Como prometido no
+ * planejamento, os schemas e as páginas que consomem getCollection() não
+ * mudaram — só esta linha e o tipo de `capa` (ver abaixo).
+ *
+ * Os markdown antigos continuam em src/content/artigos/ como acervo: foram
+ * a fonte da carga inicial (`tools/importa-artigos.mjs`) e servem de
+ * conferência. Não são mais lidos no build.
  */
 
 const artigos = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/artigos' }),
+  loader: artigosDoSupabase(),
   schema: ({ image }) =>
     z.object({
       titulo: z.string().max(120),
       resumo: z.string().max(300),
-      capa: image(),
+      /*
+        Vindo do Supabase, `capa` é a URL pública do Storage — uma string.
+        No markdown era um arquivo local, e o `image()` devolvia um objeto
+        com largura e altura. Aceitamos os dois para que o acervo em
+        src/content/ continue validando, e para não ter de tocar no
+        <Image> das páginas.
+      */
+      capa: z.union([image(), z.string().url()]),
+      /*
+        Só existem quando a capa é remota: o <Image> exige largura e altura
+        para não deixar a página pular enquanto ela carrega. Com arquivo
+        local, o próprio Astro mede.
+      */
+      capaLargura: z.number().int().positive().nullable().optional(),
+      capaAltura: z.number().int().positive().nullable().optional(),
       capaAlt: z.string(),
       publicadoEm: z.coerce.date(),
       atualizadoEm: z.coerce.date().optional(),

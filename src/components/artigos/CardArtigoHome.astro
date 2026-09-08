@@ -30,10 +30,13 @@ const data = d.publicadoEm.toLocaleDateString('pt-BR', {
 
 <article class="cartao">
   <a class="cartao__link" href={`/artigos/${artigo.id}`}>
+    {/* Ver CardArtigo: dimensões só quando a capa é remota. */}
     <Image
       class="cartao__capa"
       src={d.capa}
       alt={d.capaAlt}
+      width={d.capaLargura ?? undefined}
+      height={d.capaAltura ?? undefined}
       widths={[285, 570]}
       sizes="285px"
       loading="lazy"

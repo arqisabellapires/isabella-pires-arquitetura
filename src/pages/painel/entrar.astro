@@ -67,10 +67,12 @@ import Base from '~/layouts/Base.astro';
 </script>
 
 <style>
+  /* Caixa estreita: a --fig-margem-interna vai a 100px no desktop e foi medida
+     para as seções largas do site — aqui ela comia metade do campo útil. */
   .entrada {
     margin-inline: auto;
-    max-width: 420px;
-    padding: var(--fig-e-6xl) var(--fig-margem-interna);
+    max-width: 34rem;
+    padding: var(--fig-e-6xl) var(--fig-e-xl);
   }
   .entrada__titulo {
     color: var(--fig-primaria-ativa);

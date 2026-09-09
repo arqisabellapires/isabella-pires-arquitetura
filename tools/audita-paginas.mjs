@@ -64,7 +64,12 @@ for (const f of arquivos) {
   somaKB += kb; maiorKB = Math.max(maiorKB, kb);
   const rota = f.replace('dist/client', '').replace('/index.html', '') || '/';
 
-  await pg.goto(`http://localhost:${PORTA}${rota}`, { waitUntil: 'networkidle' });
+  await pg.goto(`http://localhost:${PORTA}${rota}`, { waitUntil: 'domcontentloaded' });
+  /* `networkidle` não serve desde que /contato e /sobre-nos passaram a
+     embedar posts do Instagram: os iframes de terceiro mantêm conexões
+     abertas e a página nunca fica ociosa, então o portão estourava o
+     timeout de forma intermitente. */
+  await pg.waitForTimeout(1200);
   const r = await pg.evaluate(() => ({
     h1: document.querySelectorAll('h1').length,
     title: document.title.trim(),

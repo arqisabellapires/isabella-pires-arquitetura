@@ -43,7 +43,12 @@ for (const [nome, largura] of Object.entries(LARGURAS)) {
   const ruins = [];
 
   for (const rota of ROTAS) {
-    await pg.goto(`http://localhost:${porta}${rota}`, { waitUntil: 'networkidle' });
+    await pg.goto(`http://localhost:${porta}${rota}`, { waitUntil: 'domcontentloaded' });
+  /* `networkidle` não serve desde que /contato e /sobre-nos passaram a
+     embedar posts do Instagram: os iframes de terceiro mantêm conexões
+     abertas e a página nunca fica ociosa, então o portão estourava o
+     timeout de forma intermitente. */
+  await pg.waitForTimeout(1200);
     const r = await pg.evaluate((vw) => {
       const doc = document.documentElement;
       const vaza = doc.scrollWidth > vw + 1;

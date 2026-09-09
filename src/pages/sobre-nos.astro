@@ -107,8 +107,10 @@ const fotosInstagram = [
     <h2 class="entrega__titulo">Nós entregamos apenas o nosso melhor</h2>
     <div class="entrega__linha">
       <div class="acordeao">
+        {/* `name` compartilhado: o navegador fecha os outros sozinho, que é o
+            comportamento do Framer — um aberto por vez, sem JavaScript. */}
         {servicos.map((s, i) => (
-          <details class="acordeao__item" open={i === 1}>
+          <details class="acordeao__item" name="servico-sobre" open={i === 1}>
             <summary class="acordeao__rotulo">
               {s.tituloCompleto}
               <img class="acordeao__seta" src="/icones/seta-baixo.svg" alt="" width="32" height="32" />
@@ -291,13 +293,24 @@ const fotosInstagram = [
   /* min-width fixo somado ao flex-basis da foto estourava a linha em
      1440px. Percentual nos dois lados não estoura em largura nenhuma. */
   .acordeao { display: flex; flex: 1 1 46%; flex-direction: column; gap: var(--fig-e-md); min-width: 0; }
+  /* Sem `display` próprio: qualquer valor diferente do padrão tira do
+     <details> o controle nativo do conteúdo, e os cinco textos aparecem
+     mesmo com um só aberto. */
   .acordeao__item {
-    border: 2px solid #696969;
-    border-radius: var(--fig-raio-lg);
-    padding: var(--fig-e-lg) var(--fig-e-xl);
-    transition: background var(--dur-acordeao-servicos) var(--mola-acordeao-servicos);
+    border: 1px solid #d9cfc6;
+    border-radius: 14px;
+    padding: var(--fig-e-md) var(--fig-e-lg);
+    transition:
+      background var(--dur-acordeao-servicos) var(--mola-acordeao-servicos),
+      border-color var(--dur-acordeao-servicos) var(--mola-acordeao-servicos);
   }
-  .acordeao__item[open] { background: var(--fig-veu-acordeao); border-color: transparent; }
+  /* Fechado é claro com borda fina; aberto é pêssego sem borda. No Framer é
+     esse contraste que mostra qual está aberto — antes todos eram pêssego. */
+  .acordeao__item[open] {
+    background: var(--fig-veu-acordeao);
+    border-color: transparent;
+  }
+  .acordeao__item:not([open]):hover { border-color: #b9a894; }
   .acordeao__rotulo {
     align-items: center;
     color: var(--fig-cinza-900);
@@ -313,6 +326,9 @@ const fotosInstagram = [
     flex: none;
     transition: transform var(--dur-acordeao-servicos) var(--mola-acordeao-servicos);
   }
+  /* A seta aponta para baixo quando fechado e para cima quando aberto. O
+     ícone seta-baixo.svg já aponta para baixo, então quem gira é o aberto. */
+  .acordeao__seta { transform: rotate(0deg); }
   .acordeao__item[open] .acordeao__seta { transform: rotate(180deg); }
   .acordeao__texto {
     color: var(--fig-texto);

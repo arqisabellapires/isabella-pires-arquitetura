@@ -1,0 +1,168 @@
+---
+/**
+ * Criar a senha nova. É para cá que o link do e-mail leva.
+ *
+ * O Supabase põe o token na âncora da URL (#access_token=…) e a biblioteca
+ * do navegador o troca por uma sessão sozinha — por isso a página espera o
+ * evento PASSWORD_RECOVERY antes de mostrar o formulário.
+ */
+import Base from '~/layouts/Base.astro';
+import CampoSenha from '~/components/painel/CampoSenha.astro';
+import '~/styles/painel.css';
+---
+
+<Base titulo="Criar nova senha" descricao="Definir uma senha nova para o painel." noindex>
+  <main class="pnl entrada">
+    <p class="entrada__ajuda" id="esperando">Conferindo o link…</p>
+
+    <div id="expirado" hidden>
+      <p class="entrada__titulo">Link vencido</p>
+      <p class="entrada__ajuda">
+        Este link já foi usado ou passou de uma hora. Peça outro — leva um
+        minuto.
+      </p>
+      <p class="entrada__link" style="text-align:left">
+        <a href="/painel/esqueci">Pedir um link novo</a>
+      </p>
+    </div>
+
+    <div id="trocar" hidden>
+      <h1 class="entrada__titulo">Criar nova senha</h1>
+      <p class="entrada__ajuda">Escolha uma senha para <strong id="quem"></strong>.</p>
+
+      <form class="entrada__form" id="form">
+        <div>
+          <CampoSenha id="senha" nome="senha" rotulo="Nova senha" autocomplete="new-password" />
+          <div class="pnl-forca" aria-hidden="true">
+            <span class="pnl-forca__barra" data-forca="1"></span>
+            <span class="pnl-forca__barra" data-forca="2"></span>
+            <span class="pnl-forca__barra" data-forca="3"></span>
+          </div>
+          <p class="pnl-forca__texto" id="forca-texto">Pelo menos 8 caracteres.</p>
+        </div>
+
+        <CampoSenha id="senha2" nome="senha2" rotulo="Repita a senha" autocomplete="new-password" />
+
+        <button class="entrada__botao" type="submit" id="salvar">Salvar a senha</button>
+        <p class="entrada__erro" id="erro" role="alert" hidden></p>
+      </form>
+    </div>
+
+    <div class="pnl-feito" id="feito" hidden>
+      <div class="pnl-feito__marca" aria-hidden="true">✓</div>
+      <p class="pnl-feito__titulo">Senha trocada</p>
+      <p class="pnl-feito__texto">Pronto. Você já pode entrar com ela.</p>
+      <p class="pnl-feito__texto" id="indo">Levando você para o painel…</p>
+    </div>
+  </main>
+</Base>
+
+<script>
+  import { supabase } from '~/lib/supabase-navegador';
+
+  const $ = (s: string) => document.querySelector(s) as HTMLElement;
+  const form = document.getElementById('form') as HTMLFormElement;
+  const erro = $('#erro');
+  const salvar = document.getElementById('salvar') as HTMLButtonElement;
+  const senha = document.getElementById('senha') as HTMLInputElement;
+  const senha2 = document.getElementById('senha2') as HTMLInputElement;
+
+  /** Força grosseira: tamanho, e se mistura tipos de caractere. */
+  function forca(v: string) {
+    if (v.length < 8) return 0;
+    let n = 1;
+    const tipos = [/[a-z]/, /[A-Z]/, /\d/, /[^A-Za-z0-9]/].filter((r) => r.test(v)).length;
+    if (v.length >= 12 || tipos >= 3) n = 2;
+    if (v.length >= 14 && tipos >= 3) n = 3;
+    return n;
+  }
+
+  senha.addEventListener('input', () => {
+    const n = forca(senha.value);
+    const classe = ['', 'pnl-forca__barra--fraca', 'pnl-forca__barra--media', 'pnl-forca__barra--forte'][n];
+    document.querySelectorAll<HTMLElement>('[data-forca]').forEach((b) => {
+      b.className = 'pnl-forca__barra';
+      if (n >= Number(b.dataset.forca)) b.classList.add(classe);
+    });
+    $('#forca-texto').textContent =
+      senha.value.length === 0 ? 'Pelo menos 8 caracteres.'
+      : n === 0 ? 'Curta demais — precisa de 8 ou mais.'
+      : n === 1 ? 'Serve, mas dá para melhorar.'
+      : n === 2 ? 'Boa senha.'
+      : 'Senha forte.';
+  });
+
+  // O link do e-mail traz o token na âncora e o cliente o troca por sessão
+  // sozinho (detectSessionInUrl). Duas coisas podem acontecer primeiro — o
+  // evento, ou a sessão já pronta — então escutamos as duas e desistimos
+  // depois de um tempo, que é quando o link já não presta.
+  let pronto = false;
+
+  function abreFormulario(email: string) {
+    if (pronto) return;
+    pronto = true;
+    $('#esperando').hidden = true;
+    $('#expirado').hidden = true;
+    $('#trocar').hidden = false;
+    $('#quem').textContent = email;
+    senha.focus();
+    // Tira o token da barra de endereços: ele dá acesso à conta.
+    history.replaceState(null, '', location.pathname);
+  }
+
+  supabase.auth.onAuthStateChange((evento, sessao) => {
+    if ((evento === 'PASSWORD_RECOVERY' || evento === 'SIGNED_IN' || evento === 'INITIAL_SESSION') && sessao) {
+      abreFormulario(sessao.user.email ?? '');
+    }
+  });
+
+  // Rede lenta pode atrasar a troca do token por sessão; tentamos algumas
+  // vezes antes de dizer que o link venceu.
+  (async () => {
+    for (let i = 0; i < 12 && !pronto; i++) {
+      const { data } = await supabase.auth.getSession();
+      if (data.session) { abreFormulario(data.session.user.email ?? ''); return; }
+      await new Promise((r) => setTimeout(r, 500));
+    }
+    if (!pronto) {
+      $('#esperando').hidden = true;
+      $('#expirado').hidden = false;
+    }
+  })();
+
+  form.addEventListener('submit', async (evento) => {
+    evento.preventDefault();
+    erro.hidden = true;
+
+    if (senha.value.length < 8) {
+      erro.textContent = 'A senha precisa de pelo menos 8 caracteres.';
+      erro.hidden = false;
+      return;
+    }
+    if (senha.value !== senha2.value) {
+      erro.textContent = 'As duas senhas não são iguais.';
+      erro.hidden = false;
+      senha2.focus();
+      return;
+    }
+
+    salvar.disabled = true;
+    salvar.textContent = 'Salvando…';
+
+    const { error } = await supabase.auth.updateUser({ password: senha.value });
+
+    if (error) {
+      erro.textContent = error.message.includes('should be different')
+        ? 'Essa é a senha atual. Escolha outra.'
+        : `Não deu certo: ${error.message}`;
+      erro.hidden = false;
+      salvar.disabled = false;
+      salvar.textContent = 'Salvar a senha';
+      return;
+    }
+
+    $('#trocar').hidden = true;
+    $('#feito').hidden = false;
+    setTimeout(() => { window.location.href = '/painel'; }, 2000);
+  });
+</script>

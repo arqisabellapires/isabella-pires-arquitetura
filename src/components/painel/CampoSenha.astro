@@ -1,0 +1,50 @@
+---
+/**
+ * Campo de senha com o olhinho de mostrar/esconder.
+ *
+ * O botão fica dentro do rótulo e é `type="button"` de propósito: dentro de
+ * um <form>, um botão sem tipo envia o formulário ao ser clicado.
+ */
+interface Props {
+  id: string;
+  nome: string;
+  rotulo: string;
+  autocomplete?: string;
+  classe?: string;
+}
+const { id, nome, rotulo, autocomplete = 'current-password', classe = 'campo__caixa' } = Astro.props;
+---
+
+<label class="campo">
+  <span class="campo__rotulo">{rotulo}</span>
+  <span class="pnl-senha">
+    <input class={classe} id={id} type="password" name={nome} required autocomplete={autocomplete} />
+    <button class="pnl-olho" type="button" data-olho={id} aria-pressed="false" aria-label="Mostrar a senha">
+      <svg class="olho-aberto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+      <svg class="olho-fechado" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10.6 6.2A9.9 9.9 0 0 1 12 6c6.5 0 10 7 10 7a17 17 0 0 1-2.8 3.7M6.6 6.6A17 17 0 0 0 2 13s3.5 7 10 7a9.7 9.7 0 0 0 4.5-1.1" />
+        <path d="M14.1 14.1a3 3 0 1 1-4.2-4.2" />
+        <path d="m2 2 20 20" />
+      </svg>
+    </button>
+  </span>
+</label>
+
+<script>
+  // Um só ouvinte para todos os olhinhos da página.
+  document.addEventListener('click', (e) => {
+    const botao = (e.target as HTMLElement).closest('[data-olho]') as HTMLButtonElement | null;
+    if (!botao) return;
+    const campo = document.getElementById(botao.dataset.olho!) as HTMLInputElement;
+    const mostrando = campo.type === 'text';
+    campo.type = mostrando ? 'password' : 'text';
+    botao.setAttribute('aria-pressed', String(!mostrando));
+    botao.setAttribute('aria-label', mostrando ? 'Mostrar a senha' : 'Esconder a senha');
+    // O clique tira o foco do campo; devolve, para ela seguir digitando.
+    campo.focus();
+    campo.setSelectionRange(campo.value.length, campo.value.length);
+  });
+</script>

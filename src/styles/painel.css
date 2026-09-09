@@ -569,3 +569,122 @@ textarea.pnl-campo { resize: vertical; }
 }
 .ed__cru:focus-visible { outline: none; }
 .ed__cru[hidden] { display: none; }
+
+/* O preenchimento automático do Chrome pinta o campo de branco e é imune a
+   `background`: a única saída é a sombra interna, que cobre a área toda. */
+.pnl input:-webkit-autofill,
+.pnl input:-webkit-autofill:hover,
+.pnl input:-webkit-autofill:focus,
+.pnl input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 100px var(--p-fundo-campo) inset !important;
+  -webkit-text-fill-color: var(--p-texto) !important;
+  caret-color: var(--p-texto);
+  transition: background-color 100000s ease-in-out 0s;
+}
+
+/* ─── Telas de entrada, esqueci e nova senha ────────────────── */
+.entrada {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: 30rem;
+  min-height: 100vh;
+  padding: 40px 32px;
+}
+.entrada__titulo { color: var(--p-texto); font: 700 30px/1.2 var(--p-fonte); margin: 0 0 8px; }
+.entrada__ajuda { color: var(--p-texto-meta); font: 500 15px/1.6 var(--p-fonte); margin: 0 0 32px; }
+.entrada__ajuda strong { color: var(--p-texto); }
+.entrada__form { display: flex; flex-direction: column; gap: 18px; }
+.campo { display: flex; flex-direction: column; gap: 7px; }
+.campo__rotulo { color: var(--p-texto-meta); font: 600 13px/1.4 var(--p-fonte); }
+.campo__caixa {
+  background: var(--p-fundo-campo);
+  border: 1px solid var(--p-borda);
+  border-radius: var(--p-raio);
+  color: var(--p-texto);
+  font: 500 15px/1.4 var(--p-fonte);
+  padding: 11px 13px;
+}
+.campo__caixa:focus-visible { border-color: var(--p-azul); outline: none; }
+.entrada__botao {
+  background: var(--p-azul);
+  border: 0;
+  border-radius: var(--p-raio);
+  color: #fff;
+  cursor: pointer;
+  font: 700 15px/1 var(--p-fonte);
+  margin-top: 6px;
+  padding: 13px;
+}
+.entrada__botao:hover { background: var(--p-azul-fundo); }
+.entrada__botao[disabled] { cursor: progress; opacity: 0.6; }
+.entrada__erro { color: var(--p-vermelho); font: 600 13px/1.5 var(--p-fonte); margin: 0; }
+.entrada__link { margin: 4px 0 0; text-align: center; }
+.entrada__link a {
+  color: var(--p-texto-meta);
+  font: 600 13px/1.5 var(--p-fonte);
+  text-decoration: none;
+}
+.entrada__link a:hover { color: var(--p-azul); text-decoration: underline; }
+
+/* ─── Campo de senha com olhinho ────────────────────────────── */
+.pnl-senha { position: relative; }
+.pnl-senha .campo__caixa,
+.pnl-senha .pnl-campo { padding-right: 44px; width: 100%; }
+.pnl-olho {
+  align-items: center;
+  background: none;
+  border: 0;
+  border-radius: 5px;
+  color: var(--p-texto-fraco);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+}
+.pnl-olho:hover { color: var(--p-texto); }
+.pnl-olho:focus-visible { outline: 2px solid var(--p-azul); outline-offset: -2px; }
+.pnl-olho svg { display: block; height: 18px; width: 18px; }
+/* Um dos dois ícones aparece por vez, conforme o estado do botão. */
+.pnl-olho .olho-fechado { display: none; }
+.pnl-olho[aria-pressed='true'] .olho-aberto { display: none; }
+.pnl-olho[aria-pressed='true'] .olho-fechado { display: block; }
+
+/* ─── Força da senha ────────────────────────────────────────── */
+.pnl-forca { display: flex; gap: 4px; margin-top: 8px; }
+.pnl-forca__barra {
+  background: var(--p-borda);
+  border-radius: 2px;
+  flex: 1;
+  height: 3px;
+  transition: background 150ms;
+}
+.pnl-forca__barra--fraca  { background: var(--p-vermelho); }
+.pnl-forca__barra--media  { background: var(--p-ambar); }
+.pnl-forca__barra--forte  { background: var(--p-verde); }
+.pnl-forca__texto { color: var(--p-texto-fraco); font-size: 12px; margin: 6px 0 0; }
+
+/* ─── Recado de sucesso, no lugar do formulário ─────────────── */
+.pnl-feito { text-align: left; }
+.pnl-feito__marca {
+  align-items: center;
+  background: var(--p-verde-fundo);
+  border-radius: 50%;
+  color: var(--p-verde);
+  display: flex;
+  font-size: 22px;
+  height: 46px;
+  justify-content: center;
+  margin-bottom: 18px;
+  width: 46px;
+}
+.pnl-feito__titulo { color: var(--p-texto); font: 700 21px/1.3 var(--p-fonte); margin: 0 0 10px; }
+.pnl-feito__texto { color: var(--p-texto-meta); font: 500 14px/1.65 var(--p-fonte); margin: 0 0 8px; }
+.pnl-feito__texto strong { color: var(--p-texto); }

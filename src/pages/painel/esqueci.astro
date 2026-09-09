@@ -1,0 +1,85 @@
+---
+/**
+ * Pedir uma nova senha. A pessoa digita o e-mail e o Supabase manda o link.
+ *
+ * A tela responde a mesma coisa para e-mail cadastrado ou não: dizer "esse
+ * e-mail não existe" entregaria a estranhos quem tem conta aqui.
+ */
+import Base from '~/layouts/Base.astro';
+import '~/styles/painel.css';
+---
+
+<Base titulo="Esqueci minha senha" descricao="Pedir uma nova senha do painel." noindex>
+  <main class="pnl entrada">
+    <div id="pedir">
+      <h1 class="entrada__titulo">Esqueci minha senha</h1>
+      <p class="entrada__ajuda">
+        Digite seu e-mail. Se houver conta com ele, mandamos um link para você
+        criar uma senha nova.
+      </p>
+
+      <form class="entrada__form" id="form">
+        <label class="campo">
+          <span class="campo__rotulo">E-mail</span>
+          <input class="campo__caixa" type="email" name="email" required autocomplete="username" autofocus />
+        </label>
+
+        <button class="entrada__botao" type="submit" id="enviar">Enviar o link</button>
+        <p class="entrada__erro" id="erro" role="alert" hidden></p>
+        <p class="entrada__link"><a href="/painel/entrar">Voltar para a entrada</a></p>
+      </form>
+    </div>
+
+    <div class="pnl-feito" id="feito" hidden>
+      <div class="pnl-feito__marca" aria-hidden="true">✓</div>
+      <p class="pnl-feito__titulo">Verifique seu e-mail</p>
+      <p class="pnl-feito__texto">
+        Se existe conta com <strong id="destino"></strong>, o link para criar
+        uma senha nova já está a caminho.
+      </p>
+      <p class="pnl-feito__texto">
+        O link vale por uma hora. Se não chegar em alguns minutos, veja no spam.
+      </p>
+      <p class="entrada__link" style="text-align:left;margin-top:20px">
+        <a href="/painel/entrar">Voltar para a entrada</a>
+      </p>
+    </div>
+  </main>
+</Base>
+
+<script>
+  import { supabase } from '~/lib/supabase-navegador';
+
+  const form = document.getElementById('form') as HTMLFormElement;
+  const erro = document.getElementById('erro') as HTMLParagraphElement;
+  const enviar = document.getElementById('enviar') as HTMLButtonElement;
+
+  form.addEventListener('submit', async (evento) => {
+    evento.preventDefault();
+    erro.hidden = true;
+    enviar.disabled = true;
+    enviar.textContent = 'Enviando…';
+
+    const email = String((form.email as HTMLInputElement).value).trim();
+
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${location.origin}/painel/nova-senha`,
+    });
+
+    // Só erro de rede ou de limite aparece. "E-mail não cadastrado" não é
+    // mostrado de propósito: diria a um estranho quem tem conta aqui.
+    if (error && error.status !== 400) {
+      erro.textContent = error.message.includes('rate')
+        ? 'Muitos pedidos seguidos. Espere alguns minutos e tente de novo.'
+        : 'Não consegui enviar agora. Tente de novo em instantes.';
+      erro.hidden = false;
+      enviar.disabled = false;
+      enviar.textContent = 'Enviar o link';
+      return;
+    }
+
+    document.getElementById('destino')!.textContent = email;
+    document.getElementById('pedir')!.hidden = true;
+    document.getElementById('feito')!.hidden = false;
+  });
+</script>

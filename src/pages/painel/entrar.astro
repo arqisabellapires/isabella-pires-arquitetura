@@ -7,6 +7,7 @@
  * escrever vem da RLS do banco, não desta tela.
  */
 import Base from '~/layouts/Base.astro';
+import CampoSenha from '~/components/painel/CampoSenha.astro';
 import '~/styles/painel.css';
 ---
 
@@ -21,13 +22,11 @@ import '~/styles/painel.css';
         <input class="campo__caixa" type="email" name="email" required autocomplete="username" />
       </label>
 
-      <label class="campo">
-        <span class="campo__rotulo">Senha</span>
-        <input class="campo__caixa" type="password" name="senha" required autocomplete="current-password" />
-      </label>
+      <CampoSenha id="senha" nome="senha" rotulo="Senha" />
 
       <button class="entrada__botao" type="submit">Entrar</button>
       <p class="entrada__erro" id="erro" role="alert" hidden></p>
+      <p class="entrada__link"><a href="/painel/esqueci">Esqueci minha senha</a></p>
     </form>
   </main>
 </Base>
@@ -67,54 +66,4 @@ import '~/styles/painel.css';
   });
 </script>
 
-<style>
-  /* Segue o tema escuro do painel (painel.css); só o arranjo é daqui. */
-  .entrada {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-inline: auto;
-    max-width: 30rem;
-    min-height: 100vh;
-    padding: var(--fig-e-2xl) var(--fig-e-xl);
-  }
-  .entrada__titulo {
-    color: var(--p-texto);
-    font: 700 30px/1.2 var(--p-fonte);
-    margin: 0 0 8px;
-  }
-  .entrada__ajuda {
-    color: var(--p-texto-meta);
-    font: 500 15px/1.6 var(--p-fonte);
-    margin: 0 0 32px;
-  }
-  .entrada__form { display: flex; flex-direction: column; gap: 18px; }
-  .campo { display: flex; flex-direction: column; gap: 7px; }
-  .campo__rotulo { color: var(--p-texto-meta); font: 600 13px/1.4 var(--p-fonte); }
-  .campo__caixa {
-    background: var(--p-fundo-campo);
-    border: 1px solid var(--p-borda);
-    border-radius: var(--p-raio);
-    color: var(--p-texto);
-    font: 500 15px/1.4 var(--p-fonte);
-    padding: 11px 13px;
-  }
-  .campo__caixa:focus-visible { border-color: var(--p-azul); outline: none; }
-  .entrada__botao {
-    background: var(--p-azul);
-    border: 0;
-    border-radius: var(--p-raio);
-    color: #fff;
-    cursor: pointer;
-    font: 700 15px/1 var(--p-fonte);
-    margin-top: 6px;
-    padding: 13px;
-  }
-  .entrada__botao:hover { background: var(--p-azul-fundo); }
-  .entrada__botao[disabled] { cursor: progress; opacity: 0.6; }
-  .entrada__erro {
-    color: var(--p-vermelho);
-    font: 600 13px/1.5 var(--p-fonte);
-    margin: 0;
-  }
-</style>
+

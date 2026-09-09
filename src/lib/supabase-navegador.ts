@@ -11,7 +11,16 @@ import { createClient } from '@supabase/supabase-js';
 export const supabase = createClient(
   import.meta.env.PUBLIC_SUPABASE_URL,
   import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
-  { auth: { persistSession: true, autoRefreshToken: true } },
+  {
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+      // O link de recuperação chega com o token na âncora (#access_token=…).
+      // Sem isto o cliente o ignora e a tela de nova senha nunca abre.
+      detectSessionInUrl: true,
+      flowType: 'implicit',
+    },
+  },
 );
 
 /** Manda para o login quem não estiver autenticado. Devolve a sessão. */

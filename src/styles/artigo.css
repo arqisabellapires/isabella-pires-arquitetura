@@ -83,11 +83,12 @@
   display: block;
   height: auto;
   margin: 0 calc((var(--artigo-largura) - var(--artigo-capa)) / 2) 48px;
-  /* O teto absoluto: a caixa do artigo menos o padding. Sem ele a margem
-     negativa empurrava a capa para fora em telas estreitas. */
-  max-width: 100%;
+  /* `max-width:100%` cancelaria o escape — o 100% é a coluna, não a capa.
+     A largura é declarada, e o `min()` com a tela é o que segura o
+     vazamento sem depender do pai. */
+  max-width: none;
   object-fit: cover;
-  width: auto;
+  width: min(var(--artigo-capa), calc(100vw - 34px));
 }
 
 /* ── O corpo ── */

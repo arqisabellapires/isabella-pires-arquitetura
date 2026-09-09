@@ -23,6 +23,7 @@ import Migalhas from '~/components/Migalhas.astro';
 import { servicos } from '~/lib/conteudo';
 import '~/styles/cabeca-pagina.css';
 import '~/styles/botoes.css';
+import '~/styles/zoom-servicos.css';
 
 /* As fotos saíram do próprio Figma e estão na ordem dos serviços. */
 const fotos = [
@@ -126,26 +127,6 @@ const fotos = [
     width: 100%;
   }
 
-  @supports (animation-timeline: view()) {
-    .servico__foto {
-      animation: servico-zoom linear both;
-      /* A timeline é a da MOLDURA, não a da própria foto: a foto tem
-         `overflow:hidden` acima dela e o próprio transform em curso, o que
-         embaralhava a medição e travava o quadro. `view(block)` na moldura
-         mede a caixa que de fato entra e sai da tela. */
-      animation-timeline: --entrada-servico;
-      animation-range: entry 0% exit 100%;
-    }
-    .servico__moldura { view-timeline: --entrada-servico block; }
-
-    @keyframes servico-zoom {
-      from { transform: scale(1); }
-      to   { transform: scale(1.16); }
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .servico__foto { animation: none; transform: none; }
   }
 
   .servico__texto {

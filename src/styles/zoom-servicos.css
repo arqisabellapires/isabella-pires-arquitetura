@@ -1,0 +1,42 @@
+/* ============================================================
+   O zoom das fotos de /servicos ao rolar.
+
+   Vive num arquivo próprio, e não no <style> da página, por um
+   motivo concreto: o minificador que processa o CSS embutido
+   descarta `animation-timeline` por não reconhecer a
+   propriedade. Em produção a animação chegava sem timeline e
+   ficava parada no primeiro quadro, embora funcionasse no
+   servidor de desenvolvimento. Num arquivo importado a
+   propriedade sobrevive.
+
+   A timeline é declarada na MOLDURA e consumida pela foto: a
+   foto tem `overflow:hidden` acima dela e o transform em curso,
+   o que embaralhava a medição quando o `view()` ficava nela
+   mesma.
+   ============================================================ */
+
+.servico__moldura {
+  view-timeline-name: --entrada-servico;
+  view-timeline-axis: block;
+}
+
+.servico__foto {
+  animation-name: servico-zoom;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-timeline: --entrada-servico;
+  animation-range: entry 0% exit 100%;
+}
+
+@keyframes servico-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.16); }
+}
+
+/* Quem pediu menos movimento vê a foto no tamanho natural. */
+@media (prefers-reduced-motion: reduce) {
+  .servico__foto {
+    animation: none;
+    transform: none;
+  }
+}

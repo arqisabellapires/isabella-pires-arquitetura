@@ -1,15 +1,28 @@
 /* ============================================================
-   Corpo do artigo — todo valor medido em
-   _capturas/artigos__vale-mais-a-pena-reformar-ou-construir/
+   Corpo do artigo — todo valor medido contra o Framer no ar, em
+   /artigos/minimalismo-vs.-maximalismo-…, a 1440px (08/09/2026).
+   Capturas em _capturas/framer-blog/.
 
-   Não editar por gosto: o que muda aqui muda contra a captura, e o
-   verifica-secao vai acusar. Melhoria visível vira anotação em
-   docs/melhorias-depois.md e só entra depois de a página estar idêntica.
+   O Gabriel pediu o blog IDÊNTICO ao Framer, forma inclusive. As
+   medidas abaixo saíram do getBoundingClientRect da página dele:
+
+     coluna de texto     875px (x=283 num viewport de 1440)
+     capa               1040px, acima da coluna, cantos 12px
+     data               16px/400 Mulish #999, CENTRALIZADA
+     título da página   30px/700 Inter #595959, CENTRALIZADO
+     h1 do corpo        40px/44 Inter #000, à esquerda
+     h3 de seção        ~24px/700 Inter #000
+     parágrafo          16px/25.6 Mulish #666
+     imagem no corpo    768px, margem-topo 32px
+     legenda            16px/25.6 Mulish #666, 20px abaixo da imagem
+
+   Não editar por gosto: o que muda aqui muda contra a medição.
    ============================================================ */
 
 .artigo {
-  /* Largura do corpo medida: 875px desktop, 700 tablet, 342 mobile. */
+  /* A coluna de texto. A capa é mais larga e escapa dela (abaixo). */
   --artigo-largura: 875px;
+  --artigo-capa: 1040px;
   --artigo-margem: 24px;
   margin-inline: auto;
   max-width: var(--artigo-largura);
@@ -17,85 +30,132 @@
 }
 
 @media (max-width: 1199.98px) {
-  .artigo { --artigo-largura: 700px; }
+  .artigo { --artigo-largura: 700px; --artigo-capa: 860px; }
 }
 @media (max-width: 809.98px) {
-  .artigo { --artigo-largura: 390px; }
+  .artigo { --artigo-largura: 390px; --artigo-capa: 390px; }
 }
 
-/* A data acima do título: 16px/400 Mulish, cinza medido #999999. */
+/* ── Cabeçalho: data e título, ambos centralizados como no Framer ── */
+
 .artigo-data {
-  font: 400 16px/1.2 'Mulish', system-ui, sans-serif;
   color: #999999;
-  margin: 0 0 8px;
+  font: 400 16px/1.6 'Mulish', system-ui, sans-serif;
+  margin: 0 0 6px;
+  text-align: center;
 }
 
+/* A categoria não aparece no cabeçalho do Framer — o card da lista é que
+   a mostra. Fica escondida, e não removida, porque o JSON-LD e o leitor
+   de tela a usam. */
 .artigo-categoria {
-  font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-  color: #a98c67;
-  text-transform: none;
-  margin: 0 0 8px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-/*
-  O Framer usava Inter nos headings do corpo do artigo e Mulish no texto —
-  duas famílias, medidas, não escolhidas aqui. Os tamanhos são os da captura:
-  h1 40/44, h2 30/42, h3 e h4 22/30.8.
-*/
+/* O título da página: 30px, cinza, centralizado. O h1 grande e preto é o
+   que abre o CORPO do artigo, e vem do conteúdo. */
+.artigo-titulo {
+  color: #595959;
+  font: 700 30px/1.4 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+/* ── A capa: mais larga que a coluna, e centrada na página ── */
+.artigo-capa {
+  border-radius: 12px;
+  display: block;
+  height: auto;
+  margin: 0 auto 48px;
+  max-width: var(--artigo-capa);
+  object-fit: cover;
+  /* Escapa da coluna de 875px sem quebrar o fluxo. */
+  width: min(var(--artigo-capa), calc(100vw - 2 * var(--artigo-margem)));
+}
+
+/* ── O corpo ── */
+
+.artigo-corpo {
+  color: #666666;
+  font: 400 16px/1.6 'Mulish', system-ui, sans-serif;
+}
+
+.artigo-corpo > :first-child { margin-top: 0; }
+
+.artigo-corpo p {
+  margin: 0 0 20px;
+}
+
+/* Os títulos do corpo são Inter e pretos — o contraste com o Mulish
+   cinza do texto é o que dá o ritmo da página no Framer. */
 .artigo-corpo :is(h1, h2, h3, h4, h5, h6) {
+  color: #000000;
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700;
-  color: #000000;
-  margin: 32px 0 12px;
-  text-wrap: balance;
-}
-.artigo-corpo h1 { font-size: 40px; line-height: 44px; }
-.artigo-corpo h2 { font-size: 30px; line-height: 42px; }
-.artigo-corpo h3,
-.artigo-corpo h4 { font-size: 22px; line-height: 30.8px; }
-.artigo-corpo h5 { font-size: 18px; line-height: 25.2px; font-weight: 400; }
-.artigo-corpo h6 { font-size: 16px; line-height: 22.4px; }
-
-/* Corpo: 16px, altura de linha 25.6 (= 1.6), Mulish, #666666. */
-.artigo-corpo p,
-.artigo-corpo li {
-  font: 400 16px/25.6px 'Mulish', system-ui, sans-serif;
-  color: #666666;
-  margin: 0 0 16px;
+  letter-spacing: -0.015em;
 }
 
-.artigo-corpo strong { font-weight: 700; color: inherit; }
+.artigo-corpo h1 { font-size: 40px; line-height: 1.1; margin: 0 0 20px; }
+.artigo-corpo h2 { font-size: 30px; line-height: 1.2; margin: 40px 0 14px; }
+.artigo-corpo h3 { font-size: 24px; line-height: 1.25; margin: 36px 0 12px; }
+.artigo-corpo h4 { font-size: 19px; line-height: 1.3; margin: 30px 0 10px; }
 
-.artigo-corpo a {
-  color: #341f04;
-  text-underline-offset: 2px;
-}
-
-.artigo-corpo :is(ul, ol) { margin: 0 0 16px; padding-left: 24px; }
+.artigo-corpo :is(ul, ol) { margin: 0 0 20px; padding-left: 22px; }
 .artigo-corpo li { margin-bottom: 8px; }
 
-/*
-  As 19 imagens do corpo vêm em <img> cru dentro do markdown, com caminho
-  absoluto para /img-artigos/ — o Astro não resolve essas pelo image() do
-  schema. O alt veio VAZIO do Framer e continua vazio: texto é do Gabriel.
-*/
-.artigo-corpo img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 24px 0;
+.artigo-corpo a {
+  color: #a98c67;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
+.artigo-corpo a:hover { color: #8a6f4e; }
+
+.artigo-corpo strong { color: #3a2e26; font-weight: 700; }
 
 .artigo-corpo blockquote {
-  margin: 24px 0;
-  padding-left: 16px;
-  border-left: 3px solid #a98c67;
-  color: #5a5755;
+  border-left: 3px solid #ded5cc;
+  color: #59504a;
+  margin: 0 0 20px;
+  padding-left: 18px;
 }
 
-.artigo-capa {
+/* Imagem no meio do texto: 768px no Framer, com 32px acima. Não ocupa a
+   coluna inteira — é o que dá o ar da página dele. */
+.artigo-corpo img {
+  border-radius: 8px;
   display: block;
-  width: 100%;
   height: auto;
-  margin: 0 0 24px;
+  margin: 32px 0 0;
+  max-width: min(768px, 100%);
+}
+
+/* A legenda ("imagem ilustrativa gerada por IA") vem logo abaixo da
+   imagem, 20px depois, no mesmo cinza do texto. */
+.artigo-corpo img + p,
+.artigo-corpo figcaption {
+  color: #666666;
+  font: 400 16px/1.6 'Mulish', system-ui, sans-serif;
+  margin: 20px 0 20px;
+}
+
+.artigo-corpo hr {
+  border: 0;
+  border-top: 1px solid #e6ddd4;
+  margin: 36px 0;
+}
+
+@media (max-width: 809.98px) {
+  .artigo-titulo { font-size: 24px; margin-bottom: 28px; }
+  .artigo-capa { border-radius: 8px; margin-bottom: 32px; }
+  .artigo-corpo h1 { font-size: 28px; }
+  .artigo-corpo h2 { font-size: 23px; }
+  .artigo-corpo h3 { font-size: 20px; }
+  .artigo-corpo h4 { font-size: 17px; }
 }

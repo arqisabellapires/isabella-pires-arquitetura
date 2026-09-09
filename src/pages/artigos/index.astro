@@ -52,35 +52,37 @@ const comMinutos = await Promise.all(
 
     <h1 class="listagem__manchete">Dicas e notícias para quem realmente se destaca.</h1>
 
-    <nav class="filtros" aria-label="Filtrar por categoria">
-      <a class="filtros__item filtros__item--ativo" href="/artigos" aria-current="page">Todos</a>
-      {categorias.map((c) => (
-        <a class="filtros__item" href={`/artigos/categoria/${aSlug(c)}`}>{c}</a>
-      ))}
-    </nav>
+    {/* Filtros à esquerda e busca à direita, na mesma linha, como no Framer. */}
+    <div class="barra">
+      <nav class="filtros" aria-label="Filtrar por categoria">
+        <a class="filtros__item filtros__item--ativo" href="/artigos" aria-current="page">Todos</a>
+        {categorias.map((c) => (
+          <a class="filtros__item" href={`/artigos/categoria/${aSlug(c)}`}>{c}</a>
+        ))}
+      </nav>
 
-    {/*
-      "Carregar mais" sem JavaScript: os artigos além dos seis primeiros
-      ficam num <details>, e o <summary> é o botão. O conteúdo está no HTML
-      desde o começo — o Google indexa os 25, e quem não tem JS vê todos
-      igual. É o mesmo princípio dos filtros de projeto.
-    */}
-    <div class="grade" data-revela-filhos>
-      {comMinutos.slice(0, 6).map(({ artigo, minutos }, i) => (
-        <CardArtigo artigo={artigo} minutos={minutos} prioritaria={i < 2} />
-      ))}
+      {/* Busca só no navegador: filtra os cards já na página, sem recarregar.
+          Sem JS o campo some e os filtros de categoria continuam servindo. */}
+      <div class="busca" hidden id="busca-caixa">
+        <svg class="busca__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" />
+        </svg>
+        <input class="busca__campo" id="busca" type="search" placeholder="Pesquisar" aria-label="Pesquisar artigo pelo título" />
+      </div>
     </div>
 
-    {comMinutos.length > 6 && (
-      <details class="mais">
-        <summary class="mais__botao">Carregar mais</summary>
-        <div class="grade grade--extra">
-          {comMinutos.slice(6).map(({ artigo, minutos }) => (
-            <CardArtigo artigo={artigo} minutos={minutos} />
-          ))}
-        </div>
-      </details>
-    )}
+    <p class="vazio" id="vazio" hidden>Nenhum artigo com esse termo.</p>
+
+    {/*
+      O Framer mostra os 24 de uma vez, rolando — não tem "Carregar mais".
+      Os três primeiros carregam ansiosos (a primeira fileira), o resto
+      espera o scroll.
+    */}
+    <div class="grade" data-revela-filhos>
+      {comMinutos.map(({ artigo, minutos }, i) => (
+        <CardArtigo artigo={artigo} minutos={minutos} prioritaria={i < 3} />
+      ))}
+    </div>
 
     <Newsletter />
   </div>
@@ -149,11 +151,53 @@ const comMinutos = await Promise.all(
   }
 
   /* Duas por fileira, como no design — não três colunas. */
+  .barra {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fig-e-md);
+    justify-content: space-between;
+    margin-bottom: var(--fig-e-2xl);
+  }
+  .busca {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #ece5de;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    padding: 0 12px;
+  }
+  .busca__lupa { color: #a89e94; height: 15px; width: 15px; flex: none; }
+  .busca__campo {
+    background: none;
+    border: 0;
+    color: var(--fig-primaria-ativa);
+    font: var(--fig-peso-medio) 14px/1 var(--fig-fonte-corpo);
+    padding: 10px 0;
+    width: 180px;
+  }
+  .busca__campo::placeholder { color: #a89e94; }
+  .busca__campo:focus-visible { outline: none; }
+  .busca:focus-within { border-color: #d8cabb; }
+
+  .vazio {
+    color: var(--fig-texto-meta);
+    font: var(--fig-peso-medio) 15px/1.5 var(--fig-fonte-corpo);
+    margin: 0 0 var(--fig-secao-y);
+  }
+
+  /* Três por fileira, como no Framer: cards de 400px com 20px de vão.
+     O minmax de 560px que estava aqui vinha do card horizontal do Figma e
+     só cabia dois. */
   .grade {
     display: grid;
-    gap: var(--fig-e-3xl) var(--fig-e-lg);
-    grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     margin-bottom: var(--fig-secao-y);
+  }
+  @media (min-width: 1200px) {
+    .grade { grid-template-columns: repeat(3, 1fr); }
   }
 
   .mais { margin-bottom: var(--fig-secao-y); }
@@ -175,6 +219,37 @@ const comMinutos = await Promise.all(
   .grade--extra { margin-bottom: 0; }
 
   @media (max-width: 809.98px) {
-    .grade { grid-template-columns: 1fr; }
+    .grade { gap: 16px; grid-template-columns: 1fr; }
   }
 </style>
+
+<script>
+  // Busca só no navegador: os 24 cards já estão no HTML, então filtrar é
+  // esconder linha. O campo nasce escondido e aparece aqui — sem JS, os
+  // filtros de categoria continuam dando conta.
+  const caixa = document.getElementById('busca-caixa');
+  const campo = document.getElementById('busca') as HTMLInputElement | null;
+  const vazio = document.getElementById('vazio');
+  const cards = [...document.querySelectorAll<HTMLElement>('.grade .card')];
+
+  if (caixa && campo && vazio && cards.length) {
+    caixa.hidden = false;
+
+    /** Sem acento e em minúsculas, para "iluminacao" achar "Iluminação". */
+    const limpa = (t: string) =>
+      t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+    const textos = cards.map((c) => limpa(c.innerText));
+
+    campo.addEventListener('input', () => {
+      const q = limpa(campo.value.trim());
+      let achou = 0;
+      cards.forEach((c, i) => {
+        const bate = !q || textos[i].includes(q);
+        c.hidden = !bate;
+        if (bate) achou++;
+      });
+      vazio.hidden = achou > 0;
+    });
+  }
+</script>

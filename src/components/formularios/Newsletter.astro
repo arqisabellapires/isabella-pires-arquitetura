@@ -23,7 +23,7 @@ import { CAMPOS_ISCA } from '~/lib/antispam';
         required
         autocomplete="email"
         maxlength="254"
-        placeholder="voce@exemplo.com"
+        placeholder="Seu e-mail"
       />
       <button type="submit">Inscreva-se</button>
     </div>
@@ -60,37 +60,72 @@ import { CAMPOS_ISCA } from '~/lib/antispam';
 
 <style>
   .news { background: #f0d9c7; border-radius: 12px; margin-top: 64px; padding: 40px 32px; }
+  /* 64px/500 no Framer, centralizado. Era 32px/700 à esquerda. */
   .news__titulo {
-    font: 700 32px/1.2 'Mulish', system-ui, sans-serif;
-    color: #21201f;
-    margin: 0 0 24px;
+    color: #3a2e26;
+    font: 500 clamp(2rem, 1rem + 3.4vw, 4rem) / 1.1 'Mulish', system-ui, sans-serif;
+    margin: 0 auto 28px;
+    max-width: 20ch;   /* 2 linhas, como no Framer */
+    text-align: center;
     text-wrap: balance;
   }
+  /* O rótulo não existe no Framer: o campo tem só o texto de espera. Fica
+     no HTML para o leitor de tela, mas sai da vista. */
   .news__rotulo {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
     display: block;
     font: 500 14px/1.2 'Inter', system-ui, sans-serif;
     color: #483b2a;
     margin-bottom: 8px;
   }
-  .news__linha { display: flex; flex-wrap: wrap; gap: 12px; }
+  /* Centralizada e estreita, como no Framer: o input tem ~360px, não a
+     largura inteira da coluna. */
+  .news__linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-inline: auto;
+    max-width: 520px;
+  }
   .news__linha input {
-    flex: 1 1 260px;
-    font: 400 16px/1.4 'Mulish', system-ui, sans-serif;
     background: #ffffff;
     border: 1px solid #e0cbb8;
-    border-radius: 999px;
-    padding: 14px 20px;
+    /* Raio 12, não pílula: o Framer usa cantos suaves nos dois. */
+    border-radius: 12px;
+    flex: 1 1 300px;
+    font: 400 15px/1.4 'Mulish', system-ui, sans-serif;
+    padding: 15px 18px;
   }
+  /* Raio 12 e o marrom do Framer (#3a2e26), com a cara de botão que vale
+     para todos os botões do site. */
   .news__linha button {
-    /* Ficha `newsletter-artigos`: spring bounce 0.1 / 0.7s. */
-    transition: transform var(--dur-newsletter-artigos) var(--mola-newsletter-artigos);
-    font: 700 16px/1.2 'Mulish', system-ui, sans-serif;
-    background: #341f04;
-    color: #ffffff;
+    background: #3a2e26;
     border: 0;
-    border-radius: 999px;
+    border-radius: var(--fig-botao-raio, 12px);
+    box-shadow: var(--fig-botao-brilho), var(--fig-sombra-botao);
+    color: #ffffff;
     cursor: pointer;
-    padding: 14px 32px;
+    font: 700 15px/1.2 'Mulish', system-ui, sans-serif;
+    padding: 15px 26px;
+    transition:
+      box-shadow var(--dur-newsletter-artigos) var(--mola-newsletter-artigos),
+      transform var(--dur-newsletter-artigos) var(--mola-newsletter-artigos);
+    white-space: nowrap;
+  }
+  .news__linha button:hover {
+    box-shadow: var(--fig-botao-brilho), var(--fig-sombra-botao-alta);
+    transform: translateY(-2px);
+  }
+  .news__linha button:active {
+    box-shadow: var(--fig-sombra-botao-baixa);
+    transform: translateY(1px);
   }
   .news__iscas {
     position: absolute;
@@ -99,10 +134,12 @@ import { CAMPOS_ISCA } from '~/lib/antispam';
     clip-path: inset(50%);
     white-space: nowrap;
   }
+  /* 12px e centralizado, embaixo do campo. */
   .news__aviso {
-    font: 400 14px/1.4 'Mulish', system-ui, sans-serif;
-    color: #5a5755;
-    margin: 12px 0 0;
+    color: rgb(0 0 0 / 0.48);
+    font: 500 12px/1.5 'Mulish', system-ui, sans-serif;
+    margin: 14px 0 0;
+    text-align: center;
   }
   .news__estado { font: 400 14px/1.4 'Mulish', system-ui, sans-serif; margin: 8px 0 0; }
   .news__estado:empty { display: none; }

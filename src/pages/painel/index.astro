@@ -1,13 +1,18 @@
 ---
 /**
- * Lista dos artigos, na forma do CMS do Framer: tabela larga, tema escuro,
- * uma coluna por campo. As capturas do Framer que o Gabriel mandou são a
- * referência — menos o painel "Agent", que ele pediu para não existir.
+ * A lista de artigos, na forma do CMS do Framer: tabela larga de tema escuro,
+ * uma coluna por campo, e uma gaveta que abre à direita quando se clica numa
+ * linha — sem sair da lista. As capturas que o Gabriel mandou são a
+ * referência; o painel "Agent" do Framer fica de fora, a pedido dele.
+ *
+ * Status, Categoria e Nome são editáveis na própria linha, como lá.
  *
  * Tudo acontece no navegador, com a chave anônima: a RLS do banco é quem
  * decide o que ela pode ver e mudar. Rascunho só aparece para editor.
  */
 import Base from '~/layouts/Base.astro';
+import FormArtigo from '~/components/painel/FormArtigo.astro';
+import { categorias } from '~/lib/site';
 import '~/styles/painel.css';
 ---
 
@@ -19,13 +24,12 @@ import '~/styles/painel.css';
       <div class="pnl-topo__acoes">
         <a class="pnl-btn" href="/artigos" target="_blank" rel="noopener">Ver o blog</a>
         <button class="pnl-btn" id="sair" type="button">Sair</button>
-        <a class="pnl-btn pnl-btn--azul" href="/painel/artigo">Novo artigo</a>
+        <button class="pnl-btn pnl-btn--azul" id="novo" type="button">Novo artigo</button>
       </div>
     </header>
 
     <div class="pnl-corpo">
       <aside class="pnl-lado">
-        <input class="pnl-lado__busca" id="busca" type="search" placeholder="Buscar…" aria-label="Buscar artigo pelo título" />
         <div class="pnl-lado__item">
           Blog <span class="pnl-lado__conta" id="conta"></span>
         </div>
@@ -33,12 +37,34 @@ import '~/styles/painel.css';
       </aside>
 
       <main class="pnl-area">
+        <div class="pnl-fer">
+          <button class="pnl-btn pnl-btn--icone" id="novo2" type="button" title="Novo artigo" aria-label="Novo artigo">+</button>
+          <button class="pnl-btn pnl-btn--icone" id="ordena" type="button" title="Inverter a ordem" aria-label="Inverter a ordem">⇅</button>
+          <select class="pnl-cel" id="filtro" aria-label="Filtrar por status">
+            <option value="">Todos</option>
+            <option value="live">Só no ar</option>
+            <option value="rascunho">Só rascunhos</option>
+          </select>
+          <input class="pnl-fer__busca" id="busca" type="search" placeholder="Buscar…" aria-label="Buscar artigo" />
+          <span class="pnl-fer__espaco"></span>
+          <span class="pnl-fer__conta" id="mostrando"></span>
+        </div>
+
+        <div class="pnl-barra-sel" id="barra-sel" hidden>
+          <span class="pnl-barra-sel__quantos" id="quantos"></span>
+          <button class="pnl-btn" id="sel-live" type="button">Marcar como Live</button>
+          <button class="pnl-btn" id="sel-rascunho" type="button">Marcar como rascunho</button>
+          <button class="pnl-btn pnl-btn--perigo" id="sel-apagar" type="button">Apagar</button>
+        </div>
+
         <p class="pnl-aviso" id="aviso" role="status" hidden></p>
 
         <div class="pnl-rolagem">
           <table class="pnl-tabela">
             <thead>
               <tr>
+                <th class="pnl-col-fina"></th>
+                <th class="pnl-col-fina"><input class="pnl-check" id="marca-todos" type="checkbox" aria-label="Selecionar todos" /></th>
                 <th>Título</th>
                 <th>Status</th>
                 <th>Slug</th>
@@ -50,44 +76,68 @@ import '~/styles/painel.css';
                 <th>Meta Description</th>
                 <th>Keywords</th>
                 <th>Editado</th>
-                <th></th>
               </tr>
             </thead>
             <tbody id="linhas">
-              <tr><td class="pnl-tabela__vazio" colspan="12">Carregando…</td></tr>
+              <tr><td class="pnl-tabela__vazio" colspan="13">Carregando…</td></tr>
             </tbody>
           </table>
         </div>
       </main>
     </div>
+
+    <!-- Gaveta: o artigo abre aqui, sem sair da lista. -->
+    <div class="pnl-veu" id="veu" hidden></div>
+    <aside class="pnl-gaveta" id="gaveta" hidden aria-label="Editar artigo">
+      <header class="pnl-gaveta__topo">
+        <button class="pnl-btn pnl-btn--icone" id="fecha" type="button" aria-label="Fechar">✕</button>
+        <p class="pnl-gaveta__titulo" id="gaveta-titulo">Novo artigo</p>
+        <span class="pnl-salvo" id="salvo"></span>
+        <button class="pnl-btn pnl-btn--azul" type="submit" form="form">Publicar</button>
+      </header>
+      <div class="pnl-gaveta__corpo" id="gaveta-corpo">
+        <FormArtigo />
+      </div>
+    </aside>
   </div>
 </Base>
 
 <script>
   import { supabase, exigeSessao } from '~/lib/supabase-navegador';
+  import { montaEditor } from '~/lib/painel-editor';
+  import { categorias } from '~/lib/site';
 
-  const linhas = document.getElementById('linhas')!;
-  const quem = document.getElementById('quem')!;
-  const conta = document.getElementById('conta')!;
-  const aviso = document.getElementById('aviso')!;
-  const busca = document.getElementById('busca') as HTMLInputElement;
+  const $ = <T extends HTMLElement>(s: string) => document.querySelector(s) as T;
+
+  const linhas = $('#linhas');
+  const quem = $('#quem');
+  const conta = $('#conta');
+  const mostrando = $('#mostrando');
+  const aviso = $('#aviso');
+  const busca = $('#busca') as HTMLInputElement;
+  const filtro = $('#filtro') as HTMLSelectElement;
+  const gaveta = $('#gaveta');
+  const veu = $('#veu');
+  const salvo = $('#salvo');
+  const barraSel = $('#barra-sel');
+  const marcaTodos = $('#marca-todos') as HTMLInputElement;
 
   const sessao = await exigeSessao();
   if (sessao) {
     quem.textContent = sessao.user.email ?? '';
 
-    document.getElementById('sair')!.addEventListener('click', async () => {
+    $('#sair').addEventListener('click', async () => {
       await supabase.auth.signOut();
       window.location.href = '/painel/entrar';
     });
 
-    const escapa = (s: string) =>
+    const escapa = (s: unknown) =>
       String(s ?? '').replace(/[<>&"]/g, (c) =>
         ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c]!);
 
     // O `publicado_em` é timestamptz gravado em UTC. Formatar no fuso local
-    // do navegador joga o dia para trás (12/05 vira 11/05), então lemos a
-    // data em UTC — que é a que a Isabella digitou no editor.
+    // joga o dia para trás (12/05 vira 11/05), então lemos em UTC — que é a
+    // data que ela digitou no editor.
     const dataBR = (iso: string | null) =>
       iso
         ? new Intl.DateTimeFormat('pt-BR', {
@@ -109,44 +159,236 @@ import '~/styles/painel.css';
     };
 
     let todos: Artigo[] = [];
+    let recentesPrimeiro = true;
+    const marcados = new Set<string>();
 
-    function desenha(lista: Artigo[]) {
+    // ── a gaveta ────────────────────────────────────────────
+    // Cópia intocada do formulário, tirada antes de qualquer edição: é dela
+    // que sai um formulário limpo a cada vez que a gaveta abre.
+    const moldeLimpo = $('#gaveta-corpo').cloneNode(true) as HTMLElement;
+    let editorAtivo: { destroi: () => void } | null = null;
+
+    function marcaEstado(e: 'limpo' | 'mexido' | 'salvando' | 'salvo') {
+      salvo.className = 'pnl-salvo';
+      if (e === 'limpo') salvo.textContent = 'Salvo';
+      else if (e === 'mexido') { salvo.textContent = 'Não salvo'; salvo.classList.add('pnl-salvo--indo'); }
+      else if (e === 'salvando') { salvo.textContent = 'Salvando…'; salvo.classList.add('pnl-salvo--indo'); }
+      else { salvo.textContent = 'Salvo'; salvo.classList.add('pnl-salvo--ok'); }
+    }
+
+    function fecha() {
+      editorAtivo?.destroi();
+      editorAtivo = null;
+      gaveta.hidden = true;
+      veu.hidden = true;
+      history.replaceState(null, '', '/painel');
+    }
+
+    function abre(slug: string | null, titulo?: string) {
+      // Um formulário limpo a cada vez: o anterior já tem valores digitados e
+      // ouvintes presos. Repomos a partir do molde intocado guardado abaixo.
+      const zero = moldeLimpo.cloneNode(true) as HTMLElement;
+      $('#gaveta-corpo').replaceWith(zero);
+
+      $('#gaveta-titulo').textContent = titulo ?? 'Novo artigo';
+      salvo.textContent = '';
+      gaveta.hidden = false;
+      veu.hidden = false;
+
+      editorAtivo = montaEditor({
+        supabase,
+        raiz: zero,
+        slug,
+        usuario: sessao.user.id,
+        marcaEstado,
+        aoSalvar: async () => {
+          fecha();
+          mostraAviso('Artigo salvo. O site atualiza em cerca de um minuto.');
+          await carrega();
+        },
+      });
+
+      history.replaceState(null, '', slug ? `/painel?artigo=${encodeURIComponent(slug)}` : '/painel');
+    }
+
+    $('#fecha').addEventListener('click', fecha);
+    veu.addEventListener('click', fecha);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !gaveta.hidden) fecha();
+    });
+    $('#novo').addEventListener('click', () => abre(null));
+    $('#novo2').addEventListener('click', () => abre(null));
+
+    function mostraAviso(texto: string) {
+      aviso.textContent = texto;
+      aviso.hidden = false;
+      setTimeout(() => { aviso.hidden = true; }, 6000);
+    }
+
+    // ── desenha a tabela ────────────────────────────────────
+    function visiveis() {
+      const q = busca.value.trim().toLowerCase();
+      let lista = todos;
+      if (filtro.value === 'live') lista = lista.filter((a) => a.publicado);
+      if (filtro.value === 'rascunho') lista = lista.filter((a) => !a.publicado);
+      if (q) lista = lista.filter((a) =>
+        a.titulo.toLowerCase().includes(q) || a.slug.includes(q));
+      return recentesPrimeiro ? lista : [...lista].reverse();
+    }
+
+    function desenha() {
+      const lista = visiveis();
       conta.textContent = String(todos.length);
+      mostrando.textContent = lista.length === todos.length
+        ? `${todos.length} artigos`
+        : `${lista.length} de ${todos.length}`;
 
       if (!lista.length) {
         linhas.innerHTML =
-          `<tr><td class="pnl-tabela__vazio" colspan="12">${
-            todos.length ? 'Nenhum artigo com esse título.' : 'Nenhum artigo ainda.'
+          `<tr><td class="pnl-tabela__vazio" colspan="13">${
+            todos.length ? 'Nenhum artigo com esse filtro.' : 'Nenhum artigo ainda.'
           }</td></tr>`;
+        atualizaBarra();
         return;
       }
 
+      const ops = categorias.map((c) => `<option value="${escapa(c)}">${escapa(c)}</option>`).join('');
+
       linhas.innerHTML = lista.map((a) => {
-        const editar = `/painel/artigo?slug=${encodeURIComponent(a.slug)}`;
         const chaves = (a.tags ?? []).join(', ');
         return `
-        <tr>
-          <td><a class="pnl-tabela__titulo" href="${editar}" title="${escapa(a.titulo)}">${escapa(a.titulo)}</a></td>
-          <td><span class="pnl-tag ${a.publicado ? 'pnl-tag--live' : 'pnl-tag--draft'}">${a.publicado ? 'Live' : 'Rascunho'}</span></td>
+        <tr data-slug="${escapa(a.slug)}" aria-selected="${marcados.has(a.slug)}">
+          <td class="pnl-col-fina"><span class="pnl-alca" title="Arrastar">⠿</span></td>
+          <td class="pnl-col-fina"><input class="pnl-check" type="checkbox" data-marca="${escapa(a.slug)}" ${marcados.has(a.slug) ? 'checked' : ''} aria-label="Selecionar ${escapa(a.titulo)}" /></td>
+          <td><a class="pnl-tabela__titulo" href="/painel?artigo=${encodeURIComponent(a.slug)}" data-abre title="${escapa(a.titulo)}">${escapa(a.titulo)}</a></td>
+          <td>
+            <select class="pnl-cel ${a.publicado ? 'pnl-cel--live' : 'pnl-cel--draft'}" data-campo="publicado" aria-label="Status">
+              <option value="sim" ${a.publicado ? 'selected' : ''}>Live</option>
+              <option value="nao" ${a.publicado ? '' : 'selected'}>Rascunho</option>
+            </select>
+          </td>
           <td><span class="pnl-tabela__corte" title="${escapa(a.slug)}">${escapa(a.slug)}</span></td>
-          <td>${escapa(a.autor)}</td>
-          <td>${escapa(a.categoria)}</td>
+          <td><input class="pnl-cel" data-campo="autor" value="${escapa(a.autor)}" aria-label="Nome" size="14" /></td>
+          <td><select class="pnl-cel" data-campo="categoria" aria-label="Categoria">${ops}</select></td>
           <td class="pnl-num">${dataBR(a.publicado_em)}</td>
           <td><img class="pnl-tabela__capa" src="${escapa(urlCapa(a.capa))}" alt="${escapa(a.capa_alt)}" loading="lazy" /></td>
           <td class="pnl-num">${a.tempo_leitura ?? '—'}</td>
           <td><span class="pnl-tabela__corte" title="${escapa(a.seo_descricao ?? '')}">${escapa(a.seo_descricao ?? '—')}</span></td>
           <td><span class="pnl-tabela__corte" title="${escapa(chaves)}">${escapa(chaves || '—')}</span></td>
           <td class="pnl-num">${dataBR(a.atualizado_em)}</td>
-          <td><a class="pnl-btn" href="${editar}">Editar</a></td>
         </tr>`;
       }).join('');
+
+      // O <select> de categoria não aceita `selected` por HTML aqui porque as
+      // opções são as mesmas para todos: acertamos o valor depois de montar.
+      lista.forEach((a) => {
+        const tr = linhas.querySelector(`tr[data-slug="${CSS.escape(a.slug)}"]`)!;
+        (tr.querySelector('[data-campo=categoria]') as HTMLSelectElement).value = a.categoria;
+      });
+
+      atualizaBarra();
     }
 
-    busca.addEventListener('input', () => {
-      const q = busca.value.trim().toLowerCase();
-      desenha(q ? todos.filter((a) => a.titulo.toLowerCase().includes(q)) : todos);
+    // ── edição na própria linha ─────────────────────────────
+    linhas.addEventListener('change', async (e) => {
+      const alvo = e.target as HTMLElement;
+      const campo = alvo.dataset.campo;
+      const slug = alvo.closest('tr')?.dataset.slug;
+
+      if (alvo.dataset.marca !== undefined) {
+        const s = alvo.dataset.marca;
+        (alvo as HTMLInputElement).checked ? marcados.add(s) : marcados.delete(s);
+        alvo.closest('tr')!.setAttribute('aria-selected', String(marcados.has(s)));
+        atualizaBarra();
+        return;
+      }
+      if (!campo || !slug) return;
+
+      const valor = campo === 'publicado'
+        ? (alvo as HTMLSelectElement).value === 'sim'
+        : (alvo as HTMLInputElement | HTMLSelectElement).value;
+
+      const { error } = await supabase.from('artigos')
+        .update({ [campo]: valor, atualizado_em: new Date().toISOString() })
+        .eq('slug', slug);
+
+      if (error) { mostraAviso(`Não consegui salvar: ${error.message}`); return; }
+
+      const art = todos.find((a) => a.slug === slug);
+      if (art) (art as Record<string, unknown>)[campo] = valor;
+      if (campo === 'publicado') {
+        alvo.className = `pnl-cel ${valor ? 'pnl-cel--live' : 'pnl-cel--draft'}`;
+        await pedeBuild();
+      }
+      mostraAviso('Salvo.');
     });
 
+    // Clicar no título abre a gaveta em vez de navegar.
+    linhas.addEventListener('click', (e) => {
+      const link = (e.target as HTMLElement).closest('[data-abre]') as HTMLAnchorElement | null;
+      if (!link || e.metaKey || e.ctrlKey) return;   // ctrl+clique abre em nova aba
+      e.preventDefault();
+      const tr = link.closest('tr')!;
+      abre(tr.dataset.slug!, link.textContent ?? '');
+    });
+
+    // ── seleção em massa ────────────────────────────────────
+    function atualizaBarra() {
+      barraSel.hidden = marcados.size === 0;
+      $('#quantos').textContent = `${marcados.size} selecionado${marcados.size > 1 ? 's' : ''}`;
+      const na = visiveis().length;
+      marcaTodos.checked = na > 0 && marcados.size === na;
+      marcaTodos.indeterminate = marcados.size > 0 && marcados.size < na;
+    }
+
+    marcaTodos.addEventListener('change', () => {
+      marcados.clear();
+      if (marcaTodos.checked) visiveis().forEach((a) => marcados.add(a.slug));
+      desenha();
+    });
+
+    async function pedeBuild() {
+      const { data } = await supabase.auth.getSession();
+      if (!data.session) return;
+      await fetch('/api/publica', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `Bearer ${data.session.access_token}`,
+        },
+      }).catch(() => {});
+    }
+
+    async function mudaVarios(publicado: boolean) {
+      const alvos = [...marcados];
+      const { error } = await supabase.from('artigos')
+        .update({ publicado, atualizado_em: new Date().toISOString() })
+        .in('slug', alvos);
+      if (error) { mostraAviso(`Não consegui salvar: ${error.message}`); return; }
+      marcados.clear();
+      await pedeBuild();
+      mostraAviso(`${alvos.length} artigo(s) atualizados. O site atualiza em cerca de um minuto.`);
+      await carrega();
+    }
+    $('#sel-live').addEventListener('click', () => mudaVarios(true));
+    $('#sel-rascunho').addEventListener('click', () => mudaVarios(false));
+
+    $('#sel-apagar').addEventListener('click', async () => {
+      const alvos = [...marcados];
+      if (!confirm(`Apagar ${alvos.length} artigo(s)? Isso não tem volta.`)) return;
+      const { error } = await supabase.from('artigos').delete().in('slug', alvos);
+      if (error) { mostraAviso(`Não consegui apagar: ${error.message}`); return; }
+      marcados.clear();
+      await pedeBuild();
+      mostraAviso(`${alvos.length} artigo(s) apagados.`);
+      await carrega();
+    });
+
+    busca.addEventListener('input', desenha);
+    filtro.addEventListener('change', desenha);
+    $('#ordena').addEventListener('click', () => { recentesPrimeiro = !recentesPrimeiro; desenha(); });
+
+    // ── carga ───────────────────────────────────────────────
     async function carrega() {
       const { data, error } = await supabase
         .from('artigos')
@@ -154,20 +396,20 @@ import '~/styles/painel.css';
         .order('publicado_em', { ascending: false });
 
       if (error) {
-        linhas.innerHTML = '<tr><td class="pnl-tabela__vazio" colspan="12">Não consegui carregar os artigos.</td></tr>';
+        linhas.innerHTML = '<tr><td class="pnl-tabela__vazio" colspan="13">Não consegui carregar os artigos.</td></tr>';
         return;
       }
       todos = (data ?? []) as Artigo[];
-      desenha(todos);
-    }
-
-    // Se o build ainda está rodando, avisa — senão ela publica e acha que
-    // não funcionou porque o site levou um minuto para atualizar.
-    if (new URLSearchParams(location.search).get('publicado') === 'sim') {
-      aviso.textContent = 'Artigo salvo. O site atualiza em cerca de um minuto.';
-      aviso.hidden = false;
+      desenha();
     }
 
     await carrega();
+
+    // Link direto para um artigo abre a gaveta já na entrada.
+    const pedido = new URLSearchParams(location.search).get('artigo');
+    if (pedido) {
+      const a = todos.find((x) => x.slug === pedido);
+      if (a) abre(a.slug, a.titulo);
+    }
   }
 </script>

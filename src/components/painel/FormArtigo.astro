@@ -1,0 +1,147 @@
+---
+/**
+ * Os campos de um artigo. Vive num componente porque é usado em dois lugares:
+ * dentro da gaveta que abre ao clicar numa linha, e na página /painel/artigo
+ * (que continua existindo para links diretos e para quem abre em nova aba).
+ */
+import { categorias } from '~/lib/site';
+---
+
+<form class="pnl-form" id="form">
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-titulo">Título</label>
+    <div><input class="pnl-campo" id="c-titulo" name="titulo" maxlength="120" required /></div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-publicado">Status</label>
+    <div>
+      <select class="pnl-campo" id="c-publicado" name="publicado">
+        <option value="sim">Live — aparece no site</option>
+        <option value="nao">Rascunho — só você vê</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-slug">Slug</label>
+    <div>
+      <input class="pnl-campo" id="c-slug" name="slug" pattern="[a-z0-9]+(-[a-z0-9]+)*" required />
+      <p class="pnl-dica" id="previa-url"></p>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-autor">Nome</label>
+    <div><input class="pnl-campo" id="c-autor" name="autor" value="Isabella Pires" required /></div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-categoria">Categoria</label>
+    <div>
+      <select class="pnl-campo" id="c-categoria" name="categoria">
+        {categorias.map((c) => <option value={c}>{c}</option>)}
+      </select>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-data">Data</label>
+    <div><input class="pnl-campo" id="c-data" type="date" name="publicadoEm" required /></div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-capa">Capa</label>
+    <div>
+      <div class="pnl-capa">
+        <img class="pnl-capa__previa" id="previa" alt="" hidden />
+        <div style="flex:1">
+          <input class="pnl-campo" id="c-capa" type="file" name="capa" accept="image/jpeg,image/png,image/webp" />
+          <p class="pnl-dica">JPG, PNG ou WebP. Ao editar, deixe vazio para manter a atual.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-capa-alt">Descrição da capa</label>
+    <div>
+      <input class="pnl-campo" id="c-capa-alt" name="capaAlt" required />
+      <p class="pnl-dica">O que a foto mostra, para quem não enxerga. Obrigatório.</p>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-tempo">Tempo de leitura</label>
+    <div>
+      <div class="pnl-duplo">
+        <input class="pnl-campo" id="c-tempo" type="number" name="tempoLeitura" min="1" max="120" />
+        <span class="pnl-auto">
+          <input type="checkbox" id="c-tempo-auto" checked />
+          <label for="c-tempo-auto">calcular sozinho</label>
+        </span>
+      </div>
+      <p class="pnl-dica">Em minutos. Com "calcular sozinho" marcado, sai do tamanho do texto.</p>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-resumo">Resumo</label>
+    <div>
+      <textarea class="pnl-campo" id="c-resumo" name="resumo" maxlength="300" rows="3" required></textarea>
+      <p class="pnl-dica">Aparece na lista do blog, embaixo do título.</p>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <span class="pnl-linha__rotulo">Conteúdo</span>
+    <div>
+      <div class="ed">
+        <div class="ed__barra" role="toolbar" aria-label="Formatação">
+          <select class="ed__bloco" id="ed-bloco" aria-label="Tipo de bloco">
+            <option value="p">Parágrafo</option>
+            <option value="h2">Heading 1</option>
+            <option value="h3">Heading 2</option>
+            <option value="h4">Heading 3</option>
+          </select>
+          <span class="ed__risco"></span>
+          <button class="ed__b" type="button" data-cmd="link" title="Link">🔗</button>
+          <button class="ed__b" type="button" data-cmd="bold" title="Negrito (Ctrl+B)"><b>B</b></button>
+          <button class="ed__b" type="button" data-cmd="italic" title="Itálico (Ctrl+I)"><i>I</i></button>
+          <button class="ed__b" type="button" data-cmd="blockquote" title="Citação">❝</button>
+          <button class="ed__b" type="button" data-cmd="bulletList" title="Lista">•</button>
+          <button class="ed__b" type="button" data-cmd="orderedList" title="Lista numerada">1.</button>
+          <span class="ed__risco"></span>
+          <button class="ed__b" type="button" data-cmd="imagem" title="Imagem">🖼</button>
+          <button class="ed__b" type="button" data-cmd="html" title="Ver o HTML">&lt;/&gt;</button>
+        </div>
+        <div class="ed__area" id="ed-area"></div>
+        <textarea class="ed__cru" id="ed-cru" hidden aria-label="HTML do artigo"></textarea>
+      </div>
+      <input type="file" id="ed-arquivo" accept="image/jpeg,image/png,image/webp" hidden />
+      <p class="pnl-dica" id="ed-recado"></p>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-seo-desc">Meta Description</label>
+    <div>
+      <textarea class="pnl-campo" id="c-seo-desc" name="seoDescricao" maxlength="160" rows="2"></textarea>
+      <p class="pnl-dica"><span id="conta-seo">0</span>/160 — o texto que aparece no Google.</p>
+    </div>
+  </div>
+
+  <div class="pnl-linha">
+    <label class="pnl-linha__rotulo" for="c-tags">Keywords</label>
+    <div>
+      <input class="pnl-campo" id="c-tags" name="tags" />
+      <p class="pnl-dica">Separadas por vírgula.</p>
+    </div>
+  </div>
+
+  <div class="pnl-rodape">
+    <button class="pnl-btn pnl-btn--azul" type="submit">Publicar</button>
+    <button class="pnl-btn pnl-btn--perigo" type="button" id="apagar" hidden>Apagar artigo</button>
+    <p class="pnl-estado" id="estado" role="status"></p>
+  </div>
+</form>

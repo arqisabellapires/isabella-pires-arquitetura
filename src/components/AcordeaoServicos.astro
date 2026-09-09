@@ -59,10 +59,31 @@ const foto = (slug: string) => `/imagens/figma/servico--${slug}.webp`;
         </a>
       </div>
 
-      <svg class="acordeao__seta" viewBox="0 0 24 44" aria-hidden="true" focusable="false">
-        <path d="M4 4 20 22 4 40" fill="none" stroke="currentColor" stroke-width="4"
-              stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+      {/* Duas setas, e são <label> de verdade: cada uma aponta para o rádio
+          do painel vizinho, então navegam sem JavaScript. Antes havia só um
+          <svg> à direita, decorativo — não dava para voltar. O laço fecha:
+          do primeiro, a seta da esquerda vai ao último. */}
+      <label
+        class="acordeao__seta acordeao__seta--antes"
+        for={`acordeao-${servicos[(i - 1 + servicos.length) % servicos.length].slug}`}
+      >
+        <span class="vis-oculto">Serviço anterior</span>
+        <svg viewBox="0 0 24 44" aria-hidden="true" focusable="false">
+          <path d="M20 4 4 22 20 40" fill="none" stroke="currentColor" stroke-width="4"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </label>
+
+      <label
+        class="acordeao__seta acordeao__seta--depois"
+        for={`acordeao-${servicos[(i + 1) % servicos.length].slug}`}
+      >
+        <span class="vis-oculto">Próximo serviço</span>
+        <svg viewBox="0 0 24 44" aria-hidden="true" focusable="false">
+          <path d="M4 4 20 22 4 40" fill="none" stroke="currentColor" stroke-width="4"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </label>
     </div>
   ))}
 </div>
@@ -218,20 +239,39 @@ const foto = (slug: string) => `/imagens/figma/servico--${slug}.webp`;
     width: fit-content;
   }
 
-  /* A seta `>` fica no meio da borda direita do painel aberto — no design é
-     o que sinaliza "há mais para o lado". */
+  /* As setas ficam nas duas bordas do painel aberto: `<` volta e `>` avança.
+     São <label> apontando para o rádio vizinho, então clicam de verdade.
+     Ficam acima do .acordeao__gatilho no empilhamento — senão o rótulo que
+     cobre o painel inteiro roubaria o clique. */
   .acordeao__seta {
+    align-items: center;
     color: rgb(255 255 255 / 0.9);
-    height: 44px;
+    cursor: pointer;
+    display: flex;
+    height: 64px;
+    justify-content: center;
     opacity: 0;
     position: absolute;
-    right: 24px;
     top: 50%;
+    transition: opacity var(--dur-servicos-numerados-home, 0.4s) ease,
+                transform 160ms ease;
     translate: 0 -50%;
-    width: 24px;
-    z-index: 2;
+    width: 44px;
+    z-index: 4;
   }
-  .acordeao__painel:has(.acordeao__radio:checked) .acordeao__seta { opacity: 1; }
+  .acordeao__seta svg { height: 44px; width: 24px; }
+  .acordeao__seta--antes { left: 16px; }
+  .acordeao__seta--depois { right: 16px; }
+  .acordeao__painel:has(.acordeao__radio:checked) .acordeao__seta { opacity: 0.9; }
+  .acordeao__painel:has(.acordeao__radio:checked) .acordeao__seta:hover {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+  /* Nas faixas fechadas a seta não recebe clique: quem manda ali é o
+     rótulo que abre o painel. */
+  .acordeao__painel:not(:has(.acordeao__radio:checked)) .acordeao__seta {
+    pointer-events: none;
+  }
 
   .vis-oculto {
     position: absolute;

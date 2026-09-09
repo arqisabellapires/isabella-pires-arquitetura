@@ -144,8 +144,11 @@ const regrasFiltro = categorias
     border: 1px solid var(--fig-primaria-ativa);
     border-radius: var(--fig-raio-sm);
     color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.2 var(--fig-fonte-corpo);
-    padding: var(--fig-e-sm) var(--fig-e-lg);
+    /* 15px/400 e padding 8/14, como os filtros do blog. Estava em
+       --fig-f-corpo (até 20px) com peso 600 — "estourado", nas palavras
+       do Gabriel. */
+    font: 400 15px/1.2 var(--fig-fonte-corpo);
+    padding: 8px 14px;
     text-decoration: none;
     transition: background var(--dur-filtros-categoria-artigos) var(--mola-filtros-categoria-artigos),
                 color var(--dur-filtros-categoria-artigos) var(--mola-filtros-categoria-artigos);

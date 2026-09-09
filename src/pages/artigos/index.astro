@@ -50,6 +50,9 @@ const comMinutos = await Promise.all(
     */}
     <p class="listagem__rotulo">Blog</p>
 
+    {/* A pill que o Framer tem acima da manchete e nós não tínhamos. */}
+    <p class="pill">IsabellaPires Arquitetura</p>
+
     <h1 class="listagem__manchete">Dicas e notícias para quem realmente se destaca.</h1>
 
     {/* Filtros à esquerda e busca à direita, na mesma linha, como no Framer. */}
@@ -127,19 +130,36 @@ const comMinutos = await Promise.all(
   /* Pastilhas: a ativa é sólida, as outras têm contorno. Node 1:1108.
      Continuam sendo links por rota — cada categoria tem URL própria, o que
      vale mais para busca do que filtrar no cliente. */
+  /* Sem margin-bottom: quem separa da grade agora é a .barra, e a margem
+     aqui desalinhava a busca dentro do flex. */
   .filtros {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--fig-e-md);
-    margin-bottom: var(--fig-e-3xl);
+    gap: 10px;
+    margin: 0;
   }
+  /* A pill do topo: fundo bege, cantos redondos, texto pequeno.
+     Medida na captura do Framer. */
+  .pill {
+    align-self: center;
+    background: #f0e9e2;
+    border-radius: 999px;
+    color: var(--fig-primaria-ativa);
+    font: 500 13px/1.2 var(--fig-fonte-corpo);
+    margin: 0 auto var(--fig-e-lg);
+    padding: 7px 14px;
+    width: fit-content;
+  }
+
+  /* 16px/400 e pílula de 35px no Framer. Estava em --fig-f-corpo (até 20px)
+     com peso 600 e padding 12/24, o que deixava os filtros "estourados". */
   .filtros__item {
     background: #fff;
     border: 1px solid var(--fig-primaria-ativa);
     border-radius: var(--fig-raio-sm);
     color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-semi) var(--fig-f-corpo) / 1.2 var(--fig-fonte-corpo);
-    padding: var(--fig-e-sm) var(--fig-e-lg);
+    font: 400 15px/1.2 var(--fig-fonte-corpo);
+    padding: 8px 14px;
     text-decoration: none;
     transition: background var(--dur-filtros-categoria-artigos) var(--mola-filtros-categoria-artigos);
   }
@@ -151,14 +171,18 @@ const comMinutos = await Promise.all(
   }
 
   /* Duas por fileira, como no design — não três colunas. */
+  /* Filtros e busca na MESMA linha, como no Framer. O flex-wrap deixava a
+     busca cair para baixo quando os cinco filtros ocupavam a largura; agora
+     os filtros é que quebram entre si, e a busca fica ancorada à direita. */
   .barra {
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
     gap: var(--fig-e-md);
     justify-content: space-between;
     margin-bottom: var(--fig-e-2xl);
   }
+  .barra .filtros { flex: 1 1 auto; min-width: 0; }
+  .barra .busca { flex: none; }
   .busca {
     align-items: center;
     background: #ffffff;
@@ -173,9 +197,9 @@ const comMinutos = await Promise.all(
     background: none;
     border: 0;
     color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-medio) 14px/1 var(--fig-fonte-corpo);
-    padding: 10px 0;
-    width: 180px;
+    font: 400 14px/1 var(--fig-fonte-corpo);
+    padding: 8px 0;
+    width: 170px;
   }
   .busca__campo::placeholder { color: #a89e94; }
   .busca__campo:focus-visible { outline: none; }

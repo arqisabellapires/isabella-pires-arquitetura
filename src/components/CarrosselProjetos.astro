@@ -37,7 +37,8 @@ const inicial = projetos.length > 2 ? 1 : 0;
 ---
 
 <div class="carrossel" data-carrossel>
-  <ul class="carrossel__trilho" data-trilho data-desloca={inicial > 0 ? '' : undefined}>
+  <div class="carrossel__janela">
+  <ul class="carrossel__trilho" data-trilho>
     {projetos.map((p, i) => (
       <li class="carrossel__slide" id={`slide-${p.id}`} data-slide data-ativo={i === inicial ? '' : undefined}>
         <a href={`/projetos/${p.id}`} class="carrossel__foto">
@@ -52,6 +53,7 @@ const inicial = projetos.length > 2 ? 1 : 0;
       </li>
     ))}
   </ul>
+  </div>
 
   <ol class="carrossel__bolinhas" data-bolinhas>
     {projetos.map((p, i) => (
@@ -98,71 +100,129 @@ const inicial = projetos.length > 2 ? 1 : 0;
 
 <script>
   /*
-    Estado do carrossel. O scroll-snap é quem manda: as setas e as bolinhas
-    só chamam scrollIntoView, e um IntersectionObserver decide qual slide
-    está ativo. Assim arrastar com o dedo, rolar com trackpad e clicar na
-    seta convergem para o mesmo caminho, sem estado duplicado.
+    O carrossel move o trilho por `transform`, não por scroll.
+
+    A versão anterior usava scroll-snap: quando o slide ativo mudou de
+    largura (675 nos vizinhos, 817 no do meio, como no Framer), o navegador
+    recalculava os pontos de encaixe no meio da transição e pulava vários
+    projetos de uma vez. Com transform, a posição é calculada por nós e a
+    animação é uma só.
+
+    O laço é infinito: os slides são clonados nas duas pontas, e quando a
+    viagem chega num clone o trilho salta para o original sem animação —
+    o corte é invisível porque as duas posições mostram a mesma imagem.
   */
   document.querySelectorAll<HTMLElement>('[data-carrossel]').forEach((raiz) => {
     const trilho = raiz.querySelector<HTMLElement>('[data-trilho]');
-    const slides = [...raiz.querySelectorAll<HTMLElement>('[data-slide]')];
+    const originais = [...raiz.querySelectorAll<HTMLElement>('[data-slide]')];
     const bolinhas = [...raiz.querySelectorAll<HTMLElement>('[data-ir]')];
     const elTitulo = raiz.querySelector<HTMLElement>('[data-titulo]');
     const elLocal = raiz.querySelector<HTMLElement>('[data-local]');
     const legendas: { titulo: string; local: string }[] = JSON.parse(
       raiz.querySelector<HTMLElement>('[data-legendas]')?.textContent || '[]',
     );
-    if (!trilho || slides.length === 0) return;
+    if (!trilho || originais.length === 0) return;
 
-    /* Começa no slide que o servidor marcou como ativo, não em 0 — senão a
-       primeira interação pula um. */
-    let atual = Math.max(0, slides.findIndex((s) => s.hasAttribute('data-ativo')));
+    const n = originais.length;
+    trilho.removeAttribute('data-desloca');   // o CSS não centra mais nada
 
-    const marcar = (i: number) => {
-      if (i === atual) return;
-      atual = i;
-      slides.forEach((s, n) => s.toggleAttribute('data-ativo', n === i));
-      bolinhas.forEach((b, n) => b.toggleAttribute('data-ativo', n === i));
-      if (elTitulo && legendas[i]) elTitulo.textContent = legendas[i].titulo;
-      if (elLocal && legendas[i]) elLocal.textContent = legendas[i].local;
-    };
+    /* Clones nas duas pontas: com um de cada lado o vizinho já existe
+       quando se chega à borda, e a volta ao original passa despercebida. */
+    const clonesAntes = originais.map((s) => {
+      const c = s.cloneNode(true) as HTMLElement;
+      c.dataset.clone = '';
+      c.removeAttribute('id');
+      return c;
+    });
+    const clonesDepois = clonesAntes.map((c) => c.cloneNode(true) as HTMLElement);
+    clonesAntes.forEach((c) => trilho.insertBefore(c, originais[0]));
+    clonesDepois.forEach((c) => trilho.appendChild(c));
 
-    const irPara = (i: number) => {
-      soltarDeslocamento();
-      const alvo = slides[(i + slides.length) % slides.length];
-      alvo?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-    };
+    const todos = [...raiz.querySelectorAll<HTMLElement>('[data-slide]')];
+    /* O índice anda no espaço dos clones: n é o primeiro original. */
+    let pos = n + Math.max(0, originais.findIndex((s) => s.hasAttribute('data-ativo')));
+    let animando = false;
 
-    /* O slide ativo é o que está mais perto do centro do trilho. O
-       threshold alto evita que uma peça lateral, sempre parcialmente
-       visível por design, roube o estado. */
-    const observador = new IntersectionObserver(
-      (entradas) => {
-        entradas.forEach((e) => {
-          if (e.isIntersecting && e.intersectionRatio > 0.6) {
-            marcar(slides.indexOf(e.target as HTMLElement));
-          }
-        });
-      },
-      { root: trilho, threshold: [0.6, 0.9] },
-    );
-    slides.forEach((s) => observador.observe(s));
+    const real = () => ((pos - n) % n + n) % n;
 
-    /*
-      O deslocamento em CSS já entrega o slide inicial centrado. Na primeira
-      navegação ele sai de cena: a partir daí quem centra é o scroll, e
-      manter a margem negativa deixaria um vão à esquerda.
-    */
-    const soltarDeslocamento = () => {
-      if (!trilho.hasAttribute('data-desloca')) return;
-      const antes = slides[0].getBoundingClientRect().left;
-      trilho.removeAttribute('data-desloca');
-      trilho.scrollLeft += slides[0].getBoundingClientRect().left - antes;
-    };
+    /** Centra o slide `pos` movendo o trilho. */
+    function posiciona(comAnimacao: boolean) {
+      const alvo = todos[pos];
+      if (!alvo) return;
+      trilho.dataset.animando = comAnimacao ? '' : 'nao';
+      /* O deslocamento é medido do próprio layout: assim a conta continua
+         certa quando as larguras mudam com o breakpoint. */
+      const centroAlvo = alvo.offsetLeft + alvo.offsetWidth / 2;
+      const centroTela = trilho.parentElement!.offsetWidth / 2;
+      trilho.style.transform = `translate3d(${centroTela - centroAlvo}px, 0, 0)`;
 
-    raiz.querySelector('[data-anterior]')?.addEventListener('click', () => irPara(atual - 1));
-    raiz.querySelector('[data-proximo]')?.addEventListener('click', () => irPara(atual + 1));
+      todos.forEach((s, i) => s.toggleAttribute('data-ativo', i === pos));
+      const r = real();
+      bolinhas.forEach((b, i) => b.toggleAttribute('data-ativo', i === r));
+      if (elTitulo && legendas[r]) elTitulo.textContent = legendas[r].titulo;
+      if (elLocal && legendas[r]) elLocal.textContent = legendas[r].local;
+    }
+
+    function anda(passo: number) {
+      if (animando) return;
+      animando = true;
+      pos += passo;
+      posiciona(true);
+    }
+
+    /* Ao terminar a viagem, se paramos num clone, volta ao original
+       equivalente sem animação. */
+    trilho.addEventListener('transitionend', (e) => {
+      if (e.propertyName !== 'transform') return;
+      animando = false;
+      if (pos < n || pos >= n * 2) {
+        pos = n + real();
+        posiciona(false);
+        /* Força o reflow antes de devolver a animação, senão o próximo
+           passo herda o estado sem transição. */
+        void trilho.offsetWidth;
+        trilho.removeAttribute('data-animando');
+      }
+    });
+
+    function irPara(iReal: number) {
+      if (animando) return;
+      const atual = real();
+      let d = iReal - atual;
+      /* Vai pelo caminho mais curto: de 3 para 0 anda +1, não -3. */
+      if (d > n / 2) d -= n;
+      if (d < -n / 2) d += n;
+      if (d !== 0) anda(d);
+    }
+
+    raiz.querySelector('[data-anterior]')?.addEventListener('click', () => anda(-1));
+    raiz.querySelector('[data-proximo]')?.addEventListener('click', () => anda(1));
     bolinhas.forEach((b, i) => b.addEventListener('click', () => irPara(i)));
+
+    /* Arrastar com o dedo. */
+    let x0 = 0;
+    trilho.addEventListener('pointerdown', (e) => { x0 = e.clientX; });
+    trilho.addEventListener('pointerup', (e) => {
+      const d = e.clientX - x0;
+      if (Math.abs(d) > 45) anda(d < 0 ? 1 : -1);
+    });
+
+    /* Setas do teclado, quando o carrossel tem o foco. */
+    raiz.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); anda(1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); anda(-1); }
+    });
+
+    posiciona(false);
+    void trilho.offsetWidth;
+    trilho.removeAttribute('data-animando');
+
+    /* Ao mudar a largura da janela as medidas mudam; recentra sem animar. */
+    let t: number;
+    addEventListener('resize', () => {
+      clearTimeout(t);
+      t = window.setTimeout(() => posiciona(false), 120);
+    });
   });
 </script>
 
@@ -177,37 +237,32 @@ const inicial = projetos.length > 2 ? 1 : 0;
   /* O trilho sangra para fora do conteúdo: é isso que deixa as peças
      vizinhas cortadas nas bordas da tela, como no design. O padding lateral
      de 50% menos meio card centra o primeiro e o último slide. */
+  /* O trilho não rola: ele é movido por transform pelo script. O contêiner
+     é que esconde o excesso, e as peças vizinhas aparecem cortadas nas
+     bordas da tela, como no design. */
+  .carrossel__janela {
+    overflow: hidden;
+    width: 100vw;
+    max-width: 100vw;
+  }
   .carrossel__trilho {
     display: flex;
     gap: var(--fig-e-5xl);
     list-style: none;
     margin: 0;
-    padding: 0 max(var(--fig-e-md), calc(50% - 817px / 2));
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    width: 100vw;
-    max-width: 100vw;
+    padding: 0;
+    will-change: transform;
   }
-  /*
-    O primeiro slide entra com uma margem negativa de um slide inteiro (817 +
-    100 de gap), o que empurra o trilho e deixa o ativo — o segundo — no
-    centro já na primeira pintura, sem esperar JavaScript.
-
-    Fazer isso por `scrollIntoView` no carregamento funciona no navegador,
-    mas some na fotografia de página inteira do Playwright, que redesenha os
-    contêineres roláveis a partir do zero. Resolvendo em CSS, o que se
-    fotografa é o que se vê.
-  */
-  .carrossel__trilho[data-desloca] > .carrossel__slide:first-child {
-    margin-left: calc((817px + var(--fig-e-5xl)) * -1);
+  /* O motion: a mola do design, medida na ficha carrossel-home. */
+  .carrossel__trilho:not([data-animando='nao']) {
+    transition: transform var(--dur-carrossel-home, 0.6s) var(--mola-carrossel-home, cubic-bezier(0.22, 1, 0.36, 1));
   }
-  .carrossel__trilho::-webkit-scrollbar { display: none; }
+  .carrossel__trilho[data-animando='nao'] { transition: none; }
 
-  /* Medido no Framer a 1440px: o card do meio é 817×545 e os vizinhos são
-     675×469 — a razão é 0.826 nas DUAS dimensões. A versão anterior mexia
-     só na altura e deixava os três com 817px de largura, o que dava o
-     "todo mundo pequenininho" que o Gabriel apontou. */
+  @media (prefers-reduced-motion: reduce) {
+    .carrossel__trilho { transition: none !important; }
+  }
+
   .carrossel__slide {
     flex: none;
     scroll-snap-align: center;

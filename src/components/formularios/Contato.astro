@@ -41,11 +41,38 @@ const servicos = [
   </div>
 
   <div class="form__campo">
-    <label for="servico">Qual serviço você procura?</label>
-    <select id="servico" name="servico">
+    <label for="servico" id="servico-rotulo">Qual serviço você procura?</label>
+
+    {/* O <select> continua aqui, escondido: é ele que o formulário envia e
+        é ele que aparece se o JavaScript falhar. A lista bonita por cima é
+        montada no script — a nativa não aceita raio, cor nem hover. */}
+    <select id="servico" name="servico" class="form__nativo">
       <option value="" disabled selected>Selecione</option>
       {servicos.map((s) => <option value={s}>{s}</option>)}
     </select>
+
+    <div class="escolha" id="escolha" hidden>
+      <button
+        type="button"
+        class="escolha__gatilho"
+        id="escolha-gatilho"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        aria-labelledby="servico-rotulo escolha-gatilho"
+      >
+        <span class="escolha__valor" id="escolha-valor">Selecione</span>
+        <svg class="escolha__seta" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <ul class="escolha__lista" id="escolha-lista" role="listbox" tabindex="-1" hidden>
+        {servicos.map((s) => (
+          <li class="escolha__item" role="option" data-valor={s} tabindex="-1">{s}</li>
+        ))}
+      </ul>
+    </div>
   </div>
 
   <div class="form__campo">
@@ -170,4 +197,193 @@ const servicos = [
   .form__estado:empty { display: none; }
   .form__estado[data-tipo='erro'] { color: #b3261e; }
   .form__estado[data-tipo='sucesso'] { color: #2e6b3e; }
+
+  /* ── O dropdown ─────────────────────────────────────────────
+     O <select> nativo não aceita raio, cor de fundo nem hover por item —
+     o menu que ele abre é desenhado pelo sistema operacional. Esta lista
+     é HTML de verdade por cima dele; o nativo continua no DOM, escondido,
+     porque é ele que o formulário envia e é ele que aparece sem JS. */
+  /* `.form__campo` no seletor: sem ele a regra genérica de input/select/
+     textarea logo abaixo vence por especificidade e devolve os 100% de
+     largura ao nativo escondido. */
+  .form__campo select.form__nativo {
+    /* Escondido, mas ainda no formulário: `display:none` tiraria o valor do
+       envio em alguns navegadores. O clip e o 1px impedem que ele estique a
+       largura da linha e roube área de clique. */
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .escolha { position: relative; }
+
+  .escolha__gatilho {
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--fig-borda, #d9cfc6);
+    border-radius: 10px;
+    color: var(--fig-primaria-ativa);
+    cursor: pointer;
+    display: flex;
+    font: 500 15px/1.4 var(--fig-fonte-corpo);
+    gap: 12px;
+    justify-content: space-between;
+    padding: 13px 15px;
+    text-align: left;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+    width: 100%;
+  }
+  .escolha__gatilho:hover { border-color: #b9a894; }
+  .escolha__gatilho[aria-expanded='true'] {
+    border-color: var(--fig-primaria-ativa);
+    box-shadow: 0 0 0 3px rgb(53 32 5 / 0.08);
+  }
+  .escolha__gatilho:focus-visible {
+    border-color: var(--fig-primaria-ativa);
+    outline: 2px solid var(--fig-primaria-ativa);
+    outline-offset: 2px;
+  }
+  /* Enquanto nada foi escolhido o rótulo é um texto de espera. */
+  .escolha__valor[data-vazio] { color: #9a9088; }
+
+  .escolha__seta {
+    color: #8b8178;
+    flex: none;
+    height: 18px;
+    transition: transform 200ms ease;
+    width: 18px;
+  }
+  .escolha__gatilho[aria-expanded='true'] .escolha__seta { transform: rotate(180deg); }
+
+  .escolha__lista {
+    background: #fff;
+    border: 1px solid #ece5de;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.06), 0 12px 28px rgb(0 0 0 / 0.12);
+    left: 0;
+    list-style: none;
+    margin: 6px 0 0;
+    max-height: 260px;
+    overflow-y: auto;
+    padding: 6px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 30;
+  }
+  .escolha__lista[hidden] { display: none; }
+
+  .escolha__item {
+    border-radius: 8px;
+    color: var(--fig-primaria-ativa);
+    cursor: pointer;
+    font: 500 15px/1.4 var(--fig-fonte-corpo);
+    padding: 11px 13px;
+    transition: background 120ms ease;
+  }
+  /* O hover por item é o que o <select> nativo não dá: lá é a faixa azul
+     do sistema, que não combina com nada da marca. */
+  .escolha__item:hover,
+  .escolha__item[data-realce] { background: #f5efe9; }
+  .escolha__item[aria-selected='true'] {
+    background: var(--fig-fundo-pessego);
+    font-weight: 700;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .escolha__seta { transition: none; }
+  }
 </style>
+
+<script>
+  /*
+    O dropdown da lista de serviços.
+
+    O <select> nativo continua no formulário e é ele que envia o valor —
+    esta lista só o espelha. Se o script não rodar, o `hidden` do .escolha
+    nunca sai e o usuário vê o nativo, que funciona.
+
+    Teclado: setas andam, Enter/Espaço escolhem, Esc fecha, Tab sai. É o
+    contrato de um listbox, e sem ele o campo ficaria inacessível.
+  */
+  const nativo = document.getElementById('servico') as HTMLSelectElement | null;
+  const caixa = document.getElementById('escolha');
+  const gatilho = document.getElementById('escolha-gatilho');
+  const lista = document.getElementById('escolha-lista');
+  const valor = document.getElementById('escolha-valor');
+
+  if (nativo && caixa && gatilho && lista && valor) {
+    const itens = [...lista.querySelectorAll<HTMLElement>('.escolha__item')];
+
+    // Só agora a lista entra em cena; o nativo sai.
+    caixa.hidden = false;
+    nativo.classList.add('form__nativo');
+    valor.dataset.vazio = '';
+
+    let aberto = false;
+    let realce = -1;
+
+    function marcaRealce(i: number) {
+      itens.forEach((it, n) => it.toggleAttribute('data-realce', n === i));
+      realce = i;
+      if (i >= 0) itens[i].scrollIntoView({ block: 'nearest' });
+    }
+
+    function abre() {
+      aberto = true;
+      lista.hidden = false;
+      gatilho.setAttribute('aria-expanded', 'true');
+      const atual = itens.findIndex((it) => it.dataset.valor === nativo.value);
+      marcaRealce(atual >= 0 ? atual : 0);
+    }
+
+    function fecha() {
+      aberto = false;
+      lista.hidden = true;
+      gatilho.setAttribute('aria-expanded', 'false');
+      marcaRealce(-1);
+    }
+
+    function escolhe(i: number) {
+      const it = itens[i];
+      if (!it) return;
+      nativo.value = it.dataset.valor!;
+      /* `change` de verdade: quem estiver ouvindo o <select> — validação,
+         analytics — continua funcionando como se fosse o nativo. */
+      nativo.dispatchEvent(new Event('change', { bubbles: true }));
+      valor.textContent = it.textContent;
+      delete valor.dataset.vazio;
+      itens.forEach((o, n) => o.setAttribute('aria-selected', String(n === i)));
+      fecha();
+      gatilho.focus();
+    }
+
+    gatilho.addEventListener('click', () => (aberto ? fecha() : abre()));
+
+    itens.forEach((it, i) => {
+      it.addEventListener('click', () => escolhe(i));
+      it.addEventListener('mousemove', () => marcaRealce(i));
+    });
+
+    gatilho.addEventListener('keydown', (e) => {
+      if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) {
+        e.preventDefault();
+        if (!aberto) { abre(); return; }
+        if (e.key === 'Enter' || e.key === ' ') escolhe(realce);
+        else marcaRealce(Math.min(itens.length - 1, Math.max(0, realce + (e.key === 'ArrowDown' ? 1 : -1))));
+      }
+      if (e.key === 'Escape' && aberto) { e.preventDefault(); fecha(); }
+    });
+
+    // Clique fora fecha.
+    document.addEventListener('click', (e) => {
+      if (aberto && !caixa.contains(e.target as Node)) fecha();
+    });
+  }
+</script>

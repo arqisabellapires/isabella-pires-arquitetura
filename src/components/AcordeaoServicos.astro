@@ -112,12 +112,37 @@ const foto = (slug: string) => `/imagens/figma/servico--${slug}.webp`;
   /* No painel aberto o rótulo sai da frente do link "Saiba mais". */
   .acordeao__painel:has(.acordeao__radio:checked) .acordeao__gatilho { inset: 0 0 190px 0; }
 
+  /* Aberto: a foto volta ao tamanho natural e a cena inteira aparece. */
+  .acordeao__painel:has(.acordeao__radio:checked) .acordeao__foto {
+    transform: scale(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .acordeao__foto,
+    .acordeao__painel:has(.acordeao__radio:checked) .acordeao__foto {
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* A foto entra ampliada e volta ao natural quando o painel abre: é o
+     "zoom ao abrir" do Framer (visível no vídeo servicos-numerados-home,
+     comparando os 16.78s com os 21.57s). Antes não havia transform nenhum
+     — o que parecia zoom nas faixas 4 e 5 era só o recorte do object-fit
+     numa coluna estreita.
+
+     O transform-origin no centro mantém o assunto da foto enquadrado
+     enquanto ela desamplia. */
   .acordeao__foto {
     display: block;
     height: 100%;
     inset: 0;
     object-fit: cover;
     position: absolute;
+    transform: scale(1.18);
+    transform-origin: 50% 50%;
+    transition: transform var(--dur-servicos-numerados-home, 0.4s)
+      var(--mola-servicos-numerados-home, cubic-bezier(0.22, 1, 0.36, 1));
     width: 100%;
   }
   /* Véu: mais forte nas faixas fechadas (0,12→0,5) do que no painel aberto

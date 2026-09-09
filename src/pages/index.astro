@@ -388,10 +388,32 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
      Faberge 66px sobre o valor, 28px no rótulo — node 1:209. */
   /* Faixa pêssego de largura total (node 1:206, #f0d9c7, 422px de altura),
      com os números por cima. A versão anterior não tinha fundo nenhum. */
+  /* A faixa tem um padrão de logos ao fundo, do Figma (node 1:207 e 1:208,
+     "Grupo de 64 objetos"): uma grade de logos em contorno, deslocadas meia
+     célula a cada fileira. Lá são duas camadas — opacity-67 sobre
+     opacity-25 —, o que dá ~0.17 de opacidade final; é esse o valor aqui.
+     Sem ela a faixa era pêssego chapado. */
   .numeros {
     background: var(--fig-fundo-pessego);
-    padding: var(--fig-e-4xl) var(--fig-margem-interna);
+    /* 422px de altura no Figma; o padding vertical é o que a dá. */
+    padding: var(--fig-e-6xl) var(--fig-margem-interna);
+    position: relative;
+    overflow: hidden;
   }
+  .numeros::before {
+    background: url('/imagens/padrao-logos.svg') repeat;
+    /* No Figma a logo do padrão tem ~46px de largura e a grade se repete a
+       cada ~100px — bem menor do que parecia. Com a célula de 196px do
+       arquivo, 100px de repetição dá a logo no tamanho certo. */
+    background-size: 100px auto;
+    content: '';
+    inset: 0;
+    opacity: 0.17;
+    pointer-events: none;
+    position: absolute;
+  }
+  /* A lista sobe acima do padrão. */
+  .numeros__lista { position: relative; }
   .numeros__lista {
     display: grid;
     gap: var(--fig-e-3xl);
@@ -400,13 +422,16 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     max-width: var(--fig-largura-conteudo);
   }
   .numeros__item { display: flex; align-items: flex-start; gap: var(--fig-e-xl); }
+  /* 66px no Figma (node 1:211), não os ~42px que o token --fig-f-numero
+     dava: a faixa é um dos poucos lugares onde o número é o desenho. */
   .numeros__valor {
     color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-normal) var(--fig-f-numero) / var(--fig-altura-titulo) var(--fig-fonte-display);
+    font: var(--fig-peso-normal) clamp(2.5rem, 1.4rem + 3.4vw, 4.125rem) / 0.97 var(--fig-fonte-display);
   }
+  /* 28px no Figma (node 1:212). */
   .numeros__rotulo {
     color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-normal) var(--fig-f-rotulo) / var(--fig-altura-titulo) var(--fig-fonte-display);
+    font: var(--fig-peso-normal) clamp(1.0625rem, 0.9rem + 0.85vw, 1.75rem) / 0.97 var(--fig-fonte-display);
     margin: 0;
   }
 

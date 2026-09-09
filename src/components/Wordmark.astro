@@ -9,14 +9,34 @@
  * não informação.
  *
  * Uma armadilha registrada do projeto passa por aqui: nas capturas do
- * Framer este wordmark tem cada letra numa caixa separada, e por isso os
- * quatro projetos chegaram a se chamar "I" numa extração anterior. Aqui é
- * um texto só.
+ * Framer este wordmark tem cada letra numa caixa separada — e é justamente
+ * isso que permite o EFEITO DE ESCRITA que o Gabriel pediu: as letras
+ * aparecem uma a uma, da esquerda para a direita, quando a faixa entra na
+ * tela (visível no vídeo home.desktop.rodape-por-pagina.webm, aos 6.14s:
+ * "ISABELLA" já escuro e "PIRES" ainda desbotado).
+ *
+ * O texto continua legível sem CSS e sem JS: as letras são spans dentro de
+ * uma palavra, e o espaço entre as duas é um caractere de verdade.
  */
+const palavras = ['ISABELLA', 'PIRES'];
+/* O índice global de cada letra é o que escalona o atraso. */
+let n = 0;
+const linhas = palavras.map((p) => [...p].map((letra) => ({ letra, i: n++ })));
 ---
 
-<div class="wordmark" aria-hidden="true">
-  <span>ISABELLA PIRES</span>
+<div class="wordmark" aria-hidden="true" data-escreve>
+  <span class="wordmark__texto">
+    {linhas.map((palavra, iP) => (
+      <>
+        {iP > 0 && ' '}
+        <span class="wordmark__palavra">
+          {palavra.map(({ letra, i }) => (
+            <span class="wordmark__letra" style={`--atraso:${i * 55}ms`}>{letra}</span>
+          ))}
+        </span>
+      </>
+    ))}
+  </span>
 </div>
 
 <style>
@@ -28,11 +48,81 @@
     padding: var(--fig-e-xl) var(--fig-margem-interna);
     width: 100%;
   }
-  .wordmark span {
+  /* 1012px de largura no Framer contra os 947px que tínhamos: o nome é um
+     pouco maior lá, como o Gabriel notou. O clamp mantém a proporção sem
+     estourar em tela estreita. */
+  .wordmark__texto {
     color: var(--fig-tinta);
-    font: var(--fig-peso-normal) var(--fig-f-wordmark) / 1.1 var(--fig-fonte-display);
+    font: var(--fig-peso-normal) clamp(2.5rem, 1rem + 7vw, 7.35rem) / 1.1 var(--fig-fonte-display);
     letter-spacing: 0.1em;
     text-align: center;
     white-space: nowrap;
   }
+  /* A palavra não quebra no meio; o espaço entre as duas, sim, se precisar. */
+  .wordmark__palavra { white-space: nowrap; }
+
+  /* ── O efeito de escrita ────────────────────────────────────
+     Cada letra começa apagada e um pouco abaixo, e sobe ao lugar
+     quando a faixa entra na tela. O atraso por letra (--atraso)
+     é o que faz a palavra se escrever da esquerda para a direita.
+
+     Sem JS, `[data-visivel]` nunca é posto — daí o estado final
+     ser o padrão e a animação valer só quando a classe entra. */
+  .wordmark[data-escreve] .wordmark__letra {
+    display: inline-block;
+    /* O estado final é o normal: sem JS o nome aparece pronto. */
+    opacity: 1;
+  }
+  .wordmark[data-escreve][data-pronto] .wordmark__letra {
+    opacity: 0;
+    transform: translateY(0.14em);
+  }
+  .wordmark[data-escreve][data-visivel] .wordmark__letra {
+    animation: wordmark-letra 520ms cubic-bezier(0.22, 1, 0.36, 1) var(--atraso, 0ms) both;
+  }
+
+  @keyframes wordmark-letra {
+    from { opacity: 0; transform: translateY(0.14em); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Quem pediu menos movimento vê o nome inteiro, sem escrita. */
+  @media (prefers-reduced-motion: reduce) {
+    .wordmark[data-escreve][data-pronto] .wordmark__letra,
+    .wordmark[data-escreve][data-visivel] .wordmark__letra {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
 </style>
+
+<script>
+  /*
+    O efeito só liga quando há JS: `data-pronto` é que esconde as letras, e
+    ele é posto aqui. Assim quem não tem JS (ou tem, mas falhou) vê o nome
+    inteiro em vez de uma faixa vazia.
+  */
+  document.querySelectorAll<HTMLElement>('[data-escreve]').forEach((faixa) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    faixa.dataset.pronto = '';
+
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        entradas.forEach((e) => {
+          if (!e.isIntersecting) return;
+          faixa.dataset.visivel = '';
+          observador.unobserve(e.target);   // escreve uma vez só
+        });
+      },
+      /* Basta a faixa encostar na tela: com 25% ela só disparava quando o
+         nome já estava quase inteiro visível, e a escrita chegava tarde.
+         A margem negativa embaixo evita disparar cedo demais em telas
+         muito altas. */
+      { threshold: 0, rootMargin: '0px 0px -12% 0px' },
+    );
+
+    observador.observe(faixa);
+  });
+</script>

@@ -132,17 +132,42 @@ const redes = [
     font: var(--fig-peso-normal) var(--fig-f-subtitulo) / 1.15 var(--fig-fonte-display);
     color: #21201f;
   }
+  /* O Gabriel disse que não tinha cara de botão, e não tinha mesmo: era um
+     retângulo branco chapado, sem sombra nenhuma. O Framer usa três camadas
+     de sombra — uma linha de contato quase colada, uma média, e uma larga e
+     fraca. É a de baixo que dá o relevo; as de cima é que dão o assentamento.
+     Medida no Framer no ar, com os valores arredondados. */
   .rodape__botao {
     align-self: flex-start;
-    background: rgb(255 255 255 / 0.73);
+    background: #fff;
     border-radius: var(--fig-raio-lg);
+    box-shadow:
+      0 0.6px 0.6px -1.25px rgb(0 0 0 / 0.18),
+      0 2.3px 2.3px -2.5px rgb(0 0 0 / 0.16),
+      0 10px 10px -3.75px rgb(0 0 0 / 0.06);
     color: var(--fig-primaria-ativa);
     font: var(--fig-peso-semi) var(--fig-t-corpo) / 1.2 var(--fig-fonte-corpo);
-    padding: var(--fig-e-sm) var(--fig-e-lg);
+    padding: var(--fig-e-md) var(--fig-e-xl);
     text-decoration: none;
-    transition: background var(--dur-rodape-por-pagina) var(--mola-rodape-por-pagina);
+    transition:
+      box-shadow var(--dur-rodape-por-pagina) var(--mola-rodape-por-pagina),
+      transform var(--dur-rodape-por-pagina) var(--mola-rodape-por-pagina);
   }
-  .rodape__botao:hover { background: #fff; }
+  /* Sobe um fio e a sombra cresce junto: é o que faz o botão parecer que
+     se levanta da página em vez de só clarear. */
+  .rodape__botao:hover {
+    box-shadow:
+      0 1px 1px -1.25px rgb(0 0 0 / 0.2),
+      0 4px 4px -2.5px rgb(0 0 0 / 0.18),
+      0 14px 16px -3.75px rgb(0 0 0 / 0.1);
+    transform: translateY(-2px);
+  }
+  .rodape__botao:active { transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rodape__botao,
+    .rodape__botao:hover { transform: none; }
+  }
 
   .rodape__colunas { display: flex; gap: var(--fig-e-7xl); flex-wrap: wrap; }
   .rodape__coluna ul { list-style: none; margin: 0; padding: 0; }

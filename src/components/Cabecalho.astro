@@ -168,9 +168,9 @@ const estaAtiva = (href: string) =>
     align-items: center;
     justify-content: center;
     padding: var(--fig-e-xs) 0;
-    /* 12px/400 no Framer; 13px aqui porque a nossa Arboria desenha menor
-       que a sans do menu de lá. Era 15px/500 — daí parecer "estourada". */
-    font: 400 13px / 1.2 var(--fig-fonte-ui);
+    /* 15px: o Framer usa 12px, mas a Arboria desenha bem menor que a sans
+       dele e 13px ficou ilegível. O peso continua 400 — era 500. */
+    font: 400 15px / 1.2 var(--fig-fonte-ui);
     color: var(--menu-cor);
     text-decoration: none;
     transition: opacity var(--dur-nav-desktop-estado) var(--mola-nav-desktop-estado);

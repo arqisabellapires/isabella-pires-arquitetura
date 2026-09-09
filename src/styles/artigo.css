@@ -30,7 +30,9 @@
 }
 
 @media (max-width: 1199.98px) {
-  .artigo { --artigo-largura: 700px; --artigo-capa: 860px; }
+  /* Abaixo de 1200px a capa deixa de escapar: com a coluna estreita, a
+     margem negativa a jogaria para fora da tela. */
+  .artigo { --artigo-largura: 700px; --artigo-capa: 700px; }
 }
 @media (max-width: 809.98px) {
   .artigo { --artigo-largura: 390px; --artigo-capa: 390px; }
@@ -45,9 +47,8 @@
   text-align: center;
 }
 
-/* A categoria não aparece no cabeçalho do Framer — o card da lista é que
-   a mostra. Fica escondida, e não removida, porque o JSON-LD e o leitor
-   de tela a usam. */
+/* A categoria não aparece no cabeçalho do Framer — o card da lista é que a
+   mostra. Fica escondida, e não removida, porque o leitor de tela a usa. */
 .artigo-categoria {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -57,6 +58,10 @@
   white-space: nowrap;
   width: 1px;
 }
+
+/* A margem lateral é 24px, não a --fig-margem-interna de 100px: a coluna de
+   875px do Framer já é a medida final, e o token comeria 200px dela. */
+.artigo { padding-block: 56px 0; }
 
 /* O título da página: 30px, cinza, centralizado. O h1 grande e preto é o
    que abre o CORPO do artigo, e vem do conteúdo. */
@@ -69,15 +74,20 @@
 }
 
 /* ── A capa: mais larga que a coluna, e centrada na página ── */
+/* A capa escapa da coluna de 875px por margem negativa, e não por `width`
+   em vw: assim ela nunca ultrapassa o que o pai realmente tem, e o vazamento
+   em tablet (1034px numa janela de 1000) deixa de existir. O negativo é
+   metade da diferença entre a capa e a coluna, dos dois lados. */
 .artigo-capa {
   border-radius: 12px;
   display: block;
   height: auto;
-  margin: 0 auto 48px;
-  max-width: var(--artigo-capa);
+  margin: 0 calc((var(--artigo-largura) - var(--artigo-capa)) / 2) 48px;
+  /* O teto absoluto: a caixa do artigo menos o padding. Sem ele a margem
+     negativa empurrava a capa para fora em telas estreitas. */
+  max-width: 100%;
   object-fit: cover;
-  /* Escapa da coluna de 875px sem quebrar o fluxo. */
-  width: min(var(--artigo-capa), calc(100vw - 2 * var(--artigo-margem)));
+  width: auto;
 }
 
 /* ── O corpo ── */

@@ -1,0 +1,67 @@
+/* ============================================================
+   O cabeçalho que abre /projetos, /servicos, /sobre-nos e
+   /contato: migalha, título da página e o selo da marca.
+
+   Estava repetido nas quatro páginas, com 80px de padding e
+   um gap de 64px entre a migalha e o título — 449px de altura
+   para dizer uma palavra. O Gabriel pediu bem menor, e é o
+   que este arquivo faz: ~250px, mantendo a mesma composição.
+   ============================================================ */
+
+.cabeca {
+  align-items: center;
+  border-bottom: 1px solid var(--fig-primaria-ativa);
+  display: flex;
+  justify-content: space-between;
+  /* Era --fig-e-4xl (80px) em cima e embaixo. */
+  padding: var(--fig-e-xl) var(--fig-margem-interna);
+}
+
+/* Era --fig-e-3xl (64px) entre a migalha e o título. */
+.cabeca__interno {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fig-e-md);
+}
+
+.cabeca__titulo {
+  color: var(--fig-primaria-ativa);
+  font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
+  margin: 0;
+}
+
+/* ── O selo, girando devagar ──────────────────────────────────
+   As palavras "ISABELLA PIRES · ARQUITETURA E DESIGN DE
+   INTERIORES" cercam a logo; girar o disco inteiro faz o texto
+   correr em volta dela. Uma volta a cada 40s — devagar o
+   bastante para ser percebido sem puxar o olho.
+
+   `will-change` mantém a animação na GPU: sem ele, o giro
+   repinta a área toda a cada quadro e o scroll da página
+   engasga em máquina fraca. */
+.cabeca__selo {
+  animation: cabeca-gira 40s linear infinite;
+  flex: none;
+  height: auto;
+  /* Era 328px / 20vw. Menor, para acompanhar o cabeçalho baixo. */
+  max-width: 210px;
+  opacity: 0.9;
+  transform-origin: 50% 50%;
+  width: 15vw;
+  will-change: transform;
+}
+
+@keyframes cabeca-gira {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Quem pediu menos movimento no sistema não vê o giro. */
+@media (prefers-reduced-motion: reduce) {
+  .cabeca__selo { animation: none; }
+}
+
+@media (max-width: 809.98px) {
+  .cabeca { padding: var(--fig-e-lg) var(--fig-margem-interna); }
+  .cabeca__selo { display: none; }
+}

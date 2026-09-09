@@ -21,6 +21,7 @@ import Rodape from '~/components/Rodape.astro';
 import Wordmark from '~/components/Wordmark.astro';
 import Migalhas from '~/components/Migalhas.astro';
 import { servicos } from '~/lib/conteudo';
+import '~/styles/cabeca-pagina.css';
 
 /* As fotos saíram do próprio Figma e estão na ordem dos serviços. */
 const fotos = [
@@ -74,20 +75,6 @@ const fotos = [
   /* ─── Cabeçalho da página ─────────────────────────────────
      80px/100px de padding, borda inferior de 1px e o selo circular de
      328px no canto direito — node 1:550. */
-  .cabeca {
-    align-items: flex-start;
-    border-bottom: 1px solid var(--fig-primaria-ativa);
-    display: flex;
-    justify-content: space-between;
-    padding: var(--fig-e-4xl) var(--fig-margem-interna);
-  }
-  .cabeca__interno { display: flex; flex-direction: column; gap: var(--fig-e-3xl); }
-  .cabeca__titulo {
-    color: var(--fig-primaria-ativa);
-    font: var(--fig-peso-semi) var(--fig-f-titulo-pagina) / 1.1 var(--fig-fonte-corpo);
-    margin: 0;
-  }
-  .cabeca__selo { flex: none; height: auto; max-width: 328px; opacity: 0.9; width: 20vw; }
 
   /* ─── Lista ───────────────────────────────────────────────*/
   .lista {

@@ -27,9 +27,11 @@ import AcordeaoServicos from '~/components/AcordeaoServicos.astro';
 import Contato from '~/components/formularios/Contato.astro';
 import { numerosHome } from '~/lib/conteudo';
 
+/* Três artigos na home: o Gabriel pediu três em tela grande e dois em tela
+   pequena, em vez do carrossel de seis. */
 const artigos = (await getCollection('artigos', ({ data }) => data.publicado !== false))
   .sort((a, b) => b.data.publicadoEm.valueOf() - a.data.publicadoEm.valueOf())
-  .slice(0, 6);
+  .slice(0, 3);
 /* O card da home não mostra tempo de leitura (o design não tem), então não
    há por que ler o corpo de cada artigo aqui. */
 
@@ -507,19 +509,28 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   }
   .blog__acesso { align-self: start; margin-top: var(--fig-e-md); }
 
+  /* Grade em vez de carrossel: três numa tela grande, dois numa média, um no
+     celular. Era um trilho de seis que rolava para o lado. */
   .blog__trilho {
-    display: flex;
-    gap: 50px;
+    display: grid;
+    gap: var(--fig-e-xl);
+    grid-template-columns: repeat(3, 1fr);
     list-style: none;
     margin: 0;
     min-width: 0;
-    overflow-x: auto;
     padding: var(--fig-e-md) var(--fig-margem-interna) var(--fig-e-md) 0;
-    scroll-snap-type: x proximate;
-    scrollbar-width: none;
   }
-  .blog__trilho::-webkit-scrollbar { display: none; }
-  .blog__item { flex: none; scroll-snap-align: start; }
+  .blog__item { min-width: 0; }
+  @media (max-width: 1199.98px) {
+    .blog__trilho { grid-template-columns: repeat(2, 1fr); }
+    /* O terceiro sai de cena quando só cabem dois: meia fileira solta fica
+       pior que três artigos virando dois. */
+    .blog__item:nth-child(3) { display: none; }
+  }
+  @media (max-width: 699.98px) {
+    .blog__trilho { grid-template-columns: 1fr; }
+    .blog__item:nth-child(3) { display: block; }
+  }
 
   /* ─── Aparição ao rolar ───────────────────────────────────
      A ficha `reveal-entrada` mede spring bounce 0.2 / 0.8s, com filhos

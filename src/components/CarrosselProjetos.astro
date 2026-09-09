@@ -204,11 +204,17 @@ const inicial = projetos.length > 2 ? 1 : 0;
   }
   .carrossel__trilho::-webkit-scrollbar { display: none; }
 
+  /* Medido no Framer a 1440px: o card do meio é 817×545 e os vizinhos são
+     675×469 — a razão é 0.826 nas DUAS dimensões. A versão anterior mexia
+     só na altura e deixava os três com 817px de largura, o que dava o
+     "todo mundo pequenininho" que o Gabriel apontou. */
   .carrossel__slide {
     flex: none;
     scroll-snap-align: center;
-    width: min(817px, 90vw);
+    transition: width var(--dur-carrossel-home, 0.6s) var(--mola-carrossel-home, ease);
+    width: min(675px, 74vw);
   }
+  .carrossel__slide[data-ativo] { width: min(817px, 90vw); }
 
   /* Peça lateral: 451px de altura contra os 545px do card ativo, e o véu
      preto de 20% que o design usa para empurrá-la para trás. */
@@ -230,7 +236,7 @@ const inicial = projetos.length > 2 ? 1 : 0;
   .carrossel__foto :global(img) {
     display: block;
     width: 100%;
-    height: 451px;
+    height: 469px;
     object-fit: cover;
     transition: height var(--dur-carrossel-home, 0.6s) var(--mola-carrossel-home, ease);
   }

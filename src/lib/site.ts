@@ -38,6 +38,9 @@ export const site = {
     pais: 'BR',
   },
   redes: {
+    /* Posts fixados na seção de Instagram de /sobre-nos e /contato. São os
+       mesmos três que o Framer embeda; trocar aqui troca nas duas páginas. */
+    postsInstagram: ['C7Z9mNHOh0T', 'C6MoSotOes_', 'C5t3OgVu-oj'],
     instagram: 'https://www.instagram.com/arq.isabellapires/',
     facebook: 'https://www.facebook.com/arq.isabellapires',
     linkedin: 'https://www.linkedin.com/in/arqisabellapires/',

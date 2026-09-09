@@ -22,12 +22,6 @@ import Contato from '~/components/formularios/Contato.astro';
 import { site } from '~/lib/site';
 import '~/styles/cabeca-pagina.css';
 
-const fotos = [
-  '/imagens/figma/contato--unsplash-gwd-zp-xup-ms0.webp',
-  '/imagens/figma/contato--unsplash-gwd-zp-xup-ms1.webp',
-  '/imagens/figma/contato--unsplash-gwd-zp-xup-ms2.webp',
-  '/imagens/figma/contato--unsplash-gwd-zp-xup-ms3.webp',
-];
 
 const redes = [
   { nome: 'Instagram', href: site.redes.instagram, icone: '/icones/instagram.svg' },
@@ -100,7 +94,7 @@ const { endereco } = site;
     </div>
   </section>
 
-  <FeedInstagram fotos={fotos} />
+  <FeedInstagram />
 
   <div slot="rodape">
     <Wordmark />

@@ -26,12 +26,6 @@ import FeedInstagram from '~/components/FeedInstagram.astro';
 import { servicos, selosSobre, valores, passosMetodo } from '~/lib/conteudo';
 import '~/styles/cabeca-pagina.css';
 
-const fotosInstagram = [
-  '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms0.webp',
-  '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms1.webp',
-  '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms2.webp',
-  '/imagens/figma/sobre--unsplash-gwd-zp-xup-ms3.webp',
-];
 ---
 
 <Base
@@ -157,7 +151,7 @@ const fotosInstagram = [
     </ol>
   </section>
 
-  <FeedInstagram fotos={fotosInstagram} />
+  <FeedInstagram />
 
   <div slot="rodape">
     <Wordmark />

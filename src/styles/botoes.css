@@ -1,0 +1,52 @@
+/* ============================================================
+   A cara de botão, para todos os botões do site.
+
+   O Gabriel disse que nenhum parecia clicável — e não parecia
+   mesmo: eram retângulos pintados, sem relevo, sem reação ao
+   toque. Curiosamente o Framer também não tem sombra nos dele;
+   aqui a decisão é dele, não do Framer.
+
+   O que faz um retângulo virar botão, nesta ordem de peso:
+     1. relevo — três camadas de sombra, da linha de contato à
+        larga e fraca
+     2. brilho no topo, que dá volume à superfície
+     3. o texto firme (700), que enche a caixa
+     4. reação: sobe no hover, AFUNDA no clique
+   ============================================================ */
+
+.tem-cara-de-botao {
+  border-radius: var(--fig-botao-raio);
+  box-shadow: var(--fig-botao-brilho), var(--fig-sombra-botao);
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+  padding: var(--fig-botao-pad);
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+  user-select: none;
+}
+
+.tem-cara-de-botao:hover {
+  box-shadow: var(--fig-botao-brilho), var(--fig-sombra-botao-alta);
+  transform: translateY(-2px);
+}
+
+/* Pressionado afunda: a sombra externa vira interna. É o retorno tátil
+   que faz o clique parecer clique. */
+.tem-cara-de-botao:active {
+  box-shadow: var(--fig-sombra-botao-baixa);
+  transform: translateY(1px);
+}
+
+.tem-cara-de-botao:focus-visible {
+  outline: 2px solid var(--fig-primaria-ativa);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tem-cara-de-botao,
+  .tem-cara-de-botao:hover,
+  .tem-cara-de-botao:active { transform: none; }
+}

@@ -271,17 +271,38 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
     margin: 0;
     width: 100%;
   }
+  /* Cara de botão: relevo em três camadas, brilho no topo, texto firme e
+     reação ao toque. Eram retângulos pintados — o Gabriel disse que nenhum
+     parecia clicável, e não parecia. */
   .botao {
-    border-radius: var(--fig-raio-sm);
+    border-radius: var(--fig-botao-raio);
+    box-shadow: var(--fig-botao-brilho), var(--fig-sombra-botao);
+    cursor: pointer;
     flex: 1;
     font: var(--fig-peso-forte) var(--fig-f-rotulo) / 1 var(--fig-fonte-corpo);
     letter-spacing: var(--fig-tracking-botao);
-    padding: var(--fig-e-md) var(--fig-e-lg);
+    padding: var(--fig-botao-pad);
     text-align: center;
     text-decoration: none;
-    transition: transform var(--dur-cta-antes-do-rodape) var(--mola-cta-antes-do-rodape);
+    transition:
+      box-shadow var(--dur-cta-antes-do-rodape) var(--mola-cta-antes-do-rodape),
+      transform var(--dur-cta-antes-do-rodape) var(--mola-cta-antes-do-rodape);
+    user-select: none;
   }
-  .botao:hover { transform: translateY(-2px); }
+  .botao:hover {
+    box-shadow: var(--fig-botao-brilho), var(--fig-sombra-botao-alta);
+    transform: translateY(-2px);
+  }
+  /* Pressionado afunda: é o retorno tátil que faz o clique parecer clique. */
+  .botao:active {
+    box-shadow: var(--fig-sombra-botao-baixa);
+    transform: translateY(1px);
+  }
+  .botao:focus-visible { outline: 2px solid var(--fig-primaria-ativa); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .botao, .botao:hover, .botao:active { transform: none; }
+  }
   .botao--claro { background: var(--fig-cinza-50); color: var(--fig-primaria-ativa); }
   .botao--caramelo { background: var(--fig-primaria-clara); color: #fff; }
 

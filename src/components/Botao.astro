@@ -16,19 +16,50 @@ const { href, variante = 'solido', class: classe } = Astro.props;
     align-items: center;
     justify-content: center;
     gap: var(--esp-2xs);
-    padding: 0.85rem var(--esp-md);
-    border-radius: var(--raio-pill);
+    padding: var(--fig-botao-pad);
+    border-radius: var(--fig-botao-raio);
     font-size: var(--texto-sm);
-    font-weight: var(--peso-medio);
+    /* Texto mais encorpado: peso médio deixava o rótulo mole dentro da
+       caixa, e um botão pede firmeza no texto. */
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1;
     text-decoration: none;
     border: 1px solid transparent;
     cursor: pointer;
+    /* Nunca deixar o cursor virar seta de texto ao arrastar sobre o rótulo. */
+    user-select: none;
+    /* Relevo em três camadas mais o brilho de cima: é a soma que faz uma
+       superfície parecer volume, e não retângulo pintado. */
+    box-shadow: var(--fig-botao-brilho), var(--fig-sombra-botao);
     transition: background-color var(--transicao-media),
+                box-shadow var(--transicao-media),
                 color var(--transicao-media),
                 border-color var(--transicao-media),
                 transform var(--transicao-rapida);
   }
-  .botao:active { transform: translateY(1px); }
+  /* Sobe um fio e a sombra cresce junto: é o que faz parecer que se levanta
+     da página em vez de só mudar de cor. */
+  .botao:hover {
+    box-shadow: var(--fig-botao-brilho), var(--fig-sombra-botao-alta);
+    transform: translateY(-2px);
+  }
+  /* Pressionado afunda: a sombra externa vira interna e o botão desce.
+     É o retorno tátil que faz o clique parecer clique. */
+  .botao:active {
+    box-shadow: var(--fig-sombra-botao-baixa);
+    transform: translateY(1px);
+  }
+  .botao:focus-visible {
+    outline: 2px solid var(--fig-primaria-ativa);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .botao,
+    .botao:hover,
+    .botao:active { transform: none; }
+  }
 
   .botao--solido {
     background-color: var(--cor-acento);

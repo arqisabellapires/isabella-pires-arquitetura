@@ -22,6 +22,7 @@ import Wordmark from '~/components/Wordmark.astro';
 import Migalhas from '~/components/Migalhas.astro';
 import { servicos } from '~/lib/conteudo';
 import '~/styles/cabeca-pagina.css';
+import '~/styles/botoes.css';
 
 /* As fotos saíram do próprio Figma e estão na ordem dos serviços. */
 const fotos = [
@@ -59,7 +60,7 @@ const fotos = [
             {servico.titulo}
           </h2>
           {servico.paragrafos.map((p) => <p class="servico__paragrafo">{p}</p>)}
-          <a class="servico__cta" href="/contato">Entrar em contato</a>
+          <a class="servico__cta tem-cara-de-botao" href="/contato">Entrar em contato</a>
         </div>
       </li>
     ))}

@@ -160,4 +160,28 @@
   --fig-raio-pill: 999px;
 
   --fig-sombra-cartao: 2px 2px 2px rgba(0, 0, 0, 0.24);
+
+  /* Relevo dos botões, nas três camadas que o Framer usa: uma linha de
+     contato quase colada, uma média, e uma larga e fraca. É a combinação
+     que faz o botão parecer que se levanta da página em vez de ser um
+     retângulo pintado — sem ela nenhum deles tinha cara de botão. */
+  --fig-sombra-botao:
+    0 0.6px 0.6px -1.25px rgb(0 0 0 / 0.18),
+    0 2.3px 2.3px -2.5px rgb(0 0 0 / 0.16),
+    0 10px 10px -3.75px rgb(0 0 0 / 0.06);
+  /* No hover ela cresce junto com o deslocamento de 2px. */
+  --fig-sombra-botao-alta:
+    0 1px 1px -1.25px rgb(0 0 0 / 0.2),
+    0 4px 4px -2.5px rgb(0 0 0 / 0.18),
+    0 14px 16px -3.75px rgb(0 0 0 / 0.1);
+  /* Pressionado: a sombra some e o botão afunda. */
+  --fig-sombra-botao-baixa: 0 1px 1.5px rgb(0 0 0 / 0.2) inset;
+
+  /* A forma do botão. O Framer usa raio 8 e padding 12/24, mas os botões
+     dele também não parecem clicáveis — o Gabriel pediu explicitamente que
+     os nossos pareçam. Daí o raio maior, o peso do texto e o brilho de
+     cima, que é o que dá volume a uma superfície. */
+  --fig-botao-raio: 10px;
+  --fig-botao-pad: 14px 26px;
+  --fig-botao-brilho: inset 0 1px 0 rgb(255 255 255 / 0.22);
 }

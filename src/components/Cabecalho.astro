@@ -34,6 +34,9 @@ const estaAtiva = (href: string) =>
 <header class:list={['cabecalho', sobreHero && 'cabecalho--claro']} data-estado="fechado">
   <a class="cabecalho__logo" href="/" aria-label={`${site.nomeCurto} — início`}>
     <img src="/icones/logo-ip.svg" alt="" width="56" height="73" />
+    {/* O nome ao lado do monograma, como no Framer (16px/700). Estava só a
+        logo, e quem não conhece a marca não sabia de quem era o site. */}
+    <span class="cabecalho__nome">ISABELLA PIRES</span>
   </a>
 
   <nav class="cabecalho__nav" aria-label="Navegação principal">
@@ -136,7 +139,13 @@ const estaAtiva = (href: string) =>
     --menu-cor: var(--fig-cinza-50);
   }
 
-  .cabecalho__logo { display: flex; flex: none; }
+  .cabecalho__logo {
+    align-items: center;
+    display: flex;
+    flex: none;
+    gap: 10px;
+    text-decoration: none;
+  }
   .cabecalho__logo img {
     display: block;
     /* 33×42 no Framer. O 56×73 do Figma é a medida do canvas de 1920 e
@@ -180,6 +189,13 @@ const estaAtiva = (href: string) =>
 
   .cabecalho__seta { width: 32px; height: 32px; flex: none; }
   .cabecalho--claro .cabecalho__seta { filter: brightness(0) invert(1); }
+
+  .cabecalho__nome {
+    color: var(--menu-cor);
+    font: 700 16px/1 var(--fig-fonte-ui);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
 
   .cabecalho__alternador {
     display: none;

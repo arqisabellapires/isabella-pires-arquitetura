@@ -18,6 +18,7 @@
  * ninguém rola até ver.
  */
 import { site } from '~/lib/site';
+import '~/styles/botoes.css';
 
 interface Props {
   /** Ids dos posts. Sem isto, usa os três do site.ts. */
@@ -29,7 +30,7 @@ const { posts = site.redes.postsInstagram } = Astro.props;
 <section class="instagram">
   <header class="instagram__cabeca">
     <p class="instagram__arroba">{site.redes.arroba}</p>
-    <a class="instagram__botao" href={site.redes.instagram} rel="noopener noreferrer" target="_blank">
+    <a class="instagram__botao tem-cara-de-botao" href={site.redes.instagram} rel="noopener noreferrer" target="_blank">
       Siga-nos no Instagram!
     </a>
   </header>

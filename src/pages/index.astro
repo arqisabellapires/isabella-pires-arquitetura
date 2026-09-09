@@ -389,26 +389,33 @@ const projetos = (await getCollection('projetos', ({ data }) => data.publicado !
   /* Faixa pêssego de largura total (node 1:206, #f0d9c7, 422px de altura),
      com os números por cima. A versão anterior não tinha fundo nenhum. */
   /* A faixa tem um padrão de logos ao fundo, do Figma (node 1:207 e 1:208,
-     "Grupo de 64 objetos"): uma grade de logos em contorno, deslocadas meia
-     célula a cada fileira. Lá são duas camadas — opacity-67 sobre
-     opacity-25 —, o que dá ~0.17 de opacidade final; é esse o valor aqui.
-     Sem ela a faixa era pêssego chapado. */
+     "Grupo de 64 objetos"): uma grade de logos em contorno BRANCO,
+     deslocadas meia célula a cada fileira, cobrindo a faixa inteira.
+
+     Os números saíram de medir a captura do Figma pixel a pixel: a célula é
+     188×202, e o traço é rgb(246,232,222) sobre o fundo rgb(240,217,199) —
+     mais CLARO que o fundo. Branco a 0.40 reproduz essa cor nos três canais.
+
+     A primeira versão errava tudo isso: logo pequena, marrom escura, e a
+     0.17 de opacidade. */
   .numeros {
     background: var(--fig-fundo-pessego);
-    /* 422px de altura no Figma; o padding vertical é o que a dá. */
-    padding: var(--fig-e-6xl) var(--fig-margem-interna);
+    /* 422px de altura no Figma, contra os 317 que o 6xl dava. As duas
+       fileiras de logo só fecham o desenho na altura cheia. */
+    padding: clamp(4rem, 1.5rem + 8vw, 10.5rem) var(--fig-margem-interna);
     position: relative;
     overflow: hidden;
   }
   .numeros::before {
     background: url('/imagens/padrao-logos.svg') repeat;
-    /* No Figma a logo do padrão tem ~46px de largura e a grade se repete a
-       cada ~100px — bem menor do que parecia. Com a célula de 196px do
-       arquivo, 100px de repetição dá a logo no tamanho certo. */
-    background-size: 100px auto;
+    /* A célula é 188×202 no canvas de 1920px do Figma — 10,2 logos na
+       largura. Numa tela de 1440 a mesma célula daria só 7,7, e as logos
+       ficariam grandes demais; a proporção é mantida com vw, que preserva
+       as ~10 logos em qualquer largura. */
+    background-size: max(96px, 9.8vw) auto;
     content: '';
     inset: 0;
-    opacity: 0.17;
+    opacity: 0.4;
     pointer-events: none;
     position: absolute;
   }

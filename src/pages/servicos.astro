@@ -51,7 +51,10 @@ const fotos = [
   <ol class="lista">
     {servicos.map((servico, i) => (
       <li class:list={['servico', i % 2 === 1 && 'servico--invertido']} id={servico.slug} data-revela>
-        <img class="servico__foto" src={fotos[i]} alt="" loading="lazy" width="560" height="587" />
+        {/* A moldura corta o excesso do zoom; a foto é que cresce dentro. */}
+        <div class="servico__moldura">
+          <img class="servico__foto" src={fotos[i]} alt="" loading="lazy" width="560" height="587" />
+        </div>
 
         <div class="servico__texto">
           <p class="servico__numero" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
@@ -99,12 +102,50 @@ const fotos = [
 
   /* 560×587 no Framer. A altura já batia; a largura ia a 697 e deixava a
      foto larga demais em relação ao texto. */
-  .servico__foto {
+  /* A foto de cada faixa cresce conforme a seção sobe na tela — o Gabriel
+     descreveu como "vou descendo e vai aumentando as imagens daquela faixa".
+
+     Feito com `animation-timeline: view()`: o quadro da animação é ligado à
+     posição da seção na janela, não ao relógio, então o zoom acompanha a
+     rolagem nos dois sentidos e não custa nenhum listener de scroll.
+
+     Onde não houver suporte (Safari mais antigo, Firefox sem a flag), a
+     foto simplesmente fica no tamanho natural: a animação não roda e o
+     `scale(1)` do estado normal prevalece. */
+  .servico__moldura {
     border-radius: var(--fig-raio-xl);
     flex: 1 1 560px;
-    height: 587px;
     max-width: 560px;
+    overflow: hidden;
+  }
+  .servico__foto {
+    display: block;
+    height: 587px;
     object-fit: cover;
+    transform-origin: 50% 50%;
+    width: 100%;
+  }
+
+  @supports (animation-timeline: view()) {
+    .servico__foto {
+      animation: servico-zoom linear both;
+      /* A timeline é a da MOLDURA, não a da própria foto: a foto tem
+         `overflow:hidden` acima dela e o próprio transform em curso, o que
+         embaralhava a medição e travava o quadro. `view(block)` na moldura
+         mede a caixa que de fato entra e sai da tela. */
+      animation-timeline: --entrada-servico;
+      animation-range: entry 0% exit 100%;
+    }
+    .servico__moldura { view-timeline: --entrada-servico block; }
+
+    @keyframes servico-zoom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.16); }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .servico__foto { animation: none; transform: none; }
   }
 
   .servico__texto {
@@ -161,7 +202,8 @@ const fotos = [
   @media (max-width: 1199.98px) {
     .servico,
     .servico--invertido { flex-direction: column; align-items: stretch; gap: var(--fig-e-2xl); }
-    .servico__foto { height: 420px; max-width: 100%; }
+    .servico__moldura { max-width: 100%; }
+    .servico__foto { height: 420px; }
     .servico__texto { max-width: 100%; }
     .cabeca__selo { display: none; }
   }

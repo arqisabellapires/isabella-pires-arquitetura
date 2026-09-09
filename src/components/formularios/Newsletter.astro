@@ -59,7 +59,14 @@ import { CAMPOS_ISCA } from '~/lib/antispam';
 </script>
 
 <style>
-  .news { background: #f0d9c7; border-radius: 12px; margin-top: 64px; padding: 40px 32px; }
+  /* Fundo BRANCO e sem caixa: no Framer a seção ocupa a largura da tela em
+     branco, colada no rodapé. Estava pêssego com raio de 12 e margem — uma
+     caixa que lá não existe. */
+  .news {
+    background: #fff;
+    margin-top: 0;
+    padding: 90px 32px 100px;
+  }
   /* 64px/500 no Framer, centralizado. Era 32px/700 à esquerda. */
   .news__titulo {
     color: #3a2e26;

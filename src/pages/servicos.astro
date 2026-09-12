@@ -128,15 +128,20 @@ const fotos = [
     width: 100%;
   }
 
-  }
-
+  /* O respiro NÃO é uniforme: o número cola no título porque são a mesma
+     unidade de leitura, o título se separa do corpo, e o botão ganha o
+     dobro para não ser lido como mais um parágrafo. Um `gap` único
+     achatava os quatro no mesmo plano. */
   .servico__texto {
     display: flex;
     flex-direction: column;
-    gap: var(--fig-e-xl);
+    gap: var(--fig-e-md);
     flex: 1 1 659px;
     max-width: 659px;
   }
+  .servico__titulo  { margin-top: var(--fig-e-2xs); }
+  .servico__paragrafo:first-of-type { margin-top: var(--fig-e-sm); }
+  .servico__cta     { margin-top: var(--fig-e-lg); }
 
   /* A pastilha do número alterna de cor a cada serviço. */
   /* O design usa #a98d67 aqui, mas com o texto #eee isso dá 2,70:1. O
@@ -168,9 +173,11 @@ const fotos = [
   .servico:nth-child(3) .servico__titulo,
   .servico:nth-child(5) .servico__titulo { color: var(--fig-primaria-ativa); }
 
+  /* 1.6 em vez de 1.5: três parágrafos seguidos num corpo de 18px pediam
+     mais ar entre linhas para não virar bloco cinza. */
   .servico__paragrafo {
     color: var(--fig-texto);
-    font: var(--fig-peso-medio) clamp(1rem, 0.94rem + 0.28vw, 1.125rem) / 1.5 var(--fig-fonte-corpo);
+    font: var(--fig-peso-medio) clamp(1rem, 0.94rem + 0.28vw, 1.125rem) / 1.6 var(--fig-fonte-corpo);
     margin: 0;
     max-width: 538px;
   }

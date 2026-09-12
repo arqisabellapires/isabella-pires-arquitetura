@@ -9,22 +9,24 @@
  * design com um cabeçalho desenhado por cima, que parecia post mas não era
  * — não abria, não atualizava, e o "Ver perfil" era decoração.
  *
- * Os três ids saíram do Framer no ar (08/09/2026). Quando a Isabella
- * publicar algo novo que valha a pena fixar aqui, é só trocar a lista em
- * `src/lib/site.ts`.
+ * Os posts são buscados na Graph API a cada build (`~/lib/instagram.ts`):
+ * a Isabella pediu que girassem sozinhos em vez de envelhecer fixos. Se a
+ * API falhar ou o token vencer, caem nos ids de `site.ts`, que continuam
+ * valendo como rede de segurança.
  *
  * O iframe é `loading="lazy"`: são três pedidos a um domínio de terceiro, e
  * a seção fica no fim da página. Sem isso o LCP paga por algo que quase
  * ninguém rola até ver.
  */
 import { site } from '~/lib/site';
+import { ultimosPosts } from '~/lib/instagram';
 import '~/styles/botoes.css';
 
 interface Props {
-  /** Ids dos posts. Sem isto, usa os três do site.ts. */
+  /** Ids dos posts. Sem isto, busca os últimos no Instagram. */
   posts?: readonly string[];
 }
-const { posts = site.redes.postsInstagram } = Astro.props;
+const { posts = await ultimosPosts() } = Astro.props;
 ---
 
 <section class="instagram">

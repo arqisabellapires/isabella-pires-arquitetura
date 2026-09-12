@@ -69,6 +69,19 @@ export const servicos = [
       'O resultado é um ambiente pronto para ser vivido, acolhedor e cheio de personalidade.',
     ],
   },
+  {
+    slug: 'terceirizacao-de-projetos',
+    sobretitulo: 'Terceirização de',
+    titulo: 'Projetos',
+    tituloCompleto: 'Terceirização de Projetos',
+    resumoHome:
+      'Escritórios de arquitetura contam com a gente para renders, vídeos e detalhamentos que a rotina não deixa executar.',
+    paragrafos: [
+      'Escritórios de arquitetura contam com a gente quando a agenda aperta e o prazo não espera.',
+      'Produzimos imagens realistas, vídeos e renders do projeto que você já concebeu, prontos para apresentar ao seu cliente.',
+      'Também executamos os detalhamentos técnicos: marmoraria, marcenaria e o que mais o projeto exigir. Você mantém a autoria e o relacionamento; nós entregamos a execução no seu padrão.',
+    ],
+  },
 ] as const;
 
 /** Opções do select do formulário, na ordem do site atual. */
@@ -78,6 +91,7 @@ export const opcoesServico = [
   'Design de Interiores',
   'Consultoria de Decoração',
   'Ambientação',
+  'Terceirização de Projetos',
 ] as const;
 
 export const numerosHome = [
